@@ -1,4 +1,4 @@
-package com.recovery.main;
+package com.recovery.account;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,17 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.recovery.account.AccountDAO;
-
-@WebServlet("/HC")
-public class HC extends HttpServlet {
+@WebServlet("/LoginPageC")
+public class LoginPageC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		AccountDAO.loginCheck(request);
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("lgh_account/loginPage.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 로그인 하는 기능
+		AccountDAO.login(request);
+		
+		// 어디로?
+		response.sendRedirect("HC");
 	}
 
 }
