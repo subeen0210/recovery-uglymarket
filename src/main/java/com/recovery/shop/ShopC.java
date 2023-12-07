@@ -20,7 +20,7 @@ public class ShopC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		ItemDAO.getAllItems(request);
-		request.getRequestDispatcher("shopMain.jsp").forward(request, response);
+		request.getRequestDispatcher("sb_shop/jsp/shopMain.jsp").forward(request, response);
 		
 	}
 
