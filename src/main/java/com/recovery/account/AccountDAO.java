@@ -64,4 +64,15 @@ public class AccountDAO {
 		}
 	}
 
+	public static boolean loginCheck(HttpServletRequest request) {
+		User user = (User) request.getSession().getAttribute("userAccount");
+		if (user == null) {
+			request.setAttribute("loginChange", "lgh_account/loginButton/loginButton.jsp");
+			return false;
+		} else {
+			request.setAttribute("loginChange", "lgh_account/loginButton/loginOK.jsp");
+			return true;
+		}
+	}
+
 }

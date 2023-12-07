@@ -18,7 +18,6 @@ public class LoginPageC extends HttpServlet {
 		// 로그인 하는 기능
 		AccountDAO.login(request);
 		
-		
 		// 어디로?
 		response.sendRedirect("HC");
 	}

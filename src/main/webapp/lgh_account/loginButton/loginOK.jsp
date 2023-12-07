@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		
+		<span>${sessionScope.userAccount.u_name }様</span>
 	</div>
 </body>
 </html>
