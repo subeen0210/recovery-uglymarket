@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-	<jsp:include page="${loginChange }"></jsp:include>
+		
 	</div>
 </body>
 </html>

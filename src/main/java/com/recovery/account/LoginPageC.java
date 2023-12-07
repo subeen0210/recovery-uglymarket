@@ -1,4 +1,4 @@
-package com.recovery.main;
+package com.recovery.account;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,12 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/HC")
-public class HC extends HttpServlet {
+@WebServlet("/LoginPageC")
+public class LoginPageC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.setAttribute("loginChange", "lgh_account/loginButton/loginButton.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		System.out.println("배고프다");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

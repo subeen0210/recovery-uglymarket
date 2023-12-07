@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-	<jsp:include page="${loginChange }"></jsp:include>
+		<a href="LoginPageC"><img style="width: 100px" src="lgh_account/loginButton/img/semi-login-icon.png"></a>
 	</div>
 </body>
 </html>
