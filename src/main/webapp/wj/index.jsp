@@ -27,12 +27,11 @@
 			</div>
 			&emsp;&emsp;&emsp;&emsp;&emsp;
 			<div>
-				<a href="">モール</a>
+				<a href="ShopC">モール</a>
 			</div>
 		</div>
 		<div class="header-icon">
-			<a href="LoginPageC"><img class="login-icon"
-				src="img/semi-login-icon.png" alt="" /></a> &emsp;&emsp; <a href=""><img
+			<jsp:include page="${loginChange }"></jsp:include> &emsp;&emsp; <a href=""><img
 				class="cart-icon" src="img/semi-cart-icon.png" alt="" /></a>
 			&emsp;&emsp; <a href=""><img class="search-icon"
 				src="img/semi-search-icon.png" alt="" /></a>
