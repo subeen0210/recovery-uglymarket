@@ -21,7 +21,7 @@ public class ShopC extends HttpServlet {
 
 		ItemDAO.getAllItems(request);
 		request.setAttribute("contentPage", "sb_shop/jsp/shopMain.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("wj/index.jsp").forward(request, response);
 		
 	}
 

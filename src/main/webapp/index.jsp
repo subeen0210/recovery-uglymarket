@@ -11,9 +11,6 @@
 	<jsp:include page="${loginChange }"></jsp:include>
 	</div>
 	
-	<div>
-	<jsp:include page="${contentPage }"></jsp:include>
-	</div>
 	
 </body>
 </html>
