@@ -19,3 +19,8 @@ document.addEventListener("DOMContentLoaded", function(){
       pause: 3000          // 자동 슬라이드 시간 간격 (밀리초)
   });
 })
+
+$(window).on('resize', function() {
+    // 확대/축소 이벤트 발생시 bxslider를 다시 로드
+	slider.reloadSlider();
+});
