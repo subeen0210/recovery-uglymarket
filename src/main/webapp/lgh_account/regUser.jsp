@@ -5,6 +5,34 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	alert('11');
+	const japanAddressApi = () => {
+		  let searchValue; // 우편번호가 들어갈 변수 선언
+		  $(".search").on("input", () => {
+		    searchValue = $(".search").val();
+		  });
+		  
+		  $(".search-btn").on("click", () => {
+		    $.get(`https://api.zipaddress.net/?zipcode=${searchValue}`)
+		      .done((address) => {
+		        console.log(address);
+		        const addressTemplate = `
+		          <p class="address-text">${address.data.fullAddress}</p>
+		        `;
+		        $(".address").append(addressTemplate);
+		      })
+		      .fail((error) => {
+		        console.log(error);
+		      });
+		  });
+		};
+		japanAddressApi();
+	
+})
+</script>
 </head>
 <body>
 <div>
@@ -37,49 +65,19 @@
 		<div><input name="userEmail" type="email"></div>
 	</div>
 	<div>
-		<div>addr</div>
-		<div><input name="userAddrno" id="zipcode"> <button id="zipaddr" >우편번호</button> </div>
-		<div><input readonly="readonly" name="userAddrcity" value="address">불러온 내용</div>
-		<div><input name="userAddrDetail">상세정보</div>
-	</div>
+		<h1>일본 우편번호 검색</h1>
+        <div class="search-bar">
+          <input class="search" type="text" />
+          <button class="search-btn">검색</button>
+        </div>
+      </header>
+      <aside>
+        <p>주소가 나올 텍스트</p>
+      </aside>
+      </div>
 	<div>
 		<button>Sign Up</button>
 	</div>
 </div>
 </body>
-<script type="text/javascript">
-const japanAddressApi = () => {
-	  $.get("https://api.zipaddress.net/?zipcode=453-0809")
-	    .done((address) => {
-	      console.log(address.data);
-	    })
-	    .fail((error) => {
-	      console.log(error);
-	    });
-	};
-	japanAddressApi();
-//jQueryなら$とかやってください
-document.addEventListener('DOMContentLoaded', function() {
-  
-  // 検索ボタンなど
-  var btn = document.getElementById('zipaddr');
-  // 郵便番号データ
-  var zipcode = document.getElementById('zipcode');
-
-  // クリックイベントでリクエスト
-  btn.addEventListener('click', function() {
-    // リクエスト
-    ZA.request(zipcode.value, function(data, err) {
-      // エラーがあったか見つからない
-      if ( err ) {
-        return alert(data.message);
-      }
-
-      // データセット
-      document.getElementById('address').value = data.fullAddress;
-    });
-  });
-}, false);
-
-</script>
 </html>
