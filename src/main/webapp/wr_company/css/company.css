@@ -41,8 +41,31 @@
     color: black;
     font-size: 32px;
     font-weight: bold;
+   
 }
+.company_div_txt_1{
+	margin-bottom : 90px;
+ 
+}
+.company_div_txt_2{
+	height : 100px;
+	margin-top : 10px;
+ 
+}
+.company_div_txt_3{
+	height : 100px;
+	margin-top : -70px;
+ 
+}
+
+
+
+
+
+
+
 .company_div1 {
+	
     margin-top: 300px;
     display: flex;
     justify-content: center;

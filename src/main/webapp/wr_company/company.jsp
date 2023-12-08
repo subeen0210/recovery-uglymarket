@@ -42,21 +42,24 @@
 	<div class="company_container">
 		<div class="company_img">
 			<img src="img/banner1.png">
-
+<div class="company_txt1">アグリーマーケット</div>
 		</div>
-		<div class="company_txt1">アグリーマーケット</div>
+		
 
 		<div class="company_div">
-			<p>2023年にローンチしたアグリーマーケットは、醜い外見によって<br>捨てられ、環境に負担を与えるブサイク農産物の運命を<br>
-				変化させるために誕生しました。
-			</p>
-			
-			<p>アグリーな農産物は味と栄養面で他の農産物に決して<br>遅れをとりません。
-			</p>
-			<p>
-				我々のビジョンとミッションを通じて農家と消費者を連結し、<br>持続可能で価値のある共生可能な市場を作ります。
-			</p>
+		<p class="company_div_txt_1">2023年にローンチしたアグリーマーケットは、醜い外見によって捨てられ、<br>環境に負担を与えるブサイク農産物の運命を
+				変化させるために誕生しました。</p>
+		<p class="company_div_txt_2">アグリーな農産物は味と栄養面で他の農産物に決して遅れをとりません。</p>
+		<p>我々のビジョンとミッションを通じて農家と</p>
+		<div  class="company_div_txt_3">
+		<p>消費者を連結し持続可能で価値のある共生可能な市場を作ります。</p>
 		</div>
+		</div>
+			
+			
+			
+			
+		
 <!--  회사 소개란   -->
 		<div class="company_div1">
 			<div class="company_div1-1">
