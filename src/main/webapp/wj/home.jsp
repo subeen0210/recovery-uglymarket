@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="wj/css/home.css" />
 </head>
 <body>
 	<!-- bx 슬라이더 -->
@@ -31,25 +32,25 @@
 			<div class="item-img-position">
 				<img src="img/semi-main-item-img.png" alt="" />
 				<div class="item-img-position-text">
-					<img src="img/semi-main-item-img-text.png" alt="" /><br />
-					<br /> <span class="img-text-style">シャインマスカット2KG</span><br />
-					<br /> <span class="img-text-style2">390円</span>
+					<img src="img/semi-main-item-img-text.png" alt="" /><br /> <br />
+					<span class="img-text-style">シャインマスカット2KG</span><br /> <br /> <span
+						class="img-text-style2">390円</span>
 				</div>
 			</div>
 			<div class="item-img-position">
 				<img src="img/semi-main-item-img2.png" alt="" />
 				<div class="item-img-position-text">
-					<img src="img/semi-main-item-img-text2.png" alt="" /><br />
-					<br /> <span class="img-text-style">完熟トマト 5KG</span><br />
-					<br /> <span class="img-text-style2">2790円</span>
+					<img src="img/semi-main-item-img-text2.png" alt="" /><br /> <br />
+					<span class="img-text-style">完熟トマト 5KG</span><br /> <br /> <span
+						class="img-text-style2">2790円</span>
 				</div>
 			</div>
 			<div class="item-img-position">
 				<img src="img/semi-main-item-img3.png" alt="" />
 				<div class="item-img-position-text">
-					<img src="img/semi-main-item-img-text.png" alt="" /><br />
-					<br /> <span class="img-text-style">高糖度済州島 2KG</span><br />
-					<br /> <span class="img-text-style2">1680円</span>
+					<img src="img/semi-main-item-img-text.png" alt="" /><br /> <br />
+					<span class="img-text-style">高糖度済州島 2KG</span><br /> <br /> <span
+						class="img-text-style2">1680円</span>
 				</div>
 			</div>
 		</div>
@@ -80,8 +81,8 @@
 						class="news-inner-img5"
 						src="img/semi-main-item-news-text-four-img.png" alt="" /><img
 						class="news-inner-img6"
-						src="img/semi-main-item-news-text-four-img-date.png" alt="" />
-					<img src="img/semi-main-item-img-news-rectangle.png" alt="" /> <img
+						src="img/semi-main-item-news-text-four-img-date.png" alt="" /> <img
+						src="img/semi-main-item-img-news-rectangle.png" alt="" /> <img
 						class="news-inner-img"
 						src="img/semi-main-item-news-text-first-img2.png" alt="" /><img
 						class="news-inner-img2"

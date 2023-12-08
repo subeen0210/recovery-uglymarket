@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport"
-	content="width=1920, height=1080, initial-scale=1.0" />
-<link rel="stylesheet" href="css/index.css" />
-<script src="js/index.js"></script>
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="wj/css/index.css" />
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script src="wj/js/index.js"></script>
 <title>Document</title>
 </head>
 <body>
@@ -31,8 +31,7 @@
 			</div>
 		</div>
 		<div class="header-icon">
-			<a href="LoginPageC"><img class="login-icon"
-				src="img/semi-login-icon.png" alt="" /></a> &emsp;&emsp; <a href=""><img
+			<jsp:include page="${loginChange }"></jsp:include> &emsp;&emsp; <a href=""><img
 				class="cart-icon" src="img/semi-cart-icon.png" alt="" /></a>
 			&emsp;&emsp; <a href=""><img class="search-icon"
 				src="img/semi-search-icon.png" alt="" /></a>
