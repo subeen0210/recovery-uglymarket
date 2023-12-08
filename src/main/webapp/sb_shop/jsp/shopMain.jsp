@@ -14,7 +14,8 @@
 		<c:forEach var="item" items="${sessionScope.items }">
 			<div class="shop-item">
 			<div>
-				${sessionScope.i_img }<img alt="" src="">
+				<img alt="" src="">
+				<span>${item.i_img }</span>
 			</div>
 			<div>
 				<span>${item.i_name }</span>
