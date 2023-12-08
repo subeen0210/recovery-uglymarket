@@ -47,6 +47,9 @@ public class ItemDAO {
 				item.setI_stock(rs.getInt("i_stock"));
 				item.setI_star_avg(rs.getDouble("i_star_avg"));
 				items.add(item);
+				System.out.println(rs.getString("i_name"));
+				System.out.println(rs.getString("i_price"));
+				System.out.println(rs.getString("i_img"));
 			}
 				HttpSession session = request.getSession();
 				session.setAttribute("items", items);
