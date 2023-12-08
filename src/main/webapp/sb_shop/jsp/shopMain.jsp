@@ -11,7 +11,7 @@
 
 		<h3>shopMain</h3>
 		
-		<c:forEach var="item" items="${sessionScope.items }">
+		<c:forEach var="item" items="${items }">
 			<div class="shop-item">
 			<div>
 				<img alt="" src="">
