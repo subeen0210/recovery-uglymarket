@@ -1,5 +1,6 @@
 package com.recovery.shop;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,6 +9,9 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.oreilly.servlet.multipart.FileRenamePolicy;
 import com.recovery.main.DBManager;
 
 public class ItemDAO {
@@ -68,10 +72,10 @@ public class ItemDAO {
 				}
 				item.setI_des(rs.getString("i_des"));
 				item.setI_category(rs.getInt("i_category"));
-				item.setI_enddate(rs.getDate("i_enddate"));
+				item.setI_enddate(rs.getDate("i_ed"));
 				item.setI_price(rs.getInt("i_price"));
 				item.setI_stock(rs.getInt("i_stock"));
-				item.setI_star_avg(rs.getDouble("i_star_avg"));
+				item.setI_star_avg(rs.getDouble("i_avg"));
 				items.add(item);
 //				System.out.println(rs.getString("i_name"));
 //				System.out.println(rs.getString("i_price"));
@@ -97,7 +101,7 @@ public class ItemDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from item where \"i_no\" = ?";
+		String sql = "select * from item where i_no = ?";
 		
 		try {
 			con = DBManager.connect();
@@ -119,10 +123,10 @@ public class ItemDAO {
 				}
 				i.setI_des(rs.getString("i_des"));
 				i.setI_category(rs.getInt("i_category"));
-				i.setI_enddate(rs.getDate("i_enddate"));
+				i.setI_enddate(rs.getDate("i_ed"));
 				i.setI_price(rs.getInt("i_price"));
 				i.setI_stock(rs.getInt("i_stock"));
-				i.setI_star_avg(rs.getDouble("i_star_avg"));
+				i.setI_star_avg(rs.getDouble("i_avg"));
 				request.setAttribute("item", i);
 			}
 			
@@ -141,11 +145,14 @@ public class ItemDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = "insert into item values (item_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?)";
-		
+	
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
+			String path = request.getServletContext().getRealPath("itemFolder");
+			MultipartRequest mr = new MultipartRequest(request, path, 30*1024*1024 , "utf-8" , new DefaultFileRenamePolicy());
 			
+			String name = mr.getParameter(path);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
