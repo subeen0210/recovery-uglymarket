@@ -97,7 +97,7 @@ public class ItemDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from item where i_no = ?";
+		String sql = "select * from item where \"i_no\" = ?";
 		
 		try {
 			con = DBManager.connect();
@@ -155,5 +155,9 @@ public class ItemDAO {
 		
 		
 	}
+	
+	
+	
+	
 
 }
