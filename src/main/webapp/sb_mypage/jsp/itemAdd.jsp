@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
-		<span>${sessionScope.userAccount.u_nicname }様</span>
-	</div>
+
+	<h2>add Item</h2>
+	
+
 </body>
 </html>

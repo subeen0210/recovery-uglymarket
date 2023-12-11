@@ -7,8 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<h2>mypage main</h2>
+	
+	<form action="MypageC" method="post" enctype="multipart/form-data">
 	<div>
-		<span>${sessionScope.userAccount.u_nicname }様</span>
+		<span> 상품 등록 </span>
 	</div>
+	</form>
+
+	<jsp:include page="${mypageContent }"></jsp:include>
+
 </body>
 </html>
