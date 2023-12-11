@@ -24,6 +24,14 @@ a{
 .mypage_title{
 	
 	font-size: 30px;
+
+}
+.mypage_title2{
+	font-size: 25px;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	
 	
 	
 }

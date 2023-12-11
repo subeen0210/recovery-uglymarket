@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="css/myPage.css" />
+<link rel="stylesheet" href="css/myPage.css">
 <head>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <!-- jQuery를 사용할 경우, 필요한 경우에만 추가하세요 -->
@@ -20,7 +20,13 @@
 
 		<div class="mypage_contents1_box">
 			<div class="mypage_contents1_info_box">
-				<div class="myinfo_box"></div>
+				<div class="myinfo_box">
+				<div></div>
+				<div> </div>
+				<div> </div>
+				
+				
+				</div>
 
 			</div>
 			<div class="">
@@ -52,6 +58,9 @@
 			</div>
 			<div class="mypage_title">
 				<p>最近見たもの</p>
+			</div>
+			<div class="mypage_title2">
+				<a href="">もっと見る</a>
 			</div>
 			<div class="mypage_contents2_container">
 				<div class="mypage_contents2_box">
