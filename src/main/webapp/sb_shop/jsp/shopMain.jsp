@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript" src="js/shopMain.js"></script>
 <link rel="stylesheet" href="css/shopMain.css">
 <title>Insert title here</title>
 </head>
@@ -12,11 +13,17 @@
 
 		<h3>shopMain</h3>
 		
+		<div class="shop-category-filter">
+			<button class="filter-all">전체</button>
+			<button class="filter-ugly">못난이</button>
+			<button class="filter-public">일반</button>
+		</div>
+		
 		<c:forEach var="item" items="${items }">
 			<div class="shop-item">
 			<div>
 				<img alt="" src="">
-				<span>${item.i_img }</span>
+				<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_img }</span>
 			</div>
 			<div>
 				<c:choose>
