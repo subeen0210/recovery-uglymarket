@@ -7,10 +7,13 @@ import java.sql.ResultSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.recovery.main.DBManager;
 
 public class AccountDAO {
 
+	// 로그인
 	public static void login(HttpServletRequest request) {
 		// 유저 로그인 하는 기능입니다.
 		// 껍/값
@@ -67,7 +70,8 @@ public class AccountDAO {
 			DBManager.close(con, pstmt, rs);
 		}
 	}
-
+	
+	// login 했는지 안했는지 확인
 	public static boolean loginCheck(HttpServletRequest request) {
 		User user = (User) request.getSession().getAttribute("userAccount");
 		if (user == null) {
@@ -115,9 +119,36 @@ public class AccountDAO {
 		PreparedStatement pstmt = null;
 		String sql = "insert into users values(?,?,?,?,?,?,?,?,?,?,?);";
 		try {
-			
+			request.setCharacterEncoding("utf-8");
+			String path = request.getServletContext().getRealPath("lgh_account/userImg");
+			MultipartRequest mr = new MultipartRequest(request, path, 30*1024*1024, "utf-8", new DefaultFileRenamePolicy()
+					);
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
+			String id = mr.getParameter("userID");
+			String pw = mr.getParameter("userPW");
+			String kanjiLast = mr.getParameter("userKanji_ln");
+			String kanjiName = mr.getParameter("userKanji_fn");
+			String kataLast = mr.getParameter("userKata_ln");
+			String kataName = mr.getParameter("userKata_fn");
+			String nicName = mr.getParameter("userNicname");
+			String tel1 = mr.getParameter("userTel1");
+			String tel2 = mr.getParameter("userTel2");
+			String tel3 = mr.getParameter("userTel3");
+			String telAll = tel1+"-"+tel2+"-"+tel3;
+			String email = mr.getParameter("userEmail");
+			String img = mr.getFilesystemName("userImg");
+			
+			System.out.println(id);
+			System.out.println(pw);
+			System.out.println(kanjiLast);
+			System.out.println(kanjiName);
+			System.out.println(kataLast);
+			System.out.println(kataName);
+			System.out.println(nicName);
+			System.out.println(telAll);
+			System.out.println(email);
+			System.out.println(img);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -125,9 +156,9 @@ public class AccountDAO {
 		}
 	}
 	
-	public static void regUserAddr(HttpServletRequest request) {
-		Connection con = null;
-		pre
-	}
+//	public static void regUserAddr(HttpServletRequest request) {
+//		Connection con = null;
+//		pre
+//	}
 
 }
