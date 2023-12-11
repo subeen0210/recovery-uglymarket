@@ -124,5 +124,10 @@ public class AccountDAO {
 			DBManager.close(con, pstmt, null);
 		}
 	}
+	
+	public static void regUserAddr(HttpServletRequest request) {
+		Connection con = null;
+		pre
+	}
 
 }
