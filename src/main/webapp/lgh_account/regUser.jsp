@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script type="text/javascript" src="../js/addrUser.js"></script>
+<script type="text/javascript" src="../js/idCheck.js"></script>
 </head>
 <body>
 	<form action="RegUserAccountC" method="post" enctype="multipart/form-data">
@@ -17,7 +18,9 @@
 		<div>
 			<div>ID</div>
 			<div>
-				<input name="userID">중복확인
+				<input name="userID" id="userID">
+				<button type="button" id="checkDuplicate">重複確認</button>
+				 <span id="idStatus"></span>
 			</div>
 		</div>
 		<div>
