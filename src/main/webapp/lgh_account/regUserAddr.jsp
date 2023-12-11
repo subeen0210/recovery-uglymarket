@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div>
-		<h1>주소</h1>
+		<h1>住所</h1>
 		<div>
 			<input placeholder="ex) 3120061 or 312-0061" id="userAddr-Zipcode">
 			<button id="userAddr-btnSearch">検索</button>
