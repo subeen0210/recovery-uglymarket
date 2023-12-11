@@ -1,0 +1,17 @@
+@charset "EUC-KR";
+
+.review_container{
+	
+	width: 100vmax;
+	height: 100%;
+	border: 2px solid black;
+	
+	
+	
+}
+.review_title{
+	
+	font-size: 50px;
+	
+	
+}
