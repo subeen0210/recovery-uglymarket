@@ -1,145 +1,146 @@
 @font-face {
-    font-family: 'MyCustomFont'; /* 사용할 폰트 이름 설정 */
-    src: url('../font/kan.otf') format('opentype'); /* 파일 경로 설정 */
-    /* 다양한 포맷을 지원하려면 여러 소스를 추가할 수 있습니다. */
+	font-family: 'MyCustomFont'; /* 사용할 폰트 이름 설정 */
+	src: url('../font/kan.otf') format('opentype'); /* 파일 경로 설정 */
+	/* 다양한 포맷을 지원하려면 여러 소스를 추가할 수 있습니다. */
 }
+
 * {
-    font-family: 'MyCustomFont', sans-serif; /* 폰트 적용 */
+	font-family: 'MyCustomFont', sans-serif; /* 폰트 적용 */
 }
 
-
-.company_container{
-    width: 100vmax;
-    height: 100%;
+.company_container {
+	width: 100vmax;
+	height: 100%;
 }
+
 .company_img {
-    margin-top: 100px;
-    position: relative;
-    display: flex;
-    width: 100vmax;
-    height: 400px;
-    justify-content: center;
+	margin-top: 100px;
+	position: relative;
+	display: flex;
+	width: 100vmax;
+	height: 400px;
+	justify-content: center;
 }
+
 .company_txt1 {
-    position: absolute;
-    top: 43%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 70px;
-    font-weight: bold;
+	position: absolute;
+	top: 43%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 70px;
+	font-weight: bold;
 }
-.company_div{
-    margin-top: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+.company_div {
+	margin-top: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
+
 .company_div p {
-    margin-top: 40px;
-    color: black;
-    font-size: 32px;
-    font-weight: bold;
-   
-}
-.company_div_txt_1{
-	margin-bottom : 90px;
- 
-}
-.company_div_txt_2{
-	height : 100px;
-	margin-top : 10px;
- 
-}
-.company_div_txt_3{
-	height : 100px;
-	margin-top : -70px;
- 
+	margin-top: 40px;
+	color: black;
+	font-size: 32px;
+	font-weight: bold;
 }
 
+.company_div_txt_1 {
+	margin-bottom: 90px;
+}
 
+.company_div_txt_2 {
+	height: 100px;
+	margin-top: 10px;
+}
 
-
-
-
+.company_div_txt_3 {
+	height: 100px;
+	margin-top: -70px;
+}
 
 .company_div1 {
-	
-    margin-top: 300px;
-    display: flex;
-    justify-content: center;
+	margin-top: 300px;
+	display: flex;
+	justify-content: center;
 }
+
 .company_div1-1 {
-    position: relative;
-    background-color: rgb(195, 232, 32);
-    margin-right: 50px;
-    width: 300px;
-    height: 300px;
-    border-radius: 20px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-image: initial;
+	position: relative;
+	background-color: rgb(195, 232, 32);
+	margin-right: 50px;
+	width: 300px;
+	height: 300px;
+	border-radius: 20px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	border-image: initial;
 }
+
 .div1_title {
-    margin-left: 20px;
-    font-size: 30px;
-    font-weight: bold;
+	margin-left: 20px;
+	font-size: 30px;
+	font-weight: bold;
 }
+
 .div1_title2 {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    font-size: 22px;
-    margin-left: 10px;
-    margin-right: 10px;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	margin-bottom: 30px;
+	font-weight: bold;
+	font-size: 22px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
+
 .company_div2 {
-    margin-top: 150px;
-    display: flex;
-    justify-content: center;
+	margin-top: 150px;
+	display: flex;
+	justify-content: center;
 }
+
 .company_div2-1 {
-    width: 600px;
-    height: 100px;
-    background-color: rgb(235, 248, 182);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-image: initial;
-    border-radius: 40px;
+	width: 600px;
+	height: 100px;
+	background-color: rgb(235, 248, 182);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	border-image: initial;
+	border-radius: 40px;
 }
+
 .company_txt3 {
-    text-align: center;
-    font-size: 23px;
-    font-weight: bold;
+	text-align: center;
+	font-size: 23px;
+	font-weight: bold;
 }
+
 .company_div3 {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .company_div3-1 {
-    margin-left: 50px;
-    width: 200px;
-    height: 50px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-image: initial;
+	margin-left: 50px;
+	width: 200px;
+	height: 50px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	border-image: initial;
 }
+
 .div3_title {
-    text-align: center;
+	text-align: center;
 }
-
-
-

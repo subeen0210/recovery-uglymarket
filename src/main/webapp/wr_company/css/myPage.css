@@ -52,14 +52,45 @@ a{
 	align-items: center;
 }
 .myinfo_box{
+	position: relative;
 	width: 500px;
 	height:400px;
 	background-color: green;
+	align-content: center;
+	
+}
+.myinfo_box_item{
+	    position: absolute;
+    display: flex;
+    top: 100px;
+    left: 256px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+	
+}
+.myinfo_box_items{
+	width : 400px;
+	height: 50px;
+	
+	font-size: 20px;
+	
+}
+.myinfo_box_photo{
+	background-image: url('../img/bb.jpeg');
+	background-size: cover; 
+      background-position: center; 
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	 border-radius: 50%;
+	 border: 1px solid black;
+	 
+	 
+	
 	
 	
 	
 }
-
 
 
 
