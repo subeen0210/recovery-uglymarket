@@ -5,6 +5,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style type="text/css">
+.category{
+	position: relative; display: inline-block;
+}
+
+#category-back1{
+	background-color: #C3E820; 
+	width: 100px; height: 30px; 
+	border-radius: 40%;"
+}
+
+#category-back2{
+	background-color: #70E820; 
+	width: 100px; height: 30px; 
+	border-radius: 40%;
+}
+
+#category-text{
+	position: absolute;
+	top: 50%; left: 50%; 
+	transform: translate(-50%, -50%);
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
@@ -22,13 +45,13 @@
 					<c:when test="${item.i_category ==1}">
 						<div class="category">
 							<div id="category-back1"></div>
-							<span>アグリ</span>
+							<span id="category-text">アグリ</span>
 						</div>
 					</c:when>
 					<c:when test="${item.i_category ==2}">
 						<div class="category">
 							<div id="category-back2"></div>
-							<span>ふつう</span>
+							<span id="category-text">ふつう</span>
 						</div>
 					</c:when>
 				</c:choose>
