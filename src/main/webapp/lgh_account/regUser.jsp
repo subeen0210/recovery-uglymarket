@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="../js/addrUser.js"></script>
 </head>
 <body>
 	<form action="RegUserAccountC" method="post" enctype="multipart/form-data">
@@ -63,7 +64,7 @@
 		<div>
 			<h4>郵便番号</h4>
 			<div>
-				<button id="addrUser-popup">住所検索</button>
+				<button type="button" id="addrUser-popup">住所検索</button>
 				<br>
 				郵便番号 <input name="userAddrN" id="addrNum" readonly="readonly"><br> 
 				都道府県 <input name="userAddrP" id="addrPrefecture" readonly="readonly"><br> 
