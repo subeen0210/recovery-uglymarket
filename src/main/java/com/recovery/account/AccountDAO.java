@@ -108,5 +108,21 @@ public class AccountDAO {
 		}
 		return idCheck;
 	}
+	
+	//db에 유저정보 등록(회원가입)
+	public static void regUser(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "insert into users values(?,?,?,?,?,?,?,?,?,?,?);";
+		try {
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
 
 }
