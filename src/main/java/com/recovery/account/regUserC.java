@@ -18,6 +18,7 @@ public class RegUserC extends HttpServlet {
 	
 	AccountDAO.regUser(request);
 	
+	response.sendRedirect("HC");
 	}
 
 }

@@ -46,12 +46,12 @@ public class AccountDAO {
 					user.setU_nicname(rs.getString("u_nicname"));
 					user.setU_tel(rs.getString("u_tel"));
 					user.setU_email(rs.getString("u_email"));
-					user.setU_addrno(rs.getString("u_addrno"));
 					user.setU_kanji_ln(rs.getString("u_kanji_ln"));
 					user.setU_kanji_fn(rs.getString("u_kanji_fn"));
 					user.setU_kata_ln(rs.getString("u_kata_ln"));
 					user.setU_kata_fn(rs.getString("u_kata_fn"));
 					user.setU_img(rs.getString("u_img"));
+					user.setU_signout(rs.getString("u_signout"));
 					
 					// 세션 적용
 					HttpSession userHS = request.getSession();
@@ -117,14 +117,12 @@ public class AccountDAO {
 	public static void regUser(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into users values(?,?,?,?,?,?,?,?,?,?,?);";
+		String sql = "insert into users values(?,?,?,?,?,?,?,?,?,?, 'N')";
 		try {
 			request.setCharacterEncoding("utf-8");
 			String path = request.getServletContext().getRealPath("lgh_account/userImg");
 			MultipartRequest mr = new MultipartRequest(request, path, 30*1024*1024, "utf-8", new DefaultFileRenamePolicy()
 					);
-			con = DBManager.connect();
-			pstmt = con.prepareStatement(sql);
 			String id = mr.getParameter("userID");
 			String pw = mr.getParameter("userPW");
 			String kanjiLast = mr.getParameter("userKanji_ln");
@@ -139,18 +137,38 @@ public class AccountDAO {
 			String email = mr.getParameter("userEmail");
 			String img = mr.getFilesystemName("userImg");
 			
-			System.out.println(id);
-			System.out.println(pw);
-			System.out.println(kanjiLast);
-			System.out.println(kanjiName);
-			System.out.println(kataLast);
-			System.out.println(kataName);
-			System.out.println(nicName);
-			System.out.println(telAll);
-			System.out.println(email);
-			System.out.println(img);
+//			System.out.println(id);
+//			System.out.println(pw);
+//			System.out.println(kanjiLast);
+//			System.out.println(kanjiName);
+//			System.out.println(kataLast);
+//			System.out.println(kataName);
+//			System.out.println(nicName);
+//			System.out.println(telAll);
+//			System.out.println(email);
+//			System.out.println(img);
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			pstmt.setString(3, nicName);
+			pstmt.setString(4, telAll);
+			pstmt.setString(5, email);
+			pstmt.setString(6, kanjiLast);
+			pstmt.setString(7, kanjiName);
+			pstmt.setString(8, kataLast);
+			pstmt.setString(9, kataName);
+			pstmt.setString(10, img);
+			
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("등록성공");
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
+				System.out.println("등록 실패");
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
