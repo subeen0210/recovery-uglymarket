@@ -10,13 +10,14 @@
 
 	<h2>mypage main</h2>
 	
-	<form action="MypageC" method="post" enctype="multipart/form-data">
+	
 	<div>
-		<span> 상품 등록 </span>
+		<span onclick="location.href='sb_mypage/jsp/itemAdd.jsp'"> 상품 등록 </span>
 	</div>
-	</form>
+	
+	
 
-	<jsp:include page="${mypageContent }"></jsp:include>
+	
 
 </body>
 </html>
