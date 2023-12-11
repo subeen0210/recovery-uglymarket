@@ -80,14 +80,14 @@ public class AccountDAO {
 	}
 
 	//id 중복 확인 기능
-	public static boolean idCheck(HttpServletRequest request) {
+	public static int idCheck(HttpServletRequest request) {
 		System.out.println("aa");
 		String userID = request.getParameter("userID");
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from users where u_id = ?";
-		boolean idCheck = false;
+		int idCheck = 0;
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
@@ -95,10 +95,10 @@ public class AccountDAO {
 			rs = pstmt.executeQuery();
 			if (rs.next() || userID.equals("")) {
 				// 행이 있거나, 아예 입력 하지 않았을 경우 생성 불가능하게
-				idCheck = false;
+				idCheck = 0;
 			} else {
 				// 행이 존재하지 않음 == id 중복이 아님이므로 생성 가능
-				idCheck = true;
+				idCheck = 1;
 			}
 			
 		} catch (Exception e) {

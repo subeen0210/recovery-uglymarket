@@ -13,8 +13,8 @@ public class IDCheckDuplicateC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		if (AccountDAO.idCheck(request)==true) {
+	System.out.println("aa");
+		if (AccountDAO.idCheck(request)==1) {
 			response.getWriter().write("available");
 		}else {
 			response.getWriter().write("unavailable");
