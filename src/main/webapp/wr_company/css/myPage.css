@@ -80,7 +80,17 @@ a{
 
 }
 
+.mypage_contents2_container{
+	
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	
+	
+}
+
 .mypage_contents2_box{
+	width: 1600px;
 	height:500px;
 	background-color : blue;
 	border: 1px solid blue;
@@ -97,7 +107,9 @@ a{
 	border: 1px solid orange;
 	background-color: violet;
 	border-radius: 20px;
-	
+	background-image: url('../img/peach.jpg');
+	background-size: cover; 
+      background-position: center; 
 	
 }
 .mypage_centents3_box{
