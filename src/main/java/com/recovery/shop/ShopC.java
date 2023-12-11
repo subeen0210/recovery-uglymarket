@@ -1,6 +1,8 @@
 package com.recovery.shop;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,10 +14,12 @@ import com.recovery.account.AccountDAO;
 
 @WebServlet("/ShopC")
 public class ShopC extends HttpServlet {
+	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		ItemDAO.getAllItems(request);
+//		ItemDAO.shopPagin(1, request);
 		AccountDAO.loginCheck(request);
 		request.setAttribute("contentPage", "sb_shop/jsp/shopMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);

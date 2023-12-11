@@ -18,6 +18,22 @@
 				<span>${item.i_img }</span>
 			</div>
 			<div>
+				<c:choose>
+					<c:when test="${item.i_category ==1}">
+						<div class="category">
+							<div id="category-back1"></div>
+							<span>アグリ</span>
+						</div>
+					</c:when>
+					<c:when test="${item.i_category ==2}">
+						<div class="category">
+							<div id="category-back2"></div>
+							<span>ふつう</span>
+						</div>
+					</c:when>
+				</c:choose>
+			</div>
+			<div>
 				<span>${item.i_name }</span>
 			</div>
 			<div>
@@ -25,6 +41,8 @@
 			</div>
 			</div>
 		</c:forEach>
+		
+		<button>More</button>
 		
 </body>
 </html>

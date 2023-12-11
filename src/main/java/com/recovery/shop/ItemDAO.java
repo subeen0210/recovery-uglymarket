@@ -18,7 +18,7 @@ public class ItemDAO {
 	public static void shopPagin(int page, HttpServletRequest request) {
 		
 		request.setAttribute("curPageNo", page);
-		  int cnt = 3;    // 한페이지당 보여줄 개수
+		    int cnt = 9;    // 한페이지당 보여줄 개수
 	        int total = items.size(); // 총 데이터 개수
 
 	        // 총 페이지수
@@ -32,6 +32,8 @@ public class ItemDAO {
 	        for (int i = start -1; i > end; i--) {
 	            items.add(items.get(i));
 	        }
+	        
+	        
 	        request.setAttribute("items", items);
 		
 	}
