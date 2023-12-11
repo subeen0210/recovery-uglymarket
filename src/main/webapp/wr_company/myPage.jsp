@@ -4,6 +4,8 @@
 <html>
 <link rel="stylesheet" href="css/myPage.css" />
 <head>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> <!-- jQuery를 사용할 경우, 필요한 경우에만 추가하세요 -->
+  <script src="js/mypage.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -23,18 +25,18 @@
 			<div class="">
 				<div class="mypage_contents1_menu">
 					<div class="mypage_contents1_menu_boxs">
-						<a href="">配送住所管理</a>
+						<a href="#" id="kanri">配送住所管理</a>
 					</div>
 					<div class="mypage_contents1_menu_boxs">
-						<a href="">注文内訳</a>
+						<a href="#" id="order">注文内訳</a>
 					</div>
 				</div>
 				<div class="mypage_contents1_menu">
 					<div class="mypage_contents1_menu_boxs">
-						<a href="">マイカーゴー</a>
+						<a href="#" id="cart">マイカーゴー</a>
 					</div>
 					<div class="mypage_contents1_menu_boxs">
-						<a href="">後期</a>
+						<a href="#" id="review">後期</a>
 					</div>
 				</div>
 			</div>
@@ -47,7 +49,7 @@
 			<div class="mypage_contents2_box_item"></div>
 			<div class="mypage_contents2_box_item"></div>
 		</div>
-		<div class="mypage_centents3_box"></div>
+		<div class="mypage_centents3_box" id="mypage_centents3_box"></div>
 
 
 
