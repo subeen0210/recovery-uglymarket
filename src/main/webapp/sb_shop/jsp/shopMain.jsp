@@ -42,10 +42,10 @@
 				</c:choose>
 			</div>
 			<div>
-				<span>${item.i_name }</span>
+				<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_name }</span>
 			</div>
 			<div>
-				<span>${item.i_price }</span>
+				<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_price }</span>
 			</div>
 			</div>
 		</c:forEach>

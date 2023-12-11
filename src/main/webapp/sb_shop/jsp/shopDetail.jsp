@@ -8,7 +8,26 @@
 </head>
 <body>
 
-<h3>shop detail</h3>
+	<h3>shop detail</h3>
+
+	<div>
+		<div>
+			<img alt="" src="">
+			<span>${item.i_img }</span>
+		</div>
+		<div>
+			<span>${item.i_name }</span>
+		</div>
+		<div>
+			<span>${item.i_price }</span>
+		</div>
+		<div>
+			<span>무료배송</span>
+		</div>
+		<div>
+			<span>${item.i_des }</span>
+		</div>
+	</div>
 
 </body>
 </html>
