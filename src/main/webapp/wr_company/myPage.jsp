@@ -9,50 +9,68 @@
 </head>
 <body>
 	<div class="mypage_container">
-		<div class="mypage_title">マイページ</div>
-		<div class="mypage_index1_container">
-			<div class="mypage_index1_detail_container">
-				<a href="">会員情報修正</a>
-			</div>
-			<div class="mypage_index1_detail_container">
-				<a href="">配送住所管理</a>
-			</div>
-			<div class="mypage_index1_detail_container">
-				<a href="">注文内訳</a>
-			</div>
-			<div class="mypage_index1_detail_container">
-				<a href="">マイカート</a>
-			</div>
-			<div class="mypage_index1_detail_container">
-				<a href="">レビュー</a>
-			</div>
+
+
+		<div class="mypage_title">
+			<p>マイページ</p>
 		</div>
 
-		<div class="mypage_title">最近の注文情報</div>
-		<!--주문정보 -->
-		<div class="mypage_index2_container"></div>
-		<div class="mypage_title">プロフィール</div>
-		<div class="my_page_index2_container">
-			<!--회원정보 -->
-			<div class="my_page_index2_container_detail">
-				<div class="my_page_index2_container_detail_circle">
+		<div class="mypage_contents1_box">
+			<div class="mypage_contents1_info_box">
+				<div class="myinfo_box"></div>
+
+			</div>
+			<div class="">
+				<div class="mypage_contents1_menu">
+					<div class="mypage_contents1_menu_boxs">
+						<a href="">配送住所管理</a>
+					</div>
+					<div class="mypage_contents1_menu_boxs">
+						<a href="">注文内訳</a>
+					</div>
+				</div>
+				<div class="mypage_contents1_menu">
+					<div class="mypage_contents1_menu_boxs">
+						<a href="">マイカーゴー</a>
+					</div>
+					<div class="mypage_contents1_menu_boxs">
+						<a href="">後期</a>
+					</div>
 				</div>
 			</div>
 		</div>
-
-		<div class="mypage_index3_container"></div>
-		<div class="mypage_title">最近見た商品</div>
-		<!--최근에본 상품 -->
-		<div class="mypage_title_more">
-			<a href="">もっと見る</a>
+		<div class="mypage_title">
+			<p>最近見たもの</p>
 		</div>
-		<div class="mypage_index4_container">
-
-			<div class="mypage_index4_container_detail"></div>
-			<div class="mypage_index4_container_detail"></div>
-			<div class="mypage_index4_container_detail"></div>
-
+		<div class="mypage_contents2_box">
+			<div class="mypage_contents2_box_item"></div>
+			<div class="mypage_contents2_box_item"></div>
+			<div class="mypage_contents2_box_item"></div>
 		</div>
+		<div class="mypage_centents3_box"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
