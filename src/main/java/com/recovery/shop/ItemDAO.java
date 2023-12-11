@@ -12,6 +12,30 @@ import com.recovery.main.DBManager;
 
 public class ItemDAO {
 
+	private static ArrayList<ItemDTO> items;
+	
+	// 쇼핑몰 페이지 9개씩 페이징하기
+	public static void shopPagin(int page, HttpServletRequest request) {
+		
+		request.setAttribute("curPageNo", page);
+		  int cnt = 3;    // 한페이지당 보여줄 개수
+	        int total = items.size(); // 총 데이터 개수
+
+	        // 총 페이지수
+	        int pageCount =(int)Math.ceil((double)total / cnt);
+	        request.setAttribute("pageCount", pageCount);
+
+	        int start = total - (cnt * (page - 1));
+	        int end = (page == pageCount) ? -1 : start - (cnt + 1);
+
+	        ArrayList<ItemDTO> items = new ArrayList<ItemDTO>();
+	        for (int i = start -1; i > end; i--) {
+	            items.add(items.get(i));
+	        }
+	        request.setAttribute("items", items);
+		
+	}
+	
 	
 	// 쇼핑몰 페이지에서 상품 보여주기
 	public static void getAllItems(HttpServletRequest request) {
@@ -27,7 +51,7 @@ public class ItemDAO {
 			rs = pstmt.executeQuery();
 			ItemDTO item = null;
 			
-			ArrayList<ItemDTO> items = new ArrayList<ItemDTO>();
+			items = new ArrayList<ItemDTO>();
 			while (rs.next()) {
 				item = new ItemDTO();
 				item.setI_no(rs.getInt("i_no"));
@@ -47,10 +71,11 @@ public class ItemDAO {
 				item.setI_stock(rs.getInt("i_stock"));
 				item.setI_star_avg(rs.getDouble("i_star_avg"));
 				items.add(item);
+//				System.out.println(rs.getString("i_name"));
+//				System.out.println(rs.getString("i_price"));
+//				System.out.println(rs.getString("i_img"));
 			}
-				HttpSession session = request.getSession();
-				session.setAttribute("items", items);
-				session.setMaxInactiveInterval(1800);
+			request.setAttribute("items", items);
 				
 			
 		} catch (Exception e) {
