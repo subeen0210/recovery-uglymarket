@@ -40,16 +40,20 @@ public class AccountDAO {
 					User user = new User();
 					user.setU_id(userID);
 					user.setU_pw(userPW);
-					user.setU_name(rs.getString("u_name"));
+					user.setU_nicname(rs.getString("u_nicname"));
 					user.setU_tel(rs.getString("u_tel"));
 					user.setU_email(rs.getString("u_email"));
 					user.setU_addrno(rs.getString("u_addrno"));
-					user.setU_signout(rs.getString("u_signout"));
+					user.setU_kanji_ln(rs.getString("u_kanji_ln"));
+					user.setU_kanji_fn(rs.getString("u_kanji_fn"));
+					user.setU_kata_ln(rs.getString("u_kata_ln"));
+					user.setU_kata_fn(rs.getString("u_kata_fn"));
+					user.setU_img(rs.getString("u_img"));
 					
 					// 세션 적용
 					HttpSession userHS = request.getSession();
 					userHS.setAttribute("userAccount", user);
-					userHS.setMaxInactiveInterval(30);
+					userHS.setMaxInactiveInterval(10);
 				} else {
 					System.out.println("비번오류");
 				}
