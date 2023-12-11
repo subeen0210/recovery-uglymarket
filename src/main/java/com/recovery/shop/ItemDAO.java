@@ -18,7 +18,7 @@ public class ItemDAO {
 	public static void shopPagin(int page, HttpServletRequest request) {
 		
 		request.setAttribute("curPageNo", page);
-		  int cnt = 3;    // 한페이지당 보여줄 개수
+		    int cnt = 9;    // 한페이지당 보여줄 개수
 	        int total = items.size(); // 총 데이터 개수
 
 	        // 총 페이지수
@@ -32,6 +32,8 @@ public class ItemDAO {
 	        for (int i = start -1; i > end; i--) {
 	            items.add(items.get(i));
 	        }
+	        
+	        
 	        request.setAttribute("items", items);
 		
 	}
@@ -85,7 +87,77 @@ public class ItemDAO {
 		}
 		
 		
+	}
+
+
+	public static void getItem(HttpServletRequest request) {
+		
+		String paramNo = request.getParameter("no");
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from item where \"i_no\" = ?";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, paramNo);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				ItemDTO i = new ItemDTO();
+				i.setI_no(rs.getInt("i_no"));
+				i.setI_name(rs.getString("i_name"));
+				i.setI_img(rs.getString("i_img"));
+				if (rs.getString("i_img2") != null) {
+					i.setI_img2(rs.getString("i_img2"));
+				} else if (rs.getString("i_img3") != null) {
+					i.setI_img3(rs.getString("i_img3"));
+				} else if (rs.getString("i_img4") != null) {
+					i.setI_img4(rs.getString("i_img4"));
+				}
+				i.setI_des(rs.getString("i_des"));
+				i.setI_category(rs.getInt("i_category"));
+				i.setI_enddate(rs.getDate("i_enddate"));
+				i.setI_price(rs.getInt("i_price"));
+				i.setI_stock(rs.getInt("i_stock"));
+				i.setI_star_avg(rs.getDouble("i_star_avg"));
+				request.setAttribute("item", i);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		
 		
 	}
+
+
+	public static void addItem(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "insert into item values (item_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?)";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+		
+		
+	}
+	
+	
+	
+	
 
 }
