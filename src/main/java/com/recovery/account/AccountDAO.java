@@ -162,6 +162,50 @@ public class AccountDAO {
 			pstmt.setString(10, img);
 			
 			
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("유저 등록성공");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+				System.out.println("등록 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+	
+	//db에 유저아이디 fk로 받아서 배송지 등록
+	public static void regUserAddr(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "insert into address values(address_seq.nextval,?,?,?,?,?,?,?)";
+		try {
+			request.setCharacterEncoding("utf-8");
+			String path = request.getServletContext().getRealPath("lgh_account/userImg");
+			MultipartRequest mr = new MultipartRequest(request, path, 30*1024*1024, "utf-8", new DefaultFileRenamePolicy()
+					);
+			String addrNum = mr.getParameter("userAddrN");
+			String addrP = mr.getParameter("userAddrP");
+			String addrCity = mr.getParameter("userAddrC");
+			String addrDetail = mr.getParameter("userAddrD");
+			
+			System.out.println(addrNum);
+			System.out.println(addrP);
+			System.out.println(addrCity);
+			System.out.println(addrDetail);
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, addrNum);
+			pstmt.setString(2, addrP+"!"+addrCity);
+			pstmt.setString(3, addrDetail);
+			pstmt.setString(4, "name");
+			pstmt.setString(5, "tel");
+			pstmt.setString(6, "null");
+			pstmt.setString(7, mr.getParameter("userID"));
+			
+			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("등록성공");
 			}
@@ -173,10 +217,5 @@ public class AccountDAO {
 			DBManager.close(con, pstmt, null);
 		}
 	}
-	
-//	public static void regUserAddr(HttpServletRequest request) {
-//		Connection con = null;
-//		pre
-//	}
 
 }
