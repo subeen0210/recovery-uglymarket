@@ -12,11 +12,11 @@
 	
 	
 	<div>
-		<span onclick="location.href='sb_mypage/jsp/itemAdd.jsp'"> 상품 등록 </span>
+		<span onclick="location.href='ItemAddC'"> 상품 등록 </span>
 	</div>
 	
 	
-
+	<jsp:include page="${mypageContent }"></jsp:include>
 	
 
 </body>

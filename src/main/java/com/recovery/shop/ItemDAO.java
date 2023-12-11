@@ -152,7 +152,12 @@ public class ItemDAO {
 			String path = request.getServletContext().getRealPath("itemFolder");
 			MultipartRequest mr = new MultipartRequest(request, path, 30*1024*1024 , "utf-8" , new DefaultFileRenamePolicy());
 			
-			String name = mr.getParameter(path);
+			String name = mr.getParameter("name");
+			String story = mr.getParameter("story");
+			String type = mr.getParameter("type");
+			String img = mr.getParameter("img");
+			
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
