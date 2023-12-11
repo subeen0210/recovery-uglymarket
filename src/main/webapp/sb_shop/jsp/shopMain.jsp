@@ -5,29 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<style type="text/css">
-.category{
-	position: relative; display: inline-block;
-}
-
-#category-back1{
-	background-color: #C3E820; 
-	width: 100px; height: 30px; 
-	border-radius: 40%;"
-}
-
-#category-back2{
-	background-color: #70E820; 
-	width: 100px; height: 30px; 
-	border-radius: 40%;
-}
-
-#category-text{
-	position: absolute;
-	top: 50%; left: 50%; 
-	transform: translate(-50%, -50%);
-}
-</style>
+<link rel="stylesheet" href="css/shopMain.css">
 <title>Insert title here</title>
 </head>
 <body>
