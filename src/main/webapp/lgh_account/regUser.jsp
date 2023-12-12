@@ -8,7 +8,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/addrUser.js"></script>
+<script type="text/javascript" src="js/addr.js"></script>
 <script type="text/javascript" src="js/idCheck.js"></script>
 </head>
 <body>
@@ -69,7 +69,7 @@
 		<div>
 			<h4>郵便番号</h4>
 			<div>
-				<button type="button" id="addrUser-popup">住所検索</button>
+				<button type="button" id="addr-popup">住所検索</button>
 				<br>
 				郵便番号 <input name="userAddrN" id="addrNum" readonly="readonly"><br> 
 				都道府県 <input name="userAddrP" id="addrPrefecture" readonly="readonly"><br> 

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class RegSellerC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-	request.getRequestDispatcher("regSeller.jsp").forward(request, response);
+	request.getRequestDispatcher("lgh_account/regSeller.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
