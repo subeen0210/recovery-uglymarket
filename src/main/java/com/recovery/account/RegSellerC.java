@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/RegSellerC")
 public class RegSellerC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	request.getRequestDispatcher("regSeller.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

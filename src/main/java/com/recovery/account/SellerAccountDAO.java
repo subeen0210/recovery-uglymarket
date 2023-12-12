@@ -39,10 +39,13 @@ public class SellerAccountDAO {
 					Seller seller = new Seller();
 					seller.setS_id(sellerID);
 					seller.setS_pw(sellerPW);
-					seller.setS_name(rs.getString("s_name"));
+					seller.setS_kanji_ln(rs.getString("sellerKanji_ln"));
+					seller.setS_kanji_fn(rs.getString("sellerKanji_fn"));
+					seller.setS_kata_ln(rs.getString("sellerKata_ln"));
+					seller.setS_kata_fn(rs.getString("sellerKata_fn"));
 					seller.setS_tel(rs.getString("s_tel"));
-					seller.setS_addr(rs.getString("s_addr"));
 					seller.setS_Fphoto(rs.getString("s_f_photo"));
+					seller.setS_Faddr(rs.getString("s_f_addr"));
 					seller.setS_Fname(rs.getString("s_f_name"));
 					seller.setS_Fstory(rs.getString("s_f_story"));
 					
