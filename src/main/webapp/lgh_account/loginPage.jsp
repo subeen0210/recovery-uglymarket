@@ -6,44 +6,61 @@
 <meta charset="UTF-8">
 <title>로그인 페이지</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="js/loginCheck.js" ></script>
+<script src="js/validCheck.js" ></script>
 </head>
 <body>
-	<a href="HC"><img src="img/semi-logo-img.png"><img src="img/semi-logo-title.png"></a>
-	<form action="LoginPageC" method="post">
-		<h1>로그인 페이지</h1>
-		ID <br> <input name="userID"> <br> PW <br> <input
-			name="userPW" type="password"> <br>
-		<button>로그인</button>
-		<button type="button" onclick="location.href='RegUserC'">소비자 회원가입</button>
-		<button type="button" onclick="location.href='RegSellerC'">판매자 회원가입</button>
+	<a href="HC"><img src="img/semi-logo-img.png"><img
+		src="img/semi-logo-title.png"></a>
+	<form action="LoginPageC" method="post" onsubmit="return loginCall()">
+		<div>
+			<div>로그인 페이지</div>
+			<div>ID</div>
+			<div>
+				<input name="userID" id="loginUserID">
+				<p id="loginEmptyID"></p>
+			</div>
+			<div>PW</div>
+			<div>
+				<input name="userPW" id="loginUserPW" type="password"> <br>
+				<p id="loginEmptyPW"></p>
+			</div>
+			<div>
+				<button>로그인</button>
+			</div>
+		</div>
+		<button type="button" onclick="location.href='RegUserC'">소비자
+			회원가입</button>
+		<button type="button" onclick="location.href='RegSellerC'">판매자
+			회원가입</button>
 	</form>
 	<span id="openModalBtn" style="cursor: pointer;">사업자 로그인</span>
 	<!-- Dialog Element -->
 	<dialog id="myModal">
 	<div>
 		<button id="closeModalBtn">&times;</button>
-		<form action="SellerLoginC" method="post">
+		<form action="SellerLoginC" method="post" onsubmit="return loginSellerCall()">
+			<div>
+				<div>
+					<p>사업자님 환영합니다!</p>
+				</div>
+				<div>
+					<div>Id</div>
 					<div>
-						<div>
-							<p>사업자님 환영합니다!</p>
-						</div>
-						<div>
-							<div>Id</div>
-							<div>
-								<input name="sellerID">
-							</div>
-						</div>
-						<div>
-							<div>PW</div>
-							<div>
-								<input name="sellerPW">
-							</div>
-						</div>
-						<div>
-							<button>사업자 로그인</button>
-						</div>
+						<input name="sellerID" id="loginSellerID">
 					</div>
-				</form>
+				</div>
+				<div>
+					<div>PW</div>
+					<div>
+						<input name="sellerPW" id="loginSellerPW" type="password">
+					</div>
+				</div>
+				<div>
+					<button>사업자 로그인</button>
+				</div>
+			</div>
+		</form>
 	</div>
 	</dialog>
 
