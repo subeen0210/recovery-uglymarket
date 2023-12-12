@@ -101,19 +101,26 @@ public class AccountDAO {
 	
 	//id가 존재하는지 확인
 	public static int idCheck(HttpServletRequest request) {
-		System.out.println("aa");
-		String userID = request.getParameter("userID");
+		String table = request.getParameter("table");
+		String inputID = request.getParameter("ID");
+		String dbID = "s_id";
+		System.out.println(table);
+		if (table.equals("users")) {
+			dbID = "u_id";
+		}
+		System.out.println("inputID: " + inputID);
+		System.out.println(dbID);
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from users where u_id = ?";
+		String sql = "SELECT * FROM " + table + " WHERE " + dbID + " = ?";
 		int idCheck = 0;
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, userID);
+			pstmt.setString(1, inputID);
 			rs = pstmt.executeQuery();
-			if (rs.next() || userID.equals("")) {
+			if (rs.next() || inputID.equals("")) {
 				// 행이 존재 하거나 빈칸이면 존재하는 회원
 				idCheck = 0;
 			} else {

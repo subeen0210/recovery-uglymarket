@@ -20,8 +20,8 @@
 		<div>
 			<div>ID</div>
 			<div>
-				<input name="userID" id="userID">
-				<button type="button" id="checkDuplicate">重複確認</button>
+				<input name="userID" id="ID">
+				<button type="button" name="table" id="checkDuplicate" value="users">重複確認</button>
 				 <span id="idStatus"></span>
 			</div>
 		</div>
