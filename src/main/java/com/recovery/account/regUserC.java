@@ -17,7 +17,6 @@ public class RegUserC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	AccountDAO.regUser(request);
-	AccountDAO.regUserAddr(request);
 	
 	response.sendRedirect("HC");
 	}
