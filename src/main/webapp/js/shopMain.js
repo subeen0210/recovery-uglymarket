@@ -1,6 +1,6 @@
 // 필터기능
 document.addEventListener("DOMContentLoaded", function() {
-    const buttons = document.querySelectorAll('.menu_button_area button');
+    const buttons = document.querySelectorAll('.shop-item-kwj span');
     const items = document.querySelectorAll('.shop-item');
 
     buttons.forEach(button => {

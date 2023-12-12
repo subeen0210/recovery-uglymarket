@@ -1,24 +1,91 @@
 @charset "UTF-8";
 
-.category{
-	position: relative; display: inline-block;
+body {
+	margin: 0;
+	padding: 0;
 }
 
-#category-back1{
-	background-color: #C3E820; 
-	width: 100px; height: 30px; 
+.span active {
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	width : 110px;
+	height: 50px;
+}
+/* 원준 - 쇼핑몰 메뉴 */
+.shop-item-kwj {
+	display: flex;
+	justify-content: center;
+	width: 100vmax;
+	height: auto;
+}
+
+.shop-item-kwj button {
+	border: none;
+}
+
+.shop-menu {
+	display: flex;
+	justify-content: baseline;
+	align-items: center;
+	border: 4px solid black;
+	width: 80%;
+	height: 100px;
+	margin: 100px;
+	font-size: 15pt;
+	font-weight: bold;
+}
+
+.menu1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 50px;
+	width: 110px;
+	height: 50px;
+	background-color: #c3e820;
+	border-radius: 50px;
+	/* background-image: url("../../img/shop-menu.png"); */
+	background-repeat: no-repeat;
+}
+
+.menu2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 50px;
+	margin-right: 5px;
+	width: 110px;
+	height: 50px;
+	background-color: #d9d9d9;
+	border-radius: 50px;
+	/* background-image: url("../../img/shop-menu.png"); */
+	background-repeat: no-repeat;
+}
+
+.category {
+	position: relative;
+	display: inline-block;
+}
+
+#category-back1 {
+	background-color: #C3E820;
+	width: 100px;
+	height: 30px;
 	border-radius: 40%;
 }
 
-#category-back2{
-	background-color: #70E820; 
-	width: 100px; height: 30px; 
+#category-back2 {
+	background-color: #70E820;
+	width: 100px;
+	height: 30px;
 	border-radius: 40%;
 }
 
-#category-text{
+#category-text {
 	position: absolute;
-	top: 50%; left: 50%; 
+	top: 50%;
+	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
