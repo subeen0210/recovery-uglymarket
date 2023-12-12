@@ -37,7 +37,7 @@ public class AccountDAO {
 				dbUserPW = rs.getString("u_pw");
 				if (userPW.equals(dbUserPW)) {
 					System.out.println("로그인 성공");
-					// User bean 에 유저 이름 입력
+					// User bean 에 유저 정보 입력
 					User user = new User();
 					user.setU_id(userID);
 					user.setU_pw(userPW);
