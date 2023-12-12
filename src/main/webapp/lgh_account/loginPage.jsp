@@ -8,6 +8,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
+	<a href="HC"><img src="img/semi-logo-img.png"><img src="img/semi-logo-title.png"></a>
 	<form action="LoginPageC" method="post">
 		<h1>로그인 페이지</h1>
 		ID <br> <input name="userID"> <br> PW <br> <input
