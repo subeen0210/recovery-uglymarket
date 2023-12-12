@@ -20,7 +20,7 @@
 	<dialog id="myModal">
 	<div>
 		<button id="closeModalBtn">&times;</button>
-		<form action="sellerLoginC" method="post">
+		<form action="SellerLoginC" method="post">
 					<div>
 						<div>
 							<p>사업자님 환영합니다!</p>
