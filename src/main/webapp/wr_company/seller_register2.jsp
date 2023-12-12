@@ -15,56 +15,93 @@
 	<div class="seller_container">
 		<!-- 상단 탭 메뉴 -->
 		<div class="tabs">
-			<div class="tab active" onclick="showContent('product-registration')">상품
-				등록</div>
-			<div class="tab" onclick="showContent('product-management')">상품
-				관리</div>
-			<div class="tab" onclick="showContent('shipping-management')">배송
-				관리</div>
+			<div class="tab active" onclick="showContent('product-registration')">商品
+				登録</div>
+			<div class="tab" onclick="showContent('product-management')">商品管理
+			
+			</div>
+			<div class="tab" onclick="showContent('shipping-management')">配送管理</div>
 		</div>
 
 		<!-- 내용 표시 부분 -->
 		<div class="content" id="product-registration">
 			<!-- 상품 등록 내용 -->
-			<h2>상품 등록</h2>
+			<h2>商品登録</h2>
 			<form id="productForm" onsubmit="submitForm(); return false;">
 
-				<label for="productName">상품 종류:</label>
+				<label for="productName">商品種類:</label>
 				<div class="product_reg">
 
 					<select name="category" class="product_reg">
-						<option value="motnane">못난이</option>
-						<option value="normal">일반</option>
+						<option value="motnane">アグリー</option>
+						<option value="normal">ふつう</option>
 					</select>
 				</div>
-				<br> <label for="productName">상품 이름:</label> <input
+				<br> <label for="productName">商品名:</label> <input
 					class="input" type="text" id="productName" name="productName"
-					required><br> <label for="price">가 격:</label> <input
+					required><br> <label for="price">価格: </label> <input
 					class="input" type="number" id="price" name="price" required><br>
 
-				<label for="stock">재고량:</label> <input class="input" type="number"
-					id="stock" name="stock" required><br> <label for="ed">유통기한</label>
+				<label for="stock">在庫量:</label> <input class="input" type="number"
+					id="stock" name="stock" required><br> <label for="ed">賞味期限</label>
 				<input class="input" type="date" id="ed" name="ed" required><br>
-				<label for="des">상품설명</label> <input class="input" type="text"
-					id="des" name="des" required><br> <label for="img">대표이미지</label>
+				<label for="des">商品説明</label> <input class="input" type="text"
+					id="des" name="des" required><br> <label for="img">代表イメージ</label>
 				<input class="input" type="file" id="img" name="img" required><br>
-				<label for="img2">이미지2:</label> <input class="input" type="file"
-					id="img2" name="img2" required><br> <label for="img3">이미지3:</label>
+				<label for="img2">イメージ2:</label> <input class="input" type="file"
+					id="img2" name="img2" required><br> <label for="img3">イメージ3:</label>
 				<input class="input" type="file" id="img3" name="img3" required><br>
-				<label for="img4">이미지4:</label> <input class="input" type="file"
+				<label for="img4">イメージ4:</label> <input class="input" type="file"
 					id="img4" name="img4" required><br>
 
 				<!-- 기타 필요한 상품 정보를 추가할 수 있습니다. -->
 
-				<input type="submit" value="등록">
+				<input type="submit" value="登録">
 			</form>
 		</div>
 		
 <div class="content" id="product-management" style="display: none;">
 		<!-- 배송 관리 내용 -->
-		<h2>상품 관리 </h2>
+		<h2>商品管理 </h2>
+		<form id="manageForm" onsubmit="submitForm(); return false;">
+		<div class="manage_container">
+		
+		
+		<div class="product_reg">分類
+
+					<select name="category" class="product_reg">
+						<option value="motnane">アグリー</option>
+						<option value="normal">ふつう</option>
+					</select>
+				</div>
+				<br>
+				<br>
+				
+				
+				
+				
+		<div class="" id="">商品名:<input type="text"></input></div>
+		<div class="" id="">価格:L<input type="text"></div>
+		<div class="" id="">在郷量:<input type="text"></div>
+		<div class="" id="">商品説明:<input type="text"></div>
+		<div class="" id="">賞味期限:<input type="date"></div>
+		<div class="" id="">代表イメージ:<input type="file"></div>
+		<div class="" id="">イメージ2:<input type="file"></div>
+		<div class="" id="">イメージ3:<input type="file"></div>
+		<div class="" id="">イメージ4:<input type="file"></div>
+		
+		
+		
+		
+		
+		
+		</div>
+		
+		</form>
 		<p>This is the content for product management.</p>
+	
 	</div>
+	
 	
 
 
