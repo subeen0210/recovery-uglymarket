@@ -140,7 +140,10 @@ public class ItemDAO {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into item values (item_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?)";
+		String img2 = "";
+		String img3 = "";
+		String img4 = "";
+		String sql = "insert into item values (item_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?, 0.0)";
 	
 		try {
 			con = DBManager.connect();
@@ -154,20 +157,47 @@ public class ItemDAO {
 			String id = mr.getParameter("id");
 			String img = mr.getFilesystemName("img");
 			
-			if (mr.getParameter("img2") != null) {
-				String img2 = mr.getFilesystemName("img2");
-			} else if (mr.getParameter("img3") != null) {
-				String img3 = mr.getFilesystemName("img3");
-			} else if (mr.getParameter("img4") != null) {
-				String img4 = mr.getFilesystemName("img4");
+			if (mr.getFilesystemName("img2") != null) {
+				img2 = mr.getFilesystemName("img2");
+				pstmt.setString(4, img2);
+			} else if (mr.getFilesystemName("img2") == null) {
+				img2 = null;
 			}
 			
-			String date = mr.getParameter("date");
+			if (mr.getFilesystemName("img3") != null) {
+				img2 = mr.getFilesystemName("img3");
+				pstmt.setString(5, img3);
+			} else if (mr.getFilesystemName("img3") == null) {
+				img2 = null;
+			}
 			
+			if (mr.getFilesystemName("img4") != null) {
+				img2 = mr.getFilesystemName("img4");
+				pstmt.setString(6, img4);
+			} else if (mr.getFilesystemName("img4") == null) {
+				img2 = null;
+			}
 			
+			String date = mr.getParameter("enddate");
+			String price = mr.getParameter("price");
+			String stock = mr.getParameter("stock");
+			
+			pstmt.setString(1, id);
+			pstmt.setString(2, name);
+			pstmt.setString(3, img);
+			pstmt.setString(7, story);
+			pstmt.setString(8, type);
+			pstmt.setString(9, date);
+			pstmt.setString(10, price);
+			pstmt.setString(11, stock);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("등록성공");
+			}
 			
 			
 		} catch (Exception e) {
+			System.out.println("등록실패");
 			e.printStackTrace();
 		} finally {
 			DBManager.close(con, pstmt, null);

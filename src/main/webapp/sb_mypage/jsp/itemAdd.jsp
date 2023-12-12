@@ -36,6 +36,10 @@
 			<div><input name="stock"></div>
 		</div>
 		<div>
+			<div>상품 가격</div>
+			<div><input name="price"></div>
+		</div>
+		<div>
 			<div>사진 등록</div>
 			<div><input type="file" name="img"></div>
 			<div><input type="file" name="img2"></div>
