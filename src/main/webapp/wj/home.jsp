@@ -54,6 +54,7 @@
 				</div>
 			</div>
 		</div>
+		<a href="ShopC_copy">샵 테스트</a>
 		<div class="item-img-news">
 			<img src="img/semi-main-item-img-news.png" alt=""
 				class="item-img-news-position" />

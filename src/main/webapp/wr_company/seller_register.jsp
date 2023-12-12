@@ -38,7 +38,7 @@
         <label for="price">가격:</label>
         <input type="number" id="price" name="price" required><br>
 
-        <label for="stock">재고량:</label>
+        <label for="stock">재고량:</label>\
         <input type="number" id="stock" name="stock" required><br>
 
         <!-- 기타 필요한 상품 정보를 추가할 수 있습니다. -->

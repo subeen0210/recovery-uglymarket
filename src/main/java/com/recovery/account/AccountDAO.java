@@ -1,6 +1,6 @@
 package com.recovery.account;
 
-import java.sql.Connection;
+import java.sql.Connection; 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -127,7 +127,7 @@ public class AccountDAO {
 	
 	public static void regUserAddr(HttpServletRequest request) {
 		Connection con = null;
-		pre
+		
 	}
 
 }
