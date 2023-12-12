@@ -17,6 +17,10 @@
 			<div><input name="name"></div>
 		</div>
 		<div>
+			<div>농장 이름</div>
+			<div><input name="farm"></div>
+		</div>
+		<div>
 			<div>상품 설명</div>
 			<div><input name="story"></div>
 		</div>

@@ -7,17 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<h2>mypage main</h2>
-	
-	
 	<div>
-		<span onclick="location.href='ItemAddC'"> 상품 등록 </span>
+		<span>${sessionScope.sellerAccount.s_name }様</span>
 	</div>
-	
-	
-	<jsp:include page="${mypageContent }"></jsp:include>
-	
-
 </body>
 </html>

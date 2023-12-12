@@ -7,13 +7,14 @@ import java.sql.ResultSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.recovery.main.DBManager;
 
 public class AccountDAO {
 
+	// 로그인
 	public static void login(HttpServletRequest request) {
-		// 유저 로그인 하는 기능입니다.
-		// 껍/값
 		String userID = request.getParameter("userID");
 		String userPW = request.getParameter("userPW");
 		
@@ -23,39 +24,39 @@ public class AccountDAO {
 		String sql = "select * from users where u_id = ?";
 		String dbUserPW = "";
 		try {
-			// 연결 시도
+			// 연결 시작
 			con = DBManager.connect();
-			System.out.println("연결성공");
+			System.out.println("연결 성공");
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userID);
 			
 			rs = pstmt.executeQuery();
 			
-			// id, pw 확인절차
+			// id, pw 맞는지 확인
 			if (rs.next()) {
 				dbUserPW = rs.getString("u_pw");
 				if (userPW.equals(dbUserPW)) {
 					System.out.println("로그인 성공");
-					// 개인 로그인만 출력하기 위해서 생성자에 담기
+					// User bean 에 유저 정보 입력
 					User user = new User();
 					user.setU_id(userID);
 					user.setU_pw(userPW);
 					user.setU_nicname(rs.getString("u_nicname"));
 					user.setU_tel(rs.getString("u_tel"));
 					user.setU_email(rs.getString("u_email"));
-					user.setU_addrno(rs.getString("u_addrno"));
 					user.setU_kanji_ln(rs.getString("u_kanji_ln"));
 					user.setU_kanji_fn(rs.getString("u_kanji_fn"));
 					user.setU_kata_ln(rs.getString("u_kata_ln"));
 					user.setU_kata_fn(rs.getString("u_kata_fn"));
 					user.setU_img(rs.getString("u_img"));
+					user.setU_signout(rs.getString("u_signout"));
 					
-					// 세션 적용
+					// 세션 생성
 					HttpSession userHS = request.getSession();
 					userHS.setAttribute("userAccount", user);
 					userHS.setMaxInactiveInterval(10);
 				} else {
-					System.out.println("비번오류");
+					System.out.println("비밀번호 오류");
 				}
 			} else {
 				System.out.println("존재하지 않는 회원");
@@ -67,19 +68,26 @@ public class AccountDAO {
 			DBManager.close(con, pstmt, rs);
 		}
 	}
-
-	public static boolean loginCheck(HttpServletRequest request) {
+	
+	// login 했는지 안했는지 확인(seller 포함)
+	public static int loginCheck(HttpServletRequest request) {
 		User user = (User) request.getSession().getAttribute("userAccount");
-		if (user == null) {
-			request.setAttribute("loginChange", "lgh_account/loginButton/loginButton.jsp");
-			return false;
-		} else {
+		Seller seller = (Seller) request.getSession().getAttribute("sellerAccount");
+		if (user != null) {
 			request.setAttribute("loginChange", "lgh_account/loginButton/loginOK.jsp");
-			return true;
+			return 1;
+		} 
+		else if (seller != null) {
+			request.setAttribute("loginChange", "lgh_account/loginButton/sellerLoginOK.jsp");
+			return 2;
+		}
+		else {
+			request.setAttribute("loginChange", "lgh_account/loginButton/loginButton.jsp");
+			return 0;
 		}
 	}
 
-	//id 중복 확인 기능
+	//id가 존재하는지 확인
 	public static int idCheck(HttpServletRequest request) {
 		System.out.println("aa");
 		String userID = request.getParameter("userID");
@@ -94,10 +102,10 @@ public class AccountDAO {
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();
 			if (rs.next() || userID.equals("")) {
-				// 행이 있거나, 아예 입력 하지 않았을 경우 생성 불가능하게
+				// 행이 존재 하거나 빈칸이면 존재하는 회원
 				idCheck = 0;
 			} else {
-				// 행이 존재하지 않음 == id 중복이 아님이므로 생성 가능
+				// 행이 없거나 빈칸도 아니면 사용 가능
 				idCheck = 1;
 			}
 			
@@ -109,25 +117,97 @@ public class AccountDAO {
 		return idCheck;
 	}
 	
-	//db에 유저정보 등록(회원가입)
+	//db의 users / address에 정보 담기
 	public static void regUser(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into users values(?,?,?,?,?,?,?,?,?,?,?);";
+		// 유저
+		String sql = "insert into users values(?,?,?,?,?,?,?,?,?,?, 'N')";
+		// 배송지
+		String sql2 = "insert into address values(address_seq.nextval,?,?,?,?,?,?,?)";
 		try {
+			request.setCharacterEncoding("utf-8");
+			String path = request.getServletContext().getRealPath("lgh_account/userImg");
+			MultipartRequest mr = new MultipartRequest(request, path, 30*1024*1024, "utf-8", new DefaultFileRenamePolicy()
+					);
+			String id = mr.getParameter("userID");
+			String pw = mr.getParameter("userPW");
+			String kanjiLast = mr.getParameter("userKanji_ln");
+			String kanjiName = mr.getParameter("userKanji_fn");
+			String kataLast = mr.getParameter("userKata_ln");
+			String kataName = mr.getParameter("userKata_fn");
+			String nicName = mr.getParameter("userNicname");
+			String tel1 = mr.getParameter("userTel1");
+			String tel2 = mr.getParameter("userTel2");
+			String tel3 = mr.getParameter("userTel3");
+			String telAll = tel1+"-"+tel2+"-"+tel3;
+			String email = mr.getParameter("userEmail");
+			String img = mr.getFilesystemName("userImg");
+			
+//			System.out.println(id);
+//			System.out.println(pw);
+//			System.out.println(kanjiLast);
+//			System.out.println(kanjiName);
+//			System.out.println(kataLast);
+//			System.out.println(kataName);
+//			System.out.println(nicName);
+//			System.out.println(telAll);
+//			System.out.println(email);
+//			System.out.println(img);
 			
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			pstmt.setString(3, nicName);
+			pstmt.setString(4, telAll);
+			pstmt.setString(5, email);
+			pstmt.setString(6, kanjiLast);
+			pstmt.setString(7, kanjiName);
+			pstmt.setString(8, kataLast);
+			pstmt.setString(9, kataName);
+			pstmt.setString(10, img);
+			
+			
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("유저 등록성공");
+			}
+			pstmt.close();
+			String addrNum = mr.getParameter("userAddrN");
+			String addrP = mr.getParameter("userAddrP");
+			String addrCity = mr.getParameter("userAddrC");
+			String addrDetail = mr.getParameter("userAddrD");
+			
+			System.out.println(addrNum);
+			System.out.println(addrP);
+			System.out.println(addrCity);
+			System.out.println(addrDetail);
+			
+			
+			pstmt = con.prepareStatement(sql2);
+			
+			pstmt.setString(1, addrNum);
+			pstmt.setString(2, addrP+"!"+addrCity);
+			pstmt.setString(3, addrDetail);
+			pstmt.setString(4, "name");
+			pstmt.setString(5, "tel");
+			pstmt.setString(6, "null");
+			pstmt.setString(7, id);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("배송지 등록 성공");
+			}
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
+				System.out.println("등록 실패");
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
 	}
 	
-	public static void regUserAddr(HttpServletRequest request) {
-		Connection con = null;
-		
-	}
+
 
 }
