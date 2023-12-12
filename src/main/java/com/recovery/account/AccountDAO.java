@@ -13,7 +13,7 @@ import com.recovery.main.DBManager;
 
 public class AccountDAO {
 
-	// ·Î±×ÀÎ
+	// í˜¸ìŠ¤ë§
 	public static void login(HttpServletRequest request) {
 		String userID = request.getParameter("userID");
 		String userPW = request.getParameter("userPW");
@@ -24,20 +24,20 @@ public class AccountDAO {
 		String sql = "select * from users where u_id = ?";
 		String dbUserPW = "";
 		try {
-			// ¿¬°á ½ÃÀÛ
+			// ì—°ê²° ì‹œì‘
 			con = DBManager.connect();
-			System.out.println("¿¬°á ¼º°ø");
+			System.out.println("ì—°ê²° ì„±ê³µ");
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userID);
 			
 			rs = pstmt.executeQuery();
 			
-			// id, pw ¸Â´ÂÁö È®ÀÎ
+			// id, pw ë§ëŠ”ì§€ í™•ì¸
 			if (rs.next()) {
 				dbUserPW = rs.getString("u_pw");
 				if (userPW.equals(dbUserPW)) {
-					System.out.println("·Î±×ÀÎ ¼º°ø");
-					// User bean ¿¡ À¯Àú Á¤º¸ ÀÔ·Â
+					System.out.println("ë¡œê·¸ì¸ ì„±ê³µ");
+					// User bean ì— ìœ ì € ì •ë³´ ì…ë ¥
 					User user = new User();
 					user.setU_id(userID);
 					user.setU_pw(userPW);
@@ -51,25 +51,25 @@ public class AccountDAO {
 					user.setU_img(rs.getString("u_img"));
 					user.setU_signout(rs.getString("u_signout"));
 					
-					// ¼¼¼Ç »ı¼º
+					// ì„¸ì…˜ ìƒì„±
 					HttpSession userHS = request.getSession();
 					userHS.setAttribute("userAccount", user);
 					userHS.setMaxInactiveInterval(10);
 				} else {
-					System.out.println("ºñ¹Ğ¹øÈ£ ¿À·ù");
+					System.out.println("ë¹„ë°€ë²ˆí˜¸ ì˜¤ë¥˜");
 				}
 			} else {
-				System.out.println("Á¸ÀçÇÏÁö ¾Ê´Â È¸¿ø");
+				System.out.println("ì¡´ì¬í•˜ì§€ ì•ŠëŠ” íšŒì›");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("userLogin ¼­¹ö ¿À·ù");
+			System.out.println("userLogin ì„œë²„ ì˜¤ë¥˜");
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
 	}
 	
-	// login Çß´ÂÁö ¾ÈÇß´ÂÁö È®ÀÎ(seller Æ÷ÇÔ)
+	// login í–ˆëŠ”ì§€ ì•ˆí–ˆëŠ”ì§€ í™•ì¸(seller í¬í•¨)
 	public static int loginCheck(HttpServletRequest request) {
 		User user = (User) request.getSession().getAttribute("userAccount");
 		Seller seller = (Seller) request.getSession().getAttribute("sellerAccount");
@@ -99,7 +99,7 @@ public class AccountDAO {
 	};
 	
 	
-	//id°¡ Á¸ÀçÇÏ´ÂÁö È®ÀÎ(user,seller µÑ´Ù Æ÷ÇÔ)
+	//idê°€ ì¡´ì¬í•˜ëŠ”ì§€ í™•ì¸(user,seller ë‘˜ë‹¤ í¬í•¨)
 	public static int idCheck(HttpServletRequest request) {
 		String table = request.getParameter("table");
 		String inputID = request.getParameter("ID");
@@ -121,10 +121,10 @@ public class AccountDAO {
 			pstmt.setString(1, inputID);
 			rs = pstmt.executeQuery();
 			if (rs.next() || inputID.equals("")) {
-				// ÇàÀÌ Á¸Àç ÇÏ°Å³ª ºóÄ­ÀÌ¸é Á¸ÀçÇÏ´Â È¸¿ø
+				// í–‰ì´ ì¡´ì¬ í•˜ê±°ë‚˜ ë¹ˆì¹¸ì´ë©´ ì¡´ì¬í•˜ëŠ” íšŒì›
 				idCheck = 0;
 			} else {
-				// ÇàÀÌ ¾ø°Å³ª ºóÄ­µµ ¾Æ´Ï¸é »ç¿ë °¡´É
+				// í–‰ì´ ì—†ê±°ë‚˜ ë¹ˆì¹¸ë„ ì•„ë‹ˆë©´ ì‚¬ìš© ê°€ëŠ¥
 				idCheck = 1;
 			}
 			
@@ -136,13 +136,13 @@ public class AccountDAO {
 		return idCheck;
 	}
 	
-	//dbÀÇ users / address¿¡ Á¤º¸ ´ã±â
+	//dbì˜ users / addressì— ì •ë³´ ë‹´ê¸°
 	public static void regUser(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		// À¯Àú
+		// ìœ ì €
 		String sql = "insert into users values(?,?,?,?,?,?,?,?,?,?, 'N')";
-		// ¹è¼ÛÁö
+		// ë°°ì†¡ì§€
 		String sql2 = "insert into address values(address_seq.nextval,?,?,?,?,?,?,?)";
 		try {
 			request.setCharacterEncoding("utf-8");
@@ -190,7 +190,7 @@ public class AccountDAO {
 			
 			
 			if (pstmt.executeUpdate() == 1) {
-				System.out.println("À¯Àú µî·Ï¼º°ø");
+				System.out.println("ìœ ì € ë“±ë¡ì„±ê³µ");
 			}
 			pstmt.close();
 			String addrNum = mr.getParameter("userAddrN");
@@ -215,13 +215,13 @@ public class AccountDAO {
 			pstmt.setString(7, id);
 			
 			if (pstmt.executeUpdate() == 1) {
-				System.out.println("¹è¼ÛÁö µî·Ï ¼º°ø");
+				System.out.println("ë°°ì†¡ì§€ ë“±ë¡ ì„±ê³µ");
 			}
 			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-				System.out.println("µî·Ï ½ÇÆĞ");
+				System.out.println("ë“±ë¡ ì‹¤íŒ¨");
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
