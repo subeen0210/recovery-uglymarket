@@ -23,33 +23,25 @@
 }
 
 
-.clear {
-    clear: both;
-}
-
-
-.items_list {
-    position: relative; 
-}
-
-
-#pagination {
-    position: absolute; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    bottom: 10px;
-}
-
-.shop-item {
-    width: 30%; 
-    margin: 1%; 
-    float: left; 
-    box-sizing: border-box; 
-}
-
-#itemContainer {
+.items_list{
+	justify-content: center;
     display: flex;
+    flex-direction: column;
+}
+
+#itemContainer{
+	display: flex;
     flex-wrap: wrap;
+    width: 80%;
+    margin-left: auto;
+}
+
+.shop-item{
+	width: 30%;
+    margin-bottom: 20px;
+}
+
+#pagination{
+	display: flex;
     justify-content: center;
-    align-items: center;
 }
