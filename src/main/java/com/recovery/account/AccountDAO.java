@@ -86,7 +86,19 @@ public class AccountDAO {
 			return 0;
 		}
 	}
-
+	
+	public static void logout(HttpServletRequest request) {
+		
+		User user = (User) request.getSession().getAttribute("userAccount");
+		HttpSession hs = request.getSession();
+		if (user != null) {
+			hs.removeAttribute("userAccount");
+		}else {			
+			hs.removeAttribute("sellerAccount");
+		}
+	};
+	
+	
 	//id가 존재하는지 확인
 	public static int idCheck(HttpServletRequest request) {
 		System.out.println("aa");

@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/SellerLoginC")
 public class SellerLoginC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	AccountDAO.logout(request);
+	
+	response.sendRedirect("HC");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
