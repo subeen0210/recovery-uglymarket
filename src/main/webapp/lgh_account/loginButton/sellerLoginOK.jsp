@@ -9,6 +9,8 @@
 <body>
 	<div>
 		<span>${sessionScope.sellerAccount.s_name }様</span>
+		<button onclick="location.href='SellerLoginC'">logout</button>
+		<button>myPage</button>
 	</div>
 </body>
 </html>

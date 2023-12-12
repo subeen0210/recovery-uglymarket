@@ -13,7 +13,8 @@
 		ID <br> <input name="userID"> <br> PW <br> <input
 			name="userPW" type="password"> <br>
 		<button>로그인</button>
-		<button type="button" onclick="location.href='RegUserC'">회원가입</button>
+		<button type="button" onclick="location.href='RegUserC'">소비자 회원가입</button>
+		<button type="button" onclick="location.href='RegSellerC'">판매자 회원가입</button>
 	</form>
 	<span id="openModalBtn" style="cursor: pointer;">사업자 로그인</span>
 	<!-- Dialog Element -->

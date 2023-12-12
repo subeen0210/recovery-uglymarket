@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="../js/addrUserDetail.js"></script>
+<script type="text/javascript" src="../js/addrDetail.js"></script>
 </head>
 <body>
 	<div>
 		<h1>住所</h1>
 		<div>
-			<input placeholder="ex) 3120061 or 312-0061" id="userAddr-Zipcode">
-			<button id="userAddr-btnSearch">検索</button>
+			<input placeholder="ex) 3120061 or 312-0061" id="addr-Zipcode">
+			<button id="addr-btnSearch">検索</button>
 		</div>
 		<input type="hidden" id="address1">
 		<input type="hidden" id="address2">

@@ -7,21 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/SellerLoginC")
-public class SellerLoginC extends HttpServlet {
+@WebServlet("/RegSellerC")
+public class RegSellerC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	AccountDAO.logout(request);
 	
-	response.sendRedirect("HC");
+	request.getRequestDispatcher("lgh_account/regSeller.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-	SellerAccountDAO.login(request);
+	SellerAccountDAO.regSeller(request);
 	
 	response.sendRedirect("HC");
-	
-	
 	}
 
 }

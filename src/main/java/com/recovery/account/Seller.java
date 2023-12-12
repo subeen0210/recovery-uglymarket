@@ -3,10 +3,13 @@ package com.recovery.account;
 public class Seller {
 	private String s_id;
 	private String s_pw;
-	private String s_name;
+	private String s_kanji_ln;
+	private String s_kanji_fn;
+	private String s_kata_ln ;
+	private String s_kata_fn;
 	private String s_tel;
-	private String s_addr;
 	private String s_Fphoto;
+	private String s_Faddr;
 	private String s_Fname;
 	private String s_Fstory;
 	
@@ -14,15 +17,18 @@ public class Seller {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Seller(String s_id, String s_pw, String s_name, String s_tel, String s_addr, String s_Fphoto, String s_Fname,
-			String s_Fstory) {
+	public Seller(String s_id, String s_pw, String s_kanji_ln, String s_kanji_fn, String s_kata_ln, String s_kata_fn,
+			String s_tel, String s_Fphoto, String s_Faddr, String s_Fname, String s_Fstory) {
 		super();
 		this.s_id = s_id;
 		this.s_pw = s_pw;
-		this.s_name = s_name;
+		this.s_kanji_ln = s_kanji_ln;
+		this.s_kanji_fn = s_kanji_fn;
+		this.s_kata_ln = s_kata_ln;
+		this.s_kata_fn = s_kata_fn;
 		this.s_tel = s_tel;
-		this.s_addr = s_addr;
 		this.s_Fphoto = s_Fphoto;
+		this.s_Faddr = s_Faddr;
 		this.s_Fname = s_Fname;
 		this.s_Fstory = s_Fstory;
 	}
@@ -43,12 +49,36 @@ public class Seller {
 		this.s_pw = s_pw;
 	}
 
-	public String getS_name() {
-		return s_name;
+	public String getS_kanji_ln() {
+		return s_kanji_ln;
 	}
 
-	public void setS_name(String s_name) {
-		this.s_name = s_name;
+	public void setS_kanji_ln(String s_kanji_ln) {
+		this.s_kanji_ln = s_kanji_ln;
+	}
+
+	public String getS_kanji_fn() {
+		return s_kanji_fn;
+	}
+
+	public void setS_kanji_fn(String s_kanji_fn) {
+		this.s_kanji_fn = s_kanji_fn;
+	}
+
+	public String getS_kata_ln() {
+		return s_kata_ln;
+	}
+
+	public void setS_kata_ln(String s_kata_ln) {
+		this.s_kata_ln = s_kata_ln;
+	}
+
+	public String getS_kata_fn() {
+		return s_kata_fn;
+	}
+
+	public void setS_kata_fn(String s_kata_fn) {
+		this.s_kata_fn = s_kata_fn;
 	}
 
 	public String getS_tel() {
@@ -59,20 +89,20 @@ public class Seller {
 		this.s_tel = s_tel;
 	}
 
-	public String getS_addr() {
-		return s_addr;
-	}
-
-	public void setS_addr(String s_addr) {
-		this.s_addr = s_addr;
-	}
-
 	public String getS_Fphoto() {
 		return s_Fphoto;
 	}
 
 	public void setS_Fphoto(String s_Fphoto) {
 		this.s_Fphoto = s_Fphoto;
+	}
+
+	public String getS_Faddr() {
+		return s_Faddr;
+	}
+
+	public void setS_Faddr(String s_Faddr) {
+		this.s_Faddr = s_Faddr;
 	}
 
 	public String getS_Fname() {
@@ -89,7 +119,6 @@ public class Seller {
 
 	public void setS_Fstory(String s_Fstory) {
 		this.s_Fstory = s_Fstory;
-	}
-	
+	}	
 	
 }
