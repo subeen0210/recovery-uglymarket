@@ -88,3 +88,27 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+
+.items_list{
+	justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#itemContainer{
+	display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: auto;
+}
+
+.shop-item{
+	width: 30%;
+    margin-bottom: 20px;
+}
+
+#pagination{
+	display: flex;
+    justify-content: center;
+}
