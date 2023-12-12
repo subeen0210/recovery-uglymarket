@@ -1,6 +1,6 @@
 package com.recovery.account;
 
-import java.sql.Connection;
+import java.sql.Connection; 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -12,8 +12,8 @@ import com.recovery.main.DBManager;
 public class AccountDAO {
 
 	public static void login(HttpServletRequest request) {
-		// À¯Àú ·Î±×ÀÎ ÇÏ´Â ±â´ÉÀÔ´Ï´Ù.
-		// ²®/°ª
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
+		// ï¿½ï¿½/ï¿½ï¿½
 		String userID = request.getParameter("userID");
 		String userPW = request.getParameter("userPW");
 		
@@ -23,20 +23,20 @@ public class AccountDAO {
 		String sql = "select * from users where u_id = ?";
 		String dbUserPW = "";
 		try {
-			// ¿¬°á ½Ãµµ
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½Ãµï¿½
 			con = DBManager.connect();
-			System.out.println("¿¬°á¼º°ø");
+			System.out.println("ï¿½ï¿½ï¿½á¼ºï¿½ï¿½");
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userID);
 			
 			rs = pstmt.executeQuery();
 			
-			// id, pw È®ÀÎÀýÂ÷
+			// id, pw È®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (rs.next()) {
 				dbUserPW = rs.getString("u_pw");
 				if (userPW.equals(dbUserPW)) {
-					System.out.println("·Î±×ÀÎ ¼º°ø");
-					// °³ÀÎ ·Î±×ÀÎ¸¸ Ãâ·ÂÇÏ±â À§ÇØ¼­ »ý¼ºÀÚ¿¡ ´ã±â
+					System.out.println("ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+					// ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½
 					User user = new User();
 					user.setU_id(userID);
 					user.setU_pw(userPW);
@@ -50,19 +50,19 @@ public class AccountDAO {
 					user.setU_kata_fn(rs.getString("u_kata_fn"));
 					user.setU_img(rs.getString("u_img"));
 					
-					// ¼¼¼Ç Àû¿ë
+					// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 					HttpSession userHS = request.getSession();
 					userHS.setAttribute("userAccount", user);
 					userHS.setMaxInactiveInterval(10);
 				} else {
-					System.out.println("ºñ¹ø¿À·ù");
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 				}
 			} else {
-				System.out.println("Á¸ÀçÇÏÁö ¾Ê´Â È¸¿ø");
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ È¸ï¿½ï¿½");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("userLogin ¼­¹ö ¿À·ù");
+			System.out.println("userLogin ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
@@ -79,7 +79,7 @@ public class AccountDAO {
 		}
 	}
 
-	//id Áßº¹ È®ÀÎ ±â´É
+	//id ï¿½ßºï¿½ È®ï¿½ï¿½ ï¿½ï¿½ï¿½
 	public static int idCheck(HttpServletRequest request) {
 		System.out.println("aa");
 		String userID = request.getParameter("userID");
@@ -94,10 +94,10 @@ public class AccountDAO {
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();
 			if (rs.next() || userID.equals("")) {
-				// ÇàÀÌ ÀÖ°Å³ª, ¾Æ¿¹ ÀÔ·Â ÇÏÁö ¾Ê¾ÒÀ» °æ¿ì »ý¼º ºÒ°¡´ÉÇÏ°Ô
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°Å³ï¿½, ï¿½Æ¿ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½Ï°ï¿½
 				idCheck = 0;
 			} else {
-				// ÇàÀÌ Á¸ÀçÇÏÁö ¾ÊÀ½ == id Áßº¹ÀÌ ¾Æ´ÔÀÌ¹Ç·Î »ý¼º °¡´É
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ == id ï¿½ßºï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ï¿½Ì¹Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				idCheck = 1;
 			}
 			
@@ -109,7 +109,7 @@ public class AccountDAO {
 		return idCheck;
 	}
 	
-	//db¿¡ À¯ÀúÁ¤º¸ µî·Ï(È¸¿ø°¡ÀÔ)
+	//dbï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 	public static void regUser(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -127,7 +127,7 @@ public class AccountDAO {
 	
 	public static void regUserAddr(HttpServletRequest request) {
 		Connection con = null;
-//		pre
+		
 	}
 
 }
