@@ -1,4 +1,4 @@
-package com.recovery.selleraccount;
+package com.recovery.account;
 
 public class Seller {
 	private String s_id;

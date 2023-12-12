@@ -1,4 +1,4 @@
-package com.recovery.selleraccount;
+package com.recovery.account;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -16,7 +16,7 @@ public class SellerLoginC extends HttpServlet {
 	
 	SellerAccountDAO.login(request);
 	
-	
+	response.sendRedirect("HC");
 	
 	
 	}

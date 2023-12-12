@@ -1,4 +1,4 @@
-package com.recovery.selleraccount;
+package com.recovery.account;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -33,7 +33,7 @@ public class SellerAccountDAO {
 			// id, pw 맞는지 확인
 			if (rs.next()) {
 				dbSellerPW = rs.getString("s_pw");
-				if (sellerID.equals(dbSellerPW)) {
+				if (sellerPW.equals(dbSellerPW)) {
 					System.out.println("판매자 로그인 성공");
 					// Seller bean 에 판매자 정보 입력
 					Seller seller = new Seller();
@@ -48,7 +48,7 @@ public class SellerAccountDAO {
 					
 					// 세션 생성
 					HttpSession sellerHS = request.getSession();
-					sellerHS.setAttribute("userAccount", seller);
+					sellerHS.setAttribute("sellerAccount", seller);
 					sellerHS.setMaxInactiveInterval(100);
 				} else {
 					System.out.println("비밀번호 오류");

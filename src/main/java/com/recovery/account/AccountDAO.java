@@ -69,15 +69,21 @@ public class AccountDAO {
 		}
 	}
 	
-	// login 했는지 안했는지 확인
-	public static boolean loginCheck(HttpServletRequest request) {
+	// login 했는지 안했는지 확인(seller 포함)
+	public static int loginCheck(HttpServletRequest request) {
 		User user = (User) request.getSession().getAttribute("userAccount");
-		if (user == null) {
-			request.setAttribute("loginChange", "lgh_account/loginButton/loginButton.jsp");
-			return false;
-		} else {
+		Seller seller = (Seller) request.getSession().getAttribute("sellerAccount");
+		if (user != null) {
 			request.setAttribute("loginChange", "lgh_account/loginButton/loginOK.jsp");
-			return true;
+			return 1;
+		} 
+		else if (seller != null) {
+			request.setAttribute("loginChange", "lgh_account/loginButton/sellerLoginOK.jsp");
+			return 2;
+		}
+		else {
+			request.setAttribute("loginChange", "lgh_account/loginButton/loginButton.jsp");
+			return 0;
 		}
 	}
 
