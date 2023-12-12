@@ -21,12 +21,22 @@
 
 		<div class="mypage_contents1_box">
 			<div class="mypage_contents1_info_box">
+				<div class="mypage_contents2_container">
+				
+					<div class="mypage_contents2_box">
+					
+						<div class="mypage_contents2_box_item"></div>
+						<div class="mypage_contents2_box_item"></div>
+						<div class="mypage_contents2_box_item"></div>
+					<div class="mypage_contents2_more"><a href="">もっと見る</a></div>
+					</div>
+				</div>
 				<div class="myinfo_box">
-				<div class="myinfo_box_photo"> </div>
-				<div class="myinfo_box_item">
-					<div class="myinfo_box_items">xxxx님 </div>
-					<div class="myinfo_box_items">못난이 </div>
-					<div class="myinfo_box_items">히히히히히히 </div>
+					<div class="myinfo_box_photo"></div>
+					<div class="myinfo_box_item">
+						<div class="myinfo_box_items">xxxx님</div>
+						<div class="myinfo_box_items">못난이</div>
+						<div class="myinfo_box_items">히히히히히히</div>
 					</div>
 
 
@@ -60,19 +70,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mypage_title">
-			<p>最近見たもの</p>
-		</div>
-		<div class="mypage_title2">
-			<a href="">もっと見る</a>
-		</div>
-		<div class="mypage_contents2_container">
-			<div class="mypage_contents2_box">
-				<div class="mypage_contents2_box_item"></div>
-				<div class="mypage_contents2_box_item"></div>
-				<div class="mypage_contents2_box_item"></div>
-			</div>
-		</div>
+	
 		<div class="mypage_centents3_box" id="mypage_centents3_box"></div>
 
 
