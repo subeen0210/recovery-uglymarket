@@ -8,6 +8,7 @@ pageEncoding="UTF-8"%>
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
+    <link rel="icon" href="img/semi-logo-img.png" type="image/png">
     <link rel="stylesheet" href="wj/css/index.css" />
     <link
       rel="stylesheet"
