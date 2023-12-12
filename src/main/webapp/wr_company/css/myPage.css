@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'MyCustomFont'; /* 사용할 폰트 이름 설정 */
     src: url('../font/kan.otf') format('opentype'); /* 파일 경로 설정 */
-    /* 다양한 포맷을 지원하려면 여러 소스를 추가할 수 있습니다. */
+    /* 일본어 폰트 적용 */
 }
 * {
     font-family: 'MyCustomFont', sans-serif; /* 폰트 적용 */
