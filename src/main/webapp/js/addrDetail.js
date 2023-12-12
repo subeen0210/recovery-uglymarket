@@ -4,12 +4,12 @@
 window.addEventListener("load",()=>{
 const userURL = "https://zipcloud.ibsnet.co.jp/api/search?zipcode=";
 	//검색 버튼이벤트 설정
-	const user_btnSearch = document.getElementById("userAddr-btnSearch");
+	const btnSearch = document.getElementById("addr-btnSearch");
 
-	user_btnSearch.addEventListener("click",()=>{
-		let user_zipcode = document.querySelector("#userAddr-Zipcode").value;	
+	btnSearch.addEventListener("click",()=>{
+		let zipcode = document.querySelector("#addr-Zipcode").value;	
 		// 입력 한 우편번호
-		let url = userURL + user_zipcode + "&limit=100";
+		let url = userURL + zipcode + "&limit=100";
 		// url들 연결
 
 		fetch(url)
@@ -54,7 +54,7 @@ function formatJSON(json){
 }	
 function sendDataToParent() {
     // 입력된 데이터 가져오기
-    const inputNum = document.getElementById("userAddr-Zipcode").value;
+    const inputNum = document.getElementById("addr-Zipcode").value;
     const inputData1 = document.getElementById("address1").value;
     const inputData2 = document.getElementById("address2").value;
 	console.log(inputNum);
