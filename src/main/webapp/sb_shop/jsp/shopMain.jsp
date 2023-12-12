@@ -14,15 +14,15 @@
 
 	<h3>shopMain</h3>
 		
-<div class="menu_button_area">
-    <ul>
-        <li><button type="button" data-filter="all" class="active">전체</button></li>
-        <li><button type="button" data-filter="1">못난이</button></li>
-        <li><button type="button" data-filter="2">일반</button></li>
-    </ul>
-</div>
+	<div class="menu_button_area">
+    	<ul>
+        	<li><button type="button" data-filter="all" class="active">전체</button></li>
+        	<li><button type="button" data-filter="1">못난이</button></li>
+        	<li><button type="button" data-filter="2">일반</button></li>
+    	</ul>
+	</div>
 
-<div class="menu_list">
+	<div class="items_list">
     <ul id="itemContainer">
         <c:forEach var="item" items="${items}" varStatus="status">
             <div class="shop-item" data-category="${item.i_category}">
@@ -30,7 +30,7 @@
                     <img alt="" src="">
                     <span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_img}</span>
                 </div>
-                <div>
+            	<div>
                     <c:choose>
                         <c:when test="${item.i_category ==1}">
                             <div class="category" data-filter="1">
@@ -59,7 +59,8 @@
     <div id="pagination">
         <!-- 페이지 번호 버튼이 여기에 들어갑니다. -->
     </div>
-</div>
+    
+	</div>
 			
 
 </body>

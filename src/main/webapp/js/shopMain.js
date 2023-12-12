@@ -51,6 +51,20 @@ document.addEventListener('DOMContentLoaded', function () {
         const paginationContainer = document.getElementById('pagination');
         paginationContainer.innerHTML = '';
 
+
+    	// '처음' 버튼 생성
+    	const firstButton = document.createElement('button');
+   	 	firstButton.innerText = '처음';
+    	firstButton.classList.add('pagination-button');
+    	firstButton.addEventListener('click', function () {
+        	currentPage = 1;
+        	const startIndex = 0;
+       		const endIndex = itemsPerPage;
+        	showItems(startIndex, endIndex);
+    	});
+    	paginationContainer.appendChild(firstButton);
+
+
         // 페이지 버튼을 생성
         for (let i = 1; i <= totalPages; i++) {
             const pageNumber = i;
@@ -66,6 +80,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
             paginationContainer.appendChild(pageButton);
         }
+
+		// 끝 버튼을 생성
+		const lastButton = document.createElement('button');
+    	lastButton.innerText = '끝';
+    	lastButton.classList.add('pagination-button');
+    	lastButton.addEventListener('click', function () {
+        	currentPage = totalPages;
+        	const startIndex = (totalPages - 1) * itemsPerPage;
+        	const endIndex = items.length;
+        	showItems(startIndex, endIndex);
+    	});
+    	paginationContainer.appendChild(lastButton);
+
+
     }
 
     // 초기 로딩 시 첫 페이지 상품 표시

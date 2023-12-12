@@ -22,22 +22,34 @@
 	transform: translate(-50%, -50%);
 }
 
-.pagination-number {
-     /* 여기에 페이지 번호 스타일을 추가하세요. */
-     display: flex;
-     justify-content: center;
-     margin-top: 10px;
+
+.clear {
+    clear: both;
 }
 
-.pagination-number button {
-     /* 각 페이지 버튼의 스타일을 추가하세요. */
-     margin: 0 5px;
-     padding: 5px 10px;
-     cursor: pointer;
-     border: 1px solid #ccc;
-     background-color: #fff;
+
+.items_list {
+    position: relative; 
 }
 
-.pagination-number button:hover {
-     background-color: #f0f0f0;
+
+#pagination {
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    bottom: 10px;
+}
+
+.shop-item {
+    width: 30%; 
+    margin: 1%; 
+    float: left; 
+    box-sizing: border-box; 
+}
+
+#itemContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
