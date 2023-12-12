@@ -15,8 +15,6 @@ public class AccountDAO {
 
 	// ·Î±×ÀÎ
 	public static void login(HttpServletRequest request) {
-		// ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
-		// ï¿½ï¿½/ï¿½ï¿½
 		String userID = request.getParameter("userID");
 		String userPW = request.getParameter("userPW");
 		
@@ -26,20 +24,20 @@ public class AccountDAO {
 		String sql = "select * from users where u_id = ?";
 		String dbUserPW = "";
 		try {
-			// ï¿½ï¿½ï¿½ï¿½ ï¿½Ãµï¿½
+			// ¿¬°á ½ÃÀÛ
 			con = DBManager.connect();
-			System.out.println("ï¿½ï¿½ï¿½á¼ºï¿½ï¿½");
+			System.out.println("¿¬°á ¼º°ø");
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userID);
 			
 			rs = pstmt.executeQuery();
 			
-			// id, pw È®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			// id, pw ¸Â´ÂÁö È®ÀÎ
 			if (rs.next()) {
 				dbUserPW = rs.getString("u_pw");
 				if (userPW.equals(dbUserPW)) {
-					System.out.println("ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
-					// ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½
+					System.out.println("·Î±×ÀÎ ¼º°ø");
+					// User bean ¿¡ À¯Àú Á¤º¸ ÀÔ·Â
 					User user = new User();
 					user.setU_id(userID);
 					user.setU_pw(userPW);
@@ -53,37 +51,43 @@ public class AccountDAO {
 					user.setU_img(rs.getString("u_img"));
 					user.setU_signout(rs.getString("u_signout"));
 					
-					// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+					// ¼¼¼Ç »ý¼º
 					HttpSession userHS = request.getSession();
 					userHS.setAttribute("userAccount", user);
 					userHS.setMaxInactiveInterval(10);
 				} else {
-					System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+					System.out.println("ºñ¹Ð¹øÈ£ ¿À·ù");
 				}
 			} else {
-				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ È¸ï¿½ï¿½");
+				System.out.println("Á¸ÀçÇÏÁö ¾Ê´Â È¸¿ø");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("userLogin ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+			System.out.println("userLogin ¼­¹ö ¿À·ù");
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
 	}
 	
-	// login Çß´ÂÁö ¾ÈÇß´ÂÁö È®ÀÎ
-	public static boolean loginCheck(HttpServletRequest request) {
+	// login Çß´ÂÁö ¾ÈÇß´ÂÁö È®ÀÎ(seller Æ÷ÇÔ)
+	public static int loginCheck(HttpServletRequest request) {
 		User user = (User) request.getSession().getAttribute("userAccount");
-		if (user == null) {
-			request.setAttribute("loginChange", "lgh_account/loginButton/loginButton.jsp");
-			return false;
-		} else {
+		Seller seller = (Seller) request.getSession().getAttribute("sellerAccount");
+		if (user != null) {
 			request.setAttribute("loginChange", "lgh_account/loginButton/loginOK.jsp");
-			return true;
+			return 1;
+		} 
+		else if (seller != null) {
+			request.setAttribute("loginChange", "lgh_account/loginButton/sellerLoginOK.jsp");
+			return 2;
+		}
+		else {
+			request.setAttribute("loginChange", "lgh_account/loginButton/loginButton.jsp");
+			return 0;
 		}
 	}
 
-	//id ï¿½ßºï¿½ È®ï¿½ï¿½ ï¿½ï¿½ï¿½
+	//id°¡ Á¸ÀçÇÏ´ÂÁö È®ÀÎ
 	public static int idCheck(HttpServletRequest request) {
 		System.out.println("aa");
 		String userID = request.getParameter("userID");
@@ -98,10 +102,10 @@ public class AccountDAO {
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();
 			if (rs.next() || userID.equals("")) {
-				// ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°Å³ï¿½, ï¿½Æ¿ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½Ï°ï¿½
+				// ÇàÀÌ Á¸Àç ÇÏ°Å³ª ºóÄ­ÀÌ¸é Á¸ÀçÇÏ´Â È¸¿ø
 				idCheck = 0;
 			} else {
-				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ == id ï¿½ßºï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ï¿½Ì¹Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				// ÇàÀÌ ¾ø°Å³ª ºóÄ­µµ ¾Æ´Ï¸é »ç¿ë °¡´É
 				idCheck = 1;
 			}
 			
@@ -113,7 +117,7 @@ public class AccountDAO {
 		return idCheck;
 	}
 	
-	//dbï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+	//dbÀÇ users / address¿¡ Á¤º¸ ´ã±â
 	public static void regUser(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;

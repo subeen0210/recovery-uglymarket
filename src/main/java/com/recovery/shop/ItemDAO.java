@@ -19,23 +19,22 @@ public class ItemDAO {
 	public static void shopPagin(int page, HttpServletRequest request) {
 		
 		request.setAttribute("curPageNo", page);
-		    int cnt = 9;    // 한페이지당 보여줄 개수
-	        int total = items.size(); // 총 데이터 개수
+	    int cnt = 9;    // 한 페이지당 보여줄 개수
+	    int total = items.size(); // 총 데이터 개수
 
-	        // 총 페이지수
-	        int pageCount =(int)Math.ceil((double)total / cnt);
-	        request.setAttribute("pageCount", pageCount);
+	    // 총 페이지수
+	    int pageCount = (int) Math.ceil((double) total / cnt);
+	    request.setAttribute("pageCount", pageCount);
 
-	        int start = total - (cnt * (page - 1));
-	        int end = (page == pageCount) ? -1 : start - (cnt + 1);
+	    int start = total - (cnt * (page - 1)) - 1;
+	    int end = (page == pageCount) ? -1 : start - cnt;
 
-	        ArrayList<ItemDTO> items = new ArrayList<ItemDTO>();
-	        for (int i = start -1; i > end; i--) {
-	            items.add(items.get(i));
-	        }
-	        
-	        
-	        request.setAttribute("items", items);
+	    ArrayList<ItemDTO> pagedItems = new ArrayList<ItemDTO>();
+	    for (int i = start; i > end && i >= 0; i--) {
+	        pagedItems.add(items.get(i));
+	    }
+
+	    request.setAttribute("items", pagedItems);
 		
 	}
 	
@@ -149,7 +148,12 @@ public class ItemDAO {
 			String path = request.getServletContext().getRealPath("itemFolder");
 			MultipartRequest mr = new MultipartRequest(request, path, 30*1024*1024 , "utf-8" , new DefaultFileRenamePolicy());
 			
-			String name = mr.getParameter(path);
+			String name = mr.getParameter("name");
+			String story = mr.getParameter("story");
+			String type = mr.getParameter("type");
+			String img = mr.getParameter("img");
+			
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
