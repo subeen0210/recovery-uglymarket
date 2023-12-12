@@ -15,11 +15,11 @@ public class LoginPageC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// ·Î±×ÀÎ ÇÏ´Â ±â´É
+		// ë¡œê·¸ì¸ ê¸°ëŠ¥
 		AccountDAO.login(request);
 		
-		// ¾îµğ·Î?
-		response.sendRedirect("HC");
+		// ì •ë³´ê°€ ì•ˆë§ìœ¼ë©´ ë¡œê·¸ì¸ ì°½ìœ¼ë¡œ ê°€ê²Œ
+		request.getRequestDispatcher("lgh_account/loginPage.jsp").forward(request, response);
 	}
 
 }
