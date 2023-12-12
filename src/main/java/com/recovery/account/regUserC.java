@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/RegUserC")
-public class regUserC extends HttpServlet {
+public class RegUserC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		request.getRequestDispatcher("lgh_account/regUser.jsp").forward(request, response);
@@ -18,6 +18,7 @@ public class regUserC extends HttpServlet {
 	
 	AccountDAO.regUser(request);
 	
+	response.sendRedirect("HC");
 	}
 
 }

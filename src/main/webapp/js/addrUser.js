@@ -3,7 +3,7 @@ let popupData;
 		$("#addrUser-popup").click(
 				function() {
 					console.log("Popup button clicked");
-					let popup = window.open("regUserAddr.jsp", "우편번호 검색",
+					let popup = window.open("lgh_account/regUserAddr.jsp", "우편번호 검색",
 							"width=700, height=700, left=100, top=50");
 
 					popup.onbeforeunload = function() {
