@@ -24,13 +24,6 @@
 		</div>
 	</div>
 
-	<!-- 	<div class="menu_button_area"> -->
-	<!-- 		<ul> -->
-	<!-- 			<li><button type="button" data-filter="all" class="active">전체</button></li> -->
-	<!-- 			<li><button type="button" data-filter="1">못난이</button></li> -->
-	<!-- 			<li><button type="button" data-filter="2">일반</button></li> -->
-	<!-- 		</ul> -->
-	<!-- 	</div> -->
 
 	<div class="menu_list">
 		<ul id="itemContainer">
@@ -69,8 +62,6 @@
 		<div id="pagination">
 			<!-- 페이지 번호를 나타낼 곳 -->
 		</div>
-
-		<button id="moreButton">More</button>
 
 	</div>
 
