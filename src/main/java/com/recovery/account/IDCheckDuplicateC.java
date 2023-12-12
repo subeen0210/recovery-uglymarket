@@ -7,18 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/RegUserC")
-public class regUserC extends HttpServlet {
+@WebServlet("/IDCheckDuplicateC")
+public class IDCheckDuplicateC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		request.getRequestDispatcher("lgh_account/regUser.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	System.out.println("aa");
+		if (AccountDAO.idCheck(request)==1) {
+			response.getWriter().write("available");
+		}else {
+			response.getWriter().write("unavailable");
+		}
 	
-	AccountDAO.regUser(request);
-	
-	response.sendRedirect("HC");
 	}
 
 }

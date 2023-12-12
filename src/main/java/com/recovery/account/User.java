@@ -6,12 +6,12 @@ public class User {
 	private String u_nicname;
 	private String u_tel;
 	private String u_email;
-	private String u_addrno;
 	private String u_kanji_ln;
 	private String u_kanji_fn;
 	private String u_kata_ln ;
 	private String u_kata_fn;
 	private String u_img;
+	private String u_signout;
 	
 	
 	public User() {
@@ -19,20 +19,20 @@ public class User {
 	}
 
 
-	public User(String u_id, String u_pw, String u_nicname, String u_tel, String u_email, String u_addrno,
-			String u_kanji_ln, String u_kanji_fn, String u_kata_ln, String u_kata_fn, String u_img) {
+	public User(String u_id, String u_pw, String u_nicname, String u_tel, String u_email, String u_kanji_ln,
+			String u_kanji_fn, String u_kata_ln, String u_kata_fn, String u_img, String u_signout) {
 		super();
 		this.u_id = u_id;
 		this.u_pw = u_pw;
 		this.u_nicname = u_nicname;
 		this.u_tel = u_tel;
 		this.u_email = u_email;
-		this.u_addrno = u_addrno;
 		this.u_kanji_ln = u_kanji_ln;
 		this.u_kanji_fn = u_kanji_fn;
 		this.u_kata_ln = u_kata_ln;
 		this.u_kata_fn = u_kata_fn;
 		this.u_img = u_img;
+		this.u_signout = u_signout;
 	}
 
 
@@ -86,16 +86,6 @@ public class User {
 	}
 
 
-	public String getU_addrno() {
-		return u_addrno;
-	}
-
-
-	public void setU_addrno(String u_addrno) {
-		this.u_addrno = u_addrno;
-	}
-
-
 	public String getU_kanji_ln() {
 		return u_kanji_ln;
 	}
@@ -145,5 +135,15 @@ public class User {
 		this.u_img = u_img;
 	}
 
+
+	public String getU_signout() {
+		return u_signout;
+	}
+
+
+	public void setU_signout(String u_signout) {
+		this.u_signout = u_signout;
+	}
 	
+
 }

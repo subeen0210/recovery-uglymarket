@@ -31,7 +31,7 @@ function formatJSON(json){
 			addrDetail += "<div>"+(i+1).toString() + "</div>";			
 			addrDetail += "<div>"+json.results[i].address1 + "</div>";			
 			addrDetail += "<div>"+json.results[i].address2 + "</div>";			
-			addrDetail += "<div><button class='addrBtn' data-index='" + i + "'>選ぶ</button></div>";			
+			addrDetail += "<div><button class='addrBtn' data-index='" + i + "'>選択</button></div>";			
 			addrDetail += "</div>"
 			addrDetail += "<hr>"
 		}
