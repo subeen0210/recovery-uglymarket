@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/RegUserC")
-public class RegUserC extends HttpServlet {
+@WebServlet("/regUserC")
+public class regUserC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		request.getRequestDispatcher("lgh_account/regUser.jsp").forward(request, response);

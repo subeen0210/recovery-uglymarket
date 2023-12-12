@@ -127,7 +127,7 @@ public class AccountDAO {
 	
 	public static void regUserAddr(HttpServletRequest request) {
 		Connection con = null;
-		pre
+//		pre
 	}
 
 }
