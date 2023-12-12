@@ -13,42 +13,50 @@
 
 		<h3>shopMain</h3>
 		
-		<div class="shop-category-filter">
-			<button class="filter-all">전체</button>
-			<button class="filter-ugly">못난이</button>
-			<button class="filter-public">일반</button>
-		</div>
 		
-		<c:forEach var="item" items="${items }">
-			<div class="shop-item">
-			<div>
-				<img alt="" src="">
-				<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_img }</span>
-			</div>
-			<div>
-				<c:choose>
-					<c:when test="${item.i_category ==1}">
-						<div class="category">
-							<div id="category-back1"></div>
-							<span id="category-text">アグリ</span>
-						</div>
-					</c:when>
-					<c:when test="${item.i_category ==2}">
-						<div class="category">
-							<div id="category-back2"></div>
-							<span id="category-text">ふつう</span>
-						</div>
-					</c:when>
-				</c:choose>
-			</div>
-			<div>
-				<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_name }</span>
-			</div>
-			<div>
-				<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_price }</span>
-			</div>
-			</div>
-		</c:forEach>
+		<div class="menu_button_area">
+   	 		<ul>
+        		<li><button type="button" data-filter="all" class="active">전체</button></li>
+        		<li><button type="button" data-filter="1">못난이</button></li>
+        		<li><button type="button" data-filter="2">일반</button></li>
+    		</ul>
+		</div>
+
+<div class="menu_list">
+    <ul>
+        <c:forEach var="item" items="${items}">
+            <div class="shop-item" data-category="${item.i_category}">
+                <div>
+                    <img alt="" src="">
+                    <span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_img}</span>
+                </div>
+                <div>
+                    <c:choose>
+                        <c:when test="${item.i_category ==1}">
+                            <div class="category" data-filter="1">
+                                <div id="category-back1"></div>
+                                <span id="category-text">못난이</span>
+                            </div>
+                        </c:when>
+                        <c:when test="${item.i_category ==2}">
+                            <div class="category" data-filter="2">
+                                <div id="category-back2"></div>
+                                <span id="category-text">일반</span>
+                            </div>
+                        </c:when>
+                    </c:choose>
+                </div>
+                <div>
+                    <span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_name}</span>
+                </div>
+                <div>
+                    <span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_price}</span>
+                </div>
+            </div>
+        </c:forEach>
+    </ul>
+</div>
+		
 		
 		<button>More</button>
 		
