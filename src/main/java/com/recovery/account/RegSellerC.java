@@ -15,6 +15,9 @@ public class RegSellerC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	SellerAccountDAO.regSeller(request);
+	
+	response.sendRedirect("HC");
 	}
 
 }

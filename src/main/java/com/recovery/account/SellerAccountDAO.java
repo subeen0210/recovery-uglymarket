@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.recovery.account.User;
 import com.recovery.main.DBManager;
 
@@ -22,20 +24,20 @@ public class SellerAccountDAO {
 		String sql = "select * from seller where s_id = ?";
 		String dbSellerPW = "";
 		try {
-			// ¿¬°á ½ÃÀÛ
+			// ì—°ê²° ì‹œì‘
 			con = DBManager.connect();
-			System.out.println("¿¬°á ¼º°ø");
+			System.out.println("ì—°ê²° ì„±ê³µ");
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, sellerID);
 			
 			rs = pstmt.executeQuery();
 			
-			// id, pw ¸Â´ÂÁö È®ÀÎ
+			// id, pw ë§ëŠ”ì§€ í™•ì¸
 			if (rs.next()) {
 				dbSellerPW = rs.getString("s_pw");
 				if (sellerPW.equals(dbSellerPW)) {
-					System.out.println("ÆÇ¸ÅÀÚ ·Î±×ÀÎ ¼º°ø");
-					// Seller bean ¿¡ ÆÇ¸ÅÀÚ Á¤º¸ ÀÔ·Â
+					System.out.println("íŒë§¤ì ë¡œê·¸ì¸ ì„±ê³µ");
+					// Seller bean ì— íŒë§¤ì ì •ë³´ ì…ë ¥
 					Seller seller = new Seller();
 					seller.setS_id(sellerID);
 					seller.setS_pw(sellerPW);
@@ -49,22 +51,90 @@ public class SellerAccountDAO {
 					seller.setS_Fname(rs.getString("s_f_name"));
 					seller.setS_Fstory(rs.getString("s_f_story"));
 					
-					// ¼¼¼Ç »ı¼º
+					// ì„¸ì…˜ ìƒì„±
 					HttpSession sellerHS = request.getSession();
 					sellerHS.setAttribute("sellerAccount", seller);
 					sellerHS.setMaxInactiveInterval(100);
 				} else {
-					System.out.println("ºñ¹Ğ¹øÈ£ ¿À·ù");
+					System.out.println("ë¹„ë°€ë²ˆí˜¸ ì˜¤ë¥˜");
 				}
 			} else {
-				System.out.println("Á¸ÀçÇÏÁö ¾Ê´Â ÆÇ¸ÅÀÚ");
+				System.out.println("ì¡´ì¬í•˜ì§€ ì•ŠëŠ” íŒë§¤ì");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("sellerLogin ¼­¹ö ¿À·ù");
+			System.out.println("sellerLogin ì„œë²„ ì˜¤ë¥˜");
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
 	}
 
+	public static void regSeller(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "insert into seller values(?,?,?,?,?,?,?,?,?,?,?)";
+		try {
+			request.setCharacterEncoding("utf-8");
+			String path = request.getServletContext().getRealPath("lgh_account/farmImg");
+			MultipartRequest mr = new MultipartRequest(request, path, 30*1024*1024, "utf-8", new DefaultFileRenamePolicy()
+					);
+			String id = mr.getParameter("sellerID");
+			String pw = mr.getParameter("sellerPW");
+			String kanjiLast = mr.getParameter("sellerKanji_ln");
+			String kanjiName = mr.getParameter("sellerKanji_fn");
+			String kataLast = mr.getParameter("sellerKata_ln");
+			String kataName = mr.getParameter("sellerKata_fn");
+			String tel1 = mr.getParameter("sellerTel1");
+			String tel2 = mr.getParameter("sellerTel2");
+			String tel3 = mr.getParameter("sellerTel3");
+			String tel = tel1+"-"+tel2+"-"+tel3;
+			String farmImg = mr.getFilesystemName("farmImg");
+			String farmName = mr.getParameter("farmName");
+			String farmStory = mr.getParameter("farmStory");
+			String addrN = mr.getParameter("sellerAddrN");
+			String addrP = mr.getParameter("sellerAddrP");
+			String addrC = mr.getParameter("sellerAddrC");
+			String addrD = mr.getParameter("sellerAddrD");
+			String addr = addrN+"!"+addrP+"!"+addrC+"!"+addrD;
+			System.out.println(tel);
+			System.out.println(addr);
+			farmStory = farmStory.isEmpty() ? "èª¬æ˜ãŒã‚ã‚Šã¾ã›ã‚“" : farmStory.replaceAll("\r\n", "<br>");
+			System.out.println(farmStory);
+			
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			pstmt.setString(3, kanjiLast);
+			pstmt.setString(4, kanjiName);
+			pstmt.setString(5, kataLast);
+			pstmt.setString(6, kataName);
+			pstmt.setString(7, tel);
+			pstmt.setString(8, farmImg);
+			pstmt.setString(9, farmName);
+			pstmt.setString(10, farmStory);
+			pstmt.setString(11, addr);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("íŒë§¤ì ë“±ë¡ ì„±ê³µ");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	};
 }

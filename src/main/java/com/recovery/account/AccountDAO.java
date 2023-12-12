@@ -99,7 +99,7 @@ public class AccountDAO {
 	};
 	
 	
-	//id가 존재하는지 확인
+	//id가 존재하는지 확인(user,seller 둘다 포함)
 	public static int idCheck(HttpServletRequest request) {
 		String table = request.getParameter("table");
 		String inputID = request.getParameter("ID");

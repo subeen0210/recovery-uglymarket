@@ -73,7 +73,7 @@
 				<h4>農場 郵便番号</h4>
 				<div>
 					<button type="button" id="addr-popup">住所検索</button>
-					<br> 郵便番号 <input name="AddrN" id="addrNum" readonly="readonly">
+					<br> 郵便番号 <input name="sellerAddrN" id="addrNum" readonly="readonly">
 					<br> 都道府県 <input name="sellerAddrP" id="addrPrefecture" readonly="readonly">
 					<br> 市区町村 <input name="sellerAddrC" id="addrCity" readonly="readonly">
 					<br> 詳細情報 <input name="sellerAddrD">

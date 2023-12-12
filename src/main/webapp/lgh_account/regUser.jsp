@@ -21,7 +21,7 @@
 			<div>ID</div>
 			<div>
 				<input name="userID" id="ID">
-				<button type="button" name="table" id="checkDuplicate" value="users">重複確認</button>
+				<button type="button" id="checkDuplicate" value="users">重複確認</button>
 				 <span id="idStatus"></span>
 			</div>
 		</div>
