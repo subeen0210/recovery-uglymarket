@@ -63,8 +63,6 @@
 			<!-- 페이지 번호를 나타낼 곳 -->
 		</div>
 
-		<button id="moreButton">More</button>
-
 	</div>
 
 
