@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="css/seller_register.css">
+ <link rel="stylesheet" href="css/seller_register.css">
 <link rel="stylesheet" href="css/header.css">
 
 <meta charset="UTF-8">
@@ -24,6 +24,7 @@
 		</div>
 
 		<!-- 내용 표시 부분 -->
+		
 		<div class="content" id="product-registration">
 			<!-- 상품 등록 내용 -->
 			<h2>商品登録</h2>
@@ -76,19 +77,15 @@
 				</div>
 				<br>
 				<br>
-				
-				
-				
-				
-		<div class="" id="">商品名:<input type="text"></input></div>
-		<div class="" id="">価格:L<input type="text"></div>
-		<div class="" id="">在郷量:<input type="text"></div>
-		<div class="" id="">商品説明:<input type="text"></div>
-		<div class="" id="">賞味期限:<input type="date"></div>
-		<div class="" id="">代表イメージ:<input type="file"></div>
-		<div class="" id="">イメージ2:<input type="file"></div>
-		<div class="" id="">イメージ3:<input type="file"></div>
-		<div class="" id="">イメージ4:<input type="file"></div>
+		<div class="manage_name" id="">商品名:<input type="text"></input></div>
+		<div class="manage_price" id="">価格:<input type="text"></div>
+		<div class="manage_stock" id="">在郷量:<input type="text"></div>
+		<div class="manage_explan" id="">商品説明:<input type="text"></div>
+		<div class="manage_des" id="">賞味期限:<input type="date"></div>
+		<div class="manage_img" id="">代表イメージ:<input type="file"></div>
+		<div class="manage_img2" id="">イメージ2:<input type="file"></div>
+		<div class="manage_img3" id="">イメージ3:<input type="file"></div>
+		<div class="manage_img4" id="">イメージ4:<input type="file"></div>
 		
 		
 		

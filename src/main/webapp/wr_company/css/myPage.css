@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'MyCustomFont'; /* »ç¿ëÇÒ ÆùÆ® ÀÌ¸§ ¼³Á¤ */
-    src: url('../font/kan.otf') format('opentype'); /* ÆÄÀÏ °æ·Î ¼³Á¤ */
-    /* ÀÏº»¾î ÆùÆ® Àû¿ë */
+    font-family: 'MyCustomFont'; /* ì‚¬ìš©í•  í°íŠ¸ ì´ë¦„ ì„¤ì • */
+    src: url('../font/kan.otf') format('opentype'); /* íŒŒì¼ ê²½ë¡œ ì„¤ì • */
+    /* ì¼ë³¸ì–´ í°íŠ¸ ì ìš© */
 }
 * {
-    font-family: 'MyCustomFont', sans-serif; /* ÆùÆ® Àû¿ë */
+    font-family: 'MyCustomFont', sans-serif; /* í°íŠ¸ ì ìš© */
 }
 
 
@@ -142,7 +142,7 @@ a{
 	
 	
 }
-.mypage_contents2_box_item{ /*ÃÖ±Ùº» »óÇ° */
+.mypage_contents2_box_item{ /*ìµœê·¼ë³¸ ìƒí’ˆ */
 	
 	width: 150px;
 	height: 150px;
@@ -163,7 +163,7 @@ a{
 	
 	width: 100vmax;
 	height: 100%;
-	background-color: violet;
+	
 	
 	
 }
