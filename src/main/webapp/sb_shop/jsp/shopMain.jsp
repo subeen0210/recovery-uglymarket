@@ -14,7 +14,7 @@
 
 	<h3>shopMain</h3>
 		
-	<div class="menu_button_area">
+<div class="menu_button_area">
     <ul>
         <li><button type="button" data-filter="all" class="active">전체</button></li>
         <li><button type="button" data-filter="1">못난이</button></li>
@@ -57,12 +57,9 @@
     </ul>
 
     <div id="pagination">
-        <!-- 페이지 번호를 나타낼 곳 -->
+        <!-- 페이지 번호 버튼이 여기에 들어갑니다. -->
     </div>
-
-    	<button id="moreButton">More</button>
-
-	</div>
+</div>
 			
 
 </body>

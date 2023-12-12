@@ -21,3 +21,23 @@
 	top: 50%; left: 50%; 
 	transform: translate(-50%, -50%);
 }
+
+.pagination-number {
+     /* 여기에 페이지 번호 스타일을 추가하세요. */
+     display: flex;
+     justify-content: center;
+     margin-top: 10px;
+}
+
+.pagination-number button {
+     /* 각 페이지 버튼의 스타일을 추가하세요. */
+     margin: 0 5px;
+     padding: 5px 10px;
+     cursor: pointer;
+     border: 1px solid #ccc;
+     background-color: #fff;
+}
+
+.pagination-number button:hover {
+     background-color: #f0f0f0;
+}
