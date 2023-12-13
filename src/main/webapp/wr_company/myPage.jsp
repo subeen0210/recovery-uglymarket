@@ -4,6 +4,7 @@
 <html>
 <link rel="stylesheet" href="css/myPage.css">
 <link rel="stylesheet" href="css/header.css">
+
 <head>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
@@ -13,8 +14,6 @@
 </head>
 <body>
 	<div class="mypage_container"> <!-- 메인 페이지 -->
-
-
 		<div class="mypage_title">
 			<p>マイページ</p>
 		</div>
