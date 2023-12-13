@@ -50,10 +50,14 @@ function userCheck() {
 	let inputEmail = document.querySelector('input[name="userEmail"]');
 	let inputAddrN = document.querySelector('input[name="userAddrN"]');
 	console.log(inputId);
+	let setLowerCase = "abcdefghijklmnopqrstuvwxyz";
+	let setNumbers = "1234567890";
+	let setSpecialChars = "!@#$%^&*()_+-=[]{}|;':,.<>?/";
 
 	// 아이디 예외
+	// 2글자 이상
 	// 한글, 특수문자 불가능(영어와 숫자만 가능)
-	if (isEmpty(inputId)) {
+	if (isEmpty(inputId) || lessThan(inputId, 2) || containKR(inputId)) {
 		alert('IDなし');
 		inputId.focus();
 		return false;
@@ -61,65 +65,69 @@ function userCheck() {
 	// 패스워드 예외
 	// 10자 이상
 	// 소문자, 숫자, 특수문자 포함
-	if (isEmpty(inputPW)) {
+	if (isEmpty(inputPW) || lessThan(inputPW, 10) || (notContains(inputPW, setLowerCase)||notContains(inputPW, setNumbers)||notContains(inputPW, setSpecialChars))) {
 		alert('passwordなし');
 		inputPW.focus();
 		return false;
 	}
 	// 한자 성 예외
 	if (isEmpty(inputKanL)) {
-		alert('IDなし');
+		alert('seiなし');
 		inputKanL.focus();
 		return false;
 	}
 	// 한자 이름 예외
 	if (isEmpty(inputKanF)) {
-		alert('IDなし');
+		alert('meiなし');
 		inputKanF.focus();
 		return false;
 	}
 	// 카타카나 성 예외
 	if (isEmpty(inputKatL)) {
-		alert('IDなし');
+		alert('katakanaなし');
 		inputKatL.focus();
 		return false;
 	}
 	// 카타카나 이름 예외
 	if (isEmpty(inputKatF)) {
-		alert('IDなし');
+		alert('katakanameiなし');
 		inputKatF.focus();
 		return false;
 	}
 	// 닉네임 예외
 	// 특수문자 불가
-	if (isEmpty(inputNick)) {
-		alert('IDなし');
+	if (isEmpty(inputNick)||!(notContains(inputNick, setSpecialChars))) {
+		alert('nicknameなし');
 		inputNick.focus();
 		return false;
 	}
 	// 전화 예외
-	if (isEmpty(inputTel1)) {
-		alert('tel1がありません');
+	// 오직 숫자만
+	if (isEmpty(inputTel1)||isNotNumber(inputTel1)) {
+		alert('telがありません');
 		inputTel1.focus();
+		inputTel1.value = '';
 		return false;
-	} else if (isEmpty(inputTel2)) {
-		alert('tel2がありません');
+	} else if (isEmpty(inputTel2)||isNotNumber(inputTel2)) {
+		alert('telがありません');
 		inputTel2.focus();
+		inputTel2.value = '';
 		return false;
-	} else if (isEmpty(inputTel3)) {
-		alert('tel3がありません');
+	} else if (isEmpty(inputTel3)||isNotNumber(inputTel3)) {
+		alert('telがありません');
 		inputTel3.focus();
+		inputTel3.value = '';
 		return false;
 	}
 	// 이메일 예외
 	if (isEmpty(inputEmail)) {
-		alert('IDなし');
+		alert('emailなし');
 		inputEmail.focus();
 		return false;
 	}
 	// 주소 예외
 	if (isEmpty(inputAddrN)) {
-		alert('IDなし');
+		alert('addrなし');
 		inputAddrN.focus();
 		return false;
 	}
