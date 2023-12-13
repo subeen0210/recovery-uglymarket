@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // 버튼 클릭 이벤트
-  $("#kanri").on("click", function() {
+  $("kanri").on("click", function() {
     // AJAX를 이용해 별도의 JSP 파일 로드
     $.ajax({
       url: "kanri.jsp", // 로드할 다른 JSP 파일 경로

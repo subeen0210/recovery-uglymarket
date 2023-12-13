@@ -46,7 +46,7 @@
 			<div class="">
 				<div class="mypage_contents1_menu"> <!--오른쪽 메뉴 버튼 -->
 					<div class="mypage_contents1_menu_boxs">
-						<a href="#" id="kanri">配送住所管理</a>
+						<a id="kanri">配送住所管理</a>
 					</div>
 					<div class="mypage_contents1_menu_boxs">
 						<a href="#" id="review">後期</a>
@@ -69,40 +69,11 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	
 		<div class="mypage_centents3_box" id="mypage_centents3_box"></div>
 　　　　                           　<!--바닥 JSP가 표시되는 박스 부분  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	</div>
 </body>
