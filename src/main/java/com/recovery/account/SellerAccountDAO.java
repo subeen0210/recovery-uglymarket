@@ -41,10 +41,10 @@ public class SellerAccountDAO {
 					Seller seller = new Seller();
 					seller.setS_id(sellerID);
 					seller.setS_pw(sellerPW);
-					seller.setS_kanji_ln(rs.getString("sellerKanji_ln"));
-					seller.setS_kanji_fn(rs.getString("sellerKanji_fn"));
-					seller.setS_kata_ln(rs.getString("sellerKata_ln"));
-					seller.setS_kata_fn(rs.getString("sellerKata_fn"));
+					seller.setS_kanji_ln(rs.getString("s_kanji_ln"));
+					seller.setS_kanji_fn(rs.getString("s_kanji_fn"));
+					seller.setS_kata_ln(rs.getString("s_kata_ln"));
+					seller.setS_kata_fn(rs.getString("s_kata_fn"));
 					seller.setS_tel(rs.getString("s_tel"));
 					seller.setS_Fphoto(rs.getString("s_f_photo"));
 					seller.setS_Faddr(rs.getString("s_f_addr"));
@@ -122,6 +122,7 @@ public class SellerAccountDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+				System.out.println("판매자 등록 실패");
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
