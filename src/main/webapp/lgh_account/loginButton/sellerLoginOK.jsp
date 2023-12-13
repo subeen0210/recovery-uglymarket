@@ -10,7 +10,7 @@
 	<div>
 		<span>${sessionScope.sellerAccount.s_kanji_ln } ${sessionScope.sellerAccount.s_kanji_fn }様</span>
 		<button onclick="location.href='SellerLoginC'">logout</button>
-		<button>myPage</button>
+		<button onclick="location.href=MypageC?id=${sessionScope.sellerAccount.s_id}">myPage</button>
 	</div>
 </body>
 </html>

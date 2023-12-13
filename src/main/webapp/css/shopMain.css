@@ -43,7 +43,7 @@ body {
 	margin-left: 50px;
 	width: 110px;
 	height: 50px;
-	background-color: #c3e820;
+	background-color: #d9d9d9;
 	border-radius: 50px;
 	/* background-image: url("../../img/shop-menu.png"); */
 	background-repeat: no-repeat;
@@ -62,6 +62,11 @@ body {
 	/* background-image: url("../../img/shop-menu.png"); */
 	background-repeat: no-repeat;
 }
+
+.menu1:focus{
+	background-color: #C3E820;
+}
+
 
 .category {
 	position: relative;

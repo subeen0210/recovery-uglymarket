@@ -5,7 +5,7 @@ import java.util.Date;
 public class ItemDTO {
 
 	private int i_no;
-	private int i_farm;
+	private String s_id;
 	private String i_name;
 	private String i_img;
 	private String i_img2;
@@ -22,11 +22,11 @@ public class ItemDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ItemDTO(int i_no, int i_farm, String i_name, String i_img, String i_img2, String i_img3, String i_img4,
+	public ItemDTO(int i_no, String s_id, String i_name, String i_img, String i_img2, String i_img3, String i_img4,
 			String i_des, int i_category, Date i_enddate, int i_price, int i_stock, Double i_star_avg) {
 		super();
 		this.i_no = i_no;
-		this.i_farm = i_farm;
+		this.s_id = s_id;
 		this.i_name = i_name;
 		this.i_img = i_img;
 		this.i_img2 = i_img2;
@@ -48,12 +48,12 @@ public class ItemDTO {
 		this.i_no = i_no;
 	}
 
-	public int getI_farm() {
-		return i_farm;
+	public String getS_id() {
+		return s_id;
 	}
 
-	public void setI_farm(int i_farm) {
-		this.i_farm = i_farm;
+	public void setS_id(String s_id) {
+		this.s_id = s_id;
 	}
 
 	public String getI_name() {
