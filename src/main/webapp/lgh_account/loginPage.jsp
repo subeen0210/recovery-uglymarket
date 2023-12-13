@@ -12,7 +12,6 @@
 <body>
 	<a href="HC"><img src="img/semi-logo-img.png"><img
 		src="img/semi-logo-title.png"></a>
-	<form action="LoginPageC" method="post" onsubmit="return loginCall()">
 		<div>
 			<div>로그인 페이지</div>
 			<div>ID</div>
@@ -24,16 +23,17 @@
 			<div>
 				<input name="userPW" id="loginUserPW" type="password"> <br>
 				<p id="loginEmptyPW"></p>
+				<p id="errorMessage"></p>
 			</div>
 			<div>
-				<button>로그인</button>
+				<button type="button" onclick="return loginCall()">로그인</button>
+				
 			</div>
 		</div>
 		<button type="button" onclick="location.href='RegUserC'">소비자
 			회원가입</button>
 		<button type="button" onclick="location.href='RegSellerC'">판매자
 			회원가입</button>
-	</form>
 	<span id="openModalBtn" style="cursor: pointer;">사업자 로그인</span>
 	<!-- Dialog Element -->
 	<dialog id="myModal">

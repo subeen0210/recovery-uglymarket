@@ -15,8 +15,39 @@ if(isEmpty(userPW)){
 	alert("비밀번호 비어있음!!");
 	userPW.focus();
 	return false;
+	
 };
+
+userlogin();
 };
+
+
+function userlogin(){
+	let userID = $("#loginUserID").val();
+	let userPW = $("#loginUserPW").val();
+	
+	$.ajax({
+            type: "post",
+            url: "LoginPageC",
+            data:{userID, userPW},
+            success: function (response) {
+				console.log(response);
+                if (response === "0") {
+                    $("#errorMessage").text("IDまたはパスワードが正しくありません。");
+                } else{
+					location.href='HC';
+				}
+            },
+            error: function (xhr,status,error) {
+                $("#idStatus").text("서버와 통신 중 오류가 발생했습니다.");
+				console.log('xhr: ', xhr);
+				console.log('status: ', status);
+				console.log('error: ', error);
+            }
+        });
+};
+
+
 function loginSellerCall(){
 let sellerID = document.querySelector('#loginSellerID');
 let sellerPW = document.querySelector('#loginSellerPW');
@@ -31,4 +62,30 @@ if(isEmpty(sellerPW)){
 	sellerPW.focus();
 	return false;
 };
+};
+
+
+function sellerlogin(){
+	let userID = $("#loginUserID").val();
+	let userPW = $("#loginUserPW").val();
+	
+	$.ajax({
+            type: "post",
+            url: "LoginPageC",
+            data:{userID, userPW},
+            success: function (response) {
+				console.log(response);
+                if (response === "0") {
+                    $("#errorMessage").text("IDまたはパスワードが正しくありません。");
+                } else{
+					location.href='HC';
+				}
+            },
+            error: function (xhr,status,error) {
+                $("#idStatus").text("서버와 통신 중 오류가 발생했습니다.");
+				console.log('xhr: ', xhr);
+				console.log('status: ', status);
+				console.log('error: ', error);
+            }
+        });
 };

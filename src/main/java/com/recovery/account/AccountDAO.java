@@ -32,7 +32,6 @@ public class AccountDAO {
 			pstmt.setString(1, userID);
 			
 			rs = pstmt.executeQuery();
-			
 			// id, pw 맞는지 확인
 			if (rs.next()) {
 				dbUserPW = rs.getString("u_pw");

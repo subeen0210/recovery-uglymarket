@@ -13,7 +13,7 @@ $(function(){
         $.ajax({
             type: "post",
             url: "IDCheckDuplicateC", // 서버에서 ID 중복 확인을 수행하는 API 엔드포인트
-            data:{ID:ID, table:table},
+            data:{ID, table},
             success: function (response) {
 				console.log(response);
                 if (response === "available") {
