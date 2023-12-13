@@ -2,19 +2,23 @@ package com.recovery.cart;
 
 public class CartDTO {
 	private int c_no;
-	private String u_id;
-	private int i_no;
+	private String i_img;
+	private int i_category;
+	private String i_name;
+	private int i_price;
 	private int c_number;
 	
 	public CartDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CartDTO(int c_no, String u_id, int i_no, int c_number) {
+	public CartDTO(int c_no, String i_img, int i_category, String i_name, int i_price, int c_number) {
 		super();
 		this.c_no = c_no;
-		this.u_id = u_id;
-		this.i_no = i_no;
+		this.i_img = i_img;
+		this.i_category = i_category;
+		this.i_name = i_name;
+		this.i_price = i_price;
 		this.c_number = c_number;
 	}
 
@@ -26,20 +30,36 @@ public class CartDTO {
 		this.c_no = c_no;
 	}
 
-	public String getU_id() {
-		return u_id;
+	public String getI_img() {
+		return i_img;
 	}
 
-	public void setU_id(String u_id) {
-		this.u_id = u_id;
+	public void setI_img(String i_img) {
+		this.i_img = i_img;
 	}
 
-	public int getI_no() {
-		return i_no;
+	public int getI_category() {
+		return i_category;
 	}
 
-	public void setI_no(int i_no) {
-		this.i_no = i_no;
+	public void setI_category(int i_category) {
+		this.i_category = i_category;
+	}
+
+	public String getI_name() {
+		return i_name;
+	}
+
+	public void setI_name(String i_name) {
+		this.i_name = i_name;
+	}
+
+	public int getI_price() {
+		return i_price;
+	}
+
+	public void setI_price(int i_price) {
+		this.i_price = i_price;
 	}
 
 	public int getC_number() {
@@ -48,7 +68,6 @@ public class CartDTO {
 
 	public void setC_number(int c_number) {
 		this.c_number = c_number;
-	}
-	
+	}	
 	
 }
