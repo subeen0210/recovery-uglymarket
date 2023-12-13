@@ -15,10 +15,12 @@ public class ItemC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		
 		AccountDAO.loginCheck(request);
-		request.setAttribute("mypageContent", "itemAdd.jsp");
-		request.setAttribute("contentPage", "sb_mypage/jsp/mypageMain.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		 String id = request.getParameter("id");
+		 System.out.println(id);
+		request.setAttribute("contentPage", "wr_company/seller_register.jsp");
+		response.getWriter().write(id);
 	
 	}
 

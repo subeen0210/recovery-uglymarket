@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -138,7 +139,8 @@ public class ItemDAO {
 
 	public static void addItem(HttpServletRequest request) {
 		
-		String id = request.getParameter("id");
+		HttpSession hs = request.getSession();
+		String id = (String) hs.getAttribute("sellerAccount.s_id");
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String img2 = "";
@@ -214,9 +216,18 @@ public class ItemDAO {
 		String sql = "delete item where i_no = ?";
 		
 		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, request.getParameter("no"));
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("삭제 성공");
+			}
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("삭제 실패");
 		}
 		
 	}
