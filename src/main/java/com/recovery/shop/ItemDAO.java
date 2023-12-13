@@ -207,6 +207,9 @@ public class ItemDAO {
 	}
 	
 	
+	private static void deleteItem() {
+		
+	}
 	
 	
 

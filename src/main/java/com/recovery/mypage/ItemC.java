@@ -8,26 +8,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.recovery.account.AccountDAO;
-import com.recovery.shop.ItemDAO;
 
 
-@WebServlet("/ItemAddC")
-public class ItemAddC extends HttpServlet {
+@WebServlet("/ItemC")
+public class ItemC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		
+		AccountDAO.loginCheck(request);
+		request.setAttribute("mypageContent", "itemAdd.jsp");
+		request.setAttribute("contentPage", "sb_mypage/jsp/mypageMain.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	
 	}
 
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		ItemDAO.addItem(request);
-		AccountDAO.loginCheck(request);
-		request.setAttribute("mypageContent", "sb_mypage/jsp/itemAdd.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-		
-		
+	
 	}
 
 }
