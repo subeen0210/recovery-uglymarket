@@ -46,23 +46,22 @@
 			<div class="">
 				<div class="mypage_contents1_menu"> <!--오른쪽 메뉴 버튼 -->
 					<div class="mypage_contents1_menu_boxs">
-						<a href="#" id="kanri">配送住所管理</a>
+						<a id="kanri">配送住所管理</a>
 					</div>
 					<div class="mypage_contents1_menu_boxs">
-						<a href="#" id="review">後期</a>
+						<a  id="review">後期</a>
 					</div>
 
 					<div class="mypage_contents1_menu_boxs">
-						<a href="#" id="order">注文内訳</a>
+						<a id="order">注文内訳</a>
 					</div>
 
 				</div>
 				<div class="mypage_contents1_menu">
 					<div class="mypage_contents1_menu_boxs">
-						<a href="#" id="cart">マイカートー</a>
+						<a id="cart">マイカートー</a>
 					</div>
 					<div class="mypage_contents1_menu_boxs">
-						<input id="sellerIdget" value="${sessionScope.sellerAccount.s_id }" type="hidden">
 						<a id="seller-register">商品管理</a>
 					</div>
 					<div style='visibility: hidden;' class="mypage_contents1_menu_boxs">

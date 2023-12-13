@@ -138,75 +138,66 @@ public class ItemDAO {
 
 
 	public static void addItem(HttpServletRequest request) {
-		
-		HttpSession hs = request.getSession();
-		String id = (String) hs.getAttribute("sellerAccount.s_id");
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		String img2 = "";
-		String img3 = "";
-		String img4 = "";
-		String sql = "insert into item values (item_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?, 0.0)";
-	
-		try {
-			con = DBManager.connect();
-			pstmt = con.prepareStatement(sql);
-			String path = request.getServletContext().getRealPath("itemFolder");
-			MultipartRequest mr = new MultipartRequest(request, path, 30*1024*1024 , "utf-8" , new DefaultFileRenamePolicy());
-			
-			String name = mr.getParameter("name");
-			String story = mr.getParameter("story");
-			String type = mr.getParameter("type");
-			String img = mr.getFilesystemName("img");
-			
-			if (mr.getFilesystemName("img2") != null) {
-				img2 = mr.getFilesystemName("img2");
-				pstmt.setString(4, img2);
-			} else if (mr.getFilesystemName("img2") == null) {
-				img2 = null;
-			}
-			
-			if (mr.getFilesystemName("img3") != null) {
-				img2 = mr.getFilesystemName("img3");
-				pstmt.setString(5, img3);
-			} else if (mr.getFilesystemName("img3") == null) {
-				img2 = null;
-			}
-			
-			if (mr.getFilesystemName("img4") != null) {
-				img2 = mr.getFilesystemName("img4");
-				pstmt.setString(6, img4);
-			} else if (mr.getFilesystemName("img4") == null) {
-				img2 = null;
-			}
-			
-			String date = mr.getParameter("enddate");
-			String price = mr.getParameter("price");
-			String stock = mr.getParameter("stock");
-			
-			pstmt.setString(1, id);
-			pstmt.setString(2, name);
-			pstmt.setString(3, img);
-			pstmt.setString(7, story);
-			pstmt.setString(8, type);
-			pstmt.setString(9, date);
-			pstmt.setString(10, price);
-			pstmt.setString(11, stock);
-			
-			if (pstmt.executeUpdate() == 1) {
-				System.out.println("등록성공");
-			}
-			
-			
-		} catch (Exception e) {
-			System.out.println("등록실패");
-			e.printStackTrace();
-		} finally {
-			DBManager.close(con, pstmt, null);
-		}
-		
-		
+	    HttpSession hs = request.getSession();
+	    String id = (String) hs.getAttribute("sellerAccount.s_id");
+	    Connection con = null;
+	    PreparedStatement pstmt = null;
+	    String img2 = "";
+	    String img3 = "";
+	    String img4 = "";
+	    String sql = "insert into item values (item_seqence.nextval, ?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?, 0.0)";
+
+	    try {
+	        con = DBManager.connect();
+	        pstmt = con.prepareStatement(sql);
+	        String path = request.getServletContext().getRealPath("itemFolder");
+	        MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "utf-8", new DefaultFileRenamePolicy());
+
+	        String name = mr.getParameter("name");
+	        String story = mr.getParameter("story");
+	        String type = mr.getParameter("type");
+	        String img = mr.getFilesystemName("img");
+
+	        if (mr.getFilesystemName("img2") != null) {
+	            img2 = mr.getFilesystemName("img2");
+	            pstmt.setString(4, img2);
+	        }
+
+	        if (mr.getFilesystemName("img3") != null) {
+	            img3 = mr.getFilesystemName("img3");
+	            pstmt.setString(5, img3);
+	        }
+
+	        if (mr.getFilesystemName("img4") != null) {
+	            img4 = mr.getFilesystemName("img4");
+	            pstmt.setString(6, img4);
+	        }
+
+	        String date = mr.getParameter("enddate");
+	        String price = mr.getParameter("price");
+	        String stock = mr.getParameter("stock");
+
+	        pstmt.setString(1, id);
+	        pstmt.setString(2, name);
+	        pstmt.setString(3, img);
+	        pstmt.setString(7, story);
+	        pstmt.setString(8, type);
+	        pstmt.setString(9, date);
+	        pstmt.setString(10, price);
+	        pstmt.setString(11, stock);
+
+	        if (pstmt.executeUpdate() == 1) {
+	            System.out.println("등록 성공");
+	        }
+
+	    } catch (Exception e) {
+	        System.out.println("등록 실패");
+	        e.printStackTrace();
+	    } finally {
+	        DBManager.close(con, pstmt, null);
+	    }
 	}
+
 	
 	
 	public static void deleteItem(HttpServletRequest request) {
@@ -231,6 +222,8 @@ public class ItemDAO {
 		}
 		
 	}
+	
+	
 	
 	
 

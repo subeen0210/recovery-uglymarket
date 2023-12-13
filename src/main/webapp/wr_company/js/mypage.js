@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$("#kanri").on("click", function() {
 		// AJAX를 이용해 별도의 JSP 파일 로드
 		$.ajax({
-			url: "kanri.jsp", // 로드할 다른 JSP 파일 경로
+			url: "wr_company/kanri.jsp", // 로드할 다른 JSP 파일 경로
 			method: "GET",
 			success: function(data) {
 				// 로드 성공 시, 결과를 #loadedContent에 삽입
@@ -18,8 +18,7 @@ $(document).ready(function() {
 	$("#order").on("click", function() {
 		// AJAX를 이용해 별도의 JSP 파일 로드
 		$.ajax({
-			url: "order.jsp", // 로드할 다른 JSP 파일 경로
-			method: "GET",
+			url: "wr_company/order.jsp", // 로드할 다른 JSP 파일 경로
 			success: function(data) {
 				// 로드 성공 시, 결과를 #loadedContent에 삽입
 				$("#mypage_centents3_box").html(data);
@@ -33,8 +32,7 @@ $(document).ready(function() {
 	$("#cart").on("click", function() {
 		// AJAX를 이용해 별도의 JSP 파일 로드
 		$.ajax({
-			url: "cart.jsp", // 로드할 다른 JSP 파일 경로
-			method: "GET",
+			url: "wr_company/cart.jsp", // 로드할 다른 JSP 파일 경로
 			success: function(data) {
 				// 로드 성공 시, 결과를 #loadedContent에 삽입
 				$("#mypage_centents3_box").html(data);
@@ -48,8 +46,7 @@ $(document).ready(function() {
 	$("#review").on("click", function() {
 		// AJAX를 이용해 별도의 JSP 파일 로드
 		$.ajax({
-			url: "review.jsp", // 로드할 다른 JSP 파일 경로
-			method: "GET",
+			url: "wr_company/review.jsp", // 로드할 다른 JSP 파일 경로
 			success: function(data) {
 				// 로드 성공 시, 결과를 #loadedContent에 삽입
 				$("#mypage_centents3_box").html(data);
@@ -61,15 +58,10 @@ $(document).ready(function() {
 		});
 	});
 	$("#seller-register").on("click", function() {
-		let id = $('#sellerIdget').val();
-				console.log(id);
 		// AJAX를 이용해 별도의 JSP 파일 로드
 		$.ajax({
-			url: "ItemC",
-			method: "GET",
-			data: { id: id },
-			success: function(response) {
-				console.log(response);
+			url: "wr_company/seller_register3.jsp",
+			success: function(data) {
 				// 로드 성공 시, 결과를 #loadedContent에 삽입
 				$("#mypage_centents3_box").html(data);
 			},

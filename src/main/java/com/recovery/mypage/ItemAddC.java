@@ -24,7 +24,7 @@ public class ItemAddC extends HttpServlet {
 
 		ItemDAO.addItem(request);
 		AccountDAO.loginCheck(request);
-		request.setAttribute("mypageContent", "sb_mypage/jsp/itemAdd.jsp");
+		request.setAttribute("contentPage", "sb_mypage/jsp/mypageMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 		
