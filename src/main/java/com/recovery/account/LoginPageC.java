@@ -15,13 +15,16 @@ public class LoginPageC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 정보가 안맞으면 로그인 창으로 가게
-		// 정보가 맞으면 HC로
+		// 정보가 안맞으면 0
+		// 정보가 맞으면 1
 		if (AccountDAO.login(request)) {
-			response.sendRedirect("HC");
-		}else {
-			request.getRequestDispatcher("lgh_account/loginPage.jsp").forward(request, response);
+			System.out.println(1);
+			response.getWriter().write("1");
+		} else {
+			System.out.println(0);
+			response.getWriter().write("0");
 		}
 	}
+	
 
 }
