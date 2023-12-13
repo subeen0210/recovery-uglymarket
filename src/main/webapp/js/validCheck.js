@@ -47,7 +47,7 @@ function containKR(input){
 	// 태훈
 	// mz세상
 	// th1004
-	let ok = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM_@.'
+	let ok = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM_@.'
 	
 	for(let i = 0; i < input.value.length; i++){
 		if(ok.indexOf(input.value[i]) == -1){
