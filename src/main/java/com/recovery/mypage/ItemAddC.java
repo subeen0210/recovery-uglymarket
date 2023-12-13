@@ -16,15 +16,17 @@ public class ItemAddC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		
 	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		ItemDAO.addItem(request);
 		AccountDAO.loginCheck(request);
-		request.setAttribute("mypageContent", "sb_mypage/jsp/itemAdd.jsp");
-		response.sendRedirect("HC");
+		ItemDAO.addItem(request);
+		request.setAttribute("contentPage", "sb_mypage/jsp/mypageMain.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
 		
 	}
 

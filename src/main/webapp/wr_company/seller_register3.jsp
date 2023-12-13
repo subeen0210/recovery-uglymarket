@@ -20,6 +20,7 @@
 
     <div class="content" id="product-registration">
         <h2>상품 등록</h2>
+<<<<<<< HEAD
             <form action="../sb_mypage/jsp/AddItemC" method="post" enctype="multipart/form-data">
 	<div>
 		<div>
@@ -58,10 +59,50 @@
 			<div><input type="file" name="img4" class="img"></div>
 		</div>
 	</div>
+=======
+           	<form action="ItemAddC" method="post" enctype="multipart/form-data">
+    	<div>
+        <div>
+            <div>상품명</div>
+            <div><input name="name"></div>
+        </div>
+        <div>
+            <div>상품 설명</div>
+            <div><input name="story"></div>
+        </div>
+        <div>
+            <div>상품 종류</div>
+            <div>
+                <label>못난이<input type="radio" value="1" name="type"></label>
+                <label>일반<input type="radio" value="2" name="type"></label>
+            </div>
+        </div>
+        <div>
+            <div>유통기한</div>
+            <div><input name="enddate" type="date"></div>
+        </div>
+        <div>
+            <div>상품 재고</div>
+            <div><input name="stock"></div>
+        </div>
+        <div>
+            <div>상품 가격</div>
+            <div><input name="price"></div>
+        </div>
+        <div>
+            <div>사진 등록</div>
+            <div><input type="file" name="img"></div>
+            <div><input type="file" name="img2"></div>
+            <div><input type="file" name="img3"></div>
+            <div><input type="file" name="img4"></div>
+        </div>
+>>>>>>> 42baf22a77178dd938ed6fc833c4190460637b6e
 
-            <!-- 추가적인 필드들을 필요에 따라 추가하세요 -->
-            <button type="submit">등록</button>
-        </form>
+        <!-- 추가적인 필드들을 필요에 따라 추가하세요 -->
+        <button type="submit">등록</button>
+    </div>
+</form>
+           	
     </div>
 
     <div class="content" id="product-management" style="display: none;">
