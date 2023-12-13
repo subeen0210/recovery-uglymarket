@@ -33,7 +33,10 @@ $(function() {
 		});
 	});
 
-
+	$("#ID").on("input", function() {
+		// #ID의 내용이 변경될 때마다 #idStatus의 텍스트를 비움
+		$("#idStatus").text("");
+	});
 });
 
 function userCheck() {
@@ -53,30 +56,31 @@ function userCheck() {
 	let setLowerCase = "abcdefghijklmnopqrstuvwxyz";
 	let setNumbers = "1234567890";
 	let setSpecialChars = "!@#$%^&*()_+-=[]{}|;':,.<>?/";
-	
+
 	// 아이디 예외
 	// 2글자 이상
 	// 한글, 특수문자 불가능(영어와 숫자만 가능)
 	if (isEmpty(inputId) || lessThan(inputId, 2) || containKR(inputId)) {
 		alert('IDなし');
 		inputId.focus();
+		$("#idStatus").text("");
 		return false;
 	}
-	
+
 	let idStatusText = $("#idStatus").text();
 	if (idStatusText != "사용 가능한 ID입니다.") {
-		if(idStatusText == ""){
+		if (idStatusText == "") {
 			alert('ID 중복처리가 안됐습니다!');
 			return false;
-		}else{
+		} else {
 			alert('ID가 중복입니다!');
 			return false;
 		}
-	} 
+	}
 	// 패스워드 예외
 	// 10자 이상
 	// 소문자, 숫자, 특수문자 포함
-	if (isEmpty(inputPW) || lessThan(inputPW, 10) || (notContains(inputPW, setLowerCase)||notContains(inputPW, setNumbers)||notContains(inputPW, setSpecialChars))) {
+	if (isEmpty(inputPW) || lessThan(inputPW, 10) || (notContains(inputPW, setLowerCase) || notContains(inputPW, setNumbers) || notContains(inputPW, setSpecialChars))) {
 		alert('passwordなし');
 		inputPW.focus();
 		return false;
@@ -107,24 +111,24 @@ function userCheck() {
 	}
 	// 닉네임 예외
 	// 특수문자 불가
-	if (isEmpty(inputNick)||!(notContains(inputNick, setSpecialChars))) {
+	if (isEmpty(inputNick) || !(notContains(inputNick, setSpecialChars))) {
 		alert('nicknameなし');
 		inputNick.focus();
 		return false;
 	}
 	// 전화 예외
 	// 오직 숫자만
-	if (isEmpty(inputTel1)||isNotNumber(inputTel1)) {
+	if (isEmpty(inputTel1) || isNotNumber(inputTel1)) {
 		alert('telがありません');
 		inputTel1.focus();
 		inputTel1.value = '';
 		return false;
-	} else if (isEmpty(inputTel2)||isNotNumber(inputTel2)) {
+	} else if (isEmpty(inputTel2) || isNotNumber(inputTel2)) {
 		alert('telがありません');
 		inputTel2.focus();
 		inputTel2.value = '';
 		return false;
-	} else if (isEmpty(inputTel3)||isNotNumber(inputTel3)) {
+	} else if (isEmpty(inputTel3) || isNotNumber(inputTel3)) {
 		alert('telがありません');
 		inputTel3.focus();
 		inputTel3.value = '';
@@ -142,5 +146,5 @@ function userCheck() {
 		inputAddrN.focus();
 		return false;
 	}
-	
+
 };
