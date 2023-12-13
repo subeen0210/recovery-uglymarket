@@ -62,21 +62,23 @@ if(isEmpty(sellerPW)){
 	sellerPW.focus();
 	return false;
 };
+
+sellerlogin();
 };
 
 
 function sellerlogin(){
-	let userID = $("#loginUserID").val();
-	let userPW = $("#loginUserPW").val();
+	let sellerID = $("#loginSellerID").val();
+	let sellerPW = $("#loginSellerPW").val();
 	
 	$.ajax({
             type: "post",
-            url: "LoginPageC",
-            data:{userID, userPW},
+            url: "SellerLoginC",
+            data:{sellerID, sellerPW},
             success: function (response) {
 				console.log(response);
                 if (response === "0") {
-                    $("#errorMessage").text("IDまたはパスワードが正しくありません。");
+                    $("#errorMessage2").text("IDまたはパスワードが正しくありません。");
                 } else{
 					location.href='HC';
 				}

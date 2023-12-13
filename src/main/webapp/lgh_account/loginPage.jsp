@@ -39,7 +39,6 @@
 	<dialog id="myModal">
 	<div>
 		<button id="closeModalBtn">&times;</button>
-		<form action="SellerLoginC" method="post" onsubmit="return loginSellerCall()">
 			<div>
 				<div>
 					<p>판매자님 환영합니다!</p>
@@ -55,12 +54,12 @@
 					<div>
 						<input name="sellerPW" id="loginSellerPW" type="password">
 					</div>
+					<p id="errorMessage2"></p>
 				</div>
 				<div>
-					<button>사업자 로그인</button>
+					<button onclick="return loginSellerCall()">사업자 로그인</button>
 				</div>
 			</div>
-		</form>
 	</div>
 	</dialog>
 
