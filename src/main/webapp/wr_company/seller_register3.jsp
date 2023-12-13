@@ -188,7 +188,7 @@
             document.getElementById(contentId).style.display = 'block';
 
             // Activate the corresponding tab
-            document.querySelector(`.tab[onclick="showContent('${contentId}')"]`).classList.add('active');
+            document.qu erySelector(`.tab[onclick="showContent('${contentId}')"]`).classList.add('active');
         }
 
         function submitProductForm() {

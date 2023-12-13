@@ -34,7 +34,7 @@
   $("#cart").on("click", function() {
     // AJAX를 이용해 별도의 JSP 파일 로드
     $.ajax({
-      url: "cart.jsp", // 로드할 다른 JSP 파일 경로
+      url: "../wj/cart.jsp", // 로드할 다른 JSP 파일 경로
       method: "GET",
       success: function(data) {
         // 로드 성공 시, 결과를 #loadedContent에 삽입

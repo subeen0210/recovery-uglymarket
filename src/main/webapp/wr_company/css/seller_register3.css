@@ -37,8 +37,8 @@ body {
 	
     display: none;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    /*border: 1px solid #ddd;*/
+    border-radius: 40px;
    
      margin: 100px;
  
@@ -47,10 +47,19 @@ body {
 #product-registration {
     display: block;
     background-color: #C3E820;
-    border: 10px solid;
-  border-image: linear-gradient(to right, #3498db, #e74c3c); /* 그라데이션 적용 */
-  border-image-slice: 1; /* 그라데이션 중간으로 확장 */
-   
+   /* border: 1px solid;*/
+      border-radius: 40px;
+  
+  
+}
+#product-management{
+	
+	   display: block;
+    background-color: #C3E820;
+   /* border: 1px solid;*/
+      border-radius: 40px;
+  
+  
 }
 
 /* 폼 스타일링 */
@@ -169,8 +178,8 @@ th {
 
 /* 테이블 데이터 행 스타일 설정 */
 td {
-  padding: 8px; /* 셀 안 여백 설정 */
-  border: 1px solid #dddddd; /* 테두리 설정 */
-  text-align: left; /* 텍스트 정렬 설정 */
+  padding: 8px; 
+  border: 1px solid black;  
+  text-align: left; 
 }
 
