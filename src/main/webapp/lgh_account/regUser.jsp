@@ -23,7 +23,7 @@
 			<div>
 				<input name="userID" id="ID" maxlength="20">
 				<button type="button" id="checkDuplicate" value="users">重複確認</button>
-				 <span id="idStatus"></span>
+				<span id="idStatus"></span>
 			</div>
 		</div>
 		<div>

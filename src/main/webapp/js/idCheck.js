@@ -53,7 +53,7 @@ function userCheck() {
 	let setLowerCase = "abcdefghijklmnopqrstuvwxyz";
 	let setNumbers = "1234567890";
 	let setSpecialChars = "!@#$%^&*()_+-=[]{}|;':,.<>?/";
-
+	
 	// 아이디 예외
 	// 2글자 이상
 	// 한글, 특수문자 불가능(영어와 숫자만 가능)
@@ -62,6 +62,17 @@ function userCheck() {
 		inputId.focus();
 		return false;
 	}
+	
+	let idStatusText = $("#idStatus").text();
+	if (idStatusText != "사용 가능한 ID입니다.") {
+		if(idStatusText == ""){
+			alert('ID 중복처리가 안됐습니다!');
+			return false;
+		}else{
+			alert('ID가 중복입니다!');
+			return false;
+		}
+	} 
 	// 패스워드 예외
 	// 10자 이상
 	// 소문자, 숫자, 특수문자 포함
@@ -131,5 +142,5 @@ function userCheck() {
 		inputAddrN.focus();
 		return false;
 	}
-
+	
 };
