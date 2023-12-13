@@ -10,9 +10,10 @@
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/addr.js"></script>
 <script type="text/javascript" src="js/idCheck.js"></script>
+<script type="text/javascript" src="js/validCheck.js"></script>
 </head>
 <body>
-	<form action="RegUserC" method="post" enctype="multipart/form-data">
+	<form action="RegUserC" method="post" enctype="multipart/form-data" onsubmit="return userCheck()">
 	<div>
 		<div>
 			<h1>회원가입</h1>
@@ -20,7 +21,7 @@
 		<div>
 			<div>ID</div>
 			<div>
-				<input name="userID" id="ID">
+				<input name="userID" id="ID" maxlength="20">
 				<button type="button" id="checkDuplicate" value="users">重複確認</button>
 				 <span id="idStatus"></span>
 			</div>
@@ -28,7 +29,8 @@
 		<div>
 			<div>パスワード</div>
 			<div>
-				<input name="userPW" type="password"> <br>
+				<input name="userPW" type="password" id="userPW" maxlength="20"> <br>
+				<span id="pwStatus"></span>
 				<input type="password" placeholder="もう一度記入してください">
 			</div>
 		</div>
@@ -50,7 +52,7 @@
 		<div>
 			<div>ニックネーム</div>
 			<div>
-				<input name="userNicname">
+				<input name="userNicname" maxlength="10">
 			</div>
 		</div>
 		<div>
