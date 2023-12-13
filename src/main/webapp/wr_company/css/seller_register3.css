@@ -1,0 +1,80 @@
+@charset "UTF-8";
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.tabs {
+    display: flex;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.tab {
+    flex: 1;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    transition: background-color 0.3s;
+}
+
+.tab:hover {
+    background-color: #ddd;
+}
+
+.tab.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.content {
+	
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#product-registration {
+    display: block;
+ 
+}
+
+/* 폼 스타일링 */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* 추가적인 스타일 적용이 필요한 경우 여기에 추가하세요 */
+

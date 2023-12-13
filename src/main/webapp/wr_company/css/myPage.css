@@ -18,7 +18,8 @@ a{
 .mypage_container{
 	width: 100vmax;
 	height: 100%;
-	border: 2px solid black;
+	border: 2px solid #DDFD52;
+	background-color: #DDFD52;
 	
 }
 .mypage_title{
@@ -38,7 +39,7 @@ a{
 .mypage_contents1_box{
 	display: flex;
 	height: 500px;
-	border: 1px solid red;
+   /* border: 1px solid red; */
 	justify-content: center;
 	align-items: center;
 }
@@ -46,8 +47,8 @@ a{
 	
     width: 800px;
     height: 500px;
-    background-color: blue;
-    border: 1px solid blue;
+  /*  background-color: #DDFD52;*/
+    /*border: 1px solid blue;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,8 +58,9 @@ a{
 	position: relative;
 	width: 500px;
 	height:400px;
-	background-color: green;
+	/*background-color: #C3E820;*/
 	align-content: center;
+	border: 1px solid black;
 	
 }
 .myinfo_box_item{
@@ -85,7 +87,7 @@ a{
 	width: 200px;
 	height: 200px;
 	 border-radius: 50%;
-	 border: 1px solid black;
+	/* border: 1px solid black;*/
 	 
 	 
 	
@@ -102,7 +104,7 @@ a{
    	display: flex;
     width: 800px;
     height: 250px;
-    background-color: skyblue;
+    /*background-color: #C3E820;*/
     flex-direction: row;
     justify-content : space-around;
     align-items: center;
@@ -134,7 +136,7 @@ a{
 .mypage_contents2_box{
 	width: 800px;
 	height:200px;
-	background-color : pink;
+	/*background-color : pink;*/
 	border: 1px solid black;
 	display: flex;
 	justify-content: space-around;
@@ -146,8 +148,8 @@ a{
 	
 	width: 150px;
 	height: 150px;
-	border: 1px solid orange;
-	background-color: violet;
+	/*border: 1px solid orange;
+	background-color: violet;*/
 	border-radius: 20px;
 	background-image: url('../img/peach.jpg');
 	background-size: cover; 
@@ -162,7 +164,8 @@ a{
 .mypage_centents3_box{
 	
 	width: 100vmax;
-	height: 100%;
+	
+	background-color: skyblue;
 	
 	
 	

@@ -38,13 +38,15 @@
 						<option value="normal">ふつう</option>
 					</select>
 				</div>
-				<br> <label for="productName">商品名:</label> <input
-					class="input" type="text" id="productName" name="productName"
-					required><br> <label for="price">価格: </label> <input
-					class="input" type="number" id="price" name="price" required><br>
+				<br> <label for="productName">商品名:</label>\
+				<input class="input" type="text" id="productName" name="productName"
+					required><br> 
+					<label for="price">価格: </label> 
+					<input class="input" type="number" id="price" name="price" required><br>
 
-				<label for="stock">在庫量:</label> <input class="input" type="number"
-					id="stock" name="stock" required><br> <label for="ed">賞味期限</label>
+				<label for="stock">在庫量:</label> 
+				<input class="input" type="number" id="stock" name="stock" required><br>
+				 <label for="ed">賞味期限</label>
 				<input class="input" type="date" id="ed" name="ed" required><br>
 				<label for="des">商品説明</label> <input class="input" type="text"
 					id="des" name="des" required><br> <label for="img">代表イメージ</label>
