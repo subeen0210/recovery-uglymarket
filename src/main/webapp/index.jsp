@@ -38,7 +38,7 @@ pageEncoding="UTF-8"%>
       <div class="header-icon">
         <jsp:include page="${loginChange }"></jsp:include>
         &emsp;&emsp;
-        <a href=""
+        <a href="CartAllC"
           ><img class="cart-icon" src="img/semi-cart-icon.png" alt=""
         /></a>
         &emsp;&emsp;

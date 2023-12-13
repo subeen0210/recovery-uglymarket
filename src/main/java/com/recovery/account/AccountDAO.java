@@ -54,7 +54,7 @@ public class AccountDAO {
 					// 세션 생성
 					HttpSession userHS = request.getSession();
 					userHS.setAttribute("userAccount", user);
-					
+					userHS.setMaxInactiveInterval(1000);
 				} else {
 					System.out.println("비밀번호 오류");
 				}
@@ -198,7 +198,9 @@ public class AccountDAO {
 			String addrP = mr.getParameter("userAddrP");
 			String addrCity = mr.getParameter("userAddrC");
 			String addrDetail = mr.getParameter("userAddrD");
-			
+			if (addrDetail.isEmpty()) {
+				addrDetail = "...";
+			}
 			System.out.println(addrNum);
 			System.out.println(addrP);
 			System.out.println(addrCity);
