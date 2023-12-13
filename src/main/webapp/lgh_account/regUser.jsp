@@ -31,7 +31,8 @@
 			<div>
 				<input name="userPW" type="password" id="userPW" maxlength="20"> <br>
 				<span id="pwStatus"></span>
-				<input type="password" placeholder="もう一度記入してください">
+				<input type="password" id="userPWconfirm" placeholder="もう一度記入してください">
+				<span id="pwConfirm"></span>
 			</div>
 		</div>
 		<div>
