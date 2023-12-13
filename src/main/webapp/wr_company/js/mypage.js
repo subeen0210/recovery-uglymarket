@@ -1,6 +1,7 @@
-$(document).ready(function() {
+
+ $(document).ready(function() {
   // 버튼 클릭 이벤트
-  $("kanri").on("click", function() {
+  $("#kanri").on("click", function() {
     // AJAX를 이용해 별도의 JSP 파일 로드
     $.ajax({
       url: "kanri.jsp", // 로드할 다른 JSP 파일 경로
@@ -77,3 +78,14 @@ $(document).ready(function() {
   });
 
 });
+
+ /*function showJSP(jspId) {
+            // 모든 JSP 컨테이너를 숨김
+            document.querySelectorAll('.jsp-container').forEach(function(container) {
+                container.style.display = 'none';
+            });
+
+            // 클릭한 A 태그에 해당하는 JSP 컨테이너를 표시
+            document.getElementById(jspId).style.display = 'block';
+        }*/
+

@@ -15,6 +15,11 @@ a{
 }
 
 
+        /* 각 JSP의 내용을 감싸는 컨테이너의 초기 상태를 숨김으로 설정 */
+.jsp-container {
+            display: none;
+        }
+    
 .mypage_container{
 	width: 100vmax;
 	height: 100%;

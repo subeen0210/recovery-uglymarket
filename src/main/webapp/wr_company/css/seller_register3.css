@@ -25,7 +25,7 @@ body {
 }
 
 .tab:hover {
-    background-color: #ddd;
+    background-color: #E7B2B2;
 }
 
 .tab.active {
@@ -46,6 +46,10 @@ body {
 
 #product-registration {
     display: block;
+    background-color: skyblue;
+    border: 10px solid;
+  border-image: linear-gradient(to right, #3498db, #e74c3c); /* 그라데이션 적용 */
+  border-image-slice: 1; /* 그라데이션 중간으로 확장 */
    
 }
 
