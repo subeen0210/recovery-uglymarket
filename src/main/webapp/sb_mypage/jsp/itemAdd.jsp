@@ -46,6 +46,8 @@
 			<div><input type="file" name="img3"></div>
 			<div><input type="file" name="img4"></div>
 		</div>
+		
+		<button>상품 등록</button>
 	</div>
 	</form>
 	

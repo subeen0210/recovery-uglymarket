@@ -138,6 +138,7 @@ public class ItemDAO {
 
 	public static void addItem(HttpServletRequest request) {
 		
+		String id = request.getParameter("id");
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String img2 = "";
@@ -154,7 +155,6 @@ public class ItemDAO {
 			String name = mr.getParameter("name");
 			String story = mr.getParameter("story");
 			String type = mr.getParameter("type");
-			String id = mr.getParameter("id");
 			String img = mr.getFilesystemName("img");
 			
 			if (mr.getFilesystemName("img2") != null) {
@@ -207,7 +207,17 @@ public class ItemDAO {
 	}
 	
 	
-	private static void deleteItem() {
+	public static void deleteItem(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "delete item where i_no = ?";
+		
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 	

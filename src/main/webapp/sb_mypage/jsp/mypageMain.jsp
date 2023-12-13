@@ -12,7 +12,7 @@
 	
 	
 	<div>
-		<span onclick="location.href='ItemC?id=${sessionSpoce.Account.s_id}'"> 상품 등록 </span>
+		<span onclick="location.href='ItemC?id=${sessionScope.sellerAccount.s_id}'"> 상품 등록 </span>
 	</div>
 	
 	
