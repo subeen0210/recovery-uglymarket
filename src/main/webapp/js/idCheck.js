@@ -33,15 +33,28 @@ $(function() {
 		});
 	});
 
-	$("#ID").on("input", function() {
+	$("#ID").keyup(function() {
 		// #ID의 내용이 변경될 때마다 #idStatus의 텍스트를 비움
 		$("#idStatus").text("");
 	});
+
+	$('#userPW').keyup(function() {
+		 $('#pwConfirm').text(''); 
+	});
+	$('#userPWconfirm').keyup(function() {
+		 if ($('#userPW').val() != $('#userPWconfirm').val()) {
+			 $('#pwConfirm').text('間違っています');
+		} else {
+			 $('#pwConfirm').text('正しいです');
+		} 
+	});
+
 });
 
 function userCheck() {
 	let inputId = document.querySelector('input[name="userID"]');
 	let inputPW = document.querySelector('input[name="userPW"]');
+	let inputPWconfirm = document.querySelector('#userPWconfirm');
 	let inputKanL = document.querySelector('input[name="userKanji_ln"]');
 	let inputKanF = document.querySelector('input[name="userKanji_fn"]');
 	let inputKatL = document.querySelector('input[name="userKata_ln"]');
@@ -83,6 +96,12 @@ function userCheck() {
 	if (isEmpty(inputPW) || lessThan(inputPW, 10) || (notContains(inputPW, setLowerCase) || notContains(inputPW, setNumbers) || notContains(inputPW, setSpecialChars))) {
 		alert('passwordなし');
 		inputPW.focus();
+		return false;
+	}
+	let pwCText = $("#pwConfirm").text();
+	if (pwCText != "正しいです" || isEmpty(inputPWconfirm)) {
+		alert('passwordの再確認が正しくありません。');
+		inputPWconfirm.focus();
 		return false;
 	}
 	// 한자 성 예외
