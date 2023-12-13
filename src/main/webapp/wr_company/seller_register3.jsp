@@ -24,37 +24,38 @@
 	<div>
 		<div>
 			<div>상품명</div>
-			<div><input name="name"></div>
+			<div><input name="name" class="name"></div>
 		</div>
 		<div>
 			<div>상품 설명</div>
-			<div><input name="story"></div>
+			<div><textarea class="story" name="story"></textarea></div>
 		</div>
 		<div>
-			<div>상품 종류</div>
-			<div>
-				<label>못난이<input type="radio" value="1" name="type"></label>
-				<label>일반<input type="radio" value="2" name="type"></label>
+			<div class="radio-container">상품 종류
+			
+				<label>못난이<input type="radio" value="1" name="type" class="select"></label>
+				<label>일반<input type="radio" value="2" name="type" class="select"></label>
+			
 			</div>
 		</div>
 		<div>
 			<div>유통기한</div>
-			<div><input name="enddate" type="date"></div>
+			<div><input name="enddate" type="date" class="date"></div>
 		</div>
 		<div>
 			<div>상품 재고</div>
-			<div><input name="stock"></div>
+			<div><input name="stock" class="stock"></div>
 		</div>
 		<div>
 			<div>상품 가격</div>
-			<div><input name="price"></div>
+			<div><input name="price"  class="price"></div>
 		</div>
 		<div>
 			<div>사진 등록</div>
-			<div><input type="file" name="img"></div>
-			<div><input type="file" name="img2"></div>
-			<div><input type="file" name="img3"></div>
-			<div><input type="file" name="img4"></div>
+			<div><input type="file" name="img" class="img"></div>
+			<div><input type="file" name="img2" class="img"></div>
+			<div><input type="file" name="img3" class="img"></div>
+			<div><input type="file" name="img4" class="img"></div>
 		</div>
 	</div>
 
