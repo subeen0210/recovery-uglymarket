@@ -13,8 +13,8 @@ import com.recovery.main.DBManager;
 
 public class AccountDAO {
 
-	// 호스링
-	public static void login(HttpServletRequest request) {
+	// 로그인
+	public static boolean login(HttpServletRequest request) {
 		String userID = request.getParameter("userID");
 		String userPW = request.getParameter("userPW");
 		
@@ -23,6 +23,7 @@ public class AccountDAO {
 		ResultSet rs = null;
 		String sql = "select * from users where u_id = ?";
 		String dbUserPW = "";
+		boolean Check = false;
 		try {
 			// 연결 시작
 			con = DBManager.connect();
@@ -50,7 +51,7 @@ public class AccountDAO {
 					user.setU_kata_fn(rs.getString("u_kata_fn"));
 					user.setU_img(rs.getString("u_img"));
 					user.setU_signout(rs.getString("u_signout"));
-					
+					Check = true;
 					// 세션 생성
 					HttpSession userHS = request.getSession();
 					userHS.setAttribute("userAccount", user);
@@ -67,6 +68,7 @@ public class AccountDAO {
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
+		return Check;
 	}
 	
 	// login 했는지 안했는지 확인(seller 포함)

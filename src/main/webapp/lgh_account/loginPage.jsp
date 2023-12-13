@@ -42,7 +42,7 @@
 		<form action="SellerLoginC" method="post" onsubmit="return loginSellerCall()">
 			<div>
 				<div>
-					<p>사업자님 환영합니다!</p>
+					<p>판매자님 환영합니다!</p>
 				</div>
 				<div>
 					<div>Id</div>
