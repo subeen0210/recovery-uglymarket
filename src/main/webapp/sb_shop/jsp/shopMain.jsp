@@ -16,11 +16,13 @@
 		<div class="shop-menu">
 			<span data-filter="all" class="active">
 				<div class="menu1">ALL</div>
-			</span> <span data-filter="1">
+			</span> 
+			<span data-filter="1">
 				<div class="menu2">アグリー</div>
-			</span> <span data-filter="2"><div class="menu2">
-					<span data-filter="2"> ふつう 
-				</div> </span>
+			</span> 
+			<span data-filter="2">
+				<div class="menu2">ふつう</div> 
+			</span>
 		</div>
 	</div>
 

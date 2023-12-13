@@ -17,10 +17,6 @@
 			<div><input name="name"></div>
 		</div>
 		<div>
-			<div>농장 이름</div>
-			<div><input name="farm"></div>
-		</div>
-		<div>
 			<div>상품 설명</div>
 			<div><input name="story"></div>
 		</div>
@@ -40,8 +36,15 @@
 			<div><input name="stock"></div>
 		</div>
 		<div>
+			<div>상품 가격</div>
+			<div><input name="price"></div>
+		</div>
+		<div>
 			<div>사진 등록</div>
 			<div><input type="file" name="img"></div>
+			<div><input type="file" name="img2"></div>
+			<div><input type="file" name="img3"></div>
+			<div><input type="file" name="img4"></div>
 		</div>
 	</div>
 	</form>
