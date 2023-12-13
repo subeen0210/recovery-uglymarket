@@ -198,7 +198,9 @@ public class AccountDAO {
 			String addrP = mr.getParameter("userAddrP");
 			String addrCity = mr.getParameter("userAddrC");
 			String addrDetail = mr.getParameter("userAddrD");
-			
+			if (addrDetail.isEmpty()) {
+				addrDetail = "...";
+			}
 			System.out.println(addrNum);
 			System.out.println(addrP);
 			System.out.println(addrCity);
