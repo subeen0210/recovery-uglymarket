@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.recovery.account.Seller;
 import com.recovery.main.DBManager;
 
 public class ItemDAO {
@@ -139,8 +140,9 @@ public class ItemDAO {
 
 	public static void addItem(HttpServletRequest request) {
 		
-	    HttpSession hs = request.getSession();
-	    String id = (String) hs.getAttribute("sellerAccount.s_id");
+		HttpSession hs = request.getSession();
+		Seller id = (Seller) request.getSession().getAttribute("sellerAccount");
+		
 	    
 	    Connection con = null;
 	    PreparedStatement pstmt = null;
@@ -200,7 +202,7 @@ public class ItemDAO {
 	        System.out.println(price);
 	        System.out.println(stock);
 
-	        pstmt.setString(1, id);
+	        pstmt.setString(1, id.getS_id());
 	        pstmt.setString(2, name);
 	        pstmt.setString(3, img);
 	        pstmt.setString(7, story);
