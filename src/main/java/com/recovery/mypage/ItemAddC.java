@@ -22,8 +22,8 @@ public class ItemAddC extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		ItemDAO.addItem(request);
 		AccountDAO.loginCheck(request);
+		ItemDAO.addItem(request);
 		request.setAttribute("contentPage", "sb_mypage/jsp/mypageMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		

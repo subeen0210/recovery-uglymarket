@@ -138,14 +138,16 @@ public class ItemDAO {
 
 
 	public static void addItem(HttpServletRequest request) {
+		
 	    HttpSession hs = request.getSession();
 	    String id = (String) hs.getAttribute("sellerAccount.s_id");
+	    
 	    Connection con = null;
 	    PreparedStatement pstmt = null;
 	    String img2 = "";
 	    String img3 = "";
 	    String img4 = "";
-	    String sql = "insert into item values (item_seqence.nextval, ?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?, 0.0)";
+	    String sql = "insert into item values (item_seqence.nextval, ?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?, 0)";
 
 	    try {
 	        con = DBManager.connect();
@@ -161,21 +163,42 @@ public class ItemDAO {
 	        if (mr.getFilesystemName("img2") != null) {
 	            img2 = mr.getFilesystemName("img2");
 	            pstmt.setString(4, img2);
-	        }
+	        } else if (mr.getFilesystemName("img2") == null) {
+	        	img2 = null;
+	        	pstmt.setString(4, img2);
+			}
 
 	        if (mr.getFilesystemName("img3") != null) {
 	            img3 = mr.getFilesystemName("img3");
 	            pstmt.setString(5, img3);
-	        }
+	        } else if (mr.getFilesystemName("img3") == null) {
+	        	img3 = null;
+	        	pstmt.setString(5, img3);
+			}
 
 	        if (mr.getFilesystemName("img4") != null) {
 	            img4 = mr.getFilesystemName("img4");
 	            pstmt.setString(6, img4);
-	        }
+	        } else if (mr.getFilesystemName("img4") == null) {
+	        	img4 = null;
+	        	pstmt.setString(6, img4);
+			}
 
 	        String date = mr.getParameter("enddate");
 	        String price = mr.getParameter("price");
 	        String stock = mr.getParameter("stock");
+	        
+	        System.out.println(id);
+	        System.out.println(name);
+	        System.out.println(img);
+	        System.out.println(img2);
+	        System.out.println(img3);
+	        System.out.println(img4);
+	        System.out.println(story);
+	        System.out.println(type);
+	        System.out.println(date);
+	        System.out.println(price);
+	        System.out.println(stock);
 
 	        pstmt.setString(1, id);
 	        pstmt.setString(2, name);
