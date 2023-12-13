@@ -14,7 +14,7 @@ import com.recovery.main.DBManager;
 
 public class SellerAccountDAO {
 
-	public static void login(HttpServletRequest request) {
+	public static boolean login(HttpServletRequest request) {
 		String sellerID = request.getParameter("sellerID");
 		String sellerPW = request.getParameter("sellerPW");
 		
@@ -23,6 +23,7 @@ public class SellerAccountDAO {
 		ResultSet rs = null;
 		String sql = "select * from seller where s_id = ?";
 		String dbSellerPW = "";
+		boolean Check = false;
 		try {
 			// 연결 시작
 			con = DBManager.connect();
@@ -55,6 +56,7 @@ public class SellerAccountDAO {
 					HttpSession sellerHS = request.getSession();
 					sellerHS.setAttribute("sellerAccount", seller);
 					sellerHS.setMaxInactiveInterval(100);
+					Check = true;
 				} else {
 					System.out.println("비밀번호 오류");
 				}
@@ -67,6 +69,7 @@ public class SellerAccountDAO {
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
+		return Check;
 	}
 
 	public static void regSeller(HttpServletRequest request) {
