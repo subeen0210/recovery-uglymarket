@@ -57,7 +57,8 @@ public class CartDAO {
 		}
 		
 	}
-
+	
+	// 상품 detail 에서 장바구니 등록하는 기능
 	public static void regCart(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -86,6 +87,45 @@ public class CartDAO {
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
+	}
+	
+	// 같은 상품 있는지 없는지 확인하는 기능
+	public static boolean hasCartItem(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		
+		User user = (User) request.getSession().getAttribute("userAccount");
+		String item = request.getParameter("no");
+		String count = request.getParameter("count");		
+		System.out.println(count);
+		System.out.println(item);
+		System.out.println(user.getU_id());
+		boolean Check = false;
+		String sql = "select COUNT(*) from cart where u_id = ? and i_no = ?";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user.getU_id());
+			pstmt.setString(2, item);
+			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				System.out.println("행이 존재한다 = 값이 있다 = true");
+				Check = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("서버 오류");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+		return Check;
+	}
+
+	public static void updateCart(HttpServletRequest request) {
+		
 	}
 
 }
