@@ -33,7 +33,7 @@
 				<div class="myinfo_box"> <!-- 나의 로그인 정보 -->
 					<div class="myinfo_box_photo"></div>
 					<div class="myinfo_box_item">
-						<div class="myinfo_box_items">xxxx님</div>
+						<div class="myinfo_box_items">xxx님</div>
 						<div class="myinfo_box_items">못난이</div>
 						<div class="myinfo_box_items">히히히히히히</div>
 					</div>
