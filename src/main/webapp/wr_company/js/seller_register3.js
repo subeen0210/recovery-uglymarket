@@ -30,15 +30,14 @@ function showContent(contentId) {
 				// 원하는 형식으로 조합
 				var formattedDate = year + "-" + month + "-" + day;
 				
-				let no = data[i].i_no;
-
+			
 				let tr = $("<tr></tr>")
 				$(tr).append("<td>" + data[i].i_name + "</td>");
 				$(tr).append("<td>" + data[i].i_stock + "</td>");
 				$(tr).append("<td>" + formattedDate + "</td>");
 				$(tr).append("<td>" + data[i].i_price + "</td>");
 				$(tr).append("<td><button>modi</button></td>");
-				$(tr).append("<td><button onclick='itemDelete("+ no +")'>delete</button></td>");
+				$(tr).append("<td><button onclick='itemDelete("+ data[i].i_no +")'>delete</button></td>");
 				$("#tbody").append(tr);
 
 			}
