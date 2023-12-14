@@ -17,6 +17,7 @@ pageEncoding="UTF-8"%>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script src="wj/js/index.js"></script>
+    <script src="js/cartCheck.js"></script>
     <title>アグリーマーケット</title>
   </head>
   <body>
@@ -38,9 +39,7 @@ pageEncoding="UTF-8"%>
       <div class="header-icon">
         <jsp:include page="${loginChange }"></jsp:include>
         &emsp;&emsp;
-        <a href="CartAllC"
-          ><img class="cart-icon" src="img/semi-cart-icon.png" alt=""
-        /></a>
+          <img class="cart-icon" src="img/semi-cart-icon.png" onclick="userLoginCheck('${sessionScope.userAccount.u_id}')">
         &emsp;&emsp;
         <a href=""
           ><img class="search-icon" src="img/semi-search-icon.png" alt=""
