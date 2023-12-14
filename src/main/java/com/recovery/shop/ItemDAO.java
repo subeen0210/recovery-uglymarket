@@ -248,7 +248,7 @@ public class ItemDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select i_name, i_price, i_ed, i_stock from item "
+		String sql = "select i_no, i_name, i_price, i_ed, i_stock from item "
 				+ "where item.s_id = ?";
 		
 		try {
@@ -263,6 +263,7 @@ public class ItemDAO {
 			
 			while (rs.next()) {
 				sellerItem = new ItemDTO();
+				sellerItem.setI_no(rs.getInt("i_no"));
 				sellerItem.setI_name(rs.getString("i_name"));
 				sellerItem.setI_price(rs.getInt("i_price"));
 				sellerItem.setI_stock(rs.getInt("i_stock"));
