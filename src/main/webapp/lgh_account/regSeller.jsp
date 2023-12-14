@@ -10,9 +10,10 @@
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/addr.js"></script>
 <script type="text/javascript" src="js/idCheck.js"></script>
+<script type="text/javascript" src="js/validCheck.js"></script>
 </head>
 <body>
-	<form action="RegSellerC" method="post" enctype="multipart/form-data">
+	<form action="RegSellerC" method="post" enctype="multipart/form-data" onsubmit="return sellerCheck()">
 		<div>
 			<div>
 				<h1>회원가입</h1>
