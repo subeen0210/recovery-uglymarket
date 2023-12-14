@@ -58,4 +58,34 @@ public class CartDAO {
 		
 	}
 
+	public static void regCart(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		User user = (User) request.getSession().getAttribute("userAccount");
+		String item = request.getParameter("no");
+		String count = request.getParameter("count");		
+		System.out.println(count);
+		System.out.println(item);
+		System.out.println(user.getU_id());
+		
+		String sql = "insert into cart values(cart_seq.nextval, ?, ?, ?)";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user.getU_id());
+			pstmt.setString(2, item);
+			pstmt.setString(3, count);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("장바구니 등록 성공");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("장바구니 등록 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+
 }
