@@ -17,7 +17,7 @@ public class ShopDetailC extends HttpServlet {
 
 		ItemDAO.getItem(request);
 		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "sb_shop/jsp/shopDetail.jsp");
+		request.setAttribute("contentPage", "wj/itemDetail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 		
 	}
