@@ -6,8 +6,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.recovery.account.Seller;
@@ -238,7 +240,7 @@ public class ItemDAO {
 	}
 	
 	
-	public static void selectItem(HttpServletRequest request) {
+	public static void selectItem(HttpServletRequest request, HttpServletResponse res) {
 		
 		HttpSession hs = request.getSession();
 		Seller seller = (Seller) request.getSession().getAttribute("sellerAccount");
@@ -270,6 +272,11 @@ public class ItemDAO {
 			request.setAttribute("sellerItems", sellerItems);
 			System.out.println("조회성공");
 			
+			Gson g = new Gson();
+			String jsonData = g.toJson(sellerItems);
+			res.setContentType("application/json");
+		    res.setCharacterEncoding("UTF-8");
+		    res.getWriter().write(jsonData);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("조회실패");

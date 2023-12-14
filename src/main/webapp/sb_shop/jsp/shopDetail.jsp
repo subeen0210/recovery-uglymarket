@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript" src="js/shopDetail.js"></script>
+<link rel="stylesheet" href="wj/css/itemDetail.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -27,6 +29,12 @@
 		<div>
 			<span>${item.i_des }</span>
 		</div>
+		
+		<div class="quantity-container">
+        	<button class="quantity-button" onclick="decrementQuantity()">-</button>
+        	<input type="text" class="quantity-input" id="quantityInput" value="1" readonly>
+        	<button class="quantity-button" onclick="incrementQuantity()">+</button>
+    	</div>
 	</div>
 
 </body>

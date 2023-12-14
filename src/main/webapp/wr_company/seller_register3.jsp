@@ -1,3 +1,6 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.google.gson.Gson" %>
+<%@ page import="com.google.gson.reflect.TypeToken" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -7,12 +10,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상품 및 배송 관리</title>
+<script type="text/javascript" src="wr_company/js/seller_register3.js"></script>
 <link rel="stylesheet" href="wr_company/css/seller_register3.css">
 <link rel="stylesheet" href="css/header.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+
 <div class="tabs">
         <div class="tab" onclick="showContent('product-registration')">상품 등록</div>
         <div class="tab" onclick="showContent('product-management')">상품 관리</div>
@@ -21,7 +26,7 @@
     <div class="content" id="product-registration">
         <h2>상품 등록</h2>
 
-    <form action="../sb_mypage/jsp/AddItemC" method="post" enctype="multipart/form-data">
+    <form action="ItemAddC" method="post" enctype="multipart/form-data">
 	<div>
 		<div>
 			<div>상품명</div>
@@ -82,17 +87,8 @@
                 <th>削除</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody">
          
-         <c:forEach var="sellerItems" items="${sellerItems }">
-         	<tr>
-         		<td>${sellerItems.i_name }</td>
-         		<td>${sellerItems.i_stock }</td>
-         		<td>${sellerItems.i_enddate }</td>
-         		<td>${sellerItems.i_price }</td>
-         	</tr>
-         </c:forEach>
-            
         </tbody>
     </table>
 
@@ -100,43 +96,6 @@
 
     
     </div>
-
-
-<script>
-        function showContent(contentId) {
-            // Hide all content divs
-            document.querySelectorAll('.content').forEach(function(content) {
-                content.style.display = 'none';
-            });
-
-            // Deactivate all tabs
-            document.querySelectorAll('.tab').forEach(function(tab) {
-                tab.classList.remove('active');
-            });
-
-            // Show the selected content
-            document.getElementById(contentId).style.display = 'block';
-
-            // Activate the corresponding tab
-            document.querySelector(`.tab[onclick="showContent('${contentId}')"]`).classList.add('active');
-        
-            $.ajax({
-                url: 'SellerItemC', 
-                success: function(response) {
-                  $('#'+contentId).html(response);
-                },
-                error: function(error) {
-                  console.error('Error:', error);
-                }
-              });
-        }
-
-        function submitProductForm() {
-            // 상품 등록 폼 제출 시 동작하는 함수
-            // 필요에 따라 추가적인 로직을 여기에 작성하세요
-            alert('상품이 등록되었습니다!');
-        }
-</script>
 
 
 </body>

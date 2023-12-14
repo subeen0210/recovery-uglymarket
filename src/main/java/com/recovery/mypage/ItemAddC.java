@@ -15,7 +15,8 @@ import com.recovery.shop.ItemDAO;
 public class ItemAddC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		ItemDAO.selectItem(request, response);
+		System.out.println("mz test ------------");
 		
 	
 	}
@@ -24,7 +25,7 @@ public class ItemAddC extends HttpServlet {
 
 		AccountDAO.loginCheck(request);
 		ItemDAO.addItem(request);
-		response.sendRedirect("HC");
+		response.sendRedirect("MyPageC");
 		
 		
 	}
