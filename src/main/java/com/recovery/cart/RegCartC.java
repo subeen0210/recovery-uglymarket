@@ -20,6 +20,7 @@ public class RegCartC extends HttpServlet {
 	CartDAO.regCart(request);
 		
 	}
+	System.out.println(CartDAO.hasCartItem(request));	
 	// 이전 페이지로 이동
 	response.sendRedirect(request.getHeader("referer"));
 

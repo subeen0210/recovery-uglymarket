@@ -98,8 +98,6 @@ public class CartDAO {
 		
 		User user = (User) request.getSession().getAttribute("userAccount");
 		String item = request.getParameter("no");
-		String count = request.getParameter("count");		
-		System.out.println(count);
 		System.out.println(item);
 		System.out.println(user.getU_id());
 		boolean Check = false;
@@ -112,9 +110,14 @@ public class CartDAO {
 			
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				System.out.println("행이 존재한다 = 값이 있다 = true");
-				Check = true;
-			}
+				int count = rs.getInt(1);
+				
+				if (count > 0) {
+			        System.out.println("행이 존재한다 = 값이 있다 = true");
+			        Check = true;
+			    } 
+				
+			} 
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("서버 오류");
@@ -123,9 +126,37 @@ public class CartDAO {
 		}
 		return Check;
 	}
-
+	
+	
+	// 같은 상품 있으면 수량 추가하는 기능
 	public static void updateCart(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
 		
+		User user = (User) request.getSession().getAttribute("userAccount");
+		String item = request.getParameter("no");
+		String count = request.getParameter("count");		
+		System.out.println(count);
+		System.out.println(item);
+		System.out.println(user.getU_id());
+		
+		String sql = "UPDATE cart SET c_number = c_number + ? WHERE u_id = ? AND i_no = ?";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, count);
+			pstmt.setString(2, user.getU_id());
+			pstmt.setString(3, item);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("장바구니 수량 추가 성공");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("수량 변경 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
 	}
 
 }
