@@ -6,8 +6,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.recovery.account.Seller;
@@ -238,6 +240,52 @@ public class ItemDAO {
 	}
 	
 	
+	public static void selectItem(HttpServletRequest request, HttpServletResponse res) {
+		
+		HttpSession hs = request.getSession();
+		Seller seller = (Seller) request.getSession().getAttribute("sellerAccount");
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select i_name, i_price, i_ed, i_stock from item "
+				+ "where item.s_id = ?";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, seller.getS_id());
+			System.out.println(seller.getS_id());
+			rs = pstmt.executeQuery();
+			
+			ArrayList<ItemDTO> sellerItems = new ArrayList<ItemDTO>();
+			ItemDTO sellerItem;
+			
+			while (rs.next()) {
+				sellerItem = new ItemDTO();
+				sellerItem.setI_name(rs.getString("i_name"));
+				sellerItem.setI_price(rs.getInt("i_price"));
+				sellerItem.setI_stock(rs.getInt("i_stock"));
+				sellerItem.setI_enddate(rs.getDate("i_ed"));
+				sellerItems.add(sellerItem);
+			}
+			request.setAttribute("sellerItems", sellerItems);
+			System.out.println("조회성공");
+			
+			Gson g = new Gson();
+			String jsonData = g.toJson(sellerItems);
+			res.setContentType("application/json");
+		    res.setCharacterEncoding("UTF-8");
+		    res.getWriter().write(jsonData);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("조회실패");
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		
+		
+	}
 	
 	
 
