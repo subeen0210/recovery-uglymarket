@@ -35,6 +35,8 @@
         	<input type="text" class="quantity-input" id="quantityInput" value="1" readonly>
         	<button class="quantity-button" onclick="incrementQuantity()">+</button>
     	</div>
+    	<button>장바구니</button>
+    	<button>바로구매</button>
 	</div>
 
 </body>
