@@ -63,6 +63,7 @@
 					<div class="mypage_contents1_menu_boxs">
 						<a id="seller-register">商品管理</a>
 					</div>
+					
 					<div style='visibility: hidden;' class="mypage_contents1_menu_boxs">
 						<a href="#">hidden</a> <!--숨겨진 박스  -->
 					</div>

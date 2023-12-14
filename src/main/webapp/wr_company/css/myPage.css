@@ -7,6 +7,12 @@
     font-family: 'MyCustomFont', sans-serif; /* 폰트 적용 */
 }
 
+body{
+	
+	
+	background-color: #92f551;
+}
+
 
 a{
 	font-size: 25px;
@@ -23,8 +29,9 @@ a{
 .mypage_container{
 	width: 100vmax;
 	height: 100%;
-	border: 2px solid #DDFD52;
-	/*background-color: #DDFD52;*/
+	border: 2px solid skyblue;
+	background-color: white;
+		
 	
 }
 .mypage_title{
@@ -47,6 +54,7 @@ a{
    /* border: 1px solid red; */
 	justify-content: center;
 	align-items: center;
+	
 }
 .mypage_contents1_info_box{
 	
@@ -114,7 +122,7 @@ a{
     flex-direction: row;
     justify-content : space-around;
     align-items: center;
-    
+ 
 }
 
 .mypage_contents1_menu_boxs{
@@ -172,7 +180,7 @@ a{
 	
 	width: 100vmax;
 	
-	background-color: skyblue;
+	background-color: Beige ;
 	
 	
 	
