@@ -1,21 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/src/main/webapp/css/cart.css" />
+    <link rel="stylesheet" href="css/cart.css" />
   </head>
-  <!-- 
-	상품 id 번호를 받아와서 장바구니에 추가.
-	상품 선택한 갯수도 받아서 c_number에 추가.
-	로그인이 안되어있다면 로그인 창으로 안내
-	로그인 세션이 만료했다면 다시 로그인 창으로 안내
-	insert into cart values(cart_seq.nextval, u_id, i_no, c_number);
-	
-	 -->
   <body>
     <div class="main">
       <div class="main-title">
@@ -31,12 +24,13 @@
         >全部選択する&ensp;<input type="checkbox" id="selectAll"
       /></label>
       <br />
+      <c:forEach var="cart" items="${carts }">
       <div class="menu" id="itemList">
         <div class="menu-profile">
           <div class="profile-name">
             농장명 넣어!&ensp;<input type="checkbox" class="item-checkbox" />
           </div>
-          <div class="profile-img">이미지 넣어!</div>
+          <div class="profile-img">${cart.i_img }</div>
         </div>
         <div class="menu-info">
           <div class="info-title">상품 제목 넣어!</div>
@@ -68,6 +62,7 @@
           <div class="set-del">削除</div>
         </div>
       </div>
+      </c:forEach>
       <br />
       <div class="pay">
         <div class="pay-allmoney">총금액 넣어!</div>
