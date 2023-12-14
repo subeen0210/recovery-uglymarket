@@ -13,7 +13,8 @@ import com.recovery.account.AccountDAO;
 public class HC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		AccountDAO.loginCheck(request);
+		AccountDA
+		O.loginCheck(request);
 		request.setAttribute("contentPage", "wj/home.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
