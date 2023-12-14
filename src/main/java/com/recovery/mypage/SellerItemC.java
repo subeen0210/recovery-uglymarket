@@ -11,22 +11,21 @@ import com.recovery.account.AccountDAO;
 import com.recovery.shop.ItemDAO;
 
 
-@WebServlet("/ItemAddC")
-public class ItemAddC extends HttpServlet {
+@WebServlet("/SellerItemC")
+public class SellerItemC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		
+		ItemDAO.selectItem(request);
+		AccountDAO.loginCheck(request);
+		request.setAttribute("contentPage", "sb_mypage/jsp/mypageMain.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		AccountDAO.loginCheck(request);
-		ItemDAO.addItem(request);
-		response.sendRedirect("HC");
-		
-		
+	
 	}
 
 }

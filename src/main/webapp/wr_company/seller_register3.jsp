@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상품 및 배송 관리</title>
-<link rel="stylesheet" href="css/seller_register3.css">
+<link rel="stylesheet" href="wr_company/css/seller_register3.css">
 <link rel="stylesheet" href="css/header.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -15,13 +16,12 @@
 <div class="tabs">
         <div class="tab" onclick="showContent('product-registration')">상품 등록</div>
         <div class="tab" onclick="showContent('product-management')">상품 관리</div>
-       <!--  <div class="tab" onclick="showContent('shipping-management')">배송 관리</div>-->
     </div>
 
     <div class="content" id="product-registration">
         <h2>상품 등록</h2>
 
-            <form action="../sb_mypage/jsp/AddItemC" method="post" enctype="multipart/form-data">
+    <form action="../sb_mypage/jsp/AddItemC" method="post" enctype="multipart/form-data">
 	<div>
 		<div>
 			<div>상품명</div>
@@ -83,32 +83,15 @@
             </tr>
         </thead>
         <tbody>
-           
-            <tr>
-                <td>못난이감자</td>
-                <td>3</td>
-                <td>2023-12-31</td>
-                <td>10000</td>
-                <td><a href="editAddress.jsp?id=1">修正</a></td>
-                <td><a href="deleteAddress.jsp?id=1">削除</a></td>
-            </tr>
-            <tr>
-                <td>예쁜딸기</td>
-                <td>10</td>
-                <td>2023-12-28</td>
-                <td>30000</td>
-                <td><a href="editAddress.jsp?id=1">修正</a></td>
-                <td><a href="deleteAddress.jsp?id=1">削除</a></td>
-            </tr>
-            <tr>
-                <td>당근</td>
-                <td>30</td>
-                <td>2024-01-03</td>
-                <td>6000</td>
-                <td><a href="editAddress.jsp?id=1">修正</a></td>
-                <td><a href="deleteAddress.jsp?id=1">削除</a></td>
-            </tr>
-            
+         
+         <c:forEach var="sellerItems" items="${sellerItems }">
+         	<tr>
+         		<td>${sellerItems.i_name }</td>
+         		<td>${sellerItems.i_stock }</td>
+         		<td>${sellerItems.i_enddate }</td>
+         		<td>${sellerItems.i_price }</td>
+         	</tr>
+         </c:forEach>
             
         </tbody>
     </table>
@@ -118,62 +101,8 @@
     
     </div>
 
-    <!-- <div class="content" id="shipping-management" style="display: none;">
-        <h2>배송 관리</h2>
-      
-      
 
-    <h2>배송 리스트</h2>
-
-    <table border="1">
-        <thead>
-            <tr>
-                <th>상품이름</th>
-                <th>주문량</th>
-                <th>제품가격</th>
-                <th>주소</th>
-                <th>詳細</th>
-                <th>削除</th>
-            </tr>
-        </thead>
-        <tbody>
-           
-            <tr>
-                <td>못난이감자</td>
-                <td>2</td>
-                <td>20000</td>
-                <td>神奈川県横浜市</td>
-                <td><a href="editAddress.jsp?id=1">詳細</a></td>
-                <td><a href="deleteAddress.jsp?id=1">削除</a></td>
-            </tr>
-            <tr>
-                <td>예쁜딸기</td>
-                <td>1</td>
-                <td>30000</td>
-                <td>東京都千代田区外神田2丁目</td>
-                <td><a href="editAddress.jsp?id=1">詳細</a></td>
-                <td><a href="deleteAddress.jsp?id=1">削除</a></td>
-            </tr>
-            <tr>
-                <td>당근</td>
-                <td>3</td>
-                <td>18000</td>
-                <td>愛知県名古屋市栄町</td>
-                <td><a href="editAddress.jsp?id=1">詳細</a></td>
-                <td><a href="deleteAddress.jsp?id=1">削除</a></td>
-            </tr>
-            
-            
-        </tbody>
-    </table> 
-
-    <br>
-
-   
-    </div> -->
-    
-
-    <script>
+<script>
         function showContent(contentId) {
             // Hide all content divs
             document.querySelectorAll('.content').forEach(function(content) {
@@ -190,6 +119,16 @@
 
             // Activate the corresponding tab
             document.querySelector(`.tab[onclick="showContent('${contentId}')"]`).classList.add('active');
+        
+            $.ajax({
+                url: 'SellerItemC', 
+                success: function(response) {
+                  $('#'+contentId).html(response);
+                },
+                error: function(error) {
+                  console.error('Error:', error);
+                }
+              });
         }
 
         function submitProductForm() {
@@ -197,7 +136,7 @@
             // 필요에 따라 추가적인 로직을 여기에 작성하세요
             alert('상품이 등록되었습니다!');
         }
-    </script>
+</script>
 
 
 </body>
