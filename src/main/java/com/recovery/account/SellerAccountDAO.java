@@ -103,6 +103,9 @@ public class SellerAccountDAO {
 			System.out.println(addr);
 			farmStory = farmStory.isEmpty() ? "説明がありません" : farmStory.replaceAll("\r\n", "<br>");
 			System.out.println(farmStory);
+			if (addrD.isEmpty()) {
+				addrD = "...";
+			}
 			
 			
 			con = DBManager.connect();

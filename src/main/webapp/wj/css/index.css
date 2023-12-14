@@ -31,6 +31,20 @@ a:hover {
 	animation: fadeIn 0.5s ease-in-out;
 	color: #70e820;
 }
+/* 장바구니 a태그 없애고 이미지에 css 값 추가 (위에 a 태그랑 같은거) _이가현 수정 */
+.cart-icon {
+	text-decoration: none;
+	color: black;
+	transition: opacity 0.5s ease-in-out;
+	cursor: pointer;
+}
+.cart-icon:hover {
+	opacity: 0.5;
+	animation: fadeIn 0.5s ease-in-out;
+	color: #70e820;
+}
+
+/* 장바구니 끝 */
 
 .active {
 	opacity: 0.7;
