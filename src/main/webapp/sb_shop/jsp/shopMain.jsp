@@ -32,8 +32,8 @@
 			<c:forEach var="item" items="${items}" varStatus="status">
 				<div class="shop-item" data-category="${item.i_category}">
 					<div>
-						<img class="item-img" alt="" src="itemFolder/${item.i_img }"> <span
-							onclick="location.href='ShopDetailC?no=${item.i_no}'"></span>
+						<img onclick="location.href='ShopDetailC?no=${item.i_no}'" 
+							class="item-img" alt="" src="itemFolder/${item.i_img }"> 
 					</div>
 					<div>
 						<c:choose>

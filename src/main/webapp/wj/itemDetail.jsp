@@ -12,9 +12,7 @@
 </head>
 <body>
 	<div class="item-detail-kwj">
-		<div class="item-img">
-			<img alt="" src="itemFolder/${item.i_img }">
-		</div>
+		<div class="item-img" style="background-image: url('itemFolder/${item.i_img }');"></div>
 		<div class="item-content">
 			<c:choose>
 				<c:when test="${item.i_category == 1 }">
@@ -28,13 +26,12 @@
 			</c:choose>
 			<div class="item-title">${item.i_name }</div>
 			<br />
-			<div class="item-title">${item.i_price }</div>
+			<div class="item-price">${item.i_price }</div>
 			<br />
 		<%--<div class="item-delivery">배송비 유무</div>
 			<br /> --%>
 			<div class="item-select">
-				<span style="font-weight: bold; font-size: 12pt">数量</span> &emsp; <input
-					type="text" id="quantity" value="db값" readonly />&emsp;
+				<span style="font-weight: bold; font-size: 12pt">数量</span> &emsp;&emsp;
 					<button id="increment" class="quantity-button" onclick="decrementQuantity()">+</button>
 					<input type="text" class="quantity-input" id="quantityInput" value="1" readonly>
 					<button id="decrement" class="quantity-button" onclick="incrementQuantity()">-</button>
