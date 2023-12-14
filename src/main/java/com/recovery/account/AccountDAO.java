@@ -212,8 +212,8 @@ public class AccountDAO {
 			pstmt.setString(1, addrNum);
 			pstmt.setString(2, addrP+"!"+addrCity);
 			pstmt.setString(3, addrDetail);
-			pstmt.setString(4, "name");
-			pstmt.setString(5, "tel");
+			pstmt.setString(4, kanjiLast+"!"+kanjiName);
+			pstmt.setString(5, telAll);
 			pstmt.setString(6, "null");
 			pstmt.setString(7, id);
 			
