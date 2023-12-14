@@ -244,3 +244,19 @@
 .view-more:hover {
   opacity: 0.5;
 }
+
+.quantity-container {
+            display: flex;
+            align-items: center;
+}
+
+.quantity-input {
+            width: 40px;
+            text-align: center;
+            margin: 0 10px;
+}
+
+.quantity-button {
+            cursor: pointer;
+            font-size: 20px;
+}
