@@ -35,7 +35,7 @@ body {
 
 .content {
 	
-    display: none;
+  
     padding: 20px;
     /*border: 1px solid #ddd;*/
     border-radius: 40px;
@@ -46,7 +46,7 @@ body {
 
 #product-registration {
     display: block;
-    background-color: #C3E820;
+  /*  background-color: #C3E820;*/
    /* border: 1px solid;*/
       border-radius: 40px;
   

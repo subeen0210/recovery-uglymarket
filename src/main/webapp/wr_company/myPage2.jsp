@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="css/header.css">
 <head>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
 <script src="js/mypage.js"></script><!--바닥 JSP호출 JS -->
 <meta charset="UTF-8">
 <title>Insert title here</title>

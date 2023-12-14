@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'MyCustomFont'; /* 사용할 폰트 이름 설정 */
+	src: url('../font/kan.otf') format('opentype'); /* 파일 경로 설정 */
+	/* 일본어 폰트 적용 */
+}
+
+* {
+	font-family: 'MyCustomFont', sans-serif; /* 폰트 적용 */
+}
+
+.myPage_container {
+	width: 100vw;
+	height: 100vh;
+	font-size: 25px;
+	
+}
+
+.seller_id_main {
+	display: flex;
+	justify-content: flex-end;
+	
+}
+.logo{
+	display: flex;
+      justify-content: center; /* 가로 중앙 정렬 */
+      align-items: center; /* 세로 중앙 정렬 */
+}
+.seller_id{
+	display: flex;
+      justify-content: center; /* 가로 중앙 정렬 */
+      align-items: center; /* 세로 중앙 정렬 */
+      border: 1px solid #ccc;
+	border: 1px solid black;
+	border-radius: 20px;
+	width: 180px;
+	height: 40px;
+
+	
+}
+.main_menu_container{
+	
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	
+	
+	
+}
+.main_menu_control{
+	display: flex;
+    width: 1000px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 20px;
+    justify-content: space-around;
+    align-items: center;
+	
+	
+} 
+.subview{
+	
+	width: 100vw;
+	height: 100vh;
+	font-size: 25px;
+	/*border: 1px solid black;*/
+	margin-top: 200px;
+	
+
+}
+.sub_control{
+ display: flex;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+	
+	
+	
+}
+.sub_menu{
+	 margin-top: 200px;
+    display: flex;
+    width: 200px;
+    height: 500px;
+    border: 1px solid black;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.subview{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 100px;
+	
+	
+}
+.jsp_view{
+	width: 1200px;
+	height: 1300px;
+	border: 1px solid black;
+	
+	
+	}
+	
+	
