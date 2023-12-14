@@ -21,6 +21,7 @@
 				<div>数量</div>
 				<div>削除&ensp;/&ensp;変更</div>
 			</div>
+			<div>
 			<c:forEach var="cart" items="${carts }">
 			<div class="cart-item">
 				<div>${cart.c_no }</div>
@@ -44,6 +45,7 @@
 				</div>
 			</div>
 			</c:forEach>
+			</div>
 			<br />
 			<div class="cart-Pay">
 				<div class="pay-set">決済する</div>
@@ -63,7 +65,7 @@
 			総決済金額<br />${priceAll }円
 		</div>
 	</div>
-	<br><br><br>
+	<br><br><br>	
 </body>
 <script src="wj/js/cart.js"></script>
 </html>
