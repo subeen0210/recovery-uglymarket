@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("#kanri").on("click", function() {
     $.ajax({
-      url: "kanri.jsp",
+      url: "wr_company/kanri.jsp",
       method: "GET",
       success: function(data) {
         $("#mypage_centents3_box").html(data);
@@ -14,7 +14,7 @@ $(document).ready(function() {
 
   $("#order").on("click", function() {
     $.ajax({
-      url: "order.jsp",
+      url: "wr_company/order.jsp",
       method: "GET",
       success: function(data) {
         $("#mypage_centents3_box").html(data);
@@ -27,7 +27,7 @@ $(document).ready(function() {
 
   $("#cart").on("click", function() {
     $.ajax({
-      url: "../wj/cart.jsp",
+      url: "wj/cart.jsp",
       method: "GET",
       success: function(data) {
         $("#mypage_centents3_box").html(data);
@@ -40,7 +40,7 @@ $(document).ready(function() {
 
   $("#review").on("click", function() {
     $.ajax({
-      url: "review.jsp",
+      url: "wr_company/review.jsp",
       method: "GET",
       success: function(data) {
         $("#mypage_centents3_box").html(data);
@@ -53,7 +53,7 @@ $(document).ready(function() {
 
   $("#seller-register").on("click", function() {
     $.ajax({
-      url: "seller_register3.jsp",
+      url: "wr_company/seller_register3.jsp",
       method: "GET",
       success: function(data) {
         $("#mypage_centents3_box").html(data);

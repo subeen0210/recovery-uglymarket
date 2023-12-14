@@ -10,9 +10,10 @@
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/addr.js"></script>
 <script type="text/javascript" src="js/idCheck.js"></script>
+<script type="text/javascript" src="js/validCheck.js"></script>
 </head>
 <body>
-	<form action="RegSellerC" method="post" enctype="multipart/form-data">
+	<form action="RegSellerC" method="post" enctype="multipart/form-data" onsubmit="return sellerCheck()">
 		<div>
 			<div>
 				<h1>회원가입</h1>
@@ -20,16 +21,18 @@
 			<div>
 				<div>ID</div>
 				<div>
-					<input name="sellerID" id="ID">
-					<button type="button" name="table" id="checkDuplicate" value="seller">重複確認</button>
+					<input name="sellerID" id="ID" maxlength="20">
+					<button type="button" id="checkDuplicate" value="seller">重複確認</button>
 					<span id="idStatus"></span>
 				</div>
 			</div>
 			<div>
 				<div>パスワード</div>
 				<div>
-					<input name="sellerPW" type="password"> <br> <input
-						type="password" placeholder="もう一度記入してください">
+					<input name="sellerPW" type="password" id="sellerPW" maxlength="20">
+					<span id="pwStatus"></span> 
+					<input type="password" id="sellerPWconfirm" placeholder="もう一度記入してください">
+					<span id="pwConfirm"></span>
 				</div>
 			</div>
 			<div>
