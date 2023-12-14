@@ -4,7 +4,6 @@
 <html>
 <link rel="stylesheet" href="css/myPage.css">
 <link rel="stylesheet" href="css/header.css">
-
 <head>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
@@ -14,6 +13,8 @@
 </head>
 <body>
 	<div class="mypage_container"> <!-- 메인 페이지 -->
+
+
 		<div class="mypage_title">
 			<p>マイページ</p>
 		</div>
@@ -45,25 +46,24 @@
 			<div class="">
 				<div class="mypage_contents1_menu"> <!--오른쪽 메뉴 버튼 -->
 					<div class="mypage_contents1_menu_boxs">
-						<a id="kanri">配送住所管理</a>
+						<a onclick="showJSP('kanri')">配送住所管理</a>
 					</div>
 					<div class="mypage_contents1_menu_boxs">
-						<a id="review">後期</a>
+						<a onclick="showJSP('review')">後期</a>
 					</div>
 
 					<div class="mypage_contents1_menu_boxs">
-						<a id="order">注文内訳</a>
+						<a onclick="showJSP('order')">>注文内訳</a>
 					</div>
 
 				</div>
 				<div class="mypage_contents1_menu">
 					<div class="mypage_contents1_menu_boxs">
-						<a id="cart">マイカートー</a>
+						<a onclick="showJSP('cart')">マイカートー</a>
 					</div>
 					<div class="mypage_contents1_menu_boxs">
-						<a id="seller-register">商品管理</a>
+						<a onclick="showJSP('seller-register')">商品管理</a>
 					</div>
-					
 					<div style='visibility: hidden;' class="mypage_contents1_menu_boxs">
 						<a href="#">hidden</a> <!--숨겨진 박스  -->
 					</div>
@@ -71,8 +71,24 @@
 			</div>
 			
 		</div>
+		
+		 <div id="kanri" class="jsp-container">
+        <%@ include file="kanri.jsp" %>
+    </div>
+    <div id="review" class="jsp-container">
+        <%@ include file="review.jsp" %>
+    </div>
+    <div id="order" class="jsp-container">
+        <%@ include file="order.jsp" %>
+    </div>
+    <div id="cart" class="jsp-container">
+        <%@ include file="cart.jsp" %>
+    </div>
+    <div id="seller-register" class="jsp-container">
+        <%@ include file="seller_register3.jsp" %>
+    </div>
 	
-		<div class="mypage_centents3_box" id="mypage_centents3_box"></div>
+		<!--  <div class="mypage_centents3_box" id="mypage_centents3_box"></div>-->
 　　　　                           　<!--바닥 JSP가 표시되는 박스 부분  -->
 
 	</div>
