@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+.body {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
 /* 원준 - bxSlider */
 .bxslider {
 	margin: 0;
@@ -43,7 +49,7 @@
 
 /* 원준 - 메인상품페이지 */
 .main-item {
-	width: 100vmax;
+	width: 100%;
 	height: 2000px;
 }
 
@@ -84,7 +90,7 @@
 }
 
 .item-img {
-	width: 100vmax;
+	width: 100%;
 	display: flex;
 	justify-content: space-around;
 	margin-left: -50px;
@@ -105,7 +111,7 @@
 }
 
 .item-img-news {
-	width: 100vmax;
+	width: 100%;
 	height: 800px;
 	margin-top: 300px;
 }

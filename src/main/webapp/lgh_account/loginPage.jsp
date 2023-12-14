@@ -27,7 +27,9 @@
 			</div>
 			<div>
 				<button type="button" onclick="return loginCall()">로그인</button>
-				
+			</div>
+			<div>
+				<a href="">id, 비밀번호 찾기</a>
 			</div>
 		</div>
 		<button type="button" onclick="location.href='RegUserC'">소비자
@@ -58,6 +60,9 @@
 				</div>
 				<div>
 					<button onclick="return loginSellerCall()">사업자 로그인</button>
+				</div>
+				<div>
+					<a>id 비밀번호 찾기</a>
 				</div>
 			</div>
 	</div>
