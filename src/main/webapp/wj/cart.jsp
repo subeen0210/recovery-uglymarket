@@ -12,10 +12,10 @@
 <body>
 	<div class="main">
 		<div class="main-title">
-			<div class="title">カート</div>
+			<div class="title">カート</div><br>
 			<div>
 				<!-- 삭제 버튼 -->
-				<button class="btn-del" onclick="deleteSelected()">選択削除</button>
+				<button class="btn-del">選択削除</button>
 			</div>
 		</div>
 		<br />
@@ -57,9 +57,9 @@
 					</div>
 				</div>
 				<br />
-				<div class="set-allprice">小計${cart.i_price * cart.c_number }</div>
+				<div class="set-allprice">小計&ensp;:&ensp;${cart.i_price * cart.c_number }</div>
 				<br />
-				<div class="set-del">削除</div>
+				<div><button>削除</button></div>
 			</div>
 		</div>
 		<br>

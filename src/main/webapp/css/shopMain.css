@@ -13,7 +13,12 @@ body {
 	width : 110px;
 	height: 50px;
 }
+
 /* 원준 - 쇼핑몰 메뉴 */
+.item-size {
+	width: 100%;
+}
+
 .shop-item-kwj {
 	display: flex;
 	justify-content: center;
@@ -28,6 +33,7 @@ body {
 .menu_list {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 .shop-menu {
@@ -118,9 +124,10 @@ body {
     flex-direction: column;
 }
 
-#itemContainer{
+#itemContainer {
 	display: flex;
     flex-wrap: wrap;
+	justify-content: center;
     width: 80%;
 }
 
