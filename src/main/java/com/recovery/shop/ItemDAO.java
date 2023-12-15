@@ -15,6 +15,8 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.recovery.account.Seller;
 import com.recovery.main.DBManager;
 
+import oracle.jdbc.proxy.annotation.Pre;
+
 public class ItemDAO {
 
 	private static ArrayList<ItemDTO> items;
@@ -162,7 +164,7 @@ public class ItemDAO {
 	        String name = mr.getParameter("name");
 	        String story = mr.getParameter("story");
 	        String type = mr.getParameter("type");
-	        String img = mr.getFilesystemName("img");
+	        String img = mr.getFilesystemName("img1");
 
 	        if (mr.getFilesystemName("img2") != null) {
 	            img2 = mr.getFilesystemName("img2");
@@ -207,7 +209,7 @@ public class ItemDAO {
 	        }
 
 	    } catch (Exception e) {
-	        System.out.println("등록 실패");
+	        System.out.println("등록 ~~");
 	        e.printStackTrace();
 	    } finally {
 	        DBManager.close(con, pstmt, null);
@@ -288,6 +290,31 @@ public class ItemDAO {
 		
 	}
 	
+	
+	public static void updateItem(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "update item set "
+					+ "i_name = ?, i_des = ?, i_category = ?, i_ed = TO_DATE(?, 'YYYY-MM-DD'), "
+					+ "i_img = ?, i_img2 = ?, i_img3 = ? , i_img4 = ?, i_price = ?, i_stock =? "
+					+ "where s_id = ? and i_no = ?";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			String path = request.getServletContext().getRealPath("itemFolder");
+			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "utf-8", new DefaultFileRenamePolicy());
+			
+			
+			 
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
 	
 
 }
