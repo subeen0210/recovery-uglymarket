@@ -10,8 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>상품 등록</h2>
 <div class="content" id="product-registration">
-        <h2>상품 등록</h2>
+        <h2>상품을 등록하세요</h2>
 
     <form action="ItemAddC" method="post" enctype="multipart/form-data">
 	<div>

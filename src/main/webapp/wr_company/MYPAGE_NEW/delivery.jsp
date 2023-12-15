@@ -10,8 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>배송 관리</h2>
 	<div class="content">
-		<h2>배송 관리</h2>
+		
 
 
 

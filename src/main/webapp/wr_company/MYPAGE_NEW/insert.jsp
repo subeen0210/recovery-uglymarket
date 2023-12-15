@@ -5,8 +5,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+.insert{
+width: 100vw;
+height: 100vh;
+
+display:flex;
+justify-content: center;
+align-items: center;
+
+}
+
+</style>
 </head>
 <body>
-<h1>장바구니</h1>
+
+<div class="insert"><img src="img/logo.png"></div>
+
+
 </body>
 </html>
