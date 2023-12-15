@@ -17,7 +17,7 @@ public class CartDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select c_no, i_img, i_category, i_name, i_price, c_number "
+		String sql = "select c_no, item.i_no, i_img, i_category, i_name, i_price, c_number "
 				+ "from cart, users, item "
 				+ "where users.u_id = cart.u_id "
 				+ "and item.i_no = cart.i_no "
@@ -36,14 +36,15 @@ public class CartDAO {
 			while (rs.next()) {
 				cart = new CartDTO();
 				cart.setC_no(rs.getInt("c_no"));
-				cart.setU_name(rs.getString("u_kanji_ln")+" "+rs.getString("u_kanji_fn"));
+				cart.setU_id(user.getU_id());
+				cart.setU_name(user.getU_kanji_ln()+" "+user.getU_kanji_fn());
 				cart.setI_no(rs.getInt("i_no"));
 				cart.setC_number(rs.getInt("c_number"));
 				cart.setI_img(rs.getString("i_img"));
 				cart.setI_category(rs.getInt("i_category"));
 				cart.setI_name(rs.getString("i_name"));
 				cart.setI_price(rs.getInt("i_price"));
-				priceAdd += rs.getInt("i_price");
+				priceAdd += rs.getInt("i_price")*rs.getInt("c_number");
 				carts.add(cart);
 			}
 			System.out.println("장바구니 조회 성공");

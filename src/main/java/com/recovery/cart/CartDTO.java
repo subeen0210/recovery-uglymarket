@@ -2,6 +2,7 @@ package com.recovery.cart;
 
 public class CartDTO {
 	private int c_no;
+	private String u_id;
 	private String u_name;
 	private int i_no;
 	private int c_number;
@@ -15,10 +16,11 @@ public class CartDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CartDTO(int c_no, String u_name, int i_no, int c_number, String i_img, int i_category, String i_name,
-			int i_price, String f_name) {
+	public CartDTO(int c_no, String u_id, String u_name, int i_no, int c_number, String i_img, int i_category,
+			String i_name, int i_price, String f_name) {
 		super();
 		this.c_no = c_no;
+		this.u_id = u_id;
 		this.u_name = u_name;
 		this.i_no = i_no;
 		this.c_number = c_number;
@@ -35,6 +37,14 @@ public class CartDTO {
 
 	public void setC_no(int c_no) {
 		this.c_no = c_no;
+	}
+
+	public String getU_id() {
+		return u_id;
+	}
+
+	public void setU_id(String u_id) {
+		this.u_id = u_id;
 	}
 
 	public String getU_name() {
@@ -100,6 +110,8 @@ public class CartDTO {
 	public void setF_name(String f_name) {
 		this.f_name = f_name;
 	}
+
+	
 	
 	
 	
