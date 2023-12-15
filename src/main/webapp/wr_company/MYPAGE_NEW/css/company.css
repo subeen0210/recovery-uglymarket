@@ -1,15 +1,15 @@
 @font-face {
-	font-family: 'MyCustomFont'; /* »ç¿ëÇÒ ÆùÆ® ÀÌ¸§ ¼³Á¤ */
-	src: url('../font/kan.otf') format('opentype'); /* ÆÄÀÏ °æ·Î ¼³Á¤ */
-	/* ´Ù¾çÇÑ Æ÷¸ËÀ» Áö¿øÇÏ·Á¸é ¿©·¯ ¼Ò½º¸¦ Ãß°¡ÇÒ ¼ö ÀÖ½À´Ï´Ù. */
+	font-family: 'MyCustomFont'; /* ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ® ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ */
+	src: url('../font/kan.otf') format('opentype'); /* ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
+	/* ï¿½Ù¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½. */
 }
 
 * {
-	font-family: 'MyCustomFont', sans-serif; /* ÆùÆ® Àû¿ë */
+	font-family: 'MyCustomFont', sans-serif; /* ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ */
 }
 
 .company_container {
-	width: 100vmax;
+	width: 100vw;
 	height: 100%;
 }
 
@@ -17,7 +17,7 @@
 	margin-top: 100px;
 	position: relative;
 	display: flex;
-	width: 100vmax;
+	width: 100vw;
 	height: 400px;
 	justify-content: center;
 }

@@ -23,7 +23,7 @@ align-content: center;
 </head>
 <body>
 
-<div class="insert"><img src="img/logo.png"><h1>管理ページへようこそ<h1></h1></div>
+<div class="insert"><img src="img/logo.png"><h1>管理ページへようこそ</h1></div>
 
 
 
