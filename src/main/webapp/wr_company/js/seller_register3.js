@@ -78,8 +78,8 @@ function showContent(contentId) {
         // 사용자가 '아니요'를 선택한 경우, 아무 동작도 하지 않음
         console.log('삭제 취소됨');
     }
-}
 	
+}
 	
  function itemAdd() {
         $.ajax({

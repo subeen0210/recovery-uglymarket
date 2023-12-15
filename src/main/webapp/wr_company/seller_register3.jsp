@@ -15,6 +15,24 @@
 <link rel="stylesheet" href="css/header.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+function itemAdd() {
+    $.ajax({
+        url: 'ItemAddC',
+        method: 'POST',
+        data: $('addForm').serialize(), // 폼 데이터를 직렬화하여 전송
+        success: function(response) {
+            // 성공 메시지 표시
+			alert("상품이 등록되었습니다.");
+            $("#registrationMessage").text(response);
+            window.location.href='MypageC'
+        },
+        error: function(error) {
+            console.error('에러:', error);
+        }
+    });
+}
+</script>
 </head>
 <body>
 

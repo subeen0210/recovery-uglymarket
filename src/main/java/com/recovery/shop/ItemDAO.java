@@ -209,7 +209,7 @@ public class ItemDAO {
 	        }
 
 	    } catch (Exception e) {
-	        System.out.println("등록 실패");
+	        System.out.println("등록 ~~");
 	        e.printStackTrace();
 	    } finally {
 	        DBManager.close(con, pstmt, null);
