@@ -82,7 +82,25 @@ function showContent(contentId) {
 	
 	
 function submitProductForm() {
-	alert('상품이 등록되었습니다!');
+    // 상품 등록 폼 제출 시 동작하는 함수
+
+    // AJAX 요청을 통해 서블릿으로 데이터를 전송
+    $.ajax({
+        url: 'ItemAddC',
+        method: 'POST',
+        data: $('#yourFormId').serialize(), // 폼 데이터 직렬화
+        dataType: 'html',
+        success: function(response) {
+            alert(response); // 서블릿에서 설정한 응답 메시지를 alert으로 표시
+            // 필요에 따라 추가적인 로직을 여기에 작성하세요
+
+            // 예: 상품이 등록되었으므로 상품 관리 탭을 활성화
+            showContent('product-management');
+        },
+        error: function(error) {
+            console.error('에러:', error);
+        }
+    });
 }
 
 
