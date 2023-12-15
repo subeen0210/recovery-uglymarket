@@ -33,11 +33,11 @@
           <div class="profile-img">${cart.i_img }</div>
         </div>
         <div class="menu-info">
-          <div class="info-title">상품 제목 넣어!</div>
+          <div class="info-title">${cart.i_name }</div>
           <br />
           <div class="info-delivery">무료배송</div>
           <br />
-          <div class="info-price">상품가격 넣어!</div>
+          <div class="info-price">${cart.i_price }</div>
         </div>
         <div class="menu-set">
           <div class="set-quanity">
@@ -62,10 +62,11 @@
           <div class="set-del">削除</div>
         </div>
       </div>
+      <br>
       </c:forEach>
       <br />
       <div class="pay">
-        <div class="pay-allmoney">총금액 넣어!</div>
+        <div class="pay-allmoney">${priceAll }</div>
         <div class="pay-click"><a class="pay-a" href="">決済する</a></div>
       </div>
     </div>
