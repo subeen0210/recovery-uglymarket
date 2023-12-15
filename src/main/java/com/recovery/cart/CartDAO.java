@@ -215,11 +215,11 @@ public class CartDAO {
 				
 				priceAdd += rs.getInt("i_price")*rs.getInt("c_number");
 			}
-			System.out.println("장바구니 조회 성공");
+			System.out.println("총가격 조회 성공");
 			
 			
 		} catch (Exception e) {
-			System.out.println("장바구니 조회 실패");
+			System.out.println("총가격 조회 실패");
 			e.printStackTrace();
 		} finally {
 			DBManager.close(con, pstmt, rs);

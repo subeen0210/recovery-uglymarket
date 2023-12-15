@@ -26,7 +26,7 @@
 		<c:set var="i" value="${loopStatus.index + 1}" />
 		<div class="menu ${cart.i_no }" id="itemList">
 			<div class="menu-num">
-				<input type="checkbox" class="item-checkbox" />&ensp;${i}
+				<input type="checkbox" class="item-checkbox" onchange="selectTotalPrice(this)"/>&ensp;${i}
 			</div>
 			<div class="menu-profile">
 				<div class="profile-img">${cart.i_img }</div>
@@ -57,7 +57,7 @@
 					</div>
 				</div>
 				<br />
-				<div class="set-allprice">小計&ensp;:&ensp;${cart.i_price * cart.c_number }</div>
+				<div class="set-allprice" data-subtotal="${cart.i_price * cart.c_number}">小計&ensp;:&ensp;${cart.i_price * cart.c_number }</div>
 				<br />
 				<div><button onclick="deleteCart(${cart.i_no})">削除</button></div>
 			</div>
@@ -67,7 +67,7 @@
 		</c:forEach>
 		<br />
 		<div class="pay">
-			<div class="pay-allmoney">商品合計 : <span>${priceAll }</span></div>
+			<div class="pay-allmoney">商品合計 : <span id="payAllMoneySpan"></span></div>
 			<div class="pay-click">
 				<a class="pay-a" href="">決済する</a>
 			</div>
