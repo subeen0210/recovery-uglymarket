@@ -15,7 +15,7 @@
 			<div class="title">カート</div><br>
 			<div>
 				<!-- 삭제 버튼 -->
-				<button class="btn-del">選択削除</button>
+				<button class="btn-del" onclick="deleteSelectCart()">選択削除</button>
 			</div>
 		</div>
 		<br />
@@ -24,7 +24,7 @@
 			type="checkbox" id="checkAll" />&ensp;全部選択する</label> <br />
 		<c:forEach var="cart" items="${carts }" varStatus="loopStatus">
 		<c:set var="i" value="${loopStatus.index + 1}" />
-		<div class="menu" id="itemList">
+		<div class="menu ${cart.i_no }" id="itemList">
 			<div class="menu-num">
 				<input type="checkbox" class="item-checkbox" />&ensp;${i}
 			</div>
@@ -59,11 +59,11 @@
 				<br />
 				<div class="set-allprice">小計&ensp;:&ensp;${cart.i_price * cart.c_number }</div>
 				<br />
-				<div><button>削除</button></div>
+				<div><button onclick="deleteCart(${cart.i_no})">削除</button></div>
 			</div>
 		</div>
-		<br>
-		<br>
+		<br class="${cart.i_no }">
+		<br class="${cart.i_no }">
 		</c:forEach>
 		<br />
 		<div class="pay">
