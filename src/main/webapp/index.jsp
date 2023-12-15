@@ -11,6 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script src="bxslider/jquery.bxslider.min.js"></script>
 <script src="wj/js/index.js"></script>
 <script src="js/cartCheck.js"></script>
 <title>アグリーマーケット</title>
@@ -74,6 +75,10 @@
 				<button class="f_button">問い合わせ</button>
 			</div>
 		</div>
+	</div>
+	<!-- 맨 하단에 화살표 위 아이콘 -->
+	<div class="scroll-to-top" onclick="scrollToTop()">
+		<img class="arrow-top" src="img/arrow-top.png" alt="Scroll to Top">
 	</div>
 </footer>
 </html>
