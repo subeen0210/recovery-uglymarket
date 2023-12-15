@@ -18,11 +18,13 @@
 <script type="text/javascript">
 	function itemAdd() {
 
-		var fileInputs = document.querySelectorAll('.img');
-		console.log(fileInputs);
+		var fileInput = document.querySelector('.img');
+		console.log(fileInput);
 		var formData = new FormData();
-		for (let i = 0; i < fileInputs.length; i++) {
-			var file = fileInputs[i].files[0];
+		
+		for (let i = 0; i < fileInput.files.length; i++) {
+			console.log(fileInput.files[i]);
+			var file = fileInput.files[i];
 			if (file) {
 				formData.append('img' + (i + 1), file);
 			}
@@ -55,7 +57,7 @@
 				}else{
 					alert('상품 등록 실패')
 				}
-				window.location.href='MypageC'
+				//window.location.href='MypageC'
 			},
 			error : function(error) {
 				console.error('에러:', error);
@@ -121,16 +123,7 @@
 				<div>
 					<div>사진 등록</div>
 					<div>
-						<input type="file" name="img" class="img">
-					</div>
-					<div>
-						<input type="file" name="img2" class="img">
-					</div>
-					<div>
-						<input type="file" name="img3" class="img">
-					</div>
-					<div>
-						<input type="file" name="img4" class="img">
+						<input type="file" name="img" class="img" multiple>
 					</div>
 				</div>
 				<button type="button" onclick="itemAdd()">등록</button>
