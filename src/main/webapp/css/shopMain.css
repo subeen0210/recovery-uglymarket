@@ -17,12 +17,17 @@ body {
 .shop-item-kwj {
 	display: flex;
 	justify-content: center;
-	width: 100vmax;
+	width: 100%;
 	height: auto;
 }
 
 .shop-item-kwj button {
 	border: none;
+}
+
+.menu_list {
+	display: flex;
+	justify-content: center;
 }
 
 .shop-menu {
@@ -117,11 +122,11 @@ body {
 	display: flex;
     flex-wrap: wrap;
     width: 80%;
-    margin-left: auto;
 }
 
 .shop-item{
 	width: 30%;
+	border: 1px solid red;
     margin-bottom: 20px;
 }
 
