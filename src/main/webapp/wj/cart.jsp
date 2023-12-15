@@ -21,7 +21,7 @@
 		<br />
 		<!-- 전체 선택 체크박스 -->
 		<label class="check-label" for="selectAll"><input
-			type="checkbox" id="selectAll" />&ensp;全部選択する</label> <br />
+			type="checkbox" id="checkAll" />&ensp;全部選択する</label> <br />
 		<c:forEach var="cart" items="${carts }" varStatus="loopStatus">
 		<c:set var="i" value="${loopStatus.index + 1}" />
 		<div class="menu" id="itemList">

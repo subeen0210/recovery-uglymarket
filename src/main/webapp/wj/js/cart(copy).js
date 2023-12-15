@@ -1,35 +1,45 @@
 // 전체 선택 체크박스 요소 가져오기
-var selectAllCheckbox = document.getElementById("selectAll");
-
-// 항목 목록 가져오기
-var itemList = document.getElementById("itemList");
+let checkAll = document.getElementById("checkAll");
 
 // 각 항목의 체크박스 요소 가져오기
-var itemCheckboxes = document.querySelectorAll(".item-checkbox");
+let checkboxes = document.querySelectorAll(".item-checkbox");
 
 // 전체 선택 체크박스의 변경 이벤트 처리
-selectAllCheckbox.addEventListener("change", function () {
-  var isChecked = selectAllCheckbox.checked;
+checkAll.addEventListener("click", function() {
+	const isChecked = checkAll.checked;
 
-  // 모든 항목의 체크박스 상태를 변경
-  itemCheckboxes.forEach(function (checkbox) {
-    checkbox.checked = isChecked;
+	if (isChecked) {
+	// 모두 체크
+		for (const checkbox of checkboxes) {
+			checkbox.checked = true;
+		}
+	}
 
-    // 선택된 항목에 스타일 적용 또는 제거
-    checkbox.parentNode.classList.toggle("selected-item", isChecked);
-  });
+	else {
+	// 모두 체크 안함
+		for (const checkbox of checkboxes) {
+			checkbox.checked = false;
+		}
+	}
+
+	
 });
-
-// 선택 삭제 버튼 클릭 이벤트 처리
-function deleteSelected() {
-  // 선택된 항목 찾기
-  var selectedItems = document.querySelectorAll(".item-checkbox:checked");
-
-  // 선택된 항목 삭제
-  selectedItems.forEach(function (selectedItem) {
-    selectedItem.parentNode.remove();
+//////////////////////////////////////////////////////
+for(const checkbox of checkboxes){
+  checkbox.addEventListener('click',function(){
+    
+    const totalCnt = checkboxes.length;
+  
+    const checkedCnt = document.querySelectorAll('.item-checkbox:checked').length;
+    
+	// 개별 선택의 변경에 따른 전체선택 체크박스의 체크유무
+    if(totalCnt == checkedCnt){
+      document.querySelector('#checkAll').checked = true;
+    }
+    else{
+      document.querySelector('#checkAll').checked = false;
+    }
+    
   });
-
-  // 전체 선택 체크박스 초기화
-  selectAllCheckbox.checked = false;
+  
 }
