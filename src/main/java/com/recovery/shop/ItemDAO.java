@@ -220,7 +220,7 @@ public class ItemDAO {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "delete item where i_no = ?";
+		String sql = "delete from item where i_no = ?";
 		
 		try {
 			con = DBManager.connect();

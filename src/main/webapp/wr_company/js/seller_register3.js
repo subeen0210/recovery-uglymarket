@@ -37,7 +37,7 @@ function showContent(contentId) {
 				$(tr).append("<td>" + formattedDate + "</td>");
 				$(tr).append("<td>" + data[i].i_price + "</td>");
 				$(tr).append("<td><button>modi</button></td>");
-				$(tr).append("<td><button onclick='itemDelete("+ data[i].i_no +")'>delete</button></td>");
+				$(tr).append("<td><button onclick='itemDelete(" + data[i].i_no + ")'>delete</button></td>");
 				$("#tbody").append(tr);
 
 			}
@@ -45,6 +45,13 @@ function showContent(contentId) {
 	}
 
 	
+
+	// Activate the corresponding tab
+	document.querySelector(`.tab[onclick="showContent('${contentId}')"]`).classList.add('active');
+	
+}
+
+
 	function itemDelete(no) {
 
     var confirmed = confirm('해당 상품을 정말 삭제하겠습니까?');
@@ -71,16 +78,10 @@ function showContent(contentId) {
         // 사용자가 '아니요'를 선택한 경우, 아무 동작도 하지 않음
         console.log('삭제 취소됨');
     }
-	}
-
-	// Activate the corresponding tab
-	document.querySelector(`.tab[onclick="showContent('${contentId}')"]`).classList.add('active');
-	
 }
-
+	
+	
 function submitProductForm() {
-	// 상품 등록 폼 제출 시 동작하는 함수
-	// 필요에 따라 추가적인 로직을 여기에 작성하세요
 	alert('상품이 등록되었습니다!');
 }
 

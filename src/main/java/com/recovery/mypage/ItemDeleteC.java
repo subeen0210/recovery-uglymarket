@@ -23,7 +23,7 @@ public class ItemDeleteC extends HttpServlet {
 
 		ItemDAO.deleteItem(request);
 		AccountDAO.loginCheck(request);
-		response.sendRedirect("MyPageC");
+		response.sendRedirect("MypageC");
 		
 	}
 
