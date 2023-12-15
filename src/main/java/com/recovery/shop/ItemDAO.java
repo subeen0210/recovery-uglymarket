@@ -295,7 +295,25 @@ public class ItemDAO {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "";
+		String sql = "update item set "
+					+ "i_name = ?, i_des = ?, i_category = ?, i_ed = TO_DATE(?, 'YYYY-MM-DD'), "
+					+ "i_img = ?, i_img2 = ?, i_img3 = ? , i_img4 = ?, i_price = ?, i_stock =? "
+					+ "where s_id = ? and i_no = ?";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			String path = request.getServletContext().getRealPath("itemFolder");
+			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "utf-8", new DefaultFileRenamePolicy());
+			
+			
+			 
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
 	}
 	
 
