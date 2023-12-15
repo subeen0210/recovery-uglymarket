@@ -67,7 +67,7 @@
 		</c:forEach>
 		<br />
 		<div class="pay">
-			<div class="pay-allmoney">商品合計 : ${priceAll }</div>
+			<div class="pay-allmoney">商品合計 : <span>${priceAll }</span></div>
 			<div class="pay-click">
 				<a class="pay-a" href="">決済する</a>
 			</div>

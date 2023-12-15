@@ -70,5 +70,24 @@ function deleteCart(i_no){
             }
         });
 	};
+	
+	updateTotalPrice();
 };
 
+function updateTotalPrice() {
+    // 서버에 현재 총 합을 요청
+    $.ajax({
+        type: "GET",
+        url: "deleteCartItem", // 서버에서 현재 총 합을 반환하는 엔드포인트
+        success: function(totalPrice) {
+            console.log(totalPrice);
+
+            // 화면의 총 합 엘리먼트를 업데이트
+            $(".pay-allmoney span").text(totalPrice);
+        },
+        error: function(error) {
+            console.error("Total price update request failed: ", error);
+        }
+    });
+
+}
