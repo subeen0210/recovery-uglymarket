@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.recovery.account.AccountDAO;
+import com.recovery.shop.ItemDAO;
 
 @WebServlet("/HC")
 public class HC extends HttpServlet {
