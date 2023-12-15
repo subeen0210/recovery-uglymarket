@@ -41,10 +41,13 @@
 }
 
 .item-img {
-  border: 1px solid black;
   width: 30%;
   height: 45%;
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
 }
+
 
 .item-content {
   width: 35%;
@@ -54,8 +57,19 @@
   flex-direction: column;
 }
 
-.item-category {
-  border: 1px solid palevioletred;
+.item-category1 {
+  background-color: #c3e820;
+  border-radius: 50px;
+  width: 15%;
+  height: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.item-category2 {
+  background-color: #70E820;
   border-radius: 50px;
   width: 15%;
   height: 7%;

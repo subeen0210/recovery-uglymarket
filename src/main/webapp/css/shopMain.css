@@ -5,6 +5,7 @@ body {
 	padding: 0;
 }
 
+
 .span active {
 	display: flex;
 	justify-content: center;
@@ -63,9 +64,8 @@ body {
 	background-repeat: no-repeat;
 }
 
-.menu1:focus{
-	background-color: #C3E820;
-}
+
+
 
 
 .category {
@@ -131,13 +131,10 @@ body {
 }
 
 .item-img{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 80%;
-	border-radius: 10px;
-	background-color: #c3e820;
-	background-repeat: no-repeat;
-	font-size: 12pt;
-	font-weight: bold;
+	 width: 330px; /* 원하는 div 크기 */
+     height: 330px;
+     background-image: url('item.Folder.jpg'); /* 이미지 경로 설정 */
+     background-size: cover; /* 이미지를 div에 맞춰서 채우기 */
+     background-position: center; /* 이미지를 가운데 정렬 */
+     background-repeat: no-repeat; /* 이미지 반복 없음 */
 }

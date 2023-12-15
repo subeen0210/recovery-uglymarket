@@ -12,10 +12,12 @@
 body {
 	margin: 0;
 	padding: 0;
+	max-width: 100vw;
 }
 
 #site {
-	width: 100vw;
+	width: 100%;
+	
 	height: 100vh;
 }
 
@@ -31,13 +33,26 @@ a:hover {
 	animation: fadeIn 0.5s ease-in-out;
 	color: #70e820;
 }
+/* 장바구니 a태그 없애고 이미지에 css 값 추가 (위에 a 태그랑 같은거) _이가현 수정 */
+.cart-icon {
+	text-decoration: none;
+	color: black;
+	transition: opacity 0.5s ease-in-out;
+	cursor: pointer;
+}
+.cart-icon:hover {
+	opacity: 0.5;
+	animation: fadeIn 0.5s ease-in-out;
+	color: #70e820;
+}
+
+/* 장바구니 끝 */
 
 .active {
 	opacity: 0.7;
 }
 
 .header {
-	width: 100vmax;
 	height: 100px;
 	display: flex;
 	justify-content: space-around;
@@ -86,8 +101,6 @@ a:hover {
 footer {
 	position: absolute;
 	background-color: #000000;
-	padding: 10px;
-	left: -10px;
 	color: white;
 	width: 100%;
 }
