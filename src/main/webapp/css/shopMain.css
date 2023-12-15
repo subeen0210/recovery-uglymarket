@@ -13,16 +13,27 @@ body {
 	width : 110px;
 	height: 50px;
 }
+
 /* 원준 - 쇼핑몰 메뉴 */
+.item-size {
+	width: 100%;
+}
+
 .shop-item-kwj {
 	display: flex;
 	justify-content: center;
-	width: 100vmax;
+	width: 100%;
 	height: auto;
 }
 
 .shop-item-kwj button {
 	border: none;
+}
+
+.menu_list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .shop-menu {
@@ -113,15 +124,16 @@ body {
     flex-direction: column;
 }
 
-#itemContainer{
+#itemContainer {
 	display: flex;
     flex-wrap: wrap;
-    width: 80%;
-    margin-left: auto;
+	justify-content: space-around;
+    width: 100%;
 }
 
 .shop-item{
-	width: 30%;
+	width: auto;
+	border: 1px solid red;
     margin-bottom: 20px;
 }
 
