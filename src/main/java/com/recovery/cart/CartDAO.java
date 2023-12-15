@@ -17,7 +17,7 @@ public class CartDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select c_no, i_img, i_category, i_name, i_price, c_number "
+		String sql = "select c_no, item.i_no, i_img, i_category, i_name, i_price, c_number "
 				+ "from cart, users, item "
 				+ "where users.u_id = cart.u_id "
 				+ "and item.i_no = cart.i_no "
@@ -36,12 +36,15 @@ public class CartDAO {
 			while (rs.next()) {
 				cart = new CartDTO();
 				cart.setC_no(rs.getInt("c_no"));
+				cart.setU_id(user.getU_id());
+				cart.setU_name(user.getU_kanji_ln()+" "+user.getU_kanji_fn());
+				cart.setI_no(rs.getInt("i_no"));
+				cart.setC_number(rs.getInt("c_number"));
 				cart.setI_img(rs.getString("i_img"));
 				cart.setI_category(rs.getInt("i_category"));
 				cart.setI_name(rs.getString("i_name"));
 				cart.setI_price(rs.getInt("i_price"));
-				cart.setC_number(rs.getInt("c_number"));
-				priceAdd += rs.getInt("i_price");
+				priceAdd += rs.getInt("i_price")*rs.getInt("c_number");
 				carts.add(cart);
 			}
 			System.out.println("장바구니 조회 성공");
@@ -56,6 +59,107 @@ public class CartDAO {
 			DBManager.close(con, pstmt, rs);
 		}
 		
+	}
+	
+	// 상품 detail 에서 장바구니 등록하는 기능
+	public static void regCart(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		User user = (User) request.getSession().getAttribute("userAccount");
+		String item = request.getParameter("no");
+		String count = request.getParameter("count");		
+		System.out.println(count);
+		System.out.println(item);
+		System.out.println(user.getU_id());
+		
+		String sql = "insert into cart values(cart_seq.nextval, ?, ?, ?)";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user.getU_id());
+			pstmt.setString(2, item);
+			pstmt.setString(3, count);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("장바구니 등록 성공");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("장바구니 등록 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+	
+	// 같은 상품 있는지 없는지 확인하는 기능
+	public static boolean hasCartItem(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		
+		User user = (User) request.getSession().getAttribute("userAccount");
+		String item = request.getParameter("no");
+		System.out.println(item);
+		System.out.println(user.getU_id());
+		boolean Check = false;
+		String sql = "select COUNT(*) from cart where u_id = ? and i_no = ?";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user.getU_id());
+			pstmt.setString(2, item);
+			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				int count = rs.getInt(1);
+				
+				if (count > 0) {
+			        System.out.println("행이 존재한다 = 값이 있다 = true");
+			        Check = true;
+			    } 
+				
+			} 
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("서버 오류");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+		return Check;
+	}
+	
+	
+	// 같은 상품 있으면 수량 추가하는 기능
+	public static void updateCart(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		User user = (User) request.getSession().getAttribute("userAccount");
+		String item = request.getParameter("no");
+		String count = request.getParameter("count");		
+		System.out.println(count);
+		System.out.println(item);
+		System.out.println(user.getU_id());
+		
+		String sql = "UPDATE cart SET c_number = c_number + ? WHERE u_id = ? AND i_no = ?";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, count);
+			pstmt.setString(2, user.getU_id());
+			pstmt.setString(3, item);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("장바구니 수량 추가 성공");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("수량 변경 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
 	}
 
 }
