@@ -38,7 +38,7 @@
 			</div>
 			<br /> <br />
 			<div class="item-click">
-				<div class="click1">カート</div>
+				<div class="click1" onclick="goToCart('${item.i_no }','${sessionScope.userAccount.u_id}')">カート</div>
 				<div class="click2">直払い</div>
 			</div>
 		</div>
