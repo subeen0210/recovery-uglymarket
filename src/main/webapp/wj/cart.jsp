@@ -22,25 +22,27 @@
 		<!-- 전체 선택 체크박스 -->
 		<label class="check-label" for="selectAll"><input
 			type="checkbox" id="selectAll" />&ensp;全部選択する</label> <br />
+		<c:forEach var="cart" items="${carts }" varStatus="loopStatus">
+		<c:set var="i" value="${loopStatus.index + 1}" />
 		<div class="menu" id="itemList">
 			<div class="menu-num">
-				<input type="checkbox" class="item-checkbox" />&ensp;넘버
+				<input type="checkbox" class="item-checkbox" />&ensp;${i}
 			</div>
 			<div class="menu-profile">
-				<div class="profile-img">이미지 넣어!</div>
+				<div class="profile-img">${cart.i_img }</div>
 			</div>
 			<div class="menu-info">
-				<div class="info-title">상품 제목 넣어!</div>
+				<div class="info-title">${cart.i_name }</div>
 				<br />
 				<div class="info-menus">
-					<div class="info-menu">못난이</div>
+					<div class="info-menu">${cart.i_category}</div>
 					&emsp;
-					<div>농장명 넣어!</div>
+					<div>${cart.f_name }</div>
 				</div>
 				<br />
 				<div class="info-delivery">送料無料</div>
 				<br />
-				<div class="info-price">상품가격 넣어!</div>
+				<div class="info-price">${cart.i_price }</div>
 			</div>
 			<div class="menu-set">
 				<div class="set-quanity">
@@ -55,14 +57,17 @@
 					</div>
 				</div>
 				<br />
-				<div class="set-allprice">小計</div>
+				<div class="set-allprice">小計${cart.i_price * cart.c_number }</div>
 				<br />
 				<div class="set-del">削除</div>
 			</div>
 		</div>
+		<br>
+		<br>
+		</c:forEach>
 		<br />
 		<div class="pay">
-			<div class="pay-allmoney">商品合計 :</div>
+			<div class="pay-allmoney">商品合計 : ${priceAll }</div>
 			<div class="pay-click">
 				<a class="pay-a" href="">決済する</a>
 			</div>
