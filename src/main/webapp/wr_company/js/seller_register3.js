@@ -88,6 +88,7 @@ function showContent(contentId) {
             data: $('addForm').serialize(), // 폼 데이터를 직렬화하여 전송
             success: function(response) {
                 // 성공 메시지 표시
+				alert("상품이 등록되었습니다.");
                 $("#registrationMessage").text(response);
             },
             error: function(error) {
