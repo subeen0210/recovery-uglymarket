@@ -27,7 +27,7 @@ a{
         }
     
 .mypage_container{
-	width: 100vmax;
+	width: 100vw;
 	height: 100%;
 	border: 2px solid skyblue;
 	background-color: white;
@@ -178,7 +178,7 @@ a{
 }
 .mypage_centents3_box{
 	
-	width: 100vmax;
+	width: 100vw;
 	
 	background-color: Beige ;
 	
