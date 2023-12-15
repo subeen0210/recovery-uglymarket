@@ -15,6 +15,8 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.recovery.account.Seller;
 import com.recovery.main.DBManager;
 
+import oracle.jdbc.proxy.annotation.Pre;
+
 public class ItemDAO {
 
 	private static ArrayList<ItemDTO> items;
@@ -289,7 +291,12 @@ public class ItemDAO {
 	}
 	
 	
-	
+	public static void updateItem(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "";
+	}
 	
 
 }

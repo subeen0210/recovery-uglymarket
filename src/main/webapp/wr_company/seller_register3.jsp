@@ -18,6 +18,8 @@
 </head>
 <body>
 
+<div id="registrationMessage"></div>
+
 <div class="tabs">
         <div class="tab" onclick="showContent('product-registration')">상품 등록</div>
         <div class="tab" onclick="showContent('product-management')">상품 관리</div>
@@ -26,7 +28,7 @@
     <div class="content" id="product-registration">
         <h2>상품 등록</h2>
 
-    <form action="ItemAddC" method="post" enctype="multipart/form-data">
+    <form id="addForm" action="ItemAddC" method="post" enctype="multipart/form-data">
 	<div>
 		<div>
 			<div>상품명</div>
@@ -63,7 +65,7 @@
 			<div><input type="file" name="img3" class="img"></div>
 			<div><input type="file" name="img4" class="img"></div>
 		</div>
-		   <button type="submit">등록</button>
+		   <button type="submit" onclick="itemAdd()">등록</button>
 	</div>
 	</form>
 
