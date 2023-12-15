@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/header.css">
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>アグリーマーケット販売用サイト</title>
 </head>
 <body>
 	<div class="myPage_container">
@@ -22,17 +22,17 @@
 		<h1>マイページ</h1>
 		<div class="main_menu_container">
 			<div class="main_menu_control">
-				<div class="main_menu">
-					<a onclick="showJSP('register')">商品管理</a>
+				<div class="main_menu" id="registerMenu">
+					<a onclick="showJSP('register') ">商品管理</a>
 				</div>
-				<div class="main_menu">
+				<div class="main_menu" id="deliveryMenu">
 					<a onclick="showJSP('delivery')">配送管理</a>
 				</div>
-				<div class="main_menu">
+				<div class="main_menu" id="stockMenu">
 					<a onclick="showJSP('stock')">在庫管理</a>
 				</div>
 
-				<div class="main_menu">
+				<div class="main_menu" id="mypageMenu">
 					<a onclick="showJSP('mypage')">農場情報管理</a>
 				</div>
 

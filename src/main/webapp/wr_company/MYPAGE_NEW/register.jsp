@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html>
 <script type="text/javascript" src="wr_company/js/seller_register3.js"></script>
-<link rel="stylesheet" href="css/seller_register3.css">
+<link rel="stylesheet" href="css/seller_register.css">
 <link rel="stylesheet" href="css/header.css">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<h2>商品登録</h2>
+
 <div class="content" id="product-registration">
         <h2>商品を登録してください</h2>
 

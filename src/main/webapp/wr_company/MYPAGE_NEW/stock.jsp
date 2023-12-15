@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/seller_register3.css">
+<link rel="stylesheet" href="css/seller_register.css">
 <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
-<h2>在庫管理</h2>
+
       
 <div class="content">
     <h2>在庫リスト</h2>

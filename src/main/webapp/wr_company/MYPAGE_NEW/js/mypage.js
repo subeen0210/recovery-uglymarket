@@ -12,6 +12,21 @@ $(document).ready(function() {
 	});
 });
 
+$(document).ready(function() {
+  $('.main_menu_control div').click(function(event) {
+    event.preventDefault();
+
+    // 기존에 선택된 메뉴에서 'selected' 클래스 제거
+    $('.main_menu_control div').removeClass('selected');
+
+    // 현재 눌린 메뉴에 'selected' 클래스 추가
+    $(this).addClass('selected');
+
+    var pageId = $(this).attr('data-page-id');
+    showJSP(pageId);
+  });
+});
+
 function showJSP(pageId) {
 	var jspContainer = $('.jsp_view');
 

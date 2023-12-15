@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="css/seller_register3.css">
+<link rel="stylesheet" href="css/seller_register.css">
 <link rel="stylesheet" href="css/header.css">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<h2>배송 관리</h2>
+
 	<div class="content">
 		
 

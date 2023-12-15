@@ -35,23 +35,27 @@ body {
 
 .content {
 	padding: 20px;
-	border: 1px solid #ddd;
+	border: 1px solid #E8D3D3;
 	border-radius: 40px;
 	margin: 100px;
+	padding: 50px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #product-registration {
-	display: block;
+	/*display: block;
 	/*  background-color: #C3E820;*/
-	/* border: 1px solid;*/
+	border: 1px solid #C3E820;
 	border-radius: 40px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #product-management {
-	display: block;
-	background-color: #C3E820;
-	/* border: 1px solid;*/
+	/*sdisplay: block;
+	/*background-color: #C3E820;*/
+	border: 1px solid #C3E820;
 	border-radius: 40px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* 폼 스타일링 */
