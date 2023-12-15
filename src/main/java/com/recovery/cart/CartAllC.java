@@ -17,7 +17,7 @@ public class CartAllC extends HttpServlet {
 		
 		// 어디로?
 		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "gh_cartInput/cartinput.jsp");
+		request.setAttribute("contentPage", "wj/cart.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

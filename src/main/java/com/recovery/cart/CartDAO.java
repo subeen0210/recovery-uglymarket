@@ -36,11 +36,13 @@ public class CartDAO {
 			while (rs.next()) {
 				cart = new CartDTO();
 				cart.setC_no(rs.getInt("c_no"));
+				cart.setU_name(rs.getString("u_kanji_ln")+" "+rs.getString("u_kanji_fn"));
+				cart.setI_no(rs.getInt("i_no"));
+				cart.setC_number(rs.getInt("c_number"));
 				cart.setI_img(rs.getString("i_img"));
 				cart.setI_category(rs.getInt("i_category"));
 				cart.setI_name(rs.getString("i_name"));
 				cart.setI_price(rs.getInt("i_price"));
-				cart.setC_number(rs.getInt("c_number"));
 				priceAdd += rs.getInt("i_price");
 				carts.add(cart);
 			}
