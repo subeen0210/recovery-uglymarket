@@ -26,7 +26,7 @@
 		<c:set var="i" value="${loopStatus.index + 1}" />
 		<div class="menu ${cart.i_no }" id="itemList">
 			<div class="menu-num">
-				<input type="checkbox" class="item-checkbox" onchange="selectTotalPrice(this)"/>&ensp;${i}
+				<input data-cartCode="${cart.c_no}" type="checkbox" class="item-checkbox" onchange="selectTotalPrice(this)"/>&ensp;${i}
 			</div>
 			<div class="menu-profile">
 				<div class="profile-img">${cart.i_img }</div>

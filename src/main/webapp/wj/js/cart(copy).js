@@ -74,7 +74,21 @@ $(checkAll).trigger("click");
 //////////////////////////////////////////////////////
 // 선택삭제
 function deleteSelectCart() {
-	alert('aa');
+	let ok = confirm('カートで商品を削除しますか');
+	
+	if(ok){
+		
+	let SelectedCheckboxes = document.querySelectorAll('.item-checkbox:checked');
+
+    SelectedCheckboxes.forEach(function (checkbox) {
+		let cartCode = checkbox.getAttribute('data-cartCode');
+	
+        let parentDiv = checkbox.closest('.menu');
+        parentDiv.parentNode.removeChild(parentDiv);
+
+		console.log(cartCode);
+    });
+	};
 };
 
 // 그냥 삭제버튼
