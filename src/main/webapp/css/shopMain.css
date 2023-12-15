@@ -127,12 +127,12 @@ body {
 #itemContainer {
 	display: flex;
     flex-wrap: wrap;
-	justify-content: center;
-    width: 80%;
+	justify-content: space-around;
+    width: 100%;
 }
 
 .shop-item{
-	width: 30%;
+	width: auto;
 	border: 1px solid red;
     margin-bottom: 20px;
 }
