@@ -1,133 +1,197 @@
 /* 원준 - 장바구니 */
-.body {
-	width: 100vw;
-	height: 100vh;
-}
-
-.cart-container {
-	width: 90%;
-	height: 100%;
+.main {
+	background-color: #ffffff;
+	width: 70%;
+	height: 600px;
+	margin: 5em auto;
+	border-radius: 1.5em;
+	box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+	padding: 3%;
 	display: flex;
 	flex-direction: column;
+}
+
+.main-title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.title {
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+.btn-del {
+	border: 2px solid white;
+	border-radius: 10px;
+	background-color: #92f551;
+	color: white;
+	font-weight: bold;
+	height: 40px;
+}
+
+.check-label {
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+}
+
+.menu {
+	border: 2px solid black;
+	border-radius: 20px;
+	width: 90%;
+	height: 160px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	padding: 5%;
 }
 
-.cart-title {
-	width: 6%;
+.menu-num {
+	border: 1px solid pink;
+	margin: 3%;
+	width: 8%;
+}
+
+.menu-profile {
+	width: 20%;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.menu-info {
+	width: 60%;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 3%
+}
+
+.menu-set {
+	width: 20%;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile-name {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile-img {
+	border: 1px solid skyblue;
+	border-radius: 10px; 
+	width : 100%;
+	height: 170px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.info-title {
+	border: 1px solid blueviolet;
+	width: 100%;
+	font-size: 15pt;
+	font-weight: bold;
+}
+
+.info-menus {
+	display: flex;
+}
+
+.info-menu {
+	border: 1px solid white;
+	border-radius: 50px;
+	background-color: #C3E820;
+	width: 13%;
+	text-align: center;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+.info-delivery {
+	border: 1px solid blueviolet;
+	width: 100%;
+	font-size: 10pt;
+	font-weight: bold;
+	opacity: 0.7;
+}
+
+.info-price {
+	border: 1px solid blueviolet;
+	width: 40%;
 	font-size: 20pt;
 	font-weight: bold;
 }
 
-.cart-menu {
-	border: 2px solid #D9D9D9;
-	height: 8%;
-	padding: 2%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.quanity-container {
+	border: 1px solid red;
+	width: auto;
+}
+
+.set-quanity {
+	border-radius: 50px;
+	height: auto;
+	font-size: 15pt;
 	font-weight: bold;
-}
-
-.cart-name {
-	margin-left: 33%;
-}
-
-.cart-menu a {
-	text-decoration: none;
-	color: black;
-}
-
-.cart-menu a:hover {
-	opacity: 0.5;
-}
-
-/* 장바구니 개수 감소증가 */
-.quantity-container {
-	display: flex;
-	align-items: center;
 }
 
 .quantity-input {
-	width: 40px;
-	text-align: center;
-	margin: 0 5px;
-}
-
-.quantity-button {
-	background-color: #4CAF50;
-	color: white;
-	border: none;
-	padding: 5px 10px;
-	cursor: pointer;
-}
-
-.cart-item {
-	border: 2px solid #D9D9D9;
-	height: 150px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 2%;
-}
-
-.item-img {
-	border: 1px solid red;
 	width: 20%;
-	height: 75%;
 }
 
-/* 못난이 보통 메뉴 넘버링 */
-/* 공통으로 적용되는 스타일 */
-.numbered-div {
-	border: 1px solid #000;
-	padding: 10px;
-	margin: 5px;
-}
-
-/* 짝수 번호의 div에 적용되는 스타일 */
-.numbered-div-even {
-	width: 4%;
-	border: 1px solid white;
-	border-radius: 50px;
-	background-color: #C3E820;
+.set-allprice {
+	border: 2px solid black;
+	border-radius: 10px;
+	padding: 2%;
 	font-weight: bold;
+	width: 60%;
 	text-align: center;
 }
 
-/* 홀수 번호의 div에 적용되는 스타일 */
-.numbered-div-odd {
-	width: 4%;
-	border: 1px solid white;
-	border-radius: 50px;
-	background-color: #70E820;
+.set-del {
+	background-color: #92f551;
+	color: white;
+	border-radius: 10px;
+	width: 32.5%;
+	height: 25px;
+	font-size: 10pt;
 	font-weight: bold;
-	text-align: center;
-}
-
-.cart-Pay {
-	width: 90%;
-	display: flex;
-	justify-content: right;
-	align-items: center;
-}
-
-.pay-set {
 	display: flex;
 	justify-content: center;
-	font-size: 15pt;
-	font-weight: bold;
-	background-color: #D9D9D9;
-	width: 10%;
-	height: 10%;
+	align-items: center;
 }
 
-.cart-result {
-	border-radius: 50px;
-	background-color: #D9D9D9;
-	height: 150px;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	font-size: 17pt;
+.pay {
+	width: 100%;
+	height: 200px;
+	font-size: 20pt;
 	font-weight: bold;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+}
+
+.pay-allmoney {
+	width: 20%;
+}
+
+.pay-click {
+	width: 20%;
+}
+
+.pay-a {
+	text-decoration: none;
+	color: black;
 }
