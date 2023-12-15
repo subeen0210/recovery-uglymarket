@@ -1,10 +1,3 @@
-body {
-  background-color: #92f551;
-  font-family: "Ubuntu", sans-serif;
-  width: 100;
-  height: 100%;
-}
-
 .main {
   background-color: #ffffff;
   width: 70%;
@@ -47,17 +40,24 @@ body {
   border: 2px solid black;
   border-radius: 20px;
   width: 90%;
-  height: 200px;
+  height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5%;
 }
 
+.menu-num {
+  border: 1px solid pink;
+  margin: 3%;
+  width: 8%;
+}
+
 .menu-profile {
   width: 20%;
   height: 300px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -81,7 +81,7 @@ body {
 
 .profile-name {
   width: 100%;
-  height: 70px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,7 +90,7 @@ body {
 .profile-img {
   border: 1px solid skyblue;
   width: 100%;
-  height: 200px;
+  height: 170px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,6 +100,20 @@ body {
   border: 1px solid blueviolet;
   width: 100%;
   font-size: 15pt;
+  font-weight: bold;
+}
+
+.info-menus {
+  display: flex;
+}
+
+.info-menu {
+  border: 1px solid white;
+  border-radius: 50px;
+  background-color: #C3E820;
+  width: 13%;
+  text-align: center;
+  font-size: 10pt;
   font-weight: bold;
 }
 
@@ -113,7 +127,7 @@ body {
 
 .info-price {
   border: 1px solid blueviolet;
-  width: 35%;
+  width: 40%;
   font-size: 20pt;
   font-weight: bold;
 }
@@ -127,7 +141,16 @@ body {
 }
 
 .set-quanity input {
-  width: 40%;
+  width: 30%;
+}
+
+.set-allprice {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 2%;
+  font-weight: bold;
+  width: 60%;
+  text-align: center;
 }
 
 .set-del {
