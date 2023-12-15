@@ -75,5 +75,8 @@
 			</div>
 		</div>
 	</div>
+	<div class="scroll-to-top" onclick="scrollToTop()">
+		<img src="arrow-up-icon.png" alt="Scroll to Top">
+	</div>
 </footer>
 </html>

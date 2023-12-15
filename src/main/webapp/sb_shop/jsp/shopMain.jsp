@@ -16,12 +16,10 @@
 		<div class="shop-menu">
 			<span data-filter="all" class="active">
 				<div class="menu1">ALL</div>
-			</span> 
-			<span data-filter="1">
+			</span> <span data-filter="1">
 				<div class="menu2">アグリー</div>
-			</span> 
-			<span data-filter="2">
-				<div class="menu2">ふつう</div> 
+			</span> <span data-filter="2">
+				<div class="menu2">ふつう</div>
 			</span>
 		</div>
 	</div>
@@ -32,8 +30,8 @@
 			<c:forEach var="item" items="${items}" varStatus="status">
 				<div class="shop-item" data-category="${item.i_category}">
 					<div class="item-size">
-						<img onclick="location.href='ShopDetailC?no=${item.i_no}'" 
-							class="item-img" alt="" src="itemFolder/${item.i_img }"> 
+						<img onclick="location.href='ShopDetailC?no=${item.i_no}'"
+							class="item-img" alt="" src="itemFolder/${item.i_img }">
 					</div>
 					<div>
 						<c:choose>
@@ -51,10 +49,10 @@
 							</c:when>
 						</c:choose>
 					</div>
-					<div>
+					<div class="text">
 						<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_name}</span>
 					</div>
-					<div>
+					<div class="text">
 						<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_price}</span>
 					</div>
 				</div>
@@ -63,10 +61,10 @@
 
 
 	</div>
-
+	<div class="page">
 		<div id="pagination">
 			<!-- 페이지 번호를 나타낼 곳 -->
 		</div>
-
+	</div>
 </body>
 </html>
