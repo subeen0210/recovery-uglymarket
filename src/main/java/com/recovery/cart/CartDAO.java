@@ -17,10 +17,11 @@ public class CartDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select c_no, item.i_no, i_img, i_category, i_name, i_price, c_number "
-				+ "from cart, users, item "
+		String sql = "select c_no, item.i_no, s_f_name, i_img, i_category, i_name, i_price, c_number "
+				+ "from cart, users, item, seller "
 				+ "where users.u_id = cart.u_id "
 				+ "and item.i_no = cart.i_no "
+				+ "and item.s_id = seller.s_id "
 				+ "and users.u_id = (select u_id from users where u_id = ?)";
 		try {
 			con = DBManager.connect();
@@ -44,6 +45,7 @@ public class CartDAO {
 				cart.setI_category(rs.getInt("i_category"));
 				cart.setI_name(rs.getString("i_name"));
 				cart.setI_price(rs.getInt("i_price"));
+				cart.setF_name(rs.getString("s_f_name"));
 				priceAdd += rs.getInt("i_price")*rs.getInt("c_number");
 				carts.add(cart);
 			}
