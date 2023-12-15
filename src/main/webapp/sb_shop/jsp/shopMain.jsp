@@ -31,7 +31,7 @@
 		<ul id="itemContainer">
 			<c:forEach var="item" items="${items}" varStatus="status">
 				<div class="shop-item" data-category="${item.i_category}">
-					<div>
+					<div class="item-size">
 						<img onclick="location.href='ShopDetailC?no=${item.i_no}'" 
 							class="item-img" alt="" src="itemFolder/${item.i_img }"> 
 					</div>
@@ -61,12 +61,12 @@
 			</c:forEach>
 		</ul>
 
-		<div id="pagination">
-			<!-- 페이지 번호를 나타낼 곳 -->
-		</div>
 
 	</div>
 
+		<div id="pagination">
+			<!-- 페이지 번호를 나타낼 곳 -->
+		</div>
 
 </body>
 </html>

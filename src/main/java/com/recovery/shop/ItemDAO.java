@@ -15,6 +15,8 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.recovery.account.Seller;
 import com.recovery.main.DBManager;
 
+import oracle.jdbc.proxy.annotation.Pre;
+
 public class ItemDAO {
 
 	private static ArrayList<ItemDTO> items;
@@ -162,31 +164,13 @@ public class ItemDAO {
 	        String name = mr.getParameter("name");
 	        String story = mr.getParameter("story");
 	        String type = mr.getParameter("type");
-	        String img = mr.getFilesystemName("img");
+	        String[] imgArray = new String[4];
 
-	        if (mr.getFilesystemName("img2") != null) {
-	            img2 = mr.getFilesystemName("img2");
-	            pstmt.setString(4, img2);
-	        } else if (mr.getFilesystemName("img2") == null) {
-	        	img2 = null;
-	        	pstmt.setString(4, img2);
-			}
-
-	        if (mr.getFilesystemName("img3") != null) {
-	            img3 = mr.getFilesystemName("img3");
-	            pstmt.setString(5, img3);
-	        } else if (mr.getFilesystemName("img3") == null) {
-	        	img3 = null;
-	        	pstmt.setString(5, img3);
-			}
-
-	        if (mr.getFilesystemName("img4") != null) {
-	            img4 = mr.getFilesystemName("img4");
-	            pstmt.setString(6, img4);
-	        } else if (mr.getFilesystemName("img4") == null) {
-	        	img4 = null;
-	        	pstmt.setString(6, img4);
-			}
+	        for (int i = 1; i <= 4; i++) {
+	            String fileName = mr.getFilesystemName("img" + i);
+	            imgArray[i - 1] = fileName != null ? fileName : null;
+	            pstmt.setString(2 + i, imgArray[i - 1]);
+	        }
 
 	        String date = mr.getParameter("enddate");
 	        String price = mr.getParameter("price");
@@ -195,7 +179,6 @@ public class ItemDAO {
 
 	        pstmt.setString(1, id.getS_id());
 	        pstmt.setString(2, name);
-	        pstmt.setString(3, img);
 	        pstmt.setString(7, story);
 	        pstmt.setString(8, type);
 	        pstmt.setString(9, date);
@@ -207,7 +190,7 @@ public class ItemDAO {
 	        }
 
 	    } catch (Exception e) {
-	        System.out.println("등록 실패");
+	        System.out.println("등록 ~~");
 	        e.printStackTrace();
 	    } finally {
 	        DBManager.close(con, pstmt, null);
@@ -288,6 +271,31 @@ public class ItemDAO {
 		
 	}
 	
+	
+	public static void updateItem(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "update item set "
+					+ "i_name = ?, i_des = ?, i_category = ?, i_ed = TO_DATE(?, 'YYYY-MM-DD'), "
+					+ "i_img = ?, i_img2 = ?, i_img3 = ? , i_img4 = ?, i_price = ?, i_stock =? "
+					+ "where s_id = ? and i_no = ?";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			String path = request.getServletContext().getRealPath("itemFolder");
+			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "utf-8", new DefaultFileRenamePolicy());
+			
+			
+			 
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
 	
 
 }
