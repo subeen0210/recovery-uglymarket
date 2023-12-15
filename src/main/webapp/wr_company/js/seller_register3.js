@@ -82,6 +82,11 @@ function showContent(contentId) {
 }
 	
  function itemAdd() {
+	 var fileInputs = document.querySelectorAll('.img');
+console.log(fileInputs);
+
+/*
+    var file = fileInput.files[0];
         $.ajax({
             url: 'ItemAddC',
             method: 'POST',
@@ -95,6 +100,7 @@ function showContent(contentId) {
                 console.error('에러:', error);
             }
         });
+*/
     }
 
 

@@ -164,7 +164,7 @@ public class ItemDAO {
 	        String name = mr.getParameter("name");
 	        String story = mr.getParameter("story");
 	        String type = mr.getParameter("type");
-	        String img = mr.getFilesystemName("img");
+	        String img = mr.getFilesystemName("img1");
 
 	        if (mr.getFilesystemName("img2") != null) {
 	            img2 = mr.getFilesystemName("img2");

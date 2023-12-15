@@ -44,12 +44,12 @@ public class ItemAddC extends HttpServlet {
 	            // 응답 메시지를 "상품이 등록되었습니다."로 설정
 	            response.setContentType("text/plain");
 	            response.setCharacterEncoding("UTF-8");
-//	            response.getWriter().write("상품이 등록되었습니다.");
+	            response.getWriter().write("1");
 	        } else {
 	            // 응답 메시지를 "상품 등록에 실패했습니다."로 설정
 	            response.setContentType("text/plain");
 	            response.setCharacterEncoding("UTF-8");
-//	            response.getWriter().write("상품 등록에 실패했습니다. 로그인 상태를 확인해주세요.");
+	            response.getWriter().write("0");
 	        }
 		
 	}
