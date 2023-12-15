@@ -16,28 +16,30 @@
 
 		<div class="seller_id_main">
 
-			<div class="seller_id">덕배네 농장</div>
+			<div class="seller_id">オタクの農場</div>
 		</div>
 
 		<h1>マイページ</h1>
 		<div class="main_menu_container">
 			<div class="main_menu_control">
 				<div class="main_menu">
-					<a onclick="showJSP('register')">상품관리</a>
+					<a onclick="showJSP('register')">商品管理</a>
 				</div>
 				<div class="main_menu">
-					<a onclick="showJSP('delivery')">배송관리</a>
+					<a onclick="showJSP('delivery')">配送管理</a>
 				</div>
 				<div class="main_menu">
-					<a onclick="showJSP('stock')">재고관리</a>
+					<a onclick="showJSP('stock')">在庫管理</a>
 				</div>
 
-				<div class="main_menu" onclick="loadInfoModification()">정보수정</div>
+				<div class="main_menu">
+					<a onclick="showJSP('mypage')">農場情報管理</a>
+				</div>
 
 			</div>
 		</div>
 		<div class="sub_control">
-			
+
 			<div class="subview">
 				<div class="jsp_view"></div>
 			</div>

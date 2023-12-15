@@ -15,12 +15,16 @@ justify-content: center;
 align-items: center;
 
 }
+.h1{
+align-content: center;
 
+}
 </style>
 </head>
 <body>
 
-<div class="insert"><img src="img/logo.png"></div>
+<div class="insert"><img src="img/logo.png"><h1>管理ページへようこそ<h1></h1></div>
+
 
 
 </body>

@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 	// 초기 페이지 로딩 시 실행할 코드
-	showJspPage('../insert.jsp');
+	showJSP('insert');
 
 	// 각 메뉴에 클릭 이벤트 리스너 추가
 	$('.main_menu a').click(function(event) {
@@ -16,7 +16,7 @@ function showJSP(pageId) {
 	var jspContainer = $('.jsp_view');
 
 	if (jspContainer.length > 0) {
-		// 여기서 각 페이지의 경로를 설정해주세요.
+
 		var pagePath = getPagePath(pageId);
 
 		$.ajax({
@@ -43,10 +43,12 @@ function getPagePath(pageId) {
 			return "register.jsp";
 		case "delivery":
 			return "delivery.jsp";
-			case "stock":
+		case "stock":
 			return "stock.jsp";
+		case "mypage":
+			return "farmpage.jsp";
 		default:
-		console.error('JSP 페이지 로딩 중 에러:', error);
+			console.error('JSP 페이지 로딩 중 에러:', error);
 			return "";
 	}
 }

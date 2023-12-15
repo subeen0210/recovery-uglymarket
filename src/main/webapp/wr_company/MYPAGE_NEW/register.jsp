@@ -10,48 +10,48 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>상품 등록</h2>
+<h2>商品登録</h2>
 <div class="content" id="product-registration">
-        <h2>상품을 등록하세요</h2>
+        <h2>商品を登録してください</h2>
 
     <form action="ItemAddC" method="post" enctype="multipart/form-data">
 	<div>
 		<div>
-			<div>상품명</div>
+			<div>商品名</div>
 			<div><input name="name" class="name"></div>
 		</div>
 		<div>
-			<div>상품 설명</div>
+			<div>商品の説明</div>
 			<div><textarea class="story" name="story"></textarea></div>
 		</div>
 		<div>
-			<div class="radio-container">상품 종류
+			<div class="radio-container">商品種類
 			
-				<label>못난이<input type="radio" value="1" name="type" class="select"></label>
-				<label>일반<input type="radio" value="2" name="type" class="select"></label>
+				<label>アグリー<input type="radio" value="1" name="type" class="select"></label>
+				<label>ふつう<input type="radio" value="2" name="type" class="select"></label>
 			
 			</div>
 		</div>
 		<div>
-			<div>유통기한</div>
+			<div>賞味期限</div>
 			<div><input name="enddate" type="date" class="date"></div>
 		</div>
 		<div>
-			<div>상품 재고</div>
+			<div>商品在郷</div>
 			<div><input name="stock" class="stock"></div>
 		</div>
 		<div>
-			<div>상품 가격</div>
+			<div>商品価格</div>
 			<div><input name="price"  class="price"></div>
 		</div>
 		<div>
-			<div>사진 등록</div>
+			<div>写真登録（一番目の写真が代表イメージになります。）</div>
 			<div><input type="file" name="img" class="img"></div>
 			<div><input type="file" name="img2" class="img"></div>
 			<div><input type="file" name="img3" class="img"></div>
 			<div><input type="file" name="img4" class="img"></div>
 		</div>
-		   <button type="submit">등록</button>
+		   <button type="submit">登録</button>
 	</div>
 	</form>
 
