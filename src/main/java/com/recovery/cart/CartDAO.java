@@ -168,24 +168,22 @@ public class CartDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
-		User user = (User) request.getSession().getAttribute("userAccount");
-		String item = request.getParameter("i_no");
-		System.out.println(item);
-		System.out.println(user.getU_id());
+		String cart = request.getParameter("c_no");
+		System.out.println(cart);
 		
-		String sql = "delete cart WHERE u_id = ? AND i_no = ?";
+		String sql = "delete cart WHERE c_no = ?";
 		try {
 			con = DBManager.connect();
+//			System.out.println("연결성공");
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, user.getU_id());
-			pstmt.setString(2, item);
+			pstmt.setString(1, cart);
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("장바구니 삭제버튼 성공");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("삭제 실패");
+			System.out.println("삭제 실패: " + e.getMessage());
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
