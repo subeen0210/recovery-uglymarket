@@ -27,15 +27,19 @@ public class ItemDAO {
 		request.setAttribute("curPageNo", page);
 	    int cnt = 9;    // �� �������� ������ ����
 	    int total = items.size(); // �� ������ ����
+	   
 
 	    // �� ��������
 	    int pageCount = (int) Math.ceil((double) total / cnt);
 	    request.setAttribute("pageCount", pageCount);
 
+	    // 첫페이지에서 마지막페이지 구분
 	    int start = total - (cnt * (page - 1)) - 1;
 	    int end = (page == pageCount) ? -1 : start - cnt;
 
 	    ArrayList<ItemDTO> pagedItems = new ArrayList<ItemDTO>();
+	    // 한페이지에 가로 3칸으로 변경해서 출력하는 방법
+	    
 	    for (int i = start; i > end && i >= 0; i--) {
 	        pagedItems.add(items.get(i));
 	    }
