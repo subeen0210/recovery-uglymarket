@@ -30,7 +30,7 @@ body {
 	border: none;
 }
 
-.menu_list {
+#menu_list {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -131,7 +131,7 @@ body {
     width: 100%;
 }
 
-.shop-item{
+#shop-item{
 	width: auto;
 	border: 1px solid red;
     margin-bottom: 20px;
