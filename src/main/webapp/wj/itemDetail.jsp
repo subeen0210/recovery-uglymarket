@@ -32,13 +32,13 @@
 			<br /> --%>
 			<div class="item-select">
 				<span style="font-weight: bold; font-size: 12pt">数量</span> &emsp;&emsp;
-					<button id="increment" class="quantity-button" onclick="decrementQuantity()">+</button>
+					<button id="decrement" class="quantity-button" onclick="incrementQuantity()">+</button>
 					<input type="text" class="quantity-input" id="quantityInput" value="1" readonly>
-					<button id="decrement" class="quantity-button" onclick="incrementQuantity()">-</button>
+					<button id="increment" class="quantity-button" onclick="decrementQuantity()">-</button>
 			</div>
-			<br /> <br />
+			<br />
 			<div class="item-click">
-				<div class="click1" onclick="goToCart('${item.i_no }','${sessionScope.userAccount.u_id}')">カート</div>
+				<div class="click1" onclick="goToCart('${item.i_no }','${sessionScope.userAccount.u_id}')">カート</div>&emsp;
 				<div class="click2">直払い</div>
 			</div>
 		</div>
@@ -49,7 +49,7 @@
 		<br /> <br />
 		<div class="explain-input">${item.i_des }</div>
 	</div>
-
+	<br><br>
 	<div class="item-review">
 		<div class="review-title">
 			<div class="review-text">レビュー</div>

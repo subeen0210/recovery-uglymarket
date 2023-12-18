@@ -1,276 +1,283 @@
 /* 원준 - 상세container */
 .body {
-  width: 100vw;
-  height: 100vh;
-  font-family: Arial, sans-serif;
+	width: 100vw;
+	height: 100vh;
+	font-family: Arial, sans-serif;
 }
 
 #quantity {
-  text-align: center;
-  width: 20%;
-  height: 50%;
-  border: 2px solid #70e820;
-  border-radius: 50px;
-  font-weight: bold;
+	text-align: center;
+	width: 20%;
+	height: 50%;
+	border: 2px solid #70e820;
+	border-radius: 50px;
+	font-weight: bold;
 }
 
 #increment {
-  background-color: white;
-  border: 2px solid #70e820;
-  border-radius: 10px;
-  width: 10%;
-  height: 55%;
-  font-size: 15pt;
+	background-color: white;
+	border: 2px solid #70e820;
+	border-radius: 10px;
+	width: 14%;
+	height: 55%;
+	font-size: 15pt;
 }
 
 #decrement {
-  background-color: white;
-  border: 2px solid #70e820;
-  border-radius: 10px;
-  width: 10%;
-  height: 55%;
-  font-size: 18pt;
+	background-color: white;
+	border: 2px solid #70e820;
+	border-radius: 10px;
+	width: 14%;
+	height: 55%;
+	font-size: 15pt;
 }
 
 .item-detail-kwj {
-  width: 100%;
-  height: 800px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+	width: 100%;
+	height: 800px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -20px;
 }
 
 .item-img {
-  width: 30%;
-  height: 45%;
-  background-size: cover; 
-  background-position: center;
-  background-repeat: no-repeat; 
+	border: 1px solid black;
+	width: 25%;
+    height: 37.5%;
+	margin-top: -137.5px;
 }
 
-
 .item-content {
-  width: 35%;
-  height: 65%;
-  padding: 3%;
-  display: flex;
-  flex-direction: column;
+	width: 35%;
+	height: 65%;
+	padding: 3%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 75px;
 }
 
 .item-category1 {
-  background-color: #c3e820;
-  border-radius: 50px;
-  width: 15%;
-  height: 7%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
+	background-color: #c3e820;
+	border-radius: 50px;
+	width: 11%;
+	height: 4%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-size: 7.5pt;
 }
 
 .item-category2 {
-  background-color: #70E820;
-  border-radius: 50px;
-  width: 15%;
-  height: 7%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
+	background-color: #70E820;
+	border-radius: 50px;
+	width: 15%;
+	height: 6%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
 }
 
 .item-title {
-  border: 1px solid skyblue;
-  height: 20%;
-  font-size: 15pt;
-  font-weight: bold;
+	border: 1px solid skyblue;
+	height: 10%;
+	font-size: 28pt;
+	font-weight: bold;
+}
+
+.item-price {
+	font-size: 15pt;
+	font-weight: bold;
 }
 
 .item-delivery {
-  width: 18%;
-  height: 5%;
-  font-size: 12pt;
-  font-weight: bold;
-  opacity: 0.5;
+	width: 18%;
+	height: 5%;
+	font-size: 12pt;
+	font-weight: bold;
+	opacity: 0.5;
 }
 
 .item-select {
-  border: 2px solid #70e820;
-  border-radius: 50px;
-  width: 54%;
-  height: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	border: 2px solid #70e820;
+	border-radius: 50px;
+	width: 40%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .item-click {
-  height: 20%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+	height: 20%;
+	display: flex;
+	justify-content: start;
+	align-items: center;
 }
 
 .click1 {
-  border: 3px solid #70e820;
-  border-radius: 50px;
-  width: 25%;
-  height: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 20pt;
+	border: 3px solid #70e820;
+	border-radius: 50px;
+	width: 25%;
+	height: 40%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-size: 20pt;
 }
 
 .click2 {
-  border: 3px solid #70e820;
-  background-color: #70e820;
-  color: white;
-  border-radius: 50px;
-  width: 25%;
-  height: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 20pt;
+	border: 3px solid #70e820;
+	background-color: #70e820;
+	color: white;
+	border-radius: 50px;
+	width: 25%;
+	height: 40%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-size: 20pt;
 }
 
 .item-explain {
-  width: 100%;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	width: 100%;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: -175px;
 }
 
 .explain-title {
-  width: 9%;
-  height: 10%;
-  font-size: 25pt;
-  font-weight: bold;
+	width: 9%;
+	height: 10%;
+	font-size: 25pt;
+	font-weight: bold;
 }
 
 .explain-input {
-  border: 1px solid black;
-  width: 80%;
-  height: 50%;
-  font-size: 15pt;
-  font-weight: bold;
+	border: 1px solid black;
+	width: 70%;
+	height: 50%;
+	font-size: 15pt;
+	font-weight: bold;
+	padding: 6%;
 }
 
 .item-review {
-  width: 100%;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	width: 100%;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .review-title {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
+	display: flex;
+	justify-content: space-around;
+	width: 80%;
 }
 
 .review-text {
-  width: 20%;
-  height: auto;
-  font-size: 25pt;
-  font-weight: bold;
+	width: 20%;
+	height: auto;
+	font-size: 25pt;
+	font-weight: bold;
 }
 
 #star-rating {
-  font-size: 36px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+	font-size: 36px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .star {
-  display: inline-block;
-  cursor: pointer;
-  color: #ccc; /* 별의 기본 색상 (회색) */
+	display: inline-block;
+	cursor: pointer;
+	color: #ccc; /* 별의 기본 색상 (회색) */
 }
 
-.star:hover,
-.star:hover ~ .star {
-  color: #ffd700; /* 호버 시 별의 색상 (노란색) */
+.star:hover, .star:hover ~ .star {
+	color: #ffd700; /* 호버 시 별의 색상 (노란색) */
 }
 
 #selected-rating {
-  font-size: 18px;
-  margin-top: 20px;
+	font-size: 18px;
+	margin-top: 20px;
 }
 
 .review-input {
-  border: 2px solid black;
-  border-radius: 50px;
-  padding: 2%;
-  width: 80%;
-  height: 50%;
-  font-size: 15pt;
-  font-weight: bold;
-  display: flex;
+	border: 2px solid black;
+	border-radius: 50px;
+	padding: 6%;
+	width: 70%;
+	height: 50%;
+	font-size: 15pt;
+	font-weight: bold;
+	display: flex;
 }
 
 .input-text {
-  border: 1px dotted black;
-  width: 70%;
-  height: 100%;
+	border: 1px dotted black;
+	width: 70%;
+	height: 100%;
 }
 
 .input-menu {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
 }
 
 .review-button {
-  background-color: #d9d9d9;
-  border: none;
+	background-color: #d9d9d9;
+	border: none;
 }
 
 .review-button:hover {
-  background-color: #d9d9d9;
-  opacity: 0.8;
+	background-color: #d9d9d9;
+	opacity: 0.8;
 }
 
 .review-view {
-  width: 90%;
-  display: flex;
-  justify-content: right;
+	width: 90%;
+	display: flex;
+	justify-content: right;
 }
 
 .view-more {
-  text-decoration: none;
-  color: #70e820;
-  font-size: 15pt;
-  font-weight: bold;
+	text-decoration: none;
+	color: #70e820;
+	font-size: 15pt;
+	font-weight: bold;
 }
 
 .view-more:hover {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 
 .quantity-container {
-            display: flex;
-            align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .quantity-input {
-            width: 40px;
-            text-align: center;
-            margin: 0 10px;
+	width: 40px;
+	text-align: center;
+	margin: 0 10px;
 }
 
 .quantity-button {
-            cursor: pointer;
-            font-size: 20px;
+	cursor: pointer;
+	font-size: 20px;
 }

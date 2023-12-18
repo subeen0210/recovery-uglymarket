@@ -57,8 +57,8 @@
             </c:if>
 				<div class="shop-item" data-category="${item.i_category}">  <!-- division3 -->
 					<div class="item-size">
-						<img onclick="location.href='ShopDetailC?no=${item.i_no}'" 
-							class="item-img" alt="" src="itemFolder/${item.i_img }"> 
+						<img onclick="location.href='ShopDetailC?no=${item.i_no}'"
+							class="item-img" alt="" src="itemFolder/${item.i_img }">
 					</div>
 					<div>  <!-- division4 -->
 						<c:choose>
@@ -76,10 +76,10 @@
 							</c:when>
 						</c:choose>
 					</div>
-					<div>
+					<div class="text">
 						<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_name}</span>
 					</div>
-					<div>
+					<div class="text">
 						<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_price}</span>
 					</div>
 			</div>
