@@ -1,26 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+<<<<<<< HEAD
+pageEncoding="UTF-8"%>
+=======
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+>>>>>>> 2b1573f1c9bab3462923d98b1336ec316b7d7865
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="wj/css/home.css" />
-</head>
-<body>
-	<!-- bx 슬라이더 -->
-	<ul class="bxslider">
-		<li><img src="img/semi-main-slider.png" alt="Image 1" /><span
-			class="text-overlay">農業を回復する<br />アグリーマーケット
-		</span></li>
-		<li><img src="img/semi-main-slider.png" alt="Image 1" /><span
-			class="text-overlay">農業を回復する<br />アグリーマーケット
-		</span></li>
-		<li><img src="img/semi-main-slider.png" alt="Image 1" /><span
-			class="text-overlay">農業を回復する<br />アグリーマーケット
-		</span></li>
-	</ul>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="wj/css/home.css" />
+  </head>
+  <body>
+    <!-- bx 슬라이더 -->
+    <ul class="bxslider">
+      <li>
+        <img src="img/semi-main-slider.png" alt="Image 1" /><span
+          class="text-overlay"
+          >農業を回復する<br />アグリーマーケット
+        </span>
+      </li>
+      <li>
+        <img src="img/semi-main-slider.png" alt="Image 1" /><span
+          class="text-overlay"
+          >農業を回復する<br />アグリーマーケット
+        </span>
+      </li>
+      <li>
+        <img src="img/semi-main-slider.png" alt="Image 1" /><span
+          class="text-overlay"
+          >農業を回復する<br />アグリーマーケット
+        </span>
+      </li>
+    </ul>
 
 	<div class="main-item">
 		<div class="item-text-discount">

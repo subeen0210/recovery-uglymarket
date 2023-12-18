@@ -7,6 +7,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Document</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <link rel="stylesheet" href="wj/css/cart.css" />
 </head>
 <body>
@@ -15,18 +16,18 @@
 			<div class="title">カート</div><br>
 			<div>
 				<!-- 삭제 버튼 -->
-				<button class="btn-del">選択削除</button>
+				<button class="btn-del" onclick="deleteSelectCart()">選択削除</button>
 			</div>
 		</div>
 		<br />
 		<!-- 전체 선택 체크박스 -->
-		<label class="check-label" for="selectAll"><input
-			type="checkbox" id="selectAll" />&ensp;全部選択する</label> <br />
+		<label class="check-label" for="checkAll"><input
+			type="checkbox" id="checkAll" />&ensp;全部選択する</label> <br />
 		<c:forEach var="cart" items="${carts }" varStatus="loopStatus">
 		<c:set var="i" value="${loopStatus.index + 1}" />
-		<div class="menu" id="itemList">
+		<div class="menu ${cart.c_no }" id="itemList">
 			<div class="menu-num">
-				<input type="checkbox" class="item-checkbox" />&ensp;${i}
+				<input data-cartCode="${cart.c_no}" type="checkbox" class="item-checkbox" onchange="selectTotalPrice(this)"/>&ensp;${i}
 			</div>
 			<div class="menu-profile">
 				<div class="profile-img">${cart.i_img }</div>
@@ -48,26 +49,31 @@
 				<div class="set-quanity">
 					<div class="quantity-container">
 						&ensp;
-						<button class="quantity-button" onclick="increaseQuantity()">
+						<button class="quantity-button" onclick="adjustQuantity(this,${cart.c_no},1)">
 							&ensp;+</button>
-						<input type="text" class="quantity-input" id="quantityInput"
-							value="${cart.c_number }" readonly />
-						<button class="quantity-button" onclick="decreaseQuantity()">
+						<input type="text" class="quantity-input" id="quantityInput_${cart.c_no}"
+							value="${cart.c_number }" data-cartCode="${cart.c_no}"/>
+						<button class="quantity-button" onclick="adjustQuantity(this,${cart.c_no},-1)">
 							-</button>
+						<button class="change_quantity" onclick="changeQuantity(${cart.c_no})">変更</button>
 					</div>
 				</div>
 				<br />
-				<div class="set-allprice">小計&ensp;:&ensp;${cart.i_price * cart.c_number }</div>
+				<div class="set-allprice" id="set-allprice2_${cart.c_no }"
+						 data-subtotal="${cart.i_price * cart.c_number}">
+						 小計&ensp;:&ensp;
+					 <span class="per-total-price" id="set-allprice_${cart.c_no }" >${cart.i_price * cart.c_number }</span></div>
 				<br />
-				<div><button>削除</button></div>
+				<div><button onclick="deleteCart(${cart.c_no })">削除</button></div>
 			</div>
 		</div>
-		<br>
-		<br>
+		<br class="${cart.c_no }">
+		<br class="${cart.c_no }">
+		<input type="hidden" class="cartNumber" value="${cart.c_no }">
 		</c:forEach>
 		<br />
 		<div class="pay">
-			<div class="pay-allmoney">商品合計 : ${priceAll }</div>
+			<div class="pay-allmoney">商品合計 : <span id="payAllMoneySpan"></span></div>
 			<div class="pay-click">
 				<a class="pay-a" href="">決済する</a>
 			</div>
@@ -75,4 +81,5 @@
 	</div>
 </body>
 <script src="wj/js/cart(copy).js"></script>
+<script src="wj/js/cart.js"></script>
 </html>
