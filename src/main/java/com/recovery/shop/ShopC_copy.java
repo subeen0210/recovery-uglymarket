@@ -18,7 +18,7 @@ public class ShopC_copy extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		ItemDAO.getAllItems(request);
+//		ItemDAO.getAllItems(request);
 //		ItemDAO.shopPagin(1, request);
 		AccountDAO.loginCheck(request);
 		request.setAttribute("contentPage", "wj/shop_copy.jsp");
