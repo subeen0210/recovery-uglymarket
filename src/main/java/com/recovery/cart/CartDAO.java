@@ -22,7 +22,7 @@ public class CartDAO {
 				+ "where users.u_id = cart.u_id "
 				+ "and item.i_no = cart.i_no "
 				+ "and item.s_id = seller.s_id "
-				+ "and users.u_id = (select u_id from users where u_id = ?)";
+				+ "and users.u_id = (select u_id from users where u_id = ?) order by c_no desc";
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
@@ -189,41 +189,6 @@ public class CartDAO {
 		}
 	}
 	
-	// 장바구니 삭제 후 total 값을 내기 위한 메서드
-	public static int totalCart(HttpServletRequest request) {
-		User user = (User) request.getSession().getAttribute("userAccount");
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = "select i_price, c_number "
-				+ "from cart, users, item "
-				+ "where users.u_id = cart.u_id "
-				+ "and item.i_no = cart.i_no "
-				+ "and users.u_id = (select u_id from users where u_id = ?)";
-		int priceAdd = 0;
-		try {
-			con = DBManager.connect();
-			pstmt = con.prepareStatement(sql);
-			System.out.println(user.getU_id());
-			pstmt.setString(1, user.getU_id());
-			
-			rs = pstmt.executeQuery();
-			
-			while (rs.next()) {
-				
-				priceAdd += rs.getInt("i_price")*rs.getInt("c_number");
-			}
-			System.out.println("총가격 조회 성공");
-			
-			
-		} catch (Exception e) {
-			System.out.println("총가격 조회 실패");
-			e.printStackTrace();
-		} finally {
-			DBManager.close(con, pstmt, rs);
-		}
-		return priceAdd;
-	}
 
 
 	// 카트 수량 변경
@@ -254,39 +219,6 @@ public class CartDAO {
 		}
 	}
 	
-	// 카드 수량 변경됐을 때 각 아이템 총 가격
-	public static int selectedCartPirce(HttpServletRequest request) {
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = "select i_price, c_number "
-				+ "from cart, item "
-				+ "where item.i_no = cart.i_no "
-				+ "and c_no = ?";
-		int priceAdd = 0;
-		try {
-			con = DBManager.connect();
-			pstmt = con.prepareStatement(sql);
-			
-			String no = request.getParameter("no");
-			pstmt.setString(1, no);
-			
-			rs = pstmt.executeQuery();
-			
-			if (rs.next()) {
-				
-				priceAdd += rs.getInt("i_price")*rs.getInt("c_number");
-			}
-			System.out.println("개별 가격 조회 성공");
-			
-			
-		} catch (Exception e) {
-			System.out.println("개별 가격 조회 실패");
-			e.printStackTrace();
-		} finally {
-			DBManager.close(con, pstmt, rs);
-		}
-		return priceAdd;
-	}
+	
 	
 }

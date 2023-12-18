@@ -49,16 +49,20 @@
 				<div class="set-quanity">
 					<div class="quantity-container">
 						&ensp;
-						<button class="quantity-button" onclick="adjustQuantity(${cart.c_no},1)">
+						<button class="quantity-button" onclick="adjustQuantity(this,${cart.c_no},1)">
 							&ensp;+</button>
 						<input type="text" class="quantity-input" id="quantityInput_${cart.c_no}"
 							value="${cart.c_number }" data-cartCode="${cart.c_no}"/>
-						<button class="quantity-button" onclick="adjustQuantity(${cart.c_no},-1)">
+						<button class="quantity-button" onclick="adjustQuantity(this,${cart.c_no},-1)">
 							-</button>
+						<button class="change_quantity" onclick="changeQuantity(${cart.c_no})">変更</button>
 					</div>
 				</div>
 				<br />
-				<div class="set-allprice" id="set-allprice2_${cart.c_no }" data-subtotal="${cart.i_price * cart.c_number}">小計&ensp;:&ensp;<span id="set-allprice_${cart.c_no }" >${cart.i_price * cart.c_number }</span></div>
+				<div class="set-allprice" id="set-allprice2_${cart.c_no }"
+						 data-subtotal="${cart.i_price * cart.c_number}">
+						 小計&ensp;:&ensp;
+					 <span class="per-total-price" id="set-allprice_${cart.c_no }" >${cart.i_price * cart.c_number }</span></div>
 				<br />
 				<div><button onclick="deleteCart(${cart.c_no })">削除</button></div>
 			</div>

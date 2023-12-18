@@ -10,10 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/deleteCartItem")
 public class deleteCartItem extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//	System.out.println(CartDAO.totalCart(request));
 		
-	response.getWriter().write(String.format("%d", CartDAO.totalCart(request)));
-	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
