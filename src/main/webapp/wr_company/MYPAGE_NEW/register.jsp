@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="wr_company/js/seller_register3.js"></script>
+
 <link rel="stylesheet" href="css/seller_register.css">
 <link rel="stylesheet" href="css/header.css">
 <head>
@@ -47,9 +47,9 @@
 		<div>
 			<div>写真登録（一番目の写真が代表イメージになります。）</div>
 			<div><input type="file" name="img" class="img"></div>
-			<div><input type="file" name="img2" class="img"></div>
+			<!--  <div><input type="file" name="img2" class="img"></div>
 			<div><input type="file" name="img3" class="img"></div>
-			<div><input type="file" name="img4" class="img"></div>
+			<div><input type="file" name="img4" class="img"></div>-->
 		</div>
 		   <button type="submit">登録</button>
 	</div>

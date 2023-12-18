@@ -49,7 +49,7 @@ function showJSP(pageId) {
 
 
 function getPagePath(pageId) {
-	// 각 페이지의 경로를 설정해주세요.
+	
 	switch (pageId) {
 
 		case "insert":

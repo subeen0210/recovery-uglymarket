@@ -4,6 +4,10 @@
 <html>
 <link rel="stylesheet" href="css/myPage.css">
 <link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="MYPAGE_NEW/css/myPas.css">
+<link rel="stylesheet" href="css/kanri.css">
+<link rel="stylesheet" href="css/reviewList.css">
+
 
 <head>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -15,7 +19,7 @@
 <body>
 	<div class="mypage_container"> <!-- 메인 페이지 -->
 		<div class="mypage_title">
-			<p>マイページ</p>
+			<img src="img/semi-logo-title.png"><p>マイページへようこそ</p>
 		</div>
 
 		<div class="mypage_contents1_box">
@@ -44,30 +48,31 @@
 			</div>
 			<div class="">
 				<div class="mypage_contents1_menu"> <!--오른쪽 메뉴 버튼 -->
-					<div class="mypage_contents1_menu_boxs">
-						<a id="kanri">配送住所管理</a>
+					<div class="mypage_contents1_menu_boxs" id="kanri">
+						<p>配送住所管理</p>
 					</div>
-					<div class="mypage_contents1_menu_boxs">
-						<a id="review">後期</a>
+					<div class="mypage_contents1_menu_boxs" id="review">
+						<p>後期</p>
 					</div>
 
-					<div class="mypage_contents1_menu_boxs">
-						<a id="order">注文内訳</a>
+					<div class="mypage_contents1_menu_boxs" id="order">
+						<p>注文内訳</p>
 					</div>
 
 				</div>
 				<div class="mypage_contents1_menu">
-					<div class="mypage_contents1_menu_boxs">
-						<a id="cart">マイカートー</a>
+					<div class="mypage_contents1_menu_boxs" id="cart">
+						<p>マイカートー</p>
 					</div>
-					<div class="mypage_contents1_menu_boxs">
-						<a id="seller-register">商品管理</a>
+					<div class="mypage_contents1_menu_boxs" id="my_infomation">
+						<p>申請情報</p>
 					</div>
 					
 					<div style='visibility: hidden;' class="mypage_contents1_menu_boxs">
 						<a href="#">hidden</a> <!--숨겨진 박스  -->
 					</div>
 				</div>
+				
 			</div>
 			
 		</div>

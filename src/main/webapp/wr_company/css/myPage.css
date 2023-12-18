@@ -1,191 +1,183 @@
 @font-face {
-    font-family: 'MyCustomFont'; /* 사용할 폰트 이름 설정 */
-    src: url('../font/kan.otf') format('opentype'); /* 파일 경로 설정 */
-    /* 일본어 폰트 적용 */
+	font-family: 'MyCustomFont'; /* 사용할 폰트 이름 설정 */
+	src: url('../font/kan.otf') format('opentype'); /* 파일 경로 설정 */
+	/* 일본어 폰트 적용 */
 }
+
 * {
-    font-family: 'MyCustomFont', sans-serif; /* 폰트 적용 */
+	font-family: 'MyCustomFont', sans-serif; /* 폰트 적용 */
 }
 
-body{
-	
-	
-	background-color: #92f551;
+body {
+	background-color: beige;
 }
 
+#kanri.clicked {
+	background-color: #ffcc00;
+}
 
-a{
+#review.clicked {
+	background-color: #ffcc00;
+}
+
+#order.clicked {
+	background-color: #ffcc00;
+}
+
+#cart.clicked {
+	background-color: #ffcc00;
+}
+
+#seller-register.clicked {
+	background-color: #ffcc00;
+}
+
+p {
 	font-size: 25px;
 	text-decoration: none;
 	justify-content: center;
 }
 
-
-        /* 각 JSP의 내용을 감싸는 컨테이너의 초기 상태를 숨김으로 설정 */
+/* 각 JSP의 내용을 감싸는 컨테이너의 초기 상태를 숨김으로 설정 */
 .jsp-container {
-            display: none;
-        }
-    
-.mypage_container{
+	display: none;
+}
+
+.mypage_container {
 	width: 100vw;
 	height: 100%;
 	border: 2px solid skyblue;
 	background-color: white;
-		
-	
 }
-.mypage_title{
-	
-	font-size: 30px;
 
+.mypage_title {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-size: 50px;
 }
-.mypage_title2{
+
+.mypage_title2 {
 	font-size: 25px;
 	display: flex;
 	justify-content: end;
 	align-items: center;
-	
-	
-	
 }
-.mypage_contents1_box{
+
+.mypage_contents1_box {
 	display: flex;
 	height: 500px;
-   /* border: 1px solid red; */
+	/* border: 1px solid red; */
 	justify-content: center;
 	align-items: center;
-	
 }
-.mypage_contents1_info_box{
-	
-    width: 800px;
-    height: 500px;
-  /*  background-color: #DDFD52;*/
-    /*border: 1px solid blue;*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column-reverse;
+
+.mypage_contents1_info_box {
+	width: 800px;
+	height: 500px;
+	/*  background-color: #DDFD52;*/
+	/*border: 1px solid blue;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column-reverse;
 }
-.myinfo_box{
+
+.myinfo_box {
 	position: relative;
 	width: 800px;
-	height:400px;
+	height: 400px;
 	/*background-color: #C3E820;*/
 	align-content: center;
 	border: 1px solid black;
-	border-radius : 30px;
-	
+	border-radius: 30px;
 }
-.myinfo_box_item{
-	    position: absolute;
-    display: flex;
-    top: 100px;
-    left: 256px;
-    flex-direction: column;
-    flex-wrap: nowrap;
-	
+
+.myinfo_box_item {
+	position: absolute;
+	display: flex;
+	top: 100px;
+	left: 400px;
+	flex-direction: column;
+	flex-wrap: nowrap;
 }
-.myinfo_box_items{
-	width : 400px;
+
+.myinfo_box_items {
+	width: 400px;
 	height: 50px;
-	
 	font-size: 20px;
-	
 }
-.myinfo_box_photo{
+
+.myinfo_box_photo {
 	background-image: url('../img/bb.jpeg');
-	background-size: cover; 
-      background-position: center; 
+	background-size: cover;
+	background-position: center;
 	position: absolute;
 	width: 200px;
 	height: 200px;
-	 border-radius: 50%;
+	border-radius: 50%;
+	top: 50px;
+	left: 100px;
+
 	/* border: 1px solid black;*/
-	 
-	 
-	
-	
-	
-	
 }
 
-
-
-
-
-.mypage_contents1_menu{
-   	display: flex;
-    width: 800px;
-    height: 250px;
-    /*background-color: #C3E820;*/
-    flex-direction: row;
-    justify-content : space-around;
-    align-items: center;
- 
+.mypage_contents1_menu {
+	display: flex;
+	width: 800px;
+	height: 250px;
+	/*background-color: #C3E820;*/
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
 }
 
-.mypage_contents1_menu_boxs{
+.mypage_contents1_menu_boxs {
 	display: flex;
 	flex-direction: column-reverse;
-      justify-content: center;
-      align-items: center;
+	justify-content: center;
+	align-items: center;
 	width: 200px;
 	height: 200px;
 	border: 1px solid black;
-	background-color : red;
-	border-radius: 30px;
-
+	background-color: white;
+	border-radius: 70px;
 }
 
-.mypage_contents2_container{
-	
-	display:flex;
+.mypage_contents2_container {
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	
-	
 }
 
-.mypage_contents2_box{
+.mypage_contents2_box {
 	width: 800px;
-	height:200px;
+	height: 200px;
 	/*background-color : pink;*/
 	border: 1px solid black;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	border-radius: 30px;
-	
-	
 }
-.mypage_contents2_box_item{ /*최근본 상품 */
-	
+
+.mypage_contents2_box_item { /*최근본 상품 */
 	width: 150px;
 	height: 150px;
 	/*border: 1px solid orange;
 	background-color: violet;*/
 	border-radius: 20px;
 	background-image: url('../img/peach.jpg');
-	background-size: cover; 
-      background-position: center; 
-	
+	background-size: cover;
+	background-position: center;
 }
-.mypage_contents2_more{
+
+.mypage_contents2_more {
 	display: flex;
 	border: 2px solid black;
-	
 }
-.mypage_centents3_box{
-	
+
+.mypage_centents3_box {
 	width: 100vw;
-	
-	background-color: Beige ;
-	
-	
-	
+	background-color: Beige;
 }
-
-
-
-
