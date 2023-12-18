@@ -5,12 +5,11 @@ body {
 	padding: 0;
 }
 
-
 .span active {
 	display: flex;
 	justify-content: center;
-	align-items: center; 
-	width : 110px;
+	align-items: center;
+	width: 110px;
 	height: 50px;
 }
 
@@ -47,7 +46,7 @@ body {
 	font-weight: bold;
 }
 
-.menu1 {
+.filter {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -59,22 +58,6 @@ body {
 	/* background-image: url("../../img/shop-menu.png"); */
 	background-repeat: no-repeat;
 }
-
-.menu2 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-left: 50px;
-	margin-right: 5px;
-	width: 110px;
-	height: 50px;
-	background-color: #d9d9d9;
-	border-radius: 50px;
-	/* background-image: url("../../img/shop-menu.png"); */
-	background-repeat: no-repeat;
-}
-
-
 
 
 
@@ -83,7 +66,7 @@ body {
 	display: inline-block;
 }
 
-#category-back1 {
+.category-back1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -96,7 +79,7 @@ body {
 	font-weight: bold;
 }
 
-#category-back2 {
+.category-back2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -116,41 +99,46 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-
-.items_list{
-	justify-content: center;
-    display: flex;
-    flex-direction: column;
-}
-
 .itemContainer {
 	display: flex;
-    flex-wrap: wrap;
+	flex-wrap: wrap;
 	justify-content: space-around;
-    width: 100%;
+	width: 100%;
 }
 
-.shop-item{
-	width: auto;
-	border: 1px solid red;
-    margin-bottom: 20px;
-}
-
-#pagination{
+.shop-list {
 	display: flex;
+    width: 85vw;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-.item-img{
-	 width: 330px; /* 원하는 div 크기 */
-     height: 330px;
-     background-image: url('item.Folder.jpg'); /* 이미지 경로 설정 */
-     background-size: cover; /* 이미지를 div에 맞춰서 채우기 */
-     background-position: center; /* 이미지를 가운데 정렬 */
-     background-repeat: no-repeat; /* 이미지 반복 없음 */
+#data-container {
+	display: flex;
+	justify-content: center;
+	width: 98vw;
 }
 
-.div-tbl-row{
-	display : flex;
+.shop-item {
+	width: 400px;
+	border: 1px solid red;
+	margin: 33px;
 }
 
+#pagination {
+	display: flex;
+	justify-content: center;
+}
+
+.item-img {
+	width: 330px; /* 원하는 div 크기 */
+	height: 330px;
+	background-image: url('item.Folder.jpg'); /* 이미지 경로 설정 */
+	background-size: cover; /* 이미지를 div에 맞춰서 채우기 */
+	background-position: center; /* 이미지를 가운데 정렬 */
+	background-repeat: no-repeat; /* 이미지 반복 없음 */
+}
+
+.div-tbl-row {
+	display: flex;
+}
