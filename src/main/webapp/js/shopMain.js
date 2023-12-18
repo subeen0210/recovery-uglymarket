@@ -10,7 +10,10 @@ $(function() {
 function filter(data) {
 	console.log(data);
 	console.log('--------------')
-	$(".filter").click(function() {
+	$(".shop-menu").on('click', '.filter', function() {
+		$('.filter').removeClass('active');
+		$(this).addClass('active');
+		 
 		let fil = $(this).attr('val');
 		var filteredItems;
 		if (fil == 'ugly') {
@@ -55,16 +58,17 @@ function pagination(jsonArray) {
 			$.each(data, function(index, item) {
 
 				dataHtml += '<div class="shop-item">';
-				dataHtml += '<div><img class="item-img" src="itemFolder/' + item.i_img + '"></div>';
-				dataHtml += '<div>' + item.i_name + '</div>';
+				dataHtml += '<div><img onclick="location.href=\'ShopDetailC?no=' + item.i_no + '\'"class="item-img" src="itemFolder/' + item.i_img + '"></div>';
 
 
 				if (item.i_category == 1) {
-					dataHtml += '<div class="category-back1">못난이</div>';
+					dataHtml += '<div class="category-back1">アグリー</div>';
 				} else {
-					dataHtml += '<div class="category-back2">일반</div>';
+					dataHtml += '<div class="category-back2">普通</div>';
 				}
-				dataHtml += '<div>' + item.i_price + '</div>';
+				
+				dataHtml += '<div class="text-name"><span onclick="location.href=\'ShopDetailC?no=' + item.i_no + '\'">' + item.i_name + '</span></div>';
+				dataHtml += '<div class="text-price"><span onclick="location.href=\'ShopDetailC?no=' + item.i_no + '\'">' + item.i_price + '</div>';
 				dataHtml += '</div>';
 			});
 			dataHtml += '</div>';
