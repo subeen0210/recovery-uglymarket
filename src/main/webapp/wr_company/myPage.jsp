@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="MYPAGE_NEW/css/myPas.css">
 <link rel="stylesheet" href="css/kanri.css">
 <link rel="stylesheet" href="css/reviewList.css">
+<link rel="stylesheet" href="css/order.css">
 
 
 <head>
@@ -23,7 +24,9 @@
 		</div>
 
 		<div class="mypage_contents1_box">
+		
 			<div class="mypage_contents1_info_box">
+			
 				<div class="mypage_contents2_container">
 				
 					<div class="mypage_contents2_box"> <!--최근 본 상품이 들어가는 박스 -->
@@ -31,18 +34,19 @@
 						<div class="mypage_contents2_box_item"></div>
 						<div class="mypage_contents2_box_item"></div>
 						<div class="mypage_contents2_box_item"></div>
-					<div class="mypage_contents2_more"><a href="">もっと見る</a></div>
+						
+					
 					</div>
+					
 				</div>
+				<div class="mypage_contents2_more"><a href="">もっと見る</a></div>
 				<div class="myinfo_box"> <!-- 나의 로그인 정보 -->
 					<div class="myinfo_box_photo"></div>
 					<div class="myinfo_box_item">
-						<div class="myinfo_box_items">xxx님</div>
+						<div class="myinfo_box_items"><h3>xxx님</h3></div>
 						<div class="myinfo_box_items">못난이</div>
 						<div class="myinfo_box_items">히히히히히히</div>
 					</div>
-
-
 				</div>
 
 			</div>
@@ -68,8 +72,8 @@
 						<p>申請情報</p>
 					</div>
 					
-					<div style='visibility: hidden;' class="mypage_contents1_menu_boxs">
-						<a href="#">hidden</a> <!--숨겨진 박스  -->
+					<div class="mypage_contents1_menu_boxs">
+						<img class="img" src="img/a.webp">
 					</div>
 				</div>
 				

@@ -1,8 +1,5 @@
-@charset "UTF-8";
-
-
-#orderDetailsContainer {
-    	background-color: #ffffff;
+.main {
+		background-color: #ffffff;
 	width: 70%;
 	height: 100%;
 	margin: 5em auto;
@@ -10,15 +7,34 @@
 	box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 	padding: 3%;
 	display: flex;
-	flex-direction: column;
+	flex-direction: flex-end;
+	
+	
+	
 }
 
-#orderInfo {
-    margin-top: 20px;
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
 }
 
-#orderInfo img {
-    max-width: 100px;
-    max-height: 100px;
-    margin-right: 10px;
+th, td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+img {
+	max-width: 50px;
+	max-height: 50px;
+}
+
+.button_div {
+	display: flex;
+	justify-content: center;
 }
