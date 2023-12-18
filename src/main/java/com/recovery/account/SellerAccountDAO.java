@@ -118,9 +118,9 @@ public class SellerAccountDAO {
 			pstmt.setString(6, kataName);
 			pstmt.setString(7, tel);
 			pstmt.setString(8, farmImg);
-			pstmt.setString(9, farmName);
-			pstmt.setString(10, farmStory);
-			pstmt.setString(11, addr);
+			pstmt.setString(9, addr);
+			pstmt.setString(10, farmName);
+			pstmt.setString(11, farmStory);
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("판매자 등록 성공");
