@@ -225,4 +225,34 @@ public class CartDAO {
 		return priceAdd;
 	}
 
+
+	// 카트 수량 변경
+	public static void updateCartQuantity(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		String no = request.getParameter("no");
+		String count = request.getParameter("quantity");		
+		System.out.println(no);
+		System.out.println(count);
+		
+		String sql = "UPDATE cart SET c_number = ? WHERE c_no = ?";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, count);
+			pstmt.setString(2, no);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("장바구니 수량 변경 성공");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("수량 변경 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+	
+	
 }

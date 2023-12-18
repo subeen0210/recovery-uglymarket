@@ -7,6 +7,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Document</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <link rel="stylesheet" href="wj/css/cart.css" />
 </head>
 <body>
@@ -48,11 +49,11 @@
 				<div class="set-quanity">
 					<div class="quantity-container">
 						&ensp;
-						<button class="quantity-button" onclick="increaseQuantity()">
+						<button class="quantity-button" onclick="adjustQuantity(${cart.c_no},1)">
 							&ensp;+</button>
-						<input type="text" class="quantity-input" id="quantityInput"
-							value="${cart.c_number }" readonly />
-						<button class="quantity-button" onclick="decreaseQuantity()">
+						<input type="text" class="quantity-input" id="quantityInput_${cart.c_no}"
+							value="${cart.c_number }" data-cartCode="${cart.c_no}"/>
+						<button class="quantity-button" onclick="adjustQuantity(${cart.c_no},-1)">
 							-</button>
 					</div>
 				</div>
@@ -64,6 +65,7 @@
 		</div>
 		<br class="${cart.c_no }">
 		<br class="${cart.c_no }">
+		<input type="hidden" id="cartNumber" value="${cart.c_no }">
 		</c:forEach>
 		<br />
 		<div class="pay">
@@ -75,4 +77,5 @@
 	</div>
 </body>
 <script src="wj/js/cart(copy).js"></script>
+<script src="wj/js/cart.js"></script>
 </html>
