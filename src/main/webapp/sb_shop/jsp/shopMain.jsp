@@ -6,8 +6,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script type="text/javascript" src="js/shopMain.js"></script>
+<script type="text/javascript" src="pagination/pagination.js"></script>
+<script type="text/javascript" src="pagination/pagination.min.js"></script>
+<link rel="stylesheet" href="pagination/pagination.css">
 <link rel="stylesheet" href="css/shopMain.css">
+
+<script type="text/javascript" src="js/shopMain.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -15,31 +19,52 @@
 	<div class="shop-item-kwj">
 		<div class="shop-menu">
 			<span data-filter="all" class="active">
-				<div class="menu1">ALL</div>
+				<div class="filter" val='all'>ALL</div>
 			</span> 
 			<span data-filter="1">
-				<div class="menu2">アグリー</div>
+				<div class="filter" val='ugly'>アグリー</div>
 			</span> 
 			<span data-filter="2">
-				<div class="menu2">ふつう</div> 
+				<div class="filter" val='normal'>ふつう</div> 
 			</span>
 		</div>
 	</div>
+	
+	<div>
+<!-- 2023.12.16일 코드 변경 , 3칸으로 정리하기 시작 by S.B. Choi-->
+	<div class="menu_list"> <!-- division1 -->
+		<hr>
+<div id="data-container"></div>
+<div id="pagination-container"></div>
 
-
-	<div class="menu_list">
-		<ul id="itemContainer">
-			<c:forEach var="item" items="${items}" varStatus="status">
-				<div class="shop-item" data-category="${item.i_category}">
+		<hr>
+		<div class="itemContainer">  <!-- division2 -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<c:forEach varStatus="status" var="item" items="${items }">
+			<c:if test="${status.index % 3 == 0}">
+                <div class="div-tbl-row">
+            </c:if>
+				<div class="shop-item" data-category="${item.i_category}">  <!-- division3 -->
 					<div class="item-size">
-						<img onclick="location.href='ShopDetailC?no=${item.i_no}'" 
-							class="item-img" alt="" src="itemFolder/${item.i_img }"> 
+						<img onclick="location.href='ShopDetailC?no=${item.i_no}'"
+							class="item-img" alt="" src="itemFolder/${item.i_img }">
 					</div>
-					<div>
+					<div>  <!-- division4 -->
 						<c:choose>
 							<c:when test="${item.i_category ==1}">
 								<div class="category" data-filter="1">
-									<div id="category-back1"></div>
+									<div class="category-back1"></div>
 									<span id="category-text">못난이</span>
 								</div>
 							</c:when>
@@ -51,22 +76,30 @@
 							</c:when>
 						</c:choose>
 					</div>
-					<div>
+					<div class="text">
 						<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_name}</span>
 					</div>
-					<div>
+					<div class="text">
 						<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_price}</span>
 					</div>
-				</div>
-			</c:forEach>
-		</ul>
+			</div>
+		
+				<c:if test="${status.index % 3 == 2 or status.last}">
+		</div>
+				</c:if>
+				<c:if test="${status.index + 1 == fn:length(items) and (status.index + 1) % 3 != 0}">
+	</div> <!-- 마지막 줄을 닫아줌 -->
+ 				</c:if>
+		</c:forEach>
+<!-- 2023.12.16일 코드 변경 , 3칸으로 정리하기 끝 -->
 
 
-	</div>
 
 		<div id="pagination">
 			<!-- 페이지 번호를 나타낼 곳 -->
 		</div>
 
+	</div>
+	
 </body>
 </html>

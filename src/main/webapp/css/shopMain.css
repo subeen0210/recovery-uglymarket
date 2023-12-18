@@ -5,18 +5,19 @@ body {
 	padding: 0;
 }
 
-
 .span active {
 	display: flex;
 	justify-content: center;
-	align-items: center; 
-	width : 110px;
+	align-items: center;
+	width: 110px;
 	height: 50px;
 }
 
 /* 원준 - 쇼핑몰 메뉴 */
 .item-size {
 	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .shop-item-kwj {
@@ -31,7 +32,6 @@ body {
 }
 
 .menu_list {
-	display: flex;
 	justify-content: center;
 	align-items: center;
 }
@@ -48,7 +48,7 @@ body {
 	font-weight: bold;
 }
 
-.menu1 {
+.filter {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -60,49 +60,32 @@ body {
 	/* background-image: url("../../img/shop-menu.png"); */
 	background-repeat: no-repeat;
 }
-
-.menu2 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-left: 50px;
-	margin-right: 5px;
-	width: 110px;
-	height: 50px;
-	background-color: #d9d9d9;
-	border-radius: 50px;
-	/* background-image: url("../../img/shop-menu.png"); */
-	background-repeat: no-repeat;
-}
-
-
-
 
 
 .category {
 	position: relative;
 	display: inline-block;
+	padding: 8%;
+	margin-top: -20px;
 }
 
-#category-back1 {
+.category-back1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 110px;
-	height: 35px;
+	width: 80px;
+	height: 30px;
 	background-color: #c3e820;
-	border-radius: 50px;
+	border-radius: 30px;
 	background-repeat: no-repeat;
-	font-size: 12pt;
-	font-weight: bold;
 }
 
-#category-back2 {
+.category-back2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 110px;
-	height: 35px;
+	width: 80px;
+	height: 30px;
 	background-color: #70E820;
 	border-radius: 50px;
 	background-repeat: no-repeat;
@@ -115,38 +98,50 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	font-size: 9pt;
+	font-weight: bold;
 }
 
-
-.items_list{
-	justify-content: center;
-    display: flex;
-    flex-direction: column;
-}
-
-#itemContainer {
+.itemContainer {
 	display: flex;
-    flex-wrap: wrap;
+	flex-wrap: wrap;
 	justify-content: space-around;
-    width: 100%;
+	width: 100%;
 }
 
-.shop-item{
-	width: auto;
-	border: 1px solid red;
-    margin-bottom: 20px;
-}
-
-#pagination{
+.shop-list {
 	display: flex;
+    width: 85vw;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-.item-img{
-	 width: 330px; /* 원하는 div 크기 */
-     height: 330px;
-     background-image: url('item.Folder.jpg'); /* 이미지 경로 설정 */
-     background-size: cover; /* 이미지를 div에 맞춰서 채우기 */
-     background-position: center; /* 이미지를 가운데 정렬 */
-     background-repeat: no-repeat; /* 이미지 반복 없음 */
+#data-container {
+	display: flex;
+	justify-content: center;
+	width: 98vw;
+}
+
+.shop-item {
+	width: 400px;
+	border: 1px solid red;
+	margin: 33px;
+}
+
+#pagination {
+	display: flex;
+	justify-content: center;
+}
+
+.item-img {
+	width: 330px; /* 원하는 div 크기 */
+	height: 330px;
+	background-image: url('item.Folder.jpg'); /* 이미지 경로 설정 */
+	background-size: cover; /* 이미지를 div에 맞춰서 채우기 */
+	background-position: center; /* 이미지를 가운데 정렬 */
+	background-repeat: no-repeat; /* 이미지 반복 없음 */
+}
+
+.div-tbl-row {
+	display: flex;
 }

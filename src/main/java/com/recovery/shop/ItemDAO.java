@@ -15,36 +15,11 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.recovery.account.Seller;
 import com.recovery.main.DBManager;
 
+import oracle.jdbc.proxy.annotation.Pre;
+
 public class ItemDAO {
 
-	private static ArrayList<ItemDTO> items;
-	
-	// ���θ� ������ 9���� ����¡�ϱ�
-	public static void shopPagin(int page, HttpServletRequest request) {
-		
-		request.setAttribute("curPageNo", page);
-	    int cnt = 9;    // �� �������� ������ ����
-	    int total = items.size(); // �� ������ ����
-
-	    // �� ��������
-	    int pageCount = (int) Math.ceil((double) total / cnt);
-	    request.setAttribute("pageCount", pageCount);
-
-	    int start = total - (cnt * (page - 1)) - 1;
-	    int end = (page == pageCount) ? -1 : start - cnt;
-
-	    ArrayList<ItemDTO> pagedItems = new ArrayList<ItemDTO>();
-	    for (int i = start; i > end && i >= 0; i--) {
-	        pagedItems.add(items.get(i));
-	    }
-
-	    request.setAttribute("items", pagedItems);
-		
-	}
-	
-	
-	// ���θ� ���������� ��ǰ �����ֱ�
-	public static void getAllItems(HttpServletRequest request) {
+	public static String getAllItems() {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -57,7 +32,7 @@ public class ItemDAO {
 			rs = pstmt.executeQuery();
 			ItemDTO item = null;
 			
-			items = new ArrayList<ItemDTO>();
+			ArrayList<ItemDTO> items = new ArrayList<ItemDTO>();
 			while (rs.next()) {
 				item = new ItemDTO();
 				item.setI_no(rs.getInt("i_no"));
@@ -81,17 +56,23 @@ public class ItemDAO {
 //				System.out.println(rs.getString("i_price"));
 //				System.out.println(rs.getString("i_img"));
 			}
-			request.setAttribute("items", items);
-				
+		return	convertItemsToJSON(items);	
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
+		return null;
 		
 		
 	}
+	
+	public static String convertItemsToJSON(ArrayList<ItemDTO> items) {
+	    Gson gson = new Gson();
+	    return gson.toJson(items);
+	}
+
 
 
 	public static void getItem(HttpServletRequest request) {
@@ -162,31 +143,13 @@ public class ItemDAO {
 	        String name = mr.getParameter("name");
 	        String story = mr.getParameter("story");
 	        String type = mr.getParameter("type");
-	        String img = mr.getFilesystemName("img");
+	        String[] imgArray = new String[4];
 
-	        if (mr.getFilesystemName("img2") != null) {
-	            img2 = mr.getFilesystemName("img2");
-	            pstmt.setString(4, img2);
-	        } else if (mr.getFilesystemName("img2") == null) {
-	        	img2 = null;
-	        	pstmt.setString(4, img2);
-			}
-
-	        if (mr.getFilesystemName("img3") != null) {
-	            img3 = mr.getFilesystemName("img3");
-	            pstmt.setString(5, img3);
-	        } else if (mr.getFilesystemName("img3") == null) {
-	        	img3 = null;
-	        	pstmt.setString(5, img3);
-			}
-
-	        if (mr.getFilesystemName("img4") != null) {
-	            img4 = mr.getFilesystemName("img4");
-	            pstmt.setString(6, img4);
-	        } else if (mr.getFilesystemName("img4") == null) {
-	        	img4 = null;
-	        	pstmt.setString(6, img4);
-			}
+	        for (int i = 1; i <= 4; i++) {
+	            String fileName = mr.getFilesystemName("img" + i);
+	            imgArray[i - 1] = fileName != null ? fileName : null;
+	            pstmt.setString(2 + i, imgArray[i - 1]);
+	        }
 
 	        String date = mr.getParameter("enddate");
 	        String price = mr.getParameter("price");
@@ -195,7 +158,6 @@ public class ItemDAO {
 
 	        pstmt.setString(1, id.getS_id());
 	        pstmt.setString(2, name);
-	        pstmt.setString(3, img);
 	        pstmt.setString(7, story);
 	        pstmt.setString(8, type);
 	        pstmt.setString(9, date);
@@ -207,7 +169,7 @@ public class ItemDAO {
 	        }
 
 	    } catch (Exception e) {
-	        System.out.println("등록 실패");
+	        System.out.println("등록 ~~");
 	        e.printStackTrace();
 	    } finally {
 	        DBManager.close(con, pstmt, null);
@@ -288,6 +250,31 @@ public class ItemDAO {
 		
 	}
 	
+	
+	public static void updateItem(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "update item set "
+					+ "i_name = ?, i_des = ?, i_category = ?, i_ed = TO_DATE(?, 'YYYY-MM-DD'), "
+					+ "i_img = ?, i_img2 = ?, i_img3 = ? , i_img4 = ?, i_price = ?, i_stock =? "
+					+ "where s_id = ? and i_no = ?";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			String path = request.getServletContext().getRealPath("itemFolder");
+			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "utf-8", new DefaultFileRenamePolicy());
+			
+			
+			 
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
 	
 
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +27,7 @@
 			<span class="item-text-discount-detail">今週の特価セール</span>
 		</div>
 		<div class="item-text-detail">
-			<a href="">もっと見る</a>
+			<a href="ShopC">もっと見る</a>
 		</div>
 		<div class="item-img">
 			<div class="item-img-position">
@@ -54,6 +55,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- <div></div> -->
 		<a href="ShopC_copy">샵 테스트</a>
 		<div class="item-img-news">
 			<img src="img/semi-main-item-img-news.png" alt=""
