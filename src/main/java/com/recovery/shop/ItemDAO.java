@@ -19,34 +19,7 @@ import oracle.jdbc.proxy.annotation.Pre;
 
 public class ItemDAO {
 
-	private static ArrayList<ItemDTO> items;
-	
-	// ���θ� ������ 9���� ����¡�ϱ�
-	public static void shopPagin(int page, HttpServletRequest request) {
-		
-		request.setAttribute("curPageNo", page);
-	    int cnt = 9;    // �� �������� ������ ����
-	    int total = items.size(); // �� ������ ����
-
-	    // �� ��������
-	    int pageCount = (int) Math.ceil((double) total / cnt);
-	    request.setAttribute("pageCount", pageCount);
-
-	    int start = total - (cnt * (page - 1)) - 1;
-	    int end = (page == pageCount) ? -1 : start - cnt;
-
-	    ArrayList<ItemDTO> pagedItems = new ArrayList<ItemDTO>();
-	    for (int i = start; i > end && i >= 0; i--) {
-	        pagedItems.add(items.get(i));
-	    }
-
-	    request.setAttribute("items", pagedItems);
-		
-	}
-	
-	
-	// ���θ� ���������� ��ǰ �����ֱ�
-	public static void getAllItems(HttpServletRequest request) {
+	public static String getAllItems() {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -59,7 +32,7 @@ public class ItemDAO {
 			rs = pstmt.executeQuery();
 			ItemDTO item = null;
 			
-			items = new ArrayList<ItemDTO>();
+			ArrayList<ItemDTO> items = new ArrayList<ItemDTO>();
 			while (rs.next()) {
 				item = new ItemDTO();
 				item.setI_no(rs.getInt("i_no"));
@@ -83,17 +56,23 @@ public class ItemDAO {
 //				System.out.println(rs.getString("i_price"));
 //				System.out.println(rs.getString("i_img"));
 			}
-			request.setAttribute("items", items);
-				
+		return	convertItemsToJSON(items);	
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
+		return null;
 		
 		
 	}
+	
+	public static String convertItemsToJSON(ArrayList<ItemDTO> items) {
+	    Gson gson = new Gson();
+	    return gson.toJson(items);
+	}
+
 
 
 	public static void getItem(HttpServletRequest request) {
