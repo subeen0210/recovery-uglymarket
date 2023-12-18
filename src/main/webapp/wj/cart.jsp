@@ -58,14 +58,14 @@
 					</div>
 				</div>
 				<br />
-				<div class="set-allprice" data-subtotal="${cart.i_price * cart.c_number}">小計&ensp;:&ensp;${cart.i_price * cart.c_number }</div>
+				<div class="set-allprice" id="set-allprice2_${cart.c_no }" data-subtotal="${cart.i_price * cart.c_number}">小計&ensp;:&ensp;<span id="set-allprice_${cart.c_no }" >${cart.i_price * cart.c_number }</span></div>
 				<br />
 				<div><button onclick="deleteCart(${cart.c_no })">削除</button></div>
 			</div>
 		</div>
 		<br class="${cart.c_no }">
 		<br class="${cart.c_no }">
-		<input type="hidden" id="cartNumber" value="${cart.c_no }">
+		<input type="hidden" class="cartNumber" value="${cart.c_no }">
 		</c:forEach>
 		<br />
 		<div class="pay">

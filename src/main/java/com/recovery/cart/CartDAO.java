@@ -254,5 +254,39 @@ public class CartDAO {
 		}
 	}
 	
+	// 카드 수량 변경됐을 때 각 아이템 총 가격
+	public static int selectedCartPirce(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select i_price, c_number "
+				+ "from cart, item "
+				+ "where item.i_no = cart.i_no "
+				+ "and c_no = ?";
+		int priceAdd = 0;
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			String no = request.getParameter("no");
+			pstmt.setString(1, no);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				
+				priceAdd += rs.getInt("i_price")*rs.getInt("c_number");
+			}
+			System.out.println("개별 가격 조회 성공");
+			
+			
+		} catch (Exception e) {
+			System.out.println("개별 가격 조회 실패");
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		return priceAdd;
+	}
 	
 }

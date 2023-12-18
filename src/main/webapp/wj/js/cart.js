@@ -6,9 +6,15 @@ function updateQuantity(cartCode, value) {
 		url: 'updateCartCount', // 실제로는 서버의 엔드포인트 URL로 대체해야 합니다.
 		method: 'GET',
 		data: { quantity: value, no: cartCode  },
+		dataType : "json",
 		success: function(response) {
+			let totalCartPrice = response.totalCartPrice;
+        	let selectedCartPrice = response.selectedCartPrice;
+			console.log(totalCartPrice);
+			console.log(selectedCartPrice);
 			// 성공적으로 처리된 경우 추가적인 로직을 수행할 수 있습니다.
-			console.log('AJAX 요청 성공:', response);
+			$(`#set-allprice_${cartCode}`).text(selectedCartPrice);
+			$(`#set-allprice2_${cartCode}`).attr('data-subtotal', selectedCartPrice);
 		},
 		error: function(error) {
 			console.error('AJAX 요청 실패:', error);
