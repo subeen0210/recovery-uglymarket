@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (index >= startIndex && index < endIndex) {
                 item.style.display = 'block';
             } else {
-                item.style.display = 'none';
+                item.parentNode.style.display = 'none';
             }
         });
     }

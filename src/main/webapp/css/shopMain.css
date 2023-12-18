@@ -30,8 +30,7 @@ body {
 	border: none;
 }
 
-#menu_list {
-	display: flex;
+.menu_list {
 	justify-content: center;
 	align-items: center;
 }
@@ -124,14 +123,14 @@ body {
     flex-direction: column;
 }
 
-#itemContainer {
+.itemContainer {
 	display: flex;
     flex-wrap: wrap;
 	justify-content: space-around;
     width: 100%;
 }
 
-#shop-item{
+.shop-item{
 	width: auto;
 	border: 1px solid red;
     margin-bottom: 20px;
@@ -150,3 +149,8 @@ body {
      background-position: center; /* 이미지를 가운데 정렬 */
      background-repeat: no-repeat; /* 이미지 반복 없음 */
 }
+
+.div-tbl-row{
+	display : flex;
+}
+

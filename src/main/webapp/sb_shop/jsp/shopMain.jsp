@@ -28,11 +28,11 @@
 	
 	<div>
 <!-- 2023.12.16일 코드 변경 , 3칸으로 정리하기 시작 by S.B. Choi-->
-	<div class="divTable" id="menu_list"> <!-- division1 -->
-		<div class="divTableBody" id="itemContainer">  <!-- division2 -->
+	<div class="menu_list"> <!-- division1 -->
+		<div class="itemContainer">  <!-- division2 -->
 		<c:forEach varStatus="status" var="item" items="${items }">
 			<c:if test="${status.index % 3 == 0}">
-                <div class="divTableRow">
+                <div class="div-tbl-row">
             </c:if>
 				<div class="shop-item" data-category="${item.i_category}">  <!-- division3 -->
 					<div class="item-size">
@@ -62,6 +62,7 @@
 						<span onclick="location.href='ShopDetailC?no=${item.i_no}'">${item.i_price}</span>
 					</div>
 			</div>
+		
 				<c:if test="${status.index % 3 == 2 or status.last}">
 		</div>
 				</c:if>
