@@ -18,7 +18,7 @@
 </head>
 <body>
 	<div class="header">
-		<a class="header-logo" href="#"> <img src="img/semi-logo-img.png"
+		<a class="header-logo" href="HC"> <img src="img/semi-logo-img.png"
 			alt="" /> <img src="img/semi-logo-title.png" alt="Website Logo" />
 		</a>
 

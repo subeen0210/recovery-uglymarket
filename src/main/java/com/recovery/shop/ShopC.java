@@ -18,8 +18,7 @@ public class ShopC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		ItemDAO.getAllItems(request);
-//		ItemDAO.shopPagin(1, request);
+//		ItemDAO.getAllItems(request);
 		AccountDAO.loginCheck(request);
 		request.setAttribute("contentPage", "sb_shop/jsp/shopMain.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);

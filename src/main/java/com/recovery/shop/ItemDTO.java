@@ -2,6 +2,8 @@ package com.recovery.shop;
 
 import java.util.Date;
 
+import com.google.gson.Gson;
+
 public class ItemDTO {
 
 	private int i_no;
@@ -144,6 +146,19 @@ public class ItemDTO {
 		this.i_star_avg = i_star_avg;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return "ItemDTO [i_no=" + i_no + ", s_id=" + s_id + ", i_name=" + i_name + ", i_img=" + i_img + ", i_img2="
+				+ i_img2 + ", i_img3=" + i_img3 + ", i_img4=" + i_img4 + ", i_des=" + i_des + ", i_category="
+				+ i_category + ", i_enddate=" + i_enddate + ", i_price=" + i_price + ", i_stock=" + i_stock
+				+ ", i_star_avg=" + i_star_avg + "]";
+	}
+
+	public String getJSON(ItemDTO item) {
+		Gson g = new Gson();
+		return g.toJson(item);
+	}
 	
 	
 }
