@@ -20,7 +20,7 @@ function payStorage() {
 
 
 			let c_no = menuContainer.querySelector('.cartNumber').value;
-            let i_no = menuContainer.querySelector('.itemNumber').value;
+			let i_no = menuContainer.querySelector('.itemNumber').value;
 			// menuContainer에서 값을 가져옵니다.
 			let image = menuContainer.querySelector('.profile-img').textContent;
 			let name = menuContainer.querySelector('.info-title').textContent;
@@ -52,31 +52,58 @@ function payStorage() {
 	console.log(selectedItems);
 
 
-//	 초기화
-		localStorage.clear();
-		
-		let arrItems = JSON.stringify(selectedItems);
-		
-		localStorage.setItem('selectedItems', arrItems);
-		
-		
-		location.href='OrderPageC';
+	//	 초기화
+	localStorage.clear();
+
+	let arrItems = JSON.stringify(selectedItems);
+
+	localStorage.setItem('selectedItems', arrItems);
+
+
+	location.href = 'OrderPageC';
 };
 
 // orderPage.jsp 에서 localStorage 불러오기
-$(function(){
+$(function() {
+
+	let itemsString = localStorage.getItem('selectedItems')
+	let items = JSON.parse(itemsString);
+	console.log(items);
+
 	
+	let getItems = "";
+	let total = 0;
+	for (i = 0; i < items.length; i++) {
+
+		console.log(items[i]);
+		total += parseInt(items[i].subtotal);
+		console.log(total);
+		console.log(items.c_no);
+		
+		getItems += "<div>";
+		getItems += "<div>" + items[i].image + "</div>";
+		getItems += "<div>" + items[i].name + "</div>";
+		getItems += "<div>" + items[i].category + "</div>";
+		getItems += "<div>" + items[i].farmName + "</div>";
+		getItems += "<div>" + items[i].price + "</div>";
+		getItems += "<div>" + items[i].quantity + "</div>";
+		getItems += "<div>" + items[i].subtotal + "</div>";
+//		getItems += "<input name='c_no' value='"+ items.c_no +"'>";		
+		getItems += "</div>";
+		getItems += "<br>";
+	}
+	document.getElementById('getItems').innerHTML = getItems;
+	document.getElementById('totalPrice').innerHTML = total;
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
 });
