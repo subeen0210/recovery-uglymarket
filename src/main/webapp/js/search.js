@@ -6,7 +6,7 @@ function handleEnterKey(event) {
 
         // 여기에 검색창에서 Enter 키를 눌렀을 때 실행할 동작을 추가
       //  alert("검색어: " + searchValue);
-		location.href='SearchC?name=' + searchValue;
+		location.href='ShopC?name=' + searchValue;
     }
 }
 

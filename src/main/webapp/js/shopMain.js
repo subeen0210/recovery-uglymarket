@@ -1,7 +1,13 @@
 let totalItem;
 
 $(function() {
-	getAllItem();
+	const urlParams = new URL(location.href).searchParams;
+	const name = urlParams.get('name');
+	if (!name) {
+		getAllItem('');
+	} else {
+		getAllItem(name);
+	}
 
 });
 
@@ -13,7 +19,7 @@ function filter(data) {
 	$(".shop-menu").on('click', '.filter', function() {
 		$('.filter').removeClass('active');
 		$(this).addClass('active');
-		 
+
 		let fil = $(this).attr('val');
 		var filteredItems;
 		if (fil == 'ugly') {
@@ -25,19 +31,20 @@ function filter(data) {
 			filteredItems = data.filter(function(item) {
 				return item.i_category === 2;
 			});
-		} else if(fil == 'all'){
+		} else if (fil == 'all') {
 			filteredItems = data;
 		}
-			console.log(filteredItems);
-			pagination(filteredItems);
+		console.log(filteredItems);
+		pagination(filteredItems);
 	});
 }
 
 
-function getAllItem() {
+function getAllItem(name) {
 
 	$.ajax({
-		url: 'get-all-item'
+		url: 'get-all-item',
+		data : {name}
 	}).done(function(data) {
 		totalItem = data;
 		pagination(data);
@@ -45,6 +52,7 @@ function getAllItem() {
 	})
 
 }
+
 
 function pagination(jsonArray) {
 	let container = $('#pagination');
@@ -66,7 +74,7 @@ function pagination(jsonArray) {
 				} else {
 					dataHtml += '<div class="category-back2">普通</div>';
 				}
-				
+
 				dataHtml += '<div class="text-name"><span onclick="location.href=\'ShopDetailC?no=' + item.i_no + '\'">' + item.i_name + '</span></div>';
 				dataHtml += '<div class="text-price"><span onclick="location.href=\'ShopDetailC?no=' + item.i_no + '\'">' + item.i_price + '</div>';
 				dataHtml += '</div>';
