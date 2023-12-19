@@ -152,8 +152,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: -175px;
-	margin-top: 200px;
+/*	margin-top: -175px;*/
+	margin-top: 120px;
 }
 
 .explain-title {
@@ -180,12 +180,13 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-top: 120px;
 }
 
 .review-title {
 	display: flex;
-	justify-content: space-around;
-	width: 80%;
+	justify-content: space-between;
+	width: 70%;
 }
 
 .review-text {
@@ -219,10 +220,10 @@
 }
 
 .review-input {
-	border: 2px solid black;
-	border-radius: 50px;
+	border: 1px solid black;
+	border-radius: 8px;
 	padding: 6%;
-	width: 70%;
+	width: 60%;
 	height: 50%;
 	font-size: 15pt;
 	font-weight: bold;
