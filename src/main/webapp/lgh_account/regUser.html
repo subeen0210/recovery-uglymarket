@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="../css/regUser.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="../js/addr.js"></script>
+    <script type="text/javascript" src="../js/idCheck.js"></script>
+    <script type="text/javascript" src="../js/validCheck.js"></script>
+  </head>
+  <body>
+    <form
+      action="RegUserC"
+      method="post"
+      enctype="multipart/form-data"
+      onsubmit="return userCheck()"
+    >
+      <div class="reg-main">
+        <div class="reg-container">
+          <h1>Sign up</h1>
+          <div class="reg-content">
+            <div class="reg-menu">ID</div>
+            <div class="reg-input">
+              <input name="userID" id="ID" maxlength="20" />&ensp;
+              <button
+                class="id-btn"
+                type="button"
+                id="checkDuplicate"
+                value="users"
+              >
+                重複確認
+              </button>
+            </div>
+          </div>
+          <span id="idStatus"></span>
+          <div class="reg-content">
+            <div class="reg-menu">PW</div>
+            <div class="reg-input">
+              <input name="userPW" type="password" id="userPW" maxlength="20" />
+              <span id="pwStatus"></span>
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-menu">PW Confirm</div>
+            <div class="reg-input">
+              <input
+                type="password"
+                id="userPWconfirm"
+                placeholder="もう一度記入してください"
+              />&ensp;
+              <span id="pwConfirm"></span>
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-name">お名前</div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-menu">姓</div>
+            <div class="reg-input">
+              <input name="userKanji_ln" />
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-menu">名</div>
+            <div class="reg-input">
+              <input name="userKanji_fn" />
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-menu">セイ</div>
+            <div class="reg-input">
+              <input name="userKata_ln" />
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-menu">メイ</div>
+            <div class="reg-input">
+              <input name="userKata_fn" />
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-menu">ニックネーム</div>
+            <div class="reg-input">
+              <input name="userNicname" maxlength="10" />
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-name">電話番号</div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-name">
+              <input name="userTel1" />-<input name="userTel2" />-<input
+                name="userTel3"
+              />
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-menu">メール</div>
+            <div class="reg-input">
+              <input name="userEmail" type="email" />
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-name">郵便番号</div>
+            <div class="reg-name">
+                <button type="button" id="addr-popup">住所検索</button><br />
+              </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-menu">郵便番号</div>
+            <div class="reg-input">
+              <input name="userAddrN" id="addrNum" readonly="readonly" />
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-menu">都道府県</div>
+            <div class="reg-input">
+              <input name="userAddrP" id="addrPrefecture" readonly="readonly" />
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-menu">市区町村</div>
+            <div class="reg-input">
+              <input name="userAddrC" id="addrCity" readonly="readonly" />
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-menu">詳細情報</div>
+            <div class="reg-input">
+              <input name="userAddrD" />
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-name">プロフィールイメージ</div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-name2">
+              <input type="file" name="userImg" />
+            </div>
+          </div>
+          <div class="reg-content">
+            <div class="reg-name"><button>Sign Up</button></div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
