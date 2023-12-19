@@ -2,41 +2,42 @@
  * 결제용 로컬 스토리지 설정
  */
 
+// cart.jsp 에서 결제하기 클릭했을 때, 상품의 로컬스토리지 생성
 function payStorage() {
 
 	// class가 'item-checkbox'인 모든 체크박스를 가져옵니다.
-	var checkboxes = document.querySelectorAll('.item-checkbox');
+	let checkboxes = document.querySelectorAll('.item-checkbox');
 
 	// 선택된 아이템을 저장할 배열을 생성합니다.
-	var selectedItems = [];
+	let selectedItems = [];
 
 	// 체크박스를 순회합니다.
 	checkboxes.forEach(function(checkbox) {
 		// 체크박스가 선택되어 있는지 확인합니다.
 		if (checkbox.checked) {
 			// 체크박스의 부모 컨테이너를 가져옵니다 ('menu' 클래스를 가진 div)
-			var menuContainer = checkbox.closest('.menu');
+			let menuContainer = checkbox.closest('.menu');
 
 
-			var c_no = menuContainer.querySelector('.cartNumber').value;
-            var i_no = menuContainer.querySelector('.itemNumber').value;
+			let c_no = menuContainer.querySelector('.cartNumber').value;
+            let i_no = menuContainer.querySelector('.itemNumber').value;
 			// menuContainer에서 값을 가져옵니다.
-			var image = menuContainer.querySelector('.profile-img').textContent;
-			var name = menuContainer.querySelector('.info-title').textContent;
-			var category = menuContainer.querySelector('.info-menu').textContent;
-			var flavor = menuContainer.querySelector('.info-menus div:nth-child(2)').textContent;
-			var price = menuContainer.querySelector('.info-price').textContent;
-			var quantity = menuContainer.querySelector('.quantity-input').value;
-			var subtotal = menuContainer.querySelector('.per-total-price').textContent;
+			let image = menuContainer.querySelector('.profile-img').textContent;
+			let name = menuContainer.querySelector('.info-title').textContent;
+			let category = menuContainer.querySelector('.info-menu').textContent;
+			let fName = menuContainer.querySelector('.info-menus div:nth-child(2)').textContent;
+			let price = menuContainer.querySelector('.info-price').textContent;
+			let quantity = menuContainer.querySelector('.quantity-input').value;
+			let subtotal = menuContainer.querySelector('.per-total-price').textContent;
 
 			// 가져온 값을 사용하여 객체를 생성합니다.
-			var item = {
+			let item = {
 				c_no: c_no,
 				i_no: i_no,
 				image: image,
 				name: name,
 				category: category,
-				flavor: flavor,
+				farmName: fName,
 				price: price,
 				quantity: quantity,
 				subtotal: subtotal
@@ -51,11 +52,31 @@ function payStorage() {
 	console.log(selectedItems);
 
 
-
-
-
-	// 초기화
-	//	localStorage.clear();
-	//	
-	//	localStorage.setItem();
+//	 초기화
+		localStorage.clear();
+		
+		let arrItems = JSON.stringify(selectedItems);
+		
+		localStorage.setItem('selectedItems', arrItems);
+		
+		
+		location.href='OrderPageC';
 };
+
+// orderPage.jsp 에서 localStorage 불러오기
+$(function(){
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+});
