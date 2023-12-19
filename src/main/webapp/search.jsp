@@ -8,7 +8,7 @@
 <style type="text/css">
 .wrapper{
 	text-align: center;
-	width: 230px;
+	width: 250px;
 	border: 2px solid red;
 }
 
@@ -16,15 +16,15 @@
 	display: inline-flex;
 	padding: 5px;
 	border-radius: 50px;
-	transition: 0.4s;
+	transition: 0.6s;
 }
 
 .search:hover {
-	background-color: rgba(255, 255, 255, 0.15);
+	background-color: #F2F2F2;
 }
 
 .search:hover input {
-	max-width: 180px;
+	max-width: 500px;
 }
 
 .search input{
@@ -33,25 +33,30 @@
 	max-width: 0;
 	padding: 0;
 	text-indent: 12px;
-	color: #D8D8D8;
-	font-size: 22px;
+	color: #A4A4A4;
+	font-size: 16px;
 	outline: none;
-	transition: 0.4s;
+	transition: 0.6s;
 }
 
 .search input::placeholder{
-	color: #D8D8D8;
+	color: #A4A4A4;
 }
 
 .search span{
 	display: grid;
 	place-item: center;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	background-color: #0B610B;
 	border-radius: inherit;
 	font-size: 15pt;
 	pointer-events: none;
+}
+
+#search-icon{
+	width: 25px;
+	margin: auto;
 }
 </style>
 </head>
@@ -60,8 +65,9 @@
 	<div class="wrapper">
 	<div class="search">
 		<span class="uil uil-search">
+		<img id="search-icon" alt="" src="img/search-icon-white.png">
 		</span>
-		<input placeholder="Search" type="text">
+		<input placeholder="상품명을 입력하세요." type="text">
 	</div>
 	</div>
 
