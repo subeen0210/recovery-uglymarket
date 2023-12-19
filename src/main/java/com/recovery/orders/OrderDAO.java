@@ -53,4 +53,19 @@ public class OrderDAO {
 		
 	}
 
+	public static void regOrders(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "insert into orders values(o_no_seq.nextval,?,?,?,?,?,?)";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+
 }

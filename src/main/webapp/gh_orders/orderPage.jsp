@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="orderPage.css">
 </head>
 <body>
+	<form action="OrderPageC" method="post">
 	<div id="order-container">
 		<details>
 			<summary>配送先</summary>
@@ -38,5 +39,6 @@
 		</details>
 		<button>決済</button>
 	</div>
+	</form>
 </body>
 </html>

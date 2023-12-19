@@ -78,7 +78,7 @@ $(function() {
 		console.log(items[i]);
 		total += parseInt(items[i].subtotal);
 		console.log(total);
-		console.log(items.c_no);
+		console.log(items.i_no);
 		
 		getItems += "<div>";
 		getItems += "<div>" + items[i].image + "</div>";
@@ -88,7 +88,9 @@ $(function() {
 		getItems += "<div>" + items[i].price + "</div>";
 		getItems += "<div>" + items[i].quantity + "</div>";
 		getItems += "<div>" + items[i].subtotal + "</div>";
-//		getItems += "<input name='c_no' value='"+ items.c_no +"'>";		
+		getItems += "<input type='hidden' name='i_no[]' value='"+ items[i].i_no +"'>";
+		getItems += "<input type='hidden' name='quantity[]' value='"+ items[i].quantity +"'>";	
+		getItems += "<input type='hidden' name='subtotal[]' value='"+ items[i].subtotal +"'>";	
 		getItems += "</div>";
 		getItems += "<br>";
 	}
