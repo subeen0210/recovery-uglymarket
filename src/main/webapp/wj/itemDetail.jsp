@@ -20,7 +20,7 @@
 					<br />
 				</c:when>
 				<c:when test="${item.i_category == 2 }">
-					<div class="item-category2">ふつう</div>
+					<div class="item-category2">普通</div>
 					<br />
 				</c:when>
 			</c:choose>
@@ -31,7 +31,7 @@
 		<%--<div class="item-delivery">배송비 유무</div>
 			<br /> --%>
 			<div class="item-select">
-				<span style="font-weight: bold; font-size: 12pt">数量</span> &emsp;&emsp;
+				<span style="font-size: 19pt; margin-right: 180px">数量</span> &emsp;&emsp;
 					<button id="decrement" class="quantity-button" onclick="incrementQuantity()">+</button>
 					<input type="text" class="quantity-input" id="quantityInput" value="1" readonly>
 					<button id="increment" class="quantity-button" onclick="decrementQuantity()">-</button>

@@ -18,14 +18,14 @@
 
 	<div class="shop-item-kwj">
 		<div class="shop-menu">
-			<span data-filter="all" class="active">
+			<span data-filter="all">
 				<div class="filter" val='all'>ALL</div>
 			</span> 
 			<span data-filter="1">
 				<div class="filter" val='ugly'>アグリー</div>
 			</span> 
 			<span data-filter="2">
-				<div class="filter" val='normal'>ふつう</div> 
+				<div class="filter" val='normal'>普通</div> 
 			</span>
 		</div>
 	</div>
@@ -33,11 +33,11 @@
 	<div>
 <!-- 2023.12.16일 코드 변경 , 3칸으로 정리하기 시작 by S.B. Choi-->
 	<div class="menu_list"> <!-- division1 -->
-		<hr>
+		
 <div id="data-container"></div>
 <div id="pagination-container"></div>
 
-		<hr>
+		
 		<div class="itemContainer">  <!-- division2 -->
 		
 		
