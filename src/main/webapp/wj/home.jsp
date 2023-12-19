@@ -38,6 +38,7 @@
       <div class="item-text-detail">
         <a href="ShopC">もっと見る</a>
       </div>
+      <!-- 상품 3개 보이기 div -->
       <div class="item-img">
         <div class="item-img-position">
           <img src="img/semi-main-item-img.png" alt="" />
@@ -71,7 +72,7 @@
         </div>
       </div>
       <!-- <div></div> -->
-      <a href="ShopC_copy">샵 테스트</a>
+
       <div class="item-img-news">
         <img
           src="img/semi-main-item-img-news.png"
