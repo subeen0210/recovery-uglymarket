@@ -27,13 +27,13 @@ function formatJSON(json){
 	else{
 		let addrDetail = "";
 		for (i = 0; i < json.results.length; i++) {			
-			addrDetail += "<div>";
-			addrDetail += "<div>"+(i+1).toString() + "</div>";			
-			addrDetail += "<div>"+json.results[i].address1 + "</div>";			
-			addrDetail += "<div>"+json.results[i].address2 + "</div>";			
-			addrDetail += "<div><button class='addrBtn' data-index='" + i + "'>選択</button></div>";			
+			addrDetail += "<div class='info'>";
+			addrDetail += "<div class='info-title'>"+(i+1).toString() + "</div>&ensp;";			
+			addrDetail += "<div class='info-text'>&ensp;"+json.results[i].address1 + "</div>";			
+			addrDetail += "<div class='info-text2'>"+json.results[i].address2 + "&ensp;</div>";			
+			addrDetail += "<div><button class='button btnFade btnBlueGreen addrBtn' data-index='" + i + "'>選択</button></div>";			
 			addrDetail += "</div>"
-			addrDetail += "<hr>"
+			addrDetail += "<br>"
 		}
 		document.querySelector("#items").innerHTML = addrDetail;
 	}

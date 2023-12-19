@@ -33,6 +33,18 @@
   display: flex;
 }
 
+.reg-content2 {
+  width: 50%;
+  height: 40px;
+  display: flex;
+}
+
+.reg-content3 {
+  width: 80%;
+  height: 200px;
+  display: flex;
+}
+
 .reg-menu {
   width: 45%;
   display: flex;
@@ -49,10 +61,12 @@
   font-weight: bold;
 }
 
-.input-style3 {
-  border: 2px solid #2a243a;
-  border-radius: 5px;
-  width: 15%;
+.reg-input2 {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }
 
 #idStatus {
@@ -88,6 +102,13 @@
   border-radius: 5px;
 }
 
+.input-style2 {
+  border: 2px solid #2a243a;
+  border-radius: 5px;
+  width: 100%;
+  height: 150px;
+}
+
 .input-style3 {
   border: 2px solid #2a243a;
   border-radius: 5px;
@@ -118,12 +139,6 @@ label {
   font-weight: bold;
 }
 
-.reg-content2 {
-  width: 50%;
-  height: 40px;
-  display: flex;
-}
-
 #fileNameDisplay {
   position: absolute;
   margin-left: 385px;
@@ -145,4 +160,3 @@ label {
   opacity: 0.8;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-
