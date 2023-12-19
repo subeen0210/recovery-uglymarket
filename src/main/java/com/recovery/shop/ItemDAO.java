@@ -120,6 +120,51 @@ public class ItemDAO {
 		
 	}
 
+	
+	public static void searchItem(HttpServletRequest request) {
+		
+		String paramName = request.getParameter("name");
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from item where i_name = ?";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, paramName);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				ItemDTO i = new ItemDTO();
+				i.setI_no(rs.getInt("i_no"));
+				i.setI_name(rs.getString("i_name"));
+				i.setI_img(rs.getString("i_img"));
+				if (rs.getString("i_img2") != null) {
+					i.setI_img2(rs.getString("i_img2"));
+				} else if (rs.getString("i_img3") != null) {
+					i.setI_img3(rs.getString("i_img3"));
+				} else if (rs.getString("i_img4") != null) {
+					i.setI_img4(rs.getString("i_img4"));
+				}
+				i.setI_des(rs.getString("i_des"));
+				i.setI_category(rs.getInt("i_category"));
+				i.setI_enddate(rs.getDate("i_ed"));
+				i.setI_price(rs.getInt("i_price"));
+				i.setI_stock(rs.getInt("i_stock"));
+				i.setI_star_avg(rs.getDouble("i_avg"));
+				request.setAttribute("item", i);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		
+	}
+	
 
 	public static void addItem(HttpServletRequest request) {
 		

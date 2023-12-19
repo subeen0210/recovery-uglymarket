@@ -41,7 +41,7 @@
 				<span class="uil uil-search">
 				<img id="search-icon" alt="" src="img/search-icon-white.png">
 				</span>
-				<input placeholder="상품명을 입력하세요." onkeyup="enterkeySearch()" type="text">
+				<input type="text" id="searchInput" name="search-input" placeholder="상품명을 입력하세요.">
 			</div>
 			</div>
 		</div>
@@ -88,4 +88,5 @@
 		<img class="arrow-top" src="img/arrow-top.png" alt="Scroll to Top">
 	</div>
 </footer>
+<script type="text/javascript" src="js/search.js"></script>
 </html>
