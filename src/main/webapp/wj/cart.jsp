@@ -66,20 +66,21 @@
 				<br />
 				<div><button onclick="deleteCart(${cart.c_no })">削除</button></div>
 			</div>
+		<input type="hidden" class="cartNumber" value="${cart.c_no }">
+		<input type="hidden" class="itemNumber" value="${cart.i_no }">
 		</div>
 		<br class="${cart.c_no }">
 		<br class="${cart.c_no }">
-		<input type="hidden" class="cartNumber" value="${cart.c_no }">
 		</c:forEach>
 		<br />
 		<div class="pay">
 			<div class="pay-allmoney">商品合計 : <span id="payAllMoneySpan"></span></div>
 			<div class="pay-click">
-				<a class="pay-a" href="">決済する</a>
+				<a class="pay-a" href="#" onclick="payStorage()">決済する</a>
 			</div>
 		</div>
 	</div>
 </body>
 <script src="wj/js/cart(copy).js"></script>
-<script src="wj/js/cart.js"></script>
+<script src="js/localStorage.js"></script>
 </html>
