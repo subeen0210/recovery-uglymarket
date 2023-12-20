@@ -30,9 +30,9 @@
 		</div>
 	</div>
 	
-	<div>
+	<!-- <div>
 
-	<div class="menu_list"> 
+	</div class="menu_list">  -->
 		
 <div id="data-container"></div>
 <div id="pagination-container"></div>

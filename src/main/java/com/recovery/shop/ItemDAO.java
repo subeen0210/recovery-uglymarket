@@ -19,16 +19,21 @@ import oracle.jdbc.proxy.annotation.Pre;
 
 public class ItemDAO {
 
-	public static String getAllItems() {
+	public static String getAllItems(HttpServletRequest request) {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from item order by i_no desc";
-		
+		String sql = "select * from item where i_name like '%'||?||'%' order by i_no desc";
+		String name = request.getParameter("name");
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
+			if(name == null) {
+				pstmt.setString(1, "");
+			}else {
+				pstmt.setString(1, name);
+			}
 			rs = pstmt.executeQuery();
 			ItemDTO item = null;
 			
@@ -120,6 +125,7 @@ public class ItemDAO {
 		
 	}
 
+	
 
 	public static void addItem(HttpServletRequest request) {
 		
