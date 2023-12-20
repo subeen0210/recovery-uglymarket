@@ -4,6 +4,11 @@
 <html>
 <link rel="stylesheet" href="css/myPage.css">
 <link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="MYPAGE_NEW/css/myPas.css">
+<link rel="stylesheet" href="css/kanri.css">
+<link rel="stylesheet" href="css/reviewList.css">
+<link rel="stylesheet" href="css/order.css">
+
 
 <head>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -15,11 +20,13 @@
 <body>
 	<div class="mypage_container"> <!-- 메인 페이지 -->
 		<div class="mypage_title">
-			<p>マイページ</p>
+			<img src="img/semi-logo-title.png"><p>マイページへようこそ</p>
 		</div>
 
 		<div class="mypage_contents1_box">
+		
 			<div class="mypage_contents1_info_box">
+			
 				<div class="mypage_contents2_container">
 				
 					<div class="mypage_contents2_box"> <!--최근 본 상품이 들어가는 박스 -->
@@ -27,47 +34,49 @@
 						<div class="mypage_contents2_box_item"></div>
 						<div class="mypage_contents2_box_item"></div>
 						<div class="mypage_contents2_box_item"></div>
-					<div class="mypage_contents2_more"><a href="">もっと見る</a></div>
+						
+					
 					</div>
+					
 				</div>
+				<div class="mypage_contents2_more"><a href="">もっと見る</a></div>
 				<div class="myinfo_box"> <!-- 나의 로그인 정보 -->
 					<div class="myinfo_box_photo"></div>
 					<div class="myinfo_box_item">
-						<div class="myinfo_box_items">xxxx님</div>
+						<div class="myinfo_box_items"><h3>xxx님</h3></div>
 						<div class="myinfo_box_items">못난이</div>
 						<div class="myinfo_box_items">히히히히히히</div>
 					</div>
-
-
 				</div>
 
 			</div>
 			<div class="">
 				<div class="mypage_contents1_menu"> <!--오른쪽 메뉴 버튼 -->
-					<div class="mypage_contents1_menu_boxs">
-						<a id="kanri">配送住所管理</a>
+					<div class="mypage_contents1_menu_boxs" id="kanri">
+						<p>配送住所管理</p>
 					</div>
-					<div class="mypage_contents1_menu_boxs">
-						<a id="review">後期</a>
+					<div class="mypage_contents1_menu_boxs" id="review">
+						<p>後期</p>
 					</div>
 
-					<div class="mypage_contents1_menu_boxs">
-						<a id="order">注文内訳</a>
+					<div class="mypage_contents1_menu_boxs" id="order">
+						<p>注文内訳</p>
 					</div>
 
 				</div>
 				<div class="mypage_contents1_menu">
-					<div class="mypage_contents1_menu_boxs">
-						<a id="cart">マイカートー</a>
+					<div class="mypage_contents1_menu_boxs" id="cart">
+						<p>マイカートー</p>
 					</div>
-					<div class="mypage_contents1_menu_boxs">
-						<a id="seller-register">商品管理</a>
+					<div class="mypage_contents1_menu_boxs" id="my_infomation">
+						<p>申請情報</p>
 					</div>
 					
-					<div style='visibility: hidden;' class="mypage_contents1_menu_boxs">
-						<a href="#">hidden</a> <!--숨겨진 박스  -->
+					<div class="mypage_contents1_menu_boxs">
+						<img class="img" src="img/a.webp">
 					</div>
 				</div>
+				
 			</div>
 			
 		</div>
