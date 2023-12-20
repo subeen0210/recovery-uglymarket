@@ -14,8 +14,7 @@ import com.recovery.shop.ItemDAO;
 public class HC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		AccountDA
-		O.loginCheck(request);
+		AccountDAO.loginCheck(request);
 		request.setAttribute("contentPage", "wj/home.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
