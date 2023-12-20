@@ -30,7 +30,7 @@
 				onclick="return loginCall()">ログイン</a><br /> <a class="submit"
 				id="openModalBtn">ログイン&ensp;(販売者専用)</a>
 			<p class="forgot">
-				<a href="#">ID・パスワードを忘れた場合</a>
+				<a href="IDForgotC">ID・パスワードを忘れた場合</a>
 			</p>
 		</form>
 		<br> <br>
@@ -71,7 +71,7 @@
 					<button onclick="return loginSellerCall()">사업자 로그인</button>
 				</div>
 				<div>
-					<a>id 비밀번호 찾기</a>
+					<a>ID・パスワードを忘れた場合</a>
 				</div>
 			</div>
 	</div>
