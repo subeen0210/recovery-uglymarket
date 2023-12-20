@@ -17,15 +17,15 @@ $(function() {
 			success: function(response) {
 				console.log(response);
 				if (response === "available") {
-					$("#idStatus").text("사용 가능한 ID입니다.");
+					$("#idStatus").text("使用可能です。").css("color", "green");
 				} else if (response === "unavailable") {
-					$("#idStatus").text("이미 사용 중인 ID입니다.");
+					$("#idStatus").text("すでに使用中のIDです。").css("color", "red");
 				} else {
-					$("#idStatus").text("ID 확인 중 오류가 발생했습니다.");
+					$("#idStatus").text("IDの確認中にエラーが発生しました。").css("color", "red");
 				}
 			},
 			error: function(xhr, status, error) {
-				$("#idStatus").text("서버와 통신 중 오류가 발생했습니다.");
+				$("#idStatus").text("サーバーとの通信中にエラーが発生しました。").css("color", "red");
 				console.log('xhr: ', xhr);
 				console.log('status: ', status);
 				console.log('error: ', error);
@@ -43,9 +43,9 @@ $(function() {
 	});
 	$('#userPWconfirm').keyup(function() {
 		 if ($('#userPW').val() != $('#userPWconfirm').val()) {
-			 $('#pwConfirm').text('間違っています');
+			 $('#pwConfirm').text('間違っています').css("color", "red");
 		} else {
-			 $('#pwConfirm').text('正しいです');
+			 $('#pwConfirm').text('正しいです').css("color", "green");
 		} 
 	});
 	
@@ -54,9 +54,9 @@ $(function() {
 	});
 	$('#sellerPWconfirm').keyup(function() {
 		 if ($('#sellerPW').val() != $('#sellerPWconfirm').val()) {
-			 $('#pwConfirm').text('間違っています');
+			 $('#pwConfirm').text('間違っています').css("color", "red");
 		} else {
-			 $('#pwConfirm').text('正しいです');
+			 $('#pwConfirm').text('正しいです').css("color", "green");
 		} 
 	});
 
@@ -77,102 +77,102 @@ function userCheck() {
 	let inputEmail = document.querySelector('input[name="userEmail"]');
 	let inputAddrN = document.querySelector('input[name="userAddrN"]');
 	console.log(inputId);
-	let setLowerCase = "abcdefghijklmnopqrstuvwxyz";
+	let setLowerCase = "abcdefghijklmnopqrstuvwxyzQWERTYUIOPASDFGHJKLZXCVBNM";
 	let setNumbers = "1234567890";
 	let setSpecialChars = "!@#$%^&*()_+-=[]{}|;':,.<>?/";
 
 	// 아이디 예외
 	// 2글자 이상
-	// 한글, 특수문자 불가능(영어와 숫자만 가능)
+	// 한글, 일본어, 특수문자 불가능(영어와 숫자만 가능)
 	if (isEmpty(inputId) || lessThan(inputId, 2) || containKR(inputId)) {
-		alert('IDなし');
+		alert('IDの条件が足りないです');
 		inputId.focus();
 		$("#idStatus").text("");
 		return false;
 	}
 
 	let idStatusText = $("#idStatus").text();
-	if (idStatusText != "사용 가능한 ID입니다.") {
+	if (idStatusText != "使用可能です。") {
 		if (idStatusText == "") {
-			alert('ID 중복처리가 안됐습니다!');
+			alert('IDが確認されていません');
 			return false;
 		} else {
-			alert('ID가 중복입니다!');
+			alert('すでに使用中のIDです。');
 			return false;
 		}
 	}
 	// 패스워드 예외
 	// 10자 이상
-	// 소문자, 숫자, 특수문자 포함
+	// 영어, 숫자, 특수문자 포함
 	if (isEmpty(inputPW) || lessThan(inputPW, 10) || (notContains(inputPW, setLowerCase) || notContains(inputPW, setNumbers) || notContains(inputPW, setSpecialChars))) {
-		alert('passwordなし');
+		alert('パスワードの条件が足りないです');
 		inputPW.focus();
 		return false;
 	}
 	let pwCText = $("#pwConfirm").text();
 	if (pwCText != "正しいです" || isEmpty(inputPWconfirm)) {
-		alert('passwordの再確認が正しくありません。');
+		alert('パスワードの再確認が正しくありません。');
 		inputPWconfirm.focus();
 		return false;
 	}
 	// 한자 성 예외
 	if (isEmpty(inputKanL)) {
-		alert('seiなし');
+		alert('姓がありません');
 		inputKanL.focus();
 		return false;
 	}
 	// 한자 이름 예외
 	if (isEmpty(inputKanF)) {
-		alert('meiなし');
+		alert('名がありません');
 		inputKanF.focus();
 		return false;
 	}
 	// 카타카나 성 예외
 	if (isEmpty(inputKatL)) {
-		alert('katakanaなし');
+		alert('セイがありません');
 		inputKatL.focus();
 		return false;
 	}
 	// 카타카나 이름 예외
 	if (isEmpty(inputKatF)) {
-		alert('katakanameiなし');
+		alert('メイがありません');
 		inputKatF.focus();
 		return false;
 	}
 	// 닉네임 예외
 	// 특수문자 불가
 	if (isEmpty(inputNick) || !(notContains(inputNick, setSpecialChars))) {
-		alert('nicknameなし');
+		alert('ニックネームがありません');
 		inputNick.focus();
 		return false;
 	}
 	// 전화 예외
 	// 오직 숫자만
 	if (isEmpty(inputTel1) || isNotNumber(inputTel1)) {
-		alert('telがありません');
+		alert('電話番号は数字を入れてください');
 		inputTel1.focus();
 		inputTel1.value = '';
 		return false;
 	} else if (isEmpty(inputTel2) || isNotNumber(inputTel2)) {
-		alert('telがありません');
+		alert('電話番号は数字を入れてください');
 		inputTel2.focus();
 		inputTel2.value = '';
 		return false;
 	} else if (isEmpty(inputTel3) || isNotNumber(inputTel3)) {
-		alert('telがありません');
+		alert('電話番号は数字を入れてください');
 		inputTel3.focus();
 		inputTel3.value = '';
 		return false;
 	}
 	// 이메일 예외
 	if (isEmpty(inputEmail)) {
-		alert('emailなし');
+		alert('メールがありません');
 		inputEmail.focus();
 		return false;
 	}
 	// 주소 예외
 	if (isEmpty(inputAddrN)) {
-		alert('addrなし');
+		alert('郵便番号がありません');
 		inputAddrN.focus();
 		return false;
 	}
@@ -195,102 +195,102 @@ function sellerCheck() {
 	let inputAddrN = document.querySelector('input[name="sellerAddrN"]');
 	let inputFImg = document.querySelector('input[name="farmImg"]');
 	console.log(inputId);
-	let setLowerCase = "abcdefghijklmnopqrstuvwxyz";
+	let setLowerCase = "abcdefghijklmnopqrstuvwxyzQWERTYUIOPASDFGHJKLZXCVBNM";
 	let setNumbers = "1234567890";
 	let setSpecialChars = "!@#$%^&*()_+-=[]{}|;':,.<>?/";
 
 	// 아이디 예외
 	// 2글자 이상
-	// 한글, 특수문자 불가능(영어와 숫자만 가능)
+	// 한글, 일본어, 특수문자 불가능(영어와 숫자만 가능)
 	if (isEmpty(inputId) || lessThan(inputId, 2) || containKR(inputId)) {
-		alert('IDなし');
+		alert('IDの条件が足りないです');
 		inputId.focus();
 		$("#idStatus").text("");
 		return false;
 	}
 
 	let idStatusText = $("#idStatus").text();
-	if (idStatusText != "사용 가능한 ID입니다.") {
+	if (idStatusText != "使用可能です。") {
 		if (idStatusText == "") {
-			alert('ID 중복처리가 안됐습니다!');
+			alert('IDが確認されていません');
 			return false;
 		} else {
-			alert('ID가 중복입니다!');
+			alert('すでに使用中のIDです。');
 			return false;
 		}
 	}
 	// 패스워드 예외
 	// 10자 이상
-	// 소문자, 숫자, 특수문자 포함
+	// 영어, 숫자, 특수문자 포함
 	if (isEmpty(inputPW) || lessThan(inputPW, 10) || (notContains(inputPW, setLowerCase) || notContains(inputPW, setNumbers) || notContains(inputPW, setSpecialChars))) {
-		alert('passwordなし');
+		alert('パスワードの条件が足りないです');
 		inputPW.focus();
 		return false;
 	}
 	let pwCText = $("#pwConfirm").text();
 	if (pwCText != "正しいです" || isEmpty(inputPWconfirm)) {
-		alert('passwordの再確認が正しくありません。');
+		alert('パスワードの再確認が正しくありません。');
 		inputPWconfirm.focus();
 		return false;
 	}
 	// 한자 성 예외
 	if (isEmpty(inputKanL)) {
-		alert('seiなし');
+		alert('姓がありません');
 		inputKanL.focus();
 		return false;
 	}
 	// 한자 이름 예외
 	if (isEmpty(inputKanF)) {
-		alert('meiなし');
+		alert('名がありません');
 		inputKanF.focus();
 		return false;
 	}
 	// 카타카나 성 예외
 	if (isEmpty(inputKatL)) {
-		alert('katakanaなし');
+		alert('セイがありません');
 		inputKatL.focus();
 		return false;
 	}
 	// 카타카나 이름 예외
 	if (isEmpty(inputKatF)) {
-		alert('katakanameiなし');
+		alert('メイがありません');
 		inputKatF.focus();
 		return false;
 	}
 	// 전화 예외
 	// 오직 숫자만
 	if (isEmpty(inputTel1) || isNotNumber(inputTel1)) {
-		alert('telがありません');
+		alert('電話番号は数字を入れてください');
 		inputTel1.focus();
 		inputTel1.value = '';
 		return false;
 	} else if (isEmpty(inputTel2) || isNotNumber(inputTel2)) {
-		alert('telがありません');
+		alert('電話番号は数字を入れてください');
 		inputTel2.focus();
 		inputTel2.value = '';
 		return false;
 	} else if (isEmpty(inputTel3) || isNotNumber(inputTel3)) {
-		alert('telがありません');
+		alert('電話番号は数字を入れてください');
 		inputTel3.focus();
 		inputTel3.value = '';
 		return false;
 	}
 	// 팜 이미지
 	if (isEmpty(inputFImg)) {
-		alert('FarmImgなし');
+		alert('農場のイメージを入れてください');
 		inputFImg.focus();
 		return false;
 	}
 	// 팜 이름 예외
 	// 특수문자 불가
 	if (isEmpty(inputFName) || !(notContains(inputFName, setSpecialChars))) {
-		alert('Farmnameなし');
+		alert('農場の名前には特殊文字なしにしてください');
 		inputFName.focus();
 		return false;
 	}
 	// 주소 예외
 	if (isEmpty(inputAddrN)) {
-		alert('addrなし');
+		alert('郵便番号がありません');
 		inputAddrN.focus();
 		return false;
 	}
