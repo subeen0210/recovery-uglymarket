@@ -108,7 +108,7 @@
 
 .info-menu {
 	border: 1px solid white;
-	border-radius: 50px;
+	border-radius: 8px;
 	background-color: #C3E820;
 	width: 13%;
 	text-align: center;
@@ -185,9 +185,17 @@
 
 .pay-click {
 	width: 20%;
+	height: 100%;
+	
 }
 
-.pay-a {
-	text-decoration: none;
+.pay-btn {
+	margin-top: 58px;
+	width: 80%;
+	height: 40%;
 	color: black;
+	font-size: 30px;
+	border-radius: 20px;
+	background-color: #228B22;
+	color: white;
 }

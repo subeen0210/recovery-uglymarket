@@ -8,14 +8,13 @@ public class UserAddr {
 	private String a_name;
 	private String a_tel;
 	private String a_req;
-	private String u_id;
 	
 	public UserAddr() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public UserAddr(int a_no, String a_postcode, String a_addr, String a_addrDetail, String a_name, String a_tel,
-			String a_req, String u_id) {
+			String a_req) {
 		super();
 		this.a_no = a_no;
 		this.a_postcode = a_postcode;
@@ -24,7 +23,6 @@ public class UserAddr {
 		this.a_name = a_name;
 		this.a_tel = a_tel;
 		this.a_req = a_req;
-		this.u_id = u_id;
 	}
 
 	public int getA_no() {
@@ -83,12 +81,5 @@ public class UserAddr {
 		this.a_req = a_req;
 	}
 
-	public String getU_id() {
-		return u_id;
-	}
-
-	public void setU_id(String u_id) {
-		this.u_id = u_id;
-	}
 	
 }
