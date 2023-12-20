@@ -30,7 +30,7 @@
 			</div>
 			<div>
 				<div class="radio-container">商品種類
-				<label>アグリー<input type="radio" value="1" name="type"class="select"></label> 
+				<label>アグリー<input checked="checked" type="radio" value="1" name="type"class="select"></label> 
 				<label>普通<input type="radio" value="2" name="type" class="select"></label>
 				</div>
 			</div>
