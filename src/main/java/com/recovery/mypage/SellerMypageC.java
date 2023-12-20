@@ -11,13 +11,13 @@ import com.recovery.account.AccountDAO;
 import com.recovery.shop.ItemDAO;
 
 
-@WebServlet("/MypageC")
-public class MypageC extends HttpServlet {
+@WebServlet("/SellerMypageC")
+public class SellerMypageC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "sb_mypage/jsp/mypageMain.jsp");
+		request.setAttribute("contentPage", "wr_company/MYPAGE_NEW/myPage.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	
 	}

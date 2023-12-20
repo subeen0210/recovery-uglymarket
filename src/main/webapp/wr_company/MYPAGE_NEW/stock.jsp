@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/seller_register.css">
-<link rel="stylesheet" href="css/modal.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/seller_register.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/modal.css">
 <!--<link rel="stylesheet" href="css/header.css">-->
 <script>
 
