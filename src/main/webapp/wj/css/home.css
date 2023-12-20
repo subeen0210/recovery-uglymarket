@@ -199,3 +199,80 @@
   left: 67.5%;
   transform: translate(-50%, -50%);
 }
+
+
+/* 최수빈 상품 3개 css */
+#data-container {
+	display: flex;
+	justify-content: center;
+	width: 98vw;
+}
+
+.shop-list{
+	display: flex;
+}
+
+.shop-item {
+	width: 400px;
+	/*border: 1px solid red;*/
+	margin: 33px;
+}
+
+#pagination {
+	display: none;
+	justify-content: center;
+}
+
+.item-img {
+	width: 330px; 
+	height: 330px;
+	background-image: url('item.Folder.jpg'); /* 이미지 경로 설정 */
+	background-size: cover; /* 이미지를 div에 맞춰서 채우기 */
+	background-position: center; /* 이미지를 가운데 정렬 */
+	background-repeat: no-repeat; /* 이미지 반복 없음 */
+	margin-left: 5px; 
+}
+.category {
+	position: relative;
+	display: inline-block;
+	padding: 8%;
+	margin-top: -20px;
+}
+
+.category-back1 {
+	margin: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 65px;
+	height: 20px;
+	background-color: #0B6121;
+	border-radius: 5px;
+	background-repeat: no-repeat;
+	letter-spacing: 1.3px;
+	font-size: 8pt;
+	color: white;
+}
+
+.category-back2 {
+	margin: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 65px;
+	height: 20px;
+	background-color: #D8D8D8;
+	border-radius: 5px;
+	background-repeat: no-repeat;
+	letter-spacing: 5px;
+	font-size: 10pt;
+}
+.text-name{
+	font-size: 1.5vw;
+	margin: 3px 5px;
+}
+
+.text-price{
+	font-size: 1.3vw;
+	margin: 3px 5px;
+}

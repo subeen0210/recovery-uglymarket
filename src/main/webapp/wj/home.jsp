@@ -7,6 +7,10 @@
     <meta charset="UTF-8" />
     <title>Insert title here</title>
     <link rel="stylesheet" href="wj/css/home.css" />
+<script type="text/javascript" src="pagination/pagination.js"></script>
+<script type="text/javascript" src="pagination/pagination.min.js"></script>
+<link rel="stylesheet" href="pagination/pagination.css">
+<script type="text/javascript" src="js/item.js"></script>
   </head>
   <body>
     <!-- bx 슬라이더 -->
@@ -32,46 +36,21 @@
     </ul>
 
     <div class="main-item">
+    
       <div class="item-text-discount">
         <span class="item-text-discount-detail">今週の特価セール</span>
       </div>
       <div class="item-text-detail">
         <a href="ShopC">もっと見る</a>
       </div>
+      
       <!-- 상품 3개 보이기 div -->
-      <div class="item-img">
-        <div class="item-img-position">
-          <img src="img/semi-main-item-img.png" alt="" />
-          <div class="item-img-position-text">
-            <img src="img/semi-main-item-img-text.png" alt="" /><br />
-            <br />
-            <span class="img-text-style">シャインマスカット2KG</span><br />
-            <br />
-            <span class="img-text-style2">390円</span>
-          </div>
-        </div>
-        <div class="item-img-position">
-          <img src="img/semi-main-item-img2.png" alt="" />
-          <div class="item-img-position-text">
-            <img src="img/semi-main-item-img-text2.png" alt="" /><br />
-            <br />
-            <span class="img-text-style">完熟トマト 5KG</span><br />
-            <br />
-            <span class="img-text-style2">2790円</span>
-          </div>
-        </div>
-        <div class="item-img-position">
-          <img src="img/semi-main-item-img3.png" alt="" />
-          <div class="item-img-position-text">
-            <img src="img/semi-main-item-img-text.png" alt="" /><br />
-            <br />
-            <span class="img-text-style">高糖度済州島 2KG</span><br />
-            <br />
-            <span class="img-text-style2">1680円</span>
-          </div>
-        </div>
+      <div>
+      <div id="pagination"></div>
+      <div id="data-container"></div>
       </div>
       <!-- <div></div> -->
+	
 
       <div class="item-img-news">
         <img
