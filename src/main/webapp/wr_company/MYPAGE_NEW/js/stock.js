@@ -1,21 +1,39 @@
-var modal = document.getElementById('myModal');
-var btn = document.getElementById('openModalBtn');
-var span = document.getElementsByClassName('close')[0];
+document.addEventListener('DOMContentLoaded', function () {
+    var modal = document.getElementById('myModal');
+    var btn = document.getElementById('openModalBtn');
+    var span = document.getElementsByClassName('close')[0];
 
-btn.onclick = function() {
-    modal.style.display = 'block';
-}
+    btn.onclick = function() {
+        modal.style.display = 'block';
+    };
 
-span.onclick = function() {
-    modal.style.display = 'none';
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
+    span.onclick = function() {
         modal.style.display = 'none';
-    }
-}
+    };
 
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    // 추가된 부분
+    var modifyColumn = document.getElementById('modifyColumn');
+
+    if (modifyColumn) {
+        modifyColumn.onclick = function () {
+            modal.style.display = 'block';
+        };
+    } else {
+        console.error('modifyColumn not found.');
+    }
+});
+
+window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+};
 
 function showContent(contentId) {
     // Hide all content divs
@@ -23,45 +41,42 @@ function showContent(contentId) {
         content.style.display = 'none';
     });
 
-    // Deactivate all tabs
-    document.querySelectorAll('.tab').forEach(function(tab) {
-        tab.classList.remove('active');
-    });
-
     // Show the selected content
     document.getElementById(contentId).style.display = 'block';
     console.log(contentId)
     if (contentId == 'product-management') {
-        $.ajax({
-            url: 'ItemAddC',
-            datatype: 'json'
-        }).done(function(data) {
-            console.log(data);
-            for (let i = 0; i < data.length; i++) {
-                // Date 객체로 변환
-                var dateObject = new Date(data[i].i_enddate.replace(/월|일/g, '').trim());
-                // 원하는 날짜 형식으로 포맷팅
-                var year = dateObject.getFullYear();
-                var month = (dateObject.getMonth() + 1).toString().padStart(2, '0');
-                var day = dateObject.getDate().toString().padStart(2, '0');
-
-                // 원하는 형식으로 조합
-                var formattedDate = year + "-" + month + "-" + day;
-
-                let tr = $("<tr></tr>")
-                $(tr).append("<td>" + data[i].i_name + "</td>");
-                $(tr).append("<td>" + data[i].i_stock + "</td>");
-                $(tr).append("<td>" + formattedDate + "</td>");
-                $(tr).append("<td>" + data[i].i_price + "</td>");
-                $(tr).append("<td><button id='openModalBtn'>modi</button></td>");
-                $(tr).append("<td><button onclick='itemDelete(" + data[i].i_no + ")'>delete</button></td>");
-                $("#tbody").append(tr);
-            }
-        })
+        // 페이지 로드 시 데이터 로딩
+        loadStockData();
     }
+}
 
-    // Activate the corresponding tab
-    document.querySelector(`.tab[onclick="showContent('${contentId}')"]`).classList.add('active');
+function loadStockData() {
+    $.ajax({
+        url: 'ItemAddC',
+        datatype: 'json'
+    }).done(function(data) {
+        console.log(data);
+        for (let i = 0; i < data.length; i++) {
+            // Date 객체로 변환
+            var dateObject = new Date(data[i].i_enddate.replace(/월|일/g, '').trim());
+            // 원하는 날짜 형식으로 포맷팅
+            var year = dateObject.getFullYear();
+            var month = (dateObject.getMonth() + 1).toString().padStart(2, '0');
+            var day = dateObject.getDate().toString().padStart(2, '0');
+
+            // 원하는 형식으로 조합
+            var formattedDate = year + "-" + month + "-" + day;
+
+            let tr = $("<tr></tr>")
+            $(tr).append("<td>" + data[i].i_name + "</td>");
+            $(tr).append("<td>" + data[i].i_stock + "</td>");
+            $(tr).append("<td>" + formattedDate + "</td>");
+            $(tr).append("<td>" + data[i].i_price + "</td>");
+            $(tr).append("<td><button id='openModalBtn'>modi</button></td>");
+            $(tr).append("<td><button onclick='itemDelete(" + data[i].i_no + ")'>delete</button></td>");
+            $("#tbody").append(tr);
+        }
+    });
 }
 
 function itemDelete(no) {
