@@ -6,13 +6,14 @@ let userID = document.querySelector('#loginUserID');
 let userPW = document.querySelector('#loginUserPW');
 	
 if(isEmpty(userID)){
-	$("#loginEmptyID").text("아이디 비어있음!!");
+	$("#loginEmptyID").text("IDが空いてます");
 	$("#loginEmptyID").css("color", "red");
 	userID.focus();
 	return false;
 };
 if(isEmpty(userPW)){
-	alert("비밀번호 비어있음!!");
+	$("#loginEmptyPW").text("パスワードが空いてます");
+	$("#loginEmptyPW").css("color", "red");
 	userPW.focus();
 	return false;
 	
