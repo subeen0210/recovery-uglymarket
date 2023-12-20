@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
 <link rel="stylesheet" href="css/myPage.css">
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/kanri.css">

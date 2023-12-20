@@ -12,14 +12,6 @@
 <script type="text/javascript" src="js/addr.js"></script>
 <script type="text/javascript" src="js/idCheck.js"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
-<script>
-
-var myInput = document.getElementById("ID");
-
-
-myInput.disabled = true;
-
-</script>
 </head>
 <body>
 	<form action="RegUserC" method="post" enctype="multipart/form-data"
