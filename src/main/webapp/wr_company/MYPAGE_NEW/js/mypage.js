@@ -53,15 +53,15 @@ function getPagePath(pageId) {
 	switch (pageId) {
 
 		case "insert":
-			return "insert.jsp"
+			return "wr_company/MYPAGE_NEW/insert.jsp"
 		case "register":
-			return "register.jsp";
+			return "wr_company/MYPAGE_NEW/register.jsp";
 		case "delivery":
-			return "delivery.jsp";
+			return "wr_company/MYPAGE_NEW/delivery.jsp";
 		case "stock":
-			return "stock.jsp";
+			return "wr_company/MYPAGE_NEW/stock.jsp";
 		case "mypage":
-			return "farmpage.jsp";
+			return "wr_company/MYPAGE_NEW/farmpage.jsp";
 		default:
 			console.error('JSP 페이지 로딩 중 에러:', error);
 			return "";

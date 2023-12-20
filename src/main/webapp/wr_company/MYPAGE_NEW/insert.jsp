@@ -24,7 +24,7 @@ align-content: center;
 </head>
 <body>
 
-<div class="insert"><img src="img/logo.png"><h1>管理ページへようこそ</h1></div>
+<div class="insert"><img src="wr_company/MYPAGE_NEW/img/logo.png"><h1>管理ページへようこそ</h1></div>
 
 
 
