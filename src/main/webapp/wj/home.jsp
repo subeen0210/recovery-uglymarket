@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080, initial-scale=1.0"charset="UTF-8">
     <title>Insert title here</title>
     <link rel="stylesheet" href="wj/css/home.css" />
 <script type="text/javascript" src="pagination/pagination.js"></script>
@@ -14,7 +14,7 @@
   </head>
   <body>
     <!-- bx 슬라이더 -->
-    <ul class="bxslider">
+    <ul class="bxslider">    
       <li>
         <img src="img/semi-main-slider.png" alt="Image 1" /><span
           class="text-overlay"
@@ -74,7 +74,6 @@
               src="img/semi-main-item-news-text-first-img-date.png"
               alt=""
             />
-            <!-- 앱솔루트 이미지 -->
             <img src="img/semi-main-item-img-news-rectangle.png" alt="" />
             <img
               class="news-inner-img4"
