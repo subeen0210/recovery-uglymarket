@@ -11,8 +11,8 @@ import com.recovery.account.AccountDAO;
 import com.recovery.shop.ItemDAO;
 
 
-@WebServlet("/MypageC")
-public class MypageC extends HttpServlet {
+@WebServlet("/SellerMypageC")
+public class SellerMypageC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
