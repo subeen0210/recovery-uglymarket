@@ -11,7 +11,8 @@ import com.recovery.account.UserAddr;
 import com.recovery.main.DBManager;
 
 public class OrderDAO {
-
+	
+	// 배송 조회
 	public static void userAddr(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -52,7 +53,8 @@ public class OrderDAO {
 		}
 		
 	}
-
+	
+	// order에 db 등록
 	public static void regOrders(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -67,13 +69,13 @@ public class OrderDAO {
 		    System.out.println("subtotal: " + subtotal[i]);
 		}
 		
-		String sql = "insert into orders values(o_no_seq.nextval,?,?,?,?, DEFAULT, sysdate)";
+		String sql = "insert into orders values(orders_seq.nextval,?,?,?,?, DEFAULT, sysdate)";
 		try {
 			con = DBManager.connect();
-			for (int i = 0; i < i_no.length; i++) {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, user.getU_id());
 			
+			for (int i = 0; i < i_no.length; i++) {
 			pstmt.setString(2, i_no[i]);
 			pstmt.setString(3, quantity[i]);
 			pstmt.setString(4, subtotal[i]);
@@ -89,6 +91,39 @@ public class OrderDAO {
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
+		deleteOrdersCart(request);
 	}
-
+	
+	// order 등록이 되면 cart 삭제 
+	public static void deleteOrdersCart(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		User user = (User) request.getSession().getAttribute("userAccount");
+		String[] i_no = request.getParameterValues("i_no");
+		
+		for (String i : i_no) {
+			System.out.println("i_no: " + i);
+		}
+		
+		String sql = "delete cart where u_id = ? and i_no = ?";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user.getU_id());
+			for (int i = 0; i < i_no.length; i++) {
+			
+			pstmt.setString(2, i_no[i]);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("장바구니 삭제 성공 " + i);
+			}
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("장바구니 삭제 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
 }

@@ -118,7 +118,6 @@ public class CartDAO {
 				int count = rs.getInt(1);
 				
 				if (count > 0) {
-			        System.out.println("행이 존재한다 = 값이 있다 = true");
 			        Check = true;
 			    } 
 				

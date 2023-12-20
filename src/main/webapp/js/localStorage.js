@@ -64,48 +64,48 @@ function payStorage() {
 };
 
 // orderPage.jsp 에서 localStorage 불러오기
-//$(function() {
-//
-//	let itemsString = localStorage.getItem('selectedItems')
-//	let items = JSON.parse(itemsString);
-//	console.log(items);
-//
-//	
-//	let getItems = "";
-//	let total = 0;
-//	for (i = 0; i < items.length; i++) {
-//
-//		console.log(items[i]);
-//		total += parseInt(items[i].subtotal);
-//		console.log(total);
-//		console.log(items.i_no);
-//		
-//		getItems += "<div>";
-//		getItems += "<div>" + items[i].image + "</div>";
-//		getItems += "<div>" + items[i].name + "</div>";
-//		getItems += "<div>" + items[i].category + "</div>";
-//		getItems += "<div>" + items[i].farmName + "</div>";
-//		getItems += "<div>" + items[i].price + "</div>";
-//		getItems += "<div>" + items[i].quantity + "</div>";
-//		getItems += "<div>" + items[i].subtotal + "</div>";
-//		getItems += "<input type='hidden' name='i_no' value='"+ items[i].i_no +"'>";
-//		getItems += "<input type='hidden' name='quantity' value='"+ items[i].quantity +"'>";	
-//		getItems += "<input type='hidden' name='subtotal' value='"+ items[i].subtotal +"'>";	
-//		getItems += "</div>";
-//		getItems += "<br>";
-//	}
-//	document.getElementById('getItems').innerHTML = getItems;
-//	document.getElementById('totalPrice').innerHTML = total;
-//	
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//});
+$(function() {
+
+	let itemsString = localStorage.getItem('selectedItems')
+	let items = JSON.parse(itemsString);
+	console.log(items);
+
+	
+	let getItems = "";
+	let total = 0;
+	for (i = 0; i < items.length; i++) {
+
+		console.log(items[i]);
+		total += parseInt(items[i].subtotal);
+		console.log(total);
+		console.log(items.i_no);
+		
+		getItems += "<div>";
+		getItems += "<div>" + items[i].image + "</div>";
+		getItems += "<div>" + items[i].name + "</div>";
+		getItems += "<div>" + items[i].category + "</div>";
+		getItems += "<div>" + items[i].farmName + "</div>";
+		getItems += "<div>" + items[i].price + "</div>";
+		getItems += "<div>" + items[i].quantity + "</div>";
+		getItems += "<div>" + items[i].subtotal + "</div>";
+		getItems += "<input type='hidden' name='i_no' value='"+ items[i].i_no +"'>";
+		getItems += "<input type='hidden' name='quantity' value='"+ items[i].quantity +"'>";	
+		getItems += "<input type='hidden' name='subtotal' value='"+ items[i].subtotal +"'>";	
+		getItems += "</div>";
+		getItems += "<br>";
+	}
+	document.getElementById('getItems').innerHTML = getItems;
+	document.getElementById('totalPrice').innerHTML = total;
+	
+
+
+
+
+
+
+
+
+
+
+
+});
