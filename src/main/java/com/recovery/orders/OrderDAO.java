@@ -56,13 +56,36 @@ public class OrderDAO {
 	public static void regOrders(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into orders values(o_no_seq.nextval,?,?,?,?,?,?)";
+		User user = (User) request.getSession().getAttribute("userAccount");
+		
+		String[] i_no = request.getParameterValues("i_no");
+		String[] quantity = request.getParameterValues("quantity");
+		String[] subtotal = request.getParameterValues("subtotal");
+		for (int i = 0; i < i_no.length; i++) {
+		    System.out.println("i_no: " + i_no[i]);
+		    System.out.println("quantity: " + quantity[i]);
+		    System.out.println("subtotal: " + subtotal[i]);
+		}
+		
+		String sql = "insert into orders values(o_no_seq.nextval,?,?,?,?, DEFAULT, sysdate)";
 		try {
 			con = DBManager.connect();
+			for (int i = 0; i < i_no.length; i++) {
 			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user.getU_id());
+			
+			pstmt.setString(2, i_no[i]);
+			pstmt.setString(3, quantity[i]);
+			pstmt.setString(4, subtotal[i]);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("주문 등록 성공"+i);
+			}
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("주문 등록 실패");
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
