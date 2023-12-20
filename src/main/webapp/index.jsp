@@ -35,8 +35,15 @@
 			<jsp:include page="${loginChange }"></jsp:include>
 			&emsp;&emsp; <img class="cart-icon" src="img/semi-cart-icon.png"
 				onclick="userLoginCheck('${sessionScope.userAccount.u_id}')">
-			&emsp;&emsp; <a href=""><img class="search-icon"
-				src="img/semi-search-icon.png" alt="" /></a>
+			&emsp;&emsp; 
+			<div class="wrapper">
+			<div class="search">
+				<span class="uil uil-search">
+				<img id="search-icon" alt="" src="img/search-icon-white.png">
+				</span>
+				<input type="text" id="searchInput" name="search-input" placeholder="상품명을 입력하세요.">
+			</div>
+			</div>
 		</div>
 	</div>
 
@@ -81,4 +88,5 @@
 		<img class="arrow-top" src="img/arrow-top.png" alt="Scroll to Top">
 	</div>
 </footer>
+<script type="text/javascript" src="js/search.js"></script>
 </html>

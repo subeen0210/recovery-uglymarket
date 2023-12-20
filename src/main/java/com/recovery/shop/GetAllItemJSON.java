@@ -13,7 +13,8 @@ public class GetAllItemJSON extends HttpServlet {
 //		System.out.println(ItemDAO.getAllItems());
 		response.setContentType("application/json");
 		response.setCharacterEncoding("utf-8");
-		response.getWriter().write(ItemDAO.getAllItems());
+		
+		response.getWriter().write(ItemDAO.getAllItems(request));
 		
 	}
 
