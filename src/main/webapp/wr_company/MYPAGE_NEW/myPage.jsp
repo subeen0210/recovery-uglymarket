@@ -14,15 +14,12 @@
 <body>
 	<div class="myPage_container">
 
-	 	<div class="seller_id_main">
-
-			<div class="seller_id">オタクの農場</div>
-		</div>
+	 	
 
 		<div class="main_menu_container">
 			<div class="main_menu_control">
 				<div class="main_menu" id="registerMenu">
-					<a onclick="showJSP('register') ">商品管理</a>
+					<a onclick="showJSP('register') ">商品登録</a>
 				</div>
 				<div class="main_menu" id="deliveryMenu">
 					<a onclick="showJSP('delivery')">配送管理</a>
@@ -32,7 +29,7 @@
 				</div>
 
 				<div class="main_menu" id="mypageMenu">
-					<a onclick="showJSP('mypage')">農場情報管理</a>
+					<a onclick="showJSP('mypage')">農場情報修正</a>
 				</div>
 
 			</div>
