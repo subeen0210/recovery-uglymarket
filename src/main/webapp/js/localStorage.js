@@ -4,6 +4,14 @@
 
 // cart.jsp 에서 결제하기 클릭했을 때, 상품의 로컬스토리지 생성
 function payStorage() {
+	
+	let payTotalPrice = document.querySelector('#payAllMoneySpan').innerText;
+	if(payTotalPrice == '0'){
+		alert('買い物を選択してください');
+		
+		return f;
+	}
+	
 
 	// class가 'item-checkbox'인 모든 체크박스를 가져옵니다.
 	let checkboxes = document.querySelectorAll('.item-checkbox');
