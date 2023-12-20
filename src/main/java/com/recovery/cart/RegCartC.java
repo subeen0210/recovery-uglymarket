@@ -13,10 +13,12 @@ public class RegCartC extends HttpServlet {
 	// cart u_id/ i_no 있는지 없는지 확인
 	if (CartDAO.hasCartItem(request)) {		
 		//업데이트
+		System.out.println("갯수 추가");
 	CartDAO.updateCart(request);
 	
 	}else {
 		// cart db에 장바구니 추가 
+		System.out.println("새 장바구니 추가");
 	CartDAO.regCart(request);
 		
 	}
