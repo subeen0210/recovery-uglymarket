@@ -1,42 +1,35 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="css/review.css" />
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+    <meta charset="UTF-8">
+    <title>리뷰 관리 목록</title>
+    <link rel="stylesheet" href="css/reviewList.css">
  
 </head>
 <body>
-<div class="review_container">
-<div class="review_title">리뷰관리</div>
-
-  <div class="review" onclick="toggleReview('review1')">
-    <h2>Review 1</h2>
-    <div id="review1" class="review-content">
-      내용 1
+    <div id="reviewListContainer">
+        <h1>レビュー管理リスト</h1>
+        <div class="my_review_buttons">
+        <button id="modify">修正</button>
+        <button id="delete">削除</button>
+        </div>
+        <table id="reviewTable">
+            <thead>
+                <tr>
+                    <th>タイトル</th>
+                    <th>内容</th>
+                    <th>作成日時</th>
+                    <th>スター</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 리뷰 목록 표시 -->
+            </tbody>
+        </table>
     </div>
-  </div>
 
-  <div class="review" onclick="toggleReview('review2')">
-    <h2>Review 2</h2>
-    <div id="review2" class="review-content">
-      내용 2
-    </div>
-  </div>
-</div>
-  <script>
-    function toggleReview(reviewId) {
-      var content = document.getElementById(reviewId);
-      if (content.style.display === "none") {
-        content.style.display = "block";
-      } else {
-        content.style.display = "none";
-      }
-    }
-  </script>
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="js/reviewList.js"></script>
 </body>
 </html>

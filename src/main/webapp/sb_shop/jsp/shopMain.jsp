@@ -19,7 +19,7 @@
 	<div class="shop-item-kwj">
 		<div class="shop-menu">
 			<span data-filter="all">
-				<div class="filter" val='all'>ALL</div>
+				<div class="filter" val='all'>すべて</div>
 			</span> 
 			<span data-filter="1">
 				<div class="filter" val='ugly'>アグリー</div>
@@ -30,9 +30,9 @@
 		</div>
 	</div>
 	
-	<div>
+	<!-- <div>
 
-	<div class="menu_list"> 
+	</div class="menu_list">  -->
 		
 <div id="data-container"></div>
 <div id="pagination-container"></div>
@@ -44,9 +44,9 @@
 		
 		
 		
-		<div id="pagination">
+	 <div id="pagination"> 
 			<!-- 페이지 번호를 나타낼 곳 -->
-		</div>
+	 	</div> 
 
 	</div>
 	

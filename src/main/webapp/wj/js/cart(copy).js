@@ -213,11 +213,23 @@ function adjustQuantity(btn, cartCode, delta) {
 	$("#payAllMoneySpan").text(perTotal);
 	
 	
-	
-	
-	
-	
-	
-	
-	
 }
+
+
+
+// 1일때 못난이 2일떄 일반
+$(function(){
+	let categories = document.querySelectorAll('.info-menu');
+
+    categories.forEach(function(category) {
+        let cValue = category.textContent.trim();
+        let result = cValue === '1' ? 'アグリー' : '普 通';
+		let backgroundColor = cValue === '1' ? '#0B6121' : '#D8D8D8';
+		let color = cValue === '1' ? '#FFFFFF' : '#000000';
+		
+        
+        category.style.backgroundColor = backgroundColor;
+        category.style.color = color;
+        category.textContent = result;
+    });
+});

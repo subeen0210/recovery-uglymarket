@@ -22,7 +22,7 @@ a:hover {
 }
 
 .header {
-  width: 100vmax;
+  width: 100vw;
   height: 130px;
   display: flex;
   justify-content: space-around;
@@ -71,7 +71,7 @@ a:hover {
 footer {
   position: absolute;
   background-color: #000000;
-  padding: 10px;
+  
   color: white;
   width: 100%;
 }
@@ -100,7 +100,7 @@ footer {
 }
 
 .footer3 {
-  padding: 10px;
+  /*padding: 10px;*/
 }
 
 .f_button {

@@ -22,7 +22,7 @@ public class CartDAO {
 				+ "where users.u_id = cart.u_id "
 				+ "and item.i_no = cart.i_no "
 				+ "and item.s_id = seller.s_id "
-				+ "and users.u_id = (select u_id from users where u_id = ?) order by c_no desc";
+				+ "and users.u_id = ? order by c_no desc";
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
@@ -118,7 +118,6 @@ public class CartDAO {
 				int count = rs.getInt(1);
 				
 				if (count > 0) {
-			        System.out.println("행이 존재한다 = 값이 있다 = true");
 			        Check = true;
 			    } 
 				

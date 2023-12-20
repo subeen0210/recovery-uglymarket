@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+body {
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.tabs {
+	display: flex;
+	background-color: #f1f1f1;
+	padding: 10px;
+	font-size: 20px;
+}
+
+.tab {
+	flex: 1;
+	cursor: pointer;
+	padding: 10px;
+	text-align: center;
+	border: none;
+	outline: none;
+	background-color: inherit;
+	transition: background-color 0.8s;
+}
+
+.tab:hover {
+	background-color: #E7B2B2;
+}
+
+.tab.active {
+	background-color: black;
+	color: white;
+}
+
+.content {
+	padding: 20px;
+	border: 1px solid #E8D3D3;
+	border-radius: 40px;
+	margin: 100px;
+	padding: 50px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#product-registration {
+	/*display: block;
+	/*  background-color: #C3E820;*/
+	border: 1px solid black;
+	border-radius: 40px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#product-management {
+	/*sdisplay: block;
+	/*background-color: #C3E820;*/
+	border: 1px solid black;
+	border-radius: 40px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 폼 스타일링 */
+form {
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+label {
+	display: block;
+	margin: 10px 0;
+}
+
+.img {
+	width: calc(100% - 20px);
+	padding: 8px;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+}
+
+.price {
+	width: calc(100% - 20px);
+	padding: 8px;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+}
+
+.stock {
+	width: calc(100% - 20px);
+	padding: 8px;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+}
+
+.date {
+	width: calc(100% - 20px);
+	padding: 8px;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+}
+
+input {
+	border: 2px solid black;/* 테두리 색상 설정 */
+	border-radius: 5px; /* 테두리 모서리 둥글게 만들기 */
+	padding: 8px; /* 안쪽 여백 설정 */
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+}
+
+.story {
+	width: calc(100% - 20px);
+	padding: 8px;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+}
+
+.name {
+	width: calc(100% - 20px);
+	padding: 8px;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+}
+
+.radio-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.radio-container label {
+	margin-right: 20px;
+}
+
+.story {
+	width: calc(100% - 20px);
+	height: 100px;
+	padding: 8px;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+	resize: none;
+}
+
+button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #45a049;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 40px; /* 원하는 여백 설정 */
+}
+
+/* 테이블 헤더 스타일 설정 */
+th {
+	background-color: #f2f2f2; /* 배경색 설정 */
+	padding: 8px; /* 셀 안 여백 설정 */
+	border: 1px solid #dddddd; /* 테두리 설정 */
+	text-align: left; /* 텍스트 정렬 설정 */
+}
+
+/* 테이블 데이터 행 스타일 설정 */
+td {
+	padding: 8px;
+	border: 1px solid black;
+	text-align: left;
+}
