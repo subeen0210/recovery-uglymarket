@@ -18,8 +18,9 @@
     
     var myInput = document.getElementById("ID");
 
-    myInput.readOnly = true;
-    
+    function toggleReadOnly() {
+        
+        myInput.readOnly = !myInput.readOnly;
     </script>
   </head>
   <body>
@@ -42,7 +43,12 @@
                 id="ID"
                 maxlength="20"
               />&ensp;
-              
+              <button
+                class="btn-style"
+                type="button" id="checkDuplicate" value="seller"
+              >
+                重複確認
+              </button>
             </div>
           </div>
           <span id="idStatus"></span>
