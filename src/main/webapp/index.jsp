@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080, initial-scale=1.0">
 <link rel="icon" href="img/semi-logo-img.png" type="image/png">
 <link rel="stylesheet" href="wj/css/index.css" />
 <link rel="stylesheet"
@@ -11,8 +12,7 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-<script src="bxslider/jquery.bxslider.min.js"></script>
-<script src="wj/js/index.js"></script>
+
 <script src="js/cartCheck.js"></script>
 <title>アグリーマーケット</title>
 </head>
@@ -26,7 +26,6 @@
 			<div>
 				<a href="">会社紹介</a>
 			</div>
-			&emsp;&emsp;&emsp;&emsp;&emsp;
 			<div>
 				<a href="ShopC">モール</a>
 			</div>
@@ -49,7 +48,7 @@
 
 	<table id="site">
 		<tr>
-			<td><jsp:include page="${contentPage }"></jsp:include></td>
+			<td style="max-width: 98vw;"><jsp:include page="${contentPage }"></jsp:include></td>
 		</tr>
 	</table>
 </body>
@@ -88,5 +87,6 @@
 		<img class="arrow-top" src="img/arrow-top.png" alt="Scroll to Top">
 	</div>
 </footer>
+<script src="wj/js/index.js"></script>
 <script type="text/javascript" src="js/search.js"></script>
 </html>

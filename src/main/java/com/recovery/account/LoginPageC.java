@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginPageC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("lgh_account/loginPage.jsp").forward(request, response);
+		request.getRequestDispatcher("lgh_account/loginPage2.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
