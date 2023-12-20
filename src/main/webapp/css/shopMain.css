@@ -160,9 +160,12 @@ body {
 	display: flex;
 }
 
-.text-name{
+.text-name span{
 	font-size: 1.5vw;
 	margin: 3px 5px;
+	font-family: 'Meiryo', serif;
+      font-weight: bold;
+      
 }
 
 .text-price{

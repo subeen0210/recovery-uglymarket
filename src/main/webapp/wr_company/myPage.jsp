@@ -4,10 +4,10 @@
 <html>
 <link rel="stylesheet" href="css/myPage.css">
 <link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="MYPAGE_NEW/css/myPas.css">
 <link rel="stylesheet" href="css/kanri.css">
 <link rel="stylesheet" href="css/reviewList.css">
 <link rel="stylesheet" href="css/order.css">
+<link rel="stylesheet" href="css/regUser.css">
 
 
 <head>
@@ -68,7 +68,7 @@
 					<div class="mypage_contents1_menu_boxs" id="cart">
 						<p>マイカートー</p>
 					</div>
-					<div class="mypage_contents1_menu_boxs" id="my_infomation">
+					<div class="mypage_contents1_menu_boxs" id="user_modify">
 						<p>申請情報</p>
 					</div>
 					

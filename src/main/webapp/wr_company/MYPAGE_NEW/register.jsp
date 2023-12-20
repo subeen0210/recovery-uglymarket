@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="css/seller_register.css">
-<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/seller_register.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/header.css">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>

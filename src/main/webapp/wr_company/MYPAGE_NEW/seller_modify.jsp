@@ -5,21 +5,22 @@
   <head>
     <meta charset="UTF-8" />
     <title>Insert title here</title>
-    <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/regSeller.css" />
+    <link rel="stylesheet" href="css/regSeller.css" />
     <script
       src="https://code.jquery.com/jquery-3.7.0.js"
       integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="wr_company/MYPAGE_NEW/js/addr.js"></script>
-    <script type="text/javascript" src="wr_company/MYPAGE_NEW/js/idCheck.js"></script>
-    <script type="text/javascript" src="wr_company/MYPAGE_NEW/js/validCheck.js"></script>
+    <script type="text/javascript" src="js/addr.js"></script>
+    <script type="text/javascript" src="js/idCheck.js"></script>
+    <script type="text/javascript" src="js/validCheck.js"></script>
     <script>
     
     var myInput = document.getElementById("ID");
 
-    myInput.readOnly = true;
-    
+    function toggleReadOnly() {
+        
+        myInput.readOnly = !myInput.readOnly;
     </script>
   </head>
   <body>
@@ -42,7 +43,12 @@
                 id="ID"
                 maxlength="20"
               />&ensp;
-              
+              <button
+                class="btn-style"
+                type="button" id="checkDuplicate" value="seller"
+              >
+                重複確認
+              </button>
             </div>
           </div>
           <span id="idStatus"></span>

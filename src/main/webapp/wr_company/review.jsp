@@ -9,22 +9,22 @@
 </head>
 <body>
     <div id="reviewListContainer">
-        <h1>리뷰 관리 목록</h1>
+        <h1>レビュー管理リスト</h1>
         <div class="my_review_buttons">
-        <button id="modify">수정</button>
-        <button id="delete">삭제</button>
+        <button id="modify">修正</button>
+        <button id="delete">削除</button>
         </div>
         <table id="reviewTable">
             <thead>
                 <tr>
-                    <th>제목</th>
-                    <th>내용</th>
-                    <th>작성일</th>
-                    <th>별점</th>
+                    <th>タイトル</th>
+                    <th>内容</th>
+                    <th>作成日時</th>
+                    <th>スター</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- 리뷰 목록이 여기에 표시될 것입니다 -->
+                <!-- 리뷰 목록 표시 -->
             </tbody>
         </table>
     </div>

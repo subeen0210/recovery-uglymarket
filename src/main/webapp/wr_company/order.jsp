@@ -9,33 +9,33 @@
 </head>
 <body>
 <div class="main">
-    <h1>주문 상세 정보</h1>
-<div class="button_div"><button>수정</button>
-<button>수정</button></div>
+    <h1>注文詳細情報</h1>
+<div class="button_div"><button id="modify">修正</button>
+<button id="delete">削除</button></div>
     <table>
         <thead>
             <tr>
-                <th>선택</th>
-                <th>상품 사진</th>
-                <th>상품명</th>
-                <th>수량</th>
-                <th>가격</th>
+                <th>選択</th>
+                <th>写真</th>
+                <th>商品名</th>
+                <th>数量</th>
+                <th>価格</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><input type="checkbox"></td>
                 <td><img src="product1.jpg" alt="상품1"></td>
-                <td>상품 1</td>
+                <td>アグリートマト</td>
                 <td>2</td>
-                <td>$30.00</td>
+                <td>3000</td>
             </tr>
             <tr>
                 <td><input type="checkbox"></td>
                 <td><img src="product2.jpg" alt="상품2"></td>
-                <td>상품 2</td>
+                <td>可愛いイチゴ</td>
                 <td>1</td>
-                <td>$20.00</td>
+                <td>1000</td>
             </tr>
          
         </tbody>

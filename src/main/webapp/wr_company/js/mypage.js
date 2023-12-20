@@ -36,8 +36,8 @@ $(document).ready(function() {
     });
 
 
-    $('#my_infomation').on('click', function(event) {
-        handleDivClick(event, 'my_infomation.jsp', '#my_infomation');
+    $('#user_modify').on('click', function(event) {
+        handleDivClick(event, 'user_modify.jsp', '#user_modify');
     });
 
     function handleDivClick(event, pageUrl, divId) {
@@ -95,8 +95,8 @@ $(document).ready(function() {
     });
 
  
-    $('#my_infomation').on('click', function(event) {
-        handleDivClick(event, 'my_infomation.jsp', '#my_infomation');
+    $('#user_modify').on('click', function(event) {
+        handleDivClick(event, 'user_modify.jsp', '#user_modify');
     });
 function handleDivClick(event, pageUrl, divId) {
         // 기본 동작(페이지 이동) 막기
@@ -274,7 +274,7 @@ $(document).ready(function() {
     var previousClickedDiv = null; // 이전에 클릭된 div의 참조를 저장하는 변수
 
 
-    $('#my_infomation').on('click', function(event) {
+    $('#user_modify').on('click', function(event) {
         // 기본 동작(페이지 이동) 막기
         event.preventDefault();
 
@@ -285,7 +285,7 @@ $(document).ready(function() {
 
         // AJAX 요청 수행
         $.ajax({
-            url: 'MYPAGE_NEW/mypage.jsp',
+            url: 'user_modify.jsp',
             type: 'GET',
             dataType: 'html', // JSP 페이지는 HTML 형식일 것으로 가정
             success: function(response) {
@@ -293,8 +293,8 @@ $(document).ready(function() {
                 $('#mypage_centents3_box').html(response);
 
                 // 현재 div를 클릭한 것으로 표시하고 변수 업데이트
-                $('#my_infomation').addClass('clicked');
-                previousClickedDiv = $('#my_infomation');
+                $('#user_modify').addClass('clicked');
+                previousClickedDiv = $('#user_modify');
             },
             error: function(error) {
                 // 에러를 처리
