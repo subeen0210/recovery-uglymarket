@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상품 및 배송 관리</title>
 <script type="text/javascript" src="wr_company/js/seller_register3.js"></script>
-<link rel="stylesheet" href="wr_company/css/seller_register3.css">
+<link rel="stylesheet" href="css/seller_register3.css">
 <link rel="stylesheet" href="css/header.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
