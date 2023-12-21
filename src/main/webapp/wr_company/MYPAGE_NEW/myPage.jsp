@@ -14,10 +14,6 @@
 <body>
 	<div class="myPage_container">
 
-	 	<div class="seller_id_main">
-
-			<div class="seller_id">オタクの農場</div>
-		</div>
 
 		<div class="main_menu_container">
 			<div class="main_menu_control">

@@ -36,7 +36,7 @@ function itemAdd() {
 				console.log(res)
 				if(res == 1){
 				alert("상품이 등록되었습니다.");
-				window.location.href = 'wr_company/MYPAGE_NEW/stock.jsp';
+				window.location.href = 'SellerMypageC';
 				}else{
 					alert('상품 등록 실패')
 				}
