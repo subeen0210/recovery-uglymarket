@@ -9,9 +9,13 @@
 </head>
 <body>
 	<div class="login-set">
-		<span class="nick">${sessionScope.userAccount.u_nicname }様</span>
-		<button onclick="location.href='SellerLoginC'">logout</button>
-		<button onclick="location.href='UserMypageC'">myPage</button>
+		<span class="nick">${sessionScope.userAccount.u_nicname }様
+			<img src="img/chevron.svg">
+		</span>
+		<div class="login-set-menus">
+			<a class="login-set-menu" href="UserMypageC">MyPage</a>
+			<a class="login-set-menu" href="SellerLoginC">Logout</a>
+		</div>
 	</div>
 </body>
 </html>

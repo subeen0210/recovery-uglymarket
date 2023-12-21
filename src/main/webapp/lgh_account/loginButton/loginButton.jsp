@@ -5,10 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/loginOk.css" />
 </head>
 <body>
-	<div>
-		<a href="LoginPageC"><img style="width: 100px" src="lgh_account/loginButton/img/semi-login-icon.png"></a>
+	<div id="login-set-icon">
+		<a class="nick" href="LoginPageC"><img style="width: 100px" src="lgh_account/loginButton/img/semi-login-icon.png"></a>
 	</div>
 </body>
 </html>
