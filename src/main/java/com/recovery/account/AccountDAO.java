@@ -3,6 +3,8 @@ package com.recovery.account;
 import java.sql.Connection; 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -229,7 +231,90 @@ public class AccountDAO {
 			DBManager.close(con, pstmt, null);
 		}
 	}
-	
 
+	public static void emailConfirm(HttpServletRequest request) {
+		String email = request.getParameter("email");
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT u_id FROM users WHERE u_email= ?";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			ArrayList<String> emails = new ArrayList<String>();
+			while (rs.next()) {
+				System.out.println("id 찾기 성공");
+				emails.add(rs.getString("u_id"));
+			}
+			if (!emails.isEmpty()) {
+			    System.out.println(emails);
+			    request.setAttribute("emails", emails);
+			} else {
+			    System.out.println("id 찾기 실패");
+			    request.setAttribute("resultMsg", "idが見つかりません");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("서버에러 ");
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
+
+	public static void createRandomPassword(HttpServletRequest request) {
+		String email = request.getParameter("email");
+		String id = request.getParameter("id");
+		String sei = request.getParameter("kanji_ln");
+		String mei = request.getParameter("kanji_fn");
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM users WHERE u_email= ? and u_id = ? and u_kanji_ln = ? and u_kanji_fn = ?";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, email);
+			pstmt.setString(2, id);
+			pstmt.setString(3, sei);
+			pstmt.setString(4, mei);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				System.out.println("새 비밀번호 생성");
+				
+				String randomPassword = generateRandomPassword(8);
+
+		        // 랜덤 비밀번호 전달 
+		        request.setAttribute("randomPassword", randomPassword);
+		    } else {
+		    	System.out.println("맞는 사람이 없음");
+		        // 조회 실패한 경우
+		        // 예외 처리 또는 다른 로직 수행
+		    	request.setAttribute("resultMsg", "idが見つかりません");
+		    }
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("서버에러 ");
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
+	
+	private static String generateRandomPassword(int length) {
+	    String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	    Random random = new Random();
+	    StringBuilder password = new StringBuilder();
+
+	    for (int i = 0; i < length; i++) {
+	        int index = random.nextInt(characters.length());
+	        password.append(characters.charAt(index));
+	    }
+
+	    return password.toString();
+	    
+	}
 
 }

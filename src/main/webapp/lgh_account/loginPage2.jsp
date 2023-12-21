@@ -34,7 +34,7 @@
 			<a class="submit" onclick="return loginCall()">ログイン</a><br /> <a
 				class="submit" id="openModalBtn">販売者専用</a>
 			<p class="forgot">
-				<a href="#">ID・パスワードを忘れた場合</a>
+				<a href="IDForgotC">ID・パスワードを忘れた場合</a>
 			</p>
 		</form>
 		<br> <br>

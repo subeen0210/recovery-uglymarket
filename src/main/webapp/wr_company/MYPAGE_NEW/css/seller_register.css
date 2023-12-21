@@ -5,7 +5,10 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
+h2{
+		font-family: 'Meiryo', serif;
+      font-weight: bold;
+}
 .tabs {
 	display: flex;
 	background-color: #f1f1f1;
