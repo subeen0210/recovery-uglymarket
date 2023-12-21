@@ -85,22 +85,7 @@ function showContent(contentId) {
 	 var fileInputs = document.querySelectorAll('.img');
 console.log(fileInputs);
 
-/*
-    var file = fileInput.files[0];
-        $.ajax({
-            url: 'ItemAddC',
-            method: 'POST',
-            data: $('addForm').serialize(), // 폼 데이터를 직렬화하여 전송
-            success: function(response) {
-                // 성공 메시지 표시
-				alert("상품이 등록되었습니다.");
-                $("#registrationMessage").text(response);
-            },
-            error: function(error) {
-                console.error('에러:', error);
-            }
-        });
-*/
-    }
+
+}
 
 
