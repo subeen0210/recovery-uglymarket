@@ -19,13 +19,13 @@
 			<div>
 				<div>商品名</div>
 				<div>
-					<input name="name" class="name">
+					<input name="name" class="name" placeholder="商品名を入力ください。">
 				</div>
 			</div>
 			<div>
 			<div>商品の説明</div>
 				<div>
-					<textarea class="story" name="story"></textarea>
+					<textarea class="story" name="story" placeholder="商品の説明を入力ください。(500字以内)"></textarea>
 				</div>
 			</div>
 			<div>
@@ -43,17 +43,20 @@
 			<div>
 				<div>商品在郷</div>
 				<div>
-					<input name="stock" class="stock">
+					<input name="stock" class="stock" placeholder="商品の在庫を入力ください。">
 				</div>
 			</div>
 			<div>
 				<div>商品価格</div>
 				<div>
-					<input name="price" class="price">
+					<input name="price" class="price" placeholder="数字だけ入力ください。">
 				</div>
 			</div>
 			<div>
+				<div class="photo-area">
 				<div>写真登録</div>
+				<div class="photo-text">写真は一枚必須で、最大四枚まで可能です。</div>
+				</div>
 				<div>
 					<input type="file" name="img" class="img" multiple>
 				</div>
