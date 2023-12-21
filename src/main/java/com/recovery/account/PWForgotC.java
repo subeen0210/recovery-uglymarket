@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/PWForgotC")
 public class PWForgotC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		request.getRequestDispatcher("lgh_account/PWForgot.jsp").forward(request, response);
 	}
 
