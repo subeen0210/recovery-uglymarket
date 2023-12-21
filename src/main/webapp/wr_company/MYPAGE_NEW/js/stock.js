@@ -1,39 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var modal = document.getElementById('myModal');
-    var btn = document.getElementById('openModalBtn');
-    var span = document.getElementsByClassName('close')[0];
-
-    btn.onclick = function() {
-        modal.style.display = 'block';
-    };
-
-    span.onclick = function() {
-        modal.style.display = 'none';
-    };
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    };
-
-    // 추가된 부분
-    var modifyColumn = document.getElementById('modifyColumn');
-
-    if (modifyColumn) {
-        modifyColumn.onclick = function () {
-            modal.style.display = 'block';
-        };
-    } else {
-        console.error('modifyColumn not found.');
-    }
-});
-
-window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-};
+var modal = document.getElementById('myModal');
 
 function showContent(contentId) {
     // Hide all content divs
@@ -51,6 +16,7 @@ function showContent(contentId) {
 }
 
 function loadStockData() {
+	console.log(modal);
     $.ajax({
         url: 'ItemAddC',
         datatype: 'json'
@@ -72,8 +38,8 @@ function loadStockData() {
             $(tr).append("<td>" + data[i].i_stock + "</td>");
             $(tr).append("<td>" + formattedDate + "</td>");
             $(tr).append("<td>" + data[i].i_price + "</td>");
-            $(tr).append("<td><button id='openModalBtn'>modi</button></td>");
-            $(tr).append("<td><button onclick='itemDelete(" + data[i].i_no + ")'>delete</button></td>");
+			$(tr).append("<td><button class='openModalBtn' data-item-no='" + data[i].i_no + "'>修正</button></td>");
+            $(tr).append("<td><button onclick='itemDelete(" + data[i].i_no + ")'>削除</button></td>");
             $("#tbody").append(tr);
         }
     });
@@ -104,3 +70,35 @@ function itemDelete(no) {
         console.log('삭제 취소됨');
     }
 }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var span = document.getElementsByClassName('close')[0];
+
+    // 수정된 부분
+    $(document).on('click', '.openModalBtn', function() {
+        // 데이터 속성을 통해 값을 가져옴
+        var itemNo = $(this).data('item-no');
+        console.log('Item No:', itemNo);
+
+        modal.style.display = 'block';
+    });
+
+    span.onclick = function() {
+        modal.style.display = 'none';
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+});
+
+
+window.onclick = function (event) {
+	console.log(modal);
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+};

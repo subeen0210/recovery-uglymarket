@@ -42,7 +42,7 @@
   	<div class="modal-content">
    		<span class="close">&times;</span>
  
-    	<form action="ItemAddC" method="post" enctype="multipart/form-data">
+    	<form action="UpdateItemC" method="post" enctype="multipart/form-data">
     	<br>
    		<br>
      	<div>
