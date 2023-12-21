@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>리뷰 관리 목록</title>
-    <link rel="stylesheet" href="css/reviewList.css">
+    <link rel="stylesheet" href="wr_company/css/reviewList.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
  
 </head>
 <body>
@@ -29,7 +30,6 @@
         </table>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="js/reviewList.js"></script>
+    <script src="wr_company/js/reviewList.js"></script>
 </body>
 </html>

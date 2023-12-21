@@ -3,6 +3,7 @@
  */
 
 function userCheck() {
+	alert(11);
 	let inputKanL = document.querySelector('input[name="userKanji_ln"]');
 	let inputKanF = document.querySelector('input[name="userKanji_fn"]');
 	let inputKatL = document.querySelector('input[name="userKata_ln"]');

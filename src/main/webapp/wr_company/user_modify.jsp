@@ -11,6 +11,7 @@
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/updateUser.js"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
+
 </head>
 <body>
 	<form action="updateUserC" method="post" enctype="multipart/form-data"
@@ -110,7 +111,6 @@
 		</div>
 	</form>
 </body>
-<script type="text/javascript" src="js/regUser.js"></script>
 <script type="text/javascript">
 	$(function() {
 		// 전화번호 분리를 위해 적었습니다. 다른 js로 넣으면 깨지니까 여기서 작업해주세요
@@ -118,14 +118,15 @@
 		console.log(telValue);
 		
 		let telParts = telValue.split("-");
+		console.log(11111)
 
 	    // 분리된 부분을 각 입력 필드에 할당합니다.
-	    document.getElementById("userTel1").value = telParts[0];
-	    document.getElementById("userTel2").value = telParts[1];
-	    document.getElementById("userTel3").value = telParts[2];
-
+	    document.querySelector("input[name='userTel1'").value = telParts[0];
+	    document.querySelector("input[name='userTel2'").value = telParts[1];
+	    document.querySelector("input[name='userTel3'").value = telParts[2];
 	});
 	
 </script>
+<script type="text/javascript" src="js/regUser1.js"></script>
 </html>
 
