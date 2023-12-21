@@ -69,7 +69,7 @@ public class OrderDAO {
 		    System.out.println("subtotal: " + subtotal[i]);
 		}
 		
-		String sql = "insert into orders values(orders_seq.nextval,?,?,?,?, DEFAULT, sysdate)";
+		String sql = "insert into orders values(orders_seq.nextval,?,?,?,?, DEFAULT, sysdate, DEFAULT)";
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);

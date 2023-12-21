@@ -6,7 +6,7 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="wr_company/MYPAGE_NEW/js/mypage.js"></script>
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/myPage.css">
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/header.css">
+<link rel="stylesheet" href="wj/css/index.css">
 
 <meta charset="UTF-8">
 <title>アグリーマーケット販売用サイト</title>

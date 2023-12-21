@@ -1,4 +1,4 @@
-package com.recovery.mypage;
+package com.recovery.account;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,26 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.recovery.account.AccountDAO;
-import com.recovery.shop.ItemDAO;
-
-
-@WebServlet("/SellerMypageC")
-public class SellerMypageC extends HttpServlet {
-
+@WebServlet("/IDForgotC")
+public class IDForgotC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "wr_company/myPage.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-	
+		request.getRequestDispatcher("lgh_account/idForgot.jsp").forward(request, response);
 	}
 
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		//email 있는지 확인
+		AccountDAO.emailConfirm(request);
 		
-		
+		request.getRequestDispatcher("lgh_account/idGet.jsp").forward(request, response);
 	}
 
 }
