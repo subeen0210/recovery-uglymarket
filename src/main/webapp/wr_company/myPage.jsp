@@ -2,12 +2,14 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <link rel="stylesheet" href="wr_company/css/myPage.css">
 <link rel="stylesheet" href="wr_company/css/header.css">
 <link rel="stylesheet" href="wr_company/css/kanri.css">
 <link rel="stylesheet" href="wr_company/css/reviewList.css">
 <link rel="stylesheet" href="wr_company/css/order.css">
 <link rel="stylesheet" href="wr_company/css/regUser.css">
+
 
 
 <head>
@@ -18,9 +20,34 @@
 <title>Insert title here</title>
 </head>
 <body>
+ <div class="header">
+      <a class="header-logo" href="#">
+        <img src="img/semi-logo-img.png" alt="" />
+        <img src="img/semi-logo-title.png" alt="Website Logo" />
+      </a>
+
+      <div class="header-menu">
+        <div><a href="">会社紹介</a></div>
+        &emsp;&emsp;&emsp;&emsp;&emsp;
+        <div><a href="">モール</a></div>
+      </div>
+      <div class="header-icon">
+        <a href=""
+          ><img class="login-icon" src="img/semi-login-icon.png" alt=""
+        /></a>
+        &emsp;&emsp;
+        <a href=""
+          ><img class="cart-icon" src="img/semi-cart-icon.png" alt=""
+        /></a>
+        &emsp;&emsp;
+        <a href=""
+          ><img class="search-icon" src="img/semi-search-icon.png" alt=""
+        /></a>
+      </div>
+    </div>
 	<div class="mypage_container"> <!-- 메인 페이지 -->
 		<div class="mypage_title">
-			<img src="img/semi-logo-title.png"><p>マイページへようこそ</p>
+			<img src="img/semi-logo-title.png"><BR><p>マイページへようこそ</p>
 		</div>
 
 		<div class="mypage_contents1_box">
@@ -39,9 +66,9 @@
 					</div>
 					
 				</div>
-				<div class="mypage_contents2_more"><a href="">もっと見る</a></div>
+				<div class="mypage_contents2_more">最近見た商品</a></div>
 				<div class="myinfo_box"> <!-- 나의 로그인 정보 -->
-					<div class="myinfo_box_photo"></div>
+					<div class="myinfo_box_photo"><img src=""></div>
 					<div class="myinfo_box_item">
 						<div class="myinfo_box_items"><h3>${sessionScope.userAccount.u_nicname}様</h3></div>
 						<div class="myinfo_box_items">${sessionScope.userAccount.u_id}</div>

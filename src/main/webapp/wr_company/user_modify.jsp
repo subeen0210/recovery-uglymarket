@@ -12,14 +12,6 @@
 <script type="text/javascript" src="js/addr.js"></script>
 <script type="text/javascript" src="js/idCheck.js"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
-<script>
-
-var myInput = document.getElementById("ID");
-
-
-myInput.disabled = true;
-
-</script>
 </head>
 <body>
 	<form action="RegUserC" method="post" enctype="multipart/form-data"
@@ -31,7 +23,7 @@ myInput.disabled = true;
 				<div class="reg-content">
 					<div class="reg-menu">ID</div>
 					<div class="reg-input">
-						<input class="input-style" name="userID" id="ID" maxlength="20" />&ensp;
+					AAAAAAAA
 						
 					</div>
 				</div>
@@ -104,41 +96,7 @@ myInput.disabled = true;
 					</div>
 				</div>
 				<br />
-				<div class="reg-content">
-					<div class="reg-name2">郵便番号</div>
-					<div class="reg-name3">
-						<button class="btn-style" type="button" id="addr-popup">住所検索</button>
-						<br />
-					</div>
-				</div>
-				<br />
-				<div class="reg-content">
-					<div class="reg-menu">郵便番号</div>
-					<div class="reg-input">
-						<input class="input-style" name="userAddrN" id="addrNum"
-							readonly="readonly" />
-					</div>
-				</div>
-				<div class="reg-content">
-					<div class="reg-menu">都道府県</div>
-					<div class="reg-input">
-						<input class="input-style" name="userAddrP" id="addrPrefecture"
-							readonly="readonly" />
-					</div>
-				</div>
-				<div class="reg-content">
-					<div class="reg-menu">市区町村</div>
-					<div class="reg-input">
-						<input class="input-style" name="userAddrC" id="addrCity"
-							readonly="readonly" />
-					</div>
-				</div>
-				<div class="reg-content">
-					<div class="reg-menu">詳細情報</div>
-					<div class="reg-input">
-						<input class="input-style" name="userAddrD" />
-					</div>
-				</div>
+				
 				<br />
 				<div class="reg-content2">
 					<div class="reg-name2">プロフィールイメージ</div>
