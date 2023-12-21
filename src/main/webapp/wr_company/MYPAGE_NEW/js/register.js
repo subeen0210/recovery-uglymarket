@@ -18,6 +18,42 @@ function itemAdd() {
 		let stock = $("input[name='stock']").val();
 		let price = $("input[name='price']").val();
 
+	/*	  if (!name.trim()) {
+        alert('상품명을 입력해주세요.');
+        return;
+    	}
+
+    	if (!story.trim()) {
+        alert('상품설명을 입력해주세요.');
+        return;
+    	}
+
+    	if (!enddate) {
+        alert('날짜를 입력해주세요.');
+        return;
+    	}
+
+    	if (!stock.trim()) {
+        alert('재고를 입력해주세요.');
+        return;
+    	}
+
+    	if (!price.trim()) {
+        alert('가격을 입력해주세요.');
+        return;
+    	}
+
+    	if (fileInput.files.length === 0) {
+        alert('이미지를 첨부해주세요.');
+        return;
+    	}
+
+    	if (fileInput.files.length > 4) {
+        alert('이미지는 최대 4장까지 첨부 가능합니다.');
+        return;
+    	}
+*/
+
 		formData.append('name', name);
 		formData.append('story', story);
 		formData.append('type', type);
@@ -46,3 +82,5 @@ function itemAdd() {
 			}
 		});
 }
+
+
