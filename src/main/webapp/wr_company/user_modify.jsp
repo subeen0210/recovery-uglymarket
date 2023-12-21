@@ -9,11 +9,11 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/idCheck.js"></script>
+<script type="text/javascript" src="js/updateUser.js"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
 </head>
 <body>
-	<form action="" method="post" enctype="multipart/form-data"
+	<form action="updateUserC" method="post" enctype="multipart/form-data"
 		onsubmit="return userCheck()">
 		<div class="reg-main">
 			<div class="reg-container">
@@ -73,7 +73,7 @@
 				<div class="reg-content">
 					<div class="reg-menu">ニックネーム</div>
 					<div class="reg-input">
-						<input class="input-style" name="userNicname"
+						<input class="input-style" name="userNickname"
 							value="${sessionScope.userAccount.u_nicname }"
 							maxlength="10" />
 					</div>
@@ -111,9 +111,9 @@
 	</form>
 </body>
 <script type="text/javascript" src="js/regUser.js"></script>
-<script type="text/javascript" src="js/updateUser.js"></script>
 <script type="text/javascript">
 	$(function() {
+		// 전화번호 분리를 위해 적었습니다. 다른 js로 넣으면 깨지니까 여기서 작업해주세요
 		let telValue = "${sessionScope.userAccount.u_tel}";
 		console.log(telValue);
 		
@@ -126,17 +126,6 @@
 
 	});
 	
-	function readURL(input) {
-		  if (input.files && input.files[0]) {
-		    var reader = new FileReader();
-		    reader.onload = function(e) {
-		      document.getElementById('preview').src = e.target.result;
-		    };
-		    reader.readAsDataURL(input.files[0]);
-		  } else {
-		    document.getElementById('preview').src = "";
-		  }
-		}
 </script>
 </html>
 
