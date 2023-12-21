@@ -4,19 +4,19 @@
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-<link rel="stylesheet" href="css/myPage.css">
-<link rel="stylesheet" href="css/header.css">
-<link rel="stylesheet" href="css/kanri.css">
-<link rel="stylesheet" href="css/reviewList.css">
-<link rel="stylesheet" href="css/order.css">
-<link rel="stylesheet" href="css/regUser.css">
-<link rel="stylesheet" href="css/modal.css">
+<link rel="stylesheet" href="wr_company/css/myPage.css">
+<link rel="stylesheet" href="wr_company/css/header.css">
+<link rel="stylesheet" href="wr_company/css/kanri.css">
+<link rel="stylesheet" href="wr_company/css/reviewList.css">
+<link rel="stylesheet" href="wr_company/css/order.css">
+<link rel="stylesheet" href="wr_company/css/regUser.css">
+<link rel="stylesheet" href="wr_company/css/modal.css">
 
 
 <head>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<script src="js/mypage.js"></script><!--바닥 JSP호출 JS -->
+<script src="wr_company/js/mypage.js"></script><!--바닥 JSP호출 JS -->
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -38,9 +38,9 @@
 				<div class="myinfo_box"> <!-- 나의 로그인 정보 -->
 					<div class="myinfo_box_photo"><img src=""></div>
 					<div class="myinfo_box_item">
-						<div class="myinfo_box_items"><h3>xxx님</h3></div>
-						<div class="myinfo_box_items2">못난이</div>
-						<div class="myinfo_box_items3">히히히히히히</div>
+						<div class="myinfo_box_items"><h3>${sessionScope.userAccount.u_nicname}様</h3></div>
+						<div class="myinfo_box_items2">${sessionScope.userAccount.u_id}</div>
+						<div class="myinfo_box_items3">${sessionScope.userAccount.u_email}</div>
 					</div>
 					</div>
 					<div class="mypage_contents2_box"> <!--최근 본 상품이 들어가는 박스 -->
