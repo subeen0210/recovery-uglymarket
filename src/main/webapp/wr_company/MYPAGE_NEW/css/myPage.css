@@ -15,6 +15,9 @@
 	width: 100%;
 	height: 100%;
 	font-size: 22px;
+	display: flex;
+	flex-direction: column;
+	min-height:100vh;
 }
 
 
@@ -42,6 +45,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-top: 30px;
+	
 }
 
 .main_menu_control {
@@ -58,7 +63,7 @@
 
 .subview {
 	width: 1920px;
-	height: 1080px;
+	height: 100%;
 	font-size: 20px;
 	display: flex;
 	justify-content: center;
@@ -86,6 +91,7 @@
 .jsp_view {
 	width: 100%;
 	height: 100%;
+	flex-grow: 1;
 	/*border: 1px solid black;*/
 }
 .main_menu_control div.selected {
@@ -94,3 +100,10 @@
   /* 선택된 메뉴에 대한 스타일 지정 */
 }
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+     
+    padding: 15px; 
+}
