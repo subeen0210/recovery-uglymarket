@@ -23,7 +23,7 @@
 
 		<div class="header-menu">
 			<div>
-				<a href="">会社紹介</a>
+				<a href="CompanyC">会社紹介</a>
 			</div>
 			<div>
 				<a href="ShopC">モール</a>
