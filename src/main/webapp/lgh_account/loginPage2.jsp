@@ -4,6 +4,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="wj/css/login.css" />
+<link rel="stylesheet" href="css/loginPage2.css" />
 <link href="https://fonts.googleapis.com/css?family=Ubuntu"
 	rel="stylesheet" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,13 +23,16 @@
 		<p class="sign">Sign in</p>
 		<form class="form1">
 			<input class="un" placeholder="ID" name="userID" id="loginUserID" />
-			<div class="emptyErrorMsg"><span id="loginEmptyID"></span></div>
+			<div class="emptyErrorMsg">
+				<span id="loginEmptyID"></span>
+			</div>
 			<input class="pass" type="password" placeholder="PW" name="userPW"
 				id="loginUserPW" />
-			<div class="emptyErrorMsg"><span id="loginEmptyPW"></span></div>
-				<a class="submit"
-				onclick="return loginCall()">ログイン</a><br /> <a class="submit"
-				id="openModalBtn">ログイン&ensp;(販売者専用)</a>
+			<div class="emptyErrorMsg">
+				<span id="loginEmptyPW"></span>
+			</div>
+			<a class="submit" onclick="return loginCall()">ログイン</a><br /> <a
+				class="submit" id="openModalBtn">販売者専用</a>
 			<p class="forgot">
 				<a href="IDForgotC">ID・パスワードを忘れた場合</a>
 			</p>
@@ -48,35 +52,37 @@
 	</div>
 	<!-- Dialog Element -->
 	<dialog id="myModal">
-	<div>
+	<div class="modal-size">
 		<button id="closeModalBtn">&times;</button>
+		<div>
+			<div class="modal-title">
+				<p>Sign in (販売者)</p>
+			</div>
+			<br>
 			<div>
-				<div>
-					<p>판매자님 환영합니다!</p>
-				</div>
-				<div>
-					<div>Id</div>
-					<div>
-						<input name="sellerID" id="loginSellerID">
-					</div>
-				</div>
-				<div>
-					<div>PW</div>
-					<div>
-						<input name="sellerPW" id="loginSellerPW" type="password">
-					</div>
-					<p id="errorMessage2"></p>
-				</div>
-				<div>
-					<button onclick="return loginSellerCall()">사업자 로그인</button>
-				</div>
-				<div>
-					<a>ID・パスワードを忘れた場合</a>
+				<div class="un-set">
+					<input class="un2" placeholder="ID" name="sellerID" id="loginSellerID">
 				</div>
 			</div>
+			<br>
+			<div>
+				<div class="un-set">
+					<input class="un2" placeholder="PW" name="sellerPW" id="loginSellerPW" type="password">
+				</div>
+				<p id="errorMessage2"></p>
+			</div>
+			<br>
+			<div class="set-size">
+				<button class="btn-set2" onclick="return loginSellerCall()">ログイン</button>
+			</div>
+			<br>
+			<div class="set-size">
+				<a>IDとパスワードを忘れましたか？</a>
+			</div>
+		</div>
 	</div>
 	</dialog>
-	
+
 	<script>
 		document.getElementById("openModalBtn").addEventListener("click",
 				function() {
@@ -86,9 +92,17 @@
 
 		document.getElementById("closeModalBtn").addEventListener("click",
 				function() {
+			
 					// Close the dialog
 					document.getElementById("myModal").close();
 				});
+		
+		window.addEventListener("click", function(event) {
+	        var modal = document.getElementById("myModal");
+	        if (event.target == modal) {
+	            modal.close();
+	        }
+	    });
 	</script>
 </body>
 </html>
