@@ -78,18 +78,13 @@
 			<div><input type="file" name="img" class="img"></div>
 		</div>
 	</div>
-<<<<<<< HEAD
      
     	</form>
   </div>
 </div>
 <!-- 모달창 내용 끝 -->
 
+			
 
-
-
-
-=======
->>>>>>> 5fdd916 (사용자용 마이페이지 새로 제작)
 </body>
 </html>

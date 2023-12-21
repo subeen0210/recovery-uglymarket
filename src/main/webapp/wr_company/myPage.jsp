@@ -2,12 +2,14 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <link rel="stylesheet" href="wr_company/css/myPage.css">
 <link rel="stylesheet" href="wr_company/css/header.css">
 <link rel="stylesheet" href="wr_company/css/kanri.css">
 <link rel="stylesheet" href="wr_company/css/reviewList.css">
 <link rel="stylesheet" href="wr_company/css/order.css">
 <link rel="stylesheet" href="wr_company/css/regUser.css">
+
 
 
 <head>
