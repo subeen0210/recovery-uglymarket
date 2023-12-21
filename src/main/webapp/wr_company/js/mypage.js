@@ -76,27 +76,27 @@ $(document).ready(function() {
 
     // 'kanri' id를 가진 div에 대한 클릭 이벤트
     $('#kanri').on('click', function(event) {
-        handleDivClick(event, 'kanri.jsp', '#kanri');
+        handleDivClick(event, 'wr_company/kanri.jsp', '#kanri');
     });
 
     // 'review' id를 가진 div에 대한 클릭 이벤트
     $('#review').on('click', function(event) {
-        handleDivClick(event, 'review.jsp', '#review');
+        handleDivClick(event, 'wr_company/review.jsp', '#review');
     });
 
     // 'order' id를 가진 div에 대한 클릭 이벤트
     $('#order').on('click', function(event) {
-        handleDivClick(event, 'order.jsp', '#order');
+        handleDivClick(event, 'wr_company/order.jsp', '#order');
     });
 
     // 'cart' id를 가진 div에 대한 클릭 이벤트
     $('#cart').on('click', function(event) {
-        handleDivClick(event, 'cart.jsp', '#cart');
+        handleDivClick(event, 'wr_company/cart.jsp', '#cart');
     });
 
  
     $('#user_modify').on('click', function(event) {
-        handleDivClick(event, 'user_modify.jsp', '#user_modify');
+        handleDivClick(event, 'wr_company/user_modify.jsp', '#user_modify');
     });
 function handleDivClick(event, pageUrl, divId) {
         // 기본 동작(페이지 이동) 막기
