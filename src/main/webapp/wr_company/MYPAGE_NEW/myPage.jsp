@@ -30,7 +30,6 @@
 				<div class="main_menu" id="stockMenu">
 					<a class="menu-link" data-page-id="stock">在庫管理</a>
 				</div>
-
 				<div class="main_menu" id="mypageMenu">
 					<a class="menu-link" data-page-id="mypage">農場情報管理</a>
 				</div>
