@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/seller_register.css">
+<link rel="stylesheet"
+	href="wr_company/MYPAGE_NEW/css/seller_register.css">
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/modal.css">
 <script type="text/javascript" src="wr_company/MYPAGE_NEW/js/stock.js"></script>
 </head>
@@ -76,8 +77,8 @@
 			<div>写真登録（一番目の写真が代表イメージになります。）</div>
 			<div><input type="file" name="img" class="img"></div>
 		</div>
-		   <button type="submit">登録</button>
 	</div>
+<<<<<<< HEAD
      
     	</form>
   </div>
@@ -88,5 +89,7 @@
 
 
 
+=======
+>>>>>>> 5fdd916 (사용자용 마이페이지 새로 제작)
 </body>
 </html>
