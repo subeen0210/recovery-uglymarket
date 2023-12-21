@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+.submit:hover {
+	background: #21825B;
+}
+
+#openModalBtn{
+	background: #64CD3C;
+}
+
+
+#openModalBtn:hover {
+	opacity: 0.5;
+}
+
+#myModal {
+	border: 1px solid #bebebe;
+	border-radius: 10px;
+	width: 400px;
+}
+
+/* dialog:-internal-dialog-in-top-layer { */
+/* 	border: 1px solid #bebebe; */
+/* 	border-radius: 10px; */
+/* 	width: 400px !important; */
+/* 	height: 400px !important; */
+/* 	display: flex; */
+/* 	flex-direction: column; */
+/* 	justify-content: center; */
+/* 	align-items: center; */
+/* } */
+.modal-size {
+	position: relative;
+	background: #fff;
+	width: 90%;
+	height: 100%;
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#closeModalBtn {
+	border: none;
+	position: absolute;
+	right: 10px;
+	top: 15px;
+	background: #64CD3C;
+	color: white;
+}
+
+#closeModalBtn:hover {
+	background: #21825B;
+}
+
+.un2 {
+	width: 85%;
+	color: rgb(38, 50, 56);
+	font-weight: 700;
+	font-size: 14px;
+	letter-spacing: 1px;
+	background: rgba(136, 126, 126, 0.04);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 20px;
+	outline: none;
+	box-sizing: border-box;
+	border: 2px solid rgba(0, 0, 0, 0.02);
+	text-align: center;
+	font-family: "Ubuntu", sans-serif;
+}
+
+.modal-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15pt;
+	font-weight: bold;
+	color: #43A047;
+}
+
+.un-set {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-set2 {
+	border: 1px solid white;
+	border-radius: 10px;
+	height: 30px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #64CD3C;
+	padding: 5%;
+	color: white;
+}
+
+.btn-set2:hover {
+	background: #21825B;
+}
+
+.btn-set3 {
+	border: 1px solid white;
+	border-radius: 10px;
+	height: 15px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #64CD3C;
+	width: 100%;
+	padding: 5%;
+	font-size: 10pt;
+}
+
+.btn-set3:hover {
+	background: #21825B;
+}
+
+.set-size {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#myModal {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+#myModal:hover {
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px
+		rgba(0, 0, 0, 0.22);
+}
+
+.reg-personal:hover {
+	opacity: 0.5;
+	animation: fadeIn 0.5s ease-in-out;
+	color: #70e820;
+}
+
+.reg-business:hover {
+	opacity: 0.5;
+	animation: fadeIn 0.5s ease-in-out;
+	color: #70e820;
+}
