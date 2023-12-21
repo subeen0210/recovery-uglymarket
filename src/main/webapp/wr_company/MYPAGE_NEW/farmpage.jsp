@@ -2,33 +2,18 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Insert title here</title>
-    <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/regSeller.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.7.0.js"
-      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-      crossorigin="anonymous"
-    ></script>
-    <script type="text/javascript" src="wr_company/MYPAGE_NEW/js/addr.js"></script>
-    <script type="text/javascript" src="wr_company/MYPAGE_NEW/js/idCheck.js"></script>
-    <script type="text/javascript" src="wr_company/MYPAGE_NEW/js/validCheck.js"></script>
-    <script>
-    
-    var myInput = document.getElementById("ID");
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/regSeller.css" />
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
+<script type="text/javascript" src="wr_company/MYPAGE_NEW/js/addr.js"></script>
+<script type="text/javascript" src="wr_company/MYPAGE_NEW/js/idCheck.js"></script>
+<script type="text/javascript" src="wr_company/MYPAGE_NEW/js/validCheck.js"></script>
+</head>
+<body>
 
-    myInput.readOnly = true;
-    
-    </script>
-  </head>
-  <body>
-    <form
-      action="RegUserC"
-      method="post"
-      enctype="multipart/form-data"
-      onsubmit="return userCheck()"
-    >
+    <form action="RegUserC" method="post" enctype="multipart/form-data" onsubmit="return userCheck()">
       <div class="reg-main">
         <div class="reg-container">
           <h1 style="color: #2a243a">情報修正</h1>
@@ -195,5 +180,5 @@
       </div>
     </form>
   </body>
-  <script type="text/javascript" src="js/regUser.js"></script>
+ <!-- <script type="text/javascript" src="js/regUser.js"></script> --> 
 </html>
