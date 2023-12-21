@@ -10,11 +10,6 @@
 	font-family: 'MyCustomFont', sans-serif; /* 폰트 적용 */
 }
 
-body {
-	margin: 0;
-	padding: 0;
-	
-}
 
 .myPage_container {
 	width: 100%;

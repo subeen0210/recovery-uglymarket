@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.login-set {
+	display: flex;
+	flex-direction: column;
+}
+
+.nick {
+	width: 95px;
+}
