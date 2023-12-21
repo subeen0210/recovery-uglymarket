@@ -293,8 +293,16 @@ body {
 .text-name {
 	font-size: 1.5vw;
 	margin: 3px 5px;
+	
+	
 }
 
+.text-name span{
+	font-family: 'Meiryo', serif;
+    font-weight: bold;
+	
+	
+}
 .text-price {
 	font-size: 1.3vw;
 	margin: 3px 5px;
