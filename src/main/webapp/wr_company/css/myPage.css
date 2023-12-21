@@ -9,7 +9,7 @@
 }
 
 body {
-	background-color: beige;
+	
 	margin: 0;
 	padding: 0;
 }
@@ -39,7 +39,7 @@ font-size: 30px;
 	color: white;
 }
 
-#seller-register.clicked {
+#user_modify.clicked {
 	background-color: #088A08;
 	color: white;
 }
@@ -64,7 +64,6 @@ p {
 .mypage_container {
 	
 	height: 100%;
-	border: 2px solid black;
 	background-color: white;
 }
 
@@ -73,6 +72,8 @@ p {
 	justify-content: center;
 	align-items: center;
 	font-size: 50px;
+	margin-top:30px;
+	margin-bottom: 30px;
 }
 
 .mypage_title>img {
@@ -89,7 +90,7 @@ p {
 
 .mypage_contents1_box {
 	display: flex;
-	height: 700px;
+	height: 250px;
 	/* border: 1px solid red; */
 	justify-content: center;
 	align-items: center;
@@ -105,23 +106,35 @@ p {
 	align-items: center;
 	flex-direction: column-reverse;
 }
+.info_container{
+	width: 1220px;
+	display: flex;
+	flex-direction: row;
+	border: 1px solid black;
+	border-radius: 8px;
+	}
+	
+.menu_container{
+width: 1900px;
+display: flex;
+justify-content: space-around;
 
+}
 .myinfo_box {
     display: flex;
-    width: 740px;
-    height: 400px;
+    flex-direction: row;
+    width: 635px;
+    height: 200px;
     align-content: center;
-    border: 1px solid black;
+  
     border-radius: 8px;
-    margin-bottom: 40px;
+    
     justify-content: space-around; 
     align-items: center; 
 }
 
 .myinfo_box_photo {
-    background-image: url('../img/bb.jpeg');
-    background-size: cover;
-    background-position: center;
+    
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -138,19 +151,34 @@ p {
 .myinfo_box_items {
     width: 180px;
     height: 40px;
-    font-size: 20px;
-    margin: 10px;
+    font-size: 30px;
+   
 }
+.myinfo_box_items2 {
+    width: 180px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.myinfo_box_items3 {
+    width: 180px;
+    height: 40px;
+    font-size: 20px;
+    
+}
+
 
 
 .mypage_contents1_menu {
 	display: flex;
-	width: 650px;
+	width: 1274px;
 	height: 250px;
+	padding: 10px;
 	/*background-color: #C3E820;*/
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
+	margin-left: 20px;
 }
 
 .mypage_contents1_menu_boxs {
@@ -164,6 +192,8 @@ p {
 	background-color: white;
 	border-radius: 8px;
 	cursor: pointer;
+	margin-right:20px;
+	
 }
 
 .mypage_contents2_container {
@@ -173,20 +203,21 @@ p {
 }
 
 .mypage_contents2_box { /*최근본 상품 */
-	width: 740px;
-	height: 200px;
+	width: 605px;
+	height: 180px;
 	/*background-color : pink;*/
-	border: 1px solid black;
+border: 1px solid black;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	border-radius: 8px;
-	margin-bottom: 10px;
+	margin-top: 9px;
+	margin-right: 13px;
 }
 
 .mypage_contents2_box_item { /*최근본 상품 */
-	width: 150px;
-	height: 150px;
+	width: 130px;
+	height: 125px;
 	/*border: 1px solid orange;
 	background-color: violet;*/
 	border-radius: 8px;
@@ -200,12 +231,13 @@ p {
 	width: 740px;
 	height: 50px;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: flex-start;
+	font-size:25px;
 }
 
 .mypage_centents3_box {
 	width: 100%;
 	height: 100%;
 	padding-top: 10px;
-	background-color: Beige;
+	
 }
