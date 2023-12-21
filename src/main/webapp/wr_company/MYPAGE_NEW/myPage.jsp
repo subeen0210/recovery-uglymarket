@@ -27,7 +27,6 @@
 				<div class="main_menu" id="stockMenu">
 					<a onclick="showJSP('stock')">在庫管理</a>
 				</div>
-
 				<div class="main_menu" id="mypageMenu">
 					<a onclick="showJSP('mypage')">農場情報修正</a>
 				</div>
