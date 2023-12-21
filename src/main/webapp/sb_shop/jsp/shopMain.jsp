@@ -6,9 +6,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script type="text/javascript" src="pagination/pagination.js"></script>
-<script type="text/javascript" src="pagination/pagination.min.js"></script>
-<link rel="stylesheet" href="pagination/pagination.css">
 <link rel="stylesheet" href="css/shopMain.css">
 
 <script type="text/javascript" src="js/shopMain.js"></script>
