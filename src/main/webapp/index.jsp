@@ -23,10 +23,10 @@
 
 		<div class="header-menu">
 			<div>
-				<a href="">会社紹介</a>
+				<a class="header-hover" href="">会社紹介</a>
 			</div>
 			<div>
-				<a href="ShopC">モール</a>
+				<a class="header-hover" href="ShopC">モール</a>
 			</div>
 		</div>
 		<div class="header-icon">

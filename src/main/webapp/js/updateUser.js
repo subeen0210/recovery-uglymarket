@@ -69,26 +69,28 @@ function userCheck() {
 		inputEmail.focus();
 		return false;
 	}
-	
+
 	alert('情報が更新されました');
 };
 
-function passwordChange(){
+function passwordChange() {
 	let oldPW = $('#old-pw').val();
 	let newPW = $('#new-pw').val();
-	
+
 	$.ajax({
-        url:'ChangePasswordC', 
-        method: 'post',
-		data:{newPW},
-        success: function(data) {
-          // AJAX 요청 성공 시 실행되는 콜백 함수
-          alert('비밀번호가 변경되었습니다.');
-        },
-        error: function(xhr, status, error) {
-          // AJAX 요청 실패 시 실행되는 콜백 함수
-          console.error('AJAX request failed: ', status, error);
-        }
-      });
+		url: 'ChangePasswordC',
+		method: 'post',
+		data: { newPW },
+		success: function(data) {
+			// AJAX 요청 성공 시 실행되는 콜백 함수
+			alert('비밀번호가 변경되었습니다.');
+		},
+		error: function(xhr, status, error) {
+			// AJAX 요청 실패 시 실행되는 콜백 함수
+			console.error('AJAX request failed: ', status, error);
+		}
+	});
 	return false;
 };
+
+// 이미지 첨부시 미리보기 (원준)
