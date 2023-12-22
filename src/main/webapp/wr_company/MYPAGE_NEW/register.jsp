@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/seller_register.css">
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/header.css">
-
 </head>
 <body>
 
@@ -37,7 +36,7 @@
 			<div>
 				<div>賞味期限</div>
 				<div>
-					<input name="enddate" type="date" class="date">
+					<input name="enddate" type="date" class="date" placeholder="賞味期限">
 				</div>
 			</div>
 			<div>

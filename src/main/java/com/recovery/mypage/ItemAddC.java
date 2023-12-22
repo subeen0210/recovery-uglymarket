@@ -17,6 +17,7 @@ public class ItemAddC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ItemDAO.selectItem(request, response);
+
 //		System.out.println("mz test ------------");
 		
 	

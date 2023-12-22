@@ -13,7 +13,7 @@ function itemAdd() {
             formData.append('img' + (i + 1), file);
         }
     }
-/*
+
     let name = $("input[name='name']").val();
     let story = $("textarea[name='story']").val();
     let type = $("input[name='type']:checked").val();
@@ -37,7 +37,7 @@ function itemAdd() {
         success: function (res) {
             // 서버 응답에 따라 알림 표시
             console.log(res);
-            if (res === 'success') {
+            if (res == 1) {
                 alert("상품이 등록되었습니다.");
                 window.location.href = 'SellerMypageC';
             } else {
@@ -47,7 +47,7 @@ function itemAdd() {
         error: function(jqXHR, textStatus, errorThrown) {
    		console.error('AJAX 오류:', textStatus, errorThrown);
 		}
-    }); */
+    }); 
 	return true;
 }
 

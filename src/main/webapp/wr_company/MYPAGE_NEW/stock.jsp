@@ -40,7 +40,7 @@
   	<div class="modal-content">
    		<span class="close">&times;</span>
  
-    	<form action="UpdateItemC" method="post" enctype="multipart/form-data">
+    	<form action="ItemUpdateC" method="post" enctype="multipart/form-data">
     	<br>
    		<br>
      	<div>
@@ -74,6 +74,7 @@
 			<div>写真登録（一番目の写真が代表イメージになります。）</div>
 			<div><input type="file" name="img" class="img"></div>
 		</div>
+		<a>수정</a>
 	</div>
      
     	</form>
@@ -81,7 +82,7 @@
 </div>
 <!-- 모달창 내용 끝 -->
 
-			
 
 </body>
+<script src="wr_company/MYPAGE_NEW/js/stock.js"></script>
 </html>
