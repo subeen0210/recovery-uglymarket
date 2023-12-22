@@ -3,7 +3,6 @@
  */
 
 function userCheck() {
-	alert(11);
 	let inputKanL = document.querySelector('input[name="userKanji_ln"]');
 	let inputKanF = document.querySelector('input[name="userKanji_fn"]');
 	let inputKatL = document.querySelector('input[name="userKata_ln"]');
@@ -42,24 +41,24 @@ function userCheck() {
 	// 닉네임 예외
 	// 특수문자 불가
 	if (isEmpty(inputNick) || !(notContains(inputNick, setSpecialChars))) {
-		alert('ニックネームがありません');
+		alert('ニックネームには特殊文字を入れないでください');
 		inputNick.focus();
 		return false;
 	}
 	// 전화 예외
 	// 오직 숫자만
 	if (isEmpty(inputTel1) || isNotNumber(inputTel1)) {
-		alert('電話番号は数字を入れてください');
+		alert('電話番号には数字を入れてください');
 		inputTel1.focus();
 		inputTel1.value = '';
 		return false;
 	} else if (isEmpty(inputTel2) || isNotNumber(inputTel2)) {
-		alert('電話番号は数字を入れてください');
+		alert('電話番号には数字を入れてください');
 		inputTel2.focus();
 		inputTel2.value = '';
 		return false;
 	} else if (isEmpty(inputTel3) || isNotNumber(inputTel3)) {
-		alert('電話番号は数字を入れてください');
+		alert('電話番号には数字を入れてください');
 		inputTel3.focus();
 		inputTel3.value = '';
 		return false;
@@ -72,4 +71,24 @@ function userCheck() {
 	}
 	
 	alert('情報が更新されました');
+};
+
+function passwordChange(){
+	let oldPW = $('#old-pw').val();
+	let newPW = $('#new-pw').val();
+	
+	$.ajax({
+        url:'ChangePasswordC', 
+        method: 'post',
+		data:{newPW},
+        success: function(data) {
+          // AJAX 요청 성공 시 실행되는 콜백 함수
+          alert('비밀번호가 변경되었습니다.');
+        },
+        error: function(xhr, status, error) {
+          // AJAX 요청 실패 시 실행되는 콜백 함수
+          console.error('AJAX request failed: ', status, error);
+        }
+      });
+	return false;
 };

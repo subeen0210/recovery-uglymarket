@@ -404,4 +404,41 @@ public class AccountDAO {
 		}
 	}
 
+	// 비밀번호 정보수정
+	public static void changePW(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		User user = (User) request.getSession().getAttribute("userAccount");
+		String newPW = request.getParameter("newPW");
+		System.out.println(newPW);
+		
+		String sql = "UPDATE users SET u_pw = ? WHERE u_id = ?";
+		try {
+			
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, newPW);
+			pstmt.setString(2, user.getU_id());
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("비밀번호 수정 성공");
+				
+				// 세션 업데이트
+				request.setAttribute("newid", user.getU_id());
+				request.setAttribute("newpw", newPW);
+				login(request);
+				
+			}
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("수정 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+
 }

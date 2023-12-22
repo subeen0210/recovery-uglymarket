@@ -5,8 +5,9 @@
 	src: url('../font/kan.otf') format('opentype');
 }
 
+	/* 폰트 적용*/
 * {
-	font-family: 'MyCustomFont', sans-serif; /* 폰트 적용 */
+	font-family: 'MyCustomFont', sans-serif; 
 }
 
 body {
@@ -208,4 +209,13 @@ footer {
 #search-icon {
 	width: 25px;
 	margin: auto;
+}
+
+input[type=password] {
+    font-family: "나눔스퀘어 아닐때 쓸 글꼴";
+
+}
+
+::placeholder {
+        font-family: 'MyCustomFont', sans-serif; 
 }
