@@ -14,8 +14,8 @@
 <script type="text/javascript" src="js/validCheck.js"></script>
 </head>
 <body>
-	<form action="RegUserC" method="post" enctype="multipart/form-data"
-		onsubmit="return userCheck()">
+	<form action="RegSellerC" method="post" enctype="multipart/form-data"
+		onsubmit="return sellerCheck()">
 		<div class="reg-main">
 			<div class="reg-container">
 				<h1 style="color: #2a243a">Sign up</h1>
@@ -108,7 +108,7 @@
 				<div class="reg-content3">
 					<div class="reg-menu">農場説明</div>
 					<div class="reg-input2">
-						<textarea class="input-style2" name="farmStory" id="" cols="30"
+						<textarea class="input-style2" name="farmStory" cols="30"
 							rows="10"></textarea>
 					</div>
 				</div>
