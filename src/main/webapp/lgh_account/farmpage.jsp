@@ -15,7 +15,7 @@
 </head>
 <body>
 
-	<form action="" method="post" enctype="multipart/form-data"
+	<form action="updateSellerC" method="post" enctype="multipart/form-data"
 		onsubmit="return sellerCheck()">
 		<div class="reg-main">
 			<div class="reg-container">
@@ -91,7 +91,7 @@
 						農場イメージ<span class="essential-icon">*</span>
 					</div>
 					&ensp; <label for="fileInput">アップロード</label><input type="file"
-						name="farmImg" id="fileInput" onchange="displayFileName(this)" />
+						name="newFarmImg" id="fileInput" onchange="displayFileName(this)" />
 					<span id="fileNameDisplay"></span>
 				</div>
 				<br />
