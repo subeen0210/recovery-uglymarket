@@ -1,5 +1,6 @@
 package com.recovery.account;
 
+import java.io.File;
 import java.sql.Connection; 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,8 +18,21 @@ public class AccountDAO {
 
 	// 로그인
 	public static boolean login(HttpServletRequest request) {
+		
+		String newid = (String) request.getAttribute("newid");
+		String newpw = (String) request.getAttribute("newpw");
+		
 		String userID = request.getParameter("userID");
 		String userPW = request.getParameter("userPW");
+		
+		if (newid != null) {
+			userID = newid;
+			userPW = newpw;
+		}
+		
+		
+		
+		
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -56,7 +70,6 @@ public class AccountDAO {
 					// 세션 생성
 					HttpSession userHS = request.getSession();
 					userHS.setAttribute("userAccount", user);
-					userHS.setMaxInactiveInterval(1000);
 				} else {
 					System.out.println("비밀번호 오류");
 				}
@@ -315,6 +328,117 @@ public class AccountDAO {
 
 	    return password.toString();
 	    
+	}
+
+	
+	// 정보 수정
+	public static void updateUser(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		User user = (User) request.getSession().getAttribute("userAccount");
+		
+		
+		String sql = "UPDATE users "
+				+ "SET u_kanji_ln = ?, u_kanji_fn = ?, u_kata_ln = ?, u_kata_fn = ?, "
+				+ "u_nicname = ?, u_tel = ?, u_email = ?, u_img = ? "
+				+ "WHERE u_id = ?";
+		try {
+			request.setCharacterEncoding("utf-8");
+			String path = request.getServletContext().getRealPath("lgh_account/userImg");
+			MultipartRequest mr = new MultipartRequest(request, path, 30*1024*1024, "utf-8", new DefaultFileRenamePolicy()
+					);
+			String kanjiLast = mr.getParameter("userKanji_ln");
+			String kanjiName = mr.getParameter("userKanji_fn");
+			String kataLast = mr.getParameter("userKata_ln");
+			String kataName = mr.getParameter("userKata_fn");
+			String nickName = mr.getParameter("userNickname");
+			String tel1 = mr.getParameter("userTel1");
+			String tel2 = mr.getParameter("userTel2");
+			String tel3 = mr.getParameter("userTel3");
+			String telAll = tel1+"-"+tel2+"-"+tel3;
+			String email = mr.getParameter("userEmail");
+			
+			// 이미지 새로 들어왔는지 안들어왔는지 체크 
+			String newImg = mr.getFilesystemName("userImg");
+			String img = newImg != null ? newImg : user.getU_img();
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, kanjiLast);
+			pstmt.setString(2, kanjiName);
+			pstmt.setString(3, kataLast);
+			pstmt.setString(4, kataName);
+			pstmt.setString(5, nickName);
+			pstmt.setString(6, telAll);
+			pstmt.setString(7, email);
+			pstmt.setString(8, img);
+			pstmt.setString(9, user.getU_id());
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("수정 성공");
+				
+				// 기존 이미지 삭제 
+				if (newImg != null) {
+					File f = new File(path+"/"+user.getU_img());
+					f.delete();
+				}
+				
+				// 세션 업데이트
+				request.setAttribute("newid", user.getU_id());
+				request.setAttribute("newpw", user.getU_pw());
+				login(request);
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("수정 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+
+	// 비밀번호 정보수정
+	public static void changePW(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		User user = (User) request.getSession().getAttribute("userAccount");
+		String newPW = request.getParameter("newPW");
+		System.out.println(newPW);
+		
+		String sql = "UPDATE users SET u_pw = ? WHERE u_id = ?";
+		try {
+			
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, newPW);
+			pstmt.setString(2, user.getU_id());
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("비밀번호 수정 성공");
+				
+				// 세션 업데이트
+				request.setAttribute("newid", user.getU_id());
+				request.setAttribute("newpw", newPW);
+				login(request);
+				
+			}
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("수정 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
 	}
 
 }
