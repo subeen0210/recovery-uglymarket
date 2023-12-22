@@ -1,22 +1,22 @@
-var modal = document.getElementById('myModal');
+var modal;
+$(function(){
+ 	modal = document.getElementsByClassName('modal')[0];
+	//alert(1111)
+	showContent('product-management');
+	
+})
+
 
 function showContent(contentId) {
-    // Hide all content divs
-    document.querySelectorAll('.content').forEach(function(content) {
-        content.style.display = 'none';
-    });
-
     // Show the selected content
     document.getElementById(contentId).style.display = 'block';
-    console.log(contentId)
+
     if (contentId == 'product-management') {
         // 페이지 로드 시 데이터 로딩
         loadStockData();
     }
 }
-
-function loadStockData() {
-	console.log(modal);
+function loadStockData(){
     $.ajax({
         url: 'ItemAddC',
         datatype: 'json'
@@ -38,7 +38,7 @@ function loadStockData() {
             $(tr).append("<td>" + data[i].i_stock + "</td>");
             $(tr).append("<td>" + formattedDate + "</td>");
             $(tr).append("<td>" + data[i].i_price + "</td>");
-			$(tr).append("<td><button class='openModalBtn' data-item-no='" + data[i].i_no + "'>修正</button></td>");
+			$(tr).append("<td><button class='button' onclick='itemUpdate("+ data[i].i_no + ")'>修正</button></td>");
             $(tr).append("<td><button onclick='itemDelete(" + data[i].i_no + ")'>削除</button></td>");
             $("#tbody").append(tr);
         }
@@ -71,8 +71,20 @@ function itemDelete(no) {
     }
 }
 
+function itemUpdate(no){
+	let modal = document.getElementsByClassName('modal');
+	let close = document.getElementsByClassName('close');
+	let button = document.getElementsByClassName('button');
+	let confirmed = confirm('해당 상품을 수정하겠습니까?');
+	
+	if(confirmed){
+		
+	}
+	
+	}
 
-document.addEventListener('DOMContentLoaded', function () {
+
+/*document.addEventListener('DOMContentLoaded', function () {
     var span = document.getElementsByClassName('close')[0];
 
     // 수정된 부분
@@ -101,4 +113,8 @@ window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = 'none';
         }
-};
+
+
+
+
+};*/

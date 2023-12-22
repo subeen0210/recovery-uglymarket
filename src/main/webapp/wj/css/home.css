@@ -247,10 +247,9 @@ body {
 .item-img {
 	width: 330px;
 	height: 330px;
-	background-image: url('item.Folder.jpg'); /* 이미지 경로 설정 */
-	background-size: cover; /* 이미지를 div에 맞춰서 채우기 */
-	background-position: center; /* 이미지를 가운데 정렬 */
-	background-repeat: no-repeat; /* 이미지 반복 없음 */
+	background-size: cover; 
+	background-position: center; 
+	background-repeat: no-repeat; 
 	margin-left: 5px;
 }
 

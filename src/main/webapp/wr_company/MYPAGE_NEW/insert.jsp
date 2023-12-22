@@ -32,7 +32,7 @@ font-size: 30px;
 	<div class="insert">
 		<div class="seller_id_main">
 
-			<div class="seller_id">オタクの農場</div>
+			<div class="seller_id">${sellerAccount.s_name }</div>
 		</div>
 		<h1>管理ページへようこそ</h1>
 	</div>
