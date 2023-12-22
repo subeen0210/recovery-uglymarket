@@ -59,21 +59,12 @@
 	width: 15%;
 }
 
-#idStatusBox {
-	position: absolute;
-	top: 1.7em;
-}
-
-#idStatus {
-	font-size: 9pt;
-}
-
-#passWordEssential{
-	position: absolute;
-	top: 2.8em;
-	left: -10em;
-	font-size: 9pt;
-}
+/* #passWordEssential{ */
+/* 	position: absolute; */
+/* 	top: 2.8em; */
+/* 	left: -10em; */
+/* 	font-size: 9pt; */
+/* } */
 
 .reg-name {
 	width: 100%;

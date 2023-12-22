@@ -142,24 +142,24 @@ function userCheck() {
 	// 닉네임 예외
 	// 특수문자 불가
 	if (isEmpty(inputNick) || !(notContains(inputNick, setSpecialChars))) {
-		alert('ニックネームがありません');
+		alert('ニックネームには特殊文字を入れないでください');
 		inputNick.focus();
 		return false;
 	}
 	// 전화 예외
 	// 오직 숫자만
 	if (isEmpty(inputTel1) || isNotNumber(inputTel1)) {
-		alert('電話番号は数字を入れてください');
+		alert('電話番号には数字を入れてください');
 		inputTel1.focus();
 		inputTel1.value = '';
 		return false;
 	} else if (isEmpty(inputTel2) || isNotNumber(inputTel2)) {
-		alert('電話番号は数字を入れてください');
+		alert('電話番号には数字を入れてください');
 		inputTel2.focus();
 		inputTel2.value = '';
 		return false;
 	} else if (isEmpty(inputTel3) || isNotNumber(inputTel3)) {
-		alert('電話番号は数字を入れてください');
+		alert('電話番号には数字を入れてください');
 		inputTel3.focus();
 		inputTel3.value = '';
 		return false;
@@ -260,17 +260,17 @@ function sellerCheck() {
 	// 전화 예외
 	// 오직 숫자만
 	if (isEmpty(inputTel1) || isNotNumber(inputTel1)) {
-		alert('電話番号は数字を入れてください');
+		alert('電話番号には数字を入れてください');
 		inputTel1.focus();
 		inputTel1.value = '';
 		return false;
 	} else if (isEmpty(inputTel2) || isNotNumber(inputTel2)) {
-		alert('電話番号は数字を入れてください');
+		alert('電話番号には数字を入れてください');
 		inputTel2.focus();
 		inputTel2.value = '';
 		return false;
 	} else if (isEmpty(inputTel3) || isNotNumber(inputTel3)) {
-		alert('電話番号は数字を入れてください');
+		alert('電話番号には数字を入れてください');
 		inputTel3.focus();
 		inputTel3.value = '';
 		return false;
@@ -284,7 +284,7 @@ function sellerCheck() {
 	// 팜 이름 예외
 	// 특수문자 불가
 	if (isEmpty(inputFName) || !(notContains(inputFName, setSpecialChars))) {
-		alert('農場の名前には特殊文字なしにしてください');
+		alert('農場の名前には特殊文字を入れないでください');
 		inputFName.focus();
 		return false;
 	}
