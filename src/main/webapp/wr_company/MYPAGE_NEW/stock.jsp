@@ -8,12 +8,11 @@
 <link rel="stylesheet"
 	href="wr_company/MYPAGE_NEW/css/seller_register.css">
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/modal.css">
-<script type="text/javascript" src="wr_company/MYPAGE_NEW/js/stock.js"></script>
 </head>
 <body>
 
       
-	<div class="content" id="product-management" style="display: none;">
+	<div class="content" id="product-management">
     	<h2>在庫リスト</h2>
 
     	<table border="1">
@@ -31,8 +30,6 @@
           
         	</tbody>
     	</table>
-
-    <br>
     
     </div>
     
@@ -43,7 +40,7 @@
   	<div class="modal-content">
    		<span class="close">&times;</span>
  
-    	<form action="UpdateItemC" method="post" enctype="multipart/form-data">
+    	<form action="ItemUpdateC" method="post" enctype="multipart/form-data">
     	<br>
    		<br>
      	<div>
@@ -77,6 +74,7 @@
 			<div>写真登録（一番目の写真が代表イメージになります。）</div>
 			<div><input type="file" name="img" class="img"></div>
 		</div>
+		<a>수정</a>
 	</div>
      
     	</form>
@@ -84,7 +82,7 @@
 </div>
 <!-- 모달창 내용 끝 -->
 
-			
 
 </body>
+<script src="wr_company/MYPAGE_NEW/js/stock.js"></script>
 </html>

@@ -8,9 +8,9 @@
 	content="width=1920, height=1080, initial-scale=1.0">
 <link rel="icon" href="img/semi-logo-img.png" type="image/png">
 <link rel="stylesheet" href="wj/css/index.css" />
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script type="text/javascript" src="pagination/pagination.js"></script>
+<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
 <script type="text/javascript" src="pagination/pagination.min.js"></script>
+<script type="text/javascript" src="pagination/pagination.js"></script>
 <link rel="stylesheet" href="pagination/pagination.css">
 <script src="js/cartCheck.js"></script>
 <title>アグリーマーケット</title>
@@ -85,10 +85,5 @@
 	</footer>
 </body>
 <script src="wj/js/index.js"></script>
-<!-- <link rel="stylesheet" -->
-<!-- 	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" /> -->
-<!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
-<!-- <script -->
-<!-- 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> -->
 <script type="text/javascript" src="js/search.js"></script>
 </html>

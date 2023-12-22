@@ -18,7 +18,7 @@ $(function() {
 
     // 'cart' id를 가진 div에 대한 클릭 이벤트
     $('#cart').on('click', function(event) {
-        handleDivClick(event, 'wr_company/cart.jsp', '#cart');
+        handleDivClick(event, 'CartAllC', '#cart');
     });
 
 
@@ -38,7 +38,7 @@ $(function() {
         // AJAX 요청 수행
         $.ajax({
             url: pageUrl,
-            type: 'GET',
+            type: 'post',
             dataType: 'html', // JSP 페이지는 HTML 형식일 것으로 가정
             success: function(response) {
                 // 서버에서 받은 HTML을 mypage_centents3_box 안에 서서히 나타나게 삽입
