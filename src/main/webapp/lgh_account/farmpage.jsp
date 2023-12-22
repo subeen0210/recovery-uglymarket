@@ -16,10 +16,10 @@
 <body>
 
 	<form action="" method="post" enctype="multipart/form-data"
-		onsubmit="return userCheck()">
+		onsubmit="return sellerCheck()">
 		<div class="reg-main">
 			<div class="reg-container">
-				<h1 style="color: #2a243a">Sign up</h1>
+				<h1 style="color: #2a243a">情報修正</h1>
 				<br />
 				<div class="reg-content">
 					<div class="reg-menu">
@@ -107,7 +107,7 @@
 				<div class="reg-content3">
 					<div class="reg-menu">農場説明</div>
 					<div class="reg-input2">
-						<textarea class="input-style2" value="${sessionScope.sellerAccount.s_Fstory }" name="farmStory" cols="30"
+						<textarea class="input-style2" name="farmStory" id="farmStory" cols="30"
 							rows="10"></textarea>
 					</div>
 				</div>
@@ -153,7 +153,7 @@
 				<br />
 				<div class="reg-content">
 					<div class="reg-name">
-						<button class="btn-style">Sign Up</button>
+						<button class="btn-style">変更</button>
 					</div>
 				</div>
 			</div>
@@ -173,6 +173,7 @@ $(function() {
 	document.querySelector("input[name='sellerTel1'").value = telParts[0];
 	document.querySelector("input[name='sellerTel2'").value = telParts[1];
 	document.querySelector("input[name='sellerTel3'").value = telParts[2];
+	/* 분리 끝 */
 	
 	// 농장 주소 분리를 위해 적었습니다.
 	let addrValue = "${sessionScope.sellerAccount.s_Faddr }";
@@ -180,10 +181,24 @@ $(function() {
 	
 	let addrParts = addrValue.split("!");
 	
-	document.querySelector("input[name='sellerAddrN'").value = telParts[0];
-	document.querySelector("input[name='sellerAddrP'").value = telParts[1];
-	document.querySelector("input[name='sellerAddrC'").value = telParts[2];
-	document.querySelector("input[name='sellerAddrD'").value = telParts[3];
+	document.querySelector("input[name='sellerAddrN'").value = addrParts[0];
+	document.querySelector("input[name='sellerAddrP'").value = addrParts[1];
+	document.querySelector("input[name='sellerAddrC'").value = addrParts[2];
+	document.querySelector("input[name='sellerAddrD'").value = addrParts[3];
+	/* 분리 끝 */
+	
+	// 스토리 부분 <br>을 \r\n으로 바꾸기 위해 작성했습니다.
+	let storyValue = "${sessionScope.sellerAccount.s_Fstory }";
+	let storyreplace = storyValue.replace(/<br>/g, '\r\n');
+	console.log(storyreplace);
+	
+	document.querySelector('#farmStory').value = storyreplace;
+	
+	
+	
+	
+	
+	/* 분리 끝 */
 	
 });
 </script>
