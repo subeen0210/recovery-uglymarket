@@ -46,7 +46,7 @@
      	<div>
 			<div>
 				<div>商品名</div>
-				<div><input name="name" class="name"></div>
+				<div><input name="name" id="farm-name" class="name" ></div>
 			</div>
 		<div>
 			<div>商品の説明</div>

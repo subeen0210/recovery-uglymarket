@@ -84,7 +84,7 @@ public class ItemDAO {
 
 
 	// 제품 상세 페이지 기능
-	public static void getItem(HttpServletRequest request) {
+	public static void getItem(HttpServletRequest request, HttpServletResponse res) {
 		
 		String paramNo = request.getParameter("no");
 		
@@ -118,6 +118,12 @@ public class ItemDAO {
 				i.setI_stock(rs.getInt("i_stock"));
 				i.setI_star_avg(rs.getDouble("i_avg"));
 				request.setAttribute("item", i);
+				
+				Gson g = new Gson();
+				String jsonData = g.toJson(i);
+				res.setContentType("application/json");
+			    res.setCharacterEncoding("UTF-8");
+			    res.getWriter().write(jsonData);
 			}
 			
 		} catch (Exception e) {
