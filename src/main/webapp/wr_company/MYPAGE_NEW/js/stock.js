@@ -1,22 +1,15 @@
-var modal = document.getElementById('myModal');
+var modal = document.getElementsByClassName('modal')[0];
 
 function showContent(contentId) {
-    // Hide all content divs
-    document.querySelectorAll('.content').forEach(function(content) {
-        content.style.display = 'none';
-    });
-
     // Show the selected content
     document.getElementById(contentId).style.display = 'block';
-    console.log(contentId)
+
     if (contentId == 'product-management') {
         // 페이지 로드 시 데이터 로딩
         loadStockData();
     }
-}
 
-function loadStockData() {
-	console.log(modal);
+
     $.ajax({
         url: 'ItemAddC',
         datatype: 'json'

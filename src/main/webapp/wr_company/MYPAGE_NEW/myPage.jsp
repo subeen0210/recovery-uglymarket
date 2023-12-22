@@ -7,8 +7,7 @@
 <script src="wr_company/MYPAGE_NEW/js/mypage.js"></script>
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/myPage.css">
 <script type="text/javascript" src="wr_company/MYPAGE_NEW/js/register.js"></script>
-
-
+<script type="text/javascript" src="wr_company/MYPAGE_NEW/js/stock.js"></script>
 <meta charset="UTF-8">
 <title>アグリーマーケット販売用サイト</title>
 </head>

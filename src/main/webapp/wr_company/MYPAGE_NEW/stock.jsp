@@ -8,7 +8,6 @@
 <link rel="stylesheet"
 	href="wr_company/MYPAGE_NEW/css/seller_register.css">
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/modal.css">
-<script type="text/javascript" src="wr_company/MYPAGE_NEW/js/stock.js"></script>
 </head>
 <body>
 
@@ -31,8 +30,6 @@
           
         	</tbody>
     	</table>
-
-    <br>
     
     </div>
     
