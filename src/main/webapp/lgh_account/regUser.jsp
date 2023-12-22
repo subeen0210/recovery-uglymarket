@@ -154,6 +154,6 @@
 		</div>
 	</form>
 </body>
-<script type="text/javascript" src="js/regUser.js"></script>
+<script type="text/javascript" src="js/regUser1.js"></script>
 </html>
 
