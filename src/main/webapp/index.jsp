@@ -8,6 +8,10 @@
 	content="width=1920, height=1080, initial-scale=1.0">
 <link rel="icon" href="img/semi-logo-img.png" type="image/png">
 <link rel="stylesheet" href="wj/css/index.css" />
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="pagination/pagination.js"></script>
+<script type="text/javascript" src="pagination/pagination.min.js"></script>
+<link rel="stylesheet" href="pagination/pagination.css">
 <script src="js/cartCheck.js"></script>
 <title>アグリーマーケット</title>
 </head>
