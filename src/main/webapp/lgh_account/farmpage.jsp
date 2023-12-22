@@ -10,7 +10,7 @@
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/addr.js"></script>
-<script type="text/javascript" src="js/idCheck.js"></script>
+<script type="text/javascript" src="js/updateUser.js"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
 </head>
 <body>
@@ -159,6 +159,27 @@
 			</div>
 		</div>
 	</form>
+	<!-- 비밀번호 찾기 modal -->
+	<dialog id="password-modal" style="width: 500px; height: 500px;">
+	<div>
+		<a id="close-button">X</a>
+	</div>
+	<div>
+		<div>
+			<span>現在パスワード</span> <input id="old-pw" type="password">
+		</div>
+		<div>
+			<span>新たなパスワード</span> <input id="new-pw" type="password">
+		</div>
+		<div>
+			<span>パスワード再確認</span> <input type="password">
+		</div>
+	</div>
+	<div>
+		<a href="#" onclick="return passwordChange();">パスワード変更</a>
+	</div>
+	</dialog>
+	<!-- 비밀번호 찾기 modal 끝 -->
 </body>
 <script type="text/javascript" src="js/regUser1.js"></script>
 <script type="text/javascript">
@@ -194,12 +215,21 @@ $(function() {
 	
 	document.querySelector('#farmStory').value = storyreplace;
 	
-	
-	
-	
-	
 	/* 분리 끝 */
 	
 });
+
+document.getElementById("password-change-button").addEventListener("click",
+		function() {
+			// Open the dialog
+			document.getElementById("password-modal").showModal();
+		});
+
+document.getElementById("close-button").addEventListener("click",
+		function() {
+
+			// Close the dialog
+			document.getElementById("password-modal").close();
+		});
 </script>
 </html>
