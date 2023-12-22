@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/seller_register.css">
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/header.css">
-<script type="text/javascript" src="wr_company/MYPAGE_NEW/js/register.js"></script>
+
 </head>
 <body>
 

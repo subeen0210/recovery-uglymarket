@@ -13,7 +13,7 @@
 <body>
 
       
-	<div class="content" id="product-management" style="display: none;">
+	<div class="content" id="product-management">
     	<h2>在庫リスト</h2>
 
     	<table border="1">

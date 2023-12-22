@@ -6,6 +6,7 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="wr_company/MYPAGE_NEW/js/mypage.js"></script>
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/myPage.css">
+<script type="text/javascript" src="wr_company/MYPAGE_NEW/js/register.js"></script>
 
 
 <meta charset="UTF-8">
