@@ -22,6 +22,11 @@ public class CartAllC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 마이페이지 cart
+		
+		CartDAO.cartAll(request);
+		request.getRequestDispatcher("wj/cart.jsp").forward(request, response);
+	
 	}
 
 }
