@@ -14,10 +14,14 @@ public class IDForgotC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//email 있는지 확인
-		AccountDAO.emailConfirm(request);
+		//id 확인 있는지 확인
+		if (AccountDAO.emailConfirm(request)) {
+			request.setAttribute("isEmailConfirmed", true);
+		} else {
+			request.setAttribute("isEmailConfirmed", false);
+		}
 		
-		request.getRequestDispatcher("lgh_account/idGet.jsp").forward(request, response);
+		request.getRequestDispatcher("wj/findResult_id.jsp").forward(request, response);
 	}
 
 }

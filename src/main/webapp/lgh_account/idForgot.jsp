@@ -15,13 +15,13 @@
 			<div class="set-size">
 				<div class="set-name">姓</div>
 				<div class="set-input">
-					<input class="style-input" placeholder="First-name">
+					<input class="style-input" name="f_name" placeholder="First-name">
 				</div>
 			</div>
 			<div class="set-size">
 				<div class="set-name">名</div>
 				<div class="set-input">
-					<input class="style-input" placeholder="Second-name">
+					<input class="style-input" name="s_name" placeholder="Second-name">
 				</div>
 			</div>
 			<div class="set-size">
@@ -31,8 +31,8 @@
 				</div>
 			</div>
 			<div class="set-btn">
-				<a href="" title="Button push blue/green"
-					class="button btnPush btnBlueGreen">探す</a>
+				<button title="Button push blue/green"
+					class="button btnPush btnBlueGreen">探す</button>
 			</div>
 			<br><br>
 			<div class="menu align-center expanded text-center SMN_effect-23">

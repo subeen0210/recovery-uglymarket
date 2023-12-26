@@ -248,26 +248,39 @@ public class AccountDAO {
 			DBManager.close(con, pstmt, null);
 		}
 	}
-
-	public static void emailConfirm(HttpServletRequest request) {
-		String email = request.getParameter("email");
+	
+	// id 찾기
+	public static boolean emailConfirm(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT u_id FROM users WHERE u_email= ?";
+		String sql = "SELECT u_id FROM users WHERE u_email= ? and "
+				+ "u_kanji_ln = ? and u_kanji_fn = ?";
 		try {
+			request.setCharacterEncoding("UTF-8");
+			String email = request.getParameter("email");
+			String kanjiL = request.getParameter("f_name");
+			String kanjiF = request.getParameter("s_name");
+			System.out.println(email);
+			System.out.println(kanjiL);
+			System.out.println(kanjiF);
+			
+			
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, email);
+			pstmt.setString(2, kanjiL);
+			pstmt.setString(3, kanjiF);
 			rs = pstmt.executeQuery();
-			ArrayList<String> emails = new ArrayList<String>();
+			ArrayList<String> IDs = new ArrayList<String>();
 			while (rs.next()) {
 				System.out.println("id 찾기 성공");
-				emails.add(rs.getString("u_id"));
+				IDs.add(rs.getString("u_id"));
 			}
-			if (!emails.isEmpty()) {
-			    System.out.println(emails);
-			    request.setAttribute("emails", emails);
+			if (!IDs.isEmpty()) {
+			    System.out.println(IDs);
+			    request.setAttribute("IDs", IDs);
+			    return true;
 			} else {
 			    System.out.println("id 찾기 실패");
 			    request.setAttribute("resultMsg", "idが見つかりません");
@@ -278,6 +291,7 @@ public class AccountDAO {
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
+		return false;
 	}
 
 	public static void createRandomPassword(HttpServletRequest request) {
