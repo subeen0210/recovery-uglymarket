@@ -96,13 +96,6 @@
 					// Close the dialog
 					document.getElementById("myModal").close();
 				});
-		
-		window.addEventListener("click", function(event) {
-	        var modal = document.getElementById("myModal");
-	        if (event.target == modal) {
-	            modal.close();
-	        }
-	    });
 	</script>
 </body>
 </html>

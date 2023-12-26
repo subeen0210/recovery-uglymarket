@@ -55,7 +55,6 @@ public class SellerAccountDAO {
 					// 세션 생성
 					HttpSession sellerHS = request.getSession();
 					sellerHS.setAttribute("sellerAccount", seller);
-					sellerHS.setMaxInactiveInterval(100);
 					Check = true;
 				} else {
 					System.out.println("비밀번호 오류");

@@ -176,3 +176,15 @@ td {
 	border: 1px solid black;
 	text-align: left;
 }
+
+/* 최수빈 상품 등록 css 추가 */
+.photo-area{
+	display: flex;
+}
+
+.photo-text{
+	font-size: small;
+    color: red;
+    margin-left: 10px;
+    padding-top: 5px;
+}

@@ -26,7 +26,7 @@ function getPagePath(pageId) {
         case "stock":
             return "wr_company/MYPAGE_NEW/stock.jsp";
         case "mypage":
-            return "wr_company/MYPAGE_NEW/farmpage.jsp";
+            return "lgh_account/farmpage.jsp";
         default:
             console.error('JSP 페이지 로딩 중 에러: 페이지 ID가 잘못되었습니다.');
             return "";
@@ -55,22 +55,3 @@ function showJSP(pageId) {
         });
     }
 }
-
-
-$(document).ready(function() {
-	
-	//showJSP('insert');
-    // 각 메뉴에 클릭 이벤트 리스너 추가
-    $('.menu-link').click(function(event) {
-        event.preventDefault();
-
-        // 기존에 선택된 메뉴에서 'selected' 클래스 제거 (선택 스타일을 추가하려면 필요)
-        $('.menu-link').removeClass('selected');
-
-        // 현재 눌린 메뉴에 'selected' 클래스 추가
-        $(this).addClass('selected');
-
-        var pageId = $(this).data('page-id');
-        showJSP(pageId);
-    });
-});

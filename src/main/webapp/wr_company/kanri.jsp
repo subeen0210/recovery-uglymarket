@@ -4,8 +4,8 @@
 <html lang="en">
 <head>
 
-<link rel="stylesheet" href="css/kanri.css">
-<link rel="stylesheet" href="css/modal.css">
+<link rel="stylesheet" href="wr_company/css/kanri.css">
+<link rel="stylesheet" href="wr_company/css/modal.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>배송 주소 관리</title>

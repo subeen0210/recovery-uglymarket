@@ -8,7 +8,6 @@ a {
 }
 
 a:hover {
-	opacity: 0.5;
 	animation: fadeIn 0.5s ease-in-out;
 	color: #70e820;
 }
