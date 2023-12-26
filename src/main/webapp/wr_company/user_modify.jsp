@@ -34,8 +34,9 @@
 				<div class="reg-content">
 					<div class="reg-menu">PW</div>
 					<div class="reg-input">
-						<a id="password-change-button" type="button"
-							href="#" onclick="return false;">パスワード変更</a>
+						<a href="" title="Button border blue/green"
+							class="btnBlueGreen-fade" id="password-change-button"
+							type="button" onclick="return false;">パスワード変更</a>
 					</div>
 				</div>
 				<br />
@@ -113,23 +114,36 @@
 		</div>
 	</form>
 	<!-- 비밀번호 찾기 modal -->
-	<dialog id="password-modal" style="width: 500px; height: 500px;">
-	<div>
+	<dialog id="password-modal">
+	<div class="btn-size-close">
 		<a id="close-button">X</a>
 	</div>
-	<div>
-		<div>
-			<span>現在パスワード</span> <input id="old-pw" type="password">
+	<div class="modal-content">
+		<div class="content1">
+			<div class="set-content1">現在パスワード</div>
+			<br>
+			<div class="set-content1">新たなパスワード</div>
+			<br>
+			<div class="set-content1">パスワード再確認</div>
 		</div>
-		<div>
-			<span>新たなパスワード</span> <input id="new-pw" type="password">
-		</div>
-		<div>
-			<span>パスワード再確認</span> <input type="password">
+		<div class="content1">
+			<div class="set-input">
+				<input class="style-input" id="old-pw" placeholder="old-password">
+			</div>
+			<br>
+			<div class="set-input">
+				<input class="style-input" id="new-pw" placeholder="new-password">
+			</div>
+			<br>
+			<div class="set-input">
+				<input class="style-input" type="password" placeholder="pw-confirm">
+			</div>
 		</div>
 	</div>
 	<div>
-		<a href="#" onclick="return passwordChange();">パスワード変更</a>
+		<a href="#" title="Button push blue/green"
+			class="button btnPush btnBlueGreen"
+			onclick="return passwordChange();">パスワード変更</a>
 	</div>
 	</dialog>
 	<!-- 비밀번호 찾기 modal 끝 -->
