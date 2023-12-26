@@ -22,7 +22,11 @@ table {
 th, td {
 	border: 1px solid #ddd;
 	padding: 8px;
-	text-align: left;
+	text-align: center;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 300px;
 }
 
 th {
@@ -38,3 +42,7 @@ img {
 	display: flex;
 	justify-content: flex-end;
 }
+
+
+	
+	
