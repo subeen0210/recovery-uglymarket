@@ -59,7 +59,9 @@
           alt=""
           class="item-img-news-position"
         />
+        
         <div class="item-img-news-link-position">
+        <br>
           <div class="item-img-news-link-position-img">
            <a href="https://financial-field.com/living/entry-225773"><img src="img/semi-main-item-img-news-rectangle.png" alt="" />
 </a>          
