@@ -5,9 +5,8 @@
 	src: url('../font/kan.otf') format('opentype');
 }
 
-	/* 폰트 적용*/
 * {
-	font-family: 'MyCustomFont', sans-serif; 
+	font-family: 'MyCustomFont', sans-serif; /* 폰트 적용 */
 }
 
 body {
@@ -21,7 +20,8 @@ a {
 	color: black;
 }
 
-.header-hover:hover  {
+a:hover  {
+	opacity: 0.5;
 	animation: fadeIn 0.5s ease-in-out;
 	color: #70e820;}
 
@@ -103,6 +103,7 @@ a {
 }
 
 footer {
+	border: 1px solid red;
 	position: absolute;
 	background-color: #000000;
 	color: white;
@@ -207,13 +208,4 @@ footer {
 #search-icon {
 	width: 25px;
 	margin: auto;
-}
-
-input[type=password] {
-    font-family: "나눔스퀘어 아닐때 쓸 글꼴";
-
-}
-
-::placeholder {
-        font-family: 'MyCustomFont', sans-serif; 
 }

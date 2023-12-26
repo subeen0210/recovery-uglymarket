@@ -105,7 +105,7 @@
 }
 
 .item-select {
-	border: 2px solid #4B8A08;
+	border: 3px solid #4B8A08;
 	border-radius: 8px;
 	width: 85%;
 	height: 100px;
@@ -132,7 +132,9 @@
 	align-items: center;
 	font-weight: bold;
 	font-size: 20pt;
+	 cursor: pointer;
 }
+
 
 .click2 {
 	/*border: 3px solid #70e820;*/
@@ -146,7 +148,9 @@
 	align-items: center;
 	font-weight: bold;
 	font-size: 20pt;
+	 cursor: pointer;
 }
+
 
 .item-explain {
 	width: 100%;
