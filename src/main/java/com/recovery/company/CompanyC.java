@@ -1,4 +1,4 @@
-package com.recovery.mypage;
+package com.recovery.company;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,26 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.recovery.account.AccountDAO;
-import com.recovery.shop.ItemDAO;
 
-
-@WebServlet("/SellerMypageC")
-public class SellerMypageC extends HttpServlet {
-
+@WebServlet("/CompanyC")
+public class CompanyC extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "lgh_account/farmpage.jsp");
+		request.setAttribute("contentPage", "company.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
-	
 	}
 
 	
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		
-		
-	}
+		}
 
 }

@@ -10,12 +10,12 @@
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/addr.js"></script>
-<script type="text/javascript" src="js/idCheck.js"></script>
+<script type="text/javascript" src="js/updateUser.js"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
 </head>
 <body>
 
-	<form action="" method="post" enctype="multipart/form-data"
+	<form action="updateSellerC" method="post" enctype="multipart/form-data"
 		onsubmit="return sellerCheck()">
 		<div class="reg-main">
 			<div class="reg-container">
@@ -88,7 +88,7 @@
 						農場イメージ<span class="essential-icon">*</span>
 					</div>
 					&ensp; <label for="fileInput">アップロード</label><input type="file"
-						name="farmImg" id="fileInput" onchange="displayFileName(this)" />
+						name="newFarmImg" id="fileInput" onchange="displayFileName(this)" />
 					<span id="fileNameDisplay"></span>
 				</div>
 				<br />
@@ -157,6 +157,27 @@
 			</div>
 		</div>
 	</form>
+	<!-- 비밀번호 찾기 modal -->
+	<dialog id="password-modal" style="width: 500px; height: 500px;">
+	<div>
+		<a id="close-button">X</a>
+	</div>
+	<div>
+		<div>
+			<span>現在パスワード</span> <input id="old-pw" type="password">
+		</div>
+		<div>
+			<span>新たなパスワード</span> <input id="new-pw" type="password">
+		</div>
+		<div>
+			<span>パスワード再確認</span> <input type="password">
+		</div>
+	</div>
+	<div>
+		<a href="#" onclick="return passwordChange();">パスワード変更</a>
+	</div>
+	</dialog>
+	<!-- 비밀번호 찾기 modal 끝 -->
 </body>
 <script type="text/javascript" src="js/regUser1.js"></script>
 <script type="text/javascript">
@@ -167,33 +188,46 @@
 
 		let telParts = telValue.split("-");
 
-		// 분리된 부분을 각 입력 필드에 할당합니다.
-		document.querySelector("input[name='sellerTel1'").value = telParts[0];
-		document.querySelector("input[name='sellerTel2'").value = telParts[1];
-		document.querySelector("input[name='sellerTel3'").value = telParts[2];
-		/* 분리 끝 */
+	// 분리된 부분을 각 입력 필드에 할당합니다.
+	document.querySelector("input[name='sellerTel1'").value = telParts[0];
+	document.querySelector("input[name='sellerTel2'").value = telParts[1];
+	document.querySelector("input[name='sellerTel3'").value = telParts[2];
+	/* 분리 끝 */
+	
+	// 농장 주소 분리를 위해 적었습니다.
+	let addrValue = "${sessionScope.sellerAccount.s_Faddr }";
+	console.log(addrValue);
+	
+	let addrParts = addrValue.split("!");
+	
+	document.querySelector("input[name='sellerAddrN'").value = addrParts[0];
+	document.querySelector("input[name='sellerAddrP'").value = addrParts[1];
+	document.querySelector("input[name='sellerAddrC'").value = addrParts[2];
+	document.querySelector("input[name='sellerAddrD'").value = addrParts[3];
+	/* 분리 끝 */
+	
+	// 스토리 부분 <br>을 \r\n으로 바꾸기 위해 작성했습니다.
+	let storyValue = "${sessionScope.sellerAccount.s_Fstory }";
+	let storyreplace = storyValue.replace(/<br>/g, '\r\n');
+	console.log(storyreplace);
+	
+	document.querySelector('#farmStory').value = storyreplace;
+	
+	/* 분리 끝 */
+	
+});
 
-		// 농장 주소 분리를 위해 적었습니다.
-		let addrValue = "${sessionScope.sellerAccount.s_Faddr }";
-		console.log(addrValue);
+document.getElementById("password-change-button").addEventListener("click",
+		function() {
+			// Open the dialog
+			document.getElementById("password-modal").showModal();
+		});
 
-		let addrParts = addrValue.split("!");
+document.getElementById("close-button").addEventListener("click",
+		function() {
 
-		document.querySelector("input[name='sellerAddrN'").value = addrParts[0];
-		document.querySelector("input[name='sellerAddrP'").value = addrParts[1];
-		document.querySelector("input[name='sellerAddrC'").value = addrParts[2];
-		document.querySelector("input[name='sellerAddrD'").value = addrParts[3];
-		/* 분리 끝 */
-
-		// 스토리 부분 <br>을 \r\n으로 바꾸기 위해 작성했습니다.
-		let storyValue = "${sessionScope.sellerAccount.s_Fstory }";
-		let storyreplace = storyValue.replace(/<br>/g, '\r\n');
-		console.log(storyreplace);
-
-		document.querySelector('#farmStory').value = storyreplace;
-
-		/* 분리 끝 */
-
-	});
+			// Close the dialog
+			document.getElementById("password-modal").close();
+		});
 </script>
 </html>

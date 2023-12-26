@@ -1,0 +1,162 @@
+.body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.button #ID {
+  padding: 0;
+  margin: 0;
+}
+
+.reg-main {
+  display: flex;
+  justify-content: center;
+}
+
+.reg-container {
+  border: 3px solid #e6e6e6;
+  border-radius: 10px;
+  box-shadow: 7px 7px 39px #e6e6e6;
+  width: 100%;
+  height: 100%;
+  margin: 100px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reg-content {
+  width: 80%;
+  height: 40px;
+  display: flex;
+}
+
+.reg-content2 {
+  width: 50%;
+  height: 40px;
+  display: flex;
+}
+
+.reg-content3 {
+  width: 80%;
+  height: 200px;
+  display: flex;
+}
+
+.reg-menu {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.reg-input {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.reg-input2 {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+#idStatus {
+  font-size: 10pt;
+}
+
+.reg-name {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.reg-name2 {
+  width: 80%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  font-weight: bold;
+}
+
+.reg-name3 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.input-style {
+  border: 2px solid #2a243a;
+  border-radius: 5px;
+}
+
+.input-style2 {
+  border: 2px solid #2a243a;
+  border-radius: 5px;
+  width: 100%;
+  height: 150px;
+}
+
+.input-style3 {
+  border: 2px solid #2a243a;
+  border-radius: 5px;
+  width: 15%;
+}
+
+#click-file {
+  cursor: pointer;
+}
+
+#click-file::after {
+  content: "アップロード";
+  margin-left: -100px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  background-color: #2a243a;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 29%;
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+#fileNameDisplay {
+  position: absolute;
+  margin-left: 385px;
+  margin-top: 10px;
+  font-size: 10pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-style {
+  background-color: #2a243a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 12pt;
+}
+
+.btn-style:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

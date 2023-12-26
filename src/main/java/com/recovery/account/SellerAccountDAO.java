@@ -1,5 +1,6 @@
 package com.recovery.account;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,8 +16,16 @@ import com.recovery.main.DBManager;
 public class SellerAccountDAO {
 
 	public static boolean login(HttpServletRequest request) {
+		String newid = (String) request.getAttribute("newid");
+		String newpw = (String) request.getAttribute("newpw");
+		
 		String sellerID = request.getParameter("sellerID");
 		String sellerPW = request.getParameter("sellerPW");
+		
+		if (newid != null) {
+			sellerID = newid;
+			sellerPW = newpw;
+		}
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -106,7 +115,6 @@ public class SellerAccountDAO {
 				addrD = "...";
 			}
 			
-			
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
@@ -132,15 +140,87 @@ public class SellerAccountDAO {
 			DBManager.close(con, pstmt, null);
 		}
 		
+	}
+
+	public static void updateSeller(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		Seller seller = (Seller) request.getSession().getAttribute("sellerAccount");
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		String sql = "UPDATE seller "
+				+ "SET s_kanji_ln = ?, s_kanji_fn = ?, s_kata_ln = ?, s_kata_fn = ?, "
+				+ "s_tel = ?, s_f_photo = ?, s_f_addr = ?, s_f_name = ?, s_f_story = ? "
+				+ "WHERE s_id = ?";
+		try {
+			request.setCharacterEncoding("utf-8");
+			String path = request.getServletContext().getRealPath("lgh_account/farmImg");
+			MultipartRequest mr = new MultipartRequest(request, path, 30*1024*1024, "utf-8", new DefaultFileRenamePolicy()
+					);
+			String kanjiLast = mr.getParameter("sellerKanji_ln");
+			String kanjiName = mr.getParameter("sellerKanji_fn");
+			String kataLast = mr.getParameter("sellerKata_ln");
+			String kataName = mr.getParameter("sellerKata_fn");
+			
+			String tel1 = mr.getParameter("sellerTel1");
+			String tel2 = mr.getParameter("sellerTel2");
+			String tel3 = mr.getParameter("sellerTel3");
+			String tel = tel1+"-"+tel2+"-"+tel3;
+			
+			String farmName = mr.getParameter("farmName");
+
+			String farmStory = mr.getParameter("farmStory");
+			farmStory = farmStory.isEmpty() ? "説明がありません" : farmStory.replaceAll("\r\n", "<br>");
+
+			String addrN = mr.getParameter("sellerAddrN");
+			String addrP = mr.getParameter("sellerAddrP");
+			String addrC = mr.getParameter("sellerAddrC");
+			String addrD = mr.getParameter("sellerAddrD");
+			String addr = addrN+"!"+addrP+"!"+addrC+"!"+addrD;
+			System.out.println(tel);
+			System.out.println(addr);
+			System.out.println(farmStory);
+			if (addrD.isEmpty()) {
+				addrD = "...";
+			}
+			
+			// 이미지 새로 들어왔는지 안들어왔는지 체크 
+			String newFarmImg = mr.getFilesystemName("newFarmImg");
+			String img = newFarmImg != null ? newFarmImg : seller.getS_Fphoto();
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, kanjiLast);
+			pstmt.setString(2, kanjiName);
+			pstmt.setString(3, kataLast);
+			pstmt.setString(4, kataName);
+			pstmt.setString(5, tel);
+			pstmt.setString(6, img);
+			pstmt.setString(7, addr);
+			pstmt.setString(8, farmName);
+			pstmt.setString(9, farmStory);
+			pstmt.setString(10, seller.getS_id());
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("수정 성공");
+				
+				// 기존 이미지 삭제 
+				if (newFarmImg != null) {
+					File f = new File(path+"/"+seller.getS_Fphoto());
+					f.delete();
+				}
+				
+				// 세션 업데이트
+				request.setAttribute("newid", seller.getS_id());
+				request.setAttribute("newpw", seller.getS_pw());
+				login(request);
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("수정 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
 	};
 }

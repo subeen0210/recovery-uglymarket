@@ -39,18 +39,21 @@ h2{
 .content {
 	padding: 20px;
 	border: 1px solid #E8D3D3;
-	border-radius: 40px;
+	border-radius: 10px;
 	margin: 100px;
 	padding: 50px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	
 }
 
 #product-registration {
 	/*display: block;
 	/*  background-color: #C3E820;*/
 	border: 1px solid black;
-	border-radius: 40px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	width: 50%;
+	
+	
 }
 
 #product-management {
@@ -59,6 +62,7 @@ h2{
 	border: 1px solid black;
 	border-radius: 40px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	
 }
 
 /* 폼 스타일링 */
