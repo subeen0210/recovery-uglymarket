@@ -100,13 +100,12 @@ function itemUpdate(no) {
 			$('#farm-name').val(response.i_name);
 			$('#farm-story').val(response.i_des);
 			
-  			if (response.i_category === '1') {
-            $('#farm-select1').prop('checked', true);
-        } else if (response.i_category === '2') {
-            $('#farm-select2').prop('checked', true);
-        }
+  			$('.select[value="' + response.i_category + '"]').prop('checked', true);
 
-			$('#farm-date').val(response.i_ed);
+			let selectedDate = new Date(response.i_ed);
+			let formattedDate = selectedDate.toISOString().slice(0, 10);
+			$('#farm-date').val(formattedDate);
+			
 			$('#farm-stock').val(response.i_stock);
 			$('#farm-price').val(response.i_price);
 			$('#farm-file').text(response.i_img);

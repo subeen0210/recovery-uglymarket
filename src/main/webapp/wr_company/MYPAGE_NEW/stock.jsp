@@ -54,8 +54,8 @@
 		</div>
 		<div>
 			<div class="radio-container">商品種類
-				<label>アグリー<input type="radio" value="1" name="type" id="farm-select" class="select"></label>
-				<label>ふつう<input type="radio" value="2" name="type" id="farm-select" class="select"></label>
+				<label>アグリー<input type="radio" value="1" name="type" class="select"></label>
+				<label>ふつう<input type="radio" value="2" name="type" class="select"></label>
 			</div>
 		</div>
 		<div>
