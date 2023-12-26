@@ -58,20 +58,22 @@ $(function() {
 
 
 // 최수빈 쿠키 이용해 최근 본 상품
-// 마이페이지에서 최근 본 상품 목록 가져오기
-let recentProductsCookie = getCookie('recentProducts');
-let recentProductsList = recentProductsCookie ? recentProductsCookie.split(',') : [];
+function getUserIdFromSession() {
+    const userAccount = sessionStorage.getItem('userAccount');
+	console.log('세션에서 가져온 userAccount:', userAccount);
+    return userAccount ? JSON.parse(userAccount).u_id : undefined;
+}
 
-// 최근 본 상품이 3개 미만인 경우 빈 상품으로 채우기
-//while (recentProductsList.length < 3) {
-//    recentProductsList.push('');
-//}
+function getRecentProductIds() {
+    let userId = getUserIdFromSession();
+	console.log('마이페이지에서 사용자 ID:', userId);
+    if (!userId) {
+        console.error('사용자 ID가 없습니다.');
+        return [];
+    }
 
-// HTML에 동적으로 추가
-let box = document.querySelector('.mypage_contents2_box');
-recentProductsList.forEach(productId => {
-    let item = document.createElement('div');
-    item.classList.add('mypage_contents2_box_item');
-    item.innerHTML = `<img src="itemFolder/${item.i_img}">`;
-    box.appendChild(item);
-});
+    let cookieValue = getCookie(`recentProducts_${userId}`);
+    const recentProducts = cookieValue ? cookieValue.split(',') : [];
+    console.log('최근 본 상품 목록:', recentProducts);
+    return recentProducts;
+}
