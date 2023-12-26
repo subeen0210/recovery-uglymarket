@@ -29,11 +29,11 @@
 		<br>
 		<div class="btn-position">
 			<div class="set-btn">
-				<a href="" title="Button push blue/green"
+				<a href="LoginPageC" title="Button push blue/green"
 					class="button btnPush btnBlueGreen">Login</a>
 			</div>
 			<div class="set-btn">
-				<a href="" title="Button push blue/green"
+				<a href="PWForgotC" title="Button push blue/green"
 					class="button btnPush btnBlueGreen">パスワードを探す</a>
 			</div>
 		</div>

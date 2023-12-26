@@ -295,15 +295,17 @@ public class AccountDAO {
 	}
 
 	public static void createRandomPassword(HttpServletRequest request) {
-		String email = request.getParameter("email");
-		String id = request.getParameter("id");
-		String sei = request.getParameter("kanji_ln");
-		String mei = request.getParameter("kanji_fn");
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT * FROM users WHERE u_email= ? and u_id = ? and u_kanji_ln = ? and u_kanji_fn = ?";
 		try {
+			request.setCharacterEncoding("UTF-8");
+			String email = request.getParameter("email");
+			String id = request.getParameter("id");
+			String sei = request.getParameter("kanji_ln");
+			String mei = request.getParameter("kanji_fn");
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, email);
@@ -315,7 +317,8 @@ public class AccountDAO {
 			if (rs.next()) {
 				System.out.println("새 비밀번호 생성");
 				
-				String randomPassword = generateRandomPassword(8);
+//				System.out.println(randomMix(10));
+				String randomPassword = randomMix(10);
 
 		        // 랜덤 비밀번호 전달 
 		        request.setAttribute("randomPassword", randomPassword);
@@ -323,7 +326,7 @@ public class AccountDAO {
 		    	System.out.println("맞는 사람이 없음");
 		        // 조회 실패한 경우
 		        // 예외 처리 또는 다른 로직 수행
-		    	request.setAttribute("resultMsg", "idが見つかりません");
+		    	request.setAttribute("resultMsg", "存在されてません");
 		    }
 			
 		} catch (Exception e) {
@@ -334,18 +337,21 @@ public class AccountDAO {
 		}
 	}
 	
-	private static String generateRandomPassword(int length) {
-	    String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	    Random random = new Random();
-	    StringBuilder password = new StringBuilder();
+	
+	public static String randomMix(int range) {
+	    StringBuilder sb = new StringBuilder();
+	    Random rd = new Random();
 
-	    for (int i = 0; i < length; i++) {
-	        int index = random.nextInt(characters.length());
-	        password.append(characters.charAt(index));
+	    for(int i=0;i<range;i++){
+
+	        if(rd.nextBoolean()){
+	            sb.append(rd.nextInt(10));
+	        }else {
+	            sb.append((char)(rd.nextInt(26)+65));
+	        }
 	    }
 
-	    return password.toString();
-	    
+	    return sb.toString();
 	}
 
 	
