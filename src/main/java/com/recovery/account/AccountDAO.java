@@ -30,10 +30,6 @@ public class AccountDAO {
 			userPW = newpw;
 		}
 		
-		
-		
-		
-		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -389,12 +385,6 @@ public class AccountDAO {
 				login(request);
 				
 			}
-			
-			
-			
-			
-			
-			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
