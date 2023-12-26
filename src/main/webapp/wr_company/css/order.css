@@ -12,6 +12,15 @@
 	
 	
 }
+.main_modal{
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+	
+	
+	
+}
 
 table {
 	width: 100%;
@@ -19,15 +28,7 @@ table {
 	margin-top: 20px;
 }
 
-th, td {
-	border: 1px solid #ddd;
-	padding: 8px;
-	text-align: center;
-	white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 300px;
-}
+
 
 th {
 	background-color: #f2f2f2;
@@ -43,6 +44,122 @@ img {
 	justify-content: flex-end;
 }
 
+.order_number{
+		border: 1px solid #ddd;
+		width: 80px;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100px;
+}
+.product_name{
+	width: 300px;
+		border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 300px;
+}
+.price{
+	width: 100px;
+		border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100px;
+}
+.total_price{
+	width: 80px;
+		border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 80px;
+}
+.pickup_status{
+	width: 100px;
+		border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100px;
+}
+.delete_table{
+	width: 50px;
+		border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 50px;
+}
+.date{
+		width: 150px;
+		border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+	
+	
+}
+	
+.closeModalBtn{
+	width: 100px;
+	height: 50px;
+	}
 
 	
 	
+	
+	
+	
+	
+	
+	
+	.main_modal {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ 
+}
+
+.column-item,
+.column-item2 {
+  width: 88%; /* 각 항목을 반응형으로 정렬하기 위한 너비 조정 */
+  margin-bottom: 10px;
+  
+}
+
+.left {
+  font-weight: bold;
+}
+
+.right {
+  margin-left: 10px;
+}
+
+/* 추가적인 스타일 조정이 필요한 경우 여기에 추가 */
