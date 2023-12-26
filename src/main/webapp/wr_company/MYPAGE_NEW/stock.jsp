@@ -74,7 +74,7 @@
 			<div>写真登録（一番目の写真が代表イメージになります。）</div>
 			<div><input type="file" name="img" id="farm-file" class="img"></div>
 		</div>
-		<a>수정</a>
+		<button class="update-button" data-i-no="1">수정</button>
 	</div>
     	</form>
   </div>

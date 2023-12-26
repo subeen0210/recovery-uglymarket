@@ -312,6 +312,18 @@ public class ItemDAO {
 		        }
 		    }
 		       
+		    System.out.println(name);
+		    System.out.println(story);
+		    System.out.println(price);
+		    System.out.println(stock);
+		    System.out.println(type);
+		    System.out.println(imgArray);
+		    System.out.println(date);
+		    System.out.println(oldImgArray);
+		    System.out.println(seller.getS_id());
+		    System.out.println(request.getParameter("iNo"));
+		    
+		    
 		    pstmt.setString(1, name);
 		    pstmt.setString(2, story);
 		    pstmt.setString(3, type);
@@ -343,6 +355,7 @@ public class ItemDAO {
 		    
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("수정실패");
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
