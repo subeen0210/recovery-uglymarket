@@ -17,7 +17,7 @@ public class SellerMypageC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "wr_company/MYPAGE_NEW/myPage.jsp");
+		request.setAttribute("contentPage", "lgh_account/farmpage.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	
 	}
