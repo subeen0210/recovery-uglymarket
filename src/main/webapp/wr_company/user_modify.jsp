@@ -128,15 +128,18 @@
 		</div>
 		<div class="content1">
 			<div class="set-input">
-				<input class="style-input" id="old-pw" placeholder="old-password">
+				<input class="style-input" id="old-pw" type="password" placeholder="10字~20字">
+				<div class="PW-change-errorMsg" id="PW-old-errorMsg"></div>
 			</div>
 			<br>
 			<div class="set-input">
-				<input class="style-input" id="new-pw" placeholder="new-password">
+				<input class="style-input" id="new-pw" placeholder="10字~20字" type="password" maxlength="20">
+				<div class="PW-change-errorMsg" id="pw-new-errorMsg"></div>
 			</div>
 			<br>
 			<div class="set-input">
-				<input class="style-input" type="password" placeholder="pw-confirm">
+				<input class="style-input" id="new-pw-confirm" type="password" placeholder="再確認">
+				<div class="PW-change-errorMsg" id="pwConfirm"></div>
 			</div>
 		</div>
 	</div>

@@ -25,6 +25,14 @@ public class AccountDAO {
 		String userID = request.getParameter("userID");
 		String userPW = request.getParameter("userPW");
 		
+		String oldPW = request.getParameter("oldPW");
+		
+		if (oldPW != null) {
+			User user2 = (User) request.getSession().getAttribute("userAccount");
+			userID = user2.getU_id();			
+			userPW = oldPW;
+		}
+		
 		if (newid != null) {
 			userID = newid;
 			userPW = newpw;
