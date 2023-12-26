@@ -45,11 +45,10 @@
 					</div>
 					</div>
 					<div class="mypage_contents2_box"> <!--최근 본 상품이 들어가는 박스 -->
-					
 						<div class="mypage_contents2_box_item"></div>
 						<div class="mypage_contents2_box_item"></div>
 						<div class="mypage_contents2_box_item"></div>
-						</div>
+					</div>
 				</div>
 </div>
 			</div>

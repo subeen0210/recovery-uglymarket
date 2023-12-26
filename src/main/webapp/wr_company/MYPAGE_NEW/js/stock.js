@@ -46,75 +46,71 @@ function loadStockData() {
 	});
 }
 
-function itemUpdate(iNo) {
-    let modal = document.getElementsByClassName('modal')[0];
-    let close = document.getElementsByClassName('close')[0];
+function itemDelete(no) {
+	var confirmed = confirm('해당 상품을 정말 삭제하겠습니까?');
+	// 사용자의 선택 확인
+	if (confirmed) {
+		// 사용자가 '예'를 선택한 경우, 삭제를 수행
+		$.ajax({
+			url: 'ItemDeleteC', // 실제 서블릿 URL로 교체
+			method: 'POST',
+			data: { no: no }, // 아이템 번호를 서블릿에 전달
+			dataType: 'text', // 일반 텍스트 응답을 기대
+			success: function(response) {
+				alert('해당 상품이 삭제되었습니다.');
+				location.reload();
+			},
+			error: function(error) {
+				console.error('에러:', error);
+			}
+		});
+	} else {
+		// 사용자가 '아니요'를 선택한 경우, 아무 동작도 하지 않음
+		console.log('삭제 취소됨');
+	}
+}
 
-    let confirmed = confirm('해당 상품을 수정하겠습니까?');
 
-    if (confirmed) {
-        setTimeout(function() {
-            modal.style.display = 'flex';
-        }, 0);
 
-        close.addEventListener("click", function() {
-            modal.style.display = 'none';
-        });
+function itemUpdate(no) {
+	let modal = document.getElementsByClassName('modal')[0];
+	let close = document.getElementsByClassName('close')[0];
+	let button = document.getElementsByClassName('update-button')[0];
 
-        // 추가된 부분: .update-button에 대한 이벤트 핸들러 정의
-        $('.update-button').off('click').on('click', function () {
-            // 모달 내의 데이터와 함께 itemUpdate 함수 호출
-            itemUpdate(iNo);
+	let confirmed = confirm('해당 상품을 수정하겠습니까?');
 
-            // 추가된 부분
-            $.ajax({
-                url: 'ItemUpdateC',
-                method: 'POST',
-                datatype: 'json',
-                data: {
-                    iNo: iNo,
-                    name: $('#farm-name').val(),
-                    story: $('#farm-story').val(),
-                    type: $('.select:checked').val(),
-                    date: $('#farm-date').val(),
-                    stock: $('#farm-stock').val(),
-                    price: $('#farm-price').val(),
-                    
-                },
-                success: function (response) {
-                    // 성공 처리
-                },
-                error: function (error) {
-                    console.error('에러:', error);
-                }
-            });
-        });
-    }
+	if (confirmed) {
+		setTimeout(function() {
+			modal.style.display = 'flex';
+		}, 0);
 
-    // 이 부분에서 iNo 값을 사용하여 데이터를 가져오는 Ajax 호출 수행
-    $.ajax({
-        url: 'ShopDetailC', 
-        method: 'POST',
-        datatype: 'json',
-        data: { no: iNo }, 
-        success: function(response) {
-            // 성공 메시지 표시
-            alert('해당 상품이 조회되었습니다.');
-            $('#farm-name').val(response.i_name);
-            $('#farm-story').val(response.i_des);
-            
-            $('.select[value="' + response.i_category + '"]').prop('checked', true);
+		close.addEventListener("click", function() {
+			modal.style.display = 'none';
+		});
+	}
 
-            let selectedDate = new Date(response.i_ed);
-            let formattedDate = selectedDate.toISOString().slice(0, 10);
-            $('#farm-date').val(formattedDate);
-            
-            $('#farm-stock').val(response.i_stock);
-            $('#farm-price').val(response.i_price);
-            $('#farm-file').text(response.i_img);
-        },
-        error: function(error) {
-            console.error('에러:', error);
-        }
-    });
+	$.ajax({
+		url: 'ShopDetailC', // 실제 서블릿 URL로 교체
+		method: 'POST',
+		datatype: 'json',
+		data: { no: no }, // 아이템 번호를 서블릿에 전달
+		success: function(response) {
+			// 성공 메시지 표시
+			alert('해당 상품이 조회되었습니다.');
+			$('#farm-name').val(response.i_name);
+			$('#farm-story').val(response.i_des);
+
+			$('.select[value="' + response.i_category + '"]').prop('checked', true);
+
+			$('#farm-date').val(response.i_ed);
+			$('#farm-stock').val(response.i_stock);
+			$('#farm-price').val(response.i_price);
+			$('#farm-file').val(response.i_img);
+
+		},
+		error: function(error) {
+			console.error('에러:', error);
+		}
+	});
+
 }

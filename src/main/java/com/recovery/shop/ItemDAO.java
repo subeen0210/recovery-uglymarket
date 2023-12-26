@@ -321,7 +321,7 @@ public class ItemDAO {
 		    System.out.println(date);
 		    System.out.println(oldImgArray);
 		    System.out.println(seller.getS_id());
-		    System.out.println(request.getParameter("iNo"));
+		    System.out.println(request.getParameter("no"));
 		    
 		    
 		    pstmt.setString(1, name);
