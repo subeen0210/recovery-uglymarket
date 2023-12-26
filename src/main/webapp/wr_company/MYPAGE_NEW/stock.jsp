@@ -76,7 +76,6 @@
 		</div>
 		<a>수정</a>
 	</div>
-     
     	</form>
   </div>
 </div>

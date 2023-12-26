@@ -314,7 +314,7 @@ public class ItemDAO {
 		       
 		    pstmt.setString(1, name);
 		    pstmt.setString(2, story);
-		    pstmt.setString(3, price);
+		    pstmt.setString(3, type);
 		    pstmt.setString(4, date);
 		    pstmt.setString(9, price);
 		    pstmt.setString(10, stock);

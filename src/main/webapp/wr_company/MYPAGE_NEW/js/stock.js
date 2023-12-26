@@ -99,11 +99,17 @@ function itemUpdate(no) {
 			alert('해당 상품이 조회되었습니다.');
 			$('#farm-name').val(response.i_name);
 			$('#farm-story').val(response.i_des);
-			$('#farm-select').val(response.i_category);
+			
+  			if (response.i_category === '1') {
+            $('#farm-select1').prop('checked', true);
+        } else if (response.i_category === '2') {
+            $('#farm-select2').prop('checked', true);
+        }
+
 			$('#farm-date').val(response.i_ed);
 			$('#farm-stock').val(response.i_stock);
 			$('#farm-price').val(response.i_price);
-			$('#farm-file').val(response.i_img);
+			$('#farm-file').text(response.i_img);
 
 		},
 		error: function(error) {
