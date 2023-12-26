@@ -7,6 +7,12 @@
 * {
 	font-family: 'MyCustomFont', sans-serif; /* ��Ʈ ���� */
 }
+body{
+	
+	margin:0;
+	padding:0;
+	
+}
 
 .company_container {
 	width: 100vw;
