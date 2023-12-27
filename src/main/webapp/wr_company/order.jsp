@@ -34,7 +34,7 @@
 					<td>2000</td>
 					<td>注文完了</td>
 					<td>2023-12-30</td>
-					<td><a id="" href="#">削除</a></td>
+					<td><a>削除</a></td>
 				</tr>
 
 
@@ -55,7 +55,7 @@
 				<tr>
 					<td class="label">農場名</td>
 					<td class="value">栃木イチゴ組合</td>
-					
+
 				</tr>
 				<tr>
 					<td class="label">商品名</td>
@@ -99,7 +99,8 @@
 				</tr>
 				<tr>
 					<td class="label">住所</td>
-					<td class="value">神奈川県座間市相模が丘<br>(252-0001)</td>
+					<td class="value">神奈川県座間市相模が丘<br>(252-0001)
+					</td>
 				</tr>
 				<tr>
 					<td class="label">注文日</td>
@@ -122,5 +123,6 @@
 	</dialog>
 
 	<script src="js/orderModal.js"></script>
+
 </body>
 </html>
