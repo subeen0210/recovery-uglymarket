@@ -84,7 +84,7 @@ public class ItemDAO {
 
 
 	// 제품 상세 페이지 기능
-	public static void getItem(HttpServletRequest request) {
+	public static void getItem(HttpServletRequest request, HttpServletResponse res) {
 		
 		String paramNo = request.getParameter("no");
 		
@@ -118,6 +118,12 @@ public class ItemDAO {
 				i.setI_stock(rs.getInt("i_stock"));
 				i.setI_star_avg(rs.getDouble("i_avg"));
 				request.setAttribute("item", i);
+				
+				Gson g = new Gson();
+				String jsonData = g.toJson(i);
+				res.setContentType("application/json");
+			    res.setCharacterEncoding("UTF-8");
+			    res.getWriter().write(jsonData);
 			}
 			
 		} catch (Exception e) {
@@ -281,62 +287,55 @@ public class ItemDAO {
 			String path = request.getServletContext().getRealPath("itemFolder");
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "utf-8", new DefaultFileRenamePolicy());
 			
+			String no = mr.getParameter("no");
 			String name = mr.getParameter("name");
 			String story = mr.getParameter("story");
 			String type = mr.getParameter("type");
 			String date = mr.getParameter("enddate");
 			String stock = mr.getParameter("stock");
 			String price = mr.getParameter("price");
-			String[] imgArray = new String[4];
-
-			 // 이미지를 수정할 때
-		    for (int i = 1; i <= 4; i++) {
-		        String fileName = mr.getFilesystemName("img" + i);
-		        imgArray[i - 1] = fileName != null ? fileName : null;
-		        pstmt.setString(2 + i, imgArray[i - 1]);
-		    }
+			String oldImg = mr.getParameter("old-img");
+			String newImg = mr.getFilesystemName("new-img");
+			
 		    
-		    String[] oldImgArray = new String[4];
+		    System.out.println(name);
+		    System.out.println(story);
+		    System.out.println(price);
+		    System.out.println(stock);
+		    System.out.println(type);
+//		    System.out.println(newArray);
+		    System.out.println(date);		    
+//		    System.out.println(oldArray);
+		    System.out.println(seller.getS_id());
+		    System.out.println(no);
 		    
-		    // 이미지를 수정하지 않을 때
-		    for (int i = 1; i <= 4; i++) {
-		        if (imgArray[i - 1] == null) {
-		            oldImgArray[i - 1] = request.getParameter("oldImg" + i); 
-		            pstmt.setString(2 + i, oldImgArray[i - 1]);
-		        }
-		    }
-		       
+		    
 		    pstmt.setString(1, name);
 		    pstmt.setString(2, story);
-		    pstmt.setString(3, price);
+		    pstmt.setString(3, type);
 		    pstmt.setString(4, date);
+		    
+		    if (newImg != null) {
+		    	pstmt.setString(5, newImg);
+		    } else {
+		    	pstmt.setString(5, oldImg);
+		    }
+		    
+		    pstmt.setString(6, null);
+		    pstmt.setString(7, null);
+		    pstmt.setString(8, null);
 		    pstmt.setString(9, price);
 		    pstmt.setString(10, stock);
 		    pstmt.setString(11, seller.getS_id());
-		    pstmt.setString(12, request.getParameter("no"));
+		    pstmt.setString(12, no);
 		    
 		    if (pstmt.executeUpdate() == 1) {
 				System.out.println("상품 수정 성공");
-				for (int i = 1; i <= 4; i++) {
-			        if (oldImgArray[i - 1] != null) {
-			            File oldImgFile = new File(path, oldImgArray[i - 1]);
-
-			            // 파일이 존재하면 삭제
-			            if (oldImgFile.exists()) {
-			                if (oldImgFile.delete()) {
-			                    System.out.println("기존 이미지 파일 삭제 성공: " + oldImgArray[i - 1]);
-			                } else {
-			                    System.out.println("기존 이미지 파일 삭제 실패: " + oldImgArray[i - 1]);
-			                }
-			            } else {
-			                System.out.println("기존 이미지 파일이 존재하지 않음: " + oldImgArray[i - 1]);
-			            }
-			        }
-			    }
 			}
 		    
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("수정실패");
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
