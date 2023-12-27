@@ -50,12 +50,11 @@
 					<div class="quantity-container">
 						&ensp;
 						<button class="quantity-button" onclick="adjustQuantity(this,${cart.c_no},1)">
-							&ensp;+</button>
+							+</button>
 						<input type="text" class="quantity-input" id="quantityInput_${cart.c_no}"
 							value="${cart.c_number }" data-cartCode="${cart.c_no}"/>
 						<button class="quantity-button" onclick="adjustQuantity(this,${cart.c_no},-1)">
 							-</button>
-						<button class="change_quantity" onclick="changeQuantity(${cart.c_no})">変更</button>
 					</div>
 				</div>
 				<br />
@@ -64,7 +63,7 @@
 						 小計&ensp;:&ensp;
 					 <span class="per-total-price" id="set-allprice_${cart.c_no }" >${cart.i_price * cart.c_number }</span></div>
 				<br />
-				<div><button onclick="deleteCart(${cart.c_no })">削除</button></div>
+				<div class="quantity-btn"><button class="change_quantity" onclick="changeQuantity(${cart.c_no})">変更</button>&ensp;<button onclick="deleteCart(${cart.c_no })">削除</button></div>
 			</div>
 		<input type="hidden" class="cartNumber" value="${cart.c_no }">
 		<input type="hidden" class="itemNumber" value="${cart.i_no }">
