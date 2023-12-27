@@ -15,8 +15,8 @@
 </head>
 <body>
 
-	<form action="updateSellerC" method="post" enctype="multipart/form-data"
-		onsubmit="return sellerCheck()">
+	<form action="updateSellerC" method="post"
+		enctype="multipart/form-data" onsubmit="return sellerCheck()">
 		<div class="reg-main">
 			<div class="reg-container">
 				<h1 style="color: #2a243a">情報修正</h1>
@@ -158,23 +158,36 @@
 		</div>
 	</form>
 	<!-- 비밀번호 찾기 modal -->
-	<dialog id="password-modal" style="width: 500px; height: 500px;">
-	<div>
+	<dialog id="password-modal">
+	<div class="btn-size-close">
 		<a id="close-button">X</a>
 	</div>
-	<div>
-		<div>
-			<span>現在パスワード</span> <input id="old-pw" type="password">
+	<div class="modal-content">
+		<div class="content1">
+			<div class="set-content1">現在パスワード</div>
+			<br>
+			<div class="set-content1">新たなパスワード</div>
+			<br>
+			<div class="set-content1">パスワード再確認</div>
 		</div>
-		<div>
-			<span>新たなパスワード</span> <input id="new-pw" type="password">
-		</div>
-		<div>
-			<span>パスワード再確認</span> <input type="password">
+		<div class="content1">
+			<div class="set-input">
+				<input class="style-input" id="old-pw" placeholder="old-password">
+			</div>
+			<br>
+			<div class="set-input">
+				<input class="style-input" id="new-pw" placeholder="new-password">
+			</div>
+			<br>
+			<div class="set-input">
+				<input class="style-input" type="password" placeholder="pw-confirm">
+			</div>
 		</div>
 	</div>
 	<div>
-		<a href="#" onclick="return passwordChange();">パスワード変更</a>
+		<a href="#" title="Button push blue/green"
+			class="button btnPush btnBlueGreen"
+			onclick="return passwordChange();">パスワード変更</a>
 	</div>
 	</dialog>
 	<!-- 비밀번호 찾기 modal 끝 -->
@@ -188,46 +201,46 @@
 
 		let telParts = telValue.split("-");
 
-	// 분리된 부분을 각 입력 필드에 할당합니다.
-	document.querySelector("input[name='sellerTel1'").value = telParts[0];
-	document.querySelector("input[name='sellerTel2'").value = telParts[1];
-	document.querySelector("input[name='sellerTel3'").value = telParts[2];
-	/* 분리 끝 */
-	
-	// 농장 주소 분리를 위해 적었습니다.
-	let addrValue = "${sessionScope.sellerAccount.s_Faddr }";
-	console.log(addrValue);
-	
-	let addrParts = addrValue.split("!");
-	
-	document.querySelector("input[name='sellerAddrN'").value = addrParts[0];
-	document.querySelector("input[name='sellerAddrP'").value = addrParts[1];
-	document.querySelector("input[name='sellerAddrC'").value = addrParts[2];
-	document.querySelector("input[name='sellerAddrD'").value = addrParts[3];
-	/* 분리 끝 */
-	
-	// 스토리 부분 <br>을 \r\n으로 바꾸기 위해 작성했습니다.
-	let storyValue = "${sessionScope.sellerAccount.s_Fstory }";
-	let storyreplace = storyValue.replace(/<br>/g, '\r\n');
-	console.log(storyreplace);
-	
-	document.querySelector('#farmStory').value = storyreplace;
-	
-	/* 분리 끝 */
-	
-});
+		// 분리된 부분을 각 입력 필드에 할당합니다.
+		document.querySelector("input[name='sellerTel1'").value = telParts[0];
+		document.querySelector("input[name='sellerTel2'").value = telParts[1];
+		document.querySelector("input[name='sellerTel3'").value = telParts[2];
+		/* 분리 끝 */
 
-document.getElementById("password-change-button").addEventListener("click",
-		function() {
-			// Open the dialog
-			document.getElementById("password-modal").showModal();
-		});
+		// 농장 주소 분리를 위해 적었습니다.
+		let addrValue = "${sessionScope.sellerAccount.s_Faddr }";
+		console.log(addrValue);
 
-document.getElementById("close-button").addEventListener("click",
-		function() {
+		let addrParts = addrValue.split("!");
 
-			// Close the dialog
-			document.getElementById("password-modal").close();
-		});
+		document.querySelector("input[name='sellerAddrN'").value = addrParts[0];
+		document.querySelector("input[name='sellerAddrP'").value = addrParts[1];
+		document.querySelector("input[name='sellerAddrC'").value = addrParts[2];
+		document.querySelector("input[name='sellerAddrD'").value = addrParts[3];
+		/* 분리 끝 */
+
+		// 스토리 부분 <br>을 \r\n으로 바꾸기 위해 작성했습니다.
+		let storyValue = "${sessionScope.sellerAccount.s_Fstory }";
+		let storyreplace = storyValue.replace(/<br>/g, '\r\n');
+		console.log(storyreplace);
+
+		document.querySelector('#farmStory').value = storyreplace;
+
+		/* 분리 끝 */
+
+	});
+
+	document.getElementById("password-change-button").addEventListener("click",
+			function() {
+				// Open the dialog
+				document.getElementById("password-modal").showModal();
+			});
+
+	document.getElementById("close-button").addEventListener("click",
+			function() {
+
+				// Close the dialog
+				document.getElementById("password-modal").close();
+			});
 </script>
 </html>
