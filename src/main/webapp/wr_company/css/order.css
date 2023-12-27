@@ -1,3 +1,12 @@
+#myModal {
+
+
+  position: relative; 
+}
+
+
+
+
 .main {
 		background-color: #ffffff;
 	width: 70%;
@@ -129,37 +138,71 @@ img {
 	
 	
 	
-	
-	.main_modal {
-  max-width: 600px;
+.main_modal {
+  max-width: 1500px;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* 중앙 정렬을 위해 text-align 추가 */
 }
 
-.table-wrapper {
+.container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
- 
 }
 
-.column-item,
-.column-item2 {
-  width: 88%; /* 각 항목을 반응형으로 정렬하기 위한 너비 조정 */
-  margin-bottom: 10px;
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin: 20px;
+}
+
+h2 {
+  color: black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+
+
+
+#closeModalBtn {
+  position: absolute; 
+  top: 10px; 
+  right: 10px; 
+  width: 100px;
+  height: 50px;
+}
+.label{
+	width: 100px;
+	
+}
+.value {
+	width: 250px;
+  word-break: break-all;
   
 }
-
-.left {
-  font-weight: bold;
-}
-
-.right {
-  margin-left: 10px;
-}
-
-/* 추가적인 스타일 조정이 필요한 경우 여기에 추가 */

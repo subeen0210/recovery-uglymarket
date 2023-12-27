@@ -22,7 +22,7 @@
 					<th class="price">数量/価格</th>
 					<th class="total_price">総価格</th>
 					<th class="pickup_status">配送状態</th>
-					<th class="date">주문날짜</th>
+					<th class="date">注文日</th>
 					<th class="delete_table">削除</th>
 				</tr>
 			</thead>
@@ -49,90 +49,76 @@
 	<dialog id="myModal">
 	<div class="main_modal">
 
-		<div class="table-wrapper">
-			<div class="column-item">
-				<div class="left">商品名</div>
-			</div>
-			<div class="column-item">
-				<div class="right">可愛いイチゴ</div>
-			</div>
+		<section class="order-details">
+			<h2>商品情報</h2>
+			<table class="order-info">
+				<tr>
+					<td class="label">農場名</td>
+					<td class="value">栃木イチゴ組合</td>
+					
+				</tr>
+				<tr>
+					<td class="label">商品名</td>
+					<td class="value">可愛いイチゴㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</td>
+				</tr>
+				<tr>
+					<td class="label">カテゴリ</td>
+					<td class="value">ふつう</td>
+				</tr>
 
-			<div class="column-item">
-				<div class="left">カテゴリー</div>
-			</div>
-			<div class="column-item">
-				<div class="right">ふつう</div>
-			</div>
-			<div class="column-item">
-				<div class="left">賞味期限</div>
-			</div>
-			<div class="column-item">
-				<div class="right">2023－12－31</div>
-			</div>
-			<div class="column-item">
-				<div class="left">価格</div>
-			</div>
-			<div class="column-item">
-				<div class="right">2000</div>
-			</div>
+				<tr>
+					<td class="label">個数</td>
+					<td class="value">2</td>
+				</tr>
+				<tr>
+					<td class="label">個別価格</td>
+					<td class="value">￥1,000</td>
+				</tr>
+				<tr>
+					<td class="label">賞味期限</td>
+					<td class="value">2023-12-31</td>
+				</tr>
+				<!-- 다른 주문 정보 항목들 추가 -->
+			</table>
+		</section>
+
+		<section class="customer-details">
+			<h2>注文請書</h2>
+			<table class="customer-info">
+				<tr>
+					<td class="label">受取人</td>
+					<td class="value">山田太郎</td>
+				</tr>
+				<tr>
+					<td class="label">電話番号</td>
+					<td class="value">080-1234-5678</td>
+				</tr>
+				<tr>
+					<td class="label">到着時間</td>
+					<td class="value">午前8時～11時</td>
+				</tr>
+				<tr>
+					<td class="label">住所</td>
+					<td class="value">神奈川県座間市相模が丘<br>(252-0001)</td>
+				</tr>
+				<tr>
+					<td class="label">注文日</td>
+					<td class="value">2023-12-20</td>
+				</tr>
+				<tr>
+					<td class="label">配送情報</td>
+					<td class="value">配達代理店に到着</td>
+				</tr>
+				<!-- 다른 고객 정보 항목들 추가 -->
+			</table>
+		</section>
 
 
-		</div>
-
-		<br><br>
-		<div class="table-wrapper">
-			<div class="column-item2">
-				<div class="left">受取人.</div>
-			</div>
-			<div class="column-item2">
-				<div class="right">山田太郎</div>
-			</div>
-
-			<div class="column-item2">
-				<div class="left">電話番号</div>
-			</div>
-			<div class="column-item2">
-				<div class="right">080-1234-5678</div>
-			</div>
-
-			<div class="column-item2">
-				<div class="left">到着時間</div>
-			</div>
-			<div class="column-item2">
-				<div class="right">8時 ~ 12時</div>
-			</div>
-
-			<div class="column-item2">
-				<div class="left">住所</div>
-			</div>
-			<div class="column-item2">
-				<div class="right">神奈川県座間市相模が丘（252-0001）</div>
-			</div>
-			<div class="column-item2">
-				<div class="left">注文日時</div>
-			</div>
-			<div class="column-item2">
-				<div class="right">2023-12-26</div>
-			</div>
-			<div class="column-item2">
-				<div class="left">配送状態</div>
-			</div>
-			<div class="column-item2">
-				<div class="right">注文完了</div>
-			</div>
-			<div class="column-item2">
-				<div class="left">住所</div>
-			</div>
-			<div class="column-item2">
-				<div class="right">神奈川県座間市相模が丘</div>
-			</div>
-
-		</div>
 
 
 	</div>
 	<br>
-	<button id="closeModalBtn" style="width: 100px; height: 50px;">閉じる</button>
+	<button id="closeModalBtn" style="width: 100px; height: 50px;">X</button>
 	</dialog>
 
 	<script src="js/orderModal.js"></script>

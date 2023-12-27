@@ -183,3 +183,8 @@ td {
     margin-left: 10px;
     padding-top: 5px;
 }
+
+.select_button, option{
+	font-size : 20px;
+	
+}
