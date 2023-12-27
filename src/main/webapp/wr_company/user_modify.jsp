@@ -113,7 +113,7 @@
 			</div>
 		</div>
 	</form>
-	<!-- 비밀번호 찾기 modal -->
+		<!-- 비밀번호 찾기 modal -->
 	<dialog id="password-modal">
 	<div class="btn-size-close">
 		<a id="close-button">X</a>
