@@ -97,7 +97,7 @@ function sellerlogin() {
 		success: function(response) {
 			console.log(response);
 			if (response === "0") {
-				$("#errorMessage2").text("IDまたはパスワードが正しくありません。");
+				$("#errorMessage2").text("IDまたはパスワードが正しくありません。").css("color", "red");
 			} else {
 				location.href = 'HC';
 			}
