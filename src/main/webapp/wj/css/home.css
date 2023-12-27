@@ -127,12 +127,7 @@ body {
 	font-weight: bold;
 }
 
-.item-img {
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	margin-left: -50px;
-}
+
 
 .item-img-position {
 	width: 350px;
@@ -251,8 +246,12 @@ body {
 	background-position: center; 
 	background-repeat: no-repeat; 
 	margin-left: 5px;
+	cursor: pointer;
 }
 
+.item-img:hover {
+	opacity: 0.8;
+}
 .category {
 	position: relative;
 	display: inline-block;
@@ -292,17 +291,19 @@ body {
 .text-name {
 	font-size: 1.5vw;
 	margin: 3px 5px;
-	
-	
 }
 
 .text-name span{
 	font-family: 'Meiryo', serif;
     font-weight: bold;
-	
-	
+}
+.text-name span:hover{
+	cursor: pointer;
 }
 .text-price {
 	font-size: 1.3vw;
 	margin: 3px 5px;
+}
+.money-icon{
+	width: 25px;
 }
