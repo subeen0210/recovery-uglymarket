@@ -10,18 +10,19 @@
 <body>
 	<form action="IDForgotC" method="post">
 		<div class="main">
+			<a href="HC"><img id="homeImg" src="img/home_icon_login.svg"></a>
 			<div class="find-Id">IDを探す</div>
 			<br> <br>
 			<div class="set-size">
 				<div class="set-name">姓</div>
 				<div class="set-input">
-					<input class="style-input" placeholder="First-name">
+					<input class="style-input" name="f_name" placeholder="First-name">
 				</div>
 			</div>
 			<div class="set-size">
 				<div class="set-name">名</div>
 				<div class="set-input">
-					<input class="style-input" placeholder="Second-name">
+					<input class="style-input" name="s_name" placeholder="Second-name">
 				</div>
 			</div>
 			<div class="set-size">
@@ -31,14 +32,15 @@
 				</div>
 			</div>
 			<div class="set-btn">
-				<a href="" title="Button push blue/green"
-					class="button btnPush btnBlueGreen">探す</a>
+				<button title="Button push blue/green"
+					class="button btnPush btnBlueGreen">探す</button>
 			</div>
-			<br><br>
+			<br>
+			<br>
 			<div class="menu align-center expanded text-center SMN_effect-23">
-				<a href="" type="button" data-hover="Sign up">Sign up</a> 
-				<a href="PWForgotC" type="button" data-hover="パスワードを探す">パスワードを探す</a> 
-				<a href="" type="button" data-hover="Sign in">Sign in</a>
+				<a href="RegUserC" type="button" data-hover="Sign up">Sign up</a> <a
+					href="PWForgotC" type="button" data-hover="パスワードを探す">パスワードを探す</a> <a
+					href="LoginPageC" type="button" data-hover="Sign in">Sign in</a>
 				<!-- data-hover : hover했을때 내려오는 글자 -->
 			</div>
 		</div>

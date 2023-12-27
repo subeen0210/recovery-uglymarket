@@ -25,6 +25,14 @@ public class AccountDAO {
 		String userID = request.getParameter("userID");
 		String userPW = request.getParameter("userPW");
 		
+		String oldPW = request.getParameter("oldPW");
+		
+		if (oldPW != null) {
+			User user2 = (User) request.getSession().getAttribute("userAccount");
+			userID = user2.getU_id();			
+			userPW = oldPW;
+		}
+		
 		if (newid != null) {
 			userID = newid;
 			userPW = newpw;
@@ -240,26 +248,39 @@ public class AccountDAO {
 			DBManager.close(con, pstmt, null);
 		}
 	}
-
-	public static void emailConfirm(HttpServletRequest request) {
-		String email = request.getParameter("email");
+	
+	// id 찾기
+	public static boolean emailConfirm(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT u_id FROM users WHERE u_email= ?";
+		String sql = "SELECT u_id FROM users WHERE u_email= ? and "
+				+ "u_kanji_ln = ? and u_kanji_fn = ?";
 		try {
+			request.setCharacterEncoding("UTF-8");
+			String email = request.getParameter("email");
+			String kanjiL = request.getParameter("f_name");
+			String kanjiF = request.getParameter("s_name");
+			System.out.println(email);
+			System.out.println(kanjiL);
+			System.out.println(kanjiF);
+			
+			
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, email);
+			pstmt.setString(2, kanjiL);
+			pstmt.setString(3, kanjiF);
 			rs = pstmt.executeQuery();
-			ArrayList<String> emails = new ArrayList<String>();
+			ArrayList<String> IDs = new ArrayList<String>();
 			while (rs.next()) {
 				System.out.println("id 찾기 성공");
-				emails.add(rs.getString("u_id"));
+				IDs.add(rs.getString("u_id"));
 			}
-			if (!emails.isEmpty()) {
-			    System.out.println(emails);
-			    request.setAttribute("emails", emails);
+			if (!IDs.isEmpty()) {
+			    System.out.println(IDs);
+			    request.setAttribute("IDs", IDs);
+			    return true;
 			} else {
 			    System.out.println("id 찾기 실패");
 			    request.setAttribute("resultMsg", "idが見つかりません");
@@ -270,18 +291,21 @@ public class AccountDAO {
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
+		return false;
 	}
 
 	public static void createRandomPassword(HttpServletRequest request) {
-		String email = request.getParameter("email");
-		String id = request.getParameter("id");
-		String sei = request.getParameter("kanji_ln");
-		String mei = request.getParameter("kanji_fn");
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT * FROM users WHERE u_email= ? and u_id = ? and u_kanji_ln = ? and u_kanji_fn = ?";
 		try {
+			request.setCharacterEncoding("UTF-8");
+			String email = request.getParameter("email");
+			String id = request.getParameter("id");
+			String sei = request.getParameter("kanji_ln");
+			String mei = request.getParameter("kanji_fn");
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, email);
@@ -293,15 +317,15 @@ public class AccountDAO {
 			if (rs.next()) {
 				System.out.println("새 비밀번호 생성");
 				
-				String randomPassword = generateRandomPassword(8);
-
+				// 비밀번호 생성하고 업데이트
+				String randomPassword = changePW(request);
 		        // 랜덤 비밀번호 전달 
 		        request.setAttribute("randomPassword", randomPassword);
 		    } else {
 		    	System.out.println("맞는 사람이 없음");
 		        // 조회 실패한 경우
 		        // 예외 처리 또는 다른 로직 수행
-		    	request.setAttribute("resultMsg", "idが見つかりません");
+		    	request.setAttribute("resultMsg", "存在されてません");
 		    }
 			
 		} catch (Exception e) {
@@ -312,18 +336,21 @@ public class AccountDAO {
 		}
 	}
 	
-	private static String generateRandomPassword(int length) {
-	    String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	    Random random = new Random();
-	    StringBuilder password = new StringBuilder();
+	
+	public static String randomMix(int range) {
+	    StringBuilder sb = new StringBuilder();
+	    Random rd = new Random();
 
-	    for (int i = 0; i < length; i++) {
-	        int index = random.nextInt(characters.length());
-	        password.append(characters.charAt(index));
+	    for(int i=0;i<range;i++){
+
+	        if(rd.nextBoolean()){
+	            sb.append(rd.nextInt(10));
+	        }else {
+	            sb.append((char)(rd.nextInt(26)+65));
+	        }
 	    }
 
-	    return password.toString();
-	    
+	    return sb.toString();
 	}
 
 	
@@ -395,12 +422,20 @@ public class AccountDAO {
 	}
 
 	// 비밀번호 정보수정
-	public static void changePW(HttpServletRequest request) {
+	public static String changePW(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		User user = (User) request.getSession().getAttribute("userAccount");
-		String newPW = request.getParameter("newPW");
-		System.out.println(newPW);
+		
+		// 비밀번호 찾기 값
+		String confirmID = request.getParameter("id");
+		String randomPassword = randomMix(10);
+		String newPW = randomPassword;
+		// 마이페이지 정보수정 - 비밀번호 값
+		if (confirmID == null) {
+			User user = (User) request.getSession().getAttribute("userAccount");
+			confirmID = user.getU_id();
+			newPW = request.getParameter("newPW");
+		}
 		
 		String sql = "UPDATE users SET u_pw = ? WHERE u_id = ?";
 		try {
@@ -409,15 +444,19 @@ public class AccountDAO {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, newPW);
-			pstmt.setString(2, user.getU_id());
+			pstmt.setString(2, confirmID);
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("비밀번호 수정 성공");
 				
-				// 세션 업데이트
-				request.setAttribute("newid", user.getU_id());
+				
+				// 정보 수정일 때만 세션 업데이트 되게 하기 
+				if (newPW == request.getParameter("newPW")) {
+					// 세션 업데이트
+				request.setAttribute("newid", confirmID);
 				request.setAttribute("newpw", newPW);
 				login(request);
+				}
 				
 			}
 			
@@ -429,6 +468,7 @@ public class AccountDAO {
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
+		return randomPassword;
 	}
 
 }

@@ -18,8 +18,8 @@
 
 
 <body>
-
 	<div class="main">
+	<a href="HC"><img id="homeImg" src="img/home_icon_login.svg"></a>
 		<p class="sign">Sign in</p>
 		<form class="form1">
 			<input class="un" placeholder="ID" name="userID" id="loginUserID" />
