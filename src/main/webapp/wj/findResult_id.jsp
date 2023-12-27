@@ -10,24 +10,23 @@
 </head>
 <body>
 	<div class="main">
-			<a href="#"><img id="homeImg" src="img/back-login.svg"></a>
+		<a href="javascript:history.back();"><img id="homeImg"
+			src="img/back-login.svg"></a>
 		<div class="find-Id">あなたのIDで合っていますか？</div>
-		<br>
-		<br>
+		<br> <br>
 		<div class="result-font">
-		<c:choose>
-			<c:when test="${isEmailConfirmed }">
-				<c:forEach var="id" items="${IDs }">
+			<c:choose>
+				<c:when test="${isEmailConfirmed }">
+					<c:forEach var="id" items="${IDs }">
 					${id }<br>
-				</c:forEach>
-			</c:when>
-			<c:otherwise>
+					</c:forEach>
+				</c:when>
+				<c:otherwise>
 				${resultMsg }
 			</c:otherwise>
-		</c:choose>
+			</c:choose>
 		</div>
-		<br>
-		<br>
+		<br> <br>
 		<div class="btn-position">
 			<div class="set-btn">
 				<a href="LoginPageC" title="Button push blue/green"
