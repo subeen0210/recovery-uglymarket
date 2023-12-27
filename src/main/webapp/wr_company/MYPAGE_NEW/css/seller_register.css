@@ -1,4 +1,13 @@
 @charset "UTF-8";
+#myModal {
+
+
+  position: relative; 
+}
+
+
+
+
 
 body {
 	font-family: 'Arial', sans-serif;
@@ -188,3 +197,94 @@ td {
 	font-size : 20px;
 	
 }
+
+
+	
+	
+	
+	
+	
+	
+	
+.main_modal {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* 중앙 정렬을 위해 text-align 추가 */
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+      flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin: 20px;
+}
+
+h2 {
+  color: black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+
+
+
+#closeModalBtn {
+  position: absolute; 
+  top: 10px; 
+  right: 10px; 
+  width: 100px;
+  height: 50px;
+}
+.label{
+	width: 100px;
+	
+}
+.value {
+	width: 250px;
+  word-break: break-all;
+}
+.modify{
+	  position: absolute; 
+ bottom: 10px; 
+ right: 10px; 
+  width: 100px;
+  height: 50px;
+  font-size: 30px;
+}
+	
+	
+	
