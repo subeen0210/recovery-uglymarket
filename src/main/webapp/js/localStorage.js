@@ -86,11 +86,11 @@ $(function() {
 		console.log(items[i]);
 		total += parseInt(items[i].subtotal);
 		console.log(total);
-		console.log(items.i_no);
+		console.log(items[i].i_no);
 		
 		
 		getItems += "<p class='details-farm'>";
-		getItems += "<span>" + items[i].farmName + "</span><span class='order-delivery-status'>무료배송</span>";
+		getItems += "<span>" + items[i].farmName + "</span><span class='order-delivery-status'>送料無料</span>";
 		getItems += "</p>";
 		getItems += "<hr />";
 		getItems += "<p class='items'>";
@@ -99,7 +99,7 @@ $(function() {
 		getItems += "</span>";
 		getItems += "<span class='order-item'>";
 		getItems += "<span class='order-item-name'>" + items[i].name + "</span><br />";
-		getItems += "<span>(" + items[i].category + ")&ensp;<img src='img/en-icon.png' style='width: 15px;'>" + items[i].price + "│" + items[i].quantity +"</span><br /> <br /> ";
+		getItems += "<span><span class='item-categorys'>" + items[i].category + "</span>&ensp;<img src='img/en-icon.png' style='width: 15px;'>" + items[i].price + "│" + items[i].quantity +"</span><br /> <br /> ";
 		getItems += "<span><img src='img/en-icon.png' style='width: 15px;'>" + items[i].subtotal + "</span>";
 		getItems += "</span>";
 		getItems += "</span>";
@@ -112,7 +112,17 @@ $(function() {
 	document.getElementById('totalPrice').innerHTML = total;
 	
 
+	let categories = document.querySelectorAll('.item-categorys');
 
+    categories.forEach(function(category) {
+        let cValue = category.textContent.trim();
+		let backgroundColor = cValue == 'アグリー' ? '#0B6121' : '#D8D8D8';
+		let color = cValue == 'アグリー' ? '#FFFFFF' : '#000000';
+		
+        
+        category.style.backgroundColor = backgroundColor;
+        category.style.color = color;
+    });
 
 
 

@@ -17,7 +17,6 @@ public class OrderPageC extends HttpServlet {
 	
 	AccountDAO.loginCheck(request);
 	request.setAttribute("contentPage", "wj/orderPage2.jsp");
-//	request.setAttribute("contentPage", "gh_orders/orderPage.jsp");
 	request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

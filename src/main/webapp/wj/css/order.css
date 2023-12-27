@@ -208,3 +208,15 @@ a.button {
 	font-size: 15pt;
 	font-weight: bold;
 }
+
+
+.item-categorys{
+	display: inline-block;
+    border: none;
+    border-radius: 6px;
+    background-color: #C3E820;
+    width: 11%;
+    text-align: center;
+    font-size: 10pt;
+    font-weight: bold;
+}
