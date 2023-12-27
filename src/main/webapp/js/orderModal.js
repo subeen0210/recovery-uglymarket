@@ -1,4 +1,4 @@
- const myModal = document.getElementById('myModal');
+ 	const myModal = document.getElementById('myModal');
     const openModalBtn = document.getElementById('openModalBtn');
     const closeModalBtn = document.getElementById('closeModalBtn');
 

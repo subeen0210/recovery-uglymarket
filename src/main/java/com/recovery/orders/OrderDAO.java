@@ -69,16 +69,21 @@ public class OrderDAO {
 		    System.out.println("subtotal: " + subtotal[i]);
 		}
 		
-		String sql = "insert into orders values(orders_seq.nextval,?,?,?,?, DEFAULT, sysdate, DEFAULT)";
+		String sql = "insert into orders values(orders_seq.nextval,?,?,?,?,?,?,?,?,?, DEFAULT, sysdate, DEFAULT)";
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, user.getU_id());
+			pstmt.setString(3, "");
+			pstmt.setString(4, "");
+			pstmt.setString(5, "");
+			pstmt.setString(6, "");
+			pstmt.setString(7, "");
 			
 			for (int i = 0; i < i_no.length; i++) {
 			pstmt.setString(2, i_no[i]);
-			pstmt.setString(3, quantity[i]);
-			pstmt.setString(4, subtotal[i]);
+			pstmt.setString(8, quantity[i]);
+			pstmt.setString(9, subtotal[i]);
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("주문 등록 성공"+i);
