@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="wr_company/css/header.css">
 <link rel="stylesheet" href="wr_company/css/kanri.css">
 <link rel="stylesheet" href="wr_company/css/reviewList.css">
-<link rel="stylesheet" href="wr_company/css/order.css">
 <link rel="stylesheet" href="wr_company/css/modal.css">
 
 
@@ -17,7 +16,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/cookie.js"></script>
+<script type="text/javascript" src="js/currentItem.js"></script>
 <script src="wr_company/js/mypage.js"></script><!--바닥 JSP호출 JS -->
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -45,12 +44,7 @@
 						<div class="myinfo_box_items3">${sessionScope.userAccount.u_email}</div>
 					</div>
 					</div>
-					<div class="mypage_contents2_box">
-    					<c:forEach var="productId" items="${recentProductIds}">
-        					<div class="mypage_contents2_box_item">
-            					<img src="itemFolder/${productId}.jpg" alt="Product Image">
-        					</div>
-   						 </c:forEach>
+					<div class="mypage_contents2_box" id="content2">
 					</div>
 				</div>
 </div>
