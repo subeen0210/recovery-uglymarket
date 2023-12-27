@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../wj/css/order.css" />
+    <link rel="stylesheet" href="wj/css/order.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
@@ -15,7 +15,7 @@
     <form action="OrderPageC" method="post">
       <div class="main-wrapper">
         <div class="detail-wrap">
-          <img class="icon" src="../img/free-icon-arrow-down.png" alt="" />
+          <img class="icon" src="img/free-icon-arrow-down.png" alt="" />
           <details class="demo-details-juqery-accordion">
             <summary>配送先</summary>
             <p>
@@ -28,7 +28,7 @@
                 <span>서울시&ensp;강남구&ensp;세미빌라&ensp;(1234567)</span> </span
               ><br /><br /><br>
               <span id="order-addr-times">
-                <span style="font-size: 15pt; font-weight: bold;">配送時間帯を設定</span><br><br>
+                <span class="addr-times">配送時間帯を設定</span><br><br>
                 <select id="cars" name="cars">
                   <!-- option 태그로 각 선택 옵션을 정의 -->
                   <option value="8">午前中(8:00~12:00)</option>
@@ -43,10 +43,10 @@
           </details>
         </div>
         <div class="detail-wrap">
-          <img class="icon" src="../img/free-icon-arrow-down.png" alt="" />
+          <img class="icon" src="img/free-icon-arrow-down.png" alt="" />
           <details class="demo-details-juqery-accordion">
             <summary>注文商品</summary>
-            <p style="position: relative; height: 0px; font-size: 15pt; font-weight: bold;"><span>판매농장</span><span class="order-delivery-status">무료배송</span></p>
+            <p class="details-farm"><span>판매농장</span><span class="order-delivery-status">무료배송</span></p>
             <hr />
             <p id="items">
               <span id="getItems">
@@ -57,8 +57,9 @@
                   <span class="order-item-name">아이템 제목아이템 제목아이템 제목아이템 제목아이템 제목아이템 제목아이템 제목아이템 제목아이템 제목아이템 제목</span><br>
                   <span>(어글리)&ensp;못난이농장</span><br><br>
                   <span>가격 * 수량</span>
-                </span> </span
-              ><br /><br><br>
+                </span>
+               </span>
+                <br /><br><br>
               <span id="totalPrice">総額&ensp;:&ensp;20000円</span>
             </p>
           </details>
