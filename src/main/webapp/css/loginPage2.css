@@ -29,6 +29,9 @@
 /* 	justify-content: center; */
 /* 	align-items: center; */
 /* } */
+.main{
+	position: relative;
+}
 .modal-size {
 	position: relative;
 	background: #fff;
@@ -147,4 +150,18 @@
 	opacity: 0.5;
 	animation: fadeIn 0.5s ease-in-out;
 	color: #70e820;
+}
+
+
+/* home 버튼 */
+#homeImg{
+	width: 35px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	filter: invert(29%) sepia(79%) saturate(1901%) hue-rotate(80deg) brightness(96%) contrast(84%);
+}
+#homeImg:hover {
+	transition: filter 0.3s ease;
+	filter: invert(51%) sepia(73%) saturate(524%) hue-rotate(62deg) brightness(102%) contrast(87%);
 }

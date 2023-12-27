@@ -14,8 +14,9 @@ public class PWForgotC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
 		AccountDAO.createRandomPassword(request);
+		request.getRequestDispatcher("wj/findResult_pw.jsp").forward(request, response);
 	}
 
 }
