@@ -115,9 +115,10 @@ p {
 	}
 	
 .menu_container{
-width: 1900px;
+width: 100vw;
 display: flex;
-justify-content: space-around;
+justify-content: center;
+align-items: center;
 
 }
 .myinfo_box {

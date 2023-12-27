@@ -1,3 +1,12 @@
+#myModal {
+
+
+  position: relative; 
+}
+
+
+
+
 .main {
 		background-color: #ffffff;
 	width: 70%;
@@ -12,6 +21,15 @@
 	
 	
 }
+.main_modal{
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+	
+	
+	
+}
 
 table {
 	width: 100%;
@@ -19,11 +37,7 @@ table {
 	margin-top: 20px;
 }
 
-th, td {
-	border: 1px solid #ddd;
-	padding: 8px;
-	text-align: left;
-}
+
 
 th {
 	background-color: #f2f2f2;
@@ -37,4 +51,158 @@ img {
 .button_div {
 	display: flex;
 	justify-content: flex-end;
+}
+
+.order_number{
+		border: 1px solid #ddd;
+		width: 80px;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100px;
+}
+.product_name{
+	width: 300px;
+		border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 300px;
+}
+.price{
+	width: 100px;
+		border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100px;
+}
+.total_price{
+	width: 80px;
+		border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 80px;
+}
+.pickup_status{
+	width: 100px;
+		border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100px;
+}
+.delete_table{
+	width: 50px;
+		border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 50px;
+}
+.date{
+		width: 150px;
+		border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+	
+	
+}
+	
+.closeModalBtn{
+	width: 100px;
+	height: 50px;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+.main_modal {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* 중앙 정렬을 위해 text-align 추가 */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin: 20px;
+}
+
+h2 {
+  color: black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+
+
+
+#closeModalBtn {
+  position: absolute; 
+  top: 10px; 
+  right: 10px; 
+  width: 100px;
+  height: 50px;
+}
+.label{
+	width: 100px;
+	
+}
+.value {
+	width: 250px;
+  word-break: break-all;
+  
 }
