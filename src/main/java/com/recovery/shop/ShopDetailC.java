@@ -15,7 +15,7 @@ public class ShopDetailC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		ItemDAO.getItem(request);
+		ItemDAO.getItem(request,response);
 		AccountDAO.loginCheck(request);
 		request.setAttribute("contentPage", "wj/itemDetail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
@@ -24,8 +24,9 @@ public class ShopDetailC extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-	
+		
+		ItemDAO.getItem(request,response);
+		
 	}
 
 }

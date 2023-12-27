@@ -56,3 +56,16 @@ $(function() {
     }
 });
 
+
+// 최수빈 쿠키 이용해 최근 본 상품
+let itemCookie = 'itemCookie';
+
+// 쿠키 조회
+let itemCookieValue = getCookie(itemCookie);
+
+// 쿠키 값이 있다면 출력
+if (itemCookieValue) {
+    console.log('내가 생성한 쿠키 값:', itemCookieValue);
+} else {
+    console.log('쿠키를 찾을 수 없습니다.');
+}

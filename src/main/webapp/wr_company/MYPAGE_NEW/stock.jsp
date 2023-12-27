@@ -46,11 +46,11 @@
      	<div>
 			<div>
 				<div>商品名</div>
-				<div><input name="name" class="name"></div>
+				<div><input name="name" id="farm-name" class="name" ></div>
 			</div>
 		<div>
 			<div>商品の説明</div>
-			<div><textarea class="story" name="story"></textarea></div>
+			<div><textarea class="story" id="farm-story" name="story"></textarea></div>
 		</div>
 		<div>
 			<div class="radio-container">商品種類
@@ -60,23 +60,24 @@
 		</div>
 		<div>
 			<div>賞味期限</div>
-			<div><input name="enddate" type="date" class="date"></div>
+			<div><input name="enddate" type="date" id="farm-date" class="date"></div>
 		</div>
 		<div>
 			<div>商品在郷</div>
-			<div><input name="stock" class="stock"></div>
+			<div><input name="stock" id="farm-stock" class="stock"></div>
 		</div>
 		<div>
 			<div>商品価格</div>
-			<div><input name="price"  class="price"></div>
+			<div><input name="price" id="farm-price" class="price"></div>
 		</div>
 		<div>
 			<div>写真登録（一番目の写真が代表イメージになります。）</div>
-			<div><input type="file" name="img" class="img"></div>
+			<div><input type="file" name="new-img" id="farm-file" class="img">
+			</div>
+			<input name="old-img" id="farm-file2" value="">
 		</div>
-		<a>수정</a>
+		<button class="update-button" id="item-no" name="no">수정</button>
 	</div>
-     
     	</form>
   </div>
 </div>
