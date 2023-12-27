@@ -287,6 +287,7 @@ public class ItemDAO {
 			String path = request.getServletContext().getRealPath("itemFolder");
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "utf-8", new DefaultFileRenamePolicy());
 			
+			String no = mr.getParameter("no");
 			String name = mr.getParameter("name");
 			String story = mr.getParameter("story");
 			String type = mr.getParameter("type");
@@ -321,7 +322,7 @@ public class ItemDAO {
 		    System.out.println(date);
 		    System.out.println(oldImgArray);
 		    System.out.println(seller.getS_id());
-		    System.out.println(request.getParameter("no"));
+		    System.out.println(no);
 		    
 		    
 		    pstmt.setString(1, name);
@@ -331,7 +332,7 @@ public class ItemDAO {
 		    pstmt.setString(9, price);
 		    pstmt.setString(10, stock);
 		    pstmt.setString(11, seller.getS_id());
-		    pstmt.setString(12, request.getParameter("no"));
+		    pstmt.setString(12, no);
 		    
 		    if (pstmt.executeUpdate() == 1) {
 				System.out.println("상품 수정 성공");

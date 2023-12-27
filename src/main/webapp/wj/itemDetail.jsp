@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Document</title>
 <link rel="stylesheet" href="wj/css/itemDetail.css" />
+<script type="text/javascript" src="js/cookie.js"></script>
 <script type="text/javascript" src="js/shopDetail.js"></script>
 </head>
 <body>

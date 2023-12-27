@@ -58,22 +58,14 @@ $(function() {
 
 
 // 최수빈 쿠키 이용해 최근 본 상품
-function getUserIdFromSession() {
-    const userAccount = sessionStorage.getItem('userAccount');
-	console.log('세션에서 가져온 userAccount:', userAccount);
-    return userAccount ? JSON.parse(userAccount).u_id : undefined;
-}
+let itemCookie = 'itemCookie';
 
-function getRecentProductIds() {
-    let userId = getUserIdFromSession();
-	console.log('마이페이지에서 사용자 ID:', userId);
-    if (!userId) {
-        console.error('사용자 ID가 없습니다.');
-        return [];
-    }
+// 쿠키 조회
+let itemCookieValue = getCookie(itemCookie);
 
-    let cookieValue = getCookie(`recentProducts_${userId}`);
-    const recentProducts = cookieValue ? cookieValue.split(',') : [];
-    console.log('최근 본 상품 목록:', recentProducts);
-    return recentProducts;
+// 쿠키 값이 있다면 출력
+if (itemCookieValue) {
+    console.log('내가 생성한 쿠키 값:', itemCookieValue);
+} else {
+    console.log('쿠키를 찾을 수 없습니다.');
 }

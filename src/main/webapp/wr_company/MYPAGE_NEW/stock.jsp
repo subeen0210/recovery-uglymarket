@@ -72,9 +72,11 @@
 		</div>
 		<div>
 			<div>写真登録（一番目の写真が代表イメージになります。）</div>
-			<div><input type="file" name="img" id="farm-file" class="img"></div>
+			<div><input type="file" name="new-img" id="farm-file" class="img">
+			<input name="old-img" id="farm-file2" value="">
+			</div>
 		</div>
-		<button class="update-button" data-i-no="1">수정</button>
+		<button class="update-button" id="item-no" name="no">수정</button>
 	</div>
     	</form>
   </div>

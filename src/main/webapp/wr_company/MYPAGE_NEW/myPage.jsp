@@ -40,4 +40,5 @@
 		</div>
 	</div>
 </body>
+<script src="wr_company/MYPAGE_NEW/js/stock.js"></script>
 </html>
