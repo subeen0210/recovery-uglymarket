@@ -10,7 +10,7 @@
 <body>
 	<form action="IDForgotC" method="post">
 		<div class="main">
-			<a href="#"><img id="homeImg" src="img/home_icon_login.svg"></a>
+			<a href="HC"><img id="homeImg" src="img/home_icon_login.svg"></a>
 			<div class="find-Id">IDを探す</div>
 			<br> <br>
 			<div class="set-size">
