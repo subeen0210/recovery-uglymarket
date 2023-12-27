@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="wr_company/css/kanri.css">
 <link rel="stylesheet" href="wr_company/css/reviewList.css">
 <link rel="stylesheet" href="wr_company/css/order.css">
-<link rel="stylesheet" href="wr_company/css/regUser.css">
 <link rel="stylesheet" href="wr_company/css/modal.css">
 
 
