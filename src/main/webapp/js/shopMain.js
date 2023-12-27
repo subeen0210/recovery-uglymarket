@@ -66,7 +66,7 @@ function pagination(jsonArray) {
 			$.each(data, function(index, item) {
 
 				dataHtml += '<div class="shop-item">';
-				dataHtml += '<div><img onclick="location.href=\'ShopDetailC?no=' + item.i_no + '\'"class="item-img" src="itemFolder/' + item.i_img + '"></div>';
+				dataHtml += '<div><img onclick="handleProductClick(\'' + item.i_no + '\', \'' + item.i_img + '\', \'' + item.i_name + '\', \'' + item.i_price + '\')" class="item-img" src="itemFolder/' + item.i_img + '"></div>';
 
 
 				if (item.i_category == 1) {
@@ -74,9 +74,9 @@ function pagination(jsonArray) {
 				} else {
 					dataHtml += '<div class="category-back2">普通</div>';
 				}
-
-				dataHtml += '<div class="text-name"><span onclick="location.href=\'ShopDetailC?no=' + item.i_no + '\'">' + item.i_name + '</span></div>';
-				dataHtml += '<div class="text-price"><img class="money-icon" src="img/en-icon.png"><span onclick="location.href=\'ShopDetailC?no=' + item.i_no + '\'">' + item.i_price + '</span></div>';
+				
+				dataHtml += '<div class="text-name"><span onclick="handleProductClick(\'' + item.i_no + '\', \'' + item.i_img + '\', \'' + item.i_name + '\', \'' + item.i_price + '\')">' + item.i_name + '</span></div>';
+				dataHtml += '<div class="text-price"><img class="money-icon" src="img/en-icon.png"><span onclick="handleProductClick(\'' + item.i_no + '\', \'' + item.i_img + '\', \'' + item.i_name + '\', \'' + item.i_price + '\')">' + item.i_price + '</span></div>';
 				dataHtml += '</div>';
 			});
 			dataHtml += '</div>';
@@ -85,3 +85,7 @@ function pagination(jsonArray) {
 	})
 }
 
+function handleProductClick(i_no, i_img, i_name, i_price) {
+    location.href = 'ShopDetailC?no=' + i_no;
+    onProductClick(i_no, i_img, i_name, i_price);
+}
