@@ -317,9 +317,8 @@ public class AccountDAO {
 			if (rs.next()) {
 				System.out.println("새 비밀번호 생성");
 				
-//				System.out.println(randomMix(10));
-				String randomPassword = randomMix(10);
-
+				// 비밀번호 생성하고 업데이트
+				String randomPassword = changePW(request);
 		        // 랜덤 비밀번호 전달 
 		        request.setAttribute("randomPassword", randomPassword);
 		    } else {
@@ -423,12 +422,20 @@ public class AccountDAO {
 	}
 
 	// 비밀번호 정보수정
-	public static void changePW(HttpServletRequest request) {
+	public static String changePW(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		User user = (User) request.getSession().getAttribute("userAccount");
-		String newPW = request.getParameter("newPW");
-		System.out.println(newPW);
+		
+		// 비밀번호 찾기 값
+		String confirmID = request.getParameter("id");
+		String randomPassword = randomMix(10);
+		String newPW = randomPassword;
+		// 마이페이지 정보수정 - 비밀번호 값
+		if (confirmID == null) {
+			User user = (User) request.getSession().getAttribute("userAccount");
+			confirmID = user.getU_id();
+			newPW = request.getParameter("newPW");
+		}
 		
 		String sql = "UPDATE users SET u_pw = ? WHERE u_id = ?";
 		try {
@@ -437,15 +444,19 @@ public class AccountDAO {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, newPW);
-			pstmt.setString(2, user.getU_id());
+			pstmt.setString(2, confirmID);
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("비밀번호 수정 성공");
 				
-				// 세션 업데이트
-				request.setAttribute("newid", user.getU_id());
+				
+				// 정보 수정일 때만 세션 업데이트 되게 하기 
+				if (newPW == request.getParameter("newPW")) {
+					// 세션 업데이트
+				request.setAttribute("newid", confirmID);
 				request.setAttribute("newpw", newPW);
 				login(request);
+				}
 				
 			}
 			
@@ -457,6 +468,7 @@ public class AccountDAO {
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
+		return randomPassword;
 	}
 
 }

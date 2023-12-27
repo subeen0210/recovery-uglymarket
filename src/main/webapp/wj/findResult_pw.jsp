@@ -14,15 +14,8 @@
 		<br>
 		<br>
 		<div class="result-font">
-		<c:choose>
-			<c:when test="${randomPassword != null} ">
 				${randomPassword }
-			</c:when>
-			<c:otherwise>
-				${resultMsg }
-			</c:otherwise>
-		</c:choose>
-		
+				${resultMsg }		
 		</div>
 		<br>
 		<br>
