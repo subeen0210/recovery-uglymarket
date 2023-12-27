@@ -43,9 +43,9 @@
 			</div>
 			<br> <br>
 			<div class="menu align-center expanded text-center SMN_effect-23">
-				<a href="" data-hover="Sign up">Sign up</a> 
+				<a href="RegUserC" data-hover="Sign up">Sign up</a> 
 				<a href="IDForgotC" data-hover="IDを探す">IDを探す</a> 
-					<a href="" data-hover="Sign in">Sign
+					<a href="LoginPageC" data-hover="Sign in">Sign
 					in</a>
 				<!-- data-hover : hover했을때 내려오는 글자 -->
 			</div>
