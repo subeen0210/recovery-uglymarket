@@ -88,21 +88,27 @@ $(function() {
 		console.log(total);
 		console.log(items.i_no);
 		
-		getItems += "<div>";
-		getItems += "<div>" + items[i].image + "</div>";
-		getItems += "<div>" + items[i].name + "</div>";
-		getItems += "<div>" + items[i].category + "</div>";
-		getItems += "<div>" + items[i].farmName + "</div>";
-		getItems += "<div>" + items[i].price + "</div>";
-		getItems += "<div>" + items[i].quantity + "</div>";
-		getItems += "<div>" + items[i].subtotal + "</div>";
+		
+		getItems += "<p class='details-farm'>";
+		getItems += "<span>" + items[i].farmName + "</span><span class='order-delivery-status'>무료배송</span>";
+		getItems += "</p>";
+		getItems += "<hr />";
+		getItems += "<p class='items'>";
+		getItems += "<span class='getItems'> <span class='order-item-imgbox'>";
+		getItems += "<img class='img-set-size' src='itemFolder/" + items[i].image + "' />";
+		getItems += "</span>";
+		getItems += "<span class='order-item'>";
+		getItems += "<span class='order-item-name'>" + items[i].name + "</span><br />";
+		getItems += "<span>(" + items[i].category + ")&ensp;<img src='img/en-icon.png' style='width: 15px;'>" + items[i].price + "│" + items[i].quantity +"</span><br /> <br /> ";
+		getItems += "<span><img src='img/en-icon.png' style='width: 15px;'>" + items[i].subtotal + "</span>";
+		getItems += "</span>";
+		getItems += "</span>";
 		getItems += "<input type='hidden' name='i_no' value='"+ items[i].i_no +"'>";
 		getItems += "<input type='hidden' name='quantity' value='"+ items[i].quantity +"'>";	
 		getItems += "<input type='hidden' name='subtotal' value='"+ items[i].subtotal +"'>";	
-		getItems += "</div>";
-		getItems += "<br>";
+		getItems += "</p>";
 	}
-	document.getElementById('getItems').innerHTML = getItems;
+	document.getElementById('wrap-content').innerHTML = getItems;
 	document.getElementById('totalPrice').innerHTML = total;
 	
 
