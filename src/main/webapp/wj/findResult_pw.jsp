@@ -10,6 +10,7 @@
 </head>
 <body>
 	<div class="main">
+	<a href="#"><img id="homeImg" src="img/back-login.svg"></a>
 		<div class="find-Id">一時パスワードを作成します</div>
 		<br>
 		<br>

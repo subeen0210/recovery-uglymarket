@@ -11,6 +11,7 @@
 <body>
 	<form action="PWForgotC" method="post">
 		<div class="main2">
+			<a href="#"><img id="homeImg" src="img/home_icon_login.svg"></a>
 			<div class="find-Id">パスワードを探す</div>
 			<br> <br>
 			<div class="set-size">

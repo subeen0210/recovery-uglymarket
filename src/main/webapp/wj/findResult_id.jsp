@@ -10,6 +10,7 @@
 </head>
 <body>
 	<div class="main">
+			<a href="#"><img id="homeImg" src="img/back-login.svg"></a>
 		<div class="find-Id">あなたのIDで合っていますか？</div>
 		<br>
 		<br>
