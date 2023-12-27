@@ -63,7 +63,7 @@
 				</tr>
 				<tr>
 					<td class="label">商品名</td>
-					<td class="value">可愛いイチゴㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</td>
+					<td class="value">可愛いイチゴ</td>
 				</tr>
 				<tr>
 					<td class="label">カテゴリ</td>
@@ -137,7 +137,7 @@
 
 	</div>
 	<br>
-	<button id="closeModalBtn" style="width: 100px; height: 50px;">X</button>
+	<button id="closeModalBtn">X</button>
 	</dialog>
 
 	<script src="js/deliveryModal.js"></script>

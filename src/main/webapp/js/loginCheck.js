@@ -6,13 +6,13 @@ function loginCall() {
 	let userPW = document.querySelector('#loginUserPW');
 
 	if (isEmpty(userID)) {
-		$("#loginEmptyID").text("IDが空いてます");
+		$("#loginEmptyID").text("IDが空いています");
 		$("#loginEmptyID").css("color", "red");
 		userID.focus();
 		return false;
 	};
 	if (isEmpty(userPW)) {
-		$("#loginEmptyPW").text("パスワードが空いてます");
+		$("#loginEmptyPW").text("パスワードが空いています");
 		$("#loginEmptyPW").css("color", "red");
 		userPW.focus();
 		return false;

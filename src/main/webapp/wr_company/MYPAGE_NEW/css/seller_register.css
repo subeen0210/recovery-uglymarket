@@ -1,23 +1,21 @@
 @charset "UTF-8";
+
 #myModal {
-
-
-  position: relative; 
+	position: relative;
+	border : 1px solid black;
 }
-
-
-
-
 
 body {
 	font-family: 'Arial', sans-serif;
 	margin: 0;
 	padding: 0;
 }
-h2{
-		font-family: 'Meiryo', serif;
-      font-weight: bold;
+
+h2 {
+	font-family: 'Meiryo', serif;
+	font-weight: bold;
 }
+
 .tabs {
 	display: flex;
 	background-color: #f1f1f1;
@@ -51,22 +49,19 @@ h2{
 	border-radius: 10px;
 	margin: 100px;
 	padding: 50px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-	
+	box-shadow: 0 0 10px rgba(175, 175, 175, 0.5);
 }
 
 #product-registration {
 	border-radius: 10px;
 	width: 50%;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-	
+	box-shadow: 0 0 10px rgba(175, 175, 175, 0.5);
 }
 
 #product-management {
 	border-radius: 10px;
 	width: 50%;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-	
+	box-shadow: 0 0 10px rgba(175, 175, 175, 0.5);
 }
 
 /* 폼 스타일링 */
@@ -109,7 +104,7 @@ label {
 }
 
 input {
-	border: 2px solid black;/* 테두리 색상 설정 */
+	border: 2px solid black; /* 테두리 색상 설정 */
 	border-radius: 5px; /* 테두리 모서리 둥글게 만들기 */
 	padding: 8px; /* 안쪽 여백 설정 */
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
@@ -182,109 +177,104 @@ td {
 }
 
 /* 최수빈 상품 등록 css 추가 */
-.photo-area{
+.photo-area {
 	display: flex;
 }
 
-.photo-text{
+.photo-text {
 	font-size: small;
-    color: red;
-    margin-left: 10px;
-    padding-top: 5px;
+	color: red;
+	margin-left: 10px;
+	padding-top: 5px;
 }
 
-.select_button, option{
-	font-size : 20px;
-	
+.select_button, option {
+	font-size: 20px;
 }
 
-
-	
-	
-	
-	
-	
-	
-	
+/* Modal */
 .main_modal {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center; /* 중앙 정렬을 위해 text-align 추가 */
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 20px;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	text-align: center; /* 중앙 정렬을 위해 text-align 추가 */
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	padding: 20px;
 }
-
-
-
-.container {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 20px;
-      flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 800px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
 }
 
 section {
-  margin: 20px;
+	margin: 20px 0;
 }
 
 h2 {
-  color: black;
+	color: black;
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
 }
 
 td {
-  padding: 10px;
-  border: 1px solid #ccc;
+	padding: 10px;
+	border: 1px solid #ccc;
 }
 
-
-
-
-#closeModalBtn {
-  position: absolute; 
-  top: 10px; 
-  right: 10px; 
-  width: 100px;
-  height: 50px;
-}
-.label{
+.label {
 	width: 100px;
-	
+	font-weight: bold;
 }
+
 .value {
 	width: 250px;
-  word-break: break-all;
+	word-break: break-all;
 }
-.modify{
-	  position: absolute; 
- bottom: 10px; 
- right: 10px; 
-  width: 100px;
-  height: 50px;
-  font-size: 30px;
+
+#closeModalBtn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 30px;
+	height: 30px;
+	background-color: silver;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
 }
-	
-	
-	
+
+.modify {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	width: 100px;
+	height: 40px;
+	font-size: 16px;
+	background-color: silver;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
