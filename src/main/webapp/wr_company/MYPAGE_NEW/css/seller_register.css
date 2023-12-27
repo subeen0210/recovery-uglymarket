@@ -47,20 +47,15 @@ h2{
 }
 
 #product-registration {
-	/*display: block;
-	/*  background-color: #C3E820;*/
-	border: 1px solid black;
 	border-radius: 10px;
 	width: 50%;
-	
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	
 }
 
 #product-management {
-	/*sdisplay: block;
-	/*background-color: #C3E820;*/
-	border: 1px solid black;
-	border-radius: 40px;
+	border-radius: 10px;
+	width: 50%;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	
 }
@@ -187,4 +182,9 @@ td {
     color: red;
     margin-left: 10px;
     padding-top: 5px;
+}
+
+.select_button, option{
+	font-size : 20px;
+	
 }
