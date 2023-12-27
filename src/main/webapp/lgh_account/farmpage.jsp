@@ -22,20 +22,17 @@
 				<h1 style="color: #2a243a">情報修正</h1>
 				<br />
 				<div class="reg-content">
-					<div class="reg-menu">
-						ID
-					</div>
+					<div class="reg-menu">ID</div>
 					<div class="reg-input">
 						<span>${sessionScope.sellerAccount.s_id }</span>
 					</div>
 				</div>
 				<div class="reg-content">
-					<div class="reg-menu">
-						パスワード
-					</div>
+					<div class="reg-menu">パスワード</div>
 					<div class="reg-input">
-						<a id="password-change-button" type="button"
-							href="#" onclick="return false;">パスワード変更</a>
+						<a href="" title="Button border blue/green"
+							class="btnBlueGreen-fade" id="password-change-button"
+							type="button" href="#" onclick="return false;">パスワード変更</a>
 					</div>
 				</div>
 				<br />
@@ -100,15 +97,16 @@
 						農場名<span class="essential-icon">*</span>
 					</div>
 					<div class="reg-input">
-						<input class="input-style" name="farmName" value="${sessionScope.sellerAccount.s_Fname }" maxlength="10" />
+						<input class="input-style" name="farmName"
+							value="${sessionScope.sellerAccount.s_Fname }" maxlength="10" />
 					</div>
 				</div>
 				<br />
 				<div class="reg-content3">
 					<div class="reg-menu">農場説明</div>
 					<div class="reg-input2">
-						<textarea class="input-style2" name="farmStory" id="farmStory" cols="30"
-							rows="10"></textarea>
+						<textarea class="input-style2" name="farmStory" id="farmStory"
+							cols="30" rows="10"></textarea>
 					</div>
 				</div>
 				<br />
@@ -183,12 +181,12 @@
 </body>
 <script type="text/javascript" src="js/regUser1.js"></script>
 <script type="text/javascript">
-$(function() {
-	// 전화번호 분리를 위해 적었습니다. 다른 js로 넣으면 깨지니까 여기서 작업해주세요
-	let telValue = "${sessionScope.sellerAccount.s_tel }";
-	console.log(telValue);
+	$(function() {
+		// 전화번호 분리를 위해 적었습니다. 다른 js로 넣으면 깨지니까 여기서 작업해주세요
+		let telValue = "${sessionScope.sellerAccount.s_tel }";
+		console.log(telValue);
 
-	let telParts = telValue.split("-");
+		let telParts = telValue.split("-");
 
 	// 분리된 부분을 각 입력 필드에 할당합니다.
 	document.querySelector("input[name='sellerTel1'").value = telParts[0];

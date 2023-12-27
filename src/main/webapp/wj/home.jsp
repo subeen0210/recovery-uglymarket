@@ -59,66 +59,21 @@
           alt=""
           class="item-img-news-position"
         />
+        
         <div class="item-img-news-link-position">
+        <br>
           <div class="item-img-news-link-position-img">
-            <img src="img/semi-main-item-img-news-rectangle.png" alt="" />
-            <img
-              class="news-inner-img"
-              src="img/semi-main-item-news-text-img.png"
-              alt=""
-            /><img
-              class="news-inner-img2"
-              src="img/semi-main-item-news-text-first-img.png"
-              alt=""
-            /><img
-              class="news-inner-img3"
-              src="img/semi-main-item-news-text-first-img-date.png"
-              alt=""
-            />
-            <img src="img/semi-main-item-img-news-rectangle.png" alt="" />
-            <img
-              class="news-inner-img4"
-              src="img/semi-main-item-news-text-first-img3.png"
-              alt=""
-            /><img
-              class="news-inner-img5"
-              src="img/semi-main-item-news-text-third-img.png"
-              alt=""
-            /><img
-              class="news-inner-img6"
-              src="img/semi-main-item-news-text-third-img-date.png"
-              alt=""
-            />
+           <a href="https://financial-field.com/living/entry-225773"><img src="img/semi-main-item-img-news-rectangle.png" alt="" />
+</a>          
+
+            <a href="https://www.chunichi.co.jp/article/753923"><img src="img/semi-main-item-img-news-rectangle2.png" alt="" />
+            </a>
           </div>
           <div class="item-img-news-link-position-img">
-            <img src="img/semi-main-item-img-news-rectangle.png" alt="" />
-            <img
-              class="news-inner-img7"
-              src="img/semi-main-item-news-text-first-img4.png"
-              alt=""
-            /><img
-              class="news-inner-img5"
-              src="img/semi-main-item-news-text-four-img.png"
-              alt=""
-            /><img
-              class="news-inner-img6"
-              src="img/semi-main-item-news-text-four-img-date.png"
-              alt=""
-            />
-            <img src="img/semi-main-item-img-news-rectangle.png" alt="" />
-            <img
-              class="news-inner-img"
-              src="img/semi-main-item-news-text-first-img2.png"
-              alt=""
-            /><img
-              class="news-inner-img2"
-              src="img/semi-main-item-news-text-second-img.png"
-              alt=""
-            /><img
-              class="news-inner-img3"
-              src="img/semi-main-item-news-text-second-img-date.png"
-              alt=""
-            />
+            <a href="https://mirasus.jp/sdgs/consumption-production/8771"><img src="img/semi-main-item-img-news-rectangle3.png" alt="" />
+            </a>
+            <a href="https://www.advertimes.com/20220817/article393137"><img src="img/semi-main-item-img-news-rectangle4.png" alt="" />
+            </a>
           </div>
         </div>
       </div>

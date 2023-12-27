@@ -15,7 +15,7 @@
 
 .reg-container {
 	border: 3px solid #e6e6e6;
-	border-radius: 50px;
+	border-radius: 10px;
 	box-shadow: 7px 7px 39px #e6e6e6;
 	width: 50%;
 	height: 100%;
@@ -169,4 +169,18 @@ label {
 
 .essential-icon {
 	color: red;
+}
+
+/* 버튼 fade효과 */
+.btnBlueGreen-fade {
+	background-color: #2a243a;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	font-size: 12pt;
+	padding: 1%;
+}
+
+.btnBlueGreen {
+	background: #2a243a;
 }
