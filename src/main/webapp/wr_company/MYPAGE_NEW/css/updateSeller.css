@@ -170,3 +170,17 @@ label {
 .essential-icon {
 	color: red;
 }
+
+/* 버튼 fade효과 */
+.btnBlueGreen-fade {
+	background-color: #2a243a;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	font-size: 12pt;
+	padding: 1%;
+}
+
+.btnBlueGreen {
+	background: #2a243a;
+}
