@@ -294,33 +294,18 @@ public class ItemDAO {
 			String date = mr.getParameter("enddate");
 			String stock = mr.getParameter("stock");
 			String price = mr.getParameter("price");
-			String[] imgArray = new String[4];
-
-			 // 이미지를 수정할 때
-		    for (int i = 1; i <= 4; i++) {
-		        String fileName = mr.getFilesystemName("img" + i);
-		        imgArray[i - 1] = fileName != null ? fileName : null;
-		        pstmt.setString(2 + i, imgArray[i - 1]);
-		    }
+			String oldImg = mr.getParameter("old-img");
+			String newImg = mr.getFilesystemName("new-img");
+			
 		    
-		    String[] oldImgArray = new String[4];
-		    
-		    // 이미지를 수정하지 않을 때
-		    for (int i = 1; i <= 4; i++) {
-		        if (imgArray[i - 1] == null) {
-		            oldImgArray[i - 1] = request.getParameter("oldImg" + i); 
-		            pstmt.setString(2 + i, oldImgArray[i - 1]);
-		        }
-		    }
-		       
 		    System.out.println(name);
 		    System.out.println(story);
 		    System.out.println(price);
 		    System.out.println(stock);
 		    System.out.println(type);
-		    System.out.println(imgArray);
-		    System.out.println(date);
-		    System.out.println(oldImgArray);
+//		    System.out.println(newArray);
+		    System.out.println(date);		    
+//		    System.out.println(oldArray);
 		    System.out.println(seller.getS_id());
 		    System.out.println(no);
 		    
@@ -329,6 +314,16 @@ public class ItemDAO {
 		    pstmt.setString(2, story);
 		    pstmt.setString(3, type);
 		    pstmt.setString(4, date);
+		    
+		    if (newImg != null) {
+		    	pstmt.setString(5, newImg);
+		    } else {
+		    	pstmt.setString(5, oldImg);
+		    }
+		    
+		    pstmt.setString(6, null);
+		    pstmt.setString(7, null);
+		    pstmt.setString(8, null);
 		    pstmt.setString(9, price);
 		    pstmt.setString(10, stock);
 		    pstmt.setString(11, seller.getS_id());
@@ -336,22 +331,6 @@ public class ItemDAO {
 		    
 		    if (pstmt.executeUpdate() == 1) {
 				System.out.println("상품 수정 성공");
-				for (int i = 1; i <= 4; i++) {
-			        if (oldImgArray[i - 1] != null) {
-			            File oldImgFile = new File(path, oldImgArray[i - 1]);
-
-			            // 파일이 존재하면 삭제
-			            if (oldImgFile.exists()) {
-			                if (oldImgFile.delete()) {
-			                    System.out.println("기존 이미지 파일 삭제 성공: " + oldImgArray[i - 1]);
-			                } else {
-			                    System.out.println("기존 이미지 파일 삭제 실패: " + oldImgArray[i - 1]);
-			                }
-			            } else {
-			                System.out.println("기존 이미지 파일이 존재하지 않음: " + oldImgArray[i - 1]);
-			            }
-			        }
-			    }
 			}
 		    
 		} catch (Exception e) {
