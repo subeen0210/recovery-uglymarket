@@ -82,7 +82,7 @@
 		</div>
 		<!-- 맨 하단에 화살표 위 아이콘 -->
 		<div class="scroll-to-top" onclick="scrollToTop()">
-			<img class="arrow-top" src="img/arrow-top.png" alt="Scroll to Top">
+			<img class="arrow-top" src="img/arrow-top.png" alt="맨 위로 이동">
 		</div>
 	</footer>
 </body>

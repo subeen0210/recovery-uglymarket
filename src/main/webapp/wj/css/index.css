@@ -5,14 +5,14 @@
 	src: url('../font/kan.otf') format('opentype');
 }
 
-	/* 폰트 적용*/
+/* 폰트 적용*/
 * {
 	font-family: 'MyCustomFont', sans-serif;
 }
 
 body {
-    display: block;
-    margin: 0;
+	display: block;
+	margin: 0;
 }
 
 /* 원준-헤더 */
@@ -21,9 +21,10 @@ a {
 	color: black;
 }
 
-.header-hover:hover  {
+.header-hover:hover {
 	animation: fadeIn 0.5s ease-in-out;
-	color: #70e820;}
+	color: #70e820;
+}
 
 /* 장바구니 a태그 없애고 이미지에 css 값 추가 (위에 a 태그랑 같은거) _이가현 수정 */
 .cart-icon {
@@ -45,7 +46,7 @@ a {
 }
 
 .header {
-	height : 100px;
+	height: 100px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -142,18 +143,21 @@ footer {
 	font-size: 15px;
 }
 
+/* 스크롤 탑 이미지*/
+
 .scroll-to-top {
+	display: none;
 	position: fixed;
-	bottom: 80px;
-	right: -435px;
+	bottom: 20px;
+	right: 20px;
 	cursor: pointer;
-	display: none; /* 초기에는 숨겨둡니다. */
 }
 
-.arrow-top {
-	width: 8%;
-	height: 8%;
+.scroll-to-top img {
+	width: 40px; /* 필요에 따라 크기 조절 */
+	height: auto;
 }
+
 
 /* 최수빈 검색창 css */
 .wrapper {
@@ -210,10 +214,9 @@ footer {
 }
 
 input[type=password] {
-    font-family: "나눔스퀘어 아닐때 쓸 글꼴";
-
+	font-family: "나눔스퀘어 아닐때 쓸 글꼴";
 }
 
 ::placeholder {
-        font-family: 'MyCustomFont', sans-serif; 
+	font-family: 'MyCustomFont', sans-serif;
 }
