@@ -154,11 +154,11 @@ body {
 }
 
 /* 버튼 효과 */
-a, a:visited {
+button, button:visited {
 	text-decoration: none;
 }
 
-a.button {
+button.button {
 	display: block;
 	position: relative;
 	float: left;

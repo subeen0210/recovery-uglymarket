@@ -13,7 +13,7 @@
 <body>
 	<div id="order-title">注文 / 決済する</div>
 
-	<form action="OrderPageC" method="post">
+	<form action="OrderPageC" method="post" onsubmit="return orderCheck();">
 		<div class="main-wrapper">
 			<div class="detail-wrap">
 				<img class="icon" src="img/free-icon-arrow-down.png" alt="" />
@@ -70,8 +70,8 @@
 				</details>
 			</div>
 			<div class="set-btn">
-				<a href="" title="Button push blue/green"
-					class="button btnPush btnBlueGreen">決済</a>
+				<button title="Button push blue/green"
+					class="button btnPush btnBlueGreen">決済</button>
 			</div>
 		</div>
 	</form>
@@ -111,6 +111,18 @@
 										});
 							}
 						});
+		
+		
+		//가현 _ 결제 버튼 눌렀을 때, 정말 결제할건지 확인하는 창
+		function orderCheck() {
+			let ok = confirm("配送先と商品を確認しましたか？");
+			if (ok) {
+				return true;
+			} else {
+				return false;
+			}
+			
+		}
 	</script>
 </body>
 </html>

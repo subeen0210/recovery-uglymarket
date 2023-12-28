@@ -61,7 +61,7 @@ function payStorage() {
 
 
 	//	 초기화
-	localStorage.clear();
+	localStorage.removeItem('selectedItems');
 
 	let arrItems = JSON.stringify(selectedItems);
 
