@@ -237,19 +237,21 @@
 	font-size: 15pt;
 	font-weight: bold;
 	display: flex;
+	flex-direction: column;
 }
 
 .input-text {
 	border: 1px dotted black;
-	width: 70%;
-	height: 100%;
+/* 	width: 70%; */
+	height: 60%;
 }
 
 .input-menu {
-	width: 30%;
+/* 	width: 30%; */
+	margin-bottom: 10px;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
+	flex-direction: row;
+	justify-content: flex-start;
 	align-items: center;
 }
 

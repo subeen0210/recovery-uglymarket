@@ -16,16 +16,19 @@ import com.recovery.main.DBManager;
 public class ReviewDAO {
 
 	// 상품 상페 페이지 후기 전체 보기
-	public static void getAllReview(HttpServletRequest request, HttpServletResponse res) {
+	public static void getItemReview(HttpServletRequest request, HttpServletResponse res) {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		String paramNo = request.getParameter("no");
 		String sql = "select * from review where i_no = ? ";
 		
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, paramNo);
+			rs = pstmt.executeQuery();
 			
 			ReviewDTO review = null;
 			ArrayList<ReviewDTO> reviews = new ArrayList<ReviewDTO>();
@@ -72,6 +75,7 @@ public class ReviewDAO {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, user.getU_id());
+			rs = pstmt.executeQuery();
 			
 			ReviewDTO review = null;
 			ArrayList<ReviewDTO> reviews = new ArrayList<ReviewDTO>();

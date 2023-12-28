@@ -28,8 +28,6 @@
 			<br />
 			<div class="item-price">${item.i_price }</div>
 			<br />
-		<%--<div class="item-delivery">배송비 유무</div>
-			<br /> --%>
 			<div class="item-select">
 				<span style="font-size: 19pt; margin-right: 180px">数量</span> &emsp;&emsp;
 					<button id="decrement" class="quantity-button" onclick="incrementQuantity()">+</button>
@@ -70,21 +68,15 @@
 		<br />
 		<br />
 		<div class="review-input">
-			<div class="input-text">db넣어!</div>
 			<div class="input-menu">
 				<div id="usernameDisplay"></div>
-				<div>
-					<button class="review-button">コメント</button>
-				</div>
+				<div>날짜</div>
+				<div>총점</div>
 			</div>
+			<div class="input-text">db넣어!</div>
 		</div>
 	</div>
 	<br />
-	<div class="review-view">
-		<div>
-			<a class="view-more" href="">もっと見る</a>
-		</div>
-	</div>
 	<br />
 </body>
 <script src="wj/js/itemDetail.js"></script>

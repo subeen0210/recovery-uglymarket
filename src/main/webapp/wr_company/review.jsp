@@ -6,7 +6,7 @@
     <title>리뷰 관리 목록</title>
     <link rel="stylesheet" href="wr_company/css/reviewList.css">
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
- 
+<script type="text/javascript" src="js/review.js"></script>
 </head>
 <body>
     <div id="reviewListContainer">
