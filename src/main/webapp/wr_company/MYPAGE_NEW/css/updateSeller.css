@@ -17,10 +17,9 @@
 	border: 3px solid #e6e6e6;
 	border-radius: 10px;
 	box-shadow: 7px 7px 39px #e6e6e6;
-	width: 50%;
-	height: 100%;
-	margin: 50px;
-	padding: 30px;
+	width: 100%;
+	margin: 100px;
+	padding: 120px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -194,8 +193,6 @@ label {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	display: flex;
-	border: none;
 }
 
 .btn-size-close {
