@@ -23,8 +23,16 @@
 }
 
 .btn-del {
+	background-color: #5dc41a;
+	border: none;
+	border-radius: 10px;
+	color: white;
 	font-weight: bold;
 	height: 40px;
+}
+
+.btn-del:hover {
+	background: #4c9c19;
 }
 
 .check-label {
@@ -45,7 +53,6 @@
 }
 
 .menu-num {
-	border: 1px solid pink;
 	margin: 3%;
 	width: 8%;
 }
@@ -85,9 +92,9 @@
 }
 
 .profile-img {
-	border: 1px solid skyblue;
-	border-radius: 10px; 
-	width : 100%;
+	border: 1px solid grey;
+	border-radius: 10px;
+	width: 100%;
 	height: 170px;
 	display: flex;
 	justify-content: center;
@@ -96,7 +103,6 @@
 }
 
 .info-title {
-	border: 1px solid blueviolet;
 	width: 100%;
 	font-size: 15pt;
 	font-weight: bold;
@@ -117,7 +123,6 @@
 }
 
 .info-delivery {
-	border: 1px solid blueviolet;
 	width: 100%;
 	font-size: 10pt;
 	font-weight: bold;
@@ -125,14 +130,12 @@
 }
 
 .info-price {
-	border: 1px solid blueviolet;
 	width: 40%;
 	font-size: 20pt;
 	font-weight: bold;
 }
 
 .quanity-container {
-	border: 1px solid red;
 	width: auto;
 }
 
@@ -145,6 +148,23 @@
 
 .quantity-input {
 	width: 20%;
+	text-align: center;
+}
+
+.quantity-button {
+	background-color: #5dc41a;
+	border: none;
+	border-radius: 10px;
+	color: white;
+	width: 30px;
+	height: 25px;
+	text-align: center;
+	font-weight: bold;
+	padding: 0;
+}
+
+.quantity-container button:hover {
+	background: #4c9c19;
 }
 
 .set-allprice {
@@ -168,7 +188,6 @@
 /* 	justify-content: center; */
 /* 	align-items: center; */
 /* } */
-
 .pay {
 	width: 100%;
 	height: 200px;
@@ -186,16 +205,36 @@
 .pay-click {
 	width: 20%;
 	height: 100%;
-	
 }
 
 .pay-btn {
+	background: #5dc41a;
 	margin-top: 58px;
 	width: 80%;
 	height: 40%;
-	color: black;
 	font-size: 30px;
+	font-weight: bold;
+	border: none;
 	border-radius: 20px;
-	background-color: #228B22;
 	color: white;
+}
+
+.pay-btn:hover {
+	background: #4c9c19;
+}
+
+.quantity-btn button {
+	background-color: #5dc41a;
+	font-weight: bold;
+	border: none;
+	border-radius: 10px;
+	color: white;
+	width: 38px;
+	height: 28px;
+	text-align: center;
+	padding: 0;
+}
+
+.quantity-btn button:hover {
+	background: #4c9c19;
 }

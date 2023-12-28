@@ -56,16 +56,27 @@ $(function() {
     }
 });
 
+function getRecentProducts() {
+    let recentProducts = localStorage.getItem('recentProducts');
+    return recentProducts ? JSON.parse(recentProducts) : [];
+}
 
-// 최수빈 쿠키 이용해 최근 본 상품
-let itemCookie = 'itemCookie';
+// 페이지 로드 시 최근 본 상품 목록 확인
+window.onload = function() {
+    let recentProducts = getRecentProducts();
+    console.log('Recent Products:', recentProducts);
 
-// 쿠키 조회
-let itemCookieValue = getCookie(itemCookie);
+	let getCurrentItem = "";
+	for (i = 0; i< recentProducts.length; i++){
+		console.log(recentProducts[i].i_img);
+		
+		getCurrentItem += "<div>";
+		
+		getCurrentItem += "<div><img style='width: 150px;' src='itemFolder/"+recentProducts[i].i_img +"'></div>";
+		
+		getCurrentItem += "</div>";
+		
+	}
+	document.getElementById('content2').innerHTML = getCurrentItem;
 
-// 쿠키 값이 있다면 출력
-if (itemCookieValue) {
-    console.log('내가 생성한 쿠키 값:', itemCookieValue);
-} else {
-    console.log('쿠키를 찾을 수 없습니다.');
 }
