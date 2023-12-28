@@ -54,3 +54,16 @@ function updateMaskedUsername() {
   document.getElementById("usernameDisplay").innerText =
     "ニックネーム: " + maskedUsername + "님";
 }
+
+// 최수빈 후기 코드
+function reviewShow(){
+	$.ajax({
+		url: 'ShopDetailC',
+		datatype: 'json'
+	}).done(function(data){
+		for (let i = 0; i < data.length; i++){
+			
+		}
+	})
+}
+

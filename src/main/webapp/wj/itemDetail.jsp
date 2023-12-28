@@ -70,8 +70,8 @@
 		<div class="review-input">
 			<div class="input-menu">
 				<div id="usernameDisplay"></div>
-				<div>날짜</div>
-				<div>총점</div>
+				<div id="input-date">날짜</div>
+				<div id="input-grade">총점</div>
 			</div>
 			<div class="input-text">db넣어!</div>
 		</div>

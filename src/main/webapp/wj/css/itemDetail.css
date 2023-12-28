@@ -255,21 +255,29 @@
 	align-items: center;
 }
 
-.review-button {
-	background-color: #d9d9d9;
-	border: none;
+#input-date{
+	margin: 10px;
 }
 
-.review-button:hover {
-	background-color: #d9d9d9;
-	opacity: 0.8;
+#input-grade{
+	margin-right: 10px;
 }
 
-.review-view {
-	width: 90%;
-	display: flex;
-	justify-content: right;
-}
+/* .review-button { */
+/* 	background-color: #d9d9d9; */
+/* 	border: none; */
+/* } */
+
+/* .review-button:hover { */
+/* 	background-color: #d9d9d9; */
+/* 	opacity: 0.8; */
+/* } */
+
+/* .review-view { */
+/* 	width: 90%; */
+/* 	display: flex; */
+/* 	justify-content: right; */
+/* } */
 
 .view-more {
 	text-decoration: none;
