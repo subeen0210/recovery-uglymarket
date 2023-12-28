@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,16 +29,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><a id="openModalBtn" style="cursor: pointer;">56465</a></td>
-					<td>可愛いイチゴ</td>
-					<td>2/1000</td>
-					<td>2000</td>
-					<td>注文完了</td>
-					<td>2023-12-30</td>
-					<td><button id="openModalBtn2">作成</button>
-					<td><a>削除</a></td>
-				</tr>
+				<c:forEach var="order" items="${userOrders }">
+					<tr>
+						<td><a id="openModalBtn" style="cursor: pointer;">${order.o_orderNum }</a></td>
+						<td>${order.i_name }</td>
+						<td>${order.o_quantity }/${order.i_price }</td>
+						<td>${order.o_totalprice }</td>
+						<td>${order.o_status }</td>
+						<td>${order.o_date }</td>
+						<td><button id="openModalBtn2">作成</button>
+						<td><a>削除</a></td>
+					</tr>
+				</c:forEach>
 
 
 
@@ -124,10 +127,7 @@
 	<button id="closeModalBtn" style="width: 100px; height: 50px;">X</button>
 	</dialog>
 
-	<script src="js/orderModal.js"></script>
-	
-	
-	
+
 	<!-- 2번째 modal 창 -->
 
 	<dialog id="myModal2">
@@ -143,10 +143,11 @@
 				</tr>
 				<tr>
 					<td class="label">評点</td>
-					<td class="value"> <input type="text" id="grade" name="grade"></td>
+					<td class="value"><input type="text" id="grade" name="grade"></td>
 				</tr>
 				<tr>
-					<td style="width: 200px; height: 50px;"class="label">作成日<td>
+					<td style="width: 200px; height: 50px;" class="label">作成日
+					<td>
 					<td class="value"><input type="date" id="date" name="date"></td>
 				</tr>
 				<tr>
@@ -162,8 +163,9 @@
 	<button id="closeModalBtn2" style="width: 100px; height: 50px;">X</button>
 	</dialog>
 
+	<script src="js/orderModal.js"></script>
 	<script src="js/orderModal2.js"></script>
-
+<script type="text/javascript" src="js/order.js"></script>
 
 </body>
 </html>
