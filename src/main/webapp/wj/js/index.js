@@ -1,14 +1,23 @@
-function scrollFunction() {
-	var arrowIcon = document.querySelector('.scroll-to-top');
-	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-		arrowIcon.style.display = 'block';
-	} else {
-		arrowIcon.style.display = 'none';
-	}
+// 스크롤 탑 (맨위로 이동) 원준 작업
+function scrollToTop() {
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth'
+	});
 }
 
-// 화살표 위 아이콘을 클릭했을 때 맨 위로 스크롤합니다.
-function scrollToTop() {
-	document.body.scrollTop = 0;
-	document.documentElement.scrollTop = 0;
-}
+document.addEventListener('DOMContentLoaded', function() {
+	var scrollToTopButton = document.querySelector('.scroll-to-top');
+
+	// 스크롤 위치에 따라 scroll-to-top 버튼을 표시/숨김
+	window.addEventListener('scroll', function() {
+		if (window.scrollY > 200) {
+			scrollToTopButton.style.display = 'block';
+		} else {
+			scrollToTopButton.style.display = 'none';
+		}
+	});
+
+	// 버튼 클릭 이벤트에 scrollToTop 함수 연결
+	scrollToTopButton.addEventListener('click', scrollToTop);
+});

@@ -17,19 +17,19 @@
     <!-- bx 슬라이더 -->
     <ul class="bxslider">    
       <li>
-        <img src="img/semi-main-slider.png" alt="Image 1" /><span
+        <img style="width: 1800px;" src="img/semi-main-slider.png" alt="Image 1" /><span
           class="text-overlay"
           >農業を回復する<br />アグリーマーケット
         </span>
       </li>
       <li>
-        <img src="img/semi-main-slider.png" alt="Image 1" /><span
+        <img style="width: 1800px;" src="img/semi-main-slider.png" alt="Image 1" /><span
           class="text-overlay"
           >農業を回復する<br />アグリーマーケット
         </span>
       </li>
       <li>
-        <img src="img/semi-main-slider.png" alt="Image 1" /><span
+        <img style="width: 1800px;" src="img/semi-main-slider.png" alt="Image 1" /><span
           class="text-overlay"
           >農業を回復する<br />アグリーマーケット
         </span>
