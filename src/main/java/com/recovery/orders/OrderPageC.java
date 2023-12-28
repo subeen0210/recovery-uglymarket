@@ -21,7 +21,7 @@ public class OrderPageC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//	OrderDAO.regOrders(request);
+	OrderDAO.regOrders(request);
 	}
 
 }

@@ -3,6 +3,9 @@ package com.recovery.orders;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -69,41 +72,61 @@ public class OrderDAO {
 			System.out.println(addrs.getA_postcode());
 			System.out.println(addrs.getA_tel());
 			System.out.println(addrs.getA_req());
-			
+
 		}
 
-		String[] i_no = request.getParameterValues("i_no");
-		String[] quantity = request.getParameterValues("quantity");
-		String[] subtotal = request.getParameterValues("subtotal");
-		for (int i = 0; i < i_no.length; i++) {
-			System.out.println("i_no: " + i_no[i]);
-			System.out.println("quantity: " + quantity[i]);
-			System.out.println("subtotal: " + subtotal[i]);
-		}
+		String i_noArray = request.getParameter("i_no");
+		String quantityArray = request.getParameter("quantity");
+		String subtotalArray = request.getParameter("subtotal");
+		System.out.println(i_noArray);
+		System.out.println(quantityArray);
+		System.out.println(subtotalArray);
+		
+		String[] i_no = i_noArray.split(",");
+		String[] quantity = quantityArray.split(",");
+		String[] subtotal = subtotalArray.split(",");
+		
+//		for (String string : i_no) {
+//			System.out.println(string);
+//		}
 
-		String sql = "insert into orders values(orders_seq.nextval,?,?,?,?,?,?,?,?,?, DEFAULT, sysdate, DEFAULT)";
+		UUID uuid = UUID.randomUUID();
+		LocalDate currentDate = LocalDate.now();
+
+		// 년, 월, 일 추출
+		int year = currentDate.getYear();
+		int month = currentDate.getMonthValue();
+		int dayOfMonth = currentDate.getDayOfMonth();
+		String dayInfo = "" + year + month + dayOfMonth;
+		System.out.println(dayInfo);
+		System.out.println(uuid.toString().split("-")[0]+dayInfo);
+		String orderNum = uuid.toString().split("-")[0]+dayInfo;
+
+		String sql = "insert into orders values(orders_seq.nextval,?,?,?,?,?,?,?,?,?,?, DEFAULT, sysdate, DEFAULT)";
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, user.getU_id());
+			pstmt.setString(2, orderNum);
+			
 			if (addrs != null) {
-				
-			pstmt.setString(3, addrs.getA_name());
-			pstmt.setString(4, addrs.getA_postcode());
-			pstmt.setString(5, addrs.getA_addr() + " " +addrs.getA_addrDetail());
-			pstmt.setString(6, addrs.getA_tel());
-			pstmt.setString(7, addrs.getA_req());
+			pstmt.setString(4, addrs.getA_name());
+			pstmt.setString(5, addrs.getA_postcode());
+			pstmt.setString(6, addrs.getA_addr() + " " +addrs.getA_addrDetail());
+			pstmt.setString(7, addrs.getA_tel());
+			pstmt.setString(8, addrs.getA_req());
 			}
 
 			for (int i = 0; i < i_no.length; i++) {
-				pstmt.setString(2, i_no[i]);
-				pstmt.setString(8, quantity[i]);
-				pstmt.setString(9, subtotal[i]);
+				pstmt.setString(3, i_no[i]);
+				pstmt.setString(9, quantity[i]);
+				pstmt.setString(10, subtotal[i]);
 
 				if (pstmt.executeUpdate() == 1) {
 					System.out.println("주문 등록 성공" + i);
 				}
 			}
+			deleteOrdersCart(request);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -111,7 +134,6 @@ public class OrderDAO {
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
-		deleteOrdersCart(request);
 	}
 
 	// order 등록이 되면 cart 삭제
@@ -119,7 +141,9 @@ public class OrderDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		User user = (User) request.getSession().getAttribute("userAccount");
-		String[] i_no = request.getParameterValues("i_no");
+		String[] i_no = request.getParameter("i_no").split(",");
+		
+		
 
 		for (String i : i_no) {
 			System.out.println("i_no: " + i);
@@ -146,6 +170,5 @@ public class OrderDAO {
 			DBManager.close(con, pstmt, null);
 		}
 	}
-	
 
 }

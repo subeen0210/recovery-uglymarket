@@ -103,9 +103,9 @@ $(function() {
 		getItems += "<span><img src='img/en-icon.png' style='width: 15px;'>" + items[i].subtotal + "</span>";
 		getItems += "</span>";
 		getItems += "</span>";
-		getItems += "<input type='hidden' class='i_no' name='i_no' value='"+ items[i].i_no +"'>";
-		getItems += "<input type='hidden' class='quantity' name='quantity' value='"+ items[i].quantity +"'>";	
-		getItems += "<input type='hidden' class='subtotal' name='subtotal' value='"+ items[i].subtotal +"'>";	
+		getItems += "<input type='hidden' class='i_no' value='"+ items[i].i_no +"'>";
+		getItems += "<input type='hidden' class='quantity' value='"+ items[i].quantity +"'>";	
+		getItems += "<input type='hidden' class='subtotal' value='"+ items[i].subtotal +"'>";	
 		getItems += "</p>";
 	}
 	document.getElementById('wrap-content').innerHTML = getItems;
@@ -141,14 +141,14 @@ function regOrder(){
         quantityArray.push(quantity[i].value);
         subtotalArray.push(subtotal[i].value);
     }
-//	console.log(i_noArray);
-//	console.log(quantityArray);
-//	console.log(subtotalArray);
+	console.log(i_noArray.toString());
+	console.log(quantityArray.toString());
+	console.log(subtotalArray.toString());
 
 	$.ajax({
     url: "OrderPageC", // 서버의 URL
     method: "post", // HTTP 메서드 (GET, POST 등)
-	data: {i_no:i_noArray, quantity:quantityArray, subtotal:subtotalArray},
+	data: {i_no: i_noArray.toString(), quantity: quantityArray.toString(), subtotal: subtotalArray.toString()},
     success: function(data) {
         // 요청이 성공했을 때 실행되는 콜백 함수
         paymentEndPage.showModal();
