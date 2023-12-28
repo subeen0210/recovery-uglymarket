@@ -75,7 +75,7 @@
 		<div class="pay">
 			<div class="pay-allmoney">商品合計 : <span id="payAllMoneySpan"></span></div>
 			<div class="pay-click">
-				<button class="pay-btn" onclick="payStorage()">決済する</button>
+				<button class="button btnPush btnBlueGreen" onclick="payStorage()">決済する</button>
 			</div>
 		</div>
 	</div>

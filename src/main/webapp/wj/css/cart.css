@@ -199,7 +199,7 @@
 }
 
 .pay-allmoney {
-	width: 30%;
+	width: 20%;
 }
 
 .pay-click {
@@ -207,20 +207,44 @@
 	height: 100%;
 }
 
-.pay-btn {
-	background: #5dc41a;
-	margin-top: 58px;
-	width: 80%;
-	height: 40%;
-	font-size: 30px;
-	font-weight: bold;
+button {
+	text-decoration: none;
+	color: #00AE68;
 	border: none;
-	border-radius: 20px;
-	color: white;
 }
 
-.pay-btn:hover {
+button.button {
+	display: block;
+	position: relative;
+	float: left;
+	width: 150px;
+	top: 60px;
+	padding: 0;
+	margin: 10px 20px 10px 0;
+	font-weight: 600;
+	text-align: center;
+	line-height: 50px;
+	color: #FFF;
+	border-radius: 5px;
+	transition: all 0.2s;
+	font-size: 15pt;
+}
+
+.btnBlueGreen {
 	background: #4c9c19;
+}
+
+.btnBlueGreen.btnPush {
+	box-shadow: 0px 5px 0px 0px #b7d0be;
+}
+
+.btnPush:hover {
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+.btnBlueGreen.btnPush:hover {
+	box-shadow: 0px 0px 0px 0px #b7d0be;
 }
 
 .quantity-btn button {
