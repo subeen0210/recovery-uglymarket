@@ -12,8 +12,6 @@
     <div id="reviewListContainer">
         <h1>レビュー管理リスト</h1>
         <div class="my_review_buttons">
-        <button id="modify">修正</button>
-        <button id="delete">削除</button>
         </div>
         <table id="reviewTable">
             <thead>
@@ -22,14 +20,22 @@
                     <th>内容</th>
                     <th>作成日時</th>
                     <th>スター</th>
+                    <th>削除</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- 리뷰 목록 표시 -->
+               <tr>
+               <td>可愛いイチゴ</td>
+               <td>おいしいです</td>
+               <td>2023.12.20</td>
+               <td>★★★★★</td>
+               <td><button id="delete">削除</button></td>
+               </tr>
             </tbody>
         </table>
     </div>
 
     <script src="wr_company/js/reviewList.js"></script>
 </body>
+
 </html>
