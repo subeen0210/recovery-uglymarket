@@ -94,7 +94,7 @@
     height: 100%;
     flex-grow: 1;
     /* border: 1px solid black; */
-    display: flex;
+/*     display: flex; */
     justify-content: center;
     align-items: center;
 }
@@ -102,12 +102,4 @@
   background-color: lightgray;
   color: darkblue;
   /* 선택된 메뉴에 대한 스타일 지정 */
-}
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-     
-    padding: 15px; 
 }
