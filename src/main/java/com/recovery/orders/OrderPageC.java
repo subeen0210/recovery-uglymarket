@@ -16,16 +16,15 @@ public class OrderPageC extends HttpServlet {
 	OrderDAO.userAddr(request);
 	
 	AccountDAO.loginCheck(request);
-//	request.setAttribute("contentPage", "wj/orderPage2.jsp");
-	request.setAttribute("contentPage", "gh_orders/orderPage.jsp");
+	request.setAttribute("contentPage", "wj/orderPage2.jsp");
 	request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-	OrderDAO.regOrders(request);
+	System.out.println(11);
+//	OrderDAO.regOrders(request);
 		
-	response.sendRedirect("HC");
+//	response.sendRedirect("HC");
 	}
 
 }

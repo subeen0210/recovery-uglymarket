@@ -61,7 +61,7 @@ function payStorage() {
 
 
 	//	 초기화
-	localStorage.clear();
+	localStorage.removeItem('selectedItems');
 
 	let arrItems = JSON.stringify(selectedItems);
 
@@ -86,27 +86,43 @@ $(function() {
 		console.log(items[i]);
 		total += parseInt(items[i].subtotal);
 		console.log(total);
-		console.log(items.i_no);
+		console.log(items[i].i_no);
 		
-		getItems += "<div>";
-		getItems += "<div>" + items[i].image + "</div>";
-		getItems += "<div>" + items[i].name + "</div>";
-		getItems += "<div>" + items[i].category + "</div>";
-		getItems += "<div>" + items[i].farmName + "</div>";
-		getItems += "<div>" + items[i].price + "</div>";
-		getItems += "<div>" + items[i].quantity + "</div>";
-		getItems += "<div>" + items[i].subtotal + "</div>";
+		
+		getItems += "<p class='details-farm'>";
+		getItems += "<span>" + items[i].farmName + "</span><span class='order-delivery-status'>送料無料</span>";
+		getItems += "</p>";
+		getItems += "<hr />";
+		getItems += "<p class='items'>";
+		getItems += "<span class='getItems'> <span class='order-item-imgbox'>";
+		getItems += "<img class='img-set-size' src='itemFolder/" + items[i].image + "' />";
+		getItems += "</span>";
+		getItems += "<span class='order-item'>";
+		getItems += "<span class='order-item-name'>" + items[i].name + "</span><br />";
+		getItems += "<span><span class='item-categorys'>" + items[i].category + "</span>&ensp;<img src='img/en-icon.png' style='width: 15px;'>" + items[i].price + "│" + items[i].quantity +"</span><br /> <br /> ";
+		getItems += "<span><img src='img/en-icon.png' style='width: 15px;'>" + items[i].subtotal + "</span>";
+		getItems += "</span>";
+		getItems += "</span>";
 		getItems += "<input type='hidden' name='i_no' value='"+ items[i].i_no +"'>";
 		getItems += "<input type='hidden' name='quantity' value='"+ items[i].quantity +"'>";	
 		getItems += "<input type='hidden' name='subtotal' value='"+ items[i].subtotal +"'>";	
-		getItems += "</div>";
-		getItems += "<br>";
+		getItems += "</p>";
 	}
-	document.getElementById('getItems').innerHTML = getItems;
+	document.getElementById('wrap-content').innerHTML = getItems;
 	document.getElementById('totalPrice').innerHTML = total;
 	
 
+	let categories = document.querySelectorAll('.item-categorys');
 
+    categories.forEach(function(category) {
+        let cValue = category.textContent.trim();
+		let backgroundColor = cValue == 'アグリー' ? '#0B6121' : '#D8D8D8';
+		let color = cValue == 'アグリー' ? '#FFFFFF' : '#000000';
+		
+        
+        category.style.backgroundColor = backgroundColor;
+        category.style.color = color;
+    });
 
 
 

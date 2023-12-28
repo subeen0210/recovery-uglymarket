@@ -17,7 +17,7 @@
 			<div>
 				<div>${addr.a_name }</div>
 				<div>${addr.a_tel }</div>
-				<div>${addr.a_addr }${addr.a_addrDetail } (${addr.a_postcode })</div>
+				<div>${addr.a_addr } ${addr.a_addrDetail } (${addr.a_postcode })</div>
 			</div>
 			<div>
 				<div>配送時間帯を設定</div>
