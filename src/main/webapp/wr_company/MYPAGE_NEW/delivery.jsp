@@ -4,8 +4,8 @@
 <html>
 
 <link rel="stylesheet"
-	href="wr_company/MYPAGE_NEW/css/seller_register.css">
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/header.css">
+	href="wr_company/MYPAGE_NEW/css/delivery.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/index.css">
 <script src="js/button.js"></script>
 <head>
 <meta charset="UTF-8">
