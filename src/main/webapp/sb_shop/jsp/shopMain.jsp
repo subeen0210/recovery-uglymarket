@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/shopMain.css">
+<script type="text/javascript" src="js/currentItem.js"></script>
 <script type="text/javascript" src="js/shopMain.js"></script>
 <title>Insert title here</title>
 </head>
