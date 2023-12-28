@@ -23,6 +23,7 @@
 					<th class="total_price">総価格</th>
 					<th class="pickup_status">配送状態</th>
 					<th class="date">注文日</th>
+					<th class="review_create">作成</th>
 					<th class="delete_table">削除</th>
 				</tr>
 			</thead>
@@ -34,6 +35,7 @@
 					<td>2000</td>
 					<td>注文完了</td>
 					<td>2023-12-30</td>
+					<td><button id="openModalBtn2">作成</button>
 					<td><a>削除</a></td>
 				</tr>
 
@@ -123,6 +125,45 @@
 	</dialog>
 
 	<script src="js/orderModal.js"></script>
+	
+	
+	
+	<!-- 2번째 modal 창 -->
+
+	<dialog id="myModal2">
+	<div class="main_modal">
+
+		<section class="order-details">
+			<h2>商品情報</h2>
+			<table class="order-info">
+				<tr>
+					<td class="label">商品名</td>
+					<td class="value">可愛いイチゴ</td>
+
+				</tr>
+				<tr>
+					<td class="label">評点</td>
+					<td class="value"> <input type="text" id="grade" name="grade"></td>
+				</tr>
+				<tr>
+					<td style="width: 200px; height: 50px;"class="label">作成日<td>
+					<td class="value"><input type="date" id="date" name="date"></td>
+				</tr>
+				<tr>
+					<td class="label">内容</td>
+					<td class="value"><textarea rows="4" cols="50">이곳에 텍스트를 입력하세요.</textarea></td>
+				</tr>
+				<!-- 다른 주문 정보 항목들 추가 -->
+			</table>
+		</section>
+
+	</div>
+	<br>
+	<button id="closeModalBtn2" style="width: 100px; height: 50px;">X</button>
+	</dialog>
+
+	<script src="js/orderModal2.js"></script>
+
 
 </body>
 </html>

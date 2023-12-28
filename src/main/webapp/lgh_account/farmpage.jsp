@@ -158,7 +158,7 @@
 		</div>
 	</form>
 	<!-- 비밀번호 찾기 modal -->
-	<dialog id="password-modal">
+	<dialog id="password-modal" >
 	<div class="btn-size-close">
 		<a id="close-button">X</a>
 	</div>
@@ -190,8 +190,11 @@
 			onclick="return passwordChange();">パスワード変更</a>
 	</div>
 	</dialog>
+	<script type="text/javascript" src="js/regUserModal.js"></script>
 	<!-- 비밀번호 찾기 modal 끝 -->
 </body>
+
+	
 <script type="text/javascript" src="js/regUser1.js"></script>
 <script type="text/javascript">
 	$(function() {
@@ -230,17 +233,6 @@
 
 	});
 
-	document.getElementById("password-change-button").addEventListener("click",
-			function() {
-				// Open the dialog
-				document.getElementById("password-modal").showModal();
-			});
-
-	document.getElementById("close-button").addEventListener("click",
-			function() {
-
-				// Close the dialog
-				document.getElementById("password-modal").close();
-			});
+	
 </script>
 </html>

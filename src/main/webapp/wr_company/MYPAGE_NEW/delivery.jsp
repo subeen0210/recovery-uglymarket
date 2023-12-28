@@ -5,7 +5,7 @@
 
 <link rel="stylesheet"
 	href="wr_company/MYPAGE_NEW/css/delivery.css">
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/header.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/index.css">
 <script src="js/button.js"></script>
 <head>
 <meta charset="UTF-8">
