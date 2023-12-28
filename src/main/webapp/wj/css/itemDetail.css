@@ -255,11 +255,11 @@
 	align-items: center;
 }
 
-#input-date{
+.input-date{
 	margin: 10px;
 }
 
-#input-grade{
+.input-grade{
 	margin-right: 10px;
 }
 

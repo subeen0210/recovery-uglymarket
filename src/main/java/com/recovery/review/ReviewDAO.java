@@ -22,6 +22,7 @@ public class ReviewDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String paramNo = request.getParameter("no");
+		System.out.println(paramNo);
 		String sql = "select * from review where i_no = ? ";
 		
 		try {

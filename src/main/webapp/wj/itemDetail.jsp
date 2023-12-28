@@ -67,14 +67,7 @@
 		</div>
 		<br />
 		<br />
-		<div class="review-input">
-			<div class="input-menu">
-				<div id="usernameDisplay"></div>
-				<div id="input-date">날짜</div>
-				<div id="input-grade">총점</div>
-			</div>
-			<div class="input-text">db넣어!</div>
-		</div>
+		<div id="review-input" class="review-input"></div>
 	</div>
 	<br />
 	<br />
