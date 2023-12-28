@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+
+#myModal {
+	position: relative;
+	border : 1px solid black;
+}
+
 body {
 	font-family: 'Arial', sans-serif;
 	margin: 0;
@@ -187,3 +193,81 @@ td {
 	font-size: 20px;
 }
 
+
+
+/* Modal */
+.main_modal {
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	text-align: center; /* 중앙 정렬을 위해 text-align 추가 */
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	padding: 20px;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+
+section {
+	margin: 20px 0;
+}
+
+h2 {
+	color: black;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+}
+
+td {
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+.label {
+	width: 100px;
+	font-weight: bold;
+}
+
+.value {
+	width: 250px;
+	word-break: break-all;
+}
+
+#closeModalBtn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 30px;
+	height: 30px;
+	background-color: silver;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.modify {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	width: 100px;
+	height: 40px;
+	font-size: 16px;
+	background-color: silver;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}

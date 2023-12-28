@@ -4,7 +4,7 @@
 <html>
 
 <link rel="stylesheet"
-	href="wr_company/MYPAGE_NEW/css/seller_register.css">
+	href="wr_company/MYPAGE_NEW/css/delivery.css">
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/header.css">
 <script src="js/button.js"></script>
 <head>
