@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/updateSeller.css" />
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/upSeller.css" />
 <script src="https://code.jquery.com/jquery-3.7.0.js"
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
