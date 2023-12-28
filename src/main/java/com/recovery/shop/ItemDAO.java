@@ -58,7 +58,6 @@ public class ItemDAO {
 				item.setI_enddate(rs.getDate("i_ed"));
 				item.setI_price(rs.getInt("i_price"));
 				item.setI_stock(rs.getInt("i_stock"));
-				item.setI_star_avg(rs.getDouble("i_avg"));
 				items.add(item);
 //				System.out.println(rs.getString("i_name"));
 //				System.out.println(rs.getString("i_price"));
@@ -116,7 +115,6 @@ public class ItemDAO {
 				i.setI_enddate(rs.getDate("i_ed"));
 				i.setI_price(rs.getInt("i_price"));
 				i.setI_stock(rs.getInt("i_stock"));
-				i.setI_star_avg(rs.getDouble("i_avg"));
 				request.setAttribute("item", i);
 				
 				Gson g = new Gson();
@@ -148,7 +146,7 @@ public class ItemDAO {
 	    String img2 = "";
 	    String img3 = "";
 	    String img4 = "";
-	    String sql = "insert into item values (item_seqence.nextval, ?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?, 0)";
+	    String sql = "insert into item values (item_seqence.nextval, ?, ?, ?, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?)";
 
 	    try {
 	        con = DBManager.connect();
