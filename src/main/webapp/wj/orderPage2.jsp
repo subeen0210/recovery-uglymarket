@@ -13,49 +13,56 @@
 <body>
 	<div id="order-title">注文 / 決済する</div>
 
-	<form action="OrderPageC" method="post" onsubmit="return orderCheck();">
-		<div class="main-wrapper">
-			<div class="detail-wrap">
-				<img class="icon" src="img/free-icon-arrow-down.png" alt="" />
-				<details class="demo-details-juqery-accordion">
-					<summary>配送先</summary>
-					<p>
-						<!-- p태그 사용할때는 div적용시 아코디언 효가가 매끄럽게 안먹음 span 사용 -->
-						<span id="order-addr-user"> <span class="span-set-position">${addr.a_name }
-								<button class="custom-btn">수정</button>
-						</span><br /> <br /> <span>${addr.a_tel }</span><br /> <br /> <span>${addr.a_addr }
-								${addr.a_addrDetail } (${addr.a_postcode })</span>
-						</span><br /> <br /> <br /> <span id="order-addr-times"> <span
-							class="addr-times">配送時間帯を設定</span><br /> <br /> <select
-							id="deliveryTime" name="deliveryTime">
-								<!-- option 태그로 각 선택 옵션을 정의 -->
-								<option value="午前中(8:00~12:00)">午前中(8:00~12:00)</option>
-								<option value="12:00~14:00">12:00~14:00</option>
-								<option value="14:00~16:00">14:00~16:00</option>
-								<option value="16:00~:18:00">16:00~:18:00</option>
-								<option value="18:00~20:00">18:00~20:00</option>
-								<option value="19:00~21:00">19:00~21:00</option>
-						</select>
-						</span>
-					</p>
-				</details>
-			</div>
-			<div class="detail-wrap">
-				<img class="icon" src="img/free-icon-arrow-down.png" alt="" />
-				<details class="demo-details-juqery-accordion">
-					<summary>注文商品</summary>
-					<div id="wrap-content"></div>
-					<hr>
-					<span id="totalPriceAll"><img src="img/en-icon.png"
-						style="width: 20px;"><span id="totalPrice"></span></span>
-				</details>
-			</div>
-			<div class="set-btn">
-				<button title="Button push blue/green"
-					class="button btnPush btnBlueGreen">決済</button>
-			</div>
+	<!-- 	<form action="OrderPageC" method="post" onsubmit="return orderCheck();"> -->
+	<div class="main-wrapper">
+		<div class="detail-wrap">
+			<img class="icon" src="img/free-icon-arrow-down.png" alt="" />
+			<details class="demo-details-juqery-accordion">
+				<summary>配送先</summary>
+				<p>
+					<!-- p태그 사용할때는 div적용시 아코디언 효가가 매끄럽게 안먹음 span 사용 -->
+					<span id="order-addr-user"> <span class="span-set-position">${addr.a_name }
+							<button class="custom-btn">수정</button>
+					</span><br /> <br /> <span>${addr.a_tel }</span><br /> <br /> <span>${addr.a_addr }
+							${addr.a_addrDetail } (${addr.a_postcode })</span>
+					</span><br /> <br /> <br /> <span id="order-addr-times"> <span
+						class="addr-times">配送時間帯を設定</span><br /> <br /> <select
+						id="deliveryTime" name="deliveryTime">
+							<!-- option 태그로 각 선택 옵션을 정의 -->
+							<option value="午前中(8:00~12:00)">午前中(8:00~12:00)</option>
+							<option value="12:00~14:00">12:00~14:00</option>
+							<option value="14:00~16:00">14:00~16:00</option>
+							<option value="16:00~:18:00">16:00~:18:00</option>
+							<option value="18:00~20:00">18:00~20:00</option>
+							<option value="19:00~21:00">19:00~21:00</option>
+					</select>
+					</span>
+				</p>
+			</details>
 		</div>
-	</form>
+		<div class="detail-wrap">
+			<img class="icon" src="img/free-icon-arrow-down.png" alt="" />
+			<details class="demo-details-juqery-accordion">
+				<summary>注文商品</summary>
+				<div id="wrap-content"></div>
+				<hr>
+				<span id="totalPriceAll"><img src="img/en-icon.png"
+					style="width: 20px;"><span id="totalPrice"></span></span>
+			</details>
+		</div>
+		<div class="set-btn">
+			<button title="Button push blue/green"
+				class="button btnPush btnBlueGreen" onclick="regOrder();">決済</button>
+		</div>
+	</div>
+	<!-- 	</form> -->
+	<!-- 모달 창 (결제 끝났을 때, 이동할 부분)-->
+	<dialog id="paymentEndPage">
+	<h2>결제가 완료되었습니다. 마이페이지로 이동하시겠습니까?</h2>
+	<a href="UserMypageC">마이페이지</a>
+	<a href="HC">홈</a>
+	</dialog>
+
 	<script>
 		// 강사님과 함께 풀이했던 내용 정리 완료
 
@@ -103,6 +110,7 @@
 			}
 
 		}
+		
 	</script>
 </body>
 </html>

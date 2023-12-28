@@ -103,9 +103,9 @@ $(function() {
 		getItems += "<span><img src='img/en-icon.png' style='width: 15px;'>" + items[i].subtotal + "</span>";
 		getItems += "</span>";
 		getItems += "</span>";
-		getItems += "<input type='hidden' name='i_no' value='"+ items[i].i_no +"'>";
-		getItems += "<input type='hidden' name='quantity' value='"+ items[i].quantity +"'>";	
-		getItems += "<input type='hidden' name='subtotal' value='"+ items[i].subtotal +"'>";	
+		getItems += "<input type='hidden' class='i_no' name='i_no' value='"+ items[i].i_no +"'>";
+		getItems += "<input type='hidden' class='quantity' name='quantity' value='"+ items[i].quantity +"'>";	
+		getItems += "<input type='hidden' class='subtotal' name='subtotal' value='"+ items[i].subtotal +"'>";	
 		getItems += "</p>";
 	}
 	document.getElementById('wrap-content').innerHTML = getItems;
@@ -124,12 +124,46 @@ $(function() {
         category.style.color = color;
     });
 
-
-
-
-
-
-
-
-
 });
+
+function regOrder(){
+	let i_no = document.getElementsByClassName('i_no');
+	let quantity = document.getElementsByClassName('quantity');
+	let subtotal = document.getElementsByClassName('subtotal');
+	const paymentEndPage = document.getElementById('paymentEndPage');
+
+//    // 가져온 요소들의 값을 배열에 저장
+    let i_noArray = [];
+	let quantityArray = [];
+	let subtotalArray = [];
+    for (var i = 0; i < i_no.length; i++) {
+        i_noArray.push(i_no[i].value);
+        quantityArray.push(quantity[i].value);
+        subtotalArray.push(subtotal[i].value);
+    }
+//	console.log(i_noArray);
+//	console.log(quantityArray);
+//	console.log(subtotalArray);
+
+	$.ajax({
+    url: "OrderPageC", // 서버의 URL
+    method: "post", // HTTP 메서드 (GET, POST 등)
+	data: {i_no:i_noArray, quantity:quantityArray, subtotal:subtotalArray},
+    success: function(data) {
+        // 요청이 성공했을 때 실행되는 콜백 함수
+        paymentEndPage.showModal();
+
+    },
+    error: function(xhr, status, error) {
+        // 요청이 실패했을 때 실행되는 콜백 함수
+        console.error("AJAX request failed:", status, error);
+    }
+});
+$(document).on('keydown', function(event) {
+    if (event.key === 'Escape') {
+        event.preventDefault(); // 기본 동작 취소
+        // 모달이 닫히지 않도록 추가적인 로직을 추가할 수 있습니다.
+    }
+});
+	
+}
