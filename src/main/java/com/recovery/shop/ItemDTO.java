@@ -18,14 +18,14 @@ public class ItemDTO {
 	private Date i_enddate;
 	private int i_price;
 	private int i_stock;
-	private Double i_star_avg;
+
 	
 	public ItemDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public ItemDTO(int i_no, String s_id, String i_name, String i_img, String i_img2, String i_img3, String i_img4,
-			String i_des, int i_category, Date i_enddate, int i_price, int i_stock, Double i_star_avg) {
+			String i_des, int i_category, Date i_enddate, int i_price, int i_stock) {
 		super();
 		this.i_no = i_no;
 		this.s_id = s_id;
@@ -39,7 +39,6 @@ public class ItemDTO {
 		this.i_enddate = i_enddate;
 		this.i_price = i_price;
 		this.i_stock = i_stock;
-		this.i_star_avg = i_star_avg;
 	}
 
 	public int getI_no() {
@@ -138,21 +137,13 @@ public class ItemDTO {
 		this.i_stock = i_stock;
 	}
 
-	public Double getI_star_avg() {
-		return i_star_avg;
-	}
-
-	public void setI_star_avg(Double i_star_avg) {
-		this.i_star_avg = i_star_avg;
-	}
-	
 	
 	@Override
 	public String toString() {
 		return "ItemDTO [i_no=" + i_no + ", s_id=" + s_id + ", i_name=" + i_name + ", i_img=" + i_img + ", i_img2="
 				+ i_img2 + ", i_img3=" + i_img3 + ", i_img4=" + i_img4 + ", i_des=" + i_des + ", i_category="
 				+ i_category + ", i_enddate=" + i_enddate + ", i_price=" + i_price + ", i_stock=" + i_stock
-				+ ", i_star_avg=" + i_star_avg + "]";
+				+ ", i_star_avg=]";
 	}
 
 	public String getJSON(ItemDTO item) {
