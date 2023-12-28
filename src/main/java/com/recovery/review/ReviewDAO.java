@@ -7,8 +7,10 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
+import com.recovery.account.User;
 import com.recovery.main.DBManager;
 
 public class ReviewDAO {
@@ -58,6 +60,9 @@ public class ReviewDAO {
 	// 개인 마이페이지 후기 리스트 조회	
 	public static void getReview(HttpServletRequest request, HttpServletResponse res) {
 		
+		HttpSession hs = request.getSession();
+		User user = (User) request.getSession().getAttribute("userAccount");
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -66,6 +71,7 @@ public class ReviewDAO {
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user.getU_id());
 			
 			ReviewDTO review = null;
 			ArrayList<ReviewDTO> reviews = new ArrayList<ReviewDTO>();
@@ -77,7 +83,6 @@ public class ReviewDAO {
 				review.setR_grade(rs.getDouble("r_grade"));
 				review.setR_nickname(rs.getString("r_nickname"));
 				review.setR_productname(rs.getString("r_productname"));
-				review.setU_id(rs.getString("u_id"));
 				review.setI_no(rs.getInt("i_no"));
 				reviews.add(review);
 			}
@@ -118,6 +123,39 @@ public class ReviewDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("리뷰 삭제 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+	
+	
+	public static void addReview(HttpServletRequest request) {
+		
+		HttpSession hs = request.getSession();
+		User user = (User) request.getSession().getAttribute("userAccount");
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "insert into review VALUES (review_seq.nextval, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?, ?, ?)";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, request.getParameter("후기 내용"));
+			pstmt.setString(2, request.getParameter("날짜"));
+			pstmt.setString(3, request.getParameter("점수"));
+			pstmt.setString(4, user.getU_nicname());
+			pstmt.setString(5, request.getParameter("제품이름"));
+			pstmt.setString(6, user.getU_id());
+			pstmt.setString(7, request.getParameter("제품 넘버"));
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("리뷰 등록 성공");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("리뷰 등록 실패");
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
