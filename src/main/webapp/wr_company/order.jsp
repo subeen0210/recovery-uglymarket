@@ -28,7 +28,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><a id="openModalBtn">56465</a></td>
+					<td><a id="openModalBtn" style="cursor: pointer;">56465</a></td>
 					<td>可愛いイチゴ</td>
 					<td>2/1000</td>
 					<td>2000</td>
