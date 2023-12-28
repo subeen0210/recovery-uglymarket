@@ -231,6 +231,7 @@ label {
 }
 
 .modal-content {
+
   width: 89%;
   height: 130px;
   display: flex;
@@ -238,6 +239,7 @@ label {
   justify-content: center;
   align-items: center;
   border: white;
+
 }
 
 .content1 {
