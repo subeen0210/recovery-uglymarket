@@ -72,7 +72,7 @@ window.onload = function() {
 		
 		getCurrentItem += "<div>";
 		
-		getCurrentItem += "<div><img style='width: 150px;' src='itemFolder/"+recentProducts[i].i_img +"'></div>";
+		getCurrentItem += "<div style='width: 150px; height: 150px; background-image: url(\"itemFolder/" + recentProducts[i].i_img + "\"); background-size: cover; border-radius: 8px;'></div>";
 		
 		getCurrentItem += "</div>";
 		

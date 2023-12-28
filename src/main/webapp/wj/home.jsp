@@ -17,19 +17,19 @@
     <!-- bx 슬라이더 -->
     <ul class="bxslider">    
       <li>
-        <img src="img/semi-main-slider.png" alt="Image 1" /><span
+        <img style="width: 1800px;" src="img/semi-main-slider.png" alt="Image 1" /><span
           class="text-overlay"
           >農業を回復する<br />アグリーマーケット
         </span>
       </li>
       <li>
-        <img src="img/semi-main-slider.png" alt="Image 1" /><span
+        <img style="width: 1800px;" src="img/semi-main-slider.png" alt="Image 1" /><span
           class="text-overlay"
           >農業を回復する<br />アグリーマーケット
         </span>
       </li>
       <li>
-        <img src="img/semi-main-slider.png" alt="Image 1" /><span
+        <img style="width: 1800px;" src="img/semi-main-slider.png" alt="Image 1" /><span
           class="text-overlay"
           >農業を回復する<br />アグリーマーケット
         </span>
@@ -63,16 +63,16 @@
         <div class="item-img-news-link-position">
         <br>
           <div class="item-img-news-link-position-img">
-           <a href="https://financial-field.com/living/entry-225773"><img src="img/semi-main-item-img-news-rectangle.png" alt="" />
+           <a href="https://financial-field.com/living/entry-225773"><img class="news-inner-img" src="img/semi-main-item-img-news-rectangle.jpg" alt="" />
 </a>          
 
-            <a href="https://www.chunichi.co.jp/article/753923"><img src="img/semi-main-item-img-news-rectangle2.png" alt="" />
+            <a href="https://www.chunichi.co.jp/article/753923"><img class="news-inner-img" src="img/semi-main-item-img-news-rectangle2.jpg" alt="" />
             </a>
           </div>
           <div class="item-img-news-link-position-img">
-            <a href="https://mirasus.jp/sdgs/consumption-production/8771"><img src="img/semi-main-item-img-news-rectangle3.png" alt="" />
+            <a href="https://mirasus.jp/sdgs/consumption-production/8771"><img class="news-inner-img" src="img/semi-main-item-img-news-rectangle3.jpg" alt="" />
             </a>
-            <a href="https://www.advertimes.com/20220817/article393137"><img src="img/semi-main-item-img-news-rectangle4.png" alt="" />
+            <a href="https://www.advertimes.com/20220817/article393137"><img class="news-inner-img" src="img/semi-main-item-img-news-rectangle4.jpg" alt="" />
             </a>
           </div>
         </div>
