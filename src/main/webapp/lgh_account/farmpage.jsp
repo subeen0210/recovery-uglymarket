@@ -158,7 +158,7 @@
 		</div>
 	</form>
 	<!-- 비밀번호 찾기 modal -->
-	<dialog id="password-modal">
+	<dialog id="password-modal" >
 	<div class="btn-size-close">
 		<a id="close-button">X</a>
 	</div>
@@ -172,15 +172,18 @@
 		</div>
 		<div class="content1">
 			<div class="set-input">
-				<input class="style-input" id="old-pw" placeholder="old-password">
+				<input class="style-input" id="old-pw" type="password" placeholder="10字~20字">
+				<div class="PW-change-errorMsg" id="PW-old-errorMsg"></div>
 			</div>
 			<br>
 			<div class="set-input">
-				<input class="style-input" id="new-pw" placeholder="new-password">
+				<input class="style-input" id="new-pw" placeholder="10字~20字" type="password" maxlength="20">
+				<div class="PW-change-errorMsg" id="pw-new-errorMsg"></div>
 			</div>
 			<br>
 			<div class="set-input">
-				<input class="style-input" type="password" placeholder="pw-confirm">
+				<input class="style-input" id="new-pw-confirm" type="password" placeholder="再確認">
+				<div class="PW-change-errorMsg" id="pwConfirm"></div>
 			</div>
 		</div>
 	</div>
@@ -190,8 +193,11 @@
 			onclick="return passwordChange();">パスワード変更</a>
 	</div>
 	</dialog>
+	<script type="text/javascript" src="js/regUserModal.js"></script>
 	<!-- 비밀번호 찾기 modal 끝 -->
 </body>
+
+	
 <script type="text/javascript" src="js/regUser1.js"></script>
 <script type="text/javascript">
 	$(function() {
@@ -230,17 +236,6 @@
 
 	});
 
-	document.getElementById("password-change-button").addEventListener("click",
-			function() {
-				// Open the dialog
-				document.getElementById("password-modal").showModal();
-			});
-
-	document.getElementById("close-button").addEventListener("click",
-			function() {
-
-				// Close the dialog
-				document.getElementById("password-modal").close();
-			});
+	
 </script>
 </html>

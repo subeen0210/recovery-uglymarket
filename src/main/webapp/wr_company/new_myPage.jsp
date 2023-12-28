@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
 <link rel="stylesheet" href="wr_company/css/myPage.css">
-<link rel="stylesheet" href="wr_company/css/index.css">
 <link rel="stylesheet" href="wr_company/css/kanri.css">
 <link rel="stylesheet" href="wr_company/css/reviewList.css">
 <link rel="stylesheet" href="wr_company/css/modal.css">

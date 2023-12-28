@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 #reviewListContainer {
-  background-color: #ffffff;
+	background-color: #ffffff;
 	width: 70%;
 	height: 100%;
 	margin: 5em auto;
@@ -13,26 +13,30 @@
 }
 
 #reviewTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
 }
 
 #reviewTable th, #reviewTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
 }
 
 #reviewTable th {
-    background-color: #f2f2f2;
+	background-color: #f2f2f2;
 }
-.my_review_buttons{
-display:flex;
-justify-content: flex-end;
-align-items: center;
+
+.my_review_buttons {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 	font-size: 20px;
-	
-	
-	
+}
+
+textarea {
+	resize: none;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
 }
