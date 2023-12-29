@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/order.css">
-
+<link rel="stylesheet" href="wr_company/css/order.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>주문 상세 정보</title>
@@ -31,13 +31,14 @@
 			<tbody>
 				<c:forEach var="order" items="${userOrders }">
 					<tr>
-						<td><a id="openModalBtn" style="cursor: pointer;">${order.o_orderNum }</a></td>
+						<td><a class="openModalBtn" data-number="${order.o_no}"
+							style="cursor: pointer;">${order.o_orderNum }</a></td>
 						<td>${order.i_name }</td>
 						<td>${order.o_quantity }/${order.i_price }</td>
 						<td>${order.o_totalprice }</td>
 						<td>${order.o_status }</td>
 						<td>${order.o_date }</td>
-						<td><button id="openModalBtn2">作成</button>
+						<td><button class="openModalBtn2">作成</button>
 						<td><a>削除</a></td>
 					</tr>
 				</c:forEach>
@@ -163,9 +164,46 @@
 	<button id="closeModalBtn2" style="width: 100px; height: 50px;">X</button>
 	</dialog>
 
-	<script src="js/orderModal.js"></script>
-	<script src="js/orderModal2.js"></script>
-<script type="text/javascript" src="js/order.js"></script>
+	<script type="text/javascript" src="js/orderDetail.js"></script>
+	<script type="text/javascript">
+
+//주문 상세 모달
+$(function () {
+	
+
+const myModal = document.getElementById('myModal');
+let openModalBtn = document.querySelector('.openModalBtn');
+const closeModalBtn = document.getElementById('closeModalBtn');
+
+
+openModalBtn.addEventListener('click', () => {
+	myModal.showModal();
+});
+
+closeModalBtn.addEventListener('click', () => {
+	myModal.close();
+});
+
+
+//수정 모달
+const myModal2 = document.getEl('myModal2');
+let openModalBtn2 = document.querySelector('.openModalBtn2');
+const closeModalBtn2 = document.getElementById('closeModalBtn2');
+
+
+openModalBtn2.addEventListener('click', () => {
+	myModal2.showModal();
+});
+
+closeModalBtn2.addEventListener('click', () => {
+	myModal2.close();
+});
+
+
+});
+
+
+</script>
 
 </body>
 </html>
