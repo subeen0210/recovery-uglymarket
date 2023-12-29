@@ -40,3 +40,7 @@ textarea {
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
 }
+
+#delete {
+	cursor: pointer;
+}

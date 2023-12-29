@@ -61,11 +61,13 @@ body {
 	border: 1px solid #BDBDBD;
 	background-repeat: no-repeat;
 	font-size: 15pt;
+	cursor: pointer;
 }
 
 .filter.active{
 	background-color: #0B6121;
 	color: white;
+	cursor: pointer;
 }
 
 .category {
