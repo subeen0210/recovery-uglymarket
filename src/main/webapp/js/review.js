@@ -27,7 +27,7 @@ function showReviews(){
 			$(tr).append("<td>" + data[i].r_estimation + "</td>");
 			$(tr).append("<td>" + date + "</td>");
 			$(tr).append("<td>" + data[i].r_grade + "</td>");
-			$(tr).append("<td><button onclick='reviewDelete(" + data[i].r_no + ")'>削除</button></td>");
+			$(tr).append("<td><button onclick='reviewDelete(" + data[i].i_no + ")'>削除</button></td>");
 			$("#review-tbody").append(tr);
 		}
 	}).fail(function(jqXHR, textStatus, errorThrown) {
@@ -43,7 +43,7 @@ function reviewDelete(no) {
 			data: {no: no},
 			dataType: 'text',
 			success: function(res) {
-				alert('해당 제품이 삭제되었습니다.');
+				alert('해당 리뷰가 삭제되었습니다.');
 				location.reload();
 			},
 			error: function(error){

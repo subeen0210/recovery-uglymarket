@@ -107,33 +107,13 @@ public class ReviewDAO {
 		
 	}
 	
-	
-	public static void reviewSelect(HttpServletRequest request, HttpServletResponse res) {
+
+	// 개인 마이페이지 후기 삭제 기능
+	public static void reviewDelete(HttpServletRequest request) {
 		
 		HttpSession hs = request.getSession();
 		User user = (User) request.getSession().getAttribute("userAccount");
 		String no = request.getParameter("no");
-		
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = "select * from review where u_id = ? and i_no = ?";
-		
-		try {
-			con = DBManager.connect();
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, user.getU_id());
-			pstmt.setString(2, no);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			DBManager.close(con, pstmt, rs);
-		}
-	}
-	
-	
-	public static void reviewDelete(HttpServletRequest request) {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -142,8 +122,10 @@ public class ReviewDAO {
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, request.getParameter(""));
-			pstmt.setString(2, request.getParameter(""));
+			pstmt.setString(1, user.getU_id());
+			pstmt.setString(2, no);
+			System.out.println(no);
+			System.out.println(user.getU_id());
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("리뷰 삭제 성공");
@@ -159,6 +141,7 @@ public class ReviewDAO {
 	}
 	
 	
+	// 개인 마이페이지 후기 추가 기능
 	public static void addReview(HttpServletRequest request) {
 		
 		HttpSession hs = request.getSession();

@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="reviewListContainer">
-        <h1>レビュー管理リスト</h1>
+        <h1>後記リスト</h1>
 <!--         <div class="my_review_buttons"> -->
 <!--         </div> -->
         <table id="reviewTable">
@@ -19,7 +19,7 @@
                     <th>商品名</th>
                     <th>内容</th>
                     <th>作成日時</th>
-                    <th>スター</th>
+                    <th>点</th>
                     <th>削除</th>
                 </tr>
             </thead>
