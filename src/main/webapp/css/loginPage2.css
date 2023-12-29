@@ -51,6 +51,7 @@
 	top: 15px;
 	background: #64CD3C;
 	color: white;
+	cursor: pointer;
 }
 
 #closeModalBtn:hover {
@@ -100,6 +101,7 @@
 	background: #64CD3C;
 	padding: 5%;
 	color: white;
+	cursor: pointer;
 }
 
 .btn-set2:hover {

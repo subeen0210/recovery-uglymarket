@@ -15,6 +15,10 @@ body {
 	margin: 0;
 }
 
+button {
+	cursor: pointer;
+}
+
 /* 원준-헤더 */
 a {
 	text-decoration: none;
