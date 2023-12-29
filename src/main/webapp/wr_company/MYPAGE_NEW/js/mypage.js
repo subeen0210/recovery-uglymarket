@@ -22,7 +22,7 @@ function getPagePath(pageId) {
         case "register":
             return "wr_company/MYPAGE_NEW/register.jsp";
         case "delivery":
-            return "wr_company/MYPAGE_NEW/delivery.jsp";
+            return "SellerOrderC";
         case "stock":
             return "wr_company/MYPAGE_NEW/stock.jsp";
         case "mypage":

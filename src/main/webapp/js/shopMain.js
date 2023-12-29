@@ -76,7 +76,7 @@ function pagination(jsonArray) {
 				}
 				
 				dataHtml += '<div class="text-name"><span onclick="handleProductClick(\'' + item.i_no + '\', \'' + item.i_img + '\', \'' + item.i_name + '\', \'' + item.i_price + '\')">' + item.i_name + '</span></div>';
-				dataHtml += '<div class="text-price"><img class="money-icon" src="img/en-icon.png"><span onclick="handleProductClick(\'' + item.i_no + '\', \'' + item.i_img + '\', \'' + item.i_name + '\', \'' + item.i_price + '\')">' + item.i_price + '</span></div>';
+				dataHtml += '<div class="text-price"><span onclick="handleProductClick(\'' + item.i_no + '\', \'' + item.i_img + '\', \'' + item.i_name + '\', \'' + item.i_price + '\')">￥' + item.i_price + '</span></div>';
 				dataHtml += '</div>';
 			});
 			dataHtml += '</div>';

@@ -154,13 +154,13 @@ public class ReviewDAO {
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, request.getParameter("후기 내용"));
-			pstmt.setString(2, request.getParameter("날짜"));
-			pstmt.setString(3, request.getParameter("점수"));
+			pstmt.setString(1, request.getParameter("story"));
+			pstmt.setString(2, request.getParameter("date"));
+			pstmt.setString(3, request.getParameter("grade"));
 			pstmt.setString(4, user.getU_nicname());
-			pstmt.setString(5, request.getParameter("제품이름"));
+			pstmt.setString(5, request.getParameter("name"));
 			pstmt.setString(6, user.getU_id());
-			pstmt.setString(7, request.getParameter("제품 넘버"));
+			pstmt.setString(7, request.getParameter("no"));
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("리뷰 등록 성공");
