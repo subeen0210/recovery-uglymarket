@@ -168,6 +168,7 @@ body {
 	margin: 3px 5px;
 	font-family: 'Meiryo', serif;
       font-weight: bold;
+      cursor: pointer;
       
 }
 
@@ -175,6 +176,7 @@ body {
 	font-size: 1.4vw;
 	margin: 3px 5px;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .money-icon{
