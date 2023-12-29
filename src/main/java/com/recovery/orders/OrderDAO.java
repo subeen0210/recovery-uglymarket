@@ -174,51 +174,10 @@ public class OrderDAO {
 		
 		String sql = "SELECT o.*, i.i_name, i.i_category, i.i_price, i.i_ed " + "FROM orders o "
 				+ "JOIN item i ON o.i_no = i.i_no " + "WHERE o.u_id = ? ORDER BY o_no DESC";
-		String orderDetail = "SELECT o.*, i.i_name, i.i_category, i.i_price, i.i_ed FROM orders o "
-				+ "JOIN item i ON o.i_no = i.i_no " + "WHERE o.o_no = ? ";
 		
 		Order order = null;
 		try {
 			con = DBManager.connect();
-			String index = request.getParameter("index");
-			if (index != null) {
-
-				pstmt = con.prepareStatement(orderDetail);
-				pstmt.setString(1, index);
-				rs = pstmt.executeQuery();
-				
-				if (rs.next()) {
-					Order order2 = new Order();
-					order2.setO_no(rs.getInt("o_no"));
-					order2.setO_orderNum(rs.getString("o_orderNum"));
-					order2.setI_no(rs.getInt("i_no"));
-					order2.setO_name(rs.getString("o_name"));
-					order2.setO_addrNum(rs.getString("o_addrNum"));
-					order2.setO_addr(rs.getString("o_addr"));
-					order2.setO_tel(rs.getString("o_tel"));
-					order2.setO_arrival(rs.getString("o_arrival"));
-					order2.setO_quantity(rs.getInt("o_quantity"));
-					order2.setO_totalprice(rs.getInt("o_totalprice"));
-					order2.setO_status(rs.getString("o_status"));
-					order2.setO_date(rs.getDate("o_date"));
-					order2.setI_name(rs.getString("i_name"));
-					order2.setI_category(rs.getInt("i_category"));
-					order2.setI_price(rs.getInt("i_price"));
-					order2.setI_ed(rs.getDate("i_ed"));
-					
-					
-					Gson g = new Gson();
-					String jsonData = g.toJson(order2);
-					response.setContentType("application/json");
-					response.setCharacterEncoding("UTF-8");
-					response.getWriter().write(jsonData);
-					System.out.println(jsonData);
-					System.out.println("상품디테일 성공");
-					
-					pstmt.close();
-					rs.close();
-				}
-			}
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, user.getU_id());
 			rs = pstmt.executeQuery();
@@ -258,8 +217,8 @@ public class OrderDAO {
 		ResultSet rs = null;
 		
 		String index = request.getParameter("index");
-		String orderDetail = "SELECT o.*, i.i_name, i.i_category, i.i_price, i.i_ed FROM orders o "
-				+ "JOIN item i ON o.i_no = i.i_no WHERE o.o_no = ?";
+		String orderDetail = "SELECT o.*, i.i_name, i.i_category, i.i_price, i.i_ed, s.s_f_name FROM orders o "
+				+ "JOIN item i ON o.i_no = i.i_no JOIN seller s ON i.s_id = s.s_id WHERE o.o_no = ?";
 		
 		try {
 			con = DBManager.connect();
@@ -286,6 +245,7 @@ public class OrderDAO {
 					order.setI_category(rs.getInt("i_category"));
 					order.setI_price(rs.getInt("i_price"));
 					order.setI_ed(rs.getDate("i_ed"));
+					order.setF_name(rs.getString("s_f_name"));
 					
 					Gson g = new Gson();
 					String jsonData = g.toJson(order);
