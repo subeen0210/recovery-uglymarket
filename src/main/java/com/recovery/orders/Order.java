@@ -19,6 +19,7 @@ public class Order {
 	private int i_category;
 	private int i_price;	
 	private Date i_ed;
+	private String f_name;
 	
 	public Order() {
 		// TODO Auto-generated constructor stub
@@ -26,7 +27,7 @@ public class Order {
 
 	public Order(int o_no, String o_orderNum, int i_no, String o_name, String o_addrNum, String o_addr, String o_tel,
 			String o_arrival, int o_quantity, int o_totalprice, String o_status, Date o_date, String i_name,
-			int i_category, int i_price, Date i_ed) {
+			int i_category, int i_price, Date i_ed, String f_name) {
 		super();
 		this.o_no = o_no;
 		this.o_orderNum = o_orderNum;
@@ -44,6 +45,7 @@ public class Order {
 		this.i_category = i_category;
 		this.i_price = i_price;
 		this.i_ed = i_ed;
+		this.f_name = f_name;
 	}
 
 	public int getO_no() {
@@ -172,6 +174,14 @@ public class Order {
 
 	public void setI_ed(Date i_ed) {
 		this.i_ed = i_ed;
+	}
+
+	public String getF_name() {
+		return f_name;
+	}
+
+	public void setF_name(String f_name) {
+		this.f_name = f_name;
 	}
 	
 }

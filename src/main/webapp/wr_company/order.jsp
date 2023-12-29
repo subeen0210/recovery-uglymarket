@@ -60,29 +60,29 @@
 			<table class="order-info">
 				<tr>
 					<td class="label">農場名</td>
-					<td class="value">栃木イチゴ組合</td>
+					<td class="value" id="f_name"></td>
 
 				</tr>
 				<tr>
 					<td class="label">商品名</td>
-					<td class="value">可愛いイチゴㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</td>
+					<td class="value" id="i_name"></td>
 				</tr>
 				<tr>
 					<td class="label">カテゴリ</td>
-					<td class="value">ふつう</td>
+					<td class="value" id="i_category"></td>
 				</tr>
 
 				<tr>
-					<td class="label">個数</td>
-					<td class="value">2</td>
+					<td class="label">数量</td>
+					<td class="value" id="o_quantity"></td>
 				</tr>
 				<tr>
 					<td class="label">個別価格</td>
-					<td class="value">￥1,000</td>
+					<td class="value" id="i_price"></td>
 				</tr>
 				<tr>
 					<td class="label">賞味期限</td>
-					<td class="value">2023-12-31</td>
+					<td class="value" id="i_ed"></td>
 				</tr>
 				<!-- 다른 주문 정보 항목들 추가 -->
 			</table>
@@ -93,28 +93,24 @@
 			<table class="customer-info">
 				<tr>
 					<td class="label">受取人</td>
-					<td class="value">山田太郎</td>
+					<td class="value" id="o_name"></td>
 				</tr>
 				<tr>
 					<td class="label">電話番号</td>
-					<td class="value">080-1234-5678</td>
+					<td class="value" id="o_tel"></td>
 				</tr>
 				<tr>
 					<td class="label">到着時間</td>
-					<td class="value">午前8時～11時</td>
+					<td class="value" id="o_arrival"></td>
 				</tr>
 				<tr>
 					<td class="label">住所</td>
-					<td class="value">神奈川県座間市相模が丘<br>(252-0001)
+					<td class="value" id="o_addr"><br>(252-0001)
 					</td>
 				</tr>
 				<tr>
 					<td class="label">注文日</td>
-					<td class="value">2023-12-20</td>
-				</tr>
-				<tr>
-					<td class="label">配送情報</td>
-					<td class="value">配達代理店に到着</td>
+					<td class="value" id="o_date"></td>
 				</tr>
 				<!-- 다른 고객 정보 항목들 추가 -->
 			</table>
@@ -165,45 +161,6 @@
 	</dialog>
 
 	<script type="text/javascript" src="js/orderDetail.js"></script>
-	<script type="text/javascript">
-
-//주문 상세 모달
-$(function () {
-	
-
-const myModal = document.getElementById('myModal');
-let openModalBtn = document.querySelector('.openModalBtn');
-const closeModalBtn = document.getElementById('closeModalBtn');
-
-
-openModalBtn.addEventListener('click', () => {
-	myModal.showModal();
-});
-
-closeModalBtn.addEventListener('click', () => {
-	myModal.close();
-});
-
-
-//수정 모달
-const myModal2 = document.getEl('myModal2');
-let openModalBtn2 = document.querySelector('.openModalBtn2');
-const closeModalBtn2 = document.getElementById('closeModalBtn2');
-
-
-openModalBtn2.addEventListener('click', () => {
-	myModal2.showModal();
-});
-
-closeModalBtn2.addEventListener('click', () => {
-	myModal2.close();
-});
-
-
-});
-
-
-</script>
 
 </body>
 </html>
