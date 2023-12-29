@@ -125,7 +125,7 @@
 		</section>
 
 
-		<button class="modify" id="modify" style="display: none;">修正</button>
+		<button class="modify" id="modify" value="" style="display: none;">修正</button>
 
 	</div>
 	<br>
