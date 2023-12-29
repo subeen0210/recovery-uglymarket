@@ -149,9 +149,10 @@
 						<td class="value"><input type="text" id="grade" name="grade"></td>
 					</tr>
 					<tr>
-						<input type="date" id="date" name="date">
+						
 
 						<td style="width: 200px; height: 50px;" class="label">作成日
+						
 						</td>
 						<td class="value"><input type="date" id="date" name="date"></td>
 
