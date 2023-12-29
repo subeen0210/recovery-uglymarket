@@ -12,13 +12,9 @@ $(function() {
 
 	//수정 모달
 	const myModal2 = document.getElementById('myModal2');
-	let openModalBtn2 = document.querySelector('.openModalBtn2');
 	const closeModalBtn2 = document.getElementById('closeModalBtn2');
 
 
-	openModalBtn2.addEventListener('click', () => {
-		myModal2.showModal();
-	});
 
 	closeModalBtn2.addEventListener('click', () => {
 		myModal2.close();
@@ -29,8 +25,7 @@ $(function() {
 
 
 
-
-	console.log("order.js loaded ======");
+	// 주문상세 확인 모달 기능
 	$('.openModalBtn').on('click', function() {
 		let index = $(this).data('number');
 		console.log(index);
@@ -50,10 +45,11 @@ $(function() {
 				// 원하는 날짜 형식으로 포맷팅
 				let formattedDate = formatDate(dateObject);
 				let formattAddrDate = formatDate(addrDate);
-
+				
+				let category = data.i_category == 1 ? "アグリー" : "普通";
 				$("#f_name").text(data.f_name);
 				$("#i_name").text(data.i_name);
-				$("#i_category").text(data.i_category);
+				$("#i_category").text(category);
 				$("#o_quantity").text(data.o_quantity);
 				$("#i_price").text("￥" + data.i_price);
 				$("#i_ed").text(formattedDate);
@@ -61,7 +57,7 @@ $(function() {
 				$("#o_name").text(data.o_name);
 				$("#o_tel").text(data.o_tel);
 				$("#o_arrival").text(data.o_arrival);
-				$("#o_addr").text(data.o_addr);
+				$("#o_addr").html(data.o_addr + "<br>(" + data.o_addrNum + ")");
 				$("#o_date").text(formattAddrDate);
 				
 				myModal.showModal();
@@ -71,6 +67,25 @@ $(function() {
 			}
 		});
 	});
+	
+	// 후기 작성 모달 기능
+	$('.openModalBtn2').on('click', function() {
+		let index = $(this).data('no');
+		console.log(index);
+		console.log(typeof (index));
+		
+		$.ajax({
+			type: 'get',
+			datatype: 'json',
+			url: 'UserOrderC?index=' + index,
+			success: function(data) {
+				$("#r_productname").text(data.i_name);
+				
+				myModal2.showModal();
+			}
+		});
+	});
+	
 });
 
 function formatDate(date) {
