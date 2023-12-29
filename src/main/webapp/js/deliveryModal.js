@@ -16,8 +16,8 @@ $(function() {
 		$.ajax({
 			type: 'post',
 			datatype: 'json',
-			url: 'sellerOrderC',// 실제 서버로의 경로로 변경해야 합니다.
-			data: index,
+			url: 'SellerOrderC',// 실제 서버로의 경로로 변경해야 합니다.
+			data: {no: index},
 			success: function(data) {
 				console.log(data.i_name);
 
@@ -29,7 +29,6 @@ $(function() {
 				let formattAddrDate = formatDate(addrDate);
 
 				let category = data.i_category == 1 ? "アグリー" : "普通";
-				$("#f_name").text(data.f_name);
 				$("#i_name").text(data.i_name);
 				$("#i_category").text(category);
 				$("#o_quantity").text(data.o_quantity);
@@ -50,3 +49,10 @@ $(function() {
 		});
 	});
 });
+
+function formatDate(date) {
+	let year = date.getFullYear();
+	let month = (date.getMonth() + 1).toString().padStart(2, '0');
+	let day = date.getDate().toString().padStart(2, '0');
+	return year + "-" + month + "-" + day;
+}

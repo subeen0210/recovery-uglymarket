@@ -316,7 +316,57 @@ public class OrderDAO {
 	}
 
 	public static void sellerOrderDetail(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		
+		String no = request.getParameter("no");
+		System.out.println(no);
+		String orderDetail = "SELECT o.*, i.i_name, i.i_category, i.i_price, i.i_ed FROM orders o "
+				+ "JOIN item i ON o.i_no = i.i_no JOIN seller s ON i.s_id = s.s_id WHERE o.o_no = ?";
+		
+		try {
+			con = DBManager.connect();
+
+				pstmt = con.prepareStatement(orderDetail);
+				pstmt.setString(1, no);
+				rs = pstmt.executeQuery();
+				
+				if (rs.next()) {
+					Order order = new Order();
+					order.setO_no(rs.getInt("o_no"));
+					order.setO_orderNum(rs.getString("o_orderNum"));
+					order.setI_no(rs.getInt("i_no"));
+					order.setO_name(rs.getString("o_name"));
+					order.setO_addrNum(rs.getString("o_addrNum"));
+					order.setO_addr(rs.getString("o_addr"));
+					order.setO_tel(rs.getString("o_tel"));
+					order.setO_arrival(rs.getString("o_arrival"));
+					order.setO_quantity(rs.getInt("o_quantity"));
+					order.setO_totalprice(rs.getInt("o_totalprice"));
+					order.setO_status(rs.getString("o_status"));
+					order.setO_date(rs.getDate("o_date"));
+					order.setI_name(rs.getString("i_name"));
+					order.setI_category(rs.getInt("i_category"));
+					order.setI_price(rs.getInt("i_price"));
+					order.setI_ed(rs.getDate("i_ed"));
+					
+					Gson g = new Gson();
+					String jsonData = g.toJson(order);
+					response.setContentType("application/json");
+					response.setCharacterEncoding("UTF-8");
+					response.getWriter().write(jsonData);
+					System.out.println(jsonData);
+					System.out.println("상품디테일 성공");
+					
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("유저 주문내역 조회 실패");
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
 	}
 		
 	

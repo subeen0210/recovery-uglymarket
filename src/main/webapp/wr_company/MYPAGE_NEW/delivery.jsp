@@ -65,24 +65,24 @@
 			<table class="order-info">
 				<tr>
 					<td class="label">商品名</td>
-					<td class="value">可愛いイチゴ</td>
+					<td class="value" id="i_name"></td>
 				</tr>
 				<tr>
 					<td class="label">カテゴリ</td>
-					<td class="value">ふつう</td>
+					<td class="value" id="i_category">ふつう</td>
 				</tr>
 
 				<tr>
-					<td class="label">個数</td>
-					<td class="value">2</td>
+					<td class="label">数量</td>
+					<td class="value" id="o_quantity">2</td>
 				</tr>
 				<tr>
 					<td class="label">個別価格</td>
-					<td class="value">￥1,000</td>
+					<td class="value" id="i_price">￥1,000</td>
 				</tr>
 				<tr>
 					<td class="label">賞味期限</td>
-					<td class="value">2023-12-31</td>
+					<td class="value" id="i_ed">2023-12-31</td>
 				</tr>
 				<!-- 다른 주문 정보 항목들 추가 -->
 			</table>
@@ -93,34 +93,31 @@
 			<table class="customer-info">
 				<tr>
 					<td class="label">受取人</td>
-					<td class="value">山田太郎</td>
+					<td class="value" id="o_name"></td>
 				</tr>
 				<tr>
 					<td class="label">電話番号</td>
-					<td class="value">080-1234-5678</td>
+					<td class="value" id="o_tel"></td>
 				</tr>
 				<tr>
 					<td class="label">到着時間</td>
-					<td class="value">午前8時～11時</td>
+					<td class="value" id="o_arrival"></td>
 				</tr>
 				<tr>
 					<td class="label">住所</td>
-					<td class="value">神奈川県座間市相模が丘<br>(252-0001)
-					</td>
+					<td class="value" id="o_addr"></td>
 				</tr>
 				<tr>
 					<td class="label">注文日</td>
-					<td class="value">2023-12-20</td>
+					<td class="value" id="o_date"></td>
 				</tr>
 				<tr>
 					<td class="label">配送情報</td>
 
-					<td class="value"><select class="select_button" id="status"
-						onchange="handleSelectChange(this)">
+					<td class="value"><select class="select_button" id="status">
 							<option value="data0">注文完了</option>
 							<option value="data1">発送完了</option>
 							<option value="data2">配送完了</option>
-
 					</select>
 				</tr>
 
