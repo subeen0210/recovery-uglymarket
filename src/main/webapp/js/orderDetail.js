@@ -12,13 +12,9 @@ $(function() {
 
 	//수정 모달
 	const myModal2 = document.getElementById('myModal2');
-	let openModalBtn2 = document.querySelector('.openModalBtn2');
 	const closeModalBtn2 = document.getElementById('closeModalBtn2');
 
 
-	openModalBtn2.addEventListener('click', () => {
-		myModal2.showModal();
-	});
 
 	closeModalBtn2.addEventListener('click', () => {
 		myModal2.close();
@@ -29,9 +25,7 @@ $(function() {
 
 
 
-
-
-	console.log("order.js loaded ======");
+	// 주문상세 확인 모달 기능
 	$('.openModalBtn').on('click', function() {
 		let index = $(this).data('number');
 		console.log(index);
@@ -73,6 +67,25 @@ $(function() {
 			}
 		});
 	});
+	
+	// 후기 작성 모달 기능
+	$('.openModalBtn2').on('click', function() {
+		let index = $(this).data('no');
+		console.log(index);
+		console.log(typeof (index));
+		
+		$.ajax({
+			type: 'get',
+			datatype: 'json',
+			url: 'UserOrderC?index=' + index,
+			success: function(data) {
+				$("#r_productname").text(data.i_name);
+				
+				myModal2.showModal();
+			}
+		});
+	});
+	
 });
 
 function formatDate(date) {
