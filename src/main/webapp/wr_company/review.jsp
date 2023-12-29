@@ -29,7 +29,6 @@
         </table>
     </div>
 
-<!--     <script src="wr_company/js/reviewList.js"></script> -->
 </body>
 
 </html>
