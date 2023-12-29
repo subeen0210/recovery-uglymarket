@@ -165,6 +165,7 @@
 		document.querySelector("input[name='userTel3'").value = telParts[2];
 	});
 
+	
 	document.getElementById("password-change-button").addEventListener("click",
 			function() {
 				// Open the dialog

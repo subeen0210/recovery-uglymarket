@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/upSeller.css" />
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/upSeller.css">
+
 <script src="https://code.jquery.com/jquery-3.7.0.js"
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
@@ -157,8 +158,7 @@
 			</div>
 		</div>
 	</form>
-	<!-- 비밀번호 찾기 modal -->
-	<dialog id="password-modal" >
+	<dialog id="password-modal">
 	<div class="btn-size-close">
 		<a id="close-button">X</a>
 	</div>
@@ -193,10 +193,9 @@
 			onclick="return passwordChange();">パスワード変更</a>
 	</div>
 	</dialog>
-	<script type="text/javascript" src="js/regUserModal.js"></script>
 	<!-- 비밀번호 찾기 modal 끝 -->
 </body>
-
+	
 	
 <script type="text/javascript" src="js/regUser1.js"></script>
 <script type="text/javascript">
@@ -235,7 +234,25 @@
 		/* 분리 끝 */
 
 	});
+	
+// 	document.getElementById("password-change-button").addEventListener('click', function() {
+// 		  document.getElementById('password-modal').style.display = 'flex'; // 또는 'block'
+// 		});	
+	
+	
+	document.getElementById("password-change-button").addEventListener("click",
+			function() {
+				// Open the dialog
+				document.getElementById("password-modal").showModal();
+			});
 
+	document.getElementById("close-button").addEventListener("click",
+			function() {
+
+				// Close the dialog
+				document.getElementById("password-modal").close();
+			});
 	
 </script>
+
 </html>
