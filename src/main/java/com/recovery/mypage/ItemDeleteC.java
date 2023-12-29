@@ -22,7 +22,6 @@ public class ItemDeleteC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		ItemDAO.deleteItem(request);
-		AccountDAO.loginCheck(request);
 		response.sendRedirect("SellerMypageC");
 		
 	}
