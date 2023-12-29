@@ -7,3 +7,4 @@ document.getElementById('password-change-button').addEventListener('click', func
 document.getElementById('close-button').addEventListener('click', function() {
     document.getElementById('password-modal').close();
 });
+
