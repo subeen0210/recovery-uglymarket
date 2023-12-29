@@ -5,11 +5,9 @@
 <html>
 <head>
 <link rel="stylesheet" href="wr_company/css/order.css">
-<<<<<<< HEAD
 
-=======
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
->>>>>>> 0d68ce469efeb146ffd08033ba78f16ac27ad7a9
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>주문 상세 정보</title>
@@ -33,19 +31,8 @@
 				</tr>
 			</thead>
 			<tbody>
-<<<<<<< HEAD
-				<tr>
-					<td><a id="openModalBtn" style="cursor: pointer;">56465</a></td>
-					<td>可愛いイチゴ</td>
-					<td>2/1000</td>
-					<td>2000</td>
-					<td>注文完了</td>
-					<td>2023-12-30</td>
-					<td><button id="openModalBtn2">作成</button>
-					<td><a>削除</a></td>
-				</tr>
-				
-=======
+
+
 				<c:forEach var="order" items="${userOrders }">
 					<tr>
 						<td><a class="openModalBtn" data-number="${order.o_no}"
@@ -59,7 +46,7 @@
 						<td><a>削除</a></td>
 					</tr>
 				</c:forEach>
->>>>>>> 0d68ce469efeb146ffd08033ba78f16ac27ad7a9
+
 
 
 
@@ -150,40 +137,39 @@
 	<!-- 2번째 modal 창 -->
 
 	<dialog id="myModal2">
-	
-	<div class="main_modal">
-<form id="myForm" action="" method="post">
-		<section class="order-details">
-			<h2>後記作成</h2>
-			<table class="order-info">
-				<tr>
-					<td class="label">商品名</td>
-					<td class="value">可愛いイチゴ</td>
 
-				</tr>
-				<tr>
-					<td class="label">評点</td>
-					<td class="value"><input type="text" id="grade" name="grade"></td>
-				</tr>
-				<tr>
-<<<<<<< HEAD
-					<td class="label">作成日<td>
-					<input type="date" id="date" name="date">
-=======
-					<td style="width: 200px; height: 50px;" class="label">作成日
-					<td>
-					<td class="value"><input type="date" id="date" name="date"></td>
->>>>>>> 0d68ce469efeb146ffd08033ba78f16ac27ad7a9
-				</tr>
-				<tr>
-					<td class="label">内容</td>
-					<td class="value"><textarea rows="4" cols="50">이곳에 텍스트를 입력하세요.</textarea></td>
-				</tr>
-			
-			</table>
-				<button type="button" id="myButton" onclick="submitForm('buttonIdValue')">作成</button>
-		</section>
-</form>
+	<div class="main_modal">
+		<form id="myForm" action="" method="post">
+			<section class="order-details">
+				<h2>後記作成</h2>
+				<table class="order-info">
+					<tr>
+						<td class="label">商品名</td>
+						<td class="value">可愛いイチゴ</td>
+
+					</tr>
+					<tr>
+						<td class="label">評点</td>
+						<td class="value"><input type="text" id="grade" name="grade"></td>
+					</tr>
+					<tr>
+						<input type="date" id="date" name="date">
+
+						<td style="width: 200px; height: 50px;" class="label">作成日
+						</td>
+						<td class="value"><input type="date" id="date" name="date"></td>
+
+					</tr>
+					<tr>
+						<td class="label">内容</td>
+						<td class="value"><textarea rows="4" cols="50">이곳에 텍스트를 입력하세요.</textarea></td>
+					</tr>
+
+				</table>
+				<button type="button" id="myButton"
+					onclick="submitForm('buttonIdValue')">作成</button>
+			</section>
+		</form>
 	</div>
 	<br>
 	<button class="closeBtn2" id="closeModalBtn2">X</button>
@@ -211,7 +197,7 @@ closeModalBtn.addEventListener('click', () => {
 
 
 //수정 모달
-const myModal2 = document.getEl('myModal2');
+const myModal2 = document.getElementById('myModal2');
 let openModalBtn2 = document.querySelector('.openModalBtn2');
 const closeModalBtn2 = document.getElementById('closeModalBtn2');
 

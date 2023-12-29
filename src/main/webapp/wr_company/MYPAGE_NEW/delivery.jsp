@@ -6,7 +6,6 @@
 <link rel="stylesheet"
 	href="wr_company/MYPAGE_NEW/css/delivery.css">
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/index.css">
-<script src="js/button.js"></script>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -34,7 +33,7 @@
 			<tbody>
 
 				<tr>
-					<td><a id="openModalBtn">485244</a></td>
+					<td><a style="cursor: pointer;" id="openModalBtn">485244</a></td>
 					<td>못난이감자</td>
 					<td>2</td>
 					<td>20000</td>
@@ -120,10 +119,7 @@
 						<option value="data3">配送完了</option>
 						
 					</select>
-					<button class="delete_button" style="display: none;"
-						onclick="handleDelete()">Delete</button>
-					</td>
-					
+				
 					
 				
 					
