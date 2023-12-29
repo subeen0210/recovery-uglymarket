@@ -113,19 +113,19 @@
 				</tr>
 				<tr>
 					<td class="label">配送情報</td>
-
-					<td class="value"><select class="select_button" id="status">
-							<option value="data0">注文完了</option>
-							<option value="data1">発送完了</option>
-							<option value="data2">配送完了</option>
-					</select>
+					<td class="value" id="o_statusEnd" style="display: none;">配送完了</td>
+					<td class="value" id="o_status" style="display: none;"><select class="select_button" id="status">
+							<option value="status0">注文完了</option>
+							<option value="status1">発送完了</option>
+							<option value="status2">配送完了</option>
+					</select></td>
 				</tr>
 
 			</table>
 		</section>
 
 
-		<button class="modify" id="modify">修正</button>
+		<button class="modify" id="modify" style="display: none;">修正</button>
 
 	</div>
 	<br>

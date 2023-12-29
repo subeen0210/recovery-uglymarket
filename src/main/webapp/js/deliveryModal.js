@@ -40,7 +40,19 @@ $(function() {
 				$("#o_arrival").text(data.o_arrival);
 				$("#o_addr").html(data.o_addr + "<br>(" + data.o_addrNum + ")");
 				$("#o_date").text(formattAddrDate);
-
+				
+				let status = 'status0'
+				$('#o_status').show();
+				$('#o_statusEnd').hide();
+				$('#modify').show();
+				if(data.o_status == "発送完了"){
+					status = 'status1'
+				} else if(data.o_status == "配送完了"){
+					$('#o_status').hide();
+					$('#o_statusEnd').show();
+					$('#modify').hide();
+				}
+				$('#status').val(status).prop("selected",true);
 				myModal.showModal();
 			},
 			error: function() {
