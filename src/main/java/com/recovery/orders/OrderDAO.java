@@ -295,8 +295,8 @@ public class OrderDAO {
 				order.setI_name(rs.getString("i_name"));
 				order.setO_quantity(rs.getInt("o_quantity"));
 				order.setO_totalprice(rs.getInt("o_totalprice"));
-				order.setI_name(rs.getString("o_name"));
-				order.setO_totalprice(rs.getInt("o_addr"));
+				order.setO_name(rs.getString("o_name"));
+				order.setO_addr(rs.getString("o_addr"));
 				order.setO_status(rs.getString("o_status"));
 				order.setO_date(rs.getDate("o_date"));
 				orders.add(order);
