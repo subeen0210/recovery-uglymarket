@@ -30,6 +30,7 @@ $(function() {
 
 
 
+
 	console.log("order.js loaded ======");
 	$('.openModalBtn').on('click', function() {
 		let index = $(this).data('number');
@@ -62,7 +63,7 @@ $(function() {
 				$("#o_name").text(data.o_name);
 				$("#o_tel").text(data.o_tel);
 				$("#o_arrival").text(data.o_arrival);
-				$("#o_addr").text(data.o_addr);
+				$("#o_addr").html(data.o_addr + "<br>(" + data.o_addrNum + ")");
 				$("#o_date").text(formattAddrDate);
 				
 				myModal.showModal();
