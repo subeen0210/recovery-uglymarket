@@ -50,7 +50,7 @@
 	<br><br>
 	<div class="item-review">
 		<div class="review-title">
-			<div class="review-text">レビュー</div>
+			<div class="review-text">後記</div>
 			<div id="star-rating">
 				<div class="star" data-value="5">&#9733;</div>
 				<div class="star" data-value="4">&#9733;</div>
@@ -65,13 +65,13 @@
 				</div>
 			</div>
 		</div>
-		<br />
+		<br>
 		<div id="review-input" class="review-input">
 		<c:forEach var="review" items="${reviews }">
 			<div class="input-menu">
 			<div class="usernameDisplay">作成者: ${review.r_nickname }</div>
-			<div class="input-date">날짜: ${review.r_date }</div>
-			<div class="input-grade">총점: ${review.r_grade }</div>
+			<div class="input-date">作成日: ${review.r_date }</div>
+			<div class="input-grade">点: ${review.r_grade }</div>
 			</div>
 			<div class="input-text">${review.r_estimation }</div>
 		</c:forEach>
