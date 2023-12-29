@@ -16,7 +16,7 @@ public class HC extends HttpServlet {
 		
 		
 		AccountDAO.loginCheck(request);
-		request.setAttribute("contentPage", "wj/home.jsp");
+		request.setAttribute("contentPage", "wj/home2.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
