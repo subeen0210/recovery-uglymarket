@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet"
-	href="wr_company/MYPAGE_NEW/css/delivery.css">
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/index.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/delivery.css">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="js/deliveryModal.js"></script>
+
 </head>
 <body>
 
@@ -34,18 +36,19 @@
 				</tr>
 			</thead>
 			<tbody>
-
-				<tr>
-					<td><a style="cursor: pointer;" id="openModalBtn">485244</a></td>
-					<td>못난이감자</td>
-					<td>2</td>
-					<td>20000</td>
-					<td>이름</td>
-					<td>神奈川県横浜市</td>
-					<td>注文完了</td>
-					<td>2023-03-03</td>
-				</tr>
-
+				<c:forEach var="order" items="${sellerOrders }">
+					<tr>
+						<td><a class="openModalBtn" data-number="${order.o_no}"
+							style="cursor: pointer;">${order.o_orderNum }</a></td>
+						<td>${order.i_name }</td>
+						<td>${order.o_quantity }</td>
+						<td>${order.o_totalprice }</td>
+						<td>${order.o_name }</td>
+						<td>${order.o_addr }</td>
+						<td>${order.o_status }</td>
+						<td>${order.o_date }</td>
+					</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 
@@ -60,11 +63,6 @@
 		<section class="order-details">
 			<h2>商品情報</h2>
 			<table class="order-info">
-				<tr>
-					<td class="label">農場名</td>
-					<td class="value">栃木イチゴ組合</td>
-					
-				</tr>
 				<tr>
 					<td class="label">商品名</td>
 					<td class="value">可愛いイチゴ</td>
@@ -107,7 +105,8 @@
 				</tr>
 				<tr>
 					<td class="label">住所</td>
-					<td class="value">神奈川県座間市相模が丘<br>(252-0001)</td>
+					<td class="value">神奈川県座間市相模が丘<br>(252-0001)
+					</td>
 				</tr>
 				<tr>
 					<td class="label">注文日</td>
@@ -115,32 +114,25 @@
 				</tr>
 				<tr>
 					<td class="label">配送情報</td>
-					
-					<td class="value">
-					<select class="select_button" id="status"
+
+					<td class="value"><select class="select_button" id="status"
 						onchange="handleSelectChange(this)">
-						<option value="data0">注文完了</option>
-						<option value="data1">発送完了</option>
-						<option value="data2">配送完了</option>
-						
+							<option value="data0">注文完了</option>
+							<option value="data1">発送完了</option>
+							<option value="data2">配送完了</option>
+
 					</select>
-				
-					
-				
-					
 				</tr>
-				
+
 			</table>
 		</section>
 
 
-<button class="modify" id="modify">修正</button>
+		<button class="modify" id="modify">修正</button>
 
 	</div>
 	<br>
 	<button id="closeModalBtn">X</button>
 	</dialog>
-
-	<script src="js/deliveryModal.js"></script>
 </body>
 </html>

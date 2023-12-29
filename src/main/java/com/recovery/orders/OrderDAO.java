@@ -314,6 +314,10 @@ public class OrderDAO {
 			DBManager.close(con, pstmt, rs);
 		}
 	}
+
+	public static void sellerOrderDetail(HttpServletRequest request, HttpServletResponse response) {
+		
+	}
 		
 	
 	

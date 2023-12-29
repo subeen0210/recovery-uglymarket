@@ -15,7 +15,7 @@ public class SellerOrderC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		OrderDAO.sellerOrderDetail(request,response);
 	}
 
 }
