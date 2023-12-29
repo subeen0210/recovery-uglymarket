@@ -58,9 +58,11 @@
 	<!-- 	</form> -->
 	<!-- 모달 창 (결제 끝났을 때, 이동할 부분)-->
 	<dialog id="paymentEndPage">
-	<h2>결제가 완료되었습니다. 마이페이지로 이동하시겠습니까?</h2>
-	<a href="UserMypageC">마이페이지</a>
-	<a href="HC">홈</a>
+	<h2 class="dialog-title">決定が完了しました。マイページに移動しますか？</h2><br><br>
+	<div class="dialog-set-btn">
+	<a class="btnPush2 btn-3d-2" href="UserMypageC">マイページ</a>
+	<a class="btnPush3 btn-3d-3" href="HC">ホーム</a>
+	</div>
 	</dialog>
 
 	<script>
