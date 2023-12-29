@@ -158,9 +158,9 @@
 			</div>
 		</div>
 	</form>
-	<dialog id="password-modal">
+	<dialog id="password-modal" style="border: none;">
 	<div class="btn-size-close">
-		<a id="close-button">X</a>
+		<a id="close-button" style="cursor: pointer;">X</a>
 	</div>
 	<div class="modal-content">
 		<div class="content1">
