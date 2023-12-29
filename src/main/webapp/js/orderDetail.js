@@ -29,8 +29,7 @@ $(function() {
 
 
 
-
-	console.log("order.js loaded ======");
+	// 주문상세 확인 모달 기능
 	$('.openModalBtn').on('click', function() {
 		let index = $(this).data('number');
 		console.log(index);
@@ -71,6 +70,49 @@ $(function() {
 			}
 		});
 	});
+	
+	// 후기 작성 모달 기능
+	$('.openModalBtn2').on('click', function() {
+		var formData = new FormData();
+		
+		let no = $(this).data('no');
+		let productname = $(".order-productname").text();
+		let grade = $("input[name:'grade']").val();
+		let date = $("input[name: 'date']").val();
+		let story = $("textarea[name: 'r-story']").val();
+		console.log(no);
+		console.log(productname);
+		console.log(grade);
+		console.log(date);
+		console.log(story);
+		
+		formData.append('name', productname);
+		formData.append('story', story);
+		formData.append('no', no);
+		formData.append('grade', grade);
+		formData.append('date', date);
+		
+		$.ajax({
+			url: 'ReviewAddC',
+			data: formData,
+			processData: false,
+			contentType: false,
+			success: function (res) {
+				console.log(res);
+				if (res == 1) {
+					alert("후기가 등록되었습니다.");
+					window.location.href = 'UserMypageC';
+				} else {
+					alert('후기 등록 실패');
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+   			console.error('AJAX 오류:', textStatus, errorThrown);
+			}
+		});
+		
+	});
+	
 });
 
 function formatDate(date) {
