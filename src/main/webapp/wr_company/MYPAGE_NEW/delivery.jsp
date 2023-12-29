@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet"
-	href="wr_company/MYPAGE_NEW/css/delivery.css">
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/index.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/delivery.css">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="js/deliveryModal.js"></script>
+
 </head>
 <body>
 
@@ -17,7 +19,7 @@
 
 
 
-		<h2>배송 리스트</h2>
+		<h2>配送リスト</h2>
 
 		<table border="1">
 			<thead>
@@ -26,21 +28,27 @@
 					<th>商品名</th>
 					<th>注文量</th>
 					<th>価格</th>
+					<th>受取人</th>
 					<th>住所</th>
+					<th>配送状態</th>
+					<th>注文時間</th>
 
 				</tr>
 			</thead>
 			<tbody>
-
-				<tr>
-					<td><a style="cursor: pointer;" id="openModalBtn">485244</a></td>
-					<td>못난이감자</td>
-					<td>2</td>
-					<td>20000</td>
-					<td>神奈川県横浜市</td>
-				</tr>
-
-
+				<c:forEach var="order" items="${sellerOrders }">
+					<tr>
+						<td><a class="openModalBtn" data-number="${order.o_no}"
+							style="cursor: pointer;">${order.o_orderNum }</a></td>
+						<td>${order.i_name }</td>
+						<td>${order.o_quantity }</td>
+						<td>${order.o_totalprice }</td>
+						<td>${order.o_name }</td>
+						<td>${order.o_addr }</td>
+						<td>${order.o_status }</td>
+						<td>${order.o_date }</td>
+					</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 
@@ -56,30 +64,25 @@
 			<h2>商品情報</h2>
 			<table class="order-info">
 				<tr>
-					<td class="label">農場名</td>
-					<td class="value">栃木イチゴ組合</td>
-					
-				</tr>
-				<tr>
 					<td class="label">商品名</td>
-					<td class="value">可愛いイチゴ</td>
+					<td class="value" id="i_name"></td>
 				</tr>
 				<tr>
 					<td class="label">カテゴリ</td>
-					<td class="value">ふつう</td>
+					<td class="value" id="i_category">ふつう</td>
 				</tr>
 
 				<tr>
-					<td class="label">個数</td>
-					<td class="value">2</td>
+					<td class="label">数量</td>
+					<td class="value" id="o_quantity">2</td>
 				</tr>
 				<tr>
 					<td class="label">個別価格</td>
-					<td class="value">￥1,000</td>
+					<td class="value" id="i_price">￥1,000</td>
 				</tr>
 				<tr>
 					<td class="label">賞味期限</td>
-					<td class="value">2023-12-31</td>
+					<td class="value" id="i_ed">2023-12-31</td>
 				</tr>
 				<!-- 다른 주문 정보 항목들 추가 -->
 			</table>
@@ -90,52 +93,43 @@
 			<table class="customer-info">
 				<tr>
 					<td class="label">受取人</td>
-					<td class="value">山田太郎</td>
+					<td class="value" id="o_name"></td>
 				</tr>
 				<tr>
 					<td class="label">電話番号</td>
-					<td class="value">080-1234-5678</td>
+					<td class="value" id="o_tel"></td>
 				</tr>
 				<tr>
 					<td class="label">到着時間</td>
-					<td class="value">午前8時～11時</td>
+					<td class="value" id="o_arrival"></td>
 				</tr>
 				<tr>
 					<td class="label">住所</td>
-					<td class="value">神奈川県座間市相模が丘<br>(252-0001)</td>
+					<td class="value" id="o_addr"></td>
 				</tr>
 				<tr>
 					<td class="label">注文日</td>
-					<td class="value">2023-12-20</td>
+					<td class="value" id="o_date"></td>
 				</tr>
 				<tr>
 					<td class="label">配送情報</td>
-					
-					<td class="value">
-					<select class="select_button" id="status"
-						onchange="handleSelectChange(this)">
-						<option value="data1">配送準備中</option>
-						<option value="data2">発送完了</option>
-						<option value="data3">配送完了</option>
-						
-					</select>
-				
-					
-				
-					
+					<td class="value" id="o_statusEnd" style="display: none;">配送完了</td>
+					<td class="value" id="o_status" style="display: none;"><select class="select_button" id="status">
+							<option value="status0">注文完了</option>
+							<option value="status1">発送完了</option>
+							<option value="status2">配送完了</option>
+					</select></td>
 				</tr>
-				
+
 			</table>
 		</section>
 
 
-<button class="modify" id="modify">修正</button>
+		<button class="modify" id="modify" style="display: none;">修正</button>
 
 	</div>
 	<br>
 	<button id="closeModalBtn">X</button>
 	</dialog>
-
-	<script src="js/deliveryModal.js"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@
 </head>
 <body>
 
-	<form action="updateSellerC" method="post"
+	<form action="updateSelerC" method="post"
 		enctype="multipart/form-data" onsubmit="return sellerCheck()">
 		<div class="reg-main">
 			<div class="reg-container">
@@ -104,7 +104,9 @@
 				</div>
 				<br />
 				<div class="reg-content3">
-					<div class="reg-menu">農場説明</div>
+				<div class="reg-menu2">
+					<div class="reg-menu2-1">農場説明</div>
+					</div>
 					<div class="reg-input2">
 						<textarea class="input-style2" name="farmStory" id="farmStory"
 							cols="30" rows="10"></textarea>

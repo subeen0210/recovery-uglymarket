@@ -26,7 +26,7 @@ function goToCart(no,id) {
 	} else{
 		location.href='RegCartC?no='+no+'&count='+count;
 	//db에 cart를 담고. 카트 이동 유뮤
-	let ok = confirm('카트에 담겼습니다. 카트로 이동하시겠습니까?');
+	let ok = confirm('カートに入れました。 カートで移動しますか？');
 	if(ok){
 		location.href='CartAllC';
 	}

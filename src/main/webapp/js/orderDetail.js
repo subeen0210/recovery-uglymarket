@@ -45,10 +45,11 @@ $(function() {
 				// 원하는 날짜 형식으로 포맷팅
 				let formattedDate = formatDate(dateObject);
 				let formattAddrDate = formatDate(addrDate);
-
+				
+				let category = data.i_category == 1 ? "アグリー" : "普通";
 				$("#f_name").text(data.f_name);
 				$("#i_name").text(data.i_name);
-				$("#i_category").text(data.i_category);
+				$("#i_category").text(category);
 				$("#o_quantity").text(data.o_quantity);
 				$("#i_price").text("￥" + data.i_price);
 				$("#i_ed").text(formattedDate);
@@ -56,7 +57,7 @@ $(function() {
 				$("#o_name").text(data.o_name);
 				$("#o_tel").text(data.o_tel);
 				$("#o_arrival").text(data.o_arrival);
-				$("#o_addr").text(data.o_addr);
+				$("#o_addr").html(data.o_addr + "<br>(" + data.o_addrNum + ")");
 				$("#o_date").text(formattAddrDate);
 				
 				myModal.showModal();
