@@ -5,7 +5,9 @@
 <html>
 <head>
 <link rel="stylesheet" href="wr_company/css/order.css">
+
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>주문 상세 정보</title>
@@ -29,6 +31,8 @@
 				</tr>
 			</thead>
 			<tbody>
+
+
 				<c:forEach var="order" items="${userOrders }">
 					<tr>
 						<td><a class="openModalBtn" data-number="${order.o_no}"
@@ -42,6 +46,7 @@
 						<td><a>削除</a></td>
 					</tr>
 				</c:forEach>
+
 
 
 
@@ -128,39 +133,46 @@
 	<!-- 2번째 modal 창 -->
 
 	<dialog id="myModal2">
+
 	<div class="main_modal">
+		<form id="myForm" action="" method="post">
+			<section class="order-details">
+				<h2>後記作成</h2>
+				<table class="order-info">
+					<tr>
+						<td class="label">商品名</td>
+						<td class="value">可愛いイチゴ</td>
 
-		<section class="order-details">
-			<h2>商品情報</h2>
-			<table class="order-info">
-				<tr>
-					<td class="label">商品名</td>
-					<td class="value">可愛いイチゴ</td>
+					</tr>
+					<tr>
+						<td class="label">評点</td>
+						<td class="value"><input type="text" id="grade" name="grade"></td>
+					</tr>
+					<tr>
+						<input type="date" id="date" name="date">
 
-				</tr>
-				<tr>
-					<td class="label">評点</td>
-					<td class="value"><input type="text" id="grade" name="grade"></td>
-				</tr>
-				<tr>
-					<td style="width: 200px; height: 50px;" class="label">作成日
-					<td>
-					<td class="value"><input type="date" id="date" name="date"></td>
-				</tr>
-				<tr>
-					<td class="label">内容</td>
-					<td class="value"><textarea rows="4" cols="50">이곳에 텍스트를 입력하세요.</textarea></td>
-				</tr>
-				<!-- 다른 주문 정보 항목들 추가 -->
-			</table>
-		</section>
+						<td style="width: 200px; height: 50px;" class="label">作成日
+						</td>
+						<td class="value"><input type="date" id="date" name="date"></td>
 
+					</tr>
+					<tr>
+						<td class="label">内容</td>
+						<td class="value"><textarea rows="4" cols="50">이곳에 텍스트를 입력하세요.</textarea></td>
+					</tr>
+
+				</table>
+				<button type="button" id="myButton"
+					onclick="submitForm('buttonIdValue')">作成</button>
+			</section>
+		</form>
 	</div>
 	<br>
-	<button id="closeModalBtn2" style="width: 100px; height: 50px;">X</button>
+	<button class="closeBtn2" id="closeModalBtn2">X</button>
 	</dialog>
 
 	<script type="text/javascript" src="js/orderDetail.js"></script>
+
 
 </body>
 </html>
