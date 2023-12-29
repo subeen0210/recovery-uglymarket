@@ -42,7 +42,7 @@
 						<td>${order.o_totalprice }</td>
 						<td>${order.o_status }</td>
 						<td>${order.o_date }</td>
-						<td><button class="openModalBtn2">作成</button>
+						<td><button class="openModalBtn2" data-no="${order.i_no }">作成</button>
 						<td><a>削除</a></td>
 					</tr>
 				</c:forEach>
@@ -141,24 +141,21 @@
 				<table class="order-info">
 					<tr>
 						<td class="label">商品名</td>
-						<td class="value">可愛いイチゴ</td>
+						<td class="value" id="r_productname"></td>
 
 					</tr>
 					<tr>
 						<td class="label">評点</td>
-						<td class="value"><input type="text" id="grade" name="grade"></td>
+						<td class="value"><input type="text" id="r-grade" name="grade"></td>
 					</tr>
 					<tr>
-						<input type="date" id="date" name="date">
-
-						<td style="width: 200px; height: 50px;" class="label">作成日
-						</td>
-						<td class="value"><input type="date" id="date" name="date"></td>
+						<td style="width: 200px; height: 50px;" class="label">作成日</td>
+						<td class="value"><input type="date" id="r-date" name="date"></td>
 
 					</tr>
 					<tr>
 						<td class="label">内容</td>
-						<td class="value"><textarea rows="4" cols="50">이곳에 텍스트를 입력하세요.</textarea></td>
+						<td class="value"><textarea name="r-story" id="r-story" rows="4" cols="50" placeholder="최대 300자"></textarea></td>
 					</tr>
 
 				</table>
