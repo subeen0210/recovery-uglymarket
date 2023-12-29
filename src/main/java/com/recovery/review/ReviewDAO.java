@@ -108,6 +108,31 @@ public class ReviewDAO {
 	}
 	
 	
+	public static void reviewSelect(HttpServletRequest request, HttpServletResponse res) {
+		
+		HttpSession hs = request.getSession();
+		User user = (User) request.getSession().getAttribute("userAccount");
+		String no = request.getParameter("no");
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from review where u_id = ? and i_no = ?";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user.getU_id());
+			pstmt.setString(2, no);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
+	
+	
 	public static void reviewDelete(HttpServletRequest request) {
 		
 		Connection con = null;

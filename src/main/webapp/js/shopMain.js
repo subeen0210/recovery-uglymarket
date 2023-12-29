@@ -89,11 +89,3 @@ function handleProductClick(i_no, i_img, i_name, i_price) {
     location.href = 'ShopDetailC?no=' + i_no;
     onProductClick(i_no, i_img, i_name, i_price);
 }
-
-//function loadItemDetailJs() {
-//    var script = document.createElement('script');
-//    script.src = 'wj/js/itemDetail.js';
-//    document.head.appendChild(script);
-//}
-//
-//loadItemDetailJs();
