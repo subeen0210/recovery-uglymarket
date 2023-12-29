@@ -59,7 +59,7 @@
           alt=""
           class="item-img-news-position"
         />
-        
+       
         <div class="item-img-news-link-position">
         <br>
           <div class="item-img-news-link-position-img">

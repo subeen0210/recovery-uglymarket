@@ -151,7 +151,7 @@
 				<br />
 				<div class="reg-content">
 					<div class="reg-name">
-						<button class="btn-style">変更</button>
+						<button class="btn-style" style="cursor: pointer;">変更</button>
 					</div>
 				</div>
 			</div>

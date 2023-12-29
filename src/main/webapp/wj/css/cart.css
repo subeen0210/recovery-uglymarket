@@ -29,6 +29,7 @@
 	color: white;
 	font-weight: bold;
 	height: 40px;
+	cursor: pointer;
 }
 
 .btn-del:hover {
@@ -228,6 +229,7 @@ button.button {
 	border-radius: 5px;
 	transition: all 0.2s;
 	font-size: 15pt;
+	cursor: pointer;
 }
 
 .btnBlueGreen {

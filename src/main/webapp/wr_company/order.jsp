@@ -35,7 +35,7 @@
 					<td>2000</td>
 					<td>注文完了</td>
 					<td>2023-12-30</td>
-					<td><button id="openModalBtn2">作成</button>
+					<td><button id="openModalBtn" style="cursor: pointer;">作成</button>
 					<td><a>削除</a></td>
 				</tr>
 
