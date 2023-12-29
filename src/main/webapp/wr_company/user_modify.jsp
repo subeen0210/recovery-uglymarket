@@ -107,7 +107,7 @@
 				<br /> <br />
 				<div class="reg-content">
 					<div class="reg-name">
-						<button class="btn-style">修正</button>
+						<button class="btn-style" style="cursor: pointer;">修正</button>
 					</div>
 				</div>
 			</div>
