@@ -36,12 +36,7 @@
 
 		
 		<div class="itemContainer">  
-		
-		
-		
-	 <div id="pagination"> 
-			<!-- 페이지 번호를 나타낼 곳 -->
-	 	</div> 
+	 	<div id="pagination"></div> 
 
 	</div>
 	

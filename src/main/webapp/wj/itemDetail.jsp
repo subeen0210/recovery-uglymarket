@@ -28,8 +28,6 @@
 			<br />
 			<div class="item-price">￥${item.i_price }</div>
 			<br />
-		<%--<div class="item-delivery">배송비 유무</div>
-			<br /> --%>
 			<div class="item-select">
 				<span style="font-size: 19pt; margin-right: 180px">数量</span> &emsp;&emsp;
 					<button id="decrement" class="quantity-button" onclick="incrementQuantity()">+</button>
@@ -52,7 +50,7 @@
 	<br><br>
 	<div class="item-review">
 		<div class="review-title">
-			<div class="review-text">レビュー</div>
+			<div class="review-text">後記</div>
 			<div id="star-rating">
 				<div class="star" data-value="5">&#9733;</div>
 				<div class="star" data-value="4">&#9733;</div>
@@ -67,24 +65,19 @@
 				</div>
 			</div>
 		</div>
-		<br />
-		<br />
-		<div class="review-input">
-			<div class="input-text">db넣어!</div>
+		<br>
+		<div id="review-input" class="review-input">
+		<c:forEach var="review" items="${reviews }">
 			<div class="input-menu">
-				<div id="usernameDisplay"></div>
-				<div>
-					<button class="review-button">コメント</button>
-				</div>
+			<div class="usernameDisplay">作成者: ${review.r_nickname }</div>
+			<div class="input-date">作成日: ${review.r_date }</div>
+			<div class="input-grade">点: ${review.r_grade }</div>
 			</div>
+			<div class="input-text">${review.r_estimation }</div>
+		</c:forEach>
 		</div>
 	</div>
 	<br />
-	<div class="review-view">
-		<div>
-			<a class="view-more" href="">もっと見る</a>
-		</div>
-	</div>
 	<br />
 </body>
 <script src="wj/js/itemDetail.js"></script>

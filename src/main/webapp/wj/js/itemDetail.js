@@ -45,12 +45,12 @@ function maskUsername(username) {
 }
 
 // 예시로 초기 닉네임을 설정
-let originalUsername = "example_user";
-updateMaskedUsername();
-
-// 닉네임이 변경될 때마다 호출되는 함수
-function updateMaskedUsername() {
-  const maskedUsername = maskUsername(originalUsername);
-  document.getElementById("usernameDisplay").innerText =
-    "ニックネーム: " + maskedUsername + "님";
-}
+//let originalUsername = "example_user";
+//updateMaskedUsername();
+//
+//// 닉네임이 변경될 때마다 호출되는 함수
+//function updateMaskedUsername() {
+//  const maskedUsername = maskUsername(originalUsername);
+//  document.getElementsByClassName("usernameDisplay").innerText =
+//    "ニックネーム: " + maskedUsername + "님";
+//}
