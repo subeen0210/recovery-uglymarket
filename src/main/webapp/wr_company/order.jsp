@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/order.css">
+<link rel="stylesheet" href="wr_company/css/order.css">
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,16 +31,22 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><a id="openModalBtn" style="cursor: pointer;">56465</a></td>
-					<td>可愛いイチゴ</td>
-					<td>2/1000</td>
-					<td>2000</td>
-					<td>注文完了</td>
-					<td>2023-12-30</td>
-					<td><button id="openModalBtn" style="cursor: pointer;">作成</button>
-					<td><a>削除</a></td>
-				</tr>
+
+
+				<c:forEach var="order" items="${userOrders }">
+					<tr>
+						<td><a class="openModalBtn" data-number="${order.o_no}"
+							style="cursor: pointer;">${order.o_orderNum }</a></td>
+						<td>${order.i_name }</td>
+						<td>${order.o_quantity }/${order.i_price }</td>
+						<td>${order.o_totalprice }</td>
+						<td>${order.o_status }</td>
+						<td>${order.o_date }</td>
+						<td><button class="openModalBtn2">作成</button>
+						<td><a>削除</a></td>
+					</tr>
+				</c:forEach>
+
 
 
 
@@ -56,29 +65,29 @@
 			<table class="order-info">
 				<tr>
 					<td class="label">農場名</td>
-					<td class="value">栃木イチゴ組合</td>
+					<td class="value" id="f_name"></td>
 
 				</tr>
 				<tr>
 					<td class="label">商品名</td>
-					<td class="value">可愛いイチゴㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</td>
+					<td class="value" id="i_name"></td>
 				</tr>
 				<tr>
 					<td class="label">カテゴリ</td>
-					<td class="value">ふつう</td>
+					<td class="value" id="i_category"></td>
 				</tr>
 
 				<tr>
-					<td class="label">個数</td>
-					<td class="value">2</td>
+					<td class="label">数量</td>
+					<td class="value" id="o_quantity"></td>
 				</tr>
 				<tr>
 					<td class="label">個別価格</td>
-					<td class="value">￥1,000</td>
+					<td class="value" id="i_price"></td>
 				</tr>
 				<tr>
 					<td class="label">賞味期限</td>
-					<td class="value">2023-12-31</td>
+					<td class="value" id="i_ed"></td>
 				</tr>
 				<!-- 다른 주문 정보 항목들 추가 -->
 			</table>
@@ -89,28 +98,24 @@
 			<table class="customer-info">
 				<tr>
 					<td class="label">受取人</td>
-					<td class="value">山田太郎</td>
+					<td class="value" id="o_name"></td>
 				</tr>
 				<tr>
 					<td class="label">電話番号</td>
-					<td class="value">080-1234-5678</td>
+					<td class="value" id="o_tel"></td>
 				</tr>
 				<tr>
 					<td class="label">到着時間</td>
-					<td class="value">午前8時～11時</td>
+					<td class="value" id="o_arrival"></td>
 				</tr>
 				<tr>
 					<td class="label">住所</td>
-					<td class="value">神奈川県座間市相模が丘<br>(252-0001)
+					<td class="value" id="o_addr">
 					</td>
 				</tr>
 				<tr>
 					<td class="label">注文日</td>
-					<td class="value">2023-12-20</td>
-				</tr>
-				<tr>
-					<td class="label">配送情報</td>
-					<td class="value">配達代理店に到着</td>
+					<td class="value" id="o_date"></td>
 				</tr>
 				<!-- 다른 고객 정보 항목들 추가 -->
 			</table>
@@ -121,48 +126,52 @@
 
 	</div>
 	<br>
-	<button id="closeModalBtn" style="width: 100px; height: 50px;">X</button>
+	<button id="closeModalBtn" style="width: 30px; height: 30px;border:none;">X</button>
 	</dialog>
 
-	<script src="js/orderModal.js"></script>
-	
-	
-	
+
 	<!-- 2번째 modal 창 -->
 
 	<dialog id="myModal2">
+
 	<div class="main_modal">
+		<form id="myForm" action="" method="post">
+			<section class="order-details">
+				<h2>後記作成</h2>
+				<table class="order-info">
+					<tr>
+						<td class="label">商品名</td>
+						<td class="value">可愛いイチゴ</td>
 
-		<section class="order-details">
-			<h2>商品情報</h2>
-			<table class="order-info">
-				<tr>
-					<td class="label">商品名</td>
-					<td class="value">可愛いイチゴ</td>
+					</tr>
+					<tr>
+						<td class="label">評点</td>
+						<td class="value"><input type="text" id="grade" name="grade"></td>
+					</tr>
+					<tr>
+						<input type="date" id="date" name="date">
 
-				</tr>
-				<tr>
-					<td class="label">評点</td>
-					<td class="value"> <input type="text" id="grade" name="grade"></td>
-				</tr>
-				<tr>
-					<td style="width: 200px; height: 50px;"class="label">作成日<td>
-					<td class="value"><input type="date" id="date" name="date"></td>
-				</tr>
-				<tr>
-					<td class="label">内容</td>
-					<td class="value"><textarea rows="4" cols="50">이곳에 텍스트를 입력하세요.</textarea></td>
-				</tr>
-				<!-- 다른 주문 정보 항목들 추가 -->
-			</table>
-		</section>
+						<td style="width: 200px; height: 50px;" class="label">作成日
+						</td>
+						<td class="value"><input type="date" id="date" name="date"></td>
 
+					</tr>
+					<tr>
+						<td class="label">内容</td>
+						<td class="value"><textarea rows="4" cols="50">이곳에 텍스트를 입력하세요.</textarea></td>
+					</tr>
+
+				</table>
+				<button type="button" id="myButton"
+					onclick="submitForm('buttonIdValue')">作成</button>
+			</section>
+		</form>
 	</div>
 	<br>
-	<button id="closeModalBtn2" style="width: 100px; height: 50px;">X</button>
+	<button class="closeBtn2" id="closeModalBtn2">X</button>
 	</dialog>
 
-	<script src="js/orderModal2.js"></script>
+	<script type="text/javascript" src="js/orderDetail.js"></script>
 
 
 </body>
