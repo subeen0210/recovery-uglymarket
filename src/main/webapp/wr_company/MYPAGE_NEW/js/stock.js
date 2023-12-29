@@ -39,7 +39,7 @@ function loadStockData() {
 			$(tr).append("<td>" + formattedDate + "</td>");
 			$(tr).append("<td>" + data[i].i_price + "</td>");
 			$(tr).append("<td><button class='button' data-i-no='" + data[i].i_no + "' onclick='itemUpdate(" + data[i].i_no + ")'>修正</button></td>");
-			$(tr).append("<td><button onclick='itemDelete(" + data[i].i_no + ")'>削除</button></td>");
+			$(tr).append("<td><button style='cursor:pointer;' onclick='itemDelete(" + data[i].i_no + ")'>削除</button></td>");
 			$("#tbody").append(tr);
 		}
 

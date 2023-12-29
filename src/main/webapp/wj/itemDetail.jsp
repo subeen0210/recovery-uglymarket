@@ -26,7 +26,7 @@
 			</c:choose>
 			<div class="item-title">${item.i_name }</div>
 			<br />
-			<div class="item-price">${item.i_price }</div>
+			<div class="item-price">￥${item.i_price }</div>
 			<br />
 			<div class="item-select">
 				<span style="font-size: 19pt; margin-right: 180px">数量</span> &emsp;&emsp;
