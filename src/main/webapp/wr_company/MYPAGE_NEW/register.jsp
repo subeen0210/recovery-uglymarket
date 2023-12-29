@@ -60,7 +60,7 @@
 					<input type="file" name="img" class="img" multiple>
 				</div>
 			</div>
-				<button type="button" onclick="itemAdd()">登録</button>
+				<button style="cursor: pointer;" type="button" onclick="itemAdd()">登録</button>
 		</div>
 			<div id="registrationMessage"></div>
 		</form>
