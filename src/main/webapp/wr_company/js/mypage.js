@@ -56,6 +56,8 @@ $(function() {
 	}
 });
 
+
+// 최수빈 최근 본 상품 코드
 function getRecentProducts() {
 	let recentProducts = localStorage.getItem('recentProducts');
 	return recentProducts ? JSON.parse(recentProducts) : [];
