@@ -79,7 +79,12 @@ $(function() {
 			datatype: 'json',
 			url: 'UserOrderC?index=' + index,
 			success: function(data) {
+				console.log(data.i_no);
 				$("#r_productname").text(data.i_name);
+				$("#myButton").val(data.i_no);
+				document.getElementById("i_name").value = data.i_name;
+				console.log(typeof ($("#i_name").val()));
+				
 				
 				myModal2.showModal();
 			}
@@ -93,4 +98,14 @@ function formatDate(date) {
 	let month = (date.getMonth() + 1).toString().padStart(2, '0');
 	let day = date.getDate().toString().padStart(2, '0');
 	return year + "-" + month + "-" + day;
+}
+
+
+
+
+function addReview(){
+	let ok = confirm('후기를 작성하시겠습니까?');
+
+		return ok;
+
 }

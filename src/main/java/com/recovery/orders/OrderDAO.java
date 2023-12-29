@@ -227,7 +227,6 @@ public class OrderDAO {
 				pstmt = con.prepareStatement(orderDetail);
 				pstmt.setString(1, index);
 				rs = pstmt.executeQuery();
-				
 				if (rs.next()) {
 					Order order = new Order();
 					order.setO_no(rs.getInt("o_no"));

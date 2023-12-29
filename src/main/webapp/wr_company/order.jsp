@@ -42,7 +42,7 @@
 						<td>${order.o_totalprice }</td>
 						<td>${order.o_status }</td>
 						<td>${order.o_date }</td>
-						<td><button class="openModalBtn2" data-no="${order.i_no }">作成</button>
+						<td><button class="openModalBtn2" data-no="${order.o_no }">作成</button>
 						<td><a>削除</a></td>
 					</tr>
 				</c:forEach>
@@ -135,13 +135,14 @@
 	<dialog id="myModal2">
 
 	<div class="main_modal">
-		<form id="myForm" action="" method="post">
+		<form id="myForm" action="ReviewAddC" method="post" onsubmit="return addReview()">
 			<section class="order-details">
 				<h2>後記作成</h2>
 				<table class="order-info">
 					<tr>
 						<td class="label">商品名</td>
 						<td class="value" id="r_productname"></td>
+						<td style="display: none;"><input type="hidden" id="i_name" name="review_name"></td>
 
 					</tr>
 					<tr>
@@ -161,8 +162,7 @@
 					</tr>
 
 				</table>
-				<button type="button" id="myButton"
-					onclick="submitForm('buttonIdValue')">作成</button>
+				<button id="myButton" name="no" value="">作成</button>
 			</section>
 		</form>
 	</div>
