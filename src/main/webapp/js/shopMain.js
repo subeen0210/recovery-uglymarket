@@ -90,10 +90,10 @@ function handleProductClick(i_no, i_img, i_name, i_price) {
     onProductClick(i_no, i_img, i_name, i_price);
 }
 
-function loadItemDetailJs() {
-    var script = document.createElement('script');
-    script.src = 'wj/js/itemDetail.js';
-    document.head.appendChild(script);
-}
-
-loadItemDetailJs();
+//function loadItemDetailJs() {
+//    var script = document.createElement('script');
+//    script.src = 'wj/js/itemDetail.js';
+//    document.head.appendChild(script);
+//}
+//
+//loadItemDetailJs();

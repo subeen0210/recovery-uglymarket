@@ -66,8 +66,16 @@
 			</div>
 		</div>
 		<br />
-		<br />
-		<div id="review-input" class="review-input"></div>
+		<div id="review-input" class="review-input">
+		<c:forEach var="review" items="${reviews }">
+			<div class="input-menu">
+			<div class="usernameDisplay">作成者: ${review.r_nickname }</div>
+			<div class="input-date">날짜: ${review.r_date }</div>
+			<div class="input-grade">총점: ${review.r_grade }</div>
+			</div>
+			<div class="input-text">${review.r_estimation }</div>
+		</c:forEach>
+		</div>
 	</div>
 	<br />
 	<br />
