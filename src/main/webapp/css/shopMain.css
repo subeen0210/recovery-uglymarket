@@ -61,11 +61,13 @@ body {
 	border: 1px solid #BDBDBD;
 	background-repeat: no-repeat;
 	font-size: 15pt;
+	cursor: pointer;
 }
 
 .filter.active{
 	background-color: #0B6121;
 	color: white;
+	cursor: pointer;
 }
 
 .category {
@@ -166,6 +168,7 @@ body {
 	margin: 3px 5px;
 	font-family: 'Meiryo', serif;
       font-weight: bold;
+      cursor: pointer;
       
 }
 
@@ -173,6 +176,7 @@ body {
 	font-size: 1.4vw;
 	margin: 3px 5px;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .money-icon{

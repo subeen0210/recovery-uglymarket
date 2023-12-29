@@ -61,7 +61,7 @@
 				<div class="set-allprice" id="set-allprice2_${cart.c_no }"
 						 data-subtotal="${cart.i_price * cart.c_number}">
 						 小計&ensp;:&ensp;
-					 <span class="per-total-price" id="set-allprice_${cart.c_no }" >${cart.i_price * cart.c_number }</span></div>
+					 <span class="per-total-price" id="set-allprice_${cart.c_no }" >${cart.i_price * cart.c_number }<img style="width: 12px;" alt="" src="img/en-icon.png"></span></div>
 				<br />
 				<div class="quantity-btn"><button class="change_quantity" onclick="changeQuantity(${cart.c_no})">変更</button>&ensp;<button onclick="deleteCart(${cart.c_no })">削除</button></div>
 			</div>
@@ -75,7 +75,7 @@
 		<div class="pay">
 			<div class="pay-allmoney">商品合計 : <span id="payAllMoneySpan"></span></div>
 			<div class="pay-click">
-				<button class="pay-btn" onclick="payStorage()">決済する</button>
+				<button class="button btnPush btnBlueGreen" onclick="payStorage()">決済する</button>
 			</div>
 		</div>
 	</div>

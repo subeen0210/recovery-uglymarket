@@ -6,6 +6,10 @@ body {
 	height: 700px;
 }
 
+a {
+	text-decoration: none;
+}
+
 .set-size {
 	display: flex;
 	flex-direction: row;

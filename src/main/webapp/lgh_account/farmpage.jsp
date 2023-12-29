@@ -116,7 +116,7 @@
 						農場 郵便番号<span class="essential-icon">*</span>
 					</div>
 					<div class="reg-name3">
-						<button class="btn-style" type="button" id="addr-popup">
+						<button style="cursor: pointer;" class="btn-style" type="button" id="addr-popup">
 							住所検索</button>
 						<br />
 					</div>
@@ -152,7 +152,7 @@
 				<br />
 				<div class="reg-content">
 					<div class="reg-name">
-						<button class="btn-style">変更</button>
+						<button class="btn-style" style="cursor: pointer;">変更</button>
 					</div>
 				</div>
 			</div>
