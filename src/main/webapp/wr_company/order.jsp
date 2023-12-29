@@ -60,29 +60,29 @@
 			<table class="order-info">
 				<tr>
 					<td class="label">農場名</td>
-					<td class="value">栃木イチゴ組合</td>
+					<td class="value" id="f_name">栃木イチゴ組合</td>
 
 				</tr>
 				<tr>
 					<td class="label">商品名</td>
-					<td class="value">可愛いイチゴㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</td>
+					<td class="value" id="i_name">可愛いイチゴㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</td>
 				</tr>
 				<tr>
 					<td class="label">カテゴリ</td>
-					<td class="value">ふつう</td>
+					<td class="value" id="i_category">ふつう</td>
 				</tr>
 
 				<tr>
 					<td class="label">個数</td>
-					<td class="value">2</td>
+					<td class="value" id="o_quantity">2</td>
 				</tr>
 				<tr>
 					<td class="label">個別価格</td>
-					<td class="value">￥1,000</td>
+					<td class="value" id="i_price">￥1,000</td>
 				</tr>
 				<tr>
 					<td class="label">賞味期限</td>
-					<td class="value">2023-12-31</td>
+					<td class="value" id="i_ed">2023-12-31</td>
 				</tr>
 				<!-- 다른 주문 정보 항목들 추가 -->
 			</table>
@@ -186,7 +186,7 @@ closeModalBtn.addEventListener('click', () => {
 
 
 //수정 모달
-const myModal2 = document.getEl('myModal2');
+const myModal2 = document.getElementById('myModal2');
 let openModalBtn2 = document.querySelector('.openModalBtn2');
 const closeModalBtn2 = document.getElementById('closeModalBtn2');
 

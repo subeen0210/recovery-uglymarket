@@ -3,13 +3,14 @@ $(function() {
 	$('.openModalBtn').on('click', function() {
 		let index = $(this).data('number');
 		console.log(index);
+		console.log(typeof(index));
 
 		// AJAX를 이용해 서버로 데이터 요청
 		$.ajax({
-			type: 'post',
+			type: 'get',
 			datatype: 'json',
-			url: 'UserOrderC', // 실제 서버로의 경로로 변경해야 합니다.
-			data: index,
+			url: 'UserOrderC?index=' + index, // 실제 서버로의 경로로 변경해야 합니다.
+//			data: {index: index},
 			success: function(data) {
 				console.log(data);
 //				$('#modalContent').html(modalContent);
