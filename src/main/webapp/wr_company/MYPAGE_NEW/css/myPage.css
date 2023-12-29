@@ -60,6 +60,10 @@
 	margin-top: 80px;
 }
 
+.main_menu {
+	cursor: pointer;
+}
+
 .jsp_view {
 
     width: 100%;
