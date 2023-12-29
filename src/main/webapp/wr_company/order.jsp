@@ -110,7 +110,7 @@
 				</tr>
 				<tr>
 					<td class="label">住所</td>
-					<td class="value" id="o_addr"><br>(252-0001)
+					<td class="value" id="o_addr">
 					</td>
 				</tr>
 				<tr>
@@ -126,7 +126,7 @@
 
 	</div>
 	<br>
-	<button id="closeModalBtn" style="width: 100px; height: 50px;">X</button>
+	<button id="closeModalBtn" style="width: 30px; height: 30px;border:none;">X</button>
 	</dialog>
 
 

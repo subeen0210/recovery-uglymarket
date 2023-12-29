@@ -123,12 +123,19 @@ img {
 	height: 50px;
 }
 
+/* .main_modal { */
+/* 	max-width: 1500px; */
+/* 	margin: 0 auto; */
+/* 	padding: 20px; */
+/* 	background-color: #fff; */
+/* 	text-align: center; 중앙 정렬을 위해 text-align 추가 */
+/* } */
+
 .main_modal {
-	max-width: 1500px;
-	margin: 0 auto;
-	padding: 20px;
-	background-color: #fff;
-	text-align: center; /* 중앙 정렬을 위해 text-align 추가 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -151,6 +158,7 @@ section {
 
 h2 {
 	color: black;
+	text-align: center;
 }
 
 table {
@@ -168,8 +176,9 @@ td {
 	position: absolute;
 	top: 10px;
 	right: 10px;
-	width: 100px;
-	height: 50px;
+	width: 30px;
+	height: 30px;
+	border: none;
 }
 
 .closeBtn2 {
