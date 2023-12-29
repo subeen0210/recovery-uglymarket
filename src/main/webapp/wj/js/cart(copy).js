@@ -159,17 +159,13 @@ function changeQuantity(cartCode) {
 	let inputField = $(`#quantityInput_${cartCode}`);
 	let currentValue = parseInt(inputField.val());
 	console.log(cartCode);
+	console.log(currentValue);
 	// AJAX 요청을 수행하고 서버에 데이터 전송
 	$.ajax({
 		url: 'updateCartCount', // 실제로는 서버의 엔드포인트 URL로 대체해야 합니다.
 		method: 'GET',
 		data: { quantity: currentValue, no: cartCode },
-		dataType: "json",
 		success: function(response) {
-			let totalCartPrice = response.totalCartPrice;
-			let selectedCartPrice = response.selectedCartPrice;
-			console.log(totalCartPrice);
-			console.log(selectedCartPrice);
 			// 성공적으로 처리된 경우 추가적인 로직을 수행할 수 있습니다.
 			
 		},

@@ -6,14 +6,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Document</title>
-<script src="js/localStorage.js"></script>
+<script src="js/regOrder.js"></script>
 <link rel="stylesheet" href="wj/css/order.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	<div id="order-title">注文 / 決済する</div>
 
-	<!-- 	<form action="OrderPageC" method="post" onsubmit="return orderCheck();"> -->
 	<div class="main-wrapper">
 		<div class="detail-wrap">
 			<img class="icon" src="img/free-icon-arrow-down.png" alt="" />
@@ -55,7 +54,6 @@
 				class="button btnPush btnBlueGreen" onclick="regOrder();">決済</button>
 		</div>
 	</div>
-	<!-- 	</form> -->
 	<!-- 모달 창 (결제 끝났을 때, 이동할 부분)-->
 	<dialog id="paymentEndPage">
 	<h2 class="dialog-title">決定が完了しました。マイページに移動しますか？</h2><br><br>
