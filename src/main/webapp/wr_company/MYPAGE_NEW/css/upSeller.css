@@ -3,6 +3,7 @@
 .body {
 	width: 100vw;
 	height: 100vh;
+	display: flex;
 	
 }
 
@@ -157,18 +158,18 @@ label {
 	background: #2a243a;
 }
 /* 비밀번호 변경 모달창 - 원준 작업 */
-#password-modal {
+.password-modal {
 	width: 700px;
 	height: 600px;
 	padding: 10%;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	border: none;
-	position: absolute;
+
  
-  visibility: hidden;
+ 
 }
 
 .btn-size-close {
