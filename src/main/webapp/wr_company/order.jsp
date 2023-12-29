@@ -37,7 +37,7 @@
 					<tr>
 						<td><a class="openModalBtn" data-number="${order.o_no}"
 							style="cursor: pointer;">${order.o_orderNum }</a></td>
-						<td class="order-productname">${order.i_name }</td>
+						<td>${order.i_name }</td>
 						<td>${order.o_quantity }/${order.i_price }</td>
 						<td>${order.o_totalprice }</td>
 						<td>${order.o_status }</td>
@@ -141,7 +141,7 @@
 				<table class="order-info">
 					<tr>
 						<td class="label">商品名</td>
-						<td class="value" id="r-productname"></td>
+						<td class="value" id="r_productname"></td>
 
 					</tr>
 					<tr>

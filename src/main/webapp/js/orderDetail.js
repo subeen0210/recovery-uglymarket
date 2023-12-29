@@ -12,13 +12,9 @@ $(function() {
 
 	//수정 모달
 	const myModal2 = document.getElementById('myModal2');
-	let openModalBtn2 = document.querySelector('.openModalBtn2');
 	const closeModalBtn2 = document.getElementById('closeModalBtn2');
 
 
-	openModalBtn2.addEventListener('click', () => {
-		myModal2.showModal();
-	});
 
 	closeModalBtn2.addEventListener('click', () => {
 		myModal2.close();
@@ -73,44 +69,20 @@ $(function() {
 	
 	// 후기 작성 모달 기능
 	$('.openModalBtn2').on('click', function() {
-		var formData = new FormData();
-		
-		let no = $(this).data('no');
-		let productname = $(".order-productname").text();
-		let grade = $("input[name:'grade']").val();
-		let date = $("input[name: 'date']").val();
-		let story = $("textarea[name: 'r-story']").val();
-		console.log(no);
-		console.log(productname);
-		console.log(grade);
-		console.log(date);
-		console.log(story);
-		
-		formData.append('name', productname);
-		formData.append('story', story);
-		formData.append('no', no);
-		formData.append('grade', grade);
-		formData.append('date', date);
+		let index = $(this).data('no');
+		console.log(index);
+		console.log(typeof (index));
 		
 		$.ajax({
-			url: 'ReviewAddC',
-			data: formData,
-			processData: false,
-			contentType: false,
-			success: function (res) {
-				console.log(res);
-				if (res == 1) {
-					alert("후기가 등록되었습니다.");
-					window.location.href = 'UserMypageC';
-				} else {
-					alert('후기 등록 실패');
-				}
-			},
-			error: function(jqXHR, textStatus, errorThrown) {
-   			console.error('AJAX 오류:', textStatus, errorThrown);
+			type: 'get',
+			datatype: 'json',
+			url: 'UserOrderC?index=' + index,
+			success: function(data) {
+				$("#r_productname").text(data.i_name);
+				
+				myModal2.showModal();
 			}
 		});
-		
 	});
 	
 });
