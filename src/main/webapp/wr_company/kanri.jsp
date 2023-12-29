@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="wr_company/css/modal.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>배송 주소 관리</title>
+<title>配送住所管理</title>
 <script>
 
 	var modal = document.getElementById('myModal');

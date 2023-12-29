@@ -45,7 +45,14 @@
 	align-items: center;
 	font-weight: bold;
 }
-
+.reg-menu2{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+		font-weight: bold;
+	
+}
 .reg-input {
 	width: 55%;
 	height: 100%;
@@ -54,13 +61,22 @@
 	font-weight: bold;
 	position: relative;
 }
-
+.reg-input2{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	
+}
 .input-style3 {
 	border: 2px solid #2a243a;
 	border-radius: 5px;
 	width: 15%;
 }
-
+textarea {
+  resize: none;
+}
 /* #passWordEssential{ */
 /* 	position: absolute; */
 /* 	top: 2.8em; */
