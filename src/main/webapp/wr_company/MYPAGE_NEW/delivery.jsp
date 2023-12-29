@@ -26,7 +26,10 @@
 					<th>商品名</th>
 					<th>注文量</th>
 					<th>価格</th>
+					<th>受取人</th>
 					<th>住所</th>
+					<th>配送状態</th>
+					<th>注文時間</th>
 
 				</tr>
 			</thead>
@@ -37,9 +40,11 @@
 					<td>못난이감자</td>
 					<td>2</td>
 					<td>20000</td>
+					<td>이름</td>
 					<td>神奈川県横浜市</td>
+					<td>注文完了</td>
+					<td>2023-03-03</td>
 				</tr>
-
 
 			</tbody>
 		</table>
@@ -114,9 +119,9 @@
 					<td class="value">
 					<select class="select_button" id="status"
 						onchange="handleSelectChange(this)">
-						<option value="data1">配送準備中</option>
-						<option value="data2">発送完了</option>
-						<option value="data3">配送完了</option>
+						<option value="data0">注文完了</option>
+						<option value="data1">発送完了</option>
+						<option value="data2">配送完了</option>
 						
 					</select>
 				

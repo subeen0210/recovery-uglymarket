@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.recovery.account.Seller;
 import com.recovery.account.User;
 import com.recovery.account.UserAddr;
 import com.recovery.main.DBManager;
@@ -210,7 +211,7 @@ public class OrderDAO {
 			DBManager.close(con, pstmt, rs);
 		}
 	}
-
+	
 	public static void userOrderDetail(HttpServletRequest request, HttpServletResponse response) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -257,6 +258,55 @@ public class OrderDAO {
 					
 			}
 
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("유저 주문내역 조회 실패");
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
+
+	
+	// 판매자 배송관리(주문) 확인
+	public static void sellerOrderAll(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Seller seller = (Seller) request.getSession().getAttribute("sellerAccount");
+		System.out.println(seller.getS_id());
+		
+		String sql = "SELECT o.*, i.i_name FROM orders o "
+				+ "JOIN item i ON o.i_no = i.i_no JOIN seller s ON i.s_id = s.s_id WHERE s.s_id = ? "
+				+ "ORDER BY o_no DESC";
+		
+		Order order = null;
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, seller.getS_id());
+			rs = pstmt.executeQuery();
+
+			ArrayList<Order> orders = new ArrayList<Order>();
+			while (rs.next()) {
+				order = new Order();
+				order.setO_no(rs.getInt("o_no"));
+				order.setO_orderNum(rs.getString("o_ordernum"));
+				order.setI_no(rs.getInt("i_no"));
+				order.setI_name(rs.getString("i_name"));
+				order.setO_quantity(rs.getInt("o_quantity"));
+				order.setO_totalprice(rs.getInt("o_totalprice"));
+				order.setI_name(rs.getString("o_name"));
+				order.setO_totalprice(rs.getInt("o_addr"));
+				order.setO_status(rs.getString("o_status"));
+				order.setO_date(rs.getDate("o_date"));
+				orders.add(order);
+
+			}
+
+			request.setAttribute("sellerOrders", orders);
+			System.out.println("주문 내역 연결 성공");
+
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("유저 주문내역 조회 실패");
