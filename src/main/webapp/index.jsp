@@ -41,7 +41,7 @@
 					<span class="uil uil-search"> <img id="search-icon" alt=""
 						src="img/search-icon-white.png">
 					</span> <input type="text" id="searchInput" name="search-input"
-						placeholder="상품명을 입력하세요.">
+						placeholder="商品名を入力して下さい.">
 				</div>
 			</div>
 		</div>
