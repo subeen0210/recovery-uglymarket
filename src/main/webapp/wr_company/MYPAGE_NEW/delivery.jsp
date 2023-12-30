@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/delivery.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/delivery.css?ver=1.1">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="js/deliveryModal.js?ver=2.5"></script>
+<script src="js/deliveryModal.js"></script>
 
 </head>
 <body>

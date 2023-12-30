@@ -18,6 +18,17 @@ $(function() {
     }
   });
 
+	// 배송완료일 때 삭제 버튼 뜨게
+	let orderdeleteBtn = document.querySelectorAll('.orderDeleteBtn');
+
+	orderdeleteBtn.forEach(function(delBtn) {
+		let orderStatus = delBtn.closest('tr').querySelector('.status').innerText;
+		
+		if (orderStatus == '配送完了') {
+			delBtn.style.visibility = 'visible';
+		}
+	})
+
 
 
 

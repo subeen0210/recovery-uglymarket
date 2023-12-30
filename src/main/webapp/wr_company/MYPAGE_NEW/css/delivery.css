@@ -205,7 +205,7 @@ td {
 	text-align: center;
 	background: #f5f5f5;
 	cursor: pointer;
-/* 	visibility: hidden; */
+	visibility: hidden;
 }
 
 .orderDeleteBtn:hover {
