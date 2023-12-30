@@ -4,8 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="wr_company/css/order.css?ver=1.1">
-
+<link rel="stylesheet" href="wr_company/css/order.css">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
 <meta charset="UTF-8">
