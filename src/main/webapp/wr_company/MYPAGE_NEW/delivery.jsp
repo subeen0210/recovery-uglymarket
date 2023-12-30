@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="js/deliveryModal.js"></script>
+<script src="js/deliveryModal.js?ver=2.1"></script>
 
 </head>
 <body>
@@ -31,7 +31,7 @@
 					<th>受取人</th>
 					<th>住所</th>
 					<th>配送状態</th>
-					<th>注文時間</th>
+					<th>注文日</th>
 
 				</tr>
 			</thead>
@@ -125,7 +125,7 @@
 		</section>
 
 
-		<button class="modify" id="modify" value="" style="display: none;">修正</button>
+		<button class="modify" id="modify" style="display: none;">修正</button>
 
 	</div>
 	<br>

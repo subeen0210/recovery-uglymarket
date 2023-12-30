@@ -6,7 +6,7 @@ $(function() {
 		myModal.close();
 	});
 
-	
+
 	// 배송 상세정보 모달
 	$('.openModalBtn').on('click', function() {
 		let index = $(this).data('number');
@@ -17,7 +17,7 @@ $(function() {
 			type: 'post',
 			datatype: 'json',
 			url: 'SellerOrderC',// 실제 서버로의 경로로 변경해야 합니다.
-			data: {no: index},
+			data: { no: index },
 			success: function(data) {
 				console.log(data.i_name);
 
@@ -40,19 +40,27 @@ $(function() {
 				$("#o_arrival").text(data.o_arrival);
 				$("#o_addr").html(data.o_addr + "<br>(" + data.o_addrNum + ")");
 				$("#o_date").text(formattAddrDate);
-				
-				let status = 'status0'
+
+				// 오더 상태에 따라서 버튼의 우무
+				let status = 'status0';
+				let statusShow = 'status0';
+				let statusHide = 'status2';
 				$('#o_status').show();
 				$('#o_statusEnd').hide();
 				$('#modify').show();
-				if(data.o_status == "発送完了"){
+				if (data.o_status == "発送完了") {
 					status = 'status1'
-				} else if(data.o_status == "配送完了"){
+					statusShow = 'status2';
+					statusHide = 'status0';
+				} else if (data.o_status == "配送完了") {
 					$('#o_status').hide();
 					$('#o_statusEnd').show();
 					$('#modify').hide();
 				}
-				$('#status').val(status).prop("selected",true);
+				$("#status option[value='" + statusShow + "']").show();
+				$("#status option[value='" + statusHide + "']").hide();
+				$('#status').val(status).prop("selected", true);
+
 				myModal.showModal();
 			},
 			error: function() {
