@@ -21,6 +21,23 @@ $(function() {
 	});
 
 
+	//만약 발송완료면 배송완료로 바꾸는 버튼이 나오게
+
+	let orderUpdateBtn = document.querySelectorAll('.orderUpdateBtn');
+
+	orderUpdateBtn.forEach(function(btn) {
+		var orderStatus = btn.closest('td').innerText;
+		console.log(orderStatus);
+		// 각 상태에 대한 작업 수행
+		if (orderStatus == '発送完了') {
+			btn.style.display = 'block';
+		}
+	});
+
+
+
+
+
 
 
 
@@ -45,7 +62,7 @@ $(function() {
 				// 원하는 날짜 형식으로 포맷팅
 				let formattedDate = formatDate(dateObject);
 				let formattAddrDate = formatDate(addrDate);
-				
+
 				let category = data.i_category == 1 ? "アグリー" : "普通";
 				$("#f_name").text(data.f_name);
 				$("#i_name").text(data.i_name);
@@ -59,7 +76,7 @@ $(function() {
 				$("#o_arrival").text(data.o_arrival);
 				$("#o_addr").html(data.o_addr + "<br>(" + data.o_addrNum + ")");
 				$("#o_date").text(formattAddrDate);
-				
+
 				myModal.showModal();
 			},
 			error: function() {
@@ -67,25 +84,25 @@ $(function() {
 			}
 		});
 	});
-	
+
 	// 후기 작성 모달 기능
 	$('.openModalBtn2').on('click', function() {
 		let index = $(this).data('no');
 		console.log(index);
 		console.log(typeof (index));
-		
+
 		$.ajax({
 			type: 'get',
 			datatype: 'json',
 			url: 'UserOrderC?index=' + index,
 			success: function(data) {
 				$("#r_productname").text(data.i_name);
-				
+
 				myModal2.showModal();
 			}
 		});
 	});
-	
+
 });
 
 function formatDate(date) {
@@ -93,4 +110,13 @@ function formatDate(date) {
 	let month = (date.getMonth() + 1).toString().padStart(2, '0');
 	let day = date.getDate().toString().padStart(2, '0');
 	return year + "-" + month + "-" + day;
+}
+
+function updateStatusOrder(no) {
+	let ok = confirm('到着しましたか？ 変えたら戻れません。');
+	if (ok) {
+		console.log(no);
+
+		location.href = 'updateOrderStatusC?o_no=' + no + '&status=status2';
+	}
 }

@@ -15,7 +15,7 @@
 </head>
 <body>
 	<div class="main">
-		<h1>注文詳細情報</h1>
+		<h1>注文詳細情報</h1><span id="deliveryStatus"></span>
 
 		<table>
 			<thead>
@@ -40,7 +40,7 @@
 						<td>${order.i_name }</td>
 						<td>${order.o_quantity }/${order.i_price }</td>
 						<td>${order.o_totalprice }</td>
-						<td>${order.o_status }</td>
+						<td>${order.o_status }<button class="orderUpdateBtn" onclick="updateStatusOrder('${order.o_no}');" style="display: none">到着</button></td>
 						<td>${order.o_date }</td>
 						<td><button class="openModalBtn2" data-no="${order.i_no }">作成</button>
 						<td><a>削除</a></td>
@@ -170,7 +170,7 @@
 	<button class="closeBtn2" id="closeModalBtn2">X</button>
 	</dialog>
 
-	<script type="text/javascript" src="js/orderDetail.js"></script>
+	<script type="text/javascript" src="js/orderDetail.js?ver=1.2"></script>
 
 
 </body>
