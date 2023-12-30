@@ -219,7 +219,7 @@ td {
 	text-align: center;
 	background: #f5f5f5;
 	cursor: pointer;
-/* 	visibility: hidden; */
+	visibility: hidden;
 }
 
 .orderDeleteBtn:hover {
@@ -230,5 +230,22 @@ td {
 	background: gray;
 	color: white;
 }
+
+
+/* 배송완료로 바꾸는 버튼 */
+.orderUpdateBtn{
+	color: green;
+	cursor: pointer;
+}
+
+.orderUpdateBtn:hover{
+	text-decoration: underline;
+}
+
+.orderUpdateBtn:active{
+	color: black;
+	font-weight: bold;
+}
+
 
 /* 가현 추가 끝*/

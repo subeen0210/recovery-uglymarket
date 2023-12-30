@@ -21,21 +21,30 @@ $(function() {
 	});
 
 
-	//만약 발송완료면 배송완료로 바꾸는 버튼이 나오게
+	//만약 발송완료면 클릭할 수 있게
 
 	let orderUpdateBtn = document.querySelectorAll('.orderUpdateBtn');
 
 	orderUpdateBtn.forEach(function(btn) {
-		var orderStatus = btn.closest('td').innerText;
+		let orderStatus = btn.closest('td').querySelector('span').innerText;
 		console.log(orderStatus);
 		// 각 상태에 대한 작업 수행
 		if (orderStatus == '発送完了') {
-			btn.style.display = 'block';
+			btn.style.display = 'inline-block';
+			btn.closest('td').querySelector('span').style.display = 'none';
 		}
 	});
+	
+	// 배송 완료일때만 삭제 버튼 나오게
+	let orderdeleteBtn = document.querySelectorAll('.orderDeleteBtn');
 
-
-
+	orderdeleteBtn.forEach(function(delBtn) {
+		let orderStatus = delBtn.closest('tr').querySelector('span').innerText;
+		
+		if (orderStatus == '配送完了') {
+			delBtn.style.visibility = 'visible';
+		}
+	})
 
 
 
