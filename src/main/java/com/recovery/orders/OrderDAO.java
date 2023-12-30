@@ -98,7 +98,7 @@ public class OrderDAO {
 		System.out.println(uuid.toString().split("-")[0]);
 		String orderNum = uuid.toString().split("-")[0];
 
-		String sql = "insert into orders values(orders_seq.nextval,?,?,?,?,?,?,?,?,?,?, DEFAULT, sysdate, DEFAULT)";
+		String sql = "insert into orders values(orders_seq.nextval,?,?,?,?,?,?,?,?,?,?, DEFAULT, sysdate, DEFAULT, DEFAULT)";
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
@@ -174,13 +174,14 @@ public class OrderDAO {
 		System.out.println(user.getU_id());
 
 		String sql = "SELECT o.*, i.i_name, i.i_category, i.i_price, i.i_ed " + "FROM orders o "
-				+ "JOIN item i ON o.i_no = i.i_no " + "WHERE o.u_id = ? ORDER BY o_no DESC";
+				+ "JOIN item i ON o.i_no = i.i_no " + "WHERE o.u_id = ? and o.o_u_show = ? ORDER BY o_no DESC";
 
 		Order order = null;
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, user.getU_id());
+			pstmt.setInt(2, 1);
 			rs = pstmt.executeQuery();
 
 			ArrayList<Order> orders = new ArrayList<Order>();
@@ -274,7 +275,7 @@ public class OrderDAO {
 		System.out.println(seller.getS_id());
 
 		String sql = "SELECT o.*, i.i_name FROM orders o "
-				+ "JOIN item i ON o.i_no = i.i_no JOIN seller s ON i.s_id = s.s_id WHERE s.s_id = ? "
+				+ "JOIN item i ON o.i_no = i.i_no JOIN seller s ON i.s_id = s.s_id WHERE s.s_id = ? and o.o_s_show = ? "
 				+ "ORDER BY o_no DESC";
 
 		Order order = null;
@@ -282,6 +283,7 @@ public class OrderDAO {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, seller.getS_id());
+			pstmt.setInt(2, 1);
 			rs = pstmt.executeQuery();
 
 			ArrayList<Order> orders = new ArrayList<Order>();

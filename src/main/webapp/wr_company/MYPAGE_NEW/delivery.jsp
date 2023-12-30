@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/delivery.css?ver=1.1">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/delivery.css">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="js/deliveryModal.js?ver=2.4"></script>
+<script src="js/deliveryModal.js?ver=2.5"></script>
 
 </head>
 <body>
@@ -32,6 +32,7 @@
 					<th>住所</th>
 					<th>配送状態</th>
 					<th>注文日</th>
+					<th>削除</th>
 
 				</tr>
 			</thead>
@@ -47,11 +48,12 @@
 						<td>${order.o_addr }</td>
 						<td class="status">${order.o_status }</td>
 						<td>${order.o_date }</td>
+						<td class="orderDeleteBtn" onclick="deleteOrder('${order.o_no}')">X</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-
+		
 		<br>
 
 
