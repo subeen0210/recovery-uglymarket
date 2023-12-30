@@ -367,7 +367,8 @@ public class OrderDAO {
 			DBManager.close(con, pstmt, rs);
 		}
 	}
-
+	
+	// 배송상태 변경
 	public static void updateOrderStatus(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -398,4 +399,98 @@ public class OrderDAO {
 		}
 	}
 
+	
+	// 유저와 판매자의 show 여부 확인
+	public static String deleteOrderCheck(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String o_no = request.getParameter("no");
+
+		String sql = "SELECT o_u_show, o_s_show from orders where o_no = ?";
+		String result = "both";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, o_no);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				System.out.println("Delete Check Success");
+				int uShow = rs.getInt("o_u_show");
+				int sShow = rs.getInt("o_s_show");
+				if (uShow == 1 && sShow == 0) {
+					result = "sDel";
+				} else if (uShow == 0 && sShow == 1){
+					result = "uDel";
+				}
+			}
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Delete Check Failed");
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		
+		return result;
+	}
+
+	
+	// 유저 or 판매자의 show 0으로 변경
+	public static void deleteSelectOrder(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			request.setCharacterEncoding("UTF-8");
+			String o_no = request.getParameter("no");
+			String person = request.getParameter("person");
+			
+			String sql = "update orders set "+ person +" = 0 where o_no = ?";
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, o_no);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("Delete Order Success: " + person);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Delete Order Failed");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+
+	
+	public static void deleteOrder(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			request.setCharacterEncoding("UTF-8");
+			String o_no = request.getParameter("no");
+			
+			String sql = "DELETE FROM orders WHERE o_no = ?";
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, o_no);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("Delete Order Success");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Delete Order Failed");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+	
+	
+	
+	
 }

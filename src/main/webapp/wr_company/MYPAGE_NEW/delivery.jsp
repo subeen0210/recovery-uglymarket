@@ -48,7 +48,7 @@
 						<td>${order.o_addr }</td>
 						<td class="status">${order.o_status }</td>
 						<td>${order.o_date }</td>
-						<td class="orderDeleteBtn" onclick="deleteOrder('${order.o_no}')">X</td>
+						<td class="orderDeleteBtn" onclick="deleteOrder('${order.o_no}','o_s_show')">X</td>
 					</tr>
 				</c:forEach>
 			</tbody>

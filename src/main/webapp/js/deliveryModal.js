@@ -124,17 +124,13 @@ function updateStatusOrder() {
 	}
 }
 
-function deleteOrder(no){
+function deleteOrder(no,person){
 	let ok1 = confirm('削除しますか？');
 	if(ok1){
 		let ok2 = confirm('本当に削除しますか？\r\n今後、商品に問題がある場合、確認できません。');
 		if(ok2){
 			
-			
-			
-			
-			
-			
+			location.href='deleteOrderC?no='+no+'&person='+person;
 			
 		}
 	}
