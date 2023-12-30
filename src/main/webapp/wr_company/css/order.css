@@ -210,3 +210,9 @@ td {
 
     border: none;
 }
+
+/* 가현 추가*/
+.openModalBtn:hover{
+	text-decoration: underline;
+}
+/* 가현 추가 끝*/

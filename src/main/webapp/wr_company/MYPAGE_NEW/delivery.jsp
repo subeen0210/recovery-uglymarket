@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/delivery.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/delivery.css?ver=1.1">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
