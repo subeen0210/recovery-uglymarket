@@ -215,4 +215,20 @@ td {
 .openModalBtn:hover{
 	text-decoration: underline;
 }
+.orderDeleteBtn {
+	text-align: center;
+	background: #f5f5f5;
+	cursor: pointer;
+/* 	visibility: hidden; */
+}
+
+.orderDeleteBtn:hover {
+	background: #f0f0f0;
+}
+
+.orderDeleteBtn:active {
+	background: gray;
+	color: white;
+}
+
 /* 가현 추가 끝*/
