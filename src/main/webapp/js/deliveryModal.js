@@ -5,6 +5,20 @@ $(function() {
 	closeModalBtn.addEventListener('click', () => {
 		myModal.close();
 	});
+	
+	// status에 따라 주문번호 색깔 교체
+	let orders = document.querySelectorAll('.openModalBtn');
+	orders.forEach(function(order) {
+    let statusChgCSS = order.closest('tr').querySelector('.status').innerText;
+
+    if (statusChgCSS == '注文完了') {
+      order.style.color = 'red';
+    } else if (statusChgCSS == '発送完了') {
+      order.style.color = 'blue';
+    }
+  });
+
+
 
 
 	// 배송 상세정보 모달
@@ -40,7 +54,7 @@ $(function() {
 				$("#o_arrival").text(data.o_arrival);
 				$("#o_addr").html(data.o_addr + "<br>(" + data.o_addrNum + ")");
 				$("#o_date").text(formattAddrDate);
-				
+
 				$('#statusConfirm').text(data.o_status);
 
 
@@ -67,7 +81,7 @@ $(function() {
 
 
 				$('#modify').val(data.o_no);
-				
+
 
 				myModal.showModal();
 			},
@@ -91,24 +105,21 @@ function updateStatusOrder() {
 		let updateO_no = $('#modify').val();
 		let status = $('#status').val();
 		let statusMsg = "配送完了";
-		
+
 		let statusConfirm = $('#statusConfirm').text()
-//		console.log(updateO_no);
-//		console.log(status);
-//		console.log(statusConfirm);
-		
-		if(status == "status0"){
+
+		if (status == "status0") {
 			statusMsg = "注文完了";
-		} else if (status == "status1"){
+		} else if (status == "status1") {
 			statusMsg = "発送完了";
 		}
 
 		if (statusMsg == statusConfirm) {
-            alert('変更がありません。');
-			
-        } else {
-            // statusMsg가 statusConfirm이 아닌 경우에만 업데이트 진행
-            location.href = 'updateOrderStatusC?o_no=' + updateO_no + '&status=' + status;
-        }
+			alert('変更がありません。');
+
+		} else {
+			// statusMsg가 statusConfirm이 아닌 경우에만 업데이트 진행
+			location.href = 'updateOrderStatusC?o_no=' + updateO_no + '&status=' + status;
+		}
 	}
 }

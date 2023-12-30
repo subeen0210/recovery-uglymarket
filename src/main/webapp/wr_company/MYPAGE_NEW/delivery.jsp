@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="js/deliveryModal.js?ver=2.2"></script>
+<script src="js/deliveryModal.js?ver=2.4"></script>
 
 </head>
 <body>
@@ -45,7 +45,7 @@
 						<td>${order.o_totalprice }</td>
 						<td>${order.o_name }</td>
 						<td>${order.o_addr }</td>
-						<td>${order.o_status }</td>
+						<td class="status">${order.o_status }</td>
 						<td>${order.o_date }</td>
 					</tr>
 				</c:forEach>
