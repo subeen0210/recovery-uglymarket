@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="js/deliveryModal.js?ver=2.1"></script>
+<script src="js/deliveryModal.js?ver=2.2"></script>
 
 </head>
 <body>
@@ -119,13 +119,14 @@
 							<option value="status1">発送完了</option>
 							<option value="status2">配送完了</option>
 					</select></td>
+					<td id="statusConfirm" style="display: none;"></td>
 				</tr>
 
 			</table>
 		</section>
 
 
-		<button class="modify" id="modify" style="display: none;">修正</button>
+		<button class="modify" id="modify" onclick="updateStatusOrder();" style="display: none;">修正</button>
 
 	</div>
 	<br>

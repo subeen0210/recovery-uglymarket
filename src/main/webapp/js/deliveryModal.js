@@ -40,6 +40,10 @@ $(function() {
 				$("#o_arrival").text(data.o_arrival);
 				$("#o_addr").html(data.o_addr + "<br>(" + data.o_addrNum + ")");
 				$("#o_date").text(formattAddrDate);
+				
+				$('#statusConfirm').text(data.o_status);
+
+
 
 				// 오더 상태에 따라서 버튼의 우무
 				let status = 'status0';
@@ -61,6 +65,10 @@ $(function() {
 				$("#status option[value='" + statusHide + "']").hide();
 				$('#status').val(status).prop("selected", true);
 
+
+				$('#modify').val(data.o_no);
+				
+
 				myModal.showModal();
 			},
 			error: function() {
@@ -75,4 +83,32 @@ function formatDate(date) {
 	let month = (date.getMonth() + 1).toString().padStart(2, '0');
 	let day = date.getDate().toString().padStart(2, '0');
 	return year + "-" + month + "-" + day;
+}
+
+function updateStatusOrder() {
+	let ok = confirm('配送情報を変えますか？ 変えたら戻れません。');
+	if (ok) {
+		let updateO_no = $('#modify').val();
+		let status = $('#status').val();
+		let statusMsg = "配送完了";
+		
+		let statusConfirm = $('#statusConfirm').text()
+//		console.log(updateO_no);
+//		console.log(status);
+//		console.log(statusConfirm);
+		
+		if(status == "status0"){
+			statusMsg = "注文完了";
+		} else if (status == "status1"){
+			statusMsg = "発送完了";
+		}
+
+		if (statusMsg == statusConfirm) {
+            alert('変更がありません。');
+			
+        } else {
+            // statusMsg가 statusConfirm이 아닌 경우에만 업데이트 진행
+            location.href = 'updateOrderStatusC?o_no=' + updateO_no + '&status=' + status;
+        }
+	}
 }
