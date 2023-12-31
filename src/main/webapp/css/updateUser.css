@@ -182,6 +182,7 @@ label {
 	width: 20px;
 	height: 20px;
 	text-align: center;
+	cursor: pointer;
 }
 
 .set-input {
@@ -204,11 +205,8 @@ label {
 
 .modal-content {
 	width: 89%;
-	height: 130px;
+	height: 263px;
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
 	border: white;
 }
 
@@ -232,11 +230,11 @@ label {
 /* 버튼 효과 - 원준 */
 a.button {
 	display: block;
-	position: relative;
+    position: absolute;
 	float: left;
 	width: 120px;
 	padding: 0;
-	margin: 10px 20px 10px 0;
+    margin: -35px 0px 0px -61px;
 	font-weight: 600;
 	text-align: center;
 	line-height: 30px;
@@ -250,8 +248,8 @@ a.button {
 }
 
 .btnPush:hover {
-	margin-top: 15px;
-	margin-bottom: 5px;
+	margin-top: -30px;
+    margin-bottom: 5px
 }
 
 .btnBlueGreen.btnPush:hover {
