@@ -40,6 +40,8 @@ $(function() {
 				
 				$("#addrDetail").val(data.a_addrDetail);
 				
+				$("#formUpBtn").val(data.a_no);
+				
 				
 				
 				myModal.showModal();
@@ -50,4 +52,11 @@ $(function() {
 		});
 	});
 });
+
+function updateCheck() {
+	if(confirm('住所を変更しますか?')){
+		return true;
+	}
+	return false;
+};
 

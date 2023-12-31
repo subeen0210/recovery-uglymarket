@@ -66,8 +66,6 @@ public class AddrDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		User user = (User) request.getSession().getAttribute("userAccount");
-		System.out.println(user.getU_id());
 		String sql = "SELECT a_no, a_postcode, a_addr, a_addrdetail, a_name, a_tel, a_req FROM address"
 				+ " where a_no = ?";
 
@@ -100,6 +98,39 @@ public class AddrDAO {
 			System.out.println("배송 하나 조회 실패");
 		} finally {
 			DBManager.close(con, pstmt, rs);
+		}
+	}
+
+	
+	public static void updateAddr(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		String sql = "UPDATE address SET a_postcode = ?, a_addr = ?, a_addrDetail = ?,"
+				+ " a_name = ?, a_tel = ?, a_req = ?"
+				+ " WHERE a_no = ?";
+		try {
+			request.setCharacterEncoding("UTF-8");
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			String postcode = request.getParameter("userAddrN");
+			
+			pstmt.setString(1, postcode);
+			pstmt.setString(2, request.getParameter("userAddrP")+"!"+request.getParameter("userAddrC"));
+			pstmt.setString(3, request.getParameter("userAddrD"));
+			pstmt.setString(4, request.getParameter("a_name"));
+			pstmt.setString(5, request.getParameter("a_tel"));
+			pstmt.setString(6, request.getParameter("deliveryTime"));
+			pstmt.setString(7, request.getParameter("a_no"));
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("주소 변경 성공");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("주소 변경 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
 		}
 	}
 

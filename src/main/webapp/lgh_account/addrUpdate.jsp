@@ -35,7 +35,7 @@
 					<tr>
 						<td>${addr.a_name }</td>
 						<td>${addr.a_postcode }</td>
-						<td>${addr.a_addr } ${addr.a_addrDetail }</td>
+						<td>${addr.a_addr }${addr.a_addrDetail }</td>
 						<td>${addr.a_tel }</td>
 						<td>${addr.a_req }</td>
 						<td class="openModalBtn" data-no="${addr.a_no }">修正</td>
@@ -54,61 +54,68 @@
 
 	<!-- dialog 태그 사용 -->
 	<dialog id="myModal">
-	<div class="main_modal">
+	<form action="updateAddrC" method="post" onsubmit="return updateCheck();">
+		<div class="main_modal">
 
-		<section class="order-details">
-			<h2>住所修正</h2>
-			<table class="order-info">
-				<tr>
-					<td class="label">受取人</td>
-					<td class="value"><input class="input-style" id="nameInput" name="" /></td>
+			<section class="order-details">
+				<h2>住所修正</h2>
+				<table class="order-info">
+					<tr>
+						<td class="label">受取人</td>
+						<td class="value"><input class="input-style" id="nameInput"
+							name="a_name" /></td>
 
-				</tr>
-				<tr>
-					<td class="label">電話番号</td>
-					<td class="value"><input class="input-style" id="telInput" name="" /></td>
-				</tr>
-				<tr>
-					<td class="label">到着時間</td>
-					<td class="value"><select id="deliveryTime" name="deliveryTime">
-						<!-- 							option 태그로 각 선택 옵션을 정의 -->
-						<option value="午前中(8:00~12:00)">午前中(8:00~12:00)</option>
-						<option value="12:00~14:00">12:00~14:00</option>
-						<option value="14:00~16:00">14:00~16:00</option>
-						<option value="16:00~:18:00">16:00~:18:00</option>
-						<option value="18:00~20:00">18:00~20:00</option>
-						<option value="19:00~21:00">19:00~21:00</option>
-					</select></td>
-				</tr>
+					</tr>
+					<tr>
+						<td class="label">電話番号</td>
+						<td class="value"><input class="input-style" id="telInput"
+							name="a_tel" /></td>
+					</tr>
+					<tr>
+						<td class="label">到着時間</td>
+						<td class="value"><select id="deliveryTime"
+							name="deliveryTime">
+								<!-- 							option 태그로 각 선택 옵션을 정의 -->
+								<option value="午前中(8:00~12:00)">午前中(8:00~12:00)</option>
+								<option value="12:00~14:00">12:00~14:00</option>
+								<option value="14:00~16:00">14:00~16:00</option>
+								<option value="16:00~:18:00">16:00~:18:00</option>
+								<option value="18:00~20:00">18:00~20:00</option>
+								<option value="19:00~21:00">19:00~21:00</option>
+						</select></td>
+					</tr>
 
-				<tr>
-					<td class="label">郵便番号</td>
-					<td class="value"><input class="input-style" name="userAddrN" id="addrNum"
-						readonly="readonly" /><button class="btn-style" type="button" id="addr-popup">住所検索</button>
-					</td>
-				</tr>
-				<tr>
-					<td class="label">都道府県</td>
-					<td class="value"><input class="input-style" name="userAddrP" id="addrPrefecture"
-						readonly="readonly" /></td>
-				</tr>
-				<tr>
-					<td class="label">市区町村</td>
-					<td class="value"><input class="input-style" name="userAddrC" id="addrCity"
-						readonly="readonly" /></td>
-				</tr>
-				<tr>
-					<td class="label">詳細情報</td>
-					<td class="value"><input class="input-style" name="userAddrD" id="addrDetail"/>
-					</td>
-				</tr>
-			</table>
-		</section>
+					<tr>
+						<td class="label">郵便番号</td>
+						<td class="value"><input class="input-style" name="userAddrN"
+							id="addrNum" readonly="readonly" />
+						<button class="btn-style" type="button" id="addr-popup">住所検索</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">都道府県</td>
+						<td class="value"><input class="input-style" name="userAddrP"
+							id="addrPrefecture" readonly="readonly" /></td>
+					</tr>
+					<tr>
+						<td class="label">市区町村</td>
+						<td class="value"><input class="input-style" name="userAddrC"
+							id="addrCity" readonly="readonly" /></td>
+					</tr>
+					<tr>
+						<td class="label">詳細情報</td>
+						<td class="value"><input class="input-style" name="userAddrD"
+							id="addrDetail" /></td>
+					</tr>
+				</table>
+				<button name="a_no" id="formUpBtn" style="width: 100px; height: 40px;">修正</button>
+			</section>
 
-
-	</div>
-	<br>
-	<button id="closeModalBtn" style="width: 30px; height: 30px;border:none;">X</button>
+		</div>
+		<br>
+		<button id="closeModalBtn" type="button"
+			style="width: 30px; height: 30px; border: none;">X</button>
+	</form>
 	</dialog>
 
 
@@ -128,7 +135,8 @@
 					</tr>
 					<tr>
 						<td class="label">評点</td>
-						<td class="value"><input type="text" id="r-grade" name="grade"></td>
+						<td class="value"><input type="text" id="r-grade"
+							name="grade"></td>
 					</tr>
 					<tr>
 
@@ -139,7 +147,8 @@
 					</tr>
 					<tr>
 						<td class="label">内容</td>
-						<td class="value"><textarea name="r-story" id="r-story" rows="4" cols="50" placeholder="최대 300자"></textarea></td>
+						<td class="value"><textarea name="r-story" id="r-story"
+								rows="4" cols="50" placeholder="최대 300자"></textarea></td>
 					</tr>
 
 				</table>
@@ -152,7 +161,7 @@
 	<button class="closeBtn2" id="closeModalBtn2">X</button>
 	</dialog>
 
-	<script type="text/javascript" src="js/userAddrUpdate.js?ver=1.1"></script>
+	<script type="text/javascript" src="js/userAddrUpdate.js?ver=1.2"></script>
 
 
 </body>
