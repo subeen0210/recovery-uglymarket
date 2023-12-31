@@ -73,14 +73,13 @@
 	font-weight: bold;
 }
 
-.reg-name2 {
-	width: 80%;
-	display: flex;
-	justify-content: right;
-	align-items: center;
-	font-weight: bold;
-}
-
+/* .reg-name2 { */
+/* 	width: 80%; */
+/* 	display: flex; */
+/* 	justify-content: right; */
+/* 	align-items: center; */
+/* 	font-weight: bold; */
+/* } */
 .reg-name3 {
 	width: 50%;
 	display: flex;
@@ -109,26 +108,25 @@
 	margin-left: -100px;
 }
 
-input[type="file"] {
-	display: none;
-}
+/* input[type="file"] { */
+/* 	display: none; */
+/* } */
 
-label {
-	background-color: #2a243a;
-	color: #fff;
-	padding: 10px 15px;
-	border-radius: 5px;
-	cursor: pointer;
-	width: 29%;
-	font-size: 11pt;
-	font-weight: bold;
-}
+/* label { */
+/* 	background-color: #2a243a; */
+/* 	color: #fff; */
+/* 	padding: 10px 15px; */
+/* 	border-radius: 5px; */
+/* 	cursor: pointer; */
+/* 	width: 29%; */
+/* 	font-size: 11pt; */
+/* 	font-weight: bold; */
+/* } */
 
-.reg-content2 {
-	width: 50%;
-	height: 40px;
-}
-
+/* .reg-content2 { */
+/* 	width: 50%; */
+/* 	height: 40px; */
+/* } */
 #fileNameDisplay {
 	position: absolute;
 	margin-left: 385px;
@@ -230,11 +228,11 @@ label {
 /* 버튼 효과 - 원준 */
 a.button {
 	display: block;
-    position: absolute;
+	position: absolute;
 	float: left;
 	width: 120px;
 	padding: 0;
-    margin: -35px 0px 0px -61px;
+	margin: -35px 0px 0px -61px;
 	font-weight: 600;
 	text-align: center;
 	line-height: 30px;
@@ -249,19 +247,63 @@ a.button {
 
 .btnPush:hover {
 	margin-top: -30px;
-    margin-bottom: 5px
+	margin-bottom: 5px
 }
 
 .btnBlueGreen.btnPush:hover {
 	box-shadow: 0px 0px 0px 0px grey;
 }
 
-
 /* 비밀번호 오류 메세지 absolute 적용*/
-.PW-change-errorMsg{
+.PW-change-errorMsg {
 	width: 300px;
-    position: absolute;
-    top: 42px;
-    right: 0;
-    text-align: right;
+	position: absolute;
+	top: 42px;
+	right: 0;
+	text-align: right;
+}
+
+/* 가현 이미지파일 업로드 수정 2023-12-31*/
+.reg-input .upload-img {
+	display: inline-block;
+	height: 25px;
+	padding: 0 10px;
+	vertical-align: middle;
+	border: 2px solid #2a243a;
+	width: 40%;
+	color: #999999;
+}
+
+.reg-input label {
+	display: inline-block;
+	vertical-align: middle;
+	height: 20px;
+	margin-left: 10px;
+	background-color: #2a243a;
+	color: #fff;
+	padding: 10px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 11pt;
+}
+
+.reg-input input[type="file"] {
+	position: absolute;
+	width: 0;
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+}
+
+/* 이미지 미리보기 추가 가현 2023_12_31*/
+#imgShow {
+	height: 200px;
+	width: 200px;
+}
+
+#imgShow img {
+	object-fit: cover;
+	height: 200px;
+	width: 100%;
 }
