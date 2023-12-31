@@ -30,7 +30,7 @@ function payStorage() {
 			let c_no = menuContainer.querySelector('.cartNumber').value;
 			let i_no = menuContainer.querySelector('.itemNumber').value;
 			// menuContainer에서 값을 가져옵니다.
-			let image = menuContainer.querySelector('.profile-img').textContent;
+			let image = menuContainer.querySelector('.profile-imgLocal').value;
 			let name = menuContainer.querySelector('.info-title').textContent;
 			let category = menuContainer.querySelector('.info-menu').textContent;
 			let fName = menuContainer.querySelector('.info-menus div:nth-child(2)').textContent;

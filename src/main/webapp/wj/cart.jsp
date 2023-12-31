@@ -30,6 +30,7 @@
 				<input data-cartCode="${cart.c_no}" type="checkbox" class="item-checkbox" onchange="selectTotalPrice(this)"/>&ensp;${i}
 			</div>
 			<div class="menu-profile">
+					<input type="hidden" class="profile-imgLocal" value="${cart.i_img }">
 				<div class="profile-img"><img class="profile-img" src="itemFolder/${cart.i_img }"></div>
 			</div>
 			<div class="menu-info">
@@ -81,5 +82,5 @@
 	</div>
 </body>
 <script src="wj/js/cart(copy).js"></script>
-<script src="js/localStorage.js"></script>
+<script src="js/localStorage.js?ver=1.1"></script>
 </html>
