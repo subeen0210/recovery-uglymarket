@@ -192,4 +192,27 @@ public class AddrDAO {
 	
 	}
 
+	public static void deleteAddr(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		String sql = "DELETE FROM address where a_no = ?";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, request.getParameter("no"));
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("address delete success");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("address delete failed");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+
 }

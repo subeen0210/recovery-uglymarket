@@ -84,3 +84,9 @@ function regCheck() {
 	}
 	return false;
 }
+
+function deleteAddr(no) {
+	if(confirm('削除しますか?')){
+		location.href='deleteAddrC?no='+no;
+	}
+}

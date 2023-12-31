@@ -39,7 +39,7 @@
 						<td>${addr.a_tel }</td>
 						<td>${addr.a_req }</td>
 						<td class="openModalBtn" data-no="${addr.a_no }">修正</td>
-						<td class="addrDeleteBtn" onclick="">X</td>
+						<td class="addrDeleteBtn" onclick="deleteAddr('${addr.a_no }')">X</td>
 					</tr>
 				</c:forEach>
 
