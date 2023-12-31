@@ -114,7 +114,7 @@
 		</div>
 	</form>
 		<!-- 비밀번호 찾기 modal -->
-	<dialog id="password-modal">
+	<dialog id="password-modal" >
 	<div class="btn-size-close">
 		<a id="close-button">X</a>
 	</div>
@@ -169,6 +169,7 @@
 	document.getElementById("password-change-button").addEventListener("click",
 			function() {
 				// Open the dialog
+				document.getElementById("password-modal").style.display= 'flex';
 				document.getElementById("password-modal").showModal();
 			});
 
@@ -176,6 +177,7 @@
 			function() {
 
 				// Close the dialog
+				document.getElementById("password-modal").style.display= 'none';
 				document.getElementById("password-modal").close();
 			});
 </script>
