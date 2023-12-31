@@ -40,7 +40,7 @@
 					<div class="myinfo_box">
 						<!-- 나의 로그인 정보 -->
 						<div class="myinfo_box_photo">
-							<img src="">
+							<img style=" object-fit: fill; width: 100%; height:160px; " src="lgh_account/userImg/${sessionScope.userAccount.u_img}">
 						</div>
 						<div class="myinfo_box_item">
 							<div class="myinfo_box_items">
