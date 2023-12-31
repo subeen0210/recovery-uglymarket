@@ -9,7 +9,7 @@ function payStorage() {
 	if(payTotalPrice == '0'){
 		alert('買い物を選択してください');
 		
-		return f;
+		return false;
 	}
 	
 

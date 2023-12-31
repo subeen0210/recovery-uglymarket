@@ -1,5 +1,11 @@
 // orderPage.jsp 에서 localStorage 불러오기
 $(function() {
+	
+	
+	
+	let req = document.getElementById('deliveryCheck').value;
+	$("#deliveryTime").val(req).prop("selected", true);
+	
 
 	let itemsString = localStorage.getItem('selectedItems')
 	let items = JSON.parse(itemsString);
@@ -54,6 +60,9 @@ $(function() {
 });
 
 function regOrder(){
+	
+	let ok = confirm("配送先と商品を確認しましたか？");
+			if (ok) {
 	let i_no = document.getElementsByClassName('i_no');
 	let quantity = document.getElementsByClassName('quantity');
 	let subtotal = document.getElementsByClassName('subtotal');
@@ -92,5 +101,5 @@ $(document).on('keydown', function(event) {
         // 모달이 닫히지 않도록 추가적인 로직을 추가할 수 있습니다.
     }
 });
-	
+	} 
 }

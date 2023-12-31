@@ -30,7 +30,7 @@
 				<input data-cartCode="${cart.c_no}" type="checkbox" class="item-checkbox" onchange="selectTotalPrice(this)"/>&ensp;${i}
 			</div>
 			<div class="menu-profile">
-				<div class="profile-img">${cart.i_img }</div>
+				<div class="profile-img"><img class="profile-img" src="itemFolder/${cart.i_img }"></div>
 			</div>
 			<div class="menu-info">
 				<div class="info-title">${cart.i_name }</div>

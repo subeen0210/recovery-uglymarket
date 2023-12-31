@@ -322,3 +322,13 @@ a.btn-3d-3 {
 .btn-3d-3.btnPush3:hover {
 	box-shadow: 0px 0px 0px 0px #e2e2e2;
 }
+
+
+/* 가현 추가 */
+#deliveryTime{
+	font-size: 14pt;
+    height: 35px;
+    width: 97%;
+}
+
+/* 가현 추가 끝*/
