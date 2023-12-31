@@ -9,7 +9,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/updateUser.js"></script>
+<script type="text/javascript" src="js/updateUser.js?ver=1.1"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
 
 </head>
@@ -28,7 +28,7 @@
 						プロフィールイメージ<span class="essential-icon">*</span>
 					</div>
 					<div class="reg-input">
-						<input class="input-style upload-img" placeholder="jpg/png/jpeg"
+						<input class="input-style upload-img" placeholder="${sessionScope.userAccount.u_img }"
 							readonly="readonly" /> <label for="fileInput">アップロード</label> <input
 							type="file" name="userImg" id="fileInput"
 							accept=".jpg, .jpeg, .png">
