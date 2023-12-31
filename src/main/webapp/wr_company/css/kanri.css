@@ -145,6 +145,12 @@ td {
 	right: 20px;
 }
 
+#closeModalBtn2 {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
 .closeBtn2 {
 	position: absolute;
 	top: 10px;
@@ -214,5 +220,13 @@ td {
 	width: 100%;
 }
 
+.value2 input{
+	border: 1px solid gray;;
+}
+
+#openRegAddrBtn:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
 
 /* 가현 추가 끝*/

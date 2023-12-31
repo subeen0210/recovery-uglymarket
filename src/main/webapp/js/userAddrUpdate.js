@@ -51,6 +51,24 @@ $(function() {
 			}
 		});
 	});
+	
+	
+	
+	
+	
+	// 주소 등록 모달
+	const myModal2 = document.getElementById('myModal2');
+	const openRegAddrBtn = document.getElementById('openRegAddrBtn');
+	const closeModalBtn2 = document.getElementById('closeModalBtn2');
+
+
+	openRegAddrBtn.addEventListener('click', () => {
+		myModal2.showModal();
+	});
+	
+	closeModalBtn2.addEventListener('click', () => {
+		myModal2.close();
+	});
 });
 
 function updateCheck() {
@@ -60,3 +78,9 @@ function updateCheck() {
 	return false;
 };
 
+function regCheck() {
+	if(confirm('住所を追加しますか?')){
+		return true;
+	}
+	return false;
+}

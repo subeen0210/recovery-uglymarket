@@ -113,13 +113,21 @@ public class AddrDAO {
 			request.setCharacterEncoding("UTF-8");
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
-			String postcode = request.getParameter("userAddrN");
+			String tel = request.getParameter("a_tel");
+			if (!tel.contains("-")) {
+				StringBuffer telAll = new StringBuffer(tel);
+				telAll.insert(3, "-");
+				telAll.insert(8, "-");
+				tel = telAll.toString();
+			}
+			System.out.println(tel);
 			
-			pstmt.setString(1, postcode);
+			
+			pstmt.setString(1, request.getParameter("userAddrN"));
 			pstmt.setString(2, request.getParameter("userAddrP")+"!"+request.getParameter("userAddrC"));
 			pstmt.setString(3, request.getParameter("userAddrD"));
 			pstmt.setString(4, request.getParameter("a_name"));
-			pstmt.setString(5, request.getParameter("a_tel"));
+			pstmt.setString(5, tel);
 			pstmt.setString(6, request.getParameter("deliveryTime"));
 			pstmt.setString(7, request.getParameter("a_no"));
 			
@@ -132,6 +140,56 @@ public class AddrDAO {
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
+	}
+
+	public static void regAddr(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		User user = (User) request.getSession().getAttribute("userAccount");
+		String sql = "insert into address values(address_seq.nextval,?,?,?,?,?,?,?)";
+		
+		try {
+			request.setCharacterEncoding("UTF-8");
+			String name = request.getParameter("a_name");
+			String tel1 = request.getParameter("a_tel1");
+			String tel2 = request.getParameter("a_tel2");
+			String tel3 = request.getParameter("a_tel3");
+			
+			String telAll = tel1+"-"+tel2+"-"+tel3;
+			
+			String deliveryTime = request.getParameter("deliveryTime");
+			String userAddrN = request.getParameter("userAddrN");
+			String userAddrP = request.getParameter("userAddrP");
+			String userAddrC = request.getParameter("userAddrC");
+			String userAddrD = request.getParameter("userAddrD");
+			if (userAddrD.isEmpty()) {
+				userAddrD = "...";
+			}
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, userAddrN);
+			pstmt.setString(2, userAddrP+"!"+userAddrC);
+			pstmt.setString(3, userAddrD);
+			pstmt.setString(4, name);
+			pstmt.setString(5, telAll);
+			pstmt.setString(6, deliveryTime);
+			pstmt.setString(7, user.getU_id());
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("배송지 등록 성공");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	
+	
+	
 	}
 
 }
