@@ -76,7 +76,8 @@ function userCheck() {
 	let inputTel3 = document.querySelector('input[name="userTel3"]');
 	let inputEmail = document.querySelector('input[name="userEmail"]');
 	let inputAddrN = document.querySelector('input[name="userAddrN"]');
-	console.log(inputId);
+	let img = document.querySelector('input[name="userImg"]');
+	console.log(img);
 	let setLowerCase = "abcdefghijklmnopqrstuvwxyzQWERTYUIOPASDFGHJKLZXCVBNM";
 	let setNumbers = "1234567890";
 	let setSpecialChars = "!@#$%^&*()_+-=[]{}|;':,.<>?/";
@@ -174,6 +175,18 @@ function userCheck() {
 	if (isEmpty(inputAddrN)) {
 		alert('郵便番号がありません');
 		inputAddrN.focus();
+		return false;
+	}
+	
+	// 이미지 예외
+	if (isEmpty(img)) {
+		alert('農場のイメージを入れてください');
+		img.focus();
+		return false;
+	}
+	else if (isNotType(img, "jpg") && isNotType(img, "jpeg") && isNotType(img, "png")){
+		alert('イメージには jpg / jpeg / png だけを入れてください');
+		img.focus();
 		return false;
 	}
 
@@ -278,6 +291,11 @@ function sellerCheck() {
 	// 팜 이미지
 	if (isEmpty(inputFImg)) {
 		alert('農場のイメージを入れてください');
+		inputFImg.focus();
+		return false;
+	}
+	if (isNotType(inputFImg, "jpg") && isNotType(inputFImg, "jpeg") && isNotType(inputFImg, "png")){
+		alert('イメージには jpg / jpeg / png だけを入れてください');
 		inputFImg.focus();
 		return false;
 	}
