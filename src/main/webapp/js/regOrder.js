@@ -87,6 +87,7 @@ function regOrder(){
 	data: {i_no: i_noArray.toString(), quantity: quantityArray.toString(), subtotal: subtotalArray.toString()},
     success: function(data) {
         // 요청이 성공했을 때 실행되는 콜백 함수
+		paymentEndPage.style.display = 'flex';
         paymentEndPage.showModal();
 
     },
