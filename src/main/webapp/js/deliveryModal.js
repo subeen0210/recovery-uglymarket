@@ -5,8 +5,33 @@ $(function() {
 	closeModalBtn.addEventListener('click', () => {
 		myModal.close();
 	});
-
 	
+	// status에 따라 주문번호 색깔 교체
+	let orders = document.querySelectorAll('.openModalBtn');
+	orders.forEach(function(order) {
+    let statusChgCSS = order.closest('tr').querySelector('.status').innerText;
+
+    if (statusChgCSS == '注文完了') {
+      order.style.color = 'red';
+    } else if (statusChgCSS == '発送完了') {
+      order.style.color = 'blue';
+    }
+  });
+
+	// 배송완료일 때 삭제 버튼 뜨게
+	let orderdeleteBtn = document.querySelectorAll('.orderDeleteBtn');
+
+	orderdeleteBtn.forEach(function(delBtn) {
+		let orderStatus = delBtn.closest('tr').querySelector('.status').innerText;
+		
+		if (orderStatus == '配送完了') {
+			delBtn.style.visibility = 'visible';
+		}
+	})
+
+
+
+
 	// 배송 상세정보 모달
 	$('.openModalBtn').on('click', function() {
 		let index = $(this).data('number');
@@ -17,7 +42,7 @@ $(function() {
 			type: 'post',
 			datatype: 'json',
 			url: 'SellerOrderC',// 실제 서버로의 경로로 변경해야 합니다.
-			data: {no: index},
+			data: { no: index },
 			success: function(data) {
 				console.log(data.i_name);
 
@@ -40,19 +65,35 @@ $(function() {
 				$("#o_arrival").text(data.o_arrival);
 				$("#o_addr").html(data.o_addr + "<br>(" + data.o_addrNum + ")");
 				$("#o_date").text(formattAddrDate);
-				
-				let status = 'status0'
+
+				$('#statusConfirm').text(data.o_status);
+
+
+
+				// 오더 상태에 따라서 버튼의 우무
+				let status = 'status0';
+				let statusShow = 'status0';
+				let statusHide = 'status2';
 				$('#o_status').show();
 				$('#o_statusEnd').hide();
 				$('#modify').show();
-				if(data.o_status == "発送完了"){
+				if (data.o_status == "発送完了") {
 					status = 'status1'
-				} else if(data.o_status == "配送完了"){
+					statusShow = 'status2';
+					statusHide = 'status0';
+				} else if (data.o_status == "配送完了") {
 					$('#o_status').hide();
 					$('#o_statusEnd').show();
 					$('#modify').hide();
 				}
-				$('#status').val(status).prop("selected",true);
+				$("#status option[value='" + statusShow + "']").show();
+				$("#status option[value='" + statusHide + "']").hide();
+				$('#status').val(status).prop("selected", true);
+
+
+				$('#modify').val(data.o_no);
+
+
 				myModal.showModal();
 			},
 			error: function() {
@@ -67,4 +108,41 @@ function formatDate(date) {
 	let month = (date.getMonth() + 1).toString().padStart(2, '0');
 	let day = date.getDate().toString().padStart(2, '0');
 	return year + "-" + month + "-" + day;
+}
+
+function updateStatusOrder() {
+	let ok = confirm('配送情報を変えますか？ 変えたら戻れません。');
+	if (ok) {
+		let updateO_no = $('#modify').val();
+		let status = $('#status').val();
+		let statusMsg = "配送完了";
+
+		let statusConfirm = $('#statusConfirm').text()
+
+		if (status == "status0") {
+			statusMsg = "注文完了";
+		} else if (status == "status1") {
+			statusMsg = "発送完了";
+		}
+
+		if (statusMsg == statusConfirm) {
+			alert('変更がありません。');
+
+		} else {
+			// statusMsg가 statusConfirm이 아닌 경우에만 업데이트 진행
+			location.href = 'updateOrderStatusC?o_no=' + updateO_no + '&status=' + status;
+		}
+	}
+}
+
+function deleteOrder(no,person){
+	let ok1 = confirm('削除しますか？');
+	if(ok1){
+		let ok2 = confirm('本当に削除しますか？\r\n今後、商品に問題がある場合、確認できません。');
+		if(ok2){
+			
+			location.href='deleteOrderC?no='+no+'&person='+person;
+			
+		}
+	}
 }

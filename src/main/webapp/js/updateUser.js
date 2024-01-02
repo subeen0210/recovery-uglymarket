@@ -67,6 +67,7 @@ function userCheck() {
 	let inputTel2 = document.querySelector('input[name="userTel2"]');
 	let inputTel3 = document.querySelector('input[name="userTel3"]');
 	let inputEmail = document.querySelector('input[name="userEmail"]');
+	let img = document.querySelector('input[name="userImg"]');
 	let setSpecialChars = "!@#$%^&*()_+-=[]{}|;':,.<>?/";
 
 	// 한자 성 예외
@@ -122,6 +123,18 @@ function userCheck() {
 	if (isEmpty(inputEmail)) {
 		alert("メールがありません");
 		inputEmail.focus();
+		return false;
+	}
+	
+	// 이미지 예외
+	if (isEmpty(img)) {
+		alert('農場のイメージを入れてください');
+		img.focus();
+		return false;
+	}
+	else if (isNotType(img, "jpg") && isNotType(img, "jpeg") && isNotType(img, "png")){
+		alert('イメージには jpg / jpeg / png だけを入れてください');
+		img.focus();
 		return false;
 	}
 
@@ -188,10 +201,16 @@ function sellerCheck() {
 	}
 	// 팜 이미지
 	if (isEmpty(inputFImg)) {
-		alert("農場のイメージを入れてください");
+		alert('農場のイメージを入れてください');
 		inputFImg.focus();
 		return false;
 	}
+	else if (isNotType(inputFImg, "jpg") && isNotType(inputFImg, "jpeg") && isNotType(inputFImg, "png")){
+		alert('イメージには jpg / jpeg / png だけを入れてください');
+		img.focus();
+		return false;
+	}
+
 	// 팜 이름 예외
 	// 특수문자 불가
 	if (isEmpty(inputFName) || !notContains(inputFName, setSpecialChars)) {

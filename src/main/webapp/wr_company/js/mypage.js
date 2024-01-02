@@ -3,7 +3,7 @@ $(function() {
 
 	// 'kanri' id를 가진 div에 대한 클릭 이벤트
 	$('#kanri').on('click', function(event) {
-		handleDivClick(event, 'wr_company/kanri.jsp', '#kanri');
+		handleDivClick(event, 'AddrShowC', '#kanri');
 	});
 
 	// 'review' id를 가진 div에 대한 클릭 이벤트

@@ -9,7 +9,7 @@ function payStorage() {
 	if(payTotalPrice == '0'){
 		alert('買い物を選択してください');
 		
-		return f;
+		return false;
 	}
 	
 
@@ -30,13 +30,13 @@ function payStorage() {
 			let c_no = menuContainer.querySelector('.cartNumber').value;
 			let i_no = menuContainer.querySelector('.itemNumber').value;
 			// menuContainer에서 값을 가져옵니다.
-			let image = menuContainer.querySelector('.profile-img').textContent;
+			let image = menuContainer.querySelector('.profile-imgLocal').value;
 			let name = menuContainer.querySelector('.info-title').textContent;
 			let category = menuContainer.querySelector('.info-menu').textContent;
 			let fName = menuContainer.querySelector('.info-menus div:nth-child(2)').textContent;
-			let price = menuContainer.querySelector('.info-price').textContent;
+			let price = menuContainer.querySelector('.info-price').textContent.replace('￥', '');
 			let quantity = menuContainer.querySelector('.quantity-input').value;
-			let subtotal = menuContainer.querySelector('.per-total-price').textContent;
+			let subtotal = menuContainer.querySelector('.per-total-price').textContent.replace('￥', '');
 
 			// 가져온 값을 사용하여 객체를 생성합니다.
 			let item = {

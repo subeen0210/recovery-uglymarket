@@ -89,6 +89,7 @@ function notContains(input, set){
 							// "jpg"
 function isNotType(input, type){
 	type = "." + type;		// .jpg
+	console.log(input.value);
 	return (input.value.indexOf(type)) == -1;
 }
 

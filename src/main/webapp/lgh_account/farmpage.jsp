@@ -16,8 +16,8 @@
 </head>
 <body>
 
-	<form action="updateSelerC" method="post"
-		enctype="multipart/form-data" onsubmit="return sellerCheck()">
+	<form action="updateSelerC" method="post" enctype="multipart/form-data"
+		onsubmit="return sellerCheck()">
 		<div class="reg-main">
 			<div class="reg-container">
 				<h1 style="color: #2a243a">情報修正</h1>
@@ -84,13 +84,16 @@
 					</div>
 				</div>
 				<br />
-				<div class="reg-content2">
-					<div class="reg-name2">
-						農場イメージ<span class="essential-icon">*</span>
+				<div class="reg-content">
+					<div class="reg-menu">
+						農場イメージ<span class="essentialicon">*</span>
 					</div>
-					&ensp; <label for="fileInput">アップロード</label><input type="file"
-						name="newFarmImg" id="fileInput" onchange="displayFileName(this)" />
-					<span id="fileNameDisplay"></span>
+					<div class="reg-input">
+						<input class="input-style upload-img" placeholder="jpg/png/jpeg"
+							readonly="readonly" /> <label for="fileInput">アップロード</label> <input
+							type="file" name="farmImg" id="fileInput"
+							accept=".jpg, .jpeg, .png" onchange="displayFileName(this)">
+					</div>
 				</div>
 				<br />
 				<div class="reg-content">
@@ -104,8 +107,8 @@
 				</div>
 				<br />
 				<div class="reg-content3">
-				<div class="reg-menu2">
-					<div class="reg-menu2-1">農場説明</div>
+					<div class="reg-menu2">
+						<div class="reg-menu2-1">農場説明</div>
 					</div>
 					<div class="reg-input2">
 						<textarea class="input-style2" name="farmStory" id="farmStory"
@@ -118,8 +121,8 @@
 						農場 郵便番号<span class="essential-icon">*</span>
 					</div>
 					<div class="reg-name3">
-						<button style="cursor: pointer;" class="btn-style" type="button" id="addr-popup">
-							住所検索</button>
+						<button style="cursor: pointer;" class="btn-style" type="button"
+							id="addr-popup">住所検索</button>
 						<br />
 					</div>
 				</div>
@@ -174,17 +177,20 @@
 		</div>
 		<div class="content1">
 			<div class="set-input">
-				<input class="style-input" id="old-pw" type="password" placeholder="10字~20字">
+				<input class="style-input" id="old-pw" type="password"
+					placeholder="10字~20字">
 				<div class="PW-change-errorMsg" id="PW-old-errorMsg"></div>
 			</div>
 			<br>
 			<div class="set-input">
-				<input class="style-input" id="new-pw" placeholder="10字~20字" type="password" maxlength="20">
+				<input class="style-input" id="new-pw" placeholder="10字~20字"
+					type="password" maxlength="20">
 				<div class="PW-change-errorMsg" id="pw-new-errorMsg"></div>
 			</div>
 			<br>
 			<div class="set-input">
-				<input class="style-input" id="new-pw-confirm" type="password" placeholder="再確認">
+				<input class="style-input" id="new-pw-confirm" type="password"
+					placeholder="再確認">
 				<div class="PW-change-errorMsg" id="pwConfirm"></div>
 			</div>
 		</div>
@@ -197,8 +203,8 @@
 	</dialog>
 	<!-- 비밀번호 찾기 modal 끝 -->
 </body>
-	
-	
+
+
 <script type="text/javascript" src="js/regUser1.js"></script>
 <script type="text/javascript">
 	$(function() {
@@ -236,12 +242,11 @@
 		/* 분리 끝 */
 
 	});
-	
-// 	document.getElementById("password-change-button").addEventListener('click', function() {
-// 		  document.getElementById('password-modal').style.display = 'flex'; // 또는 'block'
-// 		});	
-	
-	
+
+	// 	document.getElementById("password-change-button").addEventListener('click', function() {
+	// 		  document.getElementById('password-modal').style.display = 'flex'; // 또는 'block'
+	// 		});	
+
 	document.getElementById("password-change-button").addEventListener("click",
 			function() {
 				// Open the dialog
@@ -254,7 +259,6 @@
 				// Close the dialog
 				document.getElementById("password-modal").close();
 			});
-	
 </script>
 
 </html>
