@@ -22,10 +22,10 @@
 				<p>
 					<!-- p태그 사용할때는 div적용시 아코디언 효가가 매끄럽게 안먹음 span 사용 -->
 					<span id="order-addr-user"> <span class="span-set-position">${addr.a_name }
-							<button class="custom-btn">変更</button>
-					</span><br /> <br /> <span>${addr.a_tel }</span><br /> <br /> <span>${addr.a_addr }
+							<button id="openModalBtn" class="custom-btn">変更</button>
+					</span><span>${addr.a_tel }</span><br /> <br /> <span>${addr.a_addr }
 							${addr.a_addrDetail } (${addr.a_postcode })</span>
-					</span><br /> <br /> <br /> <span id="order-addr-times"> <span
+					</span> <br /> <br /> <br /> <span id="order-addr-times"> <span
 						class="addr-times">配送時間帯を設定</span><br /> <br /> <select
 						id="deliveryTime" name="deliveryTime">
 							<!-- option 태그로 각 선택 옵션을 정의 -->
@@ -55,14 +55,60 @@
 				class="button btnPush btnBlueGreen" onclick="regOrder();">決済</button>
 		</div>
 	</div>
+
+	<!-- 모달 창(주문변경 눌렀을때) -->
+	<div id="myModal" class="modal">
+		<!-- 모달 내용 -->
+		<div class="modal-content">
+			<span class="close" id="closeModalBtn">&times;</span><br>
+			<div class="del-title">배송지 선택</div>
+			<hr>
+			<div class="modal-set">
+				<div class="del-name">이름</div><br>
+				<div class="del-border">기본배송지</div>
+				<div class="del-text">주소</div>
+				<div class="del-text">번호</div><br>
+				<div class="del-text">받을장소</div>
+				<div class="del-btn-set">
+					<div>
+						<button class="btn-update">수정</button>
+					</div>
+					<div>
+						<button class="btn-select">선택</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		//모달 창 열기 버튼 및 닫기 버튼 이벤트 처리
+		document.getElementById('openModalBtn').onclick = function() {
+			document.getElementById('myModal').style.display = 'block';
+		}
+
+		document.getElementById('closeModalBtn').onclick = function() {
+			document.getElementById('myModal').style.display = 'none';
+		}
+
+		// 모달 외부 클릭 시 모달 닫기
+		window.onclick = function(event) {
+			var modal = document.getElementById('myModal');
+			if (event.target == modal) {
+				modal.style.display = 'none';
+			}
+		}
+	</script>
 	<!-- 모달 창 (결제 끝났을 때, 이동할 부분)-->
 	<dialog id="paymentEndPage">
-	<h2 class="dialog-title">決定が完了しました。マイページに移動しますか？</h2><br><br>
+	<h2 class="dialog-title">決定が完了しました。マイページに移動しますか？</h2>
+	<br>
+	<br>
 	<div class="dialog-set-btn">
-	<a class="btnPush2 btn-3d-2" href="UserMypageC">マイページ</a>
-	<a class="btnPush3 btn-3d-3" href="HC">ホーム</a>
+		<a class="btnPush2 btn-3d-2" href="UserMypageC">マイページ</a> <a
+			class="btnPush3 btn-3d-3" href="HC">ホーム</a>
 	</div>
 	</dialog>
+
 
 	<script>
 		// 강사님과 함께 풀이했던 내용 정리 완료
@@ -100,7 +146,6 @@
 										});
 							}
 						});
-
 	</script>
 </body>
 </html>
