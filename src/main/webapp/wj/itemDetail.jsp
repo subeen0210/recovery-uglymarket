@@ -75,7 +75,7 @@
 			<div class="input-date">作成日: ${review.r_date }</div>
 			<div class="input-grade">点: ${review.r_grade }</div>
 			</div>
-			<div class="input-text">${review.r_estimation }</div>
+			<div class="input-text"><pre>${review.r_estimation }</pre></div>
 		</c:forEach>
 		</div>
 	</div>

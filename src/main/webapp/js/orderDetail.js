@@ -132,19 +132,25 @@ function formatDate(date) {
 
 
 function addReview() {
+    let name = $("#r_productname").text();
+    let grade = $("input[name='grade']").val();
+    let story = $("textarea[name='story']").val();
+    let no = $("#myButton").val();
+
+    if (!grade) {
+        alert('評点を入力してください。');
+        return;
+    } 
+
+    if (!story) {
+        alert('内容を入力してください。');
+        return; 
+    } 
+
+
     let ok = confirm('後記を作成しますか？');
 
     if (ok) {
-        let name = $("#r_productname").text();
-        let grade = $("input[name='grade']").val();
-        let story = $("textarea[name='story']").val();
-        let no = $("#myButton").val();
-//        console.log(name);
-//        console.log(grade);
-//        console.log(story);
-//        console.log(no);
-
-
         $.ajax({
             url: 'ReviewAddC',
             method: 'POST',
@@ -154,12 +160,13 @@ function addReview() {
                     alert("後記が登録されました。");
                     window.location.href = 'UserMypageC';
                 } else {
-                    alert('후기 등록 실패');
+                    alert('後記の登録に失敗しました。');
                 }
             }
         });
     }
 }
+
 
 
 function updateStatusOrder(no) {
