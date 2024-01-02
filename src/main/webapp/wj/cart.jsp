@@ -49,11 +49,10 @@
 			<div class="menu-set">
 				<div class="set-quanity">
 					<div class="quantity-container">
-						&ensp;
 						<button class="quantity-button" onclick="adjustQuantity(this,${cart.c_no},1)">
-							+</button>
+							+</button>&ensp;
 						<input type="text" class="quantity-input" id="quantityInput_${cart.c_no}"
-							value="${cart.c_number }" data-cartCode="${cart.c_no}"/>
+							value="${cart.c_number }" data-cartCode="${cart.c_no}"/>&ensp;
 						<button class="quantity-button" onclick="adjustQuantity(this,${cart.c_no},-1)">
 							-</button>
 					</div>
