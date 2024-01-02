@@ -142,7 +142,7 @@
 					<tr>
 						<td class="label">商品名</td>
 						<td class="value" id="r_productname"></td>
-						<td style="display: none;"><input type="hidden" id="i_name" name="review_name"></td>
+						<td style="display: none;"><input id="i_name" name="review_name"></td>
 
 					</tr>
 					<tr>
