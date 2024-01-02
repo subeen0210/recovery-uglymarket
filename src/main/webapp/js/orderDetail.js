@@ -1,3 +1,5 @@
+document.getElementById("r-date").valueAsDate = new Date();
+
 $(function() {
 
 
@@ -130,17 +132,17 @@ function formatDate(date) {
 
 
 function addReview() {
-    let ok = confirm('후기를 작성하시겠습니까?');
+    let ok = confirm('後記を作成しますか？');
 
     if (ok) {
         let name = $("#r_productname").text();
         let grade = $("input[name='grade']").val();
         let story = $("textarea[name='story']").val();
         let no = $("#myButton").val();
-        console.log(name);
-        console.log(grade);
-        console.log(story);
-        console.log(no);
+//        console.log(name);
+//        console.log(grade);
+//        console.log(story);
+//        console.log(no);
 
 
         $.ajax({
@@ -149,7 +151,7 @@ function addReview() {
             data: {name: name, grade: grade, story: story, no: no},
             success: function (res) {
                 if (res == 1) {
-                    alert("후기가 등록되었습니다.");
+                    alert("後記が登録されました。");
                     window.location.href = 'UserMypageC';
                 } else {
                     alert('후기 등록 실패');
