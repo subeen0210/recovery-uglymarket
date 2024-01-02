@@ -45,7 +45,9 @@
 	<div class="item-explain">
 		<div class="explain-title">商品説明</div>
 		<br /> <br />
-		<div class="explain-input">${item.i_des }</div>
+		<div class="explain-input">
+		<pre>${item.i_des }</pre>
+		</div>
 	</div>
 	<br><br>
 	<div class="item-review">
