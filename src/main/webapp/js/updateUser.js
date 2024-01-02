@@ -286,4 +286,63 @@ function passwordChange() {
 	return false;
 }
 
-// 이미지 첨부시 미리보기 (원준)
+// seller 패스워드 변경
+function passwordChange2() {
+	let oldPW = $("#old-pw").val();
+	let newPW = $("#new-pw").val();
+
+	$.ajax({
+		url: "SellerLoginC",
+		method: "post",
+		data: { oldPW },
+		success: function(data) {
+			let inputPWconfirm = document.querySelector("#new-pw-confirm");
+			if (data == "0") {
+				$("#PW-old-errorMsg").text("パスワードが正しくありません。").css("color", "red");
+				$("#old-pw").focus();
+			} else {
+				// 현재 비밀번호가 맞을 때
+				// 예외처리
+				let inputPW2 = document.querySelector('#new-pw');
+				if ($("#pw-new-errorMsg").text() != "" || isEmpty(inputPW2)) {
+					alert('パスワードが正しくありません。');
+					inputPW2.focus();
+					return false;
+				}
+
+				let pwCText = $("#pwConfirm").text();
+				if (pwCText.trim() != "正しいです" || isEmpty(inputPWconfirm)) {
+					alert('パスワードの再確認が正しくありません。');
+					inputPWconfirm.focus();
+					return false;
+				}
+
+				$.ajax({
+					url: "ChangePasswordC",
+					method: "post",
+					data: { newPW },
+					success: function(data) {
+						// AJAX 요청 성공 시 실행되는 콜백 함수
+						alert("パスワードが変更されました。");
+						$("#old-pw").val('');
+						$("#new-pw").val('');
+						inputPWconfirm.value = "";
+						$('#pwConfirm').text("");
+
+					},
+					error: function(xhr, status, error) {
+						// AJAX 요청 실패 시 실행되는 콜백 함수
+						console.error("AJAX request failed: ", status, error);
+					},
+				});
+
+			}
+		},
+		error: function(xhr, status, error) {
+			// AJAX 요청 실패 시 실행되는 콜백 함수
+			console.error("AJAX request failed: ", status, error);
+		},
+	});
+
+	return false;
+}

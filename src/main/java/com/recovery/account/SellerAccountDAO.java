@@ -23,6 +23,14 @@ public class SellerAccountDAO {
 		String sellerID = request.getParameter("sellerID");
 		String sellerPW = request.getParameter("sellerPW");
 		
+		String oldPW = request.getParameter("oldPW");
+		
+		if (oldPW != null) {
+			Seller seller2 = (Seller) request.getSession().getAttribute("sellerAccount");
+			sellerID = seller2.getS_id();
+			sellerPW = oldPW;
+		}
+		
 		if (newid != null) {
 			sellerID = newid;
 			sellerPW = newpw;
@@ -324,7 +332,7 @@ public class SellerAccountDAO {
 		}
 	}
 
-	private static String changePW(HttpServletRequest request) {
+	public static String changePW(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		

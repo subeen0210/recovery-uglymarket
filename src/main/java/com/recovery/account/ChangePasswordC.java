@@ -13,7 +13,20 @@ public class ChangePasswordC extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AccountDAO.changePW(request);
+		String referer = request.getHeader("Referer");
+
+	    if (referer != null && referer.endsWith("/SellerMypageC")) {
+	    	SellerAccountDAO.changePW(request);
+	        // 판매자에서 왔을 때의 동작
+	    } else if (referer != null && referer.endsWith("/UserMypageC")) {
+	        // 유저에서 왔을 때의 동작
+	    	AccountDAO.changePW(request);
+	    } else {
+	        // 다른 경우에 대한 동작
+	        response.sendRedirect("HC");
+	    }
+		
+		
 	}
 
 }

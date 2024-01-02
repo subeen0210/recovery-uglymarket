@@ -11,7 +11,7 @@
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/addr.js"></script>
-<script type="text/javascript" src="js/updateUser.js"></script>
+<script type="text/javascript" src="js/updateUser.js?ver=1.1"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
 </head>
 <body>
@@ -89,9 +89,9 @@
 						農場イメージ<span class="essentialicon">*</span>
 					</div>
 					<div class="reg-input">
-						<input class="input-style upload-img" placeholder="jpg/png/jpeg"
+						<input class="input-style upload-img" placeholder="${sessionScope.sellerAccount.s_Fphoto }"
 							readonly="readonly" /> <label for="fileInput">アップロード</label> <input
-							type="file" name="farmImg" id="fileInput"
+							type="file" name="newFarmImg" id="fileInput"
 							accept=".jpg, .jpeg, .png" onchange="displayFileName(this)">
 					</div>
 				</div>
@@ -198,14 +198,14 @@
 	<div>
 		<a href="#" title="Button push blue/green"
 			class="button btnPush btnBlueGreen"
-			onclick="return passwordChange();">パスワード変更</a>
+			onclick="return passwordChange2();">パスワード変更</a>
 	</div>
 	</dialog>
 	<!-- 비밀번호 찾기 modal 끝 -->
 </body>
 
 
-<script type="text/javascript" src="js/regUser1.js"></script>
+<script type="text/javascript" src="js/imgShow.js"></script>
 <script type="text/javascript">
 	$(function() {
 		// 전화번호 분리를 위해 적었습니다. 다른 js로 넣으면 깨지니까 여기서 작업해주세요
