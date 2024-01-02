@@ -144,23 +144,25 @@ public class ReviewDAO {
 	// 개인 마이페이지 후기 추가 기능
 	public static void addReview(HttpServletRequest request) {
 		
-		HttpSession hs = request.getSession();
 		User user = (User) request.getSession().getAttribute("userAccount");
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into review VALUES (review_seq.nextval, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?, ?, ?, ?)";
+		String sql = "insert into review VALUES (review_seq.nextval, ?, SYSDATE, ?, ?, ?, ?, ?)";
+		System.out.println("왔?");
+		String product = request.getParameter("review_name");
+		System.out.println(product);
 		
 		try {
+			request.setCharacterEncoding("UTF-8");
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, request.getParameter("story"));
-			pstmt.setString(2, request.getParameter("date"));
-			pstmt.setString(3, request.getParameter("grade"));
-			pstmt.setString(4, user.getU_nicname());
-			pstmt.setString(5, request.getParameter("name"));
-			pstmt.setString(6, user.getU_id());
-			pstmt.setString(7, request.getParameter("no"));
+			pstmt.setString(1, request.getParameter("r-story"));
+			pstmt.setString(2, request.getParameter("grade"));
+			pstmt.setString(3, user.getU_nicname());
+			pstmt.setString(4, request.getParameter("review_name"));
+			pstmt.setString(5, user.getU_id());
+			pstmt.setString(6, request.getParameter("no"));
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("리뷰 등록 성공");
