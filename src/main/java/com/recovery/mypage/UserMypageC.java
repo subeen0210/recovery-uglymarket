@@ -19,7 +19,7 @@ public class UserMypageC extends HttpServlet {
 			PrintWriter out = response.getWriter();
 
 			out.println("<script language='javascript'>");
-			out.println("alert('ログインが切れました。ログインしに行きます')");
+			out.println("alert('ログインが切れました。ログインページに行きます')");
 			out.println("location.href='LoginPageC'");
 			out.println("</script>");
 
