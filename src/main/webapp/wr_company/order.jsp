@@ -5,7 +5,6 @@
 <html>
 <head>
 <link rel="stylesheet" href="wr_company/css/order.css">
-
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
 <meta charset="UTF-8">
@@ -15,7 +14,7 @@
 </head>
 <body>
 	<div class="main">
-		<h1>注文詳細情報</h1>
+		<h1>注文詳細情報</h1><span id="deliveryStatus"></span>
 
 		<table>
 			<thead>
@@ -40,10 +39,10 @@
 						<td>${order.i_name }</td>
 						<td>${order.o_quantity }/${order.i_price }</td>
 						<td>${order.o_totalprice }</td>
-						<td>${order.o_status }</td>
+						<td><span>${order.o_status }</span><a class="orderUpdateBtn" onclick="updateStatusOrder('${order.o_no}');" style="display: none">${order.o_status }</a></td>
 						<td>${order.o_date }</td>
 						<td><button class="openModalBtn2" data-no="${order.o_no }">作成</button>
-						<td><a>削除</a></td>
+						<td class="orderDeleteBtn" onclick="deleteOrder('${order.o_no}','o_u_show')">X</td>
 					</tr>
 				</c:forEach>
 

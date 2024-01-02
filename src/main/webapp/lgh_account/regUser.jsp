@@ -138,11 +138,13 @@
 					</div>
 				</div>
 				<br />
-				<div class="reg-content2">
-					<div class="reg-name2">プロフィールイメージ</div>
-					&ensp; <label for="fileInput">アップロード</label><input type="file"
-						name="userImg" id="fileInput" onchange="displayFileName(this)" />
-					<span id="fileNameDisplay"></span>
+				<div class="reg-content">
+					<div class="reg-menu">プロフィールイメージ<span class="essential-icon">*</span></div>
+					<div class="reg-input">
+						<input class="input-style upload-img" placeholder="jpg/png/jpeg" readonly="readonly"/>
+						<label for="fileInput">アップロード</label>
+						<input type="file" name="userImg" id="fileInput" accept=".jpg, .jpeg, .png" onchange="displayFileName(this)">
+					</div>
 				</div>
 				<br />
 				<div class="reg-content">

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/delivery.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/delivery.css?ver=1.1">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -31,7 +31,8 @@
 					<th>受取人</th>
 					<th>住所</th>
 					<th>配送状態</th>
-					<th>注文時間</th>
+					<th>注文日</th>
+					<th>削除</th>
 
 				</tr>
 			</thead>
@@ -45,13 +46,14 @@
 						<td>${order.o_totalprice }</td>
 						<td>${order.o_name }</td>
 						<td>${order.o_addr }</td>
-						<td>${order.o_status }</td>
+						<td class="status">${order.o_status }</td>
 						<td>${order.o_date }</td>
+						<td class="orderDeleteBtn" onclick="deleteOrder('${order.o_no}','o_s_show')">X</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-
+		
 		<br>
 
 
@@ -119,13 +121,14 @@
 							<option value="status1">発送完了</option>
 							<option value="status2">配送完了</option>
 					</select></td>
+					<td id="statusConfirm" style="display: none;"></td>
 				</tr>
 
 			</table>
 		</section>
 
 
-		<button class="modify" id="modify" style="display: none;">修正</button>
+		<button class="modify" id="modify" onclick="updateStatusOrder();" style="display: none;">修正</button>
 
 	</div>
 	<br>

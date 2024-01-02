@@ -66,7 +66,7 @@
 	font-size: 9pt;
 }
 
-#passWordEssential{
+#passWordEssential {
 	position: absolute;
 	top: 2.8em;
 	left: -10em;
@@ -117,21 +117,20 @@
 	margin-left: -100px;
 }
 
-input[type="file"] {
-	display: none;
-}
+/* input[type="file"] { */
+/* 	display: none; */
+/* } */
 
-label {
-	background-color: #2a243a;
-	color: #fff;
-	padding: 10px 15px;
-	border-radius: 5px;
-	cursor: pointer;
-	width: 29%;
-	font-size: 11pt;
-	font-weight: bold;
-}
-
+/* label { */
+/* 	background-color: #2a243a; */
+/* 	color: #fff; */
+/* 	padding: 10px 15px; */
+/* 	border-radius: 5px; */
+/* 	cursor: pointer; */
+/* 	width: 29%; */
+/* 	font-size: 11pt; */
+/* 	font-weight: bold; */
+/* } */
 .reg-content2 {
 	width: 50%;
 	height: 40px;
@@ -153,6 +152,7 @@ label {
 	border: none;
 	border-radius: 10px;
 	font-size: 12pt;
+	cursor: pointer;
 }
 
 .btn-style:hover {
@@ -160,6 +160,39 @@ label {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.essential-icon{
+.essential-icon {
 	color: red;
+}
+
+/* 가현 이미지파일 업로드 수정 2023-12-31*/
+.reg-input .upload-img {
+	display: inline-block;
+	height: 25px;
+	padding: 0 10px;
+	vertical-align: middle;
+	border: 2px solid #2a243a;
+	width: 40%;
+	color: #999999;
+}
+
+.reg-input label {
+	display: inline-block;
+	vertical-align: middle;
+	height: 20px;
+	margin-left: 10px;
+	background-color: #2a243a;
+	color: #fff;
+	padding: 10px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 11pt;
+}
+
+.reg-input input[type="file"] {
+	position: absolute;
+	width: 0;
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
 }

@@ -51,6 +51,7 @@
 	top: 15px;
 	background: #64CD3C;
 	color: white;
+	cursor: pointer;
 }
 
 #closeModalBtn:hover {
@@ -100,6 +101,7 @@
 	background: #64CD3C;
 	padding: 5%;
 	color: white;
+	cursor: pointer;
 }
 
 .btn-set2:hover {
@@ -164,4 +166,22 @@
 #homeImg:hover {
 	transition: filter 0.3s ease;
 	filter: invert(51%) sepia(73%) saturate(524%) hue-rotate(62deg) brightness(102%) contrast(87%);
+}
+
+
+/* 에러 메세지 css _ 가현 추가 2023-12-31*/
+
+#loginEmptyPW2, #loginEmptyID2{
+	display: block;
+    text-align: center;
+}
+
+.emptyErrorMsg2{
+	height: 22px;
+}
+
+/* a태그 호버시 밑줄_ 가현 추가 2023-12-31*/
+
+#IDForgotC:hover{
+	text-decoration: underline;
 }

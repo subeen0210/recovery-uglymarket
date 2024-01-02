@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/updateUser.css" />
+<link rel="stylesheet" href="css/updateUser.css?ver=2.0" />
 <script src="https://code.jquery.com/jquery-3.7.0.js"
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/updateUser.js"></script>
+<script type="text/javascript" src="js/updateUser.js?ver=1.1"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
 
 </head>
@@ -20,11 +20,19 @@
 			<div class="reg-container">
 				<h1 style="color: #2a243a;">情報修正</h1>
 				<br>
-				<div class="reg-content2">
-					<div class="reg-name2">プロフィールイメージ</div>
-					&ensp; <label for="fileInput">アップロード</label><input type="file"
-						name="userImg" id="fileInput" onchange="displayFileName(this)" />
-					<span id="fileNameDisplay"></span>
+				<div id="imgShow">
+					<img id="previewImg" src="lgh_account/userImg/${sessionScope.userAccount.u_img }">
+				</div>
+				<div class="reg-content">
+					<div class="reg-menu">
+						プロフィールイメージ<span class="essential-icon">*</span>
+					</div>
+					<div class="reg-input">
+						<input class="input-style upload-img" placeholder="${sessionScope.userAccount.u_img }"
+							readonly="readonly" /> <label for="fileInput">アップロード</label> <input
+							type="file" name="userImg" id="fileInput"
+							accept=".jpg, .jpeg, .png">
+					</div>
 				</div>
 				<br />
 				<div class="reg-content">
@@ -113,7 +121,7 @@
 			</div>
 		</div>
 	</form>
-		<!-- 비밀번호 찾기 modal -->
+	<!-- 비밀번호 찾기 modal -->
 	<dialog id="password-modal">
 	<div class="btn-size-close">
 		<a id="close-button">X</a>
@@ -128,17 +136,20 @@
 		</div>
 		<div class="content1">
 			<div class="set-input">
-				<input class="style-input" id="old-pw" type="password" placeholder="10字~20字">
+				<input class="style-input" id="old-pw" type="password"
+					placeholder="10字~20字">
 				<div class="PW-change-errorMsg" id="PW-old-errorMsg"></div>
 			</div>
 			<br>
 			<div class="set-input">
-				<input class="style-input" id="new-pw" placeholder="10字~20字" type="password" maxlength="20">
+				<input class="style-input" id="new-pw" placeholder="10字~20字"
+					type="password" maxlength="20">
 				<div class="PW-change-errorMsg" id="pw-new-errorMsg"></div>
 			</div>
 			<br>
 			<div class="set-input">
-				<input class="style-input" id="new-pw-confirm" type="password" placeholder="再確認">
+				<input class="style-input" id="new-pw-confirm" type="password"
+					placeholder="再確認">
 				<div class="PW-change-errorMsg" id="pwConfirm"></div>
 			</div>
 		</div>
@@ -165,20 +176,27 @@
 		document.querySelector("input[name='userTel3'").value = telParts[2];
 	});
 
-	
-	document.getElementById("password-change-button").addEventListener("click",
-			function() {
-				// Open the dialog
-				document.getElementById("password-modal").showModal();
-			});
+	document
+			.getElementById("password-change-button")
+			.addEventListener(
+					"click",
+					function() {
+						// Open the dialog
+						document.getElementById("password-modal").style.display = 'flex';
+						document.getElementById("password-modal").showModal();
+					});
 
-	document.getElementById("close-button").addEventListener("click",
-			function() {
+	document
+			.getElementById("close-button")
+			.addEventListener(
+					"click",
+					function() {
 
-				// Close the dialog
-				document.getElementById("password-modal").close();
-			});
+						// Close the dialog
+						document.getElementById("password-modal").style.display = 'none';
+						document.getElementById("password-modal").close();
+					});
 </script>
-<script type="text/javascript" src="js/regUser1.js"></script>
+<script type="text/javascript" src="js/imgShow.js"></script>
 </html>
 

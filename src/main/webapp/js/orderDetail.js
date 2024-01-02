@@ -21,6 +21,32 @@ $(function() {
 	});
 
 
+	//만약 발송완료면 클릭할 수 있게
+
+	let orderUpdateBtn = document.querySelectorAll('.orderUpdateBtn');
+
+	orderUpdateBtn.forEach(function(btn) {
+		let orderStatus = btn.closest('td').querySelector('span').innerText;
+		console.log(orderStatus);
+		// 각 상태에 대한 작업 수행
+		if (orderStatus == '発送完了') {
+			btn.style.display = 'inline-block';
+			btn.closest('td').querySelector('span').style.display = 'none';
+		}
+	});
+	
+	// 배송 완료일때만 삭제 버튼 나오게
+	let orderdeleteBtn = document.querySelectorAll('.orderDeleteBtn');
+
+	orderdeleteBtn.forEach(function(delBtn) {
+		let orderStatus = delBtn.closest('tr').querySelector('span').innerText;
+		
+		if (orderStatus == '配送完了') {
+			delBtn.style.visibility = 'visible';
+		}
+	})
+
+
 
 
 
@@ -45,7 +71,7 @@ $(function() {
 				// 원하는 날짜 형식으로 포맷팅
 				let formattedDate = formatDate(dateObject);
 				let formattAddrDate = formatDate(addrDate);
-				
+
 				let category = data.i_category == 1 ? "アグリー" : "普通";
 				$("#f_name").text(data.f_name);
 				$("#i_name").text(data.i_name);
@@ -59,7 +85,7 @@ $(function() {
 				$("#o_arrival").text(data.o_arrival);
 				$("#o_addr").html(data.o_addr + "<br>(" + data.o_addrNum + ")");
 				$("#o_date").text(formattAddrDate);
-				
+
 				myModal.showModal();
 			},
 			error: function() {
@@ -67,13 +93,13 @@ $(function() {
 			}
 		});
 	});
-	
+
 	// 후기 작성 모달 기능
 	$('.openModalBtn2').on('click', function() {
 		let index = $(this).data('no');
 		console.log(index);
 		console.log(typeof (index));
-		
+
 		$.ajax({
 			type: 'get',
 			datatype: 'json',
@@ -90,7 +116,7 @@ $(function() {
 			}
 		});
 	});
-	
+
 });
 
 function formatDate(date) {
@@ -103,9 +129,30 @@ function formatDate(date) {
 
 
 
+
 function addReview(){
 	let ok = confirm('후기를 작성하시겠습니까?');
 
 		return ok;
 
+}
+function updateStatusOrder(no) {
+	let ok = confirm('到着しましたか？ 変えたら戻れません。');
+	if (ok) {
+		console.log(no);
+
+		location.href = 'updateOrderStatusC?o_no=' + no + '&status=status2';
+	}
+}
+
+function deleteOrder(no, person) {
+	let ok1 = confirm('削除しますか？');
+	if (ok1) {
+		let ok2 = confirm('本当に削除しますか？\r\n今後、商品に問題がある場合、確認できません。');
+		if (ok2) {
+
+			location.href = 'deleteOrderC?no=' + no + '&person=' + person;
+
+		}
+	}
 }
