@@ -6,11 +6,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Document</title>
-<script src="js/regOrder.js"></script>
+<script src="js/regOrder.js?ver=1.1"></script>
 <link rel="stylesheet" href="wj/css/order.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+	<input type="hidden" id="deliveryCheck" value="${addr.a_req }">
 	<div id="order-title">注文 / 決済する</div>
 
 	<div class="main-wrapper">
@@ -21,7 +22,7 @@
 				<p>
 					<!-- p태그 사용할때는 div적용시 아코디언 효가가 매끄럽게 안먹음 span 사용 -->
 					<span id="order-addr-user"> <span class="span-set-position">${addr.a_name }
-							<button class="custom-btn">수정</button>
+							<button class="custom-btn">変更</button>
 					</span><br /> <br /> <span>${addr.a_tel }</span><br /> <br /> <span>${addr.a_addr }
 							${addr.a_addrDetail } (${addr.a_postcode })</span>
 					</span><br /> <br /> <br /> <span id="order-addr-times"> <span
@@ -100,17 +101,6 @@
 							}
 						});
 
-		//가현 _ 결제 버튼 눌렀을 때, 정말 결제할건지 확인하는 창
-		function orderCheck() {
-			let ok = confirm("配送先と商品を確認しましたか？");
-			if (ok) {
-				return true;
-			} else {
-				return false;
-			}
-
-		}
-		
 	</script>
 </body>
 </html>

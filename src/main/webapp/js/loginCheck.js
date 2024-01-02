@@ -38,6 +38,20 @@ $(function() {
 		}
 	});
 
+	document.getElementById("loginSellerID").addEventListener("keyup", function() {
+		var emptyMsg = document.getElementById("loginEmptyID2");
+		if (this.value.trim() !== "") {
+			emptyMsg.textContent = ""; // 글자가 입력되면 에러 메시지를 숨김
+		}
+	});
+
+	document.getElementById("loginSellerPW").addEventListener("keyup", function() {
+		var emptyMsg = document.getElementById("loginEmptyPW2");
+		if (this.value.trim() !== "") {
+			emptyMsg.textContent = ""; // 글자가 입력되면 에러 메시지를 숨김
+		}
+	});
+
 });
 
 
@@ -72,12 +86,17 @@ function loginSellerCall() {
 	let sellerPW = document.querySelector('#loginSellerPW');
 
 	if (isEmpty(sellerID)) {
-		alert("아이디 비어있음!!");
-		sellerID.focus();
+		$("#loginEmptyID2").text("IDが空いています");
+		$("#loginEmptyID2").css("color", "red");
+		sellerPW.focus();
 		return false;
 	};
 	if (isEmpty(sellerPW)) {
-		alert("비밀번호 비어있음!!");
+		$("#loginEmptyPW2").text("パスワードが空いています");
+		$("#loginEmptyPW2").css({
+			"color": "red",
+			"font-size": "16px"  // 여기에 적절한 크기를 지정합니다.
+		});
 		sellerPW.focus();
 		return false;
 	};
@@ -97,7 +116,10 @@ function sellerlogin() {
 		success: function(response) {
 			console.log(response);
 			if (response === "0") {
-				$("#errorMessage2").text("IDまたはパスワードが正しくありません。").css("color", "red");
+				$("#loginEmptyPW2").text("IDまたはパスワードが正しくありません。").css({
+					"color": "red",
+					"font-size": "12px"  // 여기에 적절한 크기를 지정합니다.
+				});
 			} else {
 				location.href = 'HC';
 			}
