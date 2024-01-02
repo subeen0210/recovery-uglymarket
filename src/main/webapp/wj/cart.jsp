@@ -43,7 +43,7 @@
 				<br />
 				<div class="info-delivery">送料無料</div>
 				<br />
-				<div class="info-price">${cart.i_price }</div>
+				<div class="info-price">${cart.i_price }￥</div>
 			</div>
 			<div class="menu-set">
 				<div class="set-quanity">
@@ -61,9 +61,9 @@
 				<div class="set-allprice" id="set-allprice2_${cart.c_no }"
 						 data-subtotal="${cart.i_price * cart.c_number}">
 						 小計&ensp;:&ensp;
-					 <span class="per-total-price" id="set-allprice_${cart.c_no }" >${cart.i_price * cart.c_number }<img style="width: 12px;" alt="" src="img/en-icon.png"></span></div>
+					 <span class="per-total-price" id="set-allprice_${cart.c_no }" >${cart.i_price * cart.c_number }￥</span></div>
 				<br />
-				<div class="quantity-btn"><button class="change_quantity" onclick="changeQuantity(${cart.c_no})">変更</button>&ensp;<button onclick="deleteCart(${cart.c_no })">削除</button></div>
+				<div class="quantity-btn"><button class="change_quantity" style="cursor: pointer;" onclick="changeQuantity(${cart.c_no})">変更</button>&ensp;<button style="cursor: pointer;" onclick="deleteCart(${cart.c_no })">削除</button></div>
 			</div>
 		<input type="hidden" class="cartNumber" value="${cart.c_no }">
 		<input type="hidden" class="itemNumber" value="${cart.i_no }">
@@ -73,7 +73,7 @@
 		</c:forEach>
 		<br />
 		<div class="pay">
-			<div class="pay-allmoney">商品合計 : <span id="payAllMoneySpan"></span></div>
+			<div class="pay-allmoney">商品合計 : <span id="payAllMoneySpan"></span>￥</div>
 			<div class="pay-click">
 				<button class="button btnPush btnBlueGreen" onclick="payStorage()">決済する</button>
 			</div>
