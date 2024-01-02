@@ -1,4 +1,4 @@
-package com.recovery.orders;
+package com.recovery.address;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,16 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/UserOrderC")
-public class UserOrderC extends HttpServlet {
+import com.recovery.orders.OrderDAO;
+
+@WebServlet("/AddrShowC")
+public class AddrShowC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		OrderDAO.userOrderDetail(request,response);
+	AddrDAO.userAddr(request,response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		OrderDAO.userOrderAll(request,response);
-		request.getRequestDispatcher("wr_company/order.jsp").forward(request, response);
+	AddrDAO.userAddrAll(request);
+	request.getRequestDispatcher("lgh_account/addrUpdate.jsp").forward(request, response);
 	}
 
 }

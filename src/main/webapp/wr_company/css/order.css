@@ -210,3 +210,42 @@ td {
 
     border: none;
 }
+
+/* 가현 추가*/
+.openModalBtn:hover{
+	text-decoration: underline;
+}
+.orderDeleteBtn {
+	text-align: center;
+	background: #f5f5f5;
+	cursor: pointer;
+	visibility: hidden;
+}
+
+.orderDeleteBtn:hover {
+	background: #f0f0f0;
+}
+
+.orderDeleteBtn:active {
+	background: gray;
+	color: white;
+}
+
+
+/* 배송완료로 바꾸는 버튼 */
+.orderUpdateBtn{
+	color: green;
+	cursor: pointer;
+}
+
+.orderUpdateBtn:hover{
+	text-decoration: underline;
+}
+
+.orderUpdateBtn:active{
+	color: black;
+	font-weight: bold;
+}
+
+
+/* 가현 추가 끝*/

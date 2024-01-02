@@ -231,9 +231,9 @@ public class AccountDAO {
 			pstmt.setString(1, addrNum);
 			pstmt.setString(2, addrP+"!"+addrCity);
 			pstmt.setString(3, addrDetail);
-			pstmt.setString(4, kanjiLast+"!"+kanjiName);
+			pstmt.setString(4, kanjiLast+" "+kanjiName);
 			pstmt.setString(5, telAll);
-			pstmt.setString(6, "null");
+			pstmt.setString(6, "午前中(8:00~12:00)");
 			pstmt.setString(7, id);
 			
 			if (pstmt.executeUpdate() == 1) {

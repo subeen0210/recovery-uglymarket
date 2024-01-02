@@ -19,7 +19,7 @@
 
 <body>
 	<div class="main">
-	<a href="HC"><img id="homeImg" src="img/home_icon_login.svg"></a>
+		<a href="HC"><img id="homeImg" src="img/home_icon_login.svg"></a>
 		<p class="sign">Sign in</p>
 		<form class="form1">
 			<input class="un" placeholder="ID" name="userID" id="loginUserID" />
@@ -34,7 +34,7 @@
 			<a class="submit" onclick="return loginCall()">ログイン</a><br /> <a
 				class="submit" id="openModalBtn">販売者専用</a>
 			<p class="forgot">
-				<a href="IDForgotC">ID・パスワードを忘れた場合</a>
+				<a id="IDForgotC" href="IDForgotC">ID・パスワードを忘れた場合</a>
 			</p>
 		</form>
 		<br> <br>
@@ -61,17 +61,22 @@
 			<br>
 			<div>
 				<div class="un-set">
-					<input class="un2" placeholder="ID" name="sellerID" id="loginSellerID">
+					<input class="un2" placeholder="ID" name="sellerID"
+						id="loginSellerID">
+				</div>
+				<div class="emptyErrorMsg2">
+					<span id="loginEmptyID2"></span>
 				</div>
 			</div>
-			<br>
 			<div>
 				<div class="un-set">
-					<input class="un2" placeholder="PW" name="sellerPW" id="loginSellerPW" type="password">
+					<input class="un2" placeholder="PW" name="sellerPW"
+						id="loginSellerPW" type="password">
 				</div>
-				<p id="errorMessage2"></p>
+				<div class="emptyErrorMsg2">
+					<span id="loginEmptyPW2"></span>
+				</div>
 			</div>
-			<br>
 			<div class="set-size">
 				<button class="btn-set2" onclick="return loginSellerCall()">ログイン</button>
 			</div>
@@ -92,7 +97,7 @@
 
 		document.getElementById("closeModalBtn").addEventListener("click",
 				function() {
-			
+
 					// Close the dialog
 					document.getElementById("myModal").close();
 				});

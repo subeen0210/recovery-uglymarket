@@ -5,7 +5,6 @@
 <html>
 <head>
 <link rel="stylesheet" href="wr_company/css/order.css">
-
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
 <meta charset="UTF-8">
@@ -15,7 +14,7 @@
 </head>
 <body>
 	<div class="main">
-		<h1>注文詳細情報</h1>
+		<h1>注文詳細情報</h1><span id="deliveryStatus"></span>
 
 		<table>
 			<thead>
@@ -40,10 +39,10 @@
 						<td>${order.i_name }</td>
 						<td>${order.o_quantity }/${order.i_price }</td>
 						<td>${order.o_totalprice }</td>
-						<td>${order.o_status }</td>
+						<td><span>${order.o_status }</span><a class="orderUpdateBtn" onclick="updateStatusOrder('${order.o_no}');" style="display: none">${order.o_status }</a></td>
 						<td>${order.o_date }</td>
-						<td><button class="openModalBtn2" data-no="${order.i_no }">作成</button>
-						<td><a>削除</a></td>
+						<td><button class="openModalBtn2" data-no="${order.o_no }">作成</button>
+						<td class="orderDeleteBtn" onclick="deleteOrder('${order.o_no}','o_u_show')">X</td>
 					</tr>
 				</c:forEach>
 
@@ -135,13 +134,14 @@
 	<dialog id="myModal2">
 
 	<div class="main_modal">
-		<form id="myForm" action="" method="post">
+		<form id="myForm" action="ReviewAddC" method="post" onsubmit="return addReview()">
 			<section class="order-details">
 				<h2>後記作成</h2>
 				<table class="order-info">
 					<tr>
 						<td class="label">商品名</td>
 						<td class="value" id="r_productname"></td>
+						<td style="display: none;"><input id="i_name" name="review_name"></td>
 
 					</tr>
 					<tr>
@@ -161,8 +161,7 @@
 					</tr>
 
 				</table>
-				<button type="button" id="myButton"
-					onclick="submitForm('buttonIdValue')">作成</button>
+				<button id="myButton" name="no" value="">作成</button>
 			</section>
 		</form>
 	</div>

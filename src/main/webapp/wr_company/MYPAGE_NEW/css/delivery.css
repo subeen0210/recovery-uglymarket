@@ -1,9 +1,8 @@
 @charset "UTF-8";
 
-
 #myModal {
 	position: relative;
-	border : none;
+	border: none;
 }
 
 body {
@@ -16,7 +15,6 @@ h2 {
 	font-family: 'Meiryo', serif;
 	font-weight: bold;
 }
-
 
 .tabs {
 	display: flex;
@@ -46,12 +44,14 @@ h2 {
 }
 
 .content {
+	position: relative;
 	padding: 20px;
 	border: 1px solid #E8D3D3;
 	border-radius: 10px;
 	margin: 100px;
 	padding: 50px;
 	box-shadow: 0 0 10px rgba(175, 175, 175, 0.5);
+	padding: 20px;
 }
 
 #product-registration {
@@ -194,9 +194,29 @@ td {
 	font-size: 20px;
 }
 
-
-
 /* Modal */
+
+/* 가현 추가*/
+.openModalBtn:hover {
+	text-decoration: underline;
+}
+
+.orderDeleteBtn {
+	text-align: center;
+	background: #f5f5f5;
+	cursor: pointer;
+	visibility: hidden;
+}
+
+.orderDeleteBtn:hover {
+	background: #f0f0f0;
+}
+
+.orderDeleteBtn:active {
+	background: gray;
+	color: white;
+}
+/* 가현 추가 끝*/
 .main_modal {
 	max-width: 1500px;
 	margin: 0 auto;
@@ -215,7 +235,6 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
 
 section {
 	margin: 20px 20px;
