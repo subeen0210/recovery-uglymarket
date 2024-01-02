@@ -22,8 +22,8 @@
                 	<th>財御量</th>
                 	<th>賞味期限</th>
                 	<th>価格</th>
-                	<th>修正</th>
-                	<th>削除</th>
+                	<th class="update_th">修正</th>
+                	<th class="delete_th">削除</th>
             	</tr>
         	</thead>
         	<tbody id="tbody">
