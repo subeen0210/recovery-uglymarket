@@ -144,7 +144,7 @@
 					</tr>
 					<tr>
 						<td class="label">評点</td>
-						<td class="value"><input type="text" id="r-grade" name="grade"></td>
+						<td class="value"><input type="text" id="r-grade" name="grade" placeholder="数字を入力してください。"></td>
 					</tr>
 					<tr>
 
