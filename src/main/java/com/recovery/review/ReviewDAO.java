@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
+
 import com.google.gson.Gson;
 import com.recovery.account.User;
 import com.recovery.main.DBManager;
@@ -124,8 +126,8 @@ public class ReviewDAO {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, user.getU_id());
 			pstmt.setString(2, no);
-			System.out.println(no);
-			System.out.println(user.getU_id());
+//			System.out.println(no);
+//			System.out.println(user.getU_id());
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("리뷰 삭제 성공");
@@ -142,7 +144,7 @@ public class ReviewDAO {
 	
 	
 	// 개인 마이페이지 후기 추가 기능
-	public static void addReview(HttpServletRequest request) {
+	public static boolean addReview(HttpServletRequest request) {
 		
 		User user = (User) request.getSession().getAttribute("userAccount");
 		
@@ -151,10 +153,20 @@ public class ReviewDAO {
 		String sql = "insert into review VALUES (review_seq.nextval, ?, SYSDATE, ?, ?, ?, ?, ?)";
 		System.out.println("왔?");
 		
+		boolean check = false;
+		
 		try {
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
 			request.setCharacterEncoding("UTF-8");
+//			String product = request.getParameter("name");
+//			System.out.println(product);
+//			System.out.println(request.getParameter("story"));
+//			System.out.println(request.getParameter("grade"));
+//			System.out.println(request.getParameter("no"));
+			
+			
+			
 			pstmt.setString(1, request.getParameter("story"));
 			pstmt.setString(2, request.getParameter("grade"));
 			pstmt.setString(3, user.getU_nicname());
@@ -162,15 +174,11 @@ public class ReviewDAO {
 			pstmt.setString(5, user.getU_id());
 			pstmt.setString(6, request.getParameter("no"));
 			
-			String product = request.getParameter("name");
 			
-			System.out.println(product);
-			System.out.println(request.getParameter("story"));
-			System.out.println(request.getParameter("grade"));
-			System.out.println(request.getParameter("no"));
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("리뷰 등록 성공");
+				check = true;
 			}
 			
 		} catch (Exception e) {
@@ -178,7 +186,6 @@ public class ReviewDAO {
 			System.out.println("리뷰 등록 실패");
 		} finally {
 			DBManager.close(con, pstmt, null);
-		}
+		} return check;
 	}
-	
 }

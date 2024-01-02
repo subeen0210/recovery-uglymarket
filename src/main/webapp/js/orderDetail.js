@@ -130,7 +130,6 @@ function formatDate(date) {
 
 
 function addReview() {
-    var formData = new FormData();
     let ok = confirm('후기를 작성하시겠습니까?');
 
     if (ok) {
@@ -143,17 +142,11 @@ function addReview() {
         console.log(story);
         console.log(no);
 
-        formData.append('name', name);
-        formData.append('grade', grade);
-        formData.append('story', story);
-        formData.append('no', no);
 
         $.ajax({
             url: 'ReviewAddC',
             method: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
+            data: {name: name, grade: grade, story: story, no: no},
             success: function (res) {
                 if (res == 1) {
                     alert("후기가 등록되었습니다.");

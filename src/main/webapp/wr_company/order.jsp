@@ -166,7 +166,7 @@
 	<button class="closeBtn2" id="closeModalBtn2">X</button>
 	</dialog>
 
-	<script type="text/javascript" src="js/orderDetail.js?ver=1.0"></script>
+	<script type="text/javascript" src="js/orderDetail.js?ver=1.1"></script>
 
 
 </body>
