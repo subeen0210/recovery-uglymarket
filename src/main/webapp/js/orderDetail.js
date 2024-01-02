@@ -142,6 +142,11 @@ function addReview() {
         return;
     } 
 
+	if (parseInt(grade) >= 6) {
+        alert('評点は1から5までの数字を入力してください。');
+        return; // 값이 6 이상이면 함수를 종료
+    }
+
     if (!story) {
         alert('内容を入力してください。');
         return; 

@@ -48,7 +48,7 @@ public class ReviewDAO {
 				reviews.add(review);
 			}
 			request.setAttribute("reviews", reviews);
-			
+
 			Gson g = new Gson();
 			String jsonData = g.toJson(reviews);
 			res.setContentType("application/json");

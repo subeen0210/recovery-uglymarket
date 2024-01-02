@@ -21,19 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  // HTML에서 요소들을 가져옵니다.
-  var stars = document.querySelectorAll(".star");
-  var ratingValue = document.getElementById("rating-value");
-
-  // 별 클릭 시 이벤트를 추가합니다.
-  stars.forEach(function (star) {
-    star.addEventListener("click", function () {
-      var rating = this.getAttribute("data-value");
-      ratingValue.textContent = rating;
-    });
-  });
-});
 
 function maskUsername(username) {
   if (username.length <= 3) {
@@ -43,14 +30,3 @@ function maskUsername(username) {
     return username.substring(0, 3) + maskedPart;
   }
 }
-
-// 예시로 초기 닉네임을 설정
-//let originalUsername = "example_user";
-//updateMaskedUsername();
-//
-//// 닉네임이 변경될 때마다 호출되는 함수
-//function updateMaskedUsername() {
-//  const maskedUsername = maskUsername(originalUsername);
-//  document.getElementsByClassName("usernameDisplay").innerText =
-//    "ニックネーム: " + maskedUsername + "님";
-//}
