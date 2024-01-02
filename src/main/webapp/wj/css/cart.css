@@ -136,8 +136,10 @@
 	font-weight: bold;
 }
 
-.quanity-container {
-	width: auto;
+.quantity-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .set-quanity {

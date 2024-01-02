@@ -1,4 +1,4 @@
-var modal;
+ var modal;
 $(function() {
 	modal = document.getElementsByClassName('modal')[0];
 	//alert(1111)

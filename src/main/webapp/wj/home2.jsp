@@ -52,22 +52,22 @@
 		<div class="news-position">
 			<div class="news-content">
 				<a href="https://financial-field.com/living/entry-225773"><div class="news-text1">ファイナンシャルプランナー</div>
-				<div class="news-text2">5割以上の人がよく知らない「規格外食品」。野菜などを格安で買う方法は？</div>
+				<div class="news-text2">5割以上の人がよく知らない<br>「規格外食品」。<br>野菜などを格安で買う方法は？</div>
 				<div class="news-text3">2023.08.09</div></a>
 			</div>
 			<div class="news-content">
 				<a href="https://www.chunichi.co.jp/article/753923"><div class="news-text1">中日新聞</div>
-				<div class="news-text2">規格外野菜、必要な家庭にどうぞ　「飛騨高山わらべうたの会」が支援</div>
+				<div class="news-text2">規格外野菜、<br>必要な家庭にどうぞ<br>「飛騨高山わらべうたの会」が支援</div>
 				<div class="news-text3">2023.08.23</div></a>
 			</div>
 			<div class="news-content">
 				<a href="https://mirasus.jp/sdgs/consumption-production/8771"><div class="news-text1">MIRASUS For SDGs</div>
-				<div class="news-text2">規格外野菜の廃棄が食品ロスの原因に！廃棄量や販売サイトを紹介</div>
+				<div class="news-text2">規格外野菜の廃棄が<br>食品ロスの原因に！<br>廃棄量や販売サイトを紹介</div>
 				<div class="news-text3">2022.12.21</div></a>
 			</div>
 			<div class="news-content">
 				<a href="https://www.advertimes.com/20220817/article393137"><div class="news-text1">AdverTimes</div>
-					<div class="news-text2">オイシックス・ラ・大地 規格外の農作物をアプリで通知・販売</div>
+					<div class="news-text2">オイシックス・ラ・大地<br> 規格外の農作物をアプリで通知・販売</div>
 					<div class="news-text3">2022.08.17</div></a>
 			</div>
 		</div>

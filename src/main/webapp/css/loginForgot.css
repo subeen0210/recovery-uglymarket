@@ -34,7 +34,9 @@ a {
 	height: 40px;
 }
 
+
 .style-input {
+	position: relative;
 	background: #eee;
 	padding: 16px;
 	margin: 8px 0;
@@ -43,6 +45,13 @@ a {
 	border: 0;
 	outline: none;
 	border-radius: 15px;
+}
+
+.pn-info {
+	position: absolute;
+	right: 105px;
+	color:#21825B;
+	font-weight: bold;
 }
 
 button {

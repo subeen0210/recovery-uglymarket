@@ -16,7 +16,7 @@
 </head>
 <body>
 
-	<form action="updateSelerC" method="post" enctype="multipart/form-data"
+	<form action="updateSellerC" method="post" enctype="multipart/form-data"
 		onsubmit="return sellerCheck()">
 		<div class="reg-main">
 			<div class="reg-container">
