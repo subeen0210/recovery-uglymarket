@@ -70,6 +70,7 @@
 
 	<div id="myModal" class="modal">
 		<div class="modal-content">
+		<div class="div_block">
 			<span class="close">&times;</span>
 			
 			<form action="postAddC" method="post" enctype="multipart/form-data">
@@ -109,9 +110,13 @@
 					</div>
 					
 				</div>
+				<br>
+				
 				<button type="submit">登録</button>
 			</form>
+			
 		</div>
+	</div>
 	</div>
 
 </body>
