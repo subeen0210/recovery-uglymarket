@@ -21,6 +21,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+function calculateAndLogAverage(reviews) {
+    // 평균 계산 함수
+    function calculateAverage(ratings) {
+        if (ratings.length === 0) return 0;
+        var sum = ratings.reduce((acc, val) => acc + val.r_grade, 0);
+        return sum / ratings.length;
+    }
+
+    // 평균 값 계산
+    var averageRating = calculateAverage(reviews);
+
+    // 콘솔에 출력
+    console.log("평균 평점: " + averageRating);
+
+    // 여기에서 다른 원하는 작업을 수행할 수 있습니다.
+}
+
 
 function maskUsername(username) {
   if (username.length <= 3) {
