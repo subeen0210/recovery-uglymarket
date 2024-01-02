@@ -150,19 +150,24 @@ public class ReviewDAO {
 		PreparedStatement pstmt = null;
 		String sql = "insert into review VALUES (review_seq.nextval, ?, SYSDATE, ?, ?, ?, ?, ?)";
 		System.out.println("왔?");
-		String product = request.getParameter("review_name");
-		System.out.println(product);
 		
 		try {
-			request.setCharacterEncoding("UTF-8");
 			con = DBManager.connect();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, request.getParameter("r-story"));
+			request.setCharacterEncoding("UTF-8");
+			pstmt.setString(1, request.getParameter("story"));
 			pstmt.setString(2, request.getParameter("grade"));
 			pstmt.setString(3, user.getU_nicname());
-			pstmt.setString(4, request.getParameter("review_name"));
+			pstmt.setString(4, request.getParameter("name"));
 			pstmt.setString(5, user.getU_id());
 			pstmt.setString(6, request.getParameter("no"));
+			
+			String product = request.getParameter("name");
+			
+			System.out.println(product);
+			System.out.println(request.getParameter("story"));
+			System.out.println(request.getParameter("grade"));
+			System.out.println(request.getParameter("no"));
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("리뷰 등록 성공");

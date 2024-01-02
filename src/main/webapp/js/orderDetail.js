@@ -108,8 +108,7 @@ $(function() {
 				console.log(data.i_no);
 				$("#r_productname").text(data.i_name);
 				$("#myButton").val(data.i_no);
-				document.getElementById("i_name").value = data.i_name;
-				console.log(typeof ($("#i_name").val()));
+				console.log($("#r_productname").text());
 				
 				
 				myModal2.showModal();
@@ -130,12 +129,44 @@ function formatDate(date) {
 
 
 
-function addReview(){
-	let ok = confirm('후기를 작성하시겠습니까?');
+function addReview() {
+    var formData = new FormData();
+    let ok = confirm('후기를 작성하시겠습니까?');
 
-		return ok;
+    if (ok) {
+        let name = $("#r_productname").text();
+        let grade = $("input[name='grade']").val();
+        let story = $("textarea[name='story']").val();
+        let no = $("#myButton").val();
+        console.log(name);
+        console.log(grade);
+        console.log(story);
+        console.log(no);
 
+        formData.append('name', name);
+        formData.append('grade', grade);
+        formData.append('story', story);
+        formData.append('no', no);
+
+        $.ajax({
+            url: 'ReviewAddC',
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (res) {
+                if (res == 1) {
+                    alert("후기가 등록되었습니다.");
+                    window.location.href = 'UserMypageC';
+                } else {
+                    alert('후기 등록 실패');
+                }
+            }
+        });
+    }
 }
+
+
 function updateStatusOrder(no) {
 	let ok = confirm('到着しましたか？ 変えたら戻れません。');
 	if (ok) {

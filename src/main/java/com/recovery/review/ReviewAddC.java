@@ -18,8 +18,9 @@ public class ReviewAddC extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		ReviewDAO.addReview(request);
-		response.sendRedirect("UserMypageC");
+		
 	
 	}
 
