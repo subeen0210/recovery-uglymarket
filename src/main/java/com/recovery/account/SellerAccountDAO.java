@@ -4,6 +4,7 @@ import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -222,5 +223,153 @@ public class SellerAccountDAO {
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
+	}
+
+	public static boolean idConfirm(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT s_id FROM seller WHERE s_tel= ? and "
+				+ "s_kanji_ln = ? and s_kanji_fn = ?";
+		try {
+			request.setCharacterEncoding("UTF-8");
+			String kanjiL = request.getParameter("f_name");
+			String kanjiF = request.getParameter("s_name");
+			String tel = request.getParameter("tel");
+			if (tel != null && tel.length() == 11) {
+				StringBuffer telAll = new StringBuffer(tel);
+				telAll.insert(3, "-");
+				telAll.insert(8, "-");
+				tel = telAll.toString();
+			}
+			System.out.println(tel);
+			System.out.println(kanjiL);
+			System.out.println(kanjiF);
+			
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, tel);
+			pstmt.setString(2, kanjiL);
+			pstmt.setString(3, kanjiF);
+			rs = pstmt.executeQuery();
+			ArrayList<String> IDs = new ArrayList<String>();
+			while (rs.next()) {
+				System.out.println("id 찾기 성공");
+				IDs.add(rs.getString("s_id"));
+			}
+			if (!IDs.isEmpty()) {
+			    System.out.println(IDs);
+			    request.setAttribute("IDs", IDs);
+			    return true;
+			} else {
+			    System.out.println("id 찾기 실패");
+			    request.setAttribute("resultMsg", "idが見つかりません");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("서버에러 ");
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		return false;
+	}
+
+	public static void createRandomPassword(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM seller WHERE s_tel= ? and s_id = ? and s_kanji_ln = ? and s_kanji_fn = ?";
+		try {
+			request.setCharacterEncoding("UTF-8");
+			String tel = request.getParameter("tel");
+			
+			if (tel != null && tel.length() == 11) {
+				StringBuffer telAll = new StringBuffer(tel);
+				telAll.insert(3, "-");
+				telAll.insert(8, "-");
+				tel = telAll.toString();
+			}
+			
+			String id = request.getParameter("id");
+			String sei = request.getParameter("kanji_ln");
+			String mei = request.getParameter("kanji_fn");
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, tel);
+			pstmt.setString(2, id);
+			pstmt.setString(3, sei);
+			pstmt.setString(4, mei);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				System.out.println("새 비밀번호 생성");
+				
+				// 비밀번호 생성하고 업데이트
+				String randomPassword = changePW(request);
+		        // 랜덤 비밀번호 전달 
+		        request.setAttribute("randomPassword", randomPassword);
+		    } else {
+		    	System.out.println("맞는 사람이 없음");
+		        // 조회 실패한 경우
+		        // 예외 처리 또는 다른 로직 수행
+		    	request.setAttribute("resultMsg", "存在されてません");
+		    }
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("서버에러 ");
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
+
+	private static String changePW(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		// 비밀번호 찾기 값
+		String confirmID = request.getParameter("id");
+		String randomPassword = AccountDAO.randomMix(10);
+		String newPW = randomPassword;
+		// 마이페이지 정보수정 - 비밀번호 값
+		if (confirmID == null) {
+			Seller seller = (Seller) request.getSession().getAttribute("sellerAccount");
+			confirmID = seller.getS_id();
+			newPW = request.getParameter("newPW");
+		}
+		
+		String sql = "UPDATE seller SET s_pw = ? WHERE s_id = ?";
+		try {
+			
+			
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, newPW);
+			pstmt.setString(2, confirmID);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("비밀번호 수정 성공");
+				
+				
+				// 정보 수정일 때만 세션 업데이트 되게 하기 
+				if (newPW == request.getParameter("newPW")) {
+					// 세션 업데이트
+				request.setAttribute("newid", confirmID);
+				request.setAttribute("newpw", newPW);
+				login(request);
+				}
+				
+			}
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("수정 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+		return randomPassword;
 	};
 }

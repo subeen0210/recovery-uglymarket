@@ -16,7 +16,7 @@
 		<br> <br>
 		<div class="result-font">
 			<c:choose>
-				<c:when test="${isEmailConfirmed }">
+				<c:when test="${isIDConfirmed }">
 					<c:forEach var="id" items="${IDs }">
 					${id }<br>
 					</c:forEach>
@@ -33,7 +33,7 @@
 					class="button btnPush btnBlueGreen">Login</a>
 			</div>
 			<div class="set-btn">
-				<a href="PWForgotC" title="Button push blue/green"
+				<a href="PWForgotC?button=seller" title="Button push blue/green"
 					class="button btnPush btnBlueGreen">パスワードを探す</a>
 			</div>
 		</div>
