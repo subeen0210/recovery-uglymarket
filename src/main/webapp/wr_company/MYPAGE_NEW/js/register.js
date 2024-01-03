@@ -38,7 +38,7 @@ function itemAdd() {
             // 서버 응답에 따라 알림 표시
             console.log(res);
             if (res == 1) {
-                alert("상품이 등록되었습니다.");
+                alert("商品が登録されました。");
                 window.location.href = 'SellerMypageC';
             } else {
                 alert('상품 등록 실패');
@@ -63,37 +63,37 @@ function isEmpty(){
 	
 	
 	if (!name.val().trim()) {
-        alertAndFocus(name, '상품명을 입력해주세요.');
+        alertAndFocus(name, '商品名を入力してください。');
         return false;
     }
 
     if (!story.val().trim()) {
-        alertAndFocus(story, '상품설명을 입력해주세요.');
+        alertAndFocus(story, '商品の説明を入力してください。');
         return false;
     }
 
     if (!enddate.val()) {
-        alertAndFocus(enddate, '날짜를 입력해주세요.');
+        alertAndFocus(enddate, '日付を入力してください。');
         return false;
     }
 
     if (!stock.val().trim()) {
-        alertAndFocus(stock, '재고를 입력해주세요.');
+        alertAndFocus(stock, '在庫を入力してください。');
         return false;
     }
 
     if (!price.val().trim()) {
-        alertAndFocus(price, '가격을 입력해주세요.');
+        alertAndFocus(price, '価格を入力してください。');
         return false;
     }
 
     if (fileInput.files.length === 0) {
-        alert('이미지를 첨부해주세요.');
+        alert('写真を添付してください');
         return false;
     }
 
     if (fileInput.files.length > 4) {
-        alert('이미지는 최대 4장까지 첨부 가능합니다.');
+        alert('写真は最大四枚まで添付できます。');
         return false;
     }
 

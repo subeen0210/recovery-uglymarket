@@ -47,7 +47,7 @@ function loadStockData() {
 }
 
 function itemDelete(no) {
-	var confirmed = confirm('해당 상품을 정말 삭제하겠습니까?');
+	var confirmed = confirm('商品を本当に削除しますか？');
 	// 사용자의 선택 확인
 	if (confirmed) {
 		// 사용자가 '예'를 선택한 경우, 삭제를 수행
@@ -57,7 +57,7 @@ function itemDelete(no) {
 			data: { no: no }, // 아이템 번호를 서블릿에 전달
 			dataType: 'text', // 일반 텍스트 응답을 기대
 			success: function(response) {
-				alert('해당 상품이 삭제되었습니다.');
+				alert('商品が削除されました。');
 				location.reload();
 			},
 			error: function(error) {
@@ -66,7 +66,7 @@ function itemDelete(no) {
 		});
 	} else {
 		// 사용자가 '아니요'를 선택한 경우, 아무 동작도 하지 않음
-		console.log('삭제 취소됨');
+		console.log('商品の削除がキャンセルされました。');
 	}
 }
 
@@ -78,7 +78,7 @@ function itemUpdate(no) {
 	let close = document.getElementsByClassName('close')[0];
 	let button = document.getElementsByClassName('update-button')[0];
 
-	let confirmed = confirm('해당 상품을 수정하겠습니까??');
+	let confirmed = confirm('商品を修正しますか？');
 
 	if (confirmed) {
 		setTimeout(function() {

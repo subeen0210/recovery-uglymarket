@@ -21,36 +21,41 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
   // HTML에서 요소들을 가져옵니다.
-  var stars = document.querySelectorAll(".star");
-  var ratingValue = document.getElementById("rating-value");
+  	var stars = document.querySelectorAll(".star");
+  	var ratingValue = document.getElementById("rating-value");
 
-  // 별 클릭 시 이벤트를 추가합니다.
-  stars.forEach(function (star) {
-    star.addEventListener("click", function () {
-      var rating = this.getAttribute("data-value");
-      ratingValue.textContent = rating;
-    });
-  });
+  // 초기화할 때 기본 값으로 채워줄 별 개수를 설정합니다.
+  	var initialRating = Math.round(gradeAvg != null ? gradeAvg.getR_grade() : 0);
+	console.log("initialRating:", initialRating);
+
+  // 초기화할 때 별을 채워주는 함수 호출
+  	fillStars(initialRating);
 });
 
-function maskUsername(username) {
-  if (username.length <= 3) {
-    return username;
-  } else {
-    const maskedPart = "*".repeat(username.length - 3);
-    return username.substring(0, 3) + maskedPart;
+// 별을 채워주는 함수
+function fillStars(rating) {
+  	var stars = document.querySelectorAll(".star");
+
+  // 모든 별의 클래스 초기화
+  	tars.forEach(function (star) {
+    star.classList.remove("filled");
+  });
+
+  // 현재 클릭한 별의 이하 별들을 채웁니다.
+  	for (var i = 0; i < rating; i++) {
+    	stars[i].classList.add("filled");
   }
 }
 
-// 예시로 초기 닉네임을 설정
-//let originalUsername = "example_user";
-//updateMaskedUsername();
-//
-//// 닉네임이 변경될 때마다 호출되는 함수
-//function updateMaskedUsername() {
-//  const maskedUsername = maskUsername(originalUsername);
-//  document.getElementsByClassName("usernameDisplay").innerText =
-//    "ニックネーム: " + maskedUsername + "님";
+
+//function maskUsername(username) {
+//  if (username.length <= 3) {
+//    return username;
+//  } else {
+//    const maskedPart = "*".repeat(username.length - 3);
+//    return username.substring(0, 3) + maskedPart;
+//  }
 //}

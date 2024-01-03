@@ -17,5 +17,8 @@
 			<a class="login-set-menu" href="SellerLoginC">Logout</a>
 		</div>
 	</div>
+	&emsp;&emsp; <img class="cart-icon" src="img/semi-cart-icon.png"
+				onclick="userLoginCheck('${sessionScope.userAccount.u_id}')">
+	&emsp;&emsp;
 </body>
 </html>

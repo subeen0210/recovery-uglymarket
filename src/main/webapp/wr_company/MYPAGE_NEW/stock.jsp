@@ -76,7 +76,7 @@
 			</div>
 			<input name="old-img" id="farm-file2" value="">
 		</div>
-		<button class="update-button" id="item-no" name="no">수정</button>
+		<button class="update-button" id="item-no" name="no">修正</button>
 	</div>
     	</form>
   </div>
