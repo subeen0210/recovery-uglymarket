@@ -62,7 +62,7 @@ p {
 }
 
 .mypage_container {
-	
+	overflow-x: hidden;
 	height: 100%;
 	background-color: white;
 }
