@@ -1,6 +1,8 @@
 package com.recovery.account;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +17,28 @@ public class updateSellerC extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		SellerAccountDAO.updateSeller(request);
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		if (AccountDAO.loginCheck(request) == 0) {
 
-		response.sendRedirect("SellerMypageC");
+			out.println("<script language='javascript'>");
+			out.println("alert('ログインが切れました。ログインページに移動します')");
+			out.println("location.href='LoginPageC'");
+			out.println("</script>");
 
+			out.flush();
+
+		} else {
+			SellerAccountDAO.updateSeller(request);
+
+			out.println("<script language='javascript'>");
+			out.println("alert('情報が更新されました')");
+			out.println("location.href='SellerMypageC'");
+			out.println("</script>");
+			
+			out.flush();
+			
+		}
 	}
 
 }
