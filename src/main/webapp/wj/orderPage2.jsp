@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Document</title>
-<script src="js/regOrder.js?ver=1.1"></script>
+<script src="js/regOrder.js?ver=1.2"></script>
 <link rel="stylesheet" href="wj/css/order.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -17,7 +18,7 @@
 	<div class="main-wrapper">
 		<div class="detail-wrap">
 			<img class="icon" src="img/free-icon-arrow-down.png" alt="" />
-			<details  class="demo-details-juqery-accordion">
+			<details class="demo-details-juqery-accordion">
 				<summary>配送先</summary>
 				<p>
 					<!-- p태그 사용할때는 div적용시 아코디언 효가가 매끄럽게 안먹음 span 사용 -->
@@ -63,48 +64,31 @@
 			<span class="close" id="closeModalBtn">&times;</span><br>
 			<div class="del-title">配送先選択</div>
 			<hr>
-			<div class="modal-set">
-				<div class="del-name">お名前</div>
-				<br>
-				<div class="modal-text-size">
-					<div class="del-border">基本配送先</div>
-					<div class="del-text">住所</div>
-					<div class="del-text">携帯番号</div>
+			<c:forEach var="address" items="${address }">
+				<div class="modal-set">
+					<div class="del-name">${address.a_name }</div>
 					<br>
-					<div class="del-text">受取場所</div>
-				</div>
-				<div class="del-btn-set">
-					<div>
-						<button class="btn-update">修整</button>
+					<div class="modal-text-size">
+
+						<c:if test="${address.a_no == addr.a_no}">
+							<div class="del-border">基本配送先</div>
+						</c:if>
+						<div class="del-text">${address.a_addr }</div>
+						<div class="del-text">${address.a_tel }</div>
 					</div>
-					<div>
-						<button class="btn-select">送先</button>
+					<div class="del-btn-set">
+						<div>
+							<button class="btn-select" onclick="changeAddr('${address.a_no}');" >送先</button>
+						</div>
 					</div>
 				</div>
-			</div>
+			</c:forEach>
 			<div class="modal-set2">
-				<a href=""><img class="cross-size" alt="" src="img/cross.PNG">&ensp;配送先追加</a>
+				<a href="UserMypageC"><img class="cross-size" alt=""
+					src="img/cross.PNG">&ensp;配送先追加</a>
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		//모달 창 열기 버튼 및 닫기 버튼 이벤트 처리
-		document.getElementById('openModalBtn').onclick = function() {
-			document.getElementById('myModal').style.display = 'block';
-		}
-
-		document.getElementById('closeModalBtn').onclick = function() {
-			document.getElementById('myModal').style.display = 'none';
-		}
-
-		// 모달 외부 클릭 시 모달 닫기
-		window.onclick = function(event) {
-			var modal = document.getElementById('myModal');
-			if (event.target == modal) {
-				modal.style.display = 'none';
-			}
-		}
-	</script>
 	<!-- 모달 창 (결제 끝났을 때, 이동할 부분)-->
 	<dialog id="paymentEndPage">
 	<h2 class="dialog-title">決定が完了しました。マイページに移動しますか？</h2>
@@ -153,6 +137,23 @@
 										});
 							}
 						});
+
+		//모달 창 열기 버튼 및 닫기 버튼 이벤트 처리
+		document.getElementById('openModalBtn').onclick = function() {
+			document.getElementById('myModal').style.display = 'block';
+		}
+
+		document.getElementById('closeModalBtn').onclick = function() {
+			document.getElementById('myModal').style.display = 'none';
+		}
+
+		// 모달 외부 클릭 시 모달 닫기
+		window.onclick = function(event) {
+			var modal = document.getElementById('myModal');
+			if (event.target == modal) {
+				modal.style.display = 'none';
+			}
+		}
 	</script>
 </body>
 </html>
