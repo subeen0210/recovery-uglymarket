@@ -51,10 +51,12 @@ $(function() {
 			emptyMsg.textContent = ""; // 글자가 입력되면 에러 메시지를 숨김
 		}
 	});
-
-});
-
-
+	
+ $("#loginUserPW").keypress(function(event) {
+        if (event.which === 13) { // 13은 엔터 키의 keyCode
+            userlogin("HC"); //  엔터키를 눌렀을 떄 ID, PW 체크 후 HC로 되돌림
+        }
+    });
 function userlogin(backUrl) {
 	let userID = $("#loginUserID").val();
 	let userPW = $("#loginUserPW").val();
@@ -78,7 +80,13 @@ function userlogin(backUrl) {
 			console.log('error: ', error);
 		}
 	});
-};
+}
+
+});
+
+
+
+
 
 
 function loginSellerCall(backUrl) {
