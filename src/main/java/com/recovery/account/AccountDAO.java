@@ -160,10 +160,15 @@ public class AccountDAO {
 	public static void regUser(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		// 유저
 		String sql = "insert into users values(?,?,?,?,?,?,?,?,?,?, 'N')";
 		// 배송지
 		String sql2 = "insert into address values(address_seq.nextval,?,?,?,?,?,?,?)";
+		// 배송지 확인
+		String sql3 = "select a_no from address where u_id = ?";
+		// 기본 배송지
+		String sql4 = "insert into delivery_address VALUES(?,?)";
 		try {
 			request.setCharacterEncoding("utf-8");
 			String path = request.getServletContext().getRealPath("lgh_account/userImg");
@@ -239,7 +244,26 @@ public class AccountDAO {
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("배송지 등록 성공");
 			}
+			pstmt.close();
 			
+			pstmt = con.prepareStatement(sql3);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			int no = 0;
+			if (rs.next()) {
+				no = rs.getInt("a_no");
+
+			}
+			pstmt.close();
+			rs.close();
+			pstmt = con.prepareStatement(sql4);
+			pstmt.setString(1, id);
+			pstmt.setInt(2, no);
+			
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("기본 배송지 첫등록 성공");
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
