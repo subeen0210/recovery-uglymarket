@@ -33,10 +33,10 @@
 			</div>
 			<a class="submit" onclick="return loginCall()">ログイン</a><br /> <a
 				class="submit" id="openModalBtn">販売者専用</a>
-			<p class="forgot">
-				<a id="IDForgotC" href="IDForgotC">ID・パスワードを忘れた場合</a>
-			</p>
 		</form>
+			<p class="forgot">
+				<a id="IDForgotC" href="IDForgotC?button=user">ID・パスワードを忘れた場合</a>
+			</p>
 		<br> <br>
 		<div class="reg-title">
 			<span id="reg-title-text">アグリーマーケットが初めてですか？</span>
@@ -82,7 +82,7 @@
 			</div>
 			<br>
 			<div class="set-size">
-				<a>IDとパスワードを忘れましたか？</a>
+				<a id="IDForgotC" href="IDForgotC?button=seller">IDとパスワードを忘れましたか？</a>
 			</div>
 		</div>
 	</div>

@@ -11,6 +11,7 @@ function payStorage() {
 		
 		return false;
 	}
+
 	
 
 	// class가 'item-checkbox'인 모든 체크박스를 가져옵니다.
