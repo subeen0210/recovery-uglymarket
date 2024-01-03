@@ -131,7 +131,7 @@ function formatDate(date) {
 
 
 function addReview(){
-	let ok = confirm('후기를 작성하시겠습니까?');
+	let ok = confirm('後記を作成しますか？');
 
 		return ok;
 
