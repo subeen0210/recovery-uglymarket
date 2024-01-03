@@ -131,6 +131,7 @@ function formatDate(date) {
 
 
 
+
 function addReview() {
     let name = $("#r_productname").text();
     let grade = $("input[name='grade']").val();
@@ -151,6 +152,7 @@ function addReview() {
         alert('内容を入力してください。');
         return; 
     } 
+
 
 
     let ok = confirm('後記を作成しますか？');
