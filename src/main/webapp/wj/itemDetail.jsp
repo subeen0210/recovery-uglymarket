@@ -45,7 +45,9 @@
 	<div class="item-explain">
 		<div class="explain-title">商品説明</div>
 		<br /> <br />
-		<div class="explain-input">${item.i_des }</div>
+		<div class="explain-input">
+		<pre>${item.i_des }</pre>
+		</div>
 	</div>
 	<br><br>
 	<div class="item-review">
@@ -60,7 +62,7 @@
 				&emsp;
 				<div>
 					<p id="selected-rating">
-						Star Rating : <span id="rating-value">0</span>点
+					<span id="rating-value">${gradeAvg.r_grade}</span>点
 					</p>
 				</div>
 			</div>
@@ -73,7 +75,7 @@
 			<div class="input-date">作成日: ${review.r_date }</div>
 			<div class="input-grade">点: ${review.r_grade }</div>
 			</div>
-			<div class="input-text">${review.r_estimation }</div>
+			<div class="input-text"><pre>${review.r_estimation }</pre></div>
 		</c:forEach>
 		</div>
 	</div>

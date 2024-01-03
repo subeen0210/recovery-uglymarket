@@ -93,7 +93,6 @@ public class ReviewDTO {
 	public void setI_no(int i_no) {
 		this.i_no = i_no;
 	}
-	
-	
+
 	
 }
