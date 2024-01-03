@@ -85,5 +85,5 @@
 
 
 </body>
-<script src="wr_company/MYPAGE_NEW/js/stock.js"></script>
+<script src="wr_company/MYPAGE_NEW/js/stock.js?ver=1.1"></script>
 </html>
