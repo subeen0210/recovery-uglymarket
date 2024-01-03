@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Insert title here</title>
-    <link rel="stylesheet" href="css/regSeller.css" />
+    <link rel="stylesheet" href="css/regSeller.css?ver=2.0" />
     <script type="text/javascript" src="js/addr.js"></script>
     <script type="text/javascript" src="js/idCheck.js"></script>
     <script type="text/javascript" src="js/validCheck.js"></script>

@@ -173,6 +173,15 @@ textarea {
 .btnBlueGreen {
 	background: #2a243a;
 }
+
+.btn-style {
+	background-color: #2a243a;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-size: 12pt;
+    padding: 5px;
+}
 /* 비밀번호 변경 모달창 - 원준 작업 */
 .password-modal {
 	width: 700px;
