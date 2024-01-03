@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.recovery.account.AccountDAO;
+import com.recovery.address.AddrDAO;
 
 @WebServlet("/OrderPageC")
 public class OrderPageC extends HttpServlet {
@@ -27,7 +28,7 @@ public class OrderPageC extends HttpServlet {
 			out.flush();
 		} else {
 			OrderDAO.userAddr(request);
-
+			AddrDAO.userAddrAll(request);
 			request.setAttribute("contentPage", "wj/orderPage2.jsp");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}

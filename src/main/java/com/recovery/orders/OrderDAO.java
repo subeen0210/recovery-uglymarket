@@ -25,8 +25,7 @@ public class OrderDAO {
 		ResultSet rs = null;
 		User user = (User) request.getSession().getAttribute("userAccount");
 		System.out.println(user.getU_id());
-		String sql = "SELECT a_no, a_postcode, a_addr, a_addrdetail, a_name, a_tel, a_req" + " FROM address, users"
-				+ " where users.u_id = address.u_id" + " and users.u_id = ?";
+		String sql = "SELECT * FROM delivery_address d, address a WHERE d.a_no = a.a_no and d.u_id = ?";
 
 		UserAddr addrs = null;
 		try {
