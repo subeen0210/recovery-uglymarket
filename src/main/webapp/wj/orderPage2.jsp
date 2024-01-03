@@ -61,22 +61,29 @@
 		<!-- 모달 내용 -->
 		<div class="modal-content">
 			<span class="close" id="closeModalBtn">&times;</span><br>
-			<div class="del-title">배송지 선택</div>
+			<div class="del-title">配送先選択</div>
 			<hr>
 			<div class="modal-set">
-				<div class="del-name">이름</div><br>
-				<div class="del-border">기본배송지</div>
-				<div class="del-text">주소</div>
-				<div class="del-text">번호</div><br>
-				<div class="del-text">받을장소</div>
+				<div class="del-name">お名前</div>
+				<br>
+				<div class="modal-text-size">
+					<div class="del-border">基本配送先</div>
+					<div class="del-text">住所</div>
+					<div class="del-text">携帯番号</div>
+					<br>
+					<div class="del-text">受取場所</div>
+				</div>
 				<div class="del-btn-set">
 					<div>
-						<button class="btn-update">수정</button>
+						<button class="btn-update">修整</button>
 					</div>
 					<div>
-						<button class="btn-select">선택</button>
+						<button class="btn-select">送先</button>
 					</div>
 				</div>
+			</div>
+			<div class="modal-set2">
+				<a href=""><img class="cross-size" alt="" src="img/cross.PNG">&ensp;配送先追加</a>
 			</div>
 		</div>
 	</div>
