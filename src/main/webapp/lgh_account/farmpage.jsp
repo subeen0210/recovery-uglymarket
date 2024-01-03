@@ -5,19 +5,19 @@
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/upSeller.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/upSeller.css?ver=2.1">
 
 <script src="https://code.jquery.com/jquery-3.7.0.js"
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/addr.js"></script>
-<script type="text/javascript" src="js/updateUser.js"></script>
+<script type="text/javascript" src="js/updateUser.js?ver=1.1"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
 </head>
 <body>
 
-	<form action="updateSellerC" method="post" enctype="multipart/form-data"
-		onsubmit="return sellerCheck()">
+	<form action="updateSellerC" method="post"
+		enctype="multipart/form-data" onsubmit="return sellerCheck()">
 		<div class="reg-main">
 			<div class="reg-container">
 				<h1 style="color: #2a243a">情報修正</h1>
@@ -89,9 +89,10 @@
 						農場イメージ<span class="essentialicon">*</span>
 					</div>
 					<div class="reg-input">
-						<input class="input-style upload-img" placeholder="jpg/png/jpeg"
+						<input class="input-style upload-img"
+							placeholder="${sessionScope.sellerAccount.s_Fphoto }"
 							readonly="readonly" /> <label for="fileInput">アップロード</label> <input
-							type="file" name="farmImg" id="fileInput"
+							type="file" name="newFarmImg" id="fileInput"
 							accept=".jpg, .jpeg, .png" onchange="displayFileName(this)">
 					</div>
 				</div>
@@ -198,14 +199,14 @@
 	<div>
 		<a href="#" title="Button push blue/green"
 			class="button btnPush btnBlueGreen"
-			onclick="return passwordChange();">パスワード変更</a>
+			onclick="return loginCheck('SellerLoginC');">パスワード変更</a>
 	</div>
 	</dialog>
 	<!-- 비밀번호 찾기 modal 끝 -->
 </body>
 
 
-<script type="text/javascript" src="js/regUser1.js"></script>
+<script type="text/javascript" src="js/imgShow.js"></script>
 <script type="text/javascript">
 	$(function() {
 		// 전화번호 분리를 위해 적었습니다. 다른 js로 넣으면 깨지니까 여기서 작업해주세요
@@ -243,14 +244,24 @@
 
 	});
 
-	// 	document.getElementById("password-change-button").addEventListener('click', function() {
-	// 		  document.getElementById('password-modal').style.display = 'flex'; // 또는 'block'
-	// 		});	
-
-	document.getElementById("password-change-button").addEventListener("click",
+	document.getElementById("password-change-button").addEventListener(
+			"click",
 			function() {
-				// Open the dialog
-				document.getElementById("password-modal").showModal();
+				$.ajax({
+					url : 'SessionCheck', // 서버 측 코드가 처리하는 URL
+					method : 'GET',
+					success : function(response) {
+						if (response == '0') {
+							// 세션이 만료된 경우
+							alert('ログインが切れました。ログインページに移動します。');
+							location.href = 'LoginPageC';
+						} else {
+							// Open the dialog
+							document.getElementById("password-modal")
+									.showModal();
+						}
+					}
+				});
 			});
 
 	document.getElementById("close-button").addEventListener("click",

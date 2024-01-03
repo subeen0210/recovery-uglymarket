@@ -31,12 +31,12 @@
 			<div class="emptyErrorMsg">
 				<span id="loginEmptyPW"></span>
 			</div>
-			<a class="submit" onclick="return loginCall()">ログイン</a><br /> <a
+			<a class="submit" onclick="return loginCall('${backURL}')">ログイン</a><br /> <a
 				class="submit" id="openModalBtn">販売者専用</a>
-			<p class="forgot">
-				<a id="IDForgotC" href="IDForgotC">ID・パスワードを忘れた場合</a>
-			</p>
 		</form>
+			<p class="forgot">
+				<a id="IDForgotC" href="IDForgotC?button=user">ID・パスワードを忘れた場合</a>
+			</p>
 		<br> <br>
 		<div class="reg-title">
 			<span id="reg-title-text">アグリーマーケットが初めてですか？</span>
@@ -78,11 +78,11 @@
 				</div>
 			</div>
 			<div class="set-size">
-				<button class="btn-set2" onclick="return loginSellerCall()">ログイン</button>
+				<button class="btn-set2" onclick="return loginSellerCall('${backURL}')">ログイン</button>
 			</div>
 			<br>
 			<div class="set-size">
-				<a>IDとパスワードを忘れましたか？</a>
+				<a id="IDForgotC" href="IDForgotC?button=seller">IDとパスワードを忘れましたか？</a>
 			</div>
 		</div>
 	</div>

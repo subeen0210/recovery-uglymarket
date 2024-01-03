@@ -15,7 +15,7 @@
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/currentItem.js"></script>
-<script src="wr_company/js/mypage.js?ver=1.1"></script>
+<script src="wr_company/js/mypage.js?ver=1.2"></script>
 <!--바닥 JSP호출 JS -->
 <meta charset="UTF-8">
 <title>Insert title here</title>

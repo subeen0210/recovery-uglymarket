@@ -1,31 +1,28 @@
-package com.recovery.review;
+package com.recovery.account;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.recovery.account.AccountDAO;
-
-
-@WebServlet("/ReviewAddC")
-public class ReviewAddC extends HttpServlet {
-
+@WebServlet("/SessionCheck")
+public class SessionCheck extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	if (AccountDAO.loginCheck(request) == 0) {
+        response.getWriter().write('0');
+    } 
+//	else {
+//        request.setAttribute("contentPage", "wr_company/new_myPage.jsp");
+//        request.getRequestDispatcher("index.jsp").forward(request, response);
+//    }
 	
 	}
 
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		 if (ReviewDAO.addReview(request)) {
-		        response.getWriter().write("1"); // 성공 시에는 1을 보내기
-		    } else {
-		        response.getWriter().write("0"); // 실패 시에는 0을 보내기
-		    }
 	}
 
 }

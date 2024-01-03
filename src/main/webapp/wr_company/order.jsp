@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="wr_company/css/order.css">
+<link rel="stylesheet" href="wr_company/css/order.css?ver=1.1">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
 <meta charset="UTF-8">
@@ -134,19 +134,17 @@
 	<dialog id="myModal2">
 
 	<div class="main_modal">
-		<form id="myForm" action="ReviewAddC" method="post" onsubmit="return addReview()">
 			<section class="order-details">
 				<h2>後記作成</h2>
 				<table class="order-info">
 					<tr>
 						<td class="label">商品名</td>
-						<td class="value" id="r_productname"></td>
-						<td style="display: none;"><input id="i_name" name="review_name"></td>
+						<td class="value" name="name" id="r_productname"></td>
 
 					</tr>
 					<tr>
 						<td class="label">評点</td>
-						<td class="value"><input type="text" id="r-grade" name="grade"></td>
+						<td class="value"><input type="text" id="r-grade" name="grade" placeholder="数字を入力してください。"></td>
 					</tr>
 					<tr>
 
@@ -157,19 +155,18 @@
 					</tr>
 					<tr>
 						<td class="label">内容</td>
-						<td class="value"><textarea name="r-story" id="r-story" rows="4" cols="50" placeholder="최대 300자"></textarea></td>
+						<td class="value"><textarea name="story" id="r-story" rows="4" cols="50" placeholder="최대 300자"></textarea></td>
 					</tr>
 
 				</table>
-				<button id="myButton" name="no" value="">作成</button>
+				<button id="myButton" name="no" value="" onclick="addReview()">作成</button>
 			</section>
-		</form>
 	</div>
 	<br>
 	<button class="closeBtn2" id="closeModalBtn2">X</button>
 	</dialog>
 
-	<script type="text/javascript" src="js/orderDetail.js"></script>
+	<script type="text/javascript" src="js/orderDetail.js?ver=1.1"></script>
 
 
 </body>

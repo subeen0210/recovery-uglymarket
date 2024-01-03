@@ -33,7 +33,7 @@
 					class="button btnPush btnBlueGreen">Login</a>
 			</div>
 			<div class="set-btn">
-				<a href="PWForgotC" title="Button push blue/green"
+				<a href="PWForgotC?button=user" title="Button push blue/green"
 					class="button btnPush btnBlueGreen">パスワードを探す</a>
 			</div>
 		</div>

@@ -1,3 +1,5 @@
+document.getElementById("r-date").valueAsDate = new Date();
+
 $(function() {
 
 
@@ -108,8 +110,7 @@ $(function() {
 				console.log(data.i_no);
 				$("#r_productname").text(data.i_name);
 				$("#myButton").val(data.i_no);
-				document.getElementById("i_name").value = data.i_name;
-				console.log(typeof ($("#i_name").val()));
+				console.log($("#r_productname").text());
 				
 				
 				myModal2.showModal();
@@ -130,12 +131,51 @@ function formatDate(date) {
 
 
 
-function addReview(){
-	let ok = confirm('後記を作成しますか？');
 
-		return ok;
+function addReview() {
+    let name = $("#r_productname").text();
+    let grade = $("input[name='grade']").val();
+    let story = $("textarea[name='story']").val();
+    let no = $("#myButton").val();
 
+    if (!grade) {
+        alert('評点を入力してください。');
+        return;
+    } 
+
+	if (parseInt(grade) >= 6) {
+        alert('評点は1から5までの数字を入力してください。');
+        return; // 값이 6 이상이면 함수를 종료
+    }
+
+    if (!story) {
+        alert('内容を入力してください。');
+        return; 
+    } 
+
+
+
+    let ok = confirm('後記を作成しますか？');
+
+    if (ok) {
+        $.ajax({
+            url: 'ReviewAddC',
+            method: 'POST',
+            data: {name: name, grade: grade, story: story, no: no},
+            success: function (res) {
+                if (res == 1) {
+                    alert("後記が登録されました。");
+                    window.location.href = 'UserMypageC';
+                } else {
+                    alert('後記の登録に失敗しました。');
+                }
+            }
+        });
+    }
 }
+
+
+
 function updateStatusOrder(no) {
 	let ok = confirm('到着しましたか？ 変えたら戻れません。');
 	if (ok) {

@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/updateUser.css?ver=2.0" />
+<link rel="stylesheet" href="css/updateUser.css?ver=2.1" />
 <script src="https://code.jquery.com/jquery-3.7.0.js"
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/updateUser.js?ver=1.1"></script>
+<script type="text/javascript" src="js/updateUser.js?ver=1.2"></script>
 <script type="text/javascript" src="js/validCheck.js"></script>
 
 </head>
@@ -21,14 +21,16 @@
 				<h1 style="color: #2a243a;">情報修正</h1>
 				<br>
 				<div id="imgShow">
-					<img id="previewImg" src="lgh_account/userImg/${sessionScope.userAccount.u_img }">
+					<img id="previewImg"
+						src="lgh_account/userImg/${sessionScope.userAccount.u_img }">
 				</div>
 				<div class="reg-content">
 					<div class="reg-menu">
 						プロフィールイメージ<span class="essential-icon">*</span>
 					</div>
 					<div class="reg-input">
-						<input class="input-style upload-img" placeholder="${sessionScope.userAccount.u_img }"
+						<input class="input-style upload-img"
+							placeholder="${sessionScope.userAccount.u_img }"
 							readonly="readonly" /> <label for="fileInput">アップロード</label> <input
 							type="file" name="userImg" id="fileInput"
 							accept=".jpg, .jpeg, .png">
@@ -157,7 +159,7 @@
 	<div>
 		<a href="#" title="Button push blue/green"
 			class="button btnPush btnBlueGreen"
-			onclick="return passwordChange();">パスワード変更</a>
+			onclick="return loginCheck('LoginPageC');">パスワード変更</a>
 	</div>
 	</dialog>
 	<!-- 비밀번호 찾기 modal 끝 -->
@@ -181,9 +183,25 @@
 			.addEventListener(
 					"click",
 					function() {
-						// Open the dialog
-						document.getElementById("password-modal").style.display = 'flex';
-						document.getElementById("password-modal").showModal();
+						$
+								.ajax({
+									url : 'SessionCheck', // 서버 측 코드가 처리하는 URL
+									method : 'GET',
+									success : function(response) {
+										if (response == '0') {
+											// 세션이 만료된 경우
+											alert('ログインが切れました。ログインページに移動します。');
+											location.href = 'LoginPageC';
+										} else {
+											// Open the dialog
+											document
+													.getElementById("password-modal").style.display = 'flex';
+											document.getElementById(
+													"password-modal")
+													.showModal();
+										}
+									}
+								});
 					});
 
 	document

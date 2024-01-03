@@ -17,18 +17,30 @@ function decrementQuantity() {
 	}
 }
 
-function goToCart(no,id) {
+function goToCart(no, id) {
 	let count = $('#quantityInput').val();
-//	console.log(count);
+	//	console.log(count);
 	if (id == "") {
-		alert('ログイン後に使用できます。');
+		alert('消費者ログイン後に使用できます。');
 		location.href = 'LoginPageC';
-	} else{
-		location.href='RegCartC?no='+no+'&count='+count;
-	//db에 cart를 담고. 카트 이동 유뮤
-	let ok = confirm('カートに入れました。 カートで移動しますか？');
-	if(ok){
-		location.href='CartAllC';
-	}
-	}
+	} else {
+		$.ajax({
+			url: 'SessionCheck', // 서버 측 코드가 처리하는 URL
+			method: 'GET',
+			success: function(response) {
+				if (response == '0') {
+					// 세션이 만료된 경우
+					alert('ログインが切れました。ログインページに移動します。');
+					location.href = 'LoginPageC';
+				} else {
+					location.href = 'RegCartC?no=' + no + '&count=' + count;
+					//db에 cart를 담고. 카트 이동 유뮤
+					let ok = confirm('カートに入れました。 カートで移動しますか？');
+					if (ok) {
+						location.href = 'CartAllC';
+					}
+				}
+			}
+		});
+	};
 };
