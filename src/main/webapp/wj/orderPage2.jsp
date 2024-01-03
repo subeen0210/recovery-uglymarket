@@ -78,14 +78,16 @@
 					</div>
 					<div class="del-btn-set">
 						<div>
-							<button class="btn-select" onclick="changeAddr('${address.a_no}');" >送先</button>
+							<button class="btn-select"
+								onclick="changeAddr('${address.a_no}');">送先</button>
 						</div>
 					</div>
 				</div>
 			</c:forEach>
 			<div class="modal-set2">
-				<a href="UserMypageC"><img class="cross-size" alt=""
-					src="img/cross.PNG">&ensp;配送先追加</a>
+				<a href="UserMypageC"> <img class="cross-size" alt=""
+					src="img/cross.PNG">&ensp;配送先追加
+				</a>
 			</div>
 		</div>
 	</div>
