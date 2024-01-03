@@ -116,6 +116,12 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
+}
+
+.modal-set2:hover {
+	background: #70E820;
+
 }
 
 .modal-set2 a {
@@ -123,6 +129,10 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.modal-set2:hover a {
+	color: white;
 }
 
 .cross-size {
@@ -154,28 +164,28 @@ footer {
 	margin-top: 10px;
 }
 
-.btn-update {
-	font-size: 15pt;
-	font-weight: bold;
-	color: black;
-	border: 1px solid #ccc;
-	background: white;
-	box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.38);
-	transition: box-shadow .25s ease;
-	width: 80px;
-	height: 45px;
-}
+/* .btn-update { */
+/* 	font-size: 15pt; */
+/* 	font-weight: bold; */
+/* 	color: black; */
+/* 	border: 1px solid #ccc; */
+/* 	background: white; */
+/* 	box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.38); */
+/* 	transition: box-shadow .25s ease; */
+/* 	width: 80px; */
+/* 	height: 45px; */
+/* } */
 
-.btn-update:hover {
-	background: #e5e5e5;
-}
+/* .btn-update:hover { */
+/* 	background: rgba(0, 0, 0, 0.38); */
+/* } */
 
 .btn-select {
 	font-size: 15pt;
 	font-weight: bold;
-	background-color: #70E820;
-	color: #fff;
-	border: 0;
+	color: white;
+	background: #70E820;
+	border: 2px solid #ccc;
 	box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.38);
 	transition: box-shadow .25s ease;
 	width: 80px;
@@ -183,7 +193,7 @@ footer {
 }
 
 .btn-select:hover {
-	background: #beff79;
+	background: #0a8637;
 }
 
 /* 모달 닫기 버튼 스타일 */
