@@ -9,6 +9,7 @@
 </head>
 <body>
 	<form action="IDForgotC" method="post">
+		<input type="hidden" name="personCheck" value="user">
 		<div class="main">
 			<a href="HC"><img id="homeImg" src="img/home_icon_login.svg"></a>
 			<div class="find-Id">IDを探す</div>
@@ -35,12 +36,11 @@
 				<button title="Button push blue/green"
 					class="button btnPush btnBlueGreen">探す</button>
 			</div>
-			<br>
-			<br>
+			<br> <br>
 			<div class="menu align-center expanded text-center SMN_effect-23">
 				<a href="RegUserC" type="button" data-hover="Sign up">Sign up</a> <a
-					href="PWForgotC" type="button" data-hover="パスワードを探す">パスワードを探す</a> <a
-					href="LoginPageC" type="button" data-hover="Sign in">Sign in</a>
+					href="PWForgotC?button=user" type="button" data-hover="パスワードを探す">パスワードを探す</a>
+				<a href="LoginPageC" type="button" data-hover="Sign in">Sign in</a>
 				<!-- data-hover : hover했을때 내려오는 글자 -->
 			</div>
 		</div>

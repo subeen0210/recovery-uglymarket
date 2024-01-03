@@ -17,5 +17,5 @@
 			<a class="login-set-menu" href="SellerLoginC">Logout</a>
 		</div>
 	</div>
-</body>
+	&emsp;&emsp;
 </html>

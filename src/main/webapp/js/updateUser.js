@@ -125,20 +125,6 @@ function userCheck() {
 		inputEmail.focus();
 		return false;
 	}
-	
-	// 이미지 예외
-	if (isEmpty(img)) {
-		alert('農場のイメージを入れてください');
-		img.focus();
-		return false;
-	}
-	else if (isNotType(img, "jpg") && isNotType(img, "jpeg") && isNotType(img, "png")){
-		alert('イメージには jpg / jpeg / png だけを入れてください');
-		img.focus();
-		return false;
-	}
-
-	alert("情報が更新されました");
 }
 
 function sellerCheck() {
@@ -199,17 +185,6 @@ function sellerCheck() {
 		inputTel3.value = "";
 		return false;
 	}
-	// 팜 이미지
-	if (isEmpty(inputFImg)) {
-		alert('農場のイメージを入れてください');
-		inputFImg.focus();
-		return false;
-	}
-	else if (isNotType(inputFImg, "jpg") && isNotType(inputFImg, "jpeg") && isNotType(inputFImg, "png")){
-		alert('イメージには jpg / jpeg / png だけを入れてください');
-		img.focus();
-		return false;
-	}
 
 	// 팜 이름 예외
 	// 특수문자 불가
@@ -226,12 +201,14 @@ function sellerCheck() {
 	}
 }
 
-function passwordChange() {
+
+
+function passwordChange(loginPage) {
 	let oldPW = $("#old-pw").val();
 	let newPW = $("#new-pw").val();
 
 	$.ajax({
-		url: "LoginPageC",
+		url: loginPage,
 		method: "post",
 		data: { oldPW },
 		success: function(data) {
@@ -286,4 +263,20 @@ function passwordChange() {
 	return false;
 }
 
-// 이미지 첨부시 미리보기 (원준)
+
+function loginCheck(loginPage) {
+	$.ajax({
+		url: 'SessionCheck', // 서버 측 코드가 처리하는 URL
+		method: 'GET',
+		success: function(response) {
+			if (response == '0') {
+				// 세션이 만료된 경우
+				alert('ログインが切れました。ログインページに移動します。');
+				location.href = 'LoginPageC';
+			} else {
+				passwordChange(loginPage);
+			}
+		}
+	});
+	return false;
+}

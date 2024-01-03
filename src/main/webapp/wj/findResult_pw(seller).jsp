@@ -26,7 +26,7 @@
 					class="button btnPush btnBlueGreen">Login</a>
 			</div>
 			<div class="set-btn">
-				<a href="IDForgotC" title="Button push blue/green"
+				<a href="IDForgotC?button=seller" title="Button push blue/green"
 					class="button btnPush btnBlueGreen">IDを探す</a>
 			</div>
 		</div>
