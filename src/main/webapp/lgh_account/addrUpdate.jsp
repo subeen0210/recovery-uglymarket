@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="wr_company/css/kanri.css?ver=1.3">
+<link rel="stylesheet" href="wr_company/css/kanri.css?ver=1.4">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script type="text/javascript" src="js/addr.js?ver=1.1"></script>
 <meta charset="UTF-8">
@@ -32,14 +32,16 @@
 			<tbody>
 
 
-				<c:forEach var="addr" items="${address }">
+				<c:forEach var="addr" items="${address }" varStatus="index">
 					<tr>
 						<td>${addr.a_name }</td>
 						<td>${addr.a_postcode }</td>
-						<td>${addr.a_addr } ${addr.a_addrDetail }</td>
+						<td>${addr.a_addr }${addr.a_addrDetail }</td>
 						<td>${addr.a_tel }</td>
 						<td>${addr.a_req }</td>
-						<td class="address_select" onclick="">基本</td>
+						<td class="address_select"
+							onclick="updateTopAddr('${addr.a_no}');"><c:if
+								test="${index.index != 0}">基本</c:if></td>
 						<td class="openModalBtn" data-no="${addr.a_no }">修正</td>
 						<td class="addrDeleteBtn" onclick="deleteAddr('${addr.a_no }')">X</td>
 					</tr>
@@ -56,7 +58,8 @@
 
 	<!-- dialog 태그 사용 -->
 	<dialog id="myModal">
-	<form action="updateAddrC" method="post" onsubmit="return updateCheck();">
+	<form action="updateAddrC" method="post"
+		onsubmit="return updateCheck();">
 		<div class="main_modal">
 
 			<section class="order-details">
@@ -91,7 +94,7 @@
 						<td class="label">郵便番号</td>
 						<td class="value"><input class="input-style" name="userAddrN"
 							id="addrNum" readonly="readonly" />
-						<button class="btn-style" type="button" id="addr-popup">住所検索</button>
+							<button class="btn-style" type="button" id="addr-popup">住所検索</button>
 						</td>
 					</tr>
 					<tr>
@@ -110,7 +113,8 @@
 							id="addrDetail" /></td>
 					</tr>
 				</table>
-				<button name="a_no" id="formUpBtn" style="width: 100px; height: 40px;">修正</button>
+				<button name="a_no" id="formUpBtn"
+					style="width: 100px; height: 40px;">修正</button>
 			</section>
 
 		</div>
@@ -138,16 +142,14 @@
 					</tr>
 					<tr>
 						<td class="label">電話番号</td>
-						<td class="value value2">
-						<input class="input-style" name="a_tel1" style="width: 24%"/>
-						- <input class="input-style" name="a_tel2" style="width: 24%"/>
-						- <input class="input-style" name="a_tel3" style="width: 24%"/>
-						</td>
+						<td class="value value2"><input class="input-style"
+							name="a_tel1" style="width: 24%" /> - <input class="input-style"
+							name="a_tel2" style="width: 24%" /> - <input class="input-style"
+							name="a_tel3" style="width: 24%" /></td>
 					</tr>
 					<tr>
 						<td class="label">到着時間</td>
-						<td class="value value2"><select 
-							name="deliveryTime">
+						<td class="value value2"><select name="deliveryTime">
 								<option value="午前中(8:00~12:00)">午前中(8:00~12:00)</option>
 								<option value="12:00~14:00">12:00~14:00</option>
 								<option value="14:00~16:00">14:00~16:00</option>
@@ -159,24 +161,25 @@
 
 					<tr>
 						<td class="label">郵便番号</td>
-						<td class="value value2"><input class="input-style" name="userAddrN"
-							id="addrNum2" readonly="readonly" />
-						<button class="btn-style" type="button" id="addr-popup2">住所検索</button>
+						<td class="value value2"><input class="input-style"
+							name="userAddrN" id="addrNum2" readonly="readonly" />
+							<button class="btn-style" type="button" id="addr-popup2">住所検索</button>
 						</td>
 					</tr>
 					<tr>
 						<td class="label">都道府県</td>
-						<td class="value value2"><input class="input-style" name="userAddrP"
-							id="addrPrefecture2" readonly="readonly" /></td>
+						<td class="value value2"><input class="input-style"
+							name="userAddrP" id="addrPrefecture2" readonly="readonly" /></td>
 					</tr>
 					<tr>
 						<td class="label">市区町村</td>
-						<td class="value value2"><input class="input-style" name="userAddrC"
-							id="addrCity2" readonly="readonly" /></td>
+						<td class="value value2"><input class="input-style"
+							name="userAddrC" id="addrCity2" readonly="readonly" /></td>
 					</tr>
 					<tr>
 						<td class="label">詳細情報</td>
-						<td class="value value2"><input class="input-style" name="userAddrD"/></td>
+						<td class="value value2"><input class="input-style"
+							name="userAddrD" /></td>
 					</tr>
 				</table>
 				<button name="a_no" style="width: 100px; height: 40px;">修正</button>

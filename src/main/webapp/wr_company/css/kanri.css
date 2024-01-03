@@ -86,11 +86,11 @@ td {
 }
 
 .delete_table {
-	width: 30px;
+	width: 33px;
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    min-width: 30px;
+    min-width: 33px;
 }
 
 .updateAddr {
