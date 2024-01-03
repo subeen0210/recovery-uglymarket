@@ -211,6 +211,10 @@
 	height: 100%;
 }
 
+button.f_button {
+	color: black;
+}
+
 button {
 	text-decoration: none;
 	color: #00AE68;
