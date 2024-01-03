@@ -21,21 +21,32 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function calculateAndLogAverage(reviews) {
-    // 평균 계산 함수
-    function calculateAverage(ratings) {
-        if (ratings.length === 0) return 0;
-        var sum = ratings.reduce((acc, val) => acc + val.r_grade, 0);
-        return sum / ratings.length;
-    }
 
-    // 평균 값 계산
-    var averageRating = calculateAverage(reviews);
+document.addEventListener("DOMContentLoaded", function () {
+  // HTML에서 요소들을 가져옵니다.
+  var stars = document.querySelectorAll(".star");
+  var ratingValue = document.getElementById("rating-value");
 
-    // 콘솔에 출력
-    console.log("평균 평점: " + averageRating);
+  // 초기화할 때 기본 값으로 채워줄 별 개수를 설정합니다.
+  var initialRating = Math.round(gradeAvg != null ? gradeAvg.getR_grade() : 0);
 
-    // 여기에서 다른 원하는 작업을 수행할 수 있습니다.
+  // 초기화할 때 별을 채워주는 함수 호출
+  fillStars(initialRating);
+});
+
+// 별을 채워주는 함수
+function fillStars(rating) {
+  var stars = document.querySelectorAll(".star");
+
+  // 모든 별의 클래스 초기화
+  stars.forEach(function (star) {
+    star.classList.remove("filled");
+  });
+
+  // 현재 클릭한 별의 이하 별들을 채웁니다.
+  for (var i = 0; i < rating; i++) {
+    stars[i].classList.add("filled");
+  }
 }
 
 

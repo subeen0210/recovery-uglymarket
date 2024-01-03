@@ -62,7 +62,7 @@
 				&emsp;
 				<div>
 					<p id="selected-rating">
-						Star Rating : <span id="rating-value">0</span>点
+					<span id="rating-value">${gradeAvg.r_grade}</span>点
 					</p>
 				</div>
 			</div>
