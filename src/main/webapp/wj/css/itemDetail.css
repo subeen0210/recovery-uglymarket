@@ -213,19 +213,36 @@
 	align-items: center;
 }
 
-.star {
-	display: inline-block;
-	cursor: pointer;
-	color: #ccc; /* 별의 기본 색상 (회색) */
+.star-ratings {
+  margin-right: 20px;
+  color: #aaa9a9; 
+  position: relative;
+  unicode-bidi: bidi-override;
+  width: max-content;
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1.3px;
+  -webkit-text-stroke-color: #2b2a29;
 }
-
-.star:hover, .star:hover ~ .star {
-	color: #ffd700; /* 호버 시 별의 색상 (노란색) */
+ 
+.star-ratings-fill {
+  color: #fff58c;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  -webkit-text-fill-color: gold;
+}
+ 
+.star-ratings-base {
+  z-index: 0;
+  padding: 0;
 }
 
 #selected-rating {
-	font-size: 18px;
-	margin-top: 20px;
+	font-size: 20pt;
 }
 
 .review-input {
@@ -267,6 +284,11 @@
 
 .input-date{
 	margin: 0 15px;
+}
+
+.review-text{
+  display : flex;
+  align-items : center;
 }
 
 /* .review-button { */

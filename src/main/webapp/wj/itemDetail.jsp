@@ -54,15 +54,17 @@
 		<div class="review-title">
 			<div class="review-text">後記</div>
 			<div id="star-rating">
-				<div class="star" data-value="5">&#9733;</div>
-				<div class="star" data-value="4">&#9733;</div>
-				<div class="star" data-value="3">&#9733;</div>
-				<div class="star" data-value="2">&#9733;</div>
-				<div class="star" data-value="1">&#9733;</div>
-				&emsp;
+				<div class="star-ratings">
+					<div class="star-ratings-fill space-x-2 text-lg">
+						<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+					</div>
+					<div class="star-ratings-base space-x-2 text-lg">
+						<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+					</div>
+				</div>
 				<div>
 					<p id="selected-rating">
-					<span id="rating-value">${gradeAvg.r_grade}</span>点
+					<span id="rating-value" data-rating="${gradeAvg.r_grade}">${gradeAvg.r_grade}</span>点
 					</p>
 				</div>
 			</div>
