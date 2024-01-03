@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="login-set">
-		<span class="nick">${sessionScope.userAccount.u_nicname }様
+		<span class="nick">${sessionScope.userAccount.u_nicname } 様
 			<img src="img/chevron.svg">
 		</span>
 		<div class="login-set-menus">
