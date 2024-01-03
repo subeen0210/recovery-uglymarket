@@ -17,7 +17,7 @@
 	<div class="main-wrapper">
 		<div class="detail-wrap">
 			<img class="icon" src="img/free-icon-arrow-down.png" alt="" />
-			<details class="demo-details-juqery-accordion">
+			<details  class="demo-details-juqery-accordion">
 				<summary>配送先</summary>
 				<p>
 					<!-- p태그 사용할때는 div적용시 아코디언 효가가 매끄럽게 안먹음 span 사용 -->

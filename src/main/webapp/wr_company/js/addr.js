@@ -3,7 +3,7 @@ let popupData;
 		$("#addr-popup").click(
 				function() {
 					console.log("Popup button clicked");
-					let popup = window.open("lgh_account/addrPopup.jsp", "우편번호 검색",
+					let popup = window.open("lgh_account/addrPopup.jsp", "郵便番号検索",
 							"width=700, height=700, left=100, top=50");
 
 					popup.onbeforeunload = function() {

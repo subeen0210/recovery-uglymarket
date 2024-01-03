@@ -36,14 +36,14 @@ function showReviews(){
 }
 
 function reviewDelete(no) {
-	let confirmed = confirm('해당 리뷰를 정말 삭제하겠습니까?');
+	let confirmed = confirm('後記を本当に削除しますか？');
 	if (confirmed) {
 		$.ajax({
 			url: 'ReviewDeleteC',
 			data: {no: no},
 			dataType: 'text',
 			success: function(res) {
-				alert('해당 리뷰가 삭제되었습니다.');
+				alert('後記を削除しました。');
 				location.reload();
 			},
 			error: function(error){
@@ -51,6 +51,6 @@ function reviewDelete(no) {
 			}
 		});
 	} else {
-		console.log('삭제 취소');
+		console.log('削除をキャンセルしました');
 	}
 }
