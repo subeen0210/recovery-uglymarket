@@ -63,6 +63,34 @@ public class ReviewDAO {
 		
 	}
 	
+	// 상품 상세 페이지 후기 평균 점수 조회
+	public static void getAvgReview(HttpServletRequest request) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String paramNo = request.getParameter("no");
+		String sql = "SELECT ROUND(AVG(r_grade), 1) AS avg_grade FROM review where i_no = ?";
+		
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, paramNo);
+			rs = pstmt.executeQuery();
+			
+			ReviewDTO r = new ReviewDTO();
+			if (rs.next()) {
+				r.setR_grade(rs.getDouble("avg_grade"));
+				request.setAttribute("gradeAvg", r);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
+	
 	// 개인 마이페이지 후기 리스트 조회	
 	public static void getReview(HttpServletRequest request, HttpServletResponse res) {
 		
