@@ -1,7 +1,7 @@
 /**
  * 
  */
-function loginCall() {
+function loginCall(backUrl) {
 	let userID = document.querySelector('#loginUserID');
 	let userPW = document.querySelector('#loginUserPW');
 
@@ -19,7 +19,7 @@ function loginCall() {
 
 	};
 
-	userlogin();
+	userlogin(backUrl);
 };
 
 $(function() {
@@ -55,7 +55,7 @@ $(function() {
 });
 
 
-function userlogin() {
+function userlogin(backUrl) {
 	let userID = $("#loginUserID").val();
 	let userPW = $("#loginUserPW").val();
 
@@ -68,7 +68,7 @@ function userlogin() {
 			if (response === "0") {
 				$("#loginEmptyPW").text("IDまたはパスワードが正しくありません。").css("color", "red");
 			} else {
-				location.href = 'HC';
+				location.href = backUrl;
 			}
 		},
 		error: function(xhr, status, error) {
@@ -81,7 +81,7 @@ function userlogin() {
 };
 
 
-function loginSellerCall() {
+function loginSellerCall(backUrl) {
 	let sellerID = document.querySelector('#loginSellerID');
 	let sellerPW = document.querySelector('#loginSellerPW');
 
@@ -101,11 +101,11 @@ function loginSellerCall() {
 		return false;
 	};
 
-	sellerlogin();
+	sellerlogin(backUrl);
 };
 
 
-function sellerlogin() {
+function sellerlogin(backUrl) {
 	let sellerID = $("#loginSellerID").val();
 	let sellerPW = $("#loginSellerPW").val();
 
@@ -121,7 +121,7 @@ function sellerlogin() {
 					"font-size": "12px"  // 여기에 적절한 크기를 지정합니다.
 				});
 			} else {
-				location.href = 'HC';
+				location.href = backUrl;
 			}
 		},
 		error: function(xhr, status, error) {
