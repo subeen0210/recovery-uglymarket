@@ -61,7 +61,7 @@
 					<p>配送住所管理</p>
 				</div>
 				<div class="mypage_contents1_menu_boxs" id="review">
-					<p>後期</p>
+					<p>後記</p>
 				</div>
 
 				<div class="mypage_contents1_menu_boxs" id="order">

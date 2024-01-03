@@ -6,13 +6,13 @@ function handleSelectChange(selectElement) {
 }
 
 function handleDelete() {
-  var result = confirm("정말 삭제하시겠습니까?");
+  var result = confirm("本当に削除しますか？");
   if (result) {
    
-    alert("삭제되었습니다.");
+    alert("削除されました.");
     
   } else {
    
-    alert("삭제가 취소되었습니다.");
+    alert("削除せずに帰ります.");
   }
 }
