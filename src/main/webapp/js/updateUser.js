@@ -125,20 +125,6 @@ function userCheck() {
 		inputEmail.focus();
 		return false;
 	}
-	
-	// 이미지 예외
-	if (isEmpty(img)) {
-		alert('農場のイメージを入れてください');
-		img.focus();
-		return false;
-	}
-	else if (isNotType(img, "jpg") && isNotType(img, "jpeg") && isNotType(img, "png")){
-		alert('イメージには jpg / jpeg / png だけを入れてください');
-		img.focus();
-		return false;
-	}
-
-	alert("情報が更新されました");
 }
 
 function sellerCheck() {
@@ -199,17 +185,6 @@ function sellerCheck() {
 		inputTel3.value = "";
 		return false;
 	}
-	// 팜 이미지
-	if (isEmpty(inputFImg)) {
-		alert('農場のイメージを入れてください');
-		inputFImg.focus();
-		return false;
-	}
-	else if (isNotType(inputFImg, "jpg") && isNotType(inputFImg, "jpeg") && isNotType(inputFImg, "png")){
-		alert('イメージには jpg / jpeg / png だけを入れてください');
-		img.focus();
-		return false;
-	}
 
 	// 팜 이름 예외
 	// 특수문자 불가
@@ -226,12 +201,14 @@ function sellerCheck() {
 	}
 }
 
-function passwordChange() {
+
+
+function passwordChange(loginPage) {
 	let oldPW = $("#old-pw").val();
 	let newPW = $("#new-pw").val();
 
 	$.ajax({
-		url: "LoginPageC",
+		url: loginPage,
 		method: "post",
 		data: { oldPW },
 		success: function(data) {
@@ -286,63 +263,20 @@ function passwordChange() {
 	return false;
 }
 
-// seller 패스워드 변경
-function passwordChange2() {
-	let oldPW = $("#old-pw").val();
-	let newPW = $("#new-pw").val();
 
+function loginCheck(loginPage) {
 	$.ajax({
-		url: "SellerLoginC",
-		method: "post",
-		data: { oldPW },
-		success: function(data) {
-			let inputPWconfirm = document.querySelector("#new-pw-confirm");
-			if (data == "0") {
-				$("#PW-old-errorMsg").text("パスワードが正しくありません。").css("color", "red");
-				$("#old-pw").focus();
+		url: 'SessionCheck', // 서버 측 코드가 처리하는 URL
+		method: 'GET',
+		success: function(response) {
+			if (response == '0') {
+				// 세션이 만료된 경우
+				alert('ログインが切れました。ログインページに移動します。');
+				location.href = 'LoginPageC';
 			} else {
-				// 현재 비밀번호가 맞을 때
-				// 예외처리
-				let inputPW2 = document.querySelector('#new-pw');
-				if ($("#pw-new-errorMsg").text() != "" || isEmpty(inputPW2)) {
-					alert('パスワードが正しくありません。');
-					inputPW2.focus();
-					return false;
-				}
-
-				let pwCText = $("#pwConfirm").text();
-				if (pwCText.trim() != "正しいです" || isEmpty(inputPWconfirm)) {
-					alert('パスワードの再確認が正しくありません。');
-					inputPWconfirm.focus();
-					return false;
-				}
-
-				$.ajax({
-					url: "ChangePasswordC",
-					method: "post",
-					data: { newPW },
-					success: function(data) {
-						// AJAX 요청 성공 시 실행되는 콜백 함수
-						alert("パスワードが変更されました。");
-						$("#old-pw").val('');
-						$("#new-pw").val('');
-						inputPWconfirm.value = "";
-						$('#pwConfirm').text("");
-
-					},
-					error: function(xhr, status, error) {
-						// AJAX 요청 실패 시 실행되는 콜백 함수
-						console.error("AJAX request failed: ", status, error);
-					},
-				});
-
+				passwordChange(loginPage);
 			}
-		},
-		error: function(xhr, status, error) {
-			// AJAX 요청 실패 시 실행되는 콜백 함수
-			console.error("AJAX request failed: ", status, error);
-		},
+		}
 	});
-
 	return false;
 }

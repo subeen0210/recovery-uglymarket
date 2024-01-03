@@ -198,7 +198,7 @@
 	<div>
 		<a href="#" title="Button push blue/green"
 			class="button btnPush btnBlueGreen"
-			onclick="return passwordChange2();">パスワード変更</a>
+			onclick="return loginCheck('SellerLoginC');">パスワード変更</a>
 	</div>
 	</dialog>
 	<!-- 비밀번호 찾기 modal 끝 -->
