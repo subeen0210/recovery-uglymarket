@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script type="text/javascript" src="js/shopDetail.js"></script>
+<script type="text/javascript" src="js/shopDetail.js?ver=1.2"></script>
 <link rel="stylesheet" href="wj/css/itemDetail.css">
 <title>Insert title here</title>
 </head>

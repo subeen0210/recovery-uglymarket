@@ -16,8 +16,8 @@
 </head>
 <body>
 
-	<form action="updateSellerC" method="post" enctype="multipart/form-data"
-		onsubmit="return sellerCheck()">
+	<form action="updateSellerC" method="post"
+		enctype="multipart/form-data" onsubmit="return sellerCheck()">
 		<div class="reg-main">
 			<div class="reg-container">
 				<h1 style="color: #2a243a">情報修正</h1>
@@ -89,7 +89,8 @@
 						農場イメージ<span class="essentialicon">*</span>
 					</div>
 					<div class="reg-input">
-						<input class="input-style upload-img" placeholder="${sessionScope.sellerAccount.s_Fphoto }"
+						<input class="input-style upload-img"
+							placeholder="${sessionScope.sellerAccount.s_Fphoto }"
 							readonly="readonly" /> <label for="fileInput">アップロード</label> <input
 							type="file" name="newFarmImg" id="fileInput"
 							accept=".jpg, .jpeg, .png" onchange="displayFileName(this)">
@@ -243,14 +244,24 @@
 
 	});
 
-	// 	document.getElementById("password-change-button").addEventListener('click', function() {
-	// 		  document.getElementById('password-modal').style.display = 'flex'; // 또는 'block'
-	// 		});	
-
-	document.getElementById("password-change-button").addEventListener("click",
+	document.getElementById("password-change-button").addEventListener(
+			"click",
 			function() {
-				// Open the dialog
-				document.getElementById("password-modal").showModal();
+				$.ajax({
+					url : 'SessionCheck', // 서버 측 코드가 처리하는 URL
+					method : 'GET',
+					success : function(response) {
+						if (response == '0') {
+							// 세션이 만료된 경우
+							alert('ログインが切れました。ログインページに移動します。');
+							location.href = 'LoginPageC';
+						} else {
+							// Open the dialog
+							document.getElementById("password-modal")
+									.showModal();
+						}
+					}
+				});
 			});
 
 	document.getElementById("close-button").addEventListener("click",

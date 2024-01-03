@@ -21,7 +21,7 @@ function goToCart(no, id) {
 	let count = $('#quantityInput').val();
 	//	console.log(count);
 	if (id == "") {
-		alert('ログイン後に使用できます。');
+		alert('消費者ログイン後に使用できます。');
 		location.href = 'LoginPageC';
 	} else {
 		$.ajax({

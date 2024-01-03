@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="wr_company/MYPAGE_NEW/js/mypage.js"></script>
+<script src="wr_company/MYPAGE_NEW/js/mypage.js?ver=1.1"></script>
 <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/myPage.css">
 <script type="text/javascript" src="wr_company/MYPAGE_NEW/js/register.js"></script>
 <meta charset="UTF-8">

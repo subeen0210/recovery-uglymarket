@@ -74,7 +74,6 @@ public class AccountDAO {
 					// 세션 생성
 					HttpSession userHS = request.getSession();
 					userHS.setAttribute("userAccount", user);
-					userHS.setMaxInactiveInterval(10);
 				} else {
 					System.out.println("비밀번호 오류");
 				}
