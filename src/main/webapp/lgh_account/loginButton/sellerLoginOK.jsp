@@ -10,7 +10,7 @@
 <body>
 	<div class="login-set">
 		<span class="nick">${sessionScope.sellerAccount.s_kanji_ln }
-			${sessionScope.sellerAccount.s_kanji_fn }様 <img src="img/chevron.svg">
+			${sessionScope.sellerAccount.s_kanji_fn } 様 <img src="img/chevron.svg">
 		</span>
 		<div class="login-set-menus">
 			<a class="login-set-menu" href="SellerMypageC">MyPage</a>
