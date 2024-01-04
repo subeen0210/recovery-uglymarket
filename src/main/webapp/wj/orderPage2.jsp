@@ -84,15 +84,9 @@
 					</div>
 				</div>
 			</c:forEach>
-			<div onclick="handleClick()" class="modal-set2">
-				<a href="UserMypageC"><span style="font-size: 20pt;">+</span>&ensp;配送先追加</a>
+			<div onclick="location.href='UserMypageC'" class="modal-set2">
+				<a><span style="font-size: 20pt;">+</span>&ensp;配送先追加</a>
 			</div>
-			<script>
-				// JavaScript 코드는 여기에 추가할 수 있습니다.
-				function handleClick() {
-					window.location.href = "UserMypageC";
-				}
-			</script>
 		</div>
 	</div>
 	<!-- 모달 창 (결제 끝났을 때, 이동할 부분)-->

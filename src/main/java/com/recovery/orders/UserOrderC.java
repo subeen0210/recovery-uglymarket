@@ -16,7 +16,6 @@ public class UserOrderC extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		OrderDAO.userOrderAll(request,response);
-		request.getRequestDispatcher("wr_company/order.jsp").forward(request, response);
 	}
 
 }
