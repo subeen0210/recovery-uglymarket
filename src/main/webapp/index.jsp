@@ -37,7 +37,8 @@
 				<div class="search">
 					<span class="uil uil-search"> <img id="search-icon" alt=""
 						src="img/search-icon-white.png">
-					</span> <input type="text" id="searchInput" name="search-input"
+					</span> 
+					<input type="text" id="searchInput" name="search-input"
 						placeholder="商品名を入力して下さい.">
 				</div>
 			</div>

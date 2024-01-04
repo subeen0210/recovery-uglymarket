@@ -31,13 +31,12 @@
 
 	</div class="menu_list">  -->
 		
-<div id="data-container"></div>
-<div id="pagination-container"></div>
+	<div id="data-container"></div>
+<!-- 	<div id="pagination-container"></div> -->
 
 		
-		<div class="itemContainer">  
+	<div class="itemContainer">  
 	 	<div id="pagination"></div> 
-
 	</div>
 	
 </body>
