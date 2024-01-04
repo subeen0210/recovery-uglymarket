@@ -195,7 +195,7 @@ function adjustQuantity(btn, cartCode, delta) {
 	// 변경된 값을 입력 필드에 설정
 	inputField.val(newValue);
 	// 하나 당 가격으로 총 가격 연산
-	let perPrice = parseInt($(btn).closest('.menu').find('.info-price').text());
+	let perPrice = parseInt($(btn).closest('.menu').find('.info-price span').text());
     let calcVal = perPrice * newValue;
 	$(`#set-allprice_${cartCode}`).text(calcVal);
 	$(`#set-allprice2_${cartCode}`).attr('data-subtotal', calcVal);
