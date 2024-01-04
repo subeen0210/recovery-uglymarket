@@ -110,7 +110,7 @@ public class ItemDAO {
 				} else if (rs.getString("i_img4") != null) {
 					i.setI_img4(rs.getString("i_img4"));
 				}
-				i.setI_des(rs.getString("i_des"));
+				i.setI_des(rs.getString("i_des").replaceAll("\n", "<br>"));
 				i.setI_category(rs.getInt("i_category"));
 				i.setI_enddate(rs.getDate("i_ed"));
 				i.setI_price(rs.getInt("i_price"));
