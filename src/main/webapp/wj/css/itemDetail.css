@@ -174,8 +174,8 @@
 	border: 1px solid black;
 	width: 60%;
 	border-radius: 8px;
-	height: 50%;
-	font-size: 15pt;
+	font-size: 17pt;
+	line-height: 1.5;
 	font-weight: bold;
 	padding: 6%;
 	font-family: 'Meiryo', serif;
