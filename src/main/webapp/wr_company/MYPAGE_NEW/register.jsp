@@ -60,7 +60,14 @@
 					<input type="file" name="img" class="img" multiple>
 				</div>
 			</div>
-				<button style="cursor: pointer;" type="button" onclick="itemAdd()">登録</button>
+				<button style="
+	width: 70px;
+	height: 50px;
+	background-color: #5dc41a;
+	color: white;
+	
+	border: none;
+	cursor: pointer;" type="button" onclick="itemAdd()">登録</button>
 		</div>
 			<div id="registrationMessage"></div>
 		</form>
