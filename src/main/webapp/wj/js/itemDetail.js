@@ -26,11 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	console.log(ratingValue)
 	ratingFill.style.width = (parseFloat(ratingValue) * 20) + '%';
 
-
-
-
-
-
 });
 
 

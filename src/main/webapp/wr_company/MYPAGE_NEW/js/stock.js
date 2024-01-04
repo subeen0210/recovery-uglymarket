@@ -100,7 +100,9 @@ function itemUpdate(no) {
 			console.log(response);
 			//alert('해당 상품이 조회되었습니다.');
 			$('#farm-name').val(response.i_name);
-			$('#farm-story').val(response.i_des);
+			let farmStory = response.i_des.replace(/<br>/g, '\r\n');
+			
+			$('#farm-story').val(farmStory);
 
 			$('.select[value="' + response.i_category + '"]').prop('checked', true);
 

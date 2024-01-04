@@ -64,13 +64,13 @@
 				</div>
 			</div>
 			<div class="footer2">
-				<div class="footer3">アグリーマーケット株式会社 | 代表:キム·ヨンミン | 事業者登録番号:
-					732-86-02604 | 通販業届出番号:2022-衿川-2280</div>
-				<div class="footer3">本社:忠清南道天安市東南区大興路321、501 | 支店:
+				<div class="footer3">アグリーマーケット株式会社 | 代表:キム·ヨンミン | 事業者登録番号 :
+					 732-86-02604 | 通販業届出番号 : 2022-衿川-2280</div>
+				<div class="footer3">本社 : 忠清南道天安市東南区大興路321、501 | 支店 :
 					ソウル特別市城北区花郎路13ギル59,518</div>
-				<div class="footer3">カスタマーセンター: 010 - 1111 - 1111</div>
+				<div class="footer3">カスタマーセンター : 010 - 1111 - 1111</div>
 				<div class="footer3">
-					相談時間:月~金、午前10時~午後6時(週末/祝日
+					相談時間 : 月~金、午前10時~午後6時(週末/祝日
 					お休み）&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
 					<button class="f_button">よくある質問</button>
 					<button class="f_button">問い合わせ</button>

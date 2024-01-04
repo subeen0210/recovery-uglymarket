@@ -56,7 +56,7 @@
 		</div>
 		<div class="menu_container">
 			<div class="mypage_contents1_menu">
-				<!--오른쪽 메뉴 버튼 -->
+				<!--메뉴 버튼 -->
 				<div class="mypage_contents1_menu_boxs" id="kanri">
 					<p>配送住所管理</p>
 				</div>

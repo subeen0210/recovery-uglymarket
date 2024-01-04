@@ -71,7 +71,7 @@
 			</div>
 		</div>
 	</div>
-	<br />
+
 </body>
 <script src="wj/js/home.js"></script>
 </html>

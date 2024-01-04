@@ -24,7 +24,7 @@
 			<div>
 			<div>商品の説明</div>
 				<div>
-					<textarea class="story" name="story" placeholder="商品の説明を入力ください。(500字以内)"></textarea>
+					<textarea cols="50" rows="10" class="story" name="story" placeholder="商品の説明を入力ください。(500字以内)"></textarea>
 				</div>
 			</div>
 			<div>

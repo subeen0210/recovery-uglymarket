@@ -181,6 +181,16 @@ td {
 #myModal2 {
 	border: none;
 }
+.address_select{
+	cursor: pointer;
+	width: 50px;
+	text-align: left;
+	
+		
+}
+
+
+
 
 /* 가현 추가*/
 .openModalBtn:hover {
