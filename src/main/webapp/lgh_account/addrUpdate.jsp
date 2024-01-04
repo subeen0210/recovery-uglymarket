@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="wr_company/css/kanri.css?ver=1.4">
+<link rel="stylesheet" href="wr_company/css/kanri.css">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script type="text/javascript" src="js/addr.js?ver=1.1"></script>
 <meta charset="UTF-8">
@@ -24,7 +24,7 @@
 					<th class="addr">住所</th>
 					<th class="telNum">電話番号</th>
 					<th class="delivery_time">到着時間</th>
-					<th class="address_select">配送先</th>
+					<th>配送先</th>
 					<th class="updateAddr">修正</th>
 					<th class="delete_table">削除</th>
 				</tr>
@@ -39,11 +39,17 @@
 						<td>${addr.a_addr }${addr.a_addrDetail }</td>
 						<td>${addr.a_tel }</td>
 						<td>${addr.a_req }</td>
-						<td class="address_select"
-							onclick="updateTopAddr('${addr.a_no}');"><c:if
-								test="${index.index != 0}">基本</c:if></td>
+						<td class="address_select" 
+							onclick="updateTopAddr('${addr.a_no}','${index.index}');"><c:choose>
+								<c:when test="${index.index == 0}">
+								基本
+								</c:when>
+								<c:otherwise>
+								変更
+								</c:otherwise>
+							</c:choose></td>
 						<td class="openModalBtn" data-no="${addr.a_no }">修正</td>
-						<td class="addrDeleteBtn" onclick="deleteAddr('${addr.a_no }')">X</td>
+						<td class="addrDeleteBtn" onclick="deleteAddr('${addr.a_no }','${index.index}')">X</td>
 					</tr>
 				</c:forEach>
 
@@ -192,7 +198,7 @@
 	</form>
 	</dialog>
 
-	<script type="text/javascript" src="js/userAddrUpdate.js?ver=1.2"></script>
+	<script type="text/javascript" src="js/userAddrUpdate.js"></script>
 
 
 </body>

@@ -184,9 +184,11 @@ td {
 .address_select{
 	cursor: pointer;
 	width: 50px;
-	text-align: left;
-	
-		
+	text-align: center;
+}
+
+.address_select:hover{
+	text-decoration: underline;
 }
 
 
