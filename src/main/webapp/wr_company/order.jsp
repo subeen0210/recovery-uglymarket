@@ -4,9 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="wr_company/css/order.css?ver=1.1">
+<link rel="stylesheet" href="wr_company/css/order.css">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>주문 상세 정보</title>
@@ -14,7 +13,8 @@
 </head>
 <body>
 	<div class="main">
-		<h1>注文詳細情報</h1><span id="deliveryStatus"></span>
+		<h1>注文詳細情報</h1>
+		<span id="deliveryStatus"></span>
 
 		<table>
 			<thead>
@@ -29,31 +29,11 @@
 					<th class="delete_table">削除</th>
 				</tr>
 			</thead>
-			<tbody>
-
-
-				<c:forEach var="order" items="${userOrders }">
-					<tr>
-						<td><a class="openModalBtn" data-number="${order.o_no}"
-							style="cursor: pointer;">${order.o_orderNum }</a></td>
-						<td>${order.i_name }</td>
-						<td>${order.o_quantity }/${order.i_price }</td>
-						<td>${order.o_totalprice }</td>
-						<td><span>${order.o_status }</span><a class="orderUpdateBtn" onclick="updateStatusOrder('${order.o_no}');" style="display: none">${order.o_status }</a></td>
-						<td>${order.o_date }</td>
-						<td><button class="openModalBtn2" data-no="${order.o_no }">作成</button>
-						<td class="orderDeleteBtn" onclick="deleteOrder('${order.o_no}','o_u_show')">X</td>
-					</tr>
-				</c:forEach>
-
-
-
-
+			<tbody id="userOrder">
 			</tbody>
 		</table>
-
+		<div id="pagination-container"></div>
 	</div>
-
 
 	<!-- dialog 태그 사용 -->
 	<dialog id="myModal">
@@ -109,8 +89,7 @@
 				</tr>
 				<tr>
 					<td class="label">住所</td>
-					<td class="value" id="o_addr">
-					</td>
+					<td class="value" id="o_addr"></td>
 				</tr>
 				<tr>
 					<td class="label">注文日</td>
@@ -125,7 +104,8 @@
 
 	</div>
 	<br>
-	<button id="closeModalBtn" style="width: 30px; height: 30px;border:none;">X</button>
+	<button id="closeModalBtn"
+		style="width: 30px; height: 30px; border: none;">X</button>
 	</dialog>
 
 
@@ -134,40 +114,47 @@
 	<dialog id="myModal2">
 
 	<div class="main_modal">
-			<section class="order-details">
-				<h2>後記作成</h2>
-				<table class="order-info">
-					<tr>
-						<td class="label">商品名</td>
-						<td class="value" name="name" id="r_productname"></td>
+		<section class="order-details">
+			<h2>後記作成</h2>
+			<table class="order-info">
+				<tr>
+					<td class="label">商品名</td>
+					<td class="value" name="name" id="r_productname"></td>
 
-					</tr>
-					<tr>
-						<td class="label">評点</td>
-						<td class="value"><input type="text" id="r-grade" name="grade" placeholder="数字を入力してください。"></td>
-					</tr>
-					<tr>
+				</tr>
+				<tr>
+					<td class="label">評点</td>
+					<td class="value"><input type="text" id="r-grade" name="grade"
+						placeholder="数字を入力してください。"></td>
+				</tr>
+				<tr>
 
-						<td style="width: 200px; height: 50px;" class="label">作成日</td>
-						<td class="value"><input type="date" id="r-date" name="date"></td>
+					<td style="width: 200px; height: 50px;" class="label">作成日</td>
+					<td class="value"><input type="date" id="r-date" name="date"></td>
 
 
-					</tr>
-					<tr>
-						<td class="label">内容</td>
-						<td class="value"><textarea name="story" id="r-story" rows="4" cols="50" placeholder="최대 300자"></textarea></td>
-					</tr>
+				</tr>
+				<tr>
+					<td class="label">内容</td>
+					<td class="value"><textarea name="story" id="r-story" rows="4"
+							cols="50" placeholder="최대 300자"></textarea></td>
+				</tr>
 
-				</table>
-				<button id="myButton" name="no" value="" onclick="addReview()">作成</button>
-			</section>
+			</table>
+			<button id="myButton" name="no" value="" onclick="addReview()">作成</button>
+		</section>
 	</div>
 	<br>
 	<button class="closeBtn2" id="closeModalBtn2">X</button>
 	</dialog>
 
-	<script type="text/javascript" src="js/orderDetail.js?ver=1.1"></script>
+	
+
 
 
 </body>
+<script type="text/javascript" src="pagination/pagination.min.js"></script>
+<script type="text/javascript" src="pagination/pagination.js"></script>
+<script type="text/javascript" src="js/orderPagenation.js"></script>
+<script type="text/javascript" src="js/orderDetail.js"></script>
 </html>

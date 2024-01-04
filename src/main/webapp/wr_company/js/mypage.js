@@ -13,7 +13,7 @@ $(function() {
 
 	// 'order' id를 가진 div에 대한 클릭 이벤트
 	$('#order').on('click', function(event) {
-		handleDivClick(event, 'UserOrderC', '#order');
+		handleDivClick(event, 'wr_company/order.jsp', '#order');
 	});
 
 	// 'cart' id를 가진 div에 대한 클릭 이벤트
