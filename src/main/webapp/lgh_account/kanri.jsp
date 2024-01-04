@@ -1,3 +1,5 @@
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -27,6 +29,7 @@
 					<th>住所</th>
 					<th>電話番号</th>
 					<th>到着時間</th>
+					<th>基本配送先<th>
 					<th>修正</th>
 					<th>削除</th>
 				</tr>
@@ -39,6 +42,7 @@
 						<td>${addr.a_addr }&nbsp;&nbsp;${addr.a_addrDetail }</td>
 						<td>${addr.a_tel }</td>
 						<td>${addr.a_req }</td>
+						<td><a class="address_select" style="cursor: pointer;">基本</a></td>
 						<td><a class="openModalBtn" style="cursor: pointer;">修正</a></td>
 						<td><a href="deleteAddress.jsp?id=1">削除</a></td>
 					</tr>

@@ -51,9 +51,12 @@ $(function() {
 			emptyMsg.textContent = ""; // 글자가 입력되면 에러 메시지를 숨김
 		}
 	});
-
-});
-
+	
+ $("#loginUserPW").keypress(function(event) {
+        if (event.which === 13) { // 13은 엔터 키의 keyCode
+            userlogin("HC"); //  엔터키를 눌렀을 떄 ID, PW 체크 후 HC로 되돌림
+        }
+    });
 
 function userlogin(backUrl) {
 	let userID = $("#loginUserID").val();
@@ -78,7 +81,38 @@ function userlogin(backUrl) {
 			console.log('error: ', error);
 		}
 	});
-};
+}
+
+});
+function Sellerlogin(backUrl) {
+	let SellerID = $("#loginSellerID").val();
+	let SellerPW = $("#loginSellerPW").val();
+
+	$.ajax({
+		type: "post",
+		url: "LoginPageC",
+		data: { SellerID, SellerPW },
+		success: function(response) {
+			console.log(response);
+			if (response === "0") {
+				$("#loginEmptyPW").text("IDまたはパスワードが正しくありません。").css("color", "red");
+			} else {
+				location.href = backUrl;
+			}
+		},
+		error: function(xhr, status, error) {
+			$("#idStatus").text("서버와 통신 중 오류가 발생했습니다.");
+			console.log('xhr: ', xhr);
+			console.log('status: ', status);
+			console.log('error: ', error);
+		}
+	});
+}
+
+
+
+
+
 
 
 function loginSellerCall(backUrl) {

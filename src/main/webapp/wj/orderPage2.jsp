@@ -78,15 +78,21 @@
 					</div>
 					<div class="del-btn-set">
 						<div>
-							<button class="btn-select" onclick="changeAddr('${address.a_no}');" >送先</button>
+							<button class="btn-select"
+								onclick="changeAddr('${address.a_no}');">送先</button>
 						</div>
 					</div>
 				</div>
 			</c:forEach>
-			<div class="modal-set2">
-				<a href="UserMypageC"><img class="cross-size" alt=""
-					src="img/cross.PNG">&ensp;配送先追加</a>
+			<div onclick="handleClick()" class="modal-set2">
+				<a href="UserMypageC"><span style="font-size: 20pt;">+</span>&ensp;配送先追加</a>
 			</div>
+			<script>
+				// JavaScript 코드는 여기에 추가할 수 있습니다.
+				function handleClick() {
+					window.location.href = "UserMypageC";
+				}
+			</script>
 		</div>
 	</div>
 	<!-- 모달 창 (결제 끝났을 때, 이동할 부분)-->
@@ -102,8 +108,6 @@
 
 
 	<script>
-		// 강사님과 함께 풀이했던 내용 정리 완료
-
 		const $_details = $(".demo-details-juqery-accordion"); // 클래스가 "demo-details-juqery-accordion"인 요소를 선택
 		const $_summary = $_details.find("summary"); // 선택한 요소 내에서 <summary> 요소를 찾기
 

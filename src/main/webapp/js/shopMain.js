@@ -8,7 +8,7 @@ $(function() {
 	} else {
 		getAllItem(name);
 	}
-
+$('.filter[val="all"]').addClass('active');
 });
 
 
@@ -16,6 +16,7 @@ $(function() {
 function filter(data) {
 	console.log(data);
 	console.log('--------------')
+	 $('.filter[val="all"]').addClass('active');
 	$(".shop-menu").on('click', '.filter', function() {
 		$('.filter').removeClass('active');
 		$(this).addClass('active');
