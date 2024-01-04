@@ -1,13 +1,12 @@
 // bx슬라이더
 document.addEventListener("DOMContentLoaded", function() {
 	$('.bxslider').bxSlider({
-		mode: 'fade', // 슬라이드 방향: 'horizontal' 또는 'vertical'
-		captions: false,      // 이미지 위에 캡션 표시 여부
+		mode: 'horizontal', // 슬라이드 방향: 'horizontal' 또는 'vertical'
+		captions: true,      // 이미지 위에 캡션 표시 여부
 		auto: true,          // 자동 슬라이드 여부
 		pause: 3000,          // 자동 슬라이드 시간 간격 (밀리초)
 		adaptiveHeight: true,
 		adaptiveWidth: true
-		
 
 	});
 })
