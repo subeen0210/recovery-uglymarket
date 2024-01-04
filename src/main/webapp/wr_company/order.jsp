@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="wr_company/css/order.css?ver=1.1">
+<link rel="stylesheet" href="wr_company/css/order.css">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,25 +30,6 @@
 				</tr>
 			</thead>
 			<tbody id="userOrder">
-
-
-				<%-- 				<c:forEach var="order" items="${userOrders }"> --%>
-				<!-- 					<tr> -->
-				<%-- 						<td><a class="openModalBtn" data-number="${order.o_no}" --%>
-				<%-- 							style="cursor: pointer;">${order.o_orderNum }</a></td> --%>
-				<%-- 						<td>${order.i_name }</td> --%>
-				<%-- 						<td>${order.o_quantity }/${order.i_price }</td> --%>
-				<%-- 						<td>${order.o_totalprice }</td> --%>
-				<%-- 						<td><span>${order.o_status }</span><a class="orderUpdateBtn" onclick="updateStatusOrder('${order.o_no}');" style="display: none">${order.o_status }</a></td> --%>
-				<%-- 						<td>${order.o_date }</td> --%>
-				<%-- 						<td><button class="openModalBtn2" data-no="${order.o_no }">作成</button> --%>
-				<%-- 						<td class="orderDeleteBtn" onclick="deleteOrder('${order.o_no}','o_u_show')">X</td> --%>
-				<!-- 					</tr> -->
-				<%-- 				</c:forEach> --%>
-
-
-
-
 			</tbody>
 		</table>
 		<div id="pagination-container"></div>
@@ -167,12 +148,13 @@
 	<button class="closeBtn2" id="closeModalBtn2">X</button>
 	</dialog>
 
-	<script type="text/javascript" src="js/orderDetail.js?ver=1.1"></script>
+	
 
 
 
 </body>
 <script type="text/javascript" src="pagination/pagination.min.js"></script>
 <script type="text/javascript" src="pagination/pagination.js"></script>
-<script type="text/javascript" src="js/orderPagenation.js?ver=2.2"></script>
+<script type="text/javascript" src="js/orderPagenation.js"></script>
+<script type="text/javascript" src="js/orderDetail.js"></script>
 </html>

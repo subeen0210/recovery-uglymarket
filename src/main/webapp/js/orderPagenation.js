@@ -62,10 +62,24 @@ function simpleTemplating(data) {
 		tr += "<td>" + item.i_name + "</td>";
 		tr += "<td>" + item.o_quantity + "/" + item.i_price + "</td>";
 		tr += "<td>" + item.o_totalprice + "</td>";
-		tr += "<td><span>" + item.o_status + "</span><a class='orderUpdateBtn' onclick='updateStatusOrder(\'" + item.o_no + "\');' style='display: none'>" + item.o_status + "</a></td>";
+
+		if (item.o_status == '発送完了') {
+			tr += "<td><a class='orderUpdateBtn' data-no='"+ item.o_no +"' >" + item.o_status + "</a></td>";
+		} else {
+			tr += "<td><span>" + item.o_status + "</span></td>"
+		}
+
 		tr += "<td>" + formattedDate + "</td>";
 		tr += "<td><button class='openModalBtn2' data-no='" + item.o_no + "'>作成</button>";
-		tr += "<td class='orderDeleteBtn' onclick='deleteOrder(\'" + item.o_no + "\','o_u_show')'>X</td>";
+
+		if (item.o_status == '配送完了') {
+			tr += "<td class='orderDeleteBtn' data-no='"+ item.o_no +"' data-person='o_u_show' )'>X</td>";
+		} else {
+			tr += "<td ></td>";
+		}
+
+
+
 		tr += "</tr>";
 
 		tableRows += tr;
