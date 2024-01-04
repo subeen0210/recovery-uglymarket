@@ -196,11 +196,11 @@ public class ReviewDAO {
 			
 			
 			pstmt.setString(1, request.getParameter("story"));
-			pstmt.setString(2, request.getParameter("grade"));
-			pstmt.setString(3, user.getU_nicname());
-			pstmt.setString(4, request.getParameter("name"));
-			pstmt.setString(5, user.getU_id());
-			pstmt.setString(6, request.getParameter("no"));
+			pstmt.setString(2, user.getU_nicname());
+			pstmt.setString(3, request.getParameter("name"));
+			pstmt.setString(4, user.getU_id());
+			pstmt.setString(5, request.getParameter("no"));
+			pstmt.setString(6, request.getParameter("grade"));
 			
 			
 			
