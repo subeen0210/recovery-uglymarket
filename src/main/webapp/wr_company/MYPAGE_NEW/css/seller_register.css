@@ -137,18 +137,18 @@ input {
 	resize: none;
 }
 
-.button {
-	background-color: #4CAF50;
-	color: white;
-	padding: 10px 15px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-}
+/* .button { */
+/* 	background-color: #4CAF50; */
+/* 	color: white; */
+/* 	padding: 10px 15px; */
+/* 	border: none; */
+/* 	border-radius: 5px; */
+/* 	cursor: pointer; */
+/* } */
 
-button:hover {
-	background-color: #45a049;
-}
+/* button:hover { */
+/* 	background-color: #45a049; */
+/* } */
 
 table {
 	width: 100%;
@@ -212,5 +212,38 @@ width: 8%;
 	height: 5%;
 
 	
+}
+/* .btn_control{ */
+/* display: flex; */
+/* justify-content: center; */
+/* align-items: center; */
+/* padding: 10px; */
+/* } */
+.btn_style{
+	width: 70px;
+	height: 50px;
+	
+		background-color: #5dc41a;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-size: 12pt;
+    padding: 5px;
+    top: 10px;
+    left:10px;
+}
+.update-button{
+	
+	width: 70px;
+	height: 50px;
+	
+		background-color: #5dc41a;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-size: 12pt;
+    padding: 5px;
+    top: 10px;
+    left:10px;
 }
 

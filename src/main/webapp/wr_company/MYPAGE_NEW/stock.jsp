@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="wr_company/MYPAGE_NEW/css/seller_register.css">
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/modal.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/modal.css?ver=1.1">
 </head>
 <body>
 
@@ -76,7 +76,19 @@
 			</div>
 			<input name="old-img" id="farm-file2" value="">
 		</div>
-		<button class="update-button" id="item-no" name="no">修正</button>
+		<br>
+	
+		<button class="update-button" id="item-no" name="no" style="width: 70px;
+	height: 50px;
+	
+		background-color: #5dc41a;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-size: 12pt;
+    padding: 5px;
+    top: 10px;
+    left:10px;">修正</button>
 	</div>
     	</form>
   </div>
