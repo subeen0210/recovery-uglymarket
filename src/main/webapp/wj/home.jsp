@@ -5,7 +5,6 @@
 <html>
   <head>
     <meta name="viewport" content="width=1920, height=1080, initial-scale=1.0"charset="UTF-8">
-    <link rel="stylesheet" href="path/to/bxslider.css">
     <title>Insert title here</title>
     <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
