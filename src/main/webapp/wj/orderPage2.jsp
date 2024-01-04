@@ -108,8 +108,6 @@
 
 
 	<script>
-		// 강사님과 함께 풀이했던 내용 정리 완료
-
 		const $_details = $(".demo-details-juqery-accordion"); // 클래스가 "demo-details-juqery-accordion"인 요소를 선택
 		const $_summary = $_details.find("summary"); // 선택한 요소 내에서 <summary> 요소를 찾기
 
