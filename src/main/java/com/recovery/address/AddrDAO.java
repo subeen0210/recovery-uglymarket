@@ -216,7 +216,7 @@ public class AddrDAO {
 		PreparedStatement pstmt = null;
 		User user = (User) request.getSession().getAttribute("userAccount");
 
-		String sql = "UPDATE delivery_address SET a_no = ?" + " WHERE u_id = ? ";
+		String sql = "UPDATE delivery_address SET a_no = ? WHERE u_id = ? ";
 		try {
 			request.setCharacterEncoding("UTF-8");
 			String a_no = request.getParameter("a_no");

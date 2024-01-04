@@ -12,7 +12,7 @@
 	href="path/to/font-awesome/css/font-awesome.min.css" />
 <title>Sign in</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="js/loginCheck.js"></script>
+<script src="js/loginCheck.js?ver=1.1"></script>
 <script src="js/validCheck.js"></script>
 </head>
 
@@ -31,7 +31,7 @@
 			<div class="emptyErrorMsg">
 				<span id="loginEmptyPW"></span>
 			</div>
-			<a class="submit" onclick="return loginCall('${backURL}')">ログイン</a><br /> <a
+			<a class="submit" id="userLoginBtn" onclick="return loginCall('${backURL}')">ログイン</a><br /> <a
 				class="submit" id="openModalBtn">販売者専用</a>
 		</form>
 			<p class="forgot">
@@ -78,7 +78,7 @@
 				</div>
 			</div>
 			<div class="set-size">
-				<button class="btn-set2" onclick="return loginSellerCall('${backURL}')">ログイン</button>
+				<button class="btn-set2" id="sellerLoginBtn" onclick="return loginSellerCall('${backURL}')">ログイン</button>
 			</div>
 			<br>
 			<div class="set-size">

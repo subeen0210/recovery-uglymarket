@@ -31,17 +31,6 @@ public class SellerLoginC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
-		String referer = request.getHeader("Referer");
-
-		if (referer != null) {
-		    int lastSlashIndex = referer.lastIndexOf("/");
-		    if (lastSlashIndex != -1) {
-		        String extractedValue = referer.substring(lastSlashIndex + 1);
-		        System.out.println(extractedValue);
-		        request.setAttribute("backURL", extractedValue);
-		    }
-		}
 		if (SellerAccountDAO.login(request)) {
 			System.out.println(1);
 			response.getWriter().write("1");
