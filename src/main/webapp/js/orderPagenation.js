@@ -9,7 +9,6 @@ pageCount: 화면에 나타날 페이지 갯수
 limit: 한 페이지 당 나타낼 데이터의 갯수
 */
 var jb = jQuery.noConflict();
-let totalItem;
 
 jb(function() {
 	jb.ajax({
@@ -17,7 +16,6 @@ jb(function() {
 		type: 'post',
 		datatype: 'json',
 		success: function(data) {
-			totalItem = data;
 			simpleTemplating(data)
 			Orderpagination(data);
 		},
