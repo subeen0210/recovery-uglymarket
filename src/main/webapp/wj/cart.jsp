@@ -44,7 +44,7 @@
 				<br />
 				<div class="info-delivery">送料無料</div>
 				<br />
-				<div class="info-price">￥${cart.i_price }</div>
+				<div class="info-price">￥<span>${cart.i_price }</span></div>
 			</div>
 			<div class="menu-set">
 				<div class="set-quanity">
