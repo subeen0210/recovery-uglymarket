@@ -63,6 +63,7 @@ public class ItemDAO {
 //				System.out.println(rs.getString("i_price"));
 //				System.out.println(rs.getString("i_img"));
 			}
+			
 		return	convertItemsToJSON(items);	
 			
 		} catch (Exception e) {
