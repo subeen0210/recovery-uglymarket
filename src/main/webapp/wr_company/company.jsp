@@ -61,10 +61,10 @@
 <!-- 앱스토어 연결  -->
 		<div class="company_div3">
 			<div class="company_div3-1">
-				<p class="div3_title"><a href="https://play.google.com/store/search?q=%EB%AA%BB%EB%82%9C%EC%9D%B4%EB%A7%88%EC%BC%93&c=apps&hl=kr-en">Google プレイストア</a></p>
+				<p class="div3_title"><a href="https://play.google.com/store/search?q=%EB%AA%BB%EB%82%9C%EC%9D%B4%EB%A7%88%EC%BC%93&c=apps&hl=kr-en" target="_blank" rel="noreferrer">Google プレイストア</a></p>
 			</div>
 			<div class="company_div3-1">
-				<p class="div3_title"><a href="https://apps.apple.com/kr/app/%EB%AA%BB%EB%82%9C%EC%9D%B4%EB%A7%88%EC%BC%93/id1659402432"> アップル アプリストア</a></p>
+				<p class="div3_title"><a href="https://apps.apple.com/kr/app/%EB%AA%BB%EB%82%9C%EC%9D%B4%EB%A7%88%EC%BC%93/id1659402432" target="_blank" rel="noreferrer"> アップル アプリストア</a></p>
 			</div>
 		</div>
 		</div>
