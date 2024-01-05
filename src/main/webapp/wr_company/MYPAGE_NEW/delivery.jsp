@@ -4,12 +4,15 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/delivery.css?ver=1.1">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/delivery.css">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="js/deliveryModal.js"></script>
+<script type="text/javascript" src="pagination/pagination.min.js"></script>
+<script type="text/javascript" src="pagination/pagination.js"></script>
+<script type="text/javascript" src="wr_company/MYPAGE_NEW/js/sellerOrderPagenation.js?ver=1.1"></script>
+<script type="text/javascript" src="js/deliveryModal.js?ver=1.1"></script>
 
 </head>
 <body>
@@ -36,27 +39,13 @@
 
 				</tr>
 			</thead>
-			<tbody>
-				<c:forEach var="order" items="${sellerOrders }">
-					<tr>
-						<td><a class="openModalBtn" data-number="${order.o_no}"
-							style="cursor: pointer;">${order.o_orderNum }</a></td>
-						<td>${order.i_name }</td>
-						<td>${order.o_quantity }</td>
-						<td>${order.o_totalprice }</td>
-						<td>${order.o_name }</td>
-						<td>${order.o_addr }</td>
-						<td class="status">${order.o_status }</td>
-						<td>${order.o_date }</td>
-						<td class="orderDeleteBtn" onclick="deleteOrder('${order.o_no}','o_s_show')">X</td>
-					</tr>
-				</c:forEach>
+			<tbody id="sellerOrder">
 			</tbody>
 		</table>
 		
 		<br>
 
-
+	<div id="pagination-seller"></div>
 	</div>
 	<!-- dialog 태그 사용 -->
 	<dialog id="myModal">
