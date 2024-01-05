@@ -1,0 +1,59 @@
+body {
+	margin: 0;
+}
+
+.main-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 5%;
+}
+
+.demo-details-juqery-accordion {
+	padding: 0 2rem;
+	background-color: #fafafa;
+	border: 1px solid #E0E0E0;
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.demo-details-juqery-accordion:last-child {
+	margin-bottom: 0;
+}
+
+.demo-details-juqery-accordion summary::-webkit-details-marker {
+	display: none;
+}
+
+.demo-details-juqery-accordion summary {
+	display: block;
+	padding: 2rem 3rem 2rem 0;
+	font-size: 15pt;
+	font-weight: 600;
+	cursor: pointer;
+	position: relative;
+}
+.demo-details-juqery-accordion p {
+	padding-bottom: 2rem;
+	display: none;
+	font-size: 13pt;
+}
+
+.detail-wrap {
+	margin-bottom: 20px;
+	width: 60%;
+	position: relative;
+}
+
+.icon {
+	width: 20px;
+	position: absolute;
+	right: -30px;
+	top: 35px;
+	transform: rotateZ(90deg);
+	transition: all 0.3s ease-out;
+}
