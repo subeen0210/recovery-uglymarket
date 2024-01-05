@@ -73,7 +73,7 @@ function simpleTemplating(data) {
 		tr += "<td><button class='openModalBtn2' data-no='" + item.o_no + "'>作成</button>";
 
 		if (item.o_status == '配送完了') {
-			tr += "<td class='orderDeleteBtn' data-no='"+ item.o_no +"' data-person='o_u_show' )'>X</td>";
+			tr += "<td class='orderDeleteBtn' data-no='"+ item.o_no +"' data-person='o_u_show' >X</td>";
 		} else {
 			tr += "<td ></td>";
 		}
