@@ -27,23 +27,23 @@ $(function() {
 				console.log(data);
 				$("#nameInput").val(data.a_name);
 				$("#telInput").val(data.a_tel);
-				
+
 				let time = data.a_req;
 				$('#deliveryTime').val(time).prop("selected", true);
-				
+
 				$("#addrNum").val(data.a_postcode);
-				
+
 				let addr = data.a_addr.split('!');
 				$("#addrPrefecture").val(addr[0]);
 				$("#addrCity").val(addr[1]);
-				
-				
+
+
 				$("#addrDetail").val(data.a_addrDetail);
-				
+
 				$("#formUpBtn").val(data.a_no);
-				
-				
-				
+
+
+
 				myModal.showModal();
 			},
 			error: function(xhr, status, error) {
@@ -51,11 +51,11 @@ $(function() {
 			}
 		});
 	});
-	
-	
-	
-	
-	
+
+
+
+
+
 	// 주소 등록 모달
 	const myModal2 = document.getElementById('myModal2');
 	const openRegAddrBtn = document.getElementById('openRegAddrBtn');
@@ -65,28 +65,55 @@ $(function() {
 	openRegAddrBtn.addEventListener('click', () => {
 		myModal2.showModal();
 	});
-	
+
 	closeModalBtn2.addEventListener('click', () => {
 		myModal2.close();
 	});
+
+
 });
 
 function updateCheck() {
-	if(confirm('住所を変更しますか?')){
+	if (confirm('住所を変更しますか?')) {
 		return true;
 	}
 	return false;
 };
 
 function regCheck() {
-	if(confirm('住所を追加しますか?')){
+	if (confirm('住所を追加しますか?')) {
 		return true;
 	}
 	return false;
 }
 
-function deleteAddr(no) {
-	if(confirm('削除しますか?')){
-		location.href='deleteAddrC?no='+no;
+function deleteAddr(no, index) {
+	if (index == '0') {
+		alert('基本配送先は削除できません');
+	} else {
+		if (confirm('削除しますか?')) {
+			location.href = 'deleteAddrC?no=' + no;
+		}
 	}
+}
+
+function updateTopAddr(no, index) {
+	console.log(index);
+	if (index == '0') {
+		alert('基本配送先です');
+	} else {
+		$.ajax({
+			url: 'TopUpdateAddrC',
+			type: 'post',
+			data: { a_no: no },
+			success: function(update) {
+				alert('基本配送先が変更されました');
+				location.href = 'UserMypageC';
+			},
+			error: function(xhr, status, error) {
+				console.error('Error:', status, error);
+			}
+		});
+	}
+
 }

@@ -133,9 +133,7 @@ function itemUpdate(no) {
 			// input 요소에 설정
 			$('#farm-date').val(formattedDate);
 			$("#item-no").val(response.i_no)
-
-
-
+			
 		},
 		error: function(error) {
 			console.error('에러:', error);
@@ -143,3 +141,23 @@ function itemUpdate(no) {
 	});
 
 }
+
+$('.update-button').on('click', function() {
+    // 클릭한 버튼의 데이터 가져오기
+    var iNo = $(this).data('i-no');
+
+    // Ajax 요청 보내기
+    $.ajax({
+        url: 'ItemUpdateC', // 실제 업데이트 서블릿 URL로 교체
+        method: 'POST',
+        datatype: 'json',
+        data: $('#updateForm').serialize(), // 폼 데이터를 직렬화하여 전송
+        success: function(updateResponse) {
+            // 업데이트가 성공하면
+            alert('修正を成功しました。');
+        },
+        error: function(updateError) {
+            console.error('업데이트 에러:', updateError);
+        }
+    });
+});

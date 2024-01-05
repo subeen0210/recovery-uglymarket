@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="wr_company/MYPAGE_NEW/css/seller_register.css">
-<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/modal.css">
+<link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/modal.css?ver=1.3">
 </head>
 <body>
 
@@ -40,7 +40,7 @@
   	<div class="modal-content">
    		<span class="close">&times;</span>
  
-    	<form action="ItemUpdateC" method="post" enctype="multipart/form-data">
+    	<form id="updateForm" action="ItemUpdateC" method="post" enctype="multipart/form-data">
     	<br>
    		<br>
      	<div>
@@ -76,7 +76,14 @@
 			</div>
 			<input name="old-img" id="farm-file2" value="">
 		</div>
-		<button class="update-button" id="item-no" name="no">修正</button>
+		<br>
+		<button class="update-button" style="
+	width: 70px;
+	height: 50px;
+	background-color: #5dc41a;
+	color: white;
+	
+	border: none;" id="item-no" name="no">修正</button>
 	</div>
     	</form>
   </div>
@@ -85,5 +92,5 @@
 
 
 </body>
-<script src="wr_company/MYPAGE_NEW/js/stock.js?ver=1.1"></script>
+<script src="wr_company/MYPAGE_NEW/js/stock.js?ver=1.3"></script>
 </html>

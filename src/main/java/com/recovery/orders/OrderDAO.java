@@ -199,9 +199,13 @@ public class OrderDAO {
 
 			}
 
-			request.setAttribute("userOrders", orders);
-			System.out.println("주문 내역 연결 성공");
-			// 디테일 정보 넘기기
+			Gson g = new Gson();
+			String jsonData = g.toJson(orders);
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write(jsonData);
+			System.out.println(jsonData);
+			System.out.println("유저 주문내역 조회 성공");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -301,9 +305,15 @@ public class OrderDAO {
 				orders.add(order);
 
 			}
-
-			request.setAttribute("sellerOrders", orders);
-			System.out.println("주문 내역 연결 성공");
+			
+			
+			Gson g = new Gson();
+			String jsonData = g.toJson(orders);
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write(jsonData);
+			System.out.println(jsonData);
+			System.out.println("유저 주문내역 조회 성공");
 
 		} catch (Exception e) {
 			e.printStackTrace();

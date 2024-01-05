@@ -25,7 +25,7 @@ public class ReviewDAO {
 		ResultSet rs = null;
 		String paramNo = request.getParameter("no");
 		System.out.println(paramNo);
-		String sql = "select * from review where i_no = ? ";
+		String sql = "select * from review where i_no = ? order by r_grade desc";
 		
 		try {
 			con = DBManager.connect();
@@ -100,7 +100,7 @@ public class ReviewDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from review where u_id = ? ";
+		String sql = "select * from review where u_id = ? order by r_no desc";
 		
 		try {
 			con = DBManager.connect();
