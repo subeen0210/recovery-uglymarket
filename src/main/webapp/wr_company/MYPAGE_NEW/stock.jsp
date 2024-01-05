@@ -40,7 +40,7 @@
   	<div class="modal-content">
    		<span class="close">&times;</span>
  
-    	<form action="ItemUpdateC" method="post" enctype="multipart/form-data">
+    	<form id="updateForm" action="ItemUpdateC" method="post" enctype="multipart/form-data">
     	<br>
    		<br>
      	<div>
@@ -92,5 +92,5 @@
 
 
 </body>
-<script src="wr_company/MYPAGE_NEW/js/stock.js?ver=1.1"></script>
+<script src="wr_company/MYPAGE_NEW/js/stock.js?ver=1.3"></script>
 </html>
