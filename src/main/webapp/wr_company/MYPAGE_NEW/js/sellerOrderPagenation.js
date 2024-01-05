@@ -3,14 +3,12 @@
  */
 
 var sss = jQuery.noConflict();
-let totalItem;
 sss(function() {
 	sss.ajax({
 		url: 'SellerOrderC',
 		type: 'get',
 		datatype: 'json',
 		success: function(data) {
-			totalItem = data;
 			Templating(data)
 			sellerPagination(data);
 		},
