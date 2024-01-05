@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 public class SellerOrderC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		OrderDAO.sellerOrderAll(request,response);
-		request.getRequestDispatcher("wr_company/MYPAGE_NEW/delivery.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

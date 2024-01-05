@@ -8,7 +8,7 @@ pageEncoding="UTF-8"%>
       integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
       crossorigin="anonymous"
     ></script>
-    <script src="wr_company/MYPAGE_NEW/js/mypage.js"></script>
+    <script src="wr_company/MYPAGE_NEW/js/mypage.js?ver=1.1"></script>
     <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/myPage.css" />
     <script
       type="text/javascript"
