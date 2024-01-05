@@ -110,12 +110,7 @@ function updateStatusOrder() {
 	}
 }
 
-$(document).on('click', '.orderDeleteBtn', function() {
-	
-	
-	
-	
-});
+
 $(document).on('click', '.orderDeleteBtn', function() {
 	let no = $(this).data('no');
 	let person = $(this).data('person');
