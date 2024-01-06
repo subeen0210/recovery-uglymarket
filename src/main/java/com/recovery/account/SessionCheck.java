@@ -15,10 +15,7 @@ public class SessionCheck extends HttpServlet {
 	if (AccountDAO.loginCheck(request) == 0) {
         response.getWriter().write('0');
     } 
-//	else {
-//        request.setAttribute("contentPage", "wr_company/new_myPage.jsp");
-//        request.getRequestDispatcher("index.jsp").forward(request, response);
-//    }
+	
 	
 	}
 
