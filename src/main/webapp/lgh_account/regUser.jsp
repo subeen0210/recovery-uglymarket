@@ -45,7 +45,7 @@
 					<div class="reg-menu">パスワード再確認</div>
 					<div class="reg-input">
 						<input class="input-style" type="password" id="userPWconfirm"
-							placeholder="もう一度記入してください" />&ensp; <span
+							placeholder="もう一度記入してください" maxlength="20"/>&ensp; <span
 							id="pwConfirm"></span>
 					</div>
 				</div>
@@ -56,25 +56,25 @@
 				<div class="reg-content">
 					<div class="reg-menu">姓</div>
 					<div class="reg-input">
-						<input class="input-style" name="userKanji_ln" placeholder="例）山田"/>
+						<input class="input-style" name="userKanji_ln" placeholder="例）山田" maxlength="10"/>
 					</div>
 				</div>
 				<div class="reg-content">
 					<div class="reg-menu">名</div>
 					<div class="reg-input">
-						<input class="input-style" name="userKanji_fn" placeholder="例）太郎"/>
+						<input class="input-style" name="userKanji_fn" placeholder="例）太郎" maxlength="10"/>
 					</div>
 				</div>
 				<div class="reg-content">
 					<div class="reg-menu">セイ</div>
 					<div class="reg-input">
-						<input class="input-style" name="userKata_ln" placeholder="例）ヤマダ"/>
+						<input class="input-style" name="userKata_ln" placeholder="例）ヤマダ" maxlength="10"/>
 					</div>
 				</div>
 				<div class="reg-content">
 					<div class="reg-menu">メイ</div>
 					<div class="reg-input">
-						<input class="input-style" name="userKata_fn" placeholder="例）タロウ"/>
+						<input class="input-style" name="userKata_fn" placeholder="例）タロウ" maxlength="10"/>
 					</div>
 				</div>
 				<div class="reg-content">
@@ -89,16 +89,16 @@
 				</div>
 				<div class="reg-content">
 					<div class="reg-name">
-						<input class="input-style3" name="userTel1" placeholder="012"/>&emsp;-&emsp;<input
-						class="input-style3" name="userTel2" placeholder="3456"/>&emsp;-&emsp;<input
-						class="input-style3" name="userTel3" placeholder="7890"/>
+						<input class="input-style3" name="userTel1" placeholder="012" maxlength="3"/>&emsp;-&emsp;<input
+						class="input-style3" name="userTel2" placeholder="3456" maxlength="4"/>&emsp;-&emsp;<input
+						class="input-style3" name="userTel3" placeholder="7890" maxlength="4"/>
 					</div>
 				</div>
 				<br />
 				<div class="reg-content">
 					<div class="reg-menu">メール<span class="essential-icon">*</span></div>
 					<div class="reg-input">
-						<input class="input-style" name="userEmail" type="email" />
+						<input class="input-style" name="userEmail" type="email" maxlength="50"/>
 					</div>
 				</div>
 				<br />
@@ -134,7 +134,7 @@
 				<div class="reg-content">
 					<div class="reg-menu">詳細情報</div>
 					<div class="reg-input">
-						<input class="input-style" name="userAddrD" />
+						<input class="input-style" name="userAddrD" maxlength="20"/>
 					</div>
 				</div>
 				<br />
