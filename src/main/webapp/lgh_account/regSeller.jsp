@@ -48,7 +48,7 @@
 					<div class="reg-menu">パスワード再確認</div>
 					<div class="reg-input">
 						<input class="input-style" type="password" id="sellerPWconfirm"
-							placeholder="もう一度記入してください" />&ensp; <span id="pwConfirm"></span>
+							placeholder="もう一度記入してください" maxlength="20" />&ensp; <span id="pwConfirm"></span>
 					</div>
 				</div>
 				<br />
@@ -61,28 +61,28 @@
 					<div class="reg-menu">姓</div>
 					<div class="reg-input">
 						<input class="input-style" name="sellerKanji_ln"
-							placeholder="例）山田" />
+							placeholder="例）山田" maxlength="10"/>
 					</div>
 				</div>
 				<div class="reg-content">
 					<div class="reg-menu">名</div>
 					<div class="reg-input">
 						<input class="input-style" name="sellerKanji_fn"
-							placeholder="例）太郎" />
+							placeholder="例）太郎" maxlength="10"/>
 					</div>
 				</div>
 				<div class="reg-content">
 					<div class="reg-menu">セイ</div>
 					<div class="reg-input">
 						<input class="input-style" name="sellerKata_ln"
-							placeholder="例）ヤマダ" />
+							placeholder="例）ヤマダ" maxlength="10"/>
 					</div>
 				</div>
 				<div class="reg-content">
 					<div class="reg-menu">メイ</div>
 					<div class="reg-input">
 						<input class="input-style" name="sellerKata_fn"
-							placeholder="例）タロウ" />
+							placeholder="例）タロウ" maxlength="10"/>
 					</div>
 				</div>
 				<br />
@@ -93,9 +93,9 @@
 				</div>
 				<div class="reg-content">
 					<div class="reg-name">
-						<input class="input-style3" name="sellerTel1" placeholder="012" />&emsp;-&emsp;<input
-							class="input-style3" name="sellerTel2" placeholder="3456" />&emsp;-&emsp;<input
-							class="input-style3" name="sellerTel3" placeholder="7890" />
+						<input class="input-style3" name="sellerTel1" placeholder="012" maxlength="3"/>&emsp;-&emsp;<input
+							class="input-style3" name="sellerTel2" placeholder="3456" maxlength="4"/>&emsp;-&emsp;<input
+							class="input-style3" name="sellerTel3" placeholder="7890" maxlength="4"/>
 					</div>
 				</div>
 				<br />
@@ -116,7 +116,7 @@
 						農場名<span class="essential-icon">*</span>
 					</div>
 					<div class="reg-input">
-						<input class="input-style" name="farmName" maxlength="10" />
+						<input class="input-style" name="farmName" maxlength="20" />
 					</div>
 				</div>
 				<br />
@@ -124,7 +124,7 @@
 					<div class="reg-menu">農場説明</div>
 					<div class="reg-input2">
 						<textarea class="input-style2" name="farmStory" cols="30"
-							rows="10"></textarea>
+							rows="10" maxlength="200"></textarea>
 					</div>
 				</div>
 				<br />
@@ -163,7 +163,7 @@
 				<div class="reg-content">
 					<div class="reg-menu">詳細情報</div>
 					<div class="reg-input">
-						<input class="input-style" name="sellerAddrD" />
+						<input class="input-style" name="sellerAddrD" maxlength="20"/>
 					</div>
 				</div>
 				<br />
