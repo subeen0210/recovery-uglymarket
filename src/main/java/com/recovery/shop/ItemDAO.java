@@ -330,6 +330,11 @@ public class ItemDAO {
 		    
 		    if (pstmt.executeUpdate() == 1) {
 				System.out.println("상품 수정 성공");
+				if (newImg != null) {
+					File f = new File(path + "/" + oldImg);
+					f.delete();
+					System.out.println("사진삭제");
+				}
 			}
 		    
 		} catch (Exception e) {
