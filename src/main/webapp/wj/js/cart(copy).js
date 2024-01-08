@@ -3,7 +3,7 @@ let checkAll = document.getElementById("checkAll");
 let priceAll = document.getElementById('payAllMoneySpan');
 // 각 항목의 체크박스 요소 가져오기
 let checkboxes = document.querySelectorAll(".item-checkbox");
-let totalP = 0;
+//let totalP = 0;
 // 전체 선택 체크박스의 변경 이벤트 처리
 checkAll.addEventListener("click", function() {
 	const isChecked = checkAll.checked;
@@ -12,11 +12,8 @@ checkAll.addEventListener("click", function() {
 		// 모두 체크
 		for (const checkbox of checkboxes) {
 			checkbox.checked = true;
-			totalP += parseInt(checkbox.parentNode.parentNode.querySelector('.set-allprice').getAttribute("data-subtotal"));
-			console.log(parseInt(checkbox.parentNode.parentNode.querySelector('.set-allprice').getAttribute("data-subtotal")));
 		}
-		totalP = updateTotalPrice();
-		priceAll.innerText = totalP;
+		updateTotalPrice();
 	}
 
 	else {
@@ -25,7 +22,6 @@ checkAll.addEventListener("click", function() {
 			checkbox.checked = false;
 		}
 		priceAll.innerText = 0;
-		totalP = 0;
 	}
 
 
@@ -62,7 +58,6 @@ function selectTotalPrice(checkbox) {
 		totalPrice += subtotal;
 	} else {
 		totalPrice -= subtotal;
-		totalP = 0;
 	}
 
 	priceAll.innerText = totalPrice;
@@ -93,16 +88,15 @@ function deleteSelectCart() {
 
 			$.ajax({
 				type: "POST",
-				url: "deleteCartItem", // 서버에서 해당 엔드포인트를 제공해야 함
+				url: "deleteCartItem", 
 				data: { c_no: cartCode },
 				success: function(response) {
-					// 여기서는 간단히 해당 요소를 삭제
+					
 					let parentDiv = checkbox.closest('.menu');
 					parentDiv.parentNode.removeChild(parentDiv);
 					$(`.${cartCode}`).remove();
 					updateTotalPrice();
 					
-					totalP -= parseInt(checkbox.parentNode.parentNode.querySelector('.set-allprice').getAttribute("data-subtotal"));
 				},
 				error: function(error) {
 					console.error("Delete request failed: ", error);
@@ -121,12 +115,9 @@ function deleteCart(c_no) {
 	if (ok) {
 		$.ajax({
 			type: "POST",
-			url: "deleteCartItem", // 서버에서 해당 엔드포인트를 제공해야 함
+			url: "deleteCartItem", 
 			data: { c_no: c_no },
 			success: function(response) {
-				// 서버에서 응답을 받았을 때의 처리
-				// 여기서는 간단히 해당 요소를 삭제
-				// 예시: 해당 요소를 jQuery를 사용하여 삭제 처리
 				$(`.${c_no}`).remove();
 				updateTotalPrice();
 			},
@@ -148,7 +139,7 @@ function updateTotalPrice() {
 	
 	console.log(perTotal);
 	
-	$("#payAllMoneySpan").text(perTotal);
+	priceAll.innerText = perTotal;
 	return perTotal;
 	
 
@@ -160,13 +151,11 @@ function changeQuantity(cartCode) {
 	let currentValue = parseInt(inputField.val());
 	console.log(cartCode);
 	console.log(currentValue);
-	// AJAX 요청을 수행하고 서버에 데이터 전송
 	$.ajax({
-		url: 'updateCartCount', // 실제로는 서버의 엔드포인트 URL로 대체해야 합니다.
+		url: 'updateCartCount', 
 		method: 'GET',
 		data: { quantity: currentValue, no: cartCode },
 		success: function(response) {
-			// 성공적으로 처리된 경우 추가적인 로직을 수행할 수 있습니다.
 			
 		},
 		error: function(error) {
@@ -186,7 +175,7 @@ function adjustQuantity(btn, cartCode, delta) {
 	// 값 증가 또는 감소
 	let newValue = currentValue + delta;
 
-	// 값이 1보다 작아지지 않도록 보장
+	// 값이 1보다 작아지지 않도록
 	if (newValue < 1) {
 		newValue = 1;
 		
@@ -200,13 +189,7 @@ function adjustQuantity(btn, cartCode, delta) {
 	$(`#set-allprice_${cartCode}`).text(calcVal);
 	$(`#set-allprice2_${cartCode}`).attr('data-subtotal', calcVal);
 	
-	let perTotal = 0;
-	const checkedInputs = document.querySelectorAll('.item-checkbox:checked');
-	$(checkedInputs).each(function(i,obj){
-		perTotal += parseInt($(obj).closest('.menu').find('.set-allprice').children().text());
-	});
-	
-	$("#payAllMoneySpan").text(perTotal);
+	updateTotalPrice();
 	
 	
 }

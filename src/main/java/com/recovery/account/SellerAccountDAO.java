@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
@@ -379,5 +380,35 @@ public class SellerAccountDAO {
 			DBManager.close(con, pstmt, null);
 		}
 		return randomPassword;
-	};
+	}
+
+	public static void SellerShow(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "select s_f_name from seller where s_id = ?";
+		try {
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, request.getParameter("s_id"));
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				System.out.println("팜 이름 성공");
+				
+				response.setCharacterEncoding("UTF-8");
+				response.getWriter().write(rs.getString("s_f_name"));
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("팜 이름 실패");
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
 }
+
+
+

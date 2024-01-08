@@ -21,7 +21,7 @@ public class AddrDAO {
 		ResultSet rs = null;
 		User user = (User) request.getSession().getAttribute("userAccount");
 		System.out.println(user.getU_id());
-		String sql = "SELECT * " + "FROM address " + "JOIN delivery_address ON address.u_id = delivery_address.u_id "
+		String sql = "SELECT * FROM address " + "JOIN delivery_address ON address.u_id = delivery_address.u_id "
 				+ "WHERE address.u_id = ? "
 				+ "ORDER BY CASE WHEN address.a_no = delivery_address.a_no THEN 0 ELSE 1 END";
 
