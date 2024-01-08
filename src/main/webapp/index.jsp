@@ -30,6 +30,9 @@
 			<div>
 				<a class="header-hover" href="ShopC">モール</a>
 			</div>
+			<div>
+				<a class="header-hover" id="Qna" href="QnaC">Q&A</a>
+			</div>
 		</div>
 		<div class="header-icon">
 			<jsp:include page="${loginChange }"></jsp:include>
@@ -73,7 +76,7 @@
 				<div class="footer3">
 					相談時間 : 月~金、午前10時~午後6時(週末/祝日
 					お休み）&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
-					<button class="f_button">よくある質問</button>
+					<button onclick="location.href='QnaC'" class="f_button">よくある質問</button>
 					<button class="f_button">問い合わせ</button>
 				</div>
 			</div>
