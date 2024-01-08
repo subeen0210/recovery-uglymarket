@@ -44,3 +44,92 @@ function goToCart(no, id) {
 		});
 	};
 };
+
+
+function pay(no, id) {
+	let count = $('#quantityInput').val();
+	if (id == "") {
+		alert('消費者ログイン後に使用できます。');
+		location.href = 'LoginPageC';
+	} else {
+		$.ajax({
+			url: 'SessionCheck', // 서버 측 코드가 처리하는 URL
+			method: 'GET',
+			success: function(response) {
+				if (response == '0') {
+					// 세션이 만료된 경우
+					alert('ログインが切れました。ログインページに移動します。');
+					location.href = 'LoginPageC';
+				} else {
+
+					let selectedItems = [];
+
+					$.ajax({
+						url: 'ShopDetailC', // 상품 정보 불러오기
+						data: { no: no },
+						method: 'post',
+						datatype: 'json',
+						success: function(response) {
+							let c_no = 0;
+							let i_no = response.i_no;
+							let image = response.i_img
+							let name = response.i_name
+							let category = response.i_category == 1 ? "アグリー" : "普通";
+
+							let price = response.i_price;
+							let quantity = count
+							let subtotal = response.i_price * count;
+							/*							console.log(response);
+														console.log(i_no);
+														console.log(image);
+														console.log(name);
+														console.log(category);
+														console.log(price);
+														console.log(quantity);
+														console.log(subtotal);*/
+							let fName = "";
+							farmName(response.s_id, function(farmNameResult) {
+								fName = farmNameResult;
+							let item = {
+								c_no: c_no,
+								i_no: i_no,
+								image: image,
+								name: name,
+								category: category,
+								farmName: fName,
+								price: price,
+								quantity: quantity,
+								subtotal: subtotal
+							};
+
+							selectedItems.push(item);
+
+							localStorage.removeItem('selectedItems');
+
+							let arrItems = JSON.stringify(selectedItems);
+
+							localStorage.setItem('selectedItems', arrItems);
+
+
+							location.href = 'OrderPageC';
+							});
+						}
+					});
+
+				}
+			}
+		});
+	};
+};
+
+function farmName(s_id, callback) {
+	$.ajax({
+		url: 'SellerShowC', // 상품 정보 불러오기
+		data: { s_id: s_id },
+		method: 'post',
+		success: function(response) {
+			//		console.log(response);
+			callback(response);
+		}
+	});
+}

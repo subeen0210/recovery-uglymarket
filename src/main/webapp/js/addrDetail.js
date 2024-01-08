@@ -54,7 +54,10 @@ function formatJSON(json){
 }	
 function sendDataToParent() {
     // 입력된 데이터 가져오기
-    const inputNum = document.getElementById("addr-Zipcode").value;
+    let inputNum = document.getElementById("addr-Zipcode").value;
+	if(inputNum.includes("-")){
+		inputNum = inputNum.replace(/-/g, '');
+	}
     const inputData1 = document.getElementById("address1").value;
     const inputData2 = document.getElementById("address2").value;
 	console.log(inputNum);

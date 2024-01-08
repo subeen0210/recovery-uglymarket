@@ -116,6 +116,7 @@ public class ItemDAO {
 				i.setI_enddate(rs.getDate("i_ed"));
 				i.setI_price(rs.getInt("i_price"));
 				i.setI_stock(rs.getInt("i_stock"));
+				i.setS_id(rs.getString("s_id"));
 				request.setAttribute("item", i);
 				
 				Gson g = new Gson();
