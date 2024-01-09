@@ -94,6 +94,7 @@
 .item-price {
 	font-size: 1.5vw;
 	font-weight: bold;
+	margin-top: 55px;
 }
 
 .item-delivery {
@@ -112,7 +113,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 200px;
+	margin-top: 125px;
 }
 
 .item-click {
@@ -180,6 +181,7 @@
 	padding: 6%;
 	font-family: 'Meiryo', serif;
       font-weight: bold;
+      height: 100%;
 }
 
 .item-review {
