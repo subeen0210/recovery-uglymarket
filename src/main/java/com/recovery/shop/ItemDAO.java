@@ -116,6 +116,7 @@ public class ItemDAO {
 				i.setI_enddate(rs.getDate("i_ed"));
 				i.setI_price(rs.getInt("i_price"));
 				i.setI_stock(rs.getInt("i_stock"));
+				i.setS_id(rs.getString("s_id"));
 				request.setAttribute("item", i);
 				
 				Gson g = new Gson();
@@ -330,6 +331,11 @@ public class ItemDAO {
 		    
 		    if (pstmt.executeUpdate() == 1) {
 				System.out.println("상품 수정 성공");
+				if (newImg != null) {
+					File f = new File(path + "/" + oldImg);
+					f.delete();
+					System.out.println("사진삭제");
+				}
 			}
 		    
 		} catch (Exception e) {

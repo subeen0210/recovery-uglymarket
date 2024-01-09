@@ -36,7 +36,7 @@
 					<tr>
 						<td>${addr.a_name }</td>
 						<td>${addr.a_postcode }</td>
-						<td>${addr.a_addr }${addr.a_addrDetail }</td>
+						<td>${addr.a_addr } ${addr.a_addrDetail }</td>
 						<td>${addr.a_tel }</td>
 						<td>${addr.a_req }</td>
 						<td class="address_select" 

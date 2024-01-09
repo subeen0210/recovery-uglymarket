@@ -61,48 +61,61 @@ $(function() {
 
 function regOrder() {
 
-	let ok = confirm("配送先と商品を確認しましたか？");
-	if (ok) {
-		let i_no = document.getElementsByClassName('i_no');
-		let quantity = document.getElementsByClassName('quantity');
-		let subtotal = document.getElementsByClassName('subtotal');
-		const paymentEndPage = document.getElementById('paymentEndPage');
+	$.ajax({
+		url: 'SessionCheck', // 서버 측 코드가 처리하는 URL
+		method: 'GET',
+		success: function(response) {
+			if (response == '0') {
+				// 세션이 만료된 경우
+				alert('ログインが切れました。ログインページに移動します。');
+				location.href = 'LoginPageC';
+			} else {
 
-		//    // 가져온 요소들의 값을 배열에 저장
-		let i_noArray = [];
-		let quantityArray = [];
-		let subtotalArray = [];
-		for (var i = 0; i < i_no.length; i++) {
-			i_noArray.push(i_no[i].value);
-			quantityArray.push(quantity[i].value);
-			subtotalArray.push(subtotal[i].value);
+				let ok = confirm("配送先と商品を確認しましたか？");
+				if (ok) {
+					let i_no = document.getElementsByClassName('i_no');
+					let quantity = document.getElementsByClassName('quantity');
+					let subtotal = document.getElementsByClassName('subtotal');
+					const paymentEndPage = document.getElementById('paymentEndPage');
+
+					//    // 가져온 요소들의 값을 배열에 저장
+					let i_noArray = [];
+					let quantityArray = [];
+					let subtotalArray = [];
+					for (var i = 0; i < i_no.length; i++) {
+						i_noArray.push(i_no[i].value);
+						quantityArray.push(quantity[i].value);
+						subtotalArray.push(subtotal[i].value);
+					}
+					console.log(i_noArray.toString());
+					console.log(quantityArray.toString());
+					console.log(subtotalArray.toString());
+
+					$.ajax({
+						url: "OrderPageC", // 서버의 URL
+						method: "post", // HTTP 메서드 (GET, POST 등)
+						data: { i_no: i_noArray.toString(), quantity: quantityArray.toString(), subtotal: subtotalArray.toString() },
+						success: function(data) {
+							// 요청이 성공했을 때 실행되는 콜백 함수
+							paymentEndPage.style.display = 'flex';
+							paymentEndPage.showModal();
+
+						},
+						error: function(xhr, status, error) {
+							// 요청이 실패했을 때 실행되는 콜백 함수
+							console.error("AJAX request failed:", status, error);
+						}
+					});
+					$(document).on('keydown', function(event) {
+						if (event.key === 'Escape') {
+							event.preventDefault(); // 기본 동작 취소
+							// 모달이 닫히지 않도록 추가적인 로직을 추가할 수 있습니다.
+						}
+					});
+				}
+			}
 		}
-		console.log(i_noArray.toString());
-		console.log(quantityArray.toString());
-		console.log(subtotalArray.toString());
-
-		$.ajax({
-			url: "OrderPageC", // 서버의 URL
-			method: "post", // HTTP 메서드 (GET, POST 등)
-			data: { i_no: i_noArray.toString(), quantity: quantityArray.toString(), subtotal: subtotalArray.toString() },
-			success: function(data) {
-				// 요청이 성공했을 때 실행되는 콜백 함수
-				paymentEndPage.style.display = 'flex';
-				paymentEndPage.showModal();
-
-			},
-			error: function(xhr, status, error) {
-				// 요청이 실패했을 때 실행되는 콜백 함수
-				console.error("AJAX request failed:", status, error);
-			}
-		});
-		$(document).on('keydown', function(event) {
-			if (event.key === 'Escape') {
-				event.preventDefault(); // 기본 동작 취소
-				// 모달이 닫히지 않도록 추가적인 로직을 추가할 수 있습니다.
-			}
-		});
-	}
+	});
 }
 
 function changeAddr(no) {

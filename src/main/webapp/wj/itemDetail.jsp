@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Document</title>
 <link rel="stylesheet" href="wj/css/itemDetail.css" />
-<script type="text/javascript" src="js/shopDetail.js"></script>
+<script type="text/javascript" src="js/shopDetail.js?ver=1.1"></script>
 </head>
 <body>
 	<div class="item-detail-kwj">
@@ -37,7 +37,7 @@
 			<br />
 			<div class="item-click">
 				<div class="click1" onclick="goToCart('${item.i_no }','${sessionScope.userAccount.u_id}')">カート</div>&emsp;
-				<div class="click2">直払い</div>
+				<div class="click2" onclick="pay('${item.i_no }','${sessionScope.userAccount.u_id}')">直払い</div>
 			</div>
 		</div>
 	</div>

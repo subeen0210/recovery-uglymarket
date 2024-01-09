@@ -14,13 +14,13 @@ function payStorage() {
 
 	
 
-	// class가 'item-checkbox'인 모든 체크박스를 가져옵니다.
+	// class가 'item-checkbox'인 모든 체크박스
 	let checkboxes = document.querySelectorAll('.item-checkbox');
 
-	// 선택된 아이템을 저장할 배열을 생성합니다.
+	// 배열을 생성합니다.
 	let selectedItems = [];
 
-	// 체크박스를 순회합니다.
+	
 	checkboxes.forEach(function(checkbox) {
 		// 체크박스가 선택되어 있는지 확인합니다.
 		if (checkbox.checked) {
