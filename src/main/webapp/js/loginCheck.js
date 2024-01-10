@@ -62,7 +62,7 @@ $(function() {
 			document.getElementById("userLoginBtn").click();
 		}
 	});
-	
+
 	$("#loginSellerPW").keypress(function(event) {
 		if (event.which === 13) {
 			// 13은 엔터 키의 keyCode
@@ -87,35 +87,11 @@ function userlogin(backUrl) {
 					.text("IDまたはパスワードが正しくありません。")
 					.css("color", "red");
 			} else {
-				location.href = backUrl;
-			}
-		},
-		error: function(xhr, status, error) {
-			$("#idStatus").text("서버와 통신 중 오류가 발생했습니다.");
-			console.log("xhr: ", xhr);
-			console.log("status: ", status);
-			console.log("error: ", error);
-		},
-	});
-}
-
-
-function Sellerlogin(backUrl) {
-	let SellerID = $("#loginSellerID").val();
-	let SellerPW = $("#loginSellerPW").val();
-
-	$.ajax({
-		type: "post",
-		url: "LoginPageC",
-		data: { SellerID, SellerPW },
-		success: function(response) {
-			console.log(response);
-			if (response === "0") {
-				$("#loginEmptyPW")
-					.text("IDまたはパスワードが正しくありません。")
-					.css("color", "red");
-			} else {
-				location.href = backUrl;
+				if (backUrl.includes("ForgotC")) {
+					location.href = 'HC';
+				} else {
+					location.href = backUrl;
+				}
 			}
 		},
 		error: function(xhr, status, error) {
@@ -166,7 +142,11 @@ function sellerlogin(backUrl) {
 					"font-size": "12px", // 여기에 적절한 크기를 지정합니다.
 				});
 			} else {
-				location.href = backUrl;
+				if (backUrl.includes("ForgotC")) {
+					location.href = "HC";
+				} else {
+					location.href = backUrl;
+				}
 			}
 		},
 		error: function(xhr, status, error) {
