@@ -34,7 +34,7 @@
 	<div class="main-item">
 
 		<div class="item-text-discount">
-			<span class="item-text-discount-detail">今週の特価セール</span>
+			<span class="item-text-discount-detail">今週の新商品</span>
 		</div>
 		<div class="item-text-detail">
 			<a href="ShopC">もっと見る</a>
