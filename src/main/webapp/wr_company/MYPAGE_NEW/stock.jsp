@@ -63,7 +63,8 @@
 			<div><input name="enddate" type="date" id="farm-date" class="date"></div>
 		</div>
 		<div>
-			<div>商品在郷</div>
+			<div>商品在庫</div>
+			
 			<div><input name="stock" id="farm-stock" class="stock"></div>
 		</div>
 		<div>

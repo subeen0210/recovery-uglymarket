@@ -21,7 +21,7 @@ pageEncoding="UTF-8"%>
     <div class="myPage_container">
       <div class="welcome_comment">
         <div class="welcome">
-          ${sessionScope.sellerAccount.s_Fname }様 マイページへようこそ。
+          ${sessionScope.sellerAccount.s_Fname }の マイページへようこそ。
         </div>
         <div class="main_menu_container">
           <div class="main_menu_control">
