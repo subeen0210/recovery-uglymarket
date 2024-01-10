@@ -18,6 +18,7 @@
 		onsubmit="return sellerCheck()">
 		<div class="reg-main">
 			<div class="reg-container">
+			<a href="HC" style="position: relative;"><img id="homeImg" src="img/home_icon_login.svg"></a>
 				<h1 style="color: #2a243a">Sign up</h1>
 				<br />
 				<div class="reg-content">
