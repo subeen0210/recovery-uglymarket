@@ -31,7 +31,7 @@
 				<a class="header-hover" href="ShopC">モール</a>
 			</div>
 			<div>
-				<a class="header-hover" id="Qna" href="QnaC">Q&A</a>
+				<a class="header-hover" href="QnaC">FAQ</a>
 			</div>
 		</div>
 		<div class="header-icon">
