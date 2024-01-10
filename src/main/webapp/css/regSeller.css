@@ -8,6 +8,20 @@
 	margin: 0;
 }
 
+/* home 버튼 */
+#homeImg{
+	width: 35px;
+	position: absolute;
+	right: 425px;
+	filter: invert(29%) sepia(79%) saturate(100%) hue-rotate(80deg) brightness(96%) contrast(84%);
+	opacity: 1;
+}
+#homeImg:hover {
+	transition: filter 0.3s ease;
+	filter: invert(29%) sepia(79%) saturate(100%) hue-rotate(80deg) brightness(96%) contrast(84%);
+	opacity: 0.7;
+}
+
 .reg-main {
 	display: flex;
 	justify-content: center;
