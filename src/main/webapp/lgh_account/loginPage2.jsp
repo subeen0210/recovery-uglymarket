@@ -12,7 +12,7 @@
 	href="path/to/font-awesome/css/font-awesome.min.css" />
 <title>Sign in</title>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="js/loginCheck.js?ver=1.1"></script>
+<script src="js/loginCheck.js?ver1.2"></script>
 <script src="js/validCheck.js"></script>
 </head>
 
