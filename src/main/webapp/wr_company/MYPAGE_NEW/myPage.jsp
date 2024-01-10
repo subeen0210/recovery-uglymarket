@@ -10,10 +10,6 @@ pageEncoding="UTF-8"%>
     ></script>
     <script src="wr_company/MYPAGE_NEW/js/mypage.js?ver=1.1"></script>
     <link rel="stylesheet" href="wr_company/MYPAGE_NEW/css/myPage.css" />
-    <script
-      type="text/javascript"
-      src="wr_company/MYPAGE_NEW/js/register.js"
-    ></script>
     <meta charset="UTF-8" />
     <title>アグリーマーケット販売用サイト</title>
   </head>
