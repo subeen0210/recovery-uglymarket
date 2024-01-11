@@ -155,6 +155,6 @@
 </body>
 <script type="text/javascript" src="pagination/pagination.min.js"></script>
 <script type="text/javascript" src="pagination/pagination.js"></script>
-<script type="text/javascript" src="js/orderPagenation.js"></script>
+<script type="text/javascript" src="js/orderPagenation.js?ver=1.1"></script>
 <script type="text/javascript" src="js/orderDetail.js"></script>
 </html>
