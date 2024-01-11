@@ -13,9 +13,8 @@ a {
 .set-size {
 	display: flex;
 	flex-direction: row;
-	width: 300px;
 	height: 70px;
-	width: 300px
+	width: 375px
 }
 
 .set-name {
@@ -49,7 +48,7 @@ a {
 
 .pn-info {
 	position: absolute;
-	right: 105px;
+	right: 62.5px;
 	color:#21825B;
 	font-weight: bold;
 }

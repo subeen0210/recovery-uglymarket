@@ -97,7 +97,7 @@
 				</div>
 				<br />
 				<div class="reg-content">
-					<div class="reg-menu">メール<span class="essential-icon">*</span></div>
+					<div class="reg-menu">メールアドレス<span class="essential-icon">*</span></div>
 					<div class="reg-input">
 						<input class="input-style" name="userEmail" type="email" maxlength="50"/>
 					</div>
