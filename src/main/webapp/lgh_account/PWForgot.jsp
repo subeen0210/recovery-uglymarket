@@ -35,7 +35,7 @@
 				</div>
 			</div>
 			<div class="set-size">
-				<div class="set-name">イーメール</div>
+				<div class="set-name">メールアドレス</div>
 				<div class="set-input">
 					<input class="style-input" name="email" placeholder="Email">
 				</div>

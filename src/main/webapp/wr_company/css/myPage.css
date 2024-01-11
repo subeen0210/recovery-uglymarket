@@ -147,9 +147,12 @@ p {
 }
 
 .myinfo_box_items {
-	width: 180px;
+	width: 400px;
 	height: 40px;
 	font-size: 30px;
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .myinfo_box_items2 {
