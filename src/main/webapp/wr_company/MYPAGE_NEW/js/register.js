@@ -2,7 +2,7 @@ function itemAdd() {
     var fileInput = document.querySelector('.img');
     var formData = new FormData();
     
-    if (!isEmpty()) {
+    if (!isEmptes()) {
 	
         return; 
     }
@@ -53,7 +53,7 @@ function itemAdd() {
 
 
 
-function isEmpty(){
+function isEmptes(){
 	var name = $("input[name='name']");
     var story = $("textarea[name='story']");
     var enddate = $("input[name='enddate']");
