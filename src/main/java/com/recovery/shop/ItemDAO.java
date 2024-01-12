@@ -228,7 +228,7 @@ public class ItemDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select i_no, i_name, i_price, i_ed, i_stock from item "
-				+ "where item.s_id = ?";
+				+ "where item.s_id = ? ORDER BY i_no DESC";
 		
 		try {
 			con = DBManager.connect();
