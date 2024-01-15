@@ -30,7 +30,7 @@
 						class="addr-times">配送時間帯を設定</span><br /> <br /> <select
 						id="deliveryTime" name="deliveryTime">
 							<!-- option 태그로 각 선택 옵션을 정의 -->
-							<option value="午前中(8:00~12:00)">午前中(8:00~12:00)</option>
+							<option value="午前中(8:00~12:00)">午前中(07:00~12:00)</option>
 							<option value="12:00~14:00">12:00~14:00</option>
 							<option value="14:00~16:00">14:00~16:00</option>
 							<option value="16:00~:18:00">16:00~:18:00</option>
@@ -79,7 +79,7 @@
 					<div class="del-btn-set">
 						<div>
 							<button class="btn-select"
-								onclick="changeAddr('${address.a_no}');">送先</button>
+								onclick="changeAddr('${address.a_no}');">選択</button>
 						</div>
 					</div>
 				</div>
@@ -91,7 +91,7 @@
 	</div>
 	<!-- 모달 창 (결제 끝났을 때, 이동할 부분)-->
 	<dialog id="paymentEndPage">
-	<h2 class="dialog-title">決定が完了しました。マイページに移動しますか？</h2>
+	<h2 class="dialog-title">決済が完了しました。マイページに移動しますか？</h2>
 	<br>
 	<br>
 	<div class="dialog-set-btn">
