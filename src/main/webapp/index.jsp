@@ -55,16 +55,16 @@
 		<div class="container">
 			<div class="footer1">
 				<div>
-					<span class="a-footer"><a href="">利用規約</a></span>&emsp;&emsp;
+					<span class="a-footer">利用規約</span>&emsp;&emsp;
 				</div>
 				<div>
-					<span class="a-footer"><a href="">個人情報処理方針</a></span> &emsp;&emsp;
+					<span class="a-footer">個人情報処理方針</span> &emsp;&emsp;
 				</div>
 				<div>
-					<span class="a-footer"><a href="">電子金融取引約款</a></span>&emsp;&emsp;
+					<span class="a-footer">電子金融取引約款</span>&emsp;&emsp;
 				</div>
 				<div>
-					<span class="a-footer"><a href="">安全取引政策</a></span>&emsp;&emsp;
+					<span class="a-footer">安全取引政策</span>&emsp;&emsp;
 				</div>
 			</div>
 			<div class="footer2">
