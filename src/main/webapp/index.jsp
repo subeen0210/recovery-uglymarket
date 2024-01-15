@@ -42,7 +42,7 @@
 						src="img/search-icon-white.png">
 					</span> 
 					<input type="text" id="searchInput" name="search-input"
-						placeholder="商品名を入力して下さい.">
+						placeholder="商品名を入力して下さい">
 				</div>
 			</div>
 		</div>
@@ -55,29 +55,29 @@
 		<div class="container">
 			<div class="footer1">
 				<div>
-					<span class="a-footer">利用規約</span>&emsp;&emsp;
+					<span class="a-footer"><a href="">利用規約</a></span>&emsp;&emsp;
 				</div>
 				<div>
-					<span class="a-footer">個人情報処理方針</span> &emsp;&emsp;
+					<span class="a-footer"><a href="">個人情報処理方針</a></span> &emsp;&emsp;
 				</div>
 				<div>
-					<span class="a-footer">電子金融取引約款</span>&emsp;&emsp;
+					<span class="a-footer"><a href="">電子金融取引約款</a></span>&emsp;&emsp;
 				</div>
 				<div>
-					<span class="a-footer">安全取引政策</span>&emsp;&emsp;
+					<span class="a-footer"><a href="">安全取引政策</a></span>&emsp;&emsp;
 				</div>
 			</div>
 			<div class="footer2">
-				<div class="footer3">アグリーマーケット株式会社 | 代表:キム·ヨンミン | 事業者登録番号 :
+				<div class="footer3">アグリーマーケット株式会社 | 代表 : ム·ヨンミン | 事業者登録番号 :
 					 732-86-02604 | 通販業届出番号 : 2022-衿川-2280</div>
 				<div class="footer3">本社 : 忠清南道天安市東南区大興路321、501 | 支店 :
 					ソウル特別市城北区花郎路13ギル59,518</div>
-				<div class="footer3">カスタマーセンター : 010 - 1111 - 1111</div>
+				<div class="footer3">カスタマーセンター : admin_top@agurimarket.com </div>
 				<div class="footer3">
-					相談時間 : 月~金、午前10時~午後6時(週末/祝日
+					相談時間 : 月 ~ 金、午前10時 ~ 午後6時(週末/祝日
 					お休み）&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
-					<button onclick="location.href='QnaC'" class="f_button">よくある質問</button>
-					<button class="f_button">問い合わせ</button>
+					<button onclick="location.href='QnaC'" class="f_button">FAQ</button>
+					<button onclick="window.location.href='mailto:admin_top@agurimarket.com'" class="f_button">問い合わせ</button>
 				</div>
 			</div>
 		</div>
