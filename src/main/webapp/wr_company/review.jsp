@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="reviewListContainer">
-        <h1>後記リスト</h1>
+        <h1>商品レビュー</h1>
 <!--         <div class="my_review_buttons"> -->
 <!--         </div> -->
         <table id="reviewTable">
