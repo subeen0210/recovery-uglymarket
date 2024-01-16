@@ -52,7 +52,7 @@
 	<br><br>
 	<div class="item-review">
 		<div class="review-title">
-			<div class="review-text">商銀レビュー</div>
+			<div class="review-text">商品レビュー</div>
 			<div id="star-rating">
 				<div class="star-ratings">
 					<div class="star-ratings-fill space-x-2 text-lg">
