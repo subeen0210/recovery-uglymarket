@@ -74,7 +74,7 @@
 					<p>カートー</p>
 				</div>
 				<div class="mypage_contents1_menu_boxs" id="user_modify">
-					<p>申請情報</p>
+					<p>情報管理</p>
 				</div>
 
 
