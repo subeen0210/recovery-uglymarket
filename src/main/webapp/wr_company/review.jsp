@@ -19,7 +19,7 @@
                     <th>商品名</th>
                     <th>内容</th>
                     <th>作成日時</th>
-                    <th>点</th>
+                    <th>評点</th>
                     <th>削除</th>
                 </tr>
             </thead>

@@ -102,7 +102,7 @@
 				<br />
 				<div class="reg-content">
 					<div class="reg-menu">
-						農場イメージ<span class="essentialicon">*</span>
+						農場イメージ<span class="essential-icon">*</span>
 					</div>
 					<div class="reg-input">
 						<input class="input-style upload-img" placeholder="jpg/png/jpeg"
