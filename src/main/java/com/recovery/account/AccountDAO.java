@@ -16,6 +16,8 @@ import com.recovery.main.DBManager;
 
 public class AccountDAO {
 
+	private static Connection con;
+	
 	// 로그인
 	public static boolean login(HttpServletRequest request) {
 		
@@ -38,7 +40,6 @@ public class AccountDAO {
 			userPW = newpw;
 		}
 		
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from users where u_id = ?";
@@ -130,7 +131,6 @@ public class AccountDAO {
 		}
 		System.out.println("inputID: " + inputID);
 		System.out.println(dbID);
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT * FROM " + table + " WHERE " + dbID + " = ?";
@@ -158,7 +158,6 @@ public class AccountDAO {
 	
 	//db의 users / address에 정보 담기
 	public static void regUser(HttpServletRequest request) {
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		// 유저
@@ -275,7 +274,6 @@ public class AccountDAO {
 	
 	// id 찾기
 	public static boolean emailConfirm(HttpServletRequest request) {
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT u_id FROM users WHERE u_email= ? and "
@@ -320,7 +318,6 @@ public class AccountDAO {
 
 	public static void createRandomPassword(HttpServletRequest request) {
 		
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT * FROM users WHERE u_email= ? and u_id = ? and u_kanji_ln = ? and u_kanji_fn = ?";
@@ -380,7 +377,6 @@ public class AccountDAO {
 	
 	// 정보 수정
 	public static void updateUser(HttpServletRequest request) {
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		User user = (User) request.getSession().getAttribute("userAccount");
 		
@@ -447,7 +443,6 @@ public class AccountDAO {
 
 	// 비밀번호 정보수정
 	public static String changePW(HttpServletRequest request) {
-		Connection con = null;
 		PreparedStatement pstmt = null;
 		
 		// 비밀번호 찾기 값
