@@ -12,10 +12,10 @@ function loginCall(backUrl) {
 		userID.focus();
 		return false;
 	}
-	if (isEmpty(userPW)) {
+	if (!userPW.value) {
 		$("#loginEmptyPW").text("パスワードが空いています");
 		$("#loginEmptyPW").css("color", "red");
-		userPW.focus();
+//		userPW.focus();
 		return false;
 	}
 
@@ -31,9 +31,9 @@ $(function() {
 		}
 	});
 
-	document.getElementById("loginUserPW").addEventListener("keyup", function() {
+	document.getElementById("loginUserPW").addEventListener("keyup", function(e) {
 		var emptyMsg = document.getElementById("loginEmptyPW");
-		if (this.value.trim() !== "") {
+		if (e.which !== 13 && this.value.trim() !== "") {
 			emptyMsg.textContent = ""; // 글자가 입력되면 에러 메시지를 숨김
 		}
 	});
@@ -49,23 +49,25 @@ $(function() {
 
 	document
 		.getElementById("loginSellerPW")
-		.addEventListener("keyup", function() {
+		.addEventListener("keyup", function(e) {
 			var emptyMsg = document.getElementById("loginEmptyPW2");
-			if (this.value.trim() !== "") {
+			if (e.which !== 13 && this.value.trim() !== "") {
 				emptyMsg.textContent = ""; // 글자가 입력되면 에러 메시지를 숨김
 			}
 		});
 
 	$("#loginUserPW").keypress(function(event) {
-		if (event.which === 13) {
-			// 13은 엔터 키의 keyCode
-			document.getElementById("userLoginBtn").click();
-		}
-	});
+    if (event.which === 13) {
+        // 13은 엔터 키의 keyCode
+        event.preventDefault(); // 기본 동작 방지
+        document.getElementById("userLoginBtn").click();
+    }
+});
 
 	$("#loginSellerPW").keypress(function(event) {
 		if (event.which === 13) {
 			// 13은 엔터 키의 keyCode
+			event.preventDefault(); // 기본 동작 방지
 			document.getElementById("sellerLoginBtn").click();
 		}
 	});
