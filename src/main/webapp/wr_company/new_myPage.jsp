@@ -71,7 +71,7 @@
 
 
 				<div class="mypage_contents1_menu_boxs" id="cart">
-					<p>カートー</p>
+					<p>カート</p>
 				</div>
 				<div class="mypage_contents1_menu_boxs" id="user_modify">
 					<p>情報管理</p>
