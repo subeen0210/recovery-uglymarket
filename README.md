@@ -1,6 +1,10 @@
 # :corn: 못난이마켓 쇼핑몰 제작 프로젝트 
 
 <br/>
+리카바리
+[리카바리_발표PPT_한국어ver_.pdf](https://github.com/subeen0210/recovery-uglymarket/files/14257233/_.PPT_.ver_.pdf)
+
+<br/>
 
 농산물에 흠집이나 크기 이상으로 상품성이 떨어지는 '못난이 농산물'을 판매하는 <br/>
 '못난이마켓'의 쇼핑몰 사이트를 제작하였습니다. <br/> 
