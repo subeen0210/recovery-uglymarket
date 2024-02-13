@@ -1,8 +1,9 @@
 # :corn: 못난이마켓 쇼핑몰 제작 프로젝트 
 
 <br/>
-리카바리
-[리카바리_발표PPT_한국어ver_.pdf](https://github.com/subeen0210/recovery-uglymarket/files/14257233/_.PPT_.ver_.pdf)
+
+- Recovery Project pdf file. 
+[recovery_jp_ver_.pdf](https://github.com/subeen0210/recovery-uglymarket/files/14257270/recovery_jp_ver_.pdf)
 
 <br/>
 
