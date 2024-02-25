@@ -27,7 +27,7 @@
 
 <br/>
 
-![역할분담](https://github.com/subeen0210/master-japanese/assets/82039003/3da9c2b0-d790-4188-a5b8-66652eefcf59)
+![역할분담](https://github.com/subeen0210/recovery-uglymarket/assets/82039003/ab8040ec-b0d4-4fd0-8cec-7d63844346f2)
 
 <br/>
 
@@ -36,7 +36,7 @@
 
 <br/>
 
-![사용프로그램](https://github.com/subeen0210/master-japanese/assets/82039003/50c48482-3a7b-490a-93d9-c7a587d85c85)
+![사용프로그램](https://github.com/subeen0210/recovery-uglymarket/assets/82039003/1634f28e-0d2e-4c0a-aa2d-c38dcbaff432)
 
 <br/>
 
@@ -49,7 +49,7 @@
 <hr>
 
 <p align="center">
-  <img src="https://github.com/subeen0210/master-japanese/assets/82039003/92050501-37c1-46cf-9581-98d8c640a0c4">
+  <img src="https://github.com/subeen0210/recovery-uglymarket/assets/82039003/1fbf15e3-01ac-4622-9856-d9c4f12a7afe">
 </p>
 
 - [x] 메뉴 hover 효과 <br/>
@@ -63,7 +63,7 @@
 <hr>
 
 <p align="center">
-  <img src="https://github.com/subeen0210/master-japanese/assets/82039003/b970adde-a4f2-4f24-9452-a7ee51ee621e" width:500px height: 500px>
+  <img src="https://github.com/subeen0210/recovery-uglymarket/assets/82039003/328bbfef-ba61-4208-8f58-19b41389bc1d" width:500px height: 500px>
 </p>
 
 - [x] 일본 우편번호 API를 활용한 회원가입 시 우편번호 기입 가능
@@ -74,7 +74,7 @@
 <hr>
 
 <p align="center">
-  <img src="https://github.com/subeen0210/master-japanese/assets/82039003/54af5efb-d13d-4760-8ac2-91c41b68030a">
+  <img src="https://github.com/subeen0210/recovery-uglymarket/assets/82039003/b6af12ce-0dc4-4e50-a64d-795d866d653e">
 </p>
 
 - [x] '전체', '못난이', '일반'으로 구분해 상품 확인
@@ -85,7 +85,7 @@
 <hr>
 
 <p align="center">
-  <img src="https://github.com/subeen0210/master-japanese/assets/82039003/f2f21bfa-5ddb-44bd-b0d7-d4709c955957">
+  <img src="https://github.com/subeen0210/recovery-uglymarket/assets/82039003/055b0b85-1278-4076-93fb-1b1125340173">
 </p>
 
 - [x] 검색어에 해당하는 상품 목록만 확인 가능
@@ -96,7 +96,7 @@
 <hr>
 
 <p align="center">
-  <img src="https://github.com/subeen0210/master-japanese/assets/82039003/f547a27a-5d33-4786-a22f-65d8e3685940">
+  <img src="https://github.com/subeen0210/recovery-uglymarket/assets/82039003/6ff3c0e5-7a15-432f-aa15-96bcf5d17645">
 </p>
 
 - [x] 상품 수량 변경 시 상품 금액과 전체 금액 변동 <br/>
